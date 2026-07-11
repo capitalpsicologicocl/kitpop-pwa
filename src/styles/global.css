@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+
+:root {
+  --brand:#3b1e8e;
+  --brand-l:#F0EAFF;
+  --brand-m:#5B3EC4;
+  --brand-d:#2a1566;
+  --gold:#F5A623;
+  --pink:#E91E8C;
+  --g50:#F9FAFB;
+  --g100:#F3F4F6;
+  --g200:#E5E7EB;
+  --g400:#9CA3AF;
+  --g500:#6B7280;
+  --g600:#4B5563;
+  --g700:#374151;
+  --g800:#1F2937;
+  --white:#fff;
+}
+
+*,
+*::before,
+*::after {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Plus Jakarta Sans', sans-serif;
+  background:var(--g50);
+  color:var(--g800);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+a {
+  text-decoration:none;
+  color:inherit;
+}

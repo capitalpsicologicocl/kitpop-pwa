@@ -1,0 +1,38 @@
+import { Link } from 'react-router-dom'
+
+import { activities } from '../../data/activities'
+
+export default function CategoryCard({ category }) {
+  const activityCount = activities.filter(
+    (activity) => activity.categorySlug === category.slug
+  ).length
+
+  return (
+    <Link
+      to={`/categoria/${category.slug}`}
+      className={`cat-card ${category.className || ''}`}
+    >
+      <div className="cat-icon-box">
+        <span className="cat-icon-symbol">
+          {category.icon}
+        </span>
+      </div>
+
+      <p className="cat-tag-lbl">
+        {category.subtitle || 'Banco de actividades'}
+      </p>
+
+      <h3 className="cat-name">
+        {category.title}
+      </h3>
+
+      <p className="cat-desc">
+        {category.description}
+      </p>
+
+      <span className="cat-count">
+        {activityCount} {activityCount === 1 ? 'actividad' : 'actividades'}
+      </span>
+    </Link>
+  )
+}

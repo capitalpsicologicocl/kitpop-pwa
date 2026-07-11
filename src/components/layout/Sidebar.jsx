@@ -1,0 +1,243 @@
+import { useMemo, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+
+import { useAuth } from '../../context/AuthContext'
+import { categories } from '../../data/categories'
+import { searchActivities } from '../../utils/searchActivities'
+
+export default function Sidebar({ isOpen, onClose }) {
+  const navigate = useNavigate()
+  const { user, profile, favoriteSlugs, signOut } = useAuth()
+  const [query, setQuery] = useState('')
+  const [categorySlug, setCategorySlug] = useState('all')
+  const [duration, setDuration] = useState('all')
+  const [favoritesOnly, setFavoritesOnly] = useState('all')
+
+  const results = useMemo(() => {
+    const trimmedQuery = query.trim()
+
+    if (favoritesOnly === 'fav' && !user) {
+      return []
+    }
+
+    if (!trimmedQuery && favoritesOnly !== 'fav') {
+      return []
+    }
+
+    return searchActivities({
+      query: trimmedQuery,
+      categorySlug,
+      duration,
+      favoritesOnly: favoritesOnly === 'fav',
+      favoriteSlugs,
+    }).slice(0, 8)
+  }, [query, categorySlug, duration, favoritesOnly, favoriteSlugs, user])
+
+  function handleSubmit(event) {
+    event.preventDefault()
+
+    const trimmedQuery = query.trim()
+
+    if (!trimmedQuery && favoritesOnly !== 'fav') {
+      return
+    }
+
+    if (favoritesOnly === 'fav' && !user) {
+      onClose()
+      navigate('/login')
+      return
+    }
+
+    const params = new URLSearchParams()
+
+    if (trimmedQuery) {
+      params.set('q', trimmedQuery)
+    }
+
+    if (categorySlug !== 'all') {
+      params.set('categoria', categorySlug)
+    }
+
+    if (duration !== 'all') {
+      params.set('duracion', duration)
+    }
+
+    if (favoritesOnly === 'fav') {
+      params.set('favoritas', '1')
+    }
+
+    onClose()
+    navigate(`/buscar?${params.toString()}`)
+  }
+
+  return (
+    <>
+      <div
+        className={`kp-menu-backdrop ${isOpen ? 'on' : ''}`}
+        onClick={onClose}
+      />
+
+      <aside
+        className={`kp-menu-drawer ${isOpen ? 'on' : ''}`}
+        aria-hidden={!isOpen}
+      >
+        <div className="kp-menu-head">
+          <img src="/kitpop-logo.png" alt="KitPOP de Facilitación" />
+
+          <button
+            className="kp-menu-close"
+            type="button"
+            onClick={onClose}
+            aria-label="Cerrar menú"
+          >
+            ×
+          </button>
+        </div>
+
+        <div className="kp-auth-box">
+          <p className="kp-menu-label">Cuenta KitPOP</p>
+
+          {user ? (
+            <>
+              <p className="kp-menu-note">
+                Hola, {profile?.full_name || user.email}
+              </p>
+
+              <div className="kp-auth-actions">
+                <Link to="/perfil" onClick={onClose}>Mi perfil</Link>
+                <button type="button" onClick={signOut}>Cerrar sesión</button>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="kp-auth-actions">
+                <Link to="/login" onClick={onClose}>Iniciar sesión</Link>
+                <Link to="/registro" onClick={onClose}>Registro</Link>
+              </div>
+
+              <p className="kp-menu-note">
+                Con tu cuenta puedes guardar favoritos y bitácoras.
+              </p>
+            </>
+          )}
+        </div>
+
+        <div className="kp-menu-section">
+          <p className="kp-menu-label">Buscar actividades</p>
+
+          <form onSubmit={handleSubmit}>
+            <input
+              className="kp-menu-input"
+              placeholder="Buscar por nombre, objetivo o material."
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+
+            <div className="kp-menu-filters">
+              <select
+                value={categorySlug}
+                onChange={(event) => setCategorySlug(event.target.value)}
+              >
+                <option value="all">Todas las categorías</option>
+                {categories.map((category) => (
+                  <option key={category.slug} value={category.slug}>
+                    {category.title}
+                  </option>
+                ))}
+              </select>
+
+              <select
+                value={duration}
+                onChange={(event) => setDuration(event.target.value)}
+              >
+                <option value="all">Cualquier duración</option>
+                <option value="short">Hasta 15 min</option>
+                <option value="medium">16 a 35 min</option>
+                <option value="long">36 min o más</option>
+              </select>
+
+              <select
+                value={favoritesOnly}
+                onChange={(event) => setFavoritesOnly(event.target.value)}
+              >
+                <option value="all">Todas</option>
+                <option value="fav">Favoritas</option>
+              </select>
+            </div>
+
+            <button type="submit" className="kp-menu-search-btn">
+              Buscar
+            </button>
+          </form>
+
+          <div className="kp-menu-results">
+            {favoritesOnly === 'fav' && !user ? (
+              <p className="kp-menu-empty">
+                Inicia sesión para filtrar tus actividades favoritas.
+              </p>
+            ) : favoritesOnly === 'fav' && favoriteSlugs.length === 0 ? (
+              <p className="kp-menu-empty">
+                Aún no tienes actividades favoritas guardadas.
+              </p>
+            ) : results.length > 0 ? (
+              results.map((activity) => (
+                <Link
+                  key={activity.slug}
+                  to={`/actividad/${activity.slug}`}
+                  className="kp-menu-result-item"
+                  onClick={onClose}
+                >
+                  <strong>{activity.title}</strong>
+                  <span>{activity.categoryLabel}</span>
+                </Link>
+              ))
+            ) : (
+              <p className="kp-menu-empty">
+                {query.trim()
+                  ? 'No hay coincidencias rápidas. Pulsa Buscar para ver todos los resultados.'
+                  : 'Escribe una palabra para buscar actividades.'}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="kp-menu-section">
+          <p className="kp-menu-label">Categorías</p>
+
+          <div className="kp-menu-cats">
+            <Link to="/" className="kp-menu-cat-btn" onClick={onClose}>
+              Inicio
+            </Link>
+
+            {categories.map((category) => (
+              <Link
+                key={category.slug}
+                to={`/categoria/${category.slug}`}
+                className="kp-menu-cat-btn"
+                onClick={onClose}
+              >
+                {category.title}
+              </Link>
+            ))}
+
+            <Link to="/taller" className="kp-menu-cat-btn" onClick={onClose}>
+              Diseñador de talleres
+            </Link>
+
+            <Link to="/favoritos" className="kp-menu-cat-btn" onClick={onClose}>
+              Favoritos
+            </Link>
+
+            <Link to="/bitacora" className="kp-menu-cat-btn" onClick={onClose}>
+              Bitácora
+            </Link>
+
+            <Link to="/perfil" className="kp-menu-cat-btn" onClick={onClose}>
+              Perfil
+            </Link>
+          </div>
+        </div>
+      </aside>
+    </>
+  )
+}
