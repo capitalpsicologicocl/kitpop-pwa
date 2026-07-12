@@ -881,6 +881,87 @@
   }
 }
 
+.interactive-status.status-live {
+  background:#dcfce7;
+  color:#166534;
+}
+
+.live-poll-card.is-open {
+  border:2px solid var(--brand);
+  box-shadow:0 0 0 1px var(--brand-l);
+}
+
+.live-active-hint {
+  margin:10px 0 0;
+  font-size:13px;
+  color:var(--g600);
+}
+
+.live-result-row {
+  display:grid;
+  grid-template-columns:minmax(80px,1fr) 2fr auto;
+  gap:8px;
+  align-items:center;
+  margin-bottom:8px;
+  font-size:12px;
+}
+
+.live-result-bar-wrap {
+  height:10px;
+  background:var(--g100);
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.live-result-bar {
+  height:100%;
+  background:var(--brand);
+  border-radius:999px;
+  min-width:2px;
+}
+
+.live-poll-results-inline {
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--g200);
+}
+
+.live-participant-poll h2 {
+  font-family:Nunito,sans-serif;
+  font-size:20px;
+  color:var(--g800);
+  margin:12px 0 16px;
+}
+
+.live-vote-btn {
+  border:1.5px solid var(--g200);
+  border-radius:12px;
+  padding:14px 16px;
+  background:#fff;
+  font-size:15px;
+  font-weight:700;
+  text-align:left;
+  cursor:pointer;
+  width:100%;
+}
+
+.live-vote-btn:hover {
+  border-color:var(--brand);
+  background:var(--brand-l);
+}
+
+.live-session-editor {
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+@media (max-width:720px){
+  .live-result-row {
+    grid-template-columns:1fr;
+  }
+}
+
 .workshop-modal-backdrop {
   position:fixed;
   inset:0;

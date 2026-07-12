@@ -17,6 +17,7 @@ import InteractiveSurveys from './pages/interactive/InteractiveSurveys'
 import SurveyEditor from './pages/interactive/SurveyEditor'
 import SurveyResults from './pages/interactive/SurveyResults'
 import InteractiveLive from './pages/interactive/InteractiveLive'
+import LiveSessionEditor from './pages/interactive/LiveSessionEditor'
 import ParticipantJoin from './pages/interactive/ParticipantJoin'
 import WorkshopEditor from './pages/interactive/WorkshopEditor'
 import Workshops from './pages/workshops/Workshops'
@@ -56,6 +57,7 @@ export default function App() {
           <Route path="/interactivo/encuestas/:id" element={<SurveyEditor />} />
           <Route path="/interactivo/encuestas/:id/resultados" element={<SurveyResults />} />
           <Route path="/interactivo/en-vivo" element={<InteractiveLive />} />
+          <Route path="/interactivo/en-vivo/:id" element={<LiveSessionEditor />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/perfil" element={<Profile />} />

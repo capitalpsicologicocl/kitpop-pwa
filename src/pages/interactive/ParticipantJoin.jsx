@@ -1,19 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import LiveParticipantPoll from '../../components/live/LiveParticipantPoll'
 import SurveyParticipantForm from '../../components/survey/SurveyParticipantForm'
+import { getLiveSessionForParticipant } from '../../services/liveSessionService'
 import { getSurveyForParticipant } from '../../services/surveyService'
 import { resolveAccessCode } from '../../services/accessCodeService'
-import { getParticipantToken } from '../../utils/surveyHelpers'
+import { getParticipantToken as getLiveToken } from '../../utils/liveHelpers'
+import { getParticipantToken as getSurveyToken } from '../../utils/surveyHelpers'
 import { normalizeAccessCode, RESOURCE_LABELS } from '../../utils/accessCode'
 
 export default function ParticipantJoin() {
   const { code = '' } = useParams()
   const [session, setSession] = useState(null)
   const [survey, setSurvey] = useState(null)
+  const [liveSession, setLiveSession] = useState(null)
+  const [votedPollIds, setVotedPollIds] = useState([])
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
+
+  const loadLive = useCallback(async (resourceId) => {
+    const token = getLiveToken(resourceId)
+    const data = await getLiveSessionForParticipant(code, token)
+    setLiveSession(data)
+    setVotedPollIds(data?.voted_poll_ids ?? [])
+    return data
+  }, [code])
 
   useEffect(() => {
     let mounted = true
@@ -23,6 +36,7 @@ export default function ParticipantJoin() {
       setError('')
       setSession(null)
       setSurvey(null)
+      setLiveSession(null)
       setSubmitted(false)
 
       try {
@@ -40,12 +54,16 @@ export default function ParticipantJoin() {
         setSession(result)
 
         if (result.resource_type === 'survey') {
-          const participantToken = getParticipantToken(result.resource_id)
+          const participantToken = getSurveyToken(result.resource_id)
           const surveyData = await getSurveyForParticipant(code, participantToken)
 
           if (mounted) {
             setSurvey(surveyData)
           }
+        }
+
+        if (result.resource_type === 'live') {
+          await loadLive(result.resource_id)
         }
       } catch (loadError) {
         if (mounted) {
@@ -59,12 +77,31 @@ export default function ParticipantJoin() {
     }
 
     loadSession()
-  }, [code])
+  }, [code, loadLive])
+
+  useEffect(() => {
+    if (!session || session.resource_type !== 'live' || session.status !== 'live') {
+      return undefined
+    }
+
+    const intervalId = setInterval(() => {
+      loadLive(session.resource_id).catch(() => {})
+    }, 4000)
+
+    return () => clearInterval(intervalId)
+  }, [loadLive, session])
 
   const normalizedCode = normalizeAccessCode(code)
-  const participantToken = survey?.survey_id
-    ? getParticipantToken(survey.survey_id)
+  const surveyParticipantToken = survey?.survey_id
+    ? getSurveyToken(survey.survey_id)
     : ''
+  const liveParticipantToken = liveSession?.session_id
+    ? getLiveToken(liveSession.session_id)
+    : ''
+
+  function handleLiveVoted(pollId) {
+    setVotedPollIds((current) => [...new Set([...current, pollId])])
+  }
 
   return (
     <main id="participant-view" className="fade-in">
@@ -85,31 +122,44 @@ export default function ParticipantJoin() {
           </>
         )}
 
-        {!loading && session && session.resource_type !== 'survey' && (
+        {!loading && session?.resource_type === 'workshop' && (
           <>
             <h1>{session.title}</h1>
-            <p className="participant-type">
-              {RESOURCE_LABELS[session.resource_type] || 'Sesión KitPOP'}
+            <p className="participant-type">{RESOURCE_LABELS.workshop}</p>
+            <p className="participant-copy">
+              Taller registrado. Comparte este espacio con tu facilitador/a.
             </p>
-            <span className="interactive-status">{session.status}</span>
+          </>
+        )}
 
-            {session.resource_type === 'live' && session.status === 'live' && (
-              <p className="participant-copy">
-                Sesión en vivo. La votación sincronizada llegará en Fase 10.
-              </p>
+        {!loading && session?.resource_type === 'live' && liveSession && (
+          <>
+            <h1>{liveSession.title}</h1>
+            {liveSession.organization && (
+              <p className="interactive-item-meta">{liveSession.organization}</p>
             )}
+            <p className="participant-type">{RESOURCE_LABELS.live}</p>
 
-            {session.resource_type === 'workshop' && (
-              <p className="participant-copy">
-                Taller registrado. Comparte este espacio con tu facilitador/a.
-              </p>
-            )}
-
-            {(session.status === 'draft' ||
-              (session.resource_type === 'live' && session.status !== 'live')) && (
+            {liveSession.status !== 'live' && (
               <p className="participant-copy participant-wait">
-                Espera a que el facilitador active esta sesión.
+                {liveSession.status === 'closed'
+                  ? 'La sesión en vivo ya finalizó.'
+                  : liveSession.status === 'paused'
+                    ? 'La sesión está pausada. Espera a que el facilitador la reactive.'
+                    : 'Espera a que el facilitador inicie la sesión en vivo.'}
               </p>
+            )}
+
+            {liveSession.status === 'live' && (
+              <LiveParticipantPoll
+                liveSession={{
+                  ...liveSession,
+                  voted_poll_ids: votedPollIds,
+                }}
+                code={code}
+                participantToken={liveParticipantToken}
+                onVoted={handleLiveVoted}
+              />
             )}
           </>
         )}
@@ -159,7 +209,7 @@ export default function ParticipantJoin() {
                 <SurveyParticipantForm
                   survey={survey}
                   code={code}
-                  participantToken={participantToken}
+                  participantToken={surveyParticipantToken}
                   onSubmitted={() => setSubmitted(true)}
                 />
               )}

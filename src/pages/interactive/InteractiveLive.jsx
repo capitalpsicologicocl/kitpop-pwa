@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
@@ -8,19 +8,22 @@ import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createLiveSessionDraft,
   deleteLiveSession,
+  duplicateLiveSession,
   fetchLiveSessions,
-  updateLiveSessionStatus,
+  isLiveSetupError,
 } from '../../services/liveSessionService'
 import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
+import { getLiveStatusLabel } from '../../utils/liveHelpers'
 
 export default function InteractiveLive() {
+  const navigate = useNavigate()
   const { user, profile, loading: authLoading } = useAuth()
   const [sessions, setSessions] = useState([])
   const [codeMap, setCodeMap] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [duplicatingId, setDuplicatingId] = useState('')
   const [form, setForm] = useState({
     title: '',
     organization: '',
@@ -66,7 +69,6 @@ export default function InteractiveLive() {
 
   async function handleCreate(event) {
     event.preventDefault()
-    setMessage('')
     setError('')
 
     if (!canCreateResource(profile, 'live', sessions.length)) {
@@ -82,13 +84,15 @@ export default function InteractiveLive() {
     setSubmitting(true)
 
     try {
-      const { session, code } = await createLiveSessionDraft(user.id, form)
-      setSessions((current) => [session, ...current])
-      setCodeMap((current) => ({ ...current, [session.id]: code }))
+      const { session } = await createLiveSessionDraft(user.id, form)
       setForm({ title: '', organization: '' })
-      setMessage('Sesión creada. Polls en vivo completos en Fase 10.')
+      navigate(`/interactivo/en-vivo/${session.id}`)
     } catch (createError) {
-      setError(createError.message || 'No se pudo crear la sesión.')
+      setError(
+        isLiveSetupError(createError)
+          ? 'Ejecuta live_polls_v1.sql en Supabase antes de crear.'
+          : createError.message || 'No se pudo crear la sesión.'
+      )
     } finally {
       setSubmitting(false)
     }
@@ -96,6 +100,10 @@ export default function InteractiveLive() {
 
   async function handleDelete(sessionId) {
     if (!user) {
+      return
+    }
+
+    if (!window.confirm('¿Eliminar esta sesión y sus votos?')) {
       return
     }
 
@@ -107,19 +115,27 @@ export default function InteractiveLive() {
     }
   }
 
-  async function handleGoLive(sessionId) {
+  async function handleDuplicate(sessionId) {
     if (!user) {
       return
     }
 
+    if (!canCreateResource(profile, 'live', sessions.length)) {
+      setError('Alcanzaste el límite del plan Free.')
+      return
+    }
+
+    setDuplicatingId(sessionId)
+    setError('')
+
     try {
-      const updated = await updateLiveSessionStatus(user.id, sessionId, 'live')
-      setSessions((current) =>
-        current.map((item) => (item.id === sessionId ? updated : item))
-      )
-      setMessage('Sesión en vivo. Panel de votación en Fase 10.')
-    } catch (liveError) {
-      setError(liveError.message || 'No se pudo activar la sesión.')
+      const copy = await duplicateLiveSession(user.id, sessionId)
+      await loadSessions()
+      navigate(`/interactivo/en-vivo/${copy.id}`)
+    } catch (duplicateError) {
+      setError(duplicateError.message || 'No se pudo duplicar.')
+    } finally {
+      setDuplicatingId('')
     }
   }
 
@@ -147,13 +163,12 @@ export default function InteractiveLive() {
 
       <div className="page-head">
         <h1 className="cv-title">En vivo</h1>
-        <p className="cv-desc">Polls sincronizados con participantes. Fase 10.</p>
+        <p className="cv-desc">Polls sincronizados con participantes en tiempo real.</p>
         <span className="profile-badge">{getPlanLabel(profile)}</span>
       </div>
 
       <InteractiveNav />
 
-      {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}
 
       <form className="auth-panel interactive-form" onSubmit={handleCreate}>
@@ -181,7 +196,7 @@ export default function InteractiveLive() {
         </div>
 
         <button type="submit" className="btn-primary" disabled={submitting}>
-          {submitting ? 'Creando...' : 'Crear sesión'}
+          {submitting ? 'Creando...' : 'Crear y diseñar polls →'}
         </button>
       </form>
 
@@ -199,31 +214,39 @@ export default function InteractiveLive() {
                   <p className="interactive-item-meta">
                     {session.organization || 'Sin organización'}
                   </p>
-                  <span className="interactive-status">{session.status}</span>
+                  <span className={`interactive-status status-${session.status}`}>
+                    {getLiveStatusLabel(session.status)}
+                  </span>
                 </div>
 
-                <div className="interactive-item-actions">
-                  {session.status !== 'live' && (
-                    <button
-                      type="button"
-                      className="timer-btn timer-btn-secondary"
-                      onClick={() => handleGoLive(session.id)}
-                    >
-                      Ir en vivo
-                    </button>
-                  )}
-
-                  <button
-                    type="button"
-                    className="journal-delete"
-                    onClick={() => handleDelete(session.id)}
-                  >
-                    Eliminar
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="journal-delete"
+                  onClick={() => handleDelete(session.id)}
+                >
+                  Eliminar
+                </button>
               </div>
 
               <AccessCodePanel code={codeMap[session.id]} resourceLabel="Sesión en vivo" />
+
+              <div className="interactive-item-actions">
+                <Link
+                  to={`/interactivo/en-vivo/${session.id}`}
+                  className="btn-primary btn-link"
+                >
+                  Panel de polls
+                </Link>
+
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-ghost"
+                  disabled={duplicatingId === session.id}
+                  onClick={() => handleDuplicate(session.id)}
+                >
+                  {duplicatingId === session.id ? 'Duplicando...' : 'Duplicar'}
+                </button>
+              </div>
             </article>
           ))
         )}
