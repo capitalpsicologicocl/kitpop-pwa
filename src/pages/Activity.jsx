@@ -27,12 +27,6 @@ export default function Activity() {
     setFavoriteError('')
   }, [slug])
 
-  useEffect(() => {
-    if (!showTimer && activeTab === 'timer') {
-      setActiveTab('guide')
-    }
-  }, [showTimer, activeTab])
-
   async function handleToggleFavorite() {
     setFavoriteError('')
 
@@ -85,16 +79,13 @@ export default function Activity() {
         onToggleFavorite={handleToggleFavorite}
       />
 
-      <ActivityTabs
-        activeTab={activeTab}
-        onTabChange={setActiveTab}
-        showTimer={showTimer}
-      />
+      <div className="activity-sticky-tools">
+        <ActivityTabs activeTab={activeTab} onTabChange={setActiveTab} />
+
+        {showTimer && <ActivityTimer metas={kitpop.metas ?? []} />}
+      </div>
 
       {activeTab === 'guide' && <ActivityGuide kitpop={kitpop} />}
-      {activeTab === 'timer' && showTimer && (
-        <ActivityTimer metas={kitpop.metas ?? []} />
-      )}
       {activeTab === 'science' && <ActivityScience kitpop={kitpop} />}
       {activeTab === 'journal' && (
         <ActivityJournalForm

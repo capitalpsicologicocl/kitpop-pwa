@@ -1,22 +1,13 @@
 const TABS = [
   { id: 'guide', label: 'Guía completa' },
-  { id: 'timer', label: 'Temporizador' },
   { id: 'science', label: 'Fundamento' },
   { id: 'journal', label: 'Bitácora' },
 ]
 
-export default function ActivityTabs({
-  activeTab,
-  onTabChange,
-  showTimer = true,
-}) {
-  const visibleTabs = showTimer
-    ? TABS
-    : TABS.filter((tab) => tab.id !== 'timer')
-
+export default function ActivityTabs({ activeTab, onTabChange }) {
   return (
     <div className="activity-tabs">
-      {visibleTabs.map((tab) => (
+      {TABS.map((tab) => (
         <button
           key={tab.id}
           type="button"
