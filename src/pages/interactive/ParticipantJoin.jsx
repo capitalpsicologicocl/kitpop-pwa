@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import SurveyParticipantForm from '../../components/survey/SurveyParticipantForm'
+import { getSurveyForParticipant } from '../../services/surveyService'
 import { resolveAccessCode } from '../../services/accessCodeService'
+import { getParticipantToken } from '../../utils/surveyHelpers'
 import { normalizeAccessCode, RESOURCE_LABELS } from '../../utils/accessCode'
 
 export default function ParticipantJoin() {
   const { code = '' } = useParams()
   const [session, setSession] = useState(null)
+  const [survey, setSurvey] = useState(null)
+  const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -17,6 +22,8 @@ export default function ParticipantJoin() {
       setLoading(true)
       setError('')
       setSession(null)
+      setSurvey(null)
+      setSubmitted(false)
 
       try {
         const result = await resolveAccessCode(code)
@@ -31,6 +38,15 @@ export default function ParticipantJoin() {
         }
 
         setSession(result)
+
+        if (result.resource_type === 'survey') {
+          const participantToken = getParticipantToken(result.resource_id)
+          const surveyData = await getSurveyForParticipant(code, participantToken)
+
+          if (mounted) {
+            setSurvey(surveyData)
+          }
+        }
       } catch (loadError) {
         if (mounted) {
           setError(loadError.message || 'No se pudo validar el código.')
@@ -46,6 +62,9 @@ export default function ParticipantJoin() {
   }, [code])
 
   const normalizedCode = normalizeAccessCode(code)
+  const participantToken = survey?.survey_id
+    ? getParticipantToken(survey.survey_id)
+    : ''
 
   return (
     <main id="participant-view" className="fade-in">
@@ -66,19 +85,13 @@ export default function ParticipantJoin() {
           </>
         )}
 
-        {!loading && session && (
+        {!loading && session && session.resource_type !== 'survey' && (
           <>
             <h1>{session.title}</h1>
             <p className="participant-type">
               {RESOURCE_LABELS[session.resource_type] || 'Sesión KitPOP'}
             </p>
             <span className="interactive-status">{session.status}</span>
-
-            {session.resource_type === 'survey' && session.status === 'active' && (
-              <p className="participant-copy">
-                Encuesta activa. El formulario de respuestas se habilitará en Fase 9.
-              </p>
-            )}
 
             {session.resource_type === 'live' && session.status === 'live' && (
               <p className="participant-copy">
@@ -88,17 +101,66 @@ export default function ParticipantJoin() {
 
             {session.resource_type === 'workshop' && (
               <p className="participant-copy">
-                Taller registrado. El material compartido se habilitará con Talleres v2 (Fase 8).
+                Taller registrado. Comparte este espacio con tu facilitador/a.
               </p>
             )}
 
             {(session.status === 'draft' ||
-              (session.resource_type === 'survey' && session.status !== 'active') ||
               (session.resource_type === 'live' && session.status !== 'live')) && (
               <p className="participant-copy participant-wait">
                 Espera a que el facilitador active esta sesión.
               </p>
             )}
+          </>
+        )}
+
+        {!loading && session?.resource_type === 'survey' && survey && (
+          <>
+            <h1>{survey.title}</h1>
+            {survey.organization && (
+              <p className="interactive-item-meta">{survey.organization}</p>
+            )}
+
+            {survey.status !== 'active' && (
+              <p className="participant-copy participant-wait">
+                {survey.status === 'closed'
+                  ? 'Esta encuesta ya está cerrada.'
+                  : 'Espera a que el facilitador active la encuesta.'}
+              </p>
+            )}
+
+            {survey.status === 'active' && survey.already_answered && !submitted && (
+              <p className="participant-copy participant-wait">
+                Ya enviaste tus respuestas. Gracias por participar.
+              </p>
+            )}
+
+            {survey.status === 'active' && submitted && (
+              <p className="participant-copy">
+                ¡Gracias! Tus respuestas fueron enviadas correctamente.
+              </p>
+            )}
+
+            {survey.status === 'active' &&
+              !survey.already_answered &&
+              !submitted &&
+              (survey.questions?.length ?? 0) === 0 && (
+                <p className="participant-copy participant-wait">
+                  La encuesta aún no tiene preguntas publicadas.
+                </p>
+              )}
+
+            {survey.status === 'active' &&
+              !survey.already_answered &&
+              !submitted &&
+              (survey.questions?.length ?? 0) > 0 && (
+                <SurveyParticipantForm
+                  survey={survey}
+                  code={code}
+                  participantToken={participantToken}
+                  onSubmitted={() => setSubmitted(true)}
+                />
+              )}
           </>
         )}
       </div>

@@ -14,6 +14,8 @@ import Favorites from './pages/Favorites'
 import Journal from './pages/Journal'
 import InteractiveHub from './pages/interactive/InteractiveHub'
 import InteractiveSurveys from './pages/interactive/InteractiveSurveys'
+import SurveyEditor from './pages/interactive/SurveyEditor'
+import SurveyResults from './pages/interactive/SurveyResults'
 import InteractiveLive from './pages/interactive/InteractiveLive'
 import ParticipantJoin from './pages/interactive/ParticipantJoin'
 import WorkshopEditor from './pages/interactive/WorkshopEditor'
@@ -51,6 +53,8 @@ export default function App() {
           <Route path="/interactivo/talleres/:id" element={<RedirectLegacyWorkshop />} />
           <Route path="/interactivo" element={<InteractiveHub />} />
           <Route path="/interactivo/encuestas" element={<InteractiveSurveys />} />
+          <Route path="/interactivo/encuestas/:id" element={<SurveyEditor />} />
+          <Route path="/interactivo/encuestas/:id/resultados" element={<SurveyResults />} />
           <Route path="/interactivo/en-vivo" element={<InteractiveLive />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Register />} />

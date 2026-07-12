@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
@@ -8,23 +8,27 @@ import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createSurveyDraft,
   deleteSurvey,
+  duplicateSurvey,
   fetchSurveys,
-  updateSurveyStatus,
 } from '../../services/surveyService'
 import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
+import { getSurveyStatusLabel, getSurveyTypeLabel, LIKERT_SCALE_INFO, LIKERT_SCALES } from '../../utils/surveyHelpers'
 
 export default function InteractiveSurveys() {
+  const navigate = useNavigate()
   const { user, profile, loading: authLoading } = useAuth()
   const [surveys, setSurveys] = useState([])
   const [codeMap, setCodeMap] = useState({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
-  const [message, setMessage] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [duplicatingId, setDuplicatingId] = useState('')
   const [form, setForm] = useState({
     title: '',
     organization: '',
     description: '',
+    surveyType: 'satisfaction',
+    likertScale: 5,
   })
 
   async function loadSurveys() {
@@ -67,7 +71,6 @@ export default function InteractiveSurveys() {
 
   async function handleCreate(event) {
     event.preventDefault()
-    setMessage('')
     setError('')
 
     if (!canCreateResource(profile, 'survey', surveys.length)) {
@@ -83,11 +86,15 @@ export default function InteractiveSurveys() {
     setSubmitting(true)
 
     try {
-      const { survey, code } = await createSurveyDraft(user.id, form)
-      setSurveys((current) => [survey, ...current])
-      setCodeMap((current) => ({ ...current, [survey.id]: code }))
-      setForm({ title: '', organization: '', description: '' })
-      setMessage('Encuesta creada. El editor de preguntas llega en Fase 9.')
+      const { survey } = await createSurveyDraft(user.id, form)
+      setForm({
+        title: '',
+        organization: '',
+        description: '',
+        surveyType: 'satisfaction',
+        likertScale: 5,
+      })
+      navigate(`/interactivo/encuestas/${survey.id}`)
     } catch (createError) {
       setError(createError.message || 'No se pudo crear la encuesta.')
     } finally {
@@ -100,6 +107,10 @@ export default function InteractiveSurveys() {
       return
     }
 
+    if (!window.confirm('¿Eliminar esta encuesta y sus respuestas?')) {
+      return
+    }
+
     try {
       await deleteSurvey(user.id, surveyId)
       setSurveys((current) => current.filter((item) => item.id !== surveyId))
@@ -108,19 +119,27 @@ export default function InteractiveSurveys() {
     }
   }
 
-  async function handleActivate(surveyId) {
+  async function handleDuplicate(surveyId) {
     if (!user) {
       return
     }
 
+    if (!canCreateResource(profile, 'survey', surveys.length)) {
+      setError('Alcanzaste el límite de encuestas del plan Free.')
+      return
+    }
+
+    setDuplicatingId(surveyId)
+    setError('')
+
     try {
-      const updated = await updateSurveyStatus(user.id, surveyId, 'active')
-      setSurveys((current) =>
-        current.map((item) => (item.id === surveyId ? updated : item))
-      )
-      setMessage('Encuesta activa. Los participantes pueden ingresar con el código.')
-    } catch (activateError) {
-      setError(activateError.message || 'No se pudo activar la encuesta.')
+      const copy = await duplicateSurvey(user.id, surveyId)
+      await loadSurveys()
+      navigate(`/interactivo/encuestas/${copy.id}`)
+    } catch (duplicateError) {
+      setError(duplicateError.message || 'No se pudo duplicar la encuesta.')
+    } finally {
+      setDuplicatingId('')
     }
   }
 
@@ -148,17 +167,66 @@ export default function InteractiveSurveys() {
 
       <div className="page-head">
         <h1 className="cv-title">Encuestas</h1>
-        <p className="cv-desc">Satisfacción y feedback. Formulario completo en Fase 9.</p>
+        <p className="cv-desc">Satisfacción y feedback con respuestas anónimas por código.</p>
         <span className="profile-badge">{getPlanLabel(profile)}</span>
       </div>
 
       <InteractiveNav />
 
-      {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}
 
       <form className="auth-panel interactive-form" onSubmit={handleCreate}>
         <h3>Nueva encuesta</h3>
+
+        <div className="survey-create-types">
+          <label className={`survey-create-type ${form.surveyType === 'satisfaction' ? 'on' : ''}`}>
+            <input
+              type="radio"
+              name="survey-type"
+              value="satisfaction"
+              checked={form.surveyType === 'satisfaction'}
+              onChange={() => setForm({ ...form, surveyType: 'satisfaction' })}
+            />
+            <strong>Encuesta de satisfacción</strong>
+            <p>Ítems prediseñados post-taller. Elige escala Likert 5, 7 o 10.</p>
+          </label>
+
+          <label className={`survey-create-type ${form.surveyType === 'custom' ? 'on' : ''}`}>
+            <input
+              type="radio"
+              name="survey-type"
+              value="custom"
+              checked={form.surveyType === 'custom'}
+              onChange={() => setForm({ ...form, surveyType: 'custom' })}
+            />
+            <strong>Encuesta libre</strong>
+            <p>Diseña cada pregunta con Likert, Sí/No o texto libre.</p>
+          </label>
+        </div>
+
+        {form.surveyType === 'satisfaction' && (
+          <div className="survey-likert-picker">
+            <p className="interactive-item-meta">Escala Likert para las notas de satisfacción</p>
+            <div className="survey-likert-picker-grid">
+              {LIKERT_SCALES.map((scale) => (
+                <label
+                  key={scale}
+                  className={`survey-likert-picker-card ${form.likertScale === scale ? 'on' : ''}`}
+                >
+                  <input
+                    type="radio"
+                    name="likert-scale"
+                    value={scale}
+                    checked={form.likertScale === scale}
+                    onChange={() => setForm({ ...form, likertScale: scale })}
+                  />
+                  <strong>{LIKERT_SCALE_INFO[scale].label}</strong>
+                  <span>{LIKERT_SCALE_INFO[scale].description}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="form-grid">
           <div className="field full">
@@ -207,33 +275,52 @@ export default function InteractiveSurveys() {
                 <div>
                   <h3>{survey.title}</h3>
                   <p className="interactive-item-meta">
+                    {getSurveyTypeLabel(survey.survey_type)}
+                    {survey.survey_type === 'satisfaction' &&
+                      ` · Likert 1–${survey.likert_scale ?? 5}`}
+                    {' · '}
                     {survey.organization || 'Sin organización'}
                   </p>
-                  <span className="interactive-status">{survey.status}</span>
+                  <span className={`interactive-status status-${survey.status}`}>
+                    {getSurveyStatusLabel(survey.status)}
+                  </span>
                 </div>
 
-                <div className="interactive-item-actions">
-                  {survey.status === 'draft' && (
-                    <button
-                      type="button"
-                      className="timer-btn timer-btn-secondary"
-                      onClick={() => handleActivate(survey.id)}
-                    >
-                      Activar
-                    </button>
-                  )}
-
-                  <button
-                    type="button"
-                    className="journal-delete"
-                    onClick={() => handleDelete(survey.id)}
-                  >
-                    Eliminar
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="journal-delete"
+                  onClick={() => handleDelete(survey.id)}
+                >
+                  Eliminar
+                </button>
               </div>
 
               <AccessCodePanel code={codeMap[survey.id]} resourceLabel="Encuesta" />
+
+              <div className="interactive-item-actions">
+                <Link
+                  to={`/interactivo/encuestas/${survey.id}`}
+                  className="btn-primary btn-link"
+                >
+                  Editar preguntas
+                </Link>
+
+                <Link
+                  to={`/interactivo/encuestas/${survey.id}/resultados`}
+                  className="timer-btn timer-btn-secondary btn-link"
+                >
+                  Ver resultados
+                </Link>
+
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-ghost"
+                  disabled={duplicatingId === survey.id}
+                  onClick={() => handleDuplicate(survey.id)}
+                >
+                  {duplicatingId === survey.id ? 'Duplicando...' : 'Duplicar'}
+                </button>
+              </div>
             </article>
           ))
         )}

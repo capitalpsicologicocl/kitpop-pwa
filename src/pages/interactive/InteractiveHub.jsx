@@ -117,7 +117,7 @@ export default function InteractiveHub() {
       <div className="auth-panel interactive-note">
         <h3>Participantes sin login</h3>
         <p>
-          Comparte el código o enlace <code>/p/CODIGO</code> para que entren desde el celular.
+          Comparte el código o enlace <code>/p/CODIGO</code> para encuestas activas y polls en vivo.
           El diseño de talleres está en tu perfil → Talleres.
         </p>
       </div>
