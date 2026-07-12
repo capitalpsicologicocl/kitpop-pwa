@@ -3,6 +3,7 @@
 create table if not exists public.profiles (
   id uuid references auth.users on delete cascade primary key,
   full_name text,
+  avatar_url text,
   created_at timestamptz default now()
 );
 

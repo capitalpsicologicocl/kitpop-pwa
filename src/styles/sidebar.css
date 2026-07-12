@@ -225,3 +225,31 @@
   text-transform:uppercase;
   color:var(--brand);
 }
+
+.kp-auth-user {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.kp-auth-avatar {
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.kp-auth-avatar-fallback {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--brand-l);
+  color:var(--brand);
+  font-size:14px;
+  font-weight:800;
+}
+
+.kp-auth-user .kp-menu-note {
+  margin:0;
+}

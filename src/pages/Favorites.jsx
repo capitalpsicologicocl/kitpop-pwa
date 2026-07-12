@@ -20,11 +20,11 @@ export default function Favorites() {
   }
 
   if (!user) {
-    return (
-      <main id="favorites-view" className="fade-in">
-        <Link to="/" className="back-btn">
-          ← Volver
-        </Link>
+  return (
+    <main id="favorites-view" className="fade-in">
+      <Link to="/perfil" className="back-btn">
+        ← Volver al perfil
+      </Link>
 
         <div className="page-head">
           <h1 className="cv-title">Favoritos</h1>
@@ -48,8 +48,8 @@ export default function Favorites() {
 
   return (
     <main id="favorites-view" className="fade-in">
-      <Link to="/" className="back-btn">
-        ← Volver
+      <Link to="/perfil" className="back-btn">
+        ← Volver al perfil
       </Link>
 
       <div className="page-head">

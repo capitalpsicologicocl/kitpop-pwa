@@ -12,7 +12,7 @@ import {
   fetchFavoriteSlugs,
   removeFavorite,
 } from '../services/favoritesService'
-import { fetchProfile, updateProfile } from '../services/profileService'
+import { fetchProfile, updateProfile, uploadAvatar } from '../services/profileService'
 import { supabase } from '../services/supabaseClient'
 
 const AuthContext = createContext(null)
@@ -141,6 +141,16 @@ export function AuthProvider({ children }) {
     return data
   }, [user])
 
+  const saveAvatar = useCallback(async (file) => {
+    if (!user) {
+      throw new Error('Debes iniciar sesión para actualizar tu foto.')
+    }
+
+    const data = await uploadAvatar(user.id, file)
+    setProfile(data)
+    return data
+  }, [user])
+
   const toggleFavorite = useCallback(async (activitySlug) => {
     if (!user) {
       throw new Error('LOGIN_REQUIRED')
@@ -171,6 +181,7 @@ export function AuthProvider({ children }) {
       signUp,
       signOut,
       saveProfile,
+      saveAvatar,
       refreshFavorites,
       toggleFavorite,
       isAuthenticated: Boolean(user),
@@ -184,6 +195,7 @@ export function AuthProvider({ children }) {
       signUp,
       signOut,
       saveProfile,
+      saveAvatar,
       refreshFavorites,
       toggleFavorite,
     ]

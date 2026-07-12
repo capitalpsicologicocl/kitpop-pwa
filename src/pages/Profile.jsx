@@ -1,23 +1,78 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
+import { fetchJournalEntries } from '../services/journalService'
+
+function getInitials(name = '', email = '') {
+  const source = name.trim() || email.trim()
+
+  if (!source) {
+    return 'KP'
+  }
+
+  const parts = source.split(/\s+/).filter(Boolean)
+
+  if (parts.length >= 2) {
+    return `${parts[0][0]}${parts[1][0]}`.toUpperCase()
+  }
+
+  return source.slice(0, 2).toUpperCase()
+}
 
 export default function Profile() {
   const navigate = useNavigate()
-  const { user, profile, loading, saveProfile, signOut } = useAuth()
+  const fileInputRef = useRef(null)
+  const {
+    user,
+    profile,
+    favoriteSlugs,
+    loading,
+    saveProfile,
+    saveAvatar,
+    signOut,
+  } = useAuth()
   const [fullName, setFullName] = useState('')
+  const [journalCount, setJournalCount] = useState(0)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [uploadingAvatar, setUploadingAvatar] = useState(false)
 
   useEffect(() => {
     setFullName(profile?.full_name ?? '')
   }, [profile])
 
+  useEffect(() => {
+    if (!user || loading) {
+      return
+    }
+
+    let mounted = true
+
+    async function loadJournalCount() {
+      try {
+        const entries = await fetchJournalEntries(user.id)
+        if (mounted) {
+          setJournalCount(entries.length)
+        }
+      } catch {
+        if (mounted) {
+          setJournalCount(0)
+        }
+      }
+    }
+
+    loadJournalCount()
+
+    return () => {
+      mounted = false
+    }
+  }, [user, loading])
+
   if (loading) {
     return (
-      <main id="auth-view" className="fade-in">
+      <main id="profile-view" className="fade-in">
         <p className="auth-loading">Cargando perfil...</p>
       </main>
     )
@@ -25,14 +80,14 @@ export default function Profile() {
 
   if (!user) {
     return (
-      <main id="auth-view" className="fade-in">
+      <main id="profile-view" className="fade-in">
         <Link to="/" className="back-btn">
           ← Volver
         </Link>
 
         <div className="auth-panel">
-          <h1>Perfil KitPOP</h1>
-          <p>Inicia sesión para ver y editar tu perfil.</p>
+          <h1>Mi espacio KitPOP</h1>
+          <p>Inicia sesión para acceder a tu perfil, favoritos, bitácora y talleres.</p>
           <div className="auth-actions">
             <Link to="/login" className="btn-primary btn-link">
               Iniciar sesión
@@ -62,48 +117,143 @@ export default function Profile() {
     }
   }
 
+  async function handleAvatarChange(event) {
+    const file = event.target.files?.[0]
+
+    if (!file) {
+      return
+    }
+
+    setMessage('')
+    setError('')
+    setUploadingAvatar(true)
+
+    try {
+      await saveAvatar(file)
+      setMessage('Foto de perfil actualizada.')
+    } catch (uploadError) {
+      setError(uploadError.message || 'No se pudo subir la foto.')
+    } finally {
+      setUploadingAvatar(false)
+      event.target.value = ''
+    }
+  }
+
   async function handleSignOut() {
     await signOut()
     navigate('/')
   }
 
+  const displayName = profile?.full_name?.trim() || 'Facilitador/a KitPOP'
+  const initials = getInitials(profile?.full_name, user.email)
+
   return (
-    <main id="auth-view" className="fade-in">
+    <main id="profile-view" className="fade-in">
       <Link to="/" className="back-btn">
-        ← Volver
+        ← Volver al inicio
       </Link>
 
-      <div className="auth-panel profile-card">
-        <h1>Perfil KitPOP</h1>
-        <p>Gestiona tu cuenta de facilitación.</p>
+      <div className="profile-hub">
+        <section className="auth-panel profile-card">
+          <div className="profile-head">
+            <div className="profile-avatar-wrap">
+              {profile?.avatar_url ? (
+                <img
+                  src={profile.avatar_url}
+                  alt={displayName}
+                  className="profile-avatar"
+                />
+              ) : (
+                <div className="profile-avatar profile-avatar-fallback" aria-hidden="true">
+                  {initials}
+                </div>
+              )}
 
-        <div className="profile-meta">
-          <strong>Correo:</strong> {user.email}
-        </div>
+              <button
+                type="button"
+                className="profile-avatar-btn"
+                onClick={() => fileInputRef.current?.click()}
+                disabled={uploadingAvatar}
+              >
+                {uploadingAvatar ? 'Subiendo...' : 'Cambiar foto'}
+              </button>
 
-        {message && <div className="auth-message success">{message}</div>}
-        {error && <div className="auth-message error">{error}</div>}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/jpeg,image/png,image/webp,image/gif"
+                className="profile-avatar-input"
+                onChange={handleAvatarChange}
+              />
+            </div>
 
-        <form className="form-grid" onSubmit={handleSubmit}>
-          <div className="field full">
-            <label htmlFor="profile-name">Nombre</label>
-            <input
-              id="profile-name"
-              type="text"
-              value={fullName}
-              onChange={(event) => setFullName(event.target.value)}
-            />
+            <div className="profile-head-copy">
+              <h1>{displayName}</h1>
+              <p>{user.email}</p>
+              <span className="profile-badge">Cuenta KitPOP</span>
+            </div>
           </div>
 
-          <div className="field full auth-actions">
-            <button type="submit" className="btn-primary" disabled={submitting}>
-              {submitting ? 'Guardando...' : 'Guardar perfil'}
-            </button>
-            <button type="button" className="btn-secondary" onClick={handleSignOut}>
-              Cerrar sesión
-            </button>
+          {message && <div className="auth-message success">{message}</div>}
+          {error && <div className="auth-message error">{error}</div>}
+
+          <form className="form-grid profile-form" onSubmit={handleSubmit}>
+            <div className="field full">
+              <label htmlFor="profile-name">Nombre para mostrar</label>
+              <input
+                id="profile-name"
+                type="text"
+                value={fullName}
+                onChange={(event) => setFullName(event.target.value)}
+              />
+            </div>
+
+            <div className="field full auth-actions">
+              <button type="submit" className="btn-primary" disabled={submitting}>
+                {submitting ? 'Guardando...' : 'Guardar nombre'}
+              </button>
+              <button type="button" className="btn-secondary" onClick={handleSignOut}>
+                Cerrar sesión
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section className="profile-section">
+          <div className="profile-section-head">
+            <h2>Tu espacio de facilitación</h2>
+            <p>Accede a tus recursos guardados y herramientas de trabajo.</p>
           </div>
-        </form>
+
+          <div className="profile-hub-grid">
+            <Link to="/favoritos" className="profile-hub-card">
+              <span className="profile-hub-icon">☆</span>
+              <strong>Favoritos</strong>
+              <p>Actividades que marcaste para usar después.</p>
+              <span className="profile-hub-count">
+                {favoriteSlugs.length} guardada{favoriteSlugs.length === 1 ? '' : 's'}
+              </span>
+            </Link>
+
+            <Link to="/bitacora" className="profile-hub-card">
+              <span className="profile-hub-icon">📓</span>
+              <strong>Bitácora</strong>
+              <p>Registros de sesiones y aprendizajes de facilitación.</p>
+              <span className="profile-hub-count">
+                {journalCount} registro{journalCount === 1 ? '' : 's'}
+              </span>
+            </Link>
+
+            <Link to="/taller" className="profile-hub-card">
+              <span className="profile-hub-icon">🛠</span>
+              <strong>Talleres</strong>
+              <p>Diseña workshops con actividades del banco KitPOP.</p>
+              <span className="profile-hub-count profile-hub-count-muted">
+                Diseñador activo · historial en Fase 6.4
+              </span>
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   )

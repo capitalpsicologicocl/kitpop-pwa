@@ -115,8 +115,8 @@ export default function Journal() {
 
   return (
     <main id="journal-view" className="fade-in">
-      <Link to="/" className="back-btn">
-        ← Volver
+      <Link to="/perfil" className="back-btn">
+        ← Volver al perfil
       </Link>
 
       <div className="page-head">

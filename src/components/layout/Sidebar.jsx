@@ -99,12 +99,26 @@ export default function Sidebar({ isOpen, onClose }) {
 
           {user ? (
             <>
-              <p className="kp-menu-note">
-                Hola, {profile?.full_name || user.email}
-              </p>
+              <div className="kp-auth-user">
+                {profile?.avatar_url ? (
+                  <img
+                    src={profile.avatar_url}
+                    alt=""
+                    className="kp-auth-avatar"
+                  />
+                ) : (
+                  <span className="kp-auth-avatar kp-auth-avatar-fallback" aria-hidden="true">
+                    {(profile?.full_name || user.email || 'K').slice(0, 1).toUpperCase()}
+                  </span>
+                )}
+
+                <p className="kp-menu-note">
+                  Hola, {profile?.full_name || user.email}
+                </p>
+              </div>
 
               <div className="kp-auth-actions">
-                <Link to="/perfil" onClick={onClose}>Mi perfil</Link>
+                <Link to="/perfil" onClick={onClose}>Mi espacio</Link>
                 <button type="button" onClick={signOut}>Cerrar sesión</button>
               </div>
             </>
@@ -222,18 +236,6 @@ export default function Sidebar({ isOpen, onClose }) {
 
             <Link to="/taller" className="kp-menu-cat-btn" onClick={onClose}>
               Diseñador de talleres
-            </Link>
-
-            <Link to="/favoritos" className="kp-menu-cat-btn" onClick={onClose}>
-              Favoritos
-            </Link>
-
-            <Link to="/bitacora" className="kp-menu-cat-btn" onClick={onClose}>
-              Bitácora
-            </Link>
-
-            <Link to="/perfil" className="kp-menu-cat-btn" onClick={onClose}>
-              Perfil
             </Link>
           </div>
         </div>
