@@ -147,11 +147,15 @@ export function getSurveyTypeLabel(type) {
 
 export function getSurveyStatusLabel(status) {
   if (status === 'active') {
-    return 'Activa'
+    return 'Activa · recibiendo respuestas'
+  }
+
+  if (status === 'paused') {
+    return 'Pausada'
   }
 
   if (status === 'closed') {
-    return 'Cerrada'
+    return 'Finalizada'
   }
 
   return 'Borrador'

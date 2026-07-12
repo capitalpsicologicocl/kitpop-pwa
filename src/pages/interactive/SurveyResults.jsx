@@ -117,10 +117,10 @@ export default function SurveyResults() {
       </Link>
 
       <div className="page-head">
-        <h1 className="cv-title">Resultados · {survey.title}</h1>
+        <h1 className="cv-title">Resultados y promedios</h1>
         <p className="cv-desc">
-          {results.responseCount} respuesta{results.responseCount === 1 ? '' : 's'} recibida
-          {results.responseCount === 1 ? '' : 's'}.
+          {survey.title} · {results.responseCount} respuesta
+          {results.responseCount === 1 ? '' : 's'}
         </p>
         <span className={`interactive-status status-${survey.status}`}>
           {getSurveyStatusLabel(survey.status)}

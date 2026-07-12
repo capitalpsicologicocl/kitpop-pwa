@@ -10,6 +10,7 @@ import {
   deleteSurvey,
   duplicateSurvey,
   fetchSurveys,
+  isSurveySetupError,
 } from '../../services/surveyService'
 import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
 import { getSurveyStatusLabel, getSurveyTypeLabel, LIKERT_SCALE_INFO, LIKERT_SCALES } from '../../utils/surveyHelpers'
@@ -96,7 +97,11 @@ export default function InteractiveSurveys() {
       })
       navigate(`/interactivo/encuestas/${survey.id}`)
     } catch (createError) {
-      setError(createError.message || 'No se pudo crear la encuesta.')
+      setError(
+        isSurveySetupError(createError)
+          ? 'Ejecuta los SQL de encuestas en Supabase antes de crear (surveys_v1, v2_likert, v3_paused).'
+          : createError.message || 'No se pudo crear la encuesta.'
+      )
     } finally {
       setSubmitting(false)
     }
@@ -259,8 +264,11 @@ export default function InteractiveSurveys() {
         </div>
 
         <button type="submit" className="btn-primary" disabled={submitting}>
-          {submitting ? 'Creando...' : 'Crear encuesta'}
+          {submitting ? 'Creando...' : 'Crear y editar preguntas →'}
         </button>
+        <p className="interactive-item-meta survey-create-note">
+          Al crear, entrarás al editor para ver los ítems y elegir activar la encuesta.
+        </p>
       </form>
 
       <div className="interactive-list">
@@ -299,17 +307,17 @@ export default function InteractiveSurveys() {
 
               <div className="interactive-item-actions">
                 <Link
-                  to={`/interactivo/encuestas/${survey.id}`}
+                  to={`/interactivo/encuestas/${survey.id}/resultados`}
                   className="btn-primary btn-link"
                 >
-                  Editar preguntas
+                  Resultados y promedios
                 </Link>
 
                 <Link
-                  to={`/interactivo/encuestas/${survey.id}/resultados`}
+                  to={`/interactivo/encuestas/${survey.id}`}
                   className="timer-btn timer-btn-secondary btn-link"
                 >
-                  Ver resultados
+                  Editar preguntas
                 </Link>
 
                 <button

@@ -10,11 +10,13 @@ import {
   deleteSurveyQuestion,
   fetchSurveyById,
   fetchSurveyQuestions,
+  isSurveySetupError,
+  seedSatisfactionQuestions,
   updateSurvey,
   updateSurveyQuestion,
   updateSurveyStatus,
 } from '../../services/surveyService'
-import { buildDefaultQuestion, getSurveyStatusLabel, getSurveyTypeLabel, likertTypeFromScale, CUSTOM_QUESTION_TYPES } from '../../utils/surveyHelpers'
+import { buildDefaultQuestion, getSurveyStatusLabel, getSurveyTypeLabel, likertTypeFromScale, CUSTOM_QUESTION_TYPES, LIKERT_SCALES, LIKERT_SCALE_INFO } from '../../utils/surveyHelpers'
 
 export default function SurveyEditor() {
   const { id } = useParams()
@@ -29,6 +31,9 @@ export default function SurveyEditor() {
   const [savingMeta, setSavingMeta] = useState(false)
   const [statusUpdating, setStatusUpdating] = useState(false)
   const [addingType, setAddingType] = useState('')
+  const [seeding, setSeeding] = useState(false)
+  const [seedScale, setSeedScale] = useState(5)
+  const [setupError, setSetupError] = useState(false)
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
@@ -41,9 +46,9 @@ export default function SurveyEditor() {
     setError('')
 
     try {
-      const [surveyData, questionData, codes] = await Promise.all([
+      const [surveyData, , codes] = await Promise.all([
         fetchSurveyById(user.id, id),
-        fetchSurveyQuestions(user.id, id),
+        Promise.resolve(null),
         fetchAccessCodesByType(user.id, 'survey'),
       ])
 
@@ -59,8 +64,23 @@ export default function SurveyEditor() {
         organization: surveyData.organization ?? '',
         description: surveyData.description ?? '',
       })
-      setQuestions(questionData)
+      setSeedScale(surveyData.likert_scale ?? 5)
       setAccessCode(codes.find((entry) => entry.resource_id === id)?.code ?? '')
+
+      try {
+        const questionData = await fetchSurveyQuestions(user.id, id)
+        setQuestions(questionData)
+        setSetupError(false)
+      } catch (questionsError) {
+        setQuestions([])
+        const missingSetup = isSurveySetupError(questionsError)
+        setSetupError(missingSetup)
+        setError(
+          missingSetup
+            ? 'Falta configurar Supabase. Ejecuta surveys_v1.sql, surveys_v2_likert.sql y surveys_v3_paused.sql en SQL Editor.'
+            : questionsError.message || 'No se pudieron cargar las preguntas.'
+        )
+      }
     } catch (loadError) {
       setError(loadError.message || 'No se pudo cargar la encuesta.')
     } finally {
@@ -222,6 +242,101 @@ export default function SurveyEditor() {
     }
   }
 
+  async function handleSeedTemplate() {
+    if (!user || !survey) {
+      return
+    }
+
+    setSeeding(true)
+    setError('')
+    setMessage('')
+
+    try {
+      const items = await seedSatisfactionQuestions(user.id, survey.id, seedScale)
+      setQuestions(items)
+      setSurvey((current) => ({
+        ...current,
+        survey_type: 'satisfaction',
+        likert_scale: seedScale,
+      }))
+      setSetupError(false)
+      setMessage(`Se cargaron ${items.length} ítems de satisfacción (Likert 1–${seedScale}).`)
+    } catch (seedError) {
+      setError(
+        isSurveySetupError(seedError)
+          ? 'Ejecuta los SQL de encuestas en Supabase (surveys_v1, v2_likert, v3_paused).'
+          : seedError.message || 'No se pudieron cargar los ítems.'
+      )
+    } finally {
+      setSeeding(false)
+    }
+  }
+
+  async function handlePause() {
+    if (!user || !survey) {
+      return
+    }
+
+    setStatusUpdating(true)
+    setError('')
+
+    try {
+      const updated = await updateSurveyStatus(user.id, survey.id, 'paused')
+      setSurvey(updated)
+      setMessage('Encuesta pausada. Puedes reactivarla cuando quieras.')
+    } catch (pauseError) {
+      setError(pauseError.message || 'No se pudo pausar la encuesta.')
+    } finally {
+      setStatusUpdating(false)
+    }
+  }
+
+  async function handleReactivate() {
+    if (!user || !survey) {
+      return
+    }
+
+    setStatusUpdating(true)
+    setError('')
+
+    try {
+      const updated = await updateSurveyStatus(user.id, survey.id, 'active')
+      setSurvey(updated)
+      setMessage('Encuesta reactivada. Vuelve a recibir respuestas.')
+    } catch (reactivateError) {
+      setError(reactivateError.message || 'No se pudo reactivar la encuesta.')
+    } finally {
+      setStatusUpdating(false)
+    }
+  }
+
+  async function handleFinalize() {
+    if (!user || !survey) {
+      return
+    }
+
+    if (
+      !window.confirm(
+        '¿Finalizar esta encuesta? No podrá reabrirse ni recibir más respuestas.'
+      )
+    ) {
+      return
+    }
+
+    setStatusUpdating(true)
+    setError('')
+
+    try {
+      const updated = await updateSurveyStatus(user.id, survey.id, 'closed')
+      setSurvey(updated)
+      setMessage('Encuesta finalizada.')
+    } catch (finalizeError) {
+      setError(finalizeError.message || 'No se pudo finalizar la encuesta.')
+    } finally {
+      setStatusUpdating(false)
+    }
+  }
+
   async function handleActivate() {
     if (!user || !survey) {
       return
@@ -246,24 +361,8 @@ export default function SurveyEditor() {
     }
   }
 
-  async function handleClose() {
-    if (!user || !survey) {
-      return
-    }
-
-    setStatusUpdating(true)
-    setError('')
-
-    try {
-      const updated = await updateSurveyStatus(user.id, survey.id, 'closed')
-      setSurvey(updated)
-      setMessage('Encuesta cerrada. Ya no acepta nuevas respuestas.')
-    } catch (closeError) {
-      setError(closeError.message || 'No se pudo cerrar la encuesta.')
-    } finally {
-      setStatusUpdating(false)
-    }
-  }
+  const surveyType = survey?.survey_type ?? 'custom'
+  const isSatisfaction = surveyType === 'satisfaction'
 
   if (authLoading || loading) {
     return (
@@ -303,9 +402,8 @@ export default function SurveyEditor() {
       <div className="page-head">
         <h1 className="cv-title">{survey.title}</h1>
         <p className="cv-desc">
-          {getSurveyTypeLabel(survey.survey_type)}
-          {survey.survey_type === 'satisfaction' &&
-            ` · Likert 1–${survey.likert_scale ?? 5}`}
+          {getSurveyTypeLabel(surveyType)}
+          {isSatisfaction && ` · Likert 1–${survey.likert_scale ?? 5}`}
         </p>
         <span className={`interactive-status status-${survey.status}`}>
           {getSurveyStatusLabel(survey.status)}
@@ -315,56 +413,125 @@ export default function SurveyEditor() {
       {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}
 
+      {setupError && (
+        <div className="auth-panel survey-setup-alert">
+          <h3>Configuración pendiente en Supabase</h3>
+          <p>
+            Para ver y editar preguntas, ejecuta en <strong>Supabase → SQL Editor</strong>:
+            <code>surveys_v1.sql</code>, <code>surveys_v2_likert.sql</code> y{' '}
+            <code>surveys_v3_paused.sql</code>.
+          </p>
+        </div>
+      )}
+
+      <section className="auth-panel survey-management-bar">
+        <h3>Gestionar encuesta</h3>
+        <div className="survey-management-actions">
+          <Link
+            to={`/interactivo/encuestas/${survey.id}/resultados`}
+            className="btn-primary btn-link"
+          >
+            Resultados y promedios
+          </Link>
+
+          {survey.status === 'draft' && (
+            <button
+              type="button"
+              className="timer-btn timer-btn-secondary"
+              disabled={statusUpdating || questions.length === 0}
+              onClick={handleActivate}
+            >
+              {statusUpdating ? 'Activando...' : 'Activar encuesta'}
+            </button>
+          )}
+
+          {survey.status === 'active' && (
+            <>
+              <button
+                type="button"
+                className="timer-btn timer-btn-secondary"
+                disabled={statusUpdating}
+                onClick={handlePause}
+              >
+                {statusUpdating ? 'Pausando...' : 'Pausar encuesta'}
+              </button>
+              <button
+                type="button"
+                className="timer-btn timer-btn-ghost"
+                disabled={statusUpdating}
+                onClick={handleFinalize}
+              >
+                Finalizar encuesta
+              </button>
+            </>
+          )}
+
+          {survey.status === 'paused' && (
+            <>
+              <button
+                type="button"
+                className="timer-btn timer-btn-secondary"
+                disabled={statusUpdating}
+                onClick={handleReactivate}
+              >
+                Reactivar encuesta
+              </button>
+              <button
+                type="button"
+                className="timer-btn timer-btn-ghost"
+                disabled={statusUpdating}
+                onClick={handleFinalize}
+              >
+                Finalizar encuesta
+              </button>
+            </>
+          )}
+        </div>
+      </section>
+
       <AccessCodePanel code={accessCode} resourceLabel="Encuesta" />
 
-      <form className="auth-panel interactive-form" onSubmit={handleSaveMeta}>
-        <h3>Datos de la encuesta</h3>
-
-        <div className="form-grid">
-          <div className="field full">
-            <label htmlFor="editor-survey-title">Título</label>
-            <input
-              id="editor-survey-title"
-              value={form.title}
-              onChange={(event) => setForm({ ...form, title: event.target.value })}
-            />
-          </div>
-
-          <div className="field">
-            <label htmlFor="editor-survey-org">Organización</label>
-            <input
-              id="editor-survey-org"
-              value={form.organization}
-              onChange={(event) => setForm({ ...form, organization: event.target.value })}
-            />
-          </div>
-
-          <div className="field full">
-            <label htmlFor="editor-survey-desc">Descripción para participantes</label>
-            <textarea
-              id="editor-survey-desc"
-              rows={3}
-              value={form.description}
-              onChange={(event) => setForm({ ...form, description: event.target.value })}
-            />
-          </div>
-        </div>
-
-        <button type="submit" className="btn-primary" disabled={savingMeta}>
-          {savingMeta ? 'Guardando...' : 'Guardar datos'}
-        </button>
-      </form>
-
-      <section className="auth-panel">
-        <h3>Preguntas</h3>
+      <section className="auth-panel survey-questions-panel">
+        <h3>Preguntas e ítems ({questions.length})</h3>
         <p className="workshop-section-copy">
-          {survey.survey_type === 'satisfaction'
-            ? 'Ítems prediseñados de satisfacción. Puedes eliminar los que no apliquen o agregar más.'
+          {isSatisfaction
+            ? 'Ítems prediseñados de satisfacción. Elimina los que no apliquen o agrega más.'
             : 'Diseña cada ítem con Likert 1–5, 1–7, 1–10, Sí/No o texto libre.'}
         </p>
 
+        {questions.length === 0 && (
+          <div className="survey-empty-template auth-panel">
+            <h4>Sin preguntas cargadas</h4>
+            <p>
+              Si creaste una encuesta de satisfacción, carga los ítems prediseñados aquí.
+            </p>
+            <div className="survey-seed-row">
+              <label htmlFor="seed-scale">Escala Likert</label>
+              <select
+                id="seed-scale"
+                value={seedScale}
+                onChange={(event) => setSeedScale(Number(event.target.value))}
+              >
+                {LIKERT_SCALES.map((scale) => (
+                  <option key={scale} value={scale}>
+                    {LIKERT_SCALE_INFO[scale].label}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                className="btn-primary"
+                disabled={seeding}
+                onClick={handleSeedTemplate}
+              >
+                {seeding ? 'Cargando...' : 'Cargar ítems de satisfacción'}
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="workshop-table-actions">
-          {survey.survey_type === 'satisfaction' ? (
+          {isSatisfaction ? (
             <>
               <button
                 type="button"
@@ -416,7 +583,7 @@ export default function SurveyEditor() {
       <div className="survey-question-list">
         {questions.length === 0 ? (
           <div className="auth-panel">
-            <p>Aún no hay preguntas. Agrega la primera arriba.</p>
+            <p>Usa el botón «Cargar ítems de satisfacción» o agrega preguntas manualmente.</p>
           </div>
         ) : (
           questions.map((question, index) => (
@@ -436,6 +603,44 @@ export default function SurveyEditor() {
         )}
       </div>
 
+      <form className="auth-panel interactive-form" onSubmit={handleSaveMeta}>
+        <h3>Datos de la encuesta</h3>
+
+        <div className="form-grid">
+          <div className="field full">
+            <label htmlFor="editor-survey-title">Título</label>
+            <input
+              id="editor-survey-title"
+              value={form.title}
+              onChange={(event) => setForm({ ...form, title: event.target.value })}
+            />
+          </div>
+
+          <div className="field">
+            <label htmlFor="editor-survey-org">Organización</label>
+            <input
+              id="editor-survey-org"
+              value={form.organization}
+              onChange={(event) => setForm({ ...form, organization: event.target.value })}
+            />
+          </div>
+
+          <div className="field full">
+            <label htmlFor="editor-survey-desc">Descripción para participantes</label>
+            <textarea
+              id="editor-survey-desc"
+              rows={3}
+              value={form.description}
+              onChange={(event) => setForm({ ...form, description: event.target.value })}
+            />
+          </div>
+        </div>
+
+        <button type="submit" className="btn-primary" disabled={savingMeta}>
+          {savingMeta ? 'Guardando...' : 'Guardar datos'}
+        </button>
+      </form>
+
       <div className="workshop-editor-footer">
         <button
           type="button"
@@ -444,35 +649,6 @@ export default function SurveyEditor() {
         >
           Volver al listado
         </button>
-
-        <Link
-          to={`/interactivo/encuestas/${survey.id}/resultados`}
-          className="timer-btn timer-btn-secondary btn-link"
-        >
-          Ver resultados
-        </Link>
-
-        {survey.status === 'draft' && (
-          <button
-            type="button"
-            className="btn-primary"
-            disabled={statusUpdating || questions.length === 0}
-            onClick={handleActivate}
-          >
-            {statusUpdating ? 'Activando...' : 'Activar encuesta'}
-          </button>
-        )}
-
-        {survey.status === 'active' && (
-          <button
-            type="button"
-            className="btn-primary"
-            disabled={statusUpdating}
-            onClick={handleClose}
-          >
-            {statusUpdating ? 'Cerrando...' : 'Cerrar encuesta'}
-          </button>
-        )}
       </div>
     </main>
   )

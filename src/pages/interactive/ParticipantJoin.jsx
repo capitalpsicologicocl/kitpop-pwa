@@ -124,8 +124,10 @@ export default function ParticipantJoin() {
             {survey.status !== 'active' && (
               <p className="participant-copy participant-wait">
                 {survey.status === 'closed'
-                  ? 'Esta encuesta ya está cerrada.'
-                  : 'Espera a que el facilitador active la encuesta.'}
+                  ? 'Esta encuesta ya fue finalizada.'
+                  : survey.status === 'paused'
+                    ? 'La encuesta está pausada. Espera a que el facilitador la reactive.'
+                    : 'Espera a que el facilitador active la encuesta.'}
               </p>
             )}
 

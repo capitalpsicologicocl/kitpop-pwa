@@ -282,6 +282,55 @@ export async function duplicateSurvey(userId, surveyId) {
   return copy
 }
 
+export async function seedSatisfactionQuestions(userId, surveyId, likertScale = 5) {
+  const existing = await fetchSurveyQuestions(userId, surveyId)
+
+  if (existing.length > 0) {
+    return existing
+  }
+
+  const templateQuestions = buildSatisfactionQuestions(likertScale)
+  const rows = templateQuestions.map((question) => ({
+    user_id: userId,
+    survey_id: surveyId,
+    sort_order: question.sortOrder,
+    question_type: question.questionType,
+    prompt: question.prompt,
+    options: question.options ?? [],
+    is_required: question.isRequired ?? true,
+  }))
+
+  const { error } = await supabase.from('survey_questions').insert(rows)
+
+  if (error) {
+    throw error
+  }
+
+  await supabase
+    .from('surveys')
+    .update({
+      survey_type: 'satisfaction',
+      likert_scale: likertScale,
+      updated_at: new Date().toISOString(),
+    })
+    .eq('user_id', userId)
+    .eq('id', surveyId)
+
+  return fetchSurveyQuestions(userId, surveyId)
+}
+
+export function isSurveySetupError(error) {
+  const message = error?.message?.toLowerCase() ?? ''
+
+  return (
+    message.includes('survey_questions') ||
+    message.includes('survey_type') ||
+    message.includes('likert_scale') ||
+    message.includes('does not exist') ||
+    message.includes('schema cache')
+  )
+}
+
 export async function fetchSurveyResults(userId, surveyId) {
   const [questions, responseSets, answers] = await Promise.all([
     fetchSurveyQuestions(userId, surveyId),
