@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 import { fetchJournalEntries } from '../services/journalService'
+import { getPlanLabel } from '../utils/planLimits'
 
 function getInitials(name = '', email = '') {
   const source = name.trim() || email.trim()
@@ -190,7 +191,7 @@ export default function Profile() {
             <div className="profile-head-copy">
               <h1>{displayName}</h1>
               <p>{user.email}</p>
-              <span className="profile-badge">Cuenta KitPOP</span>
+              <span className="profile-badge">{getPlanLabel(profile)}</span>
             </div>
           </div>
 
@@ -226,6 +227,13 @@ export default function Profile() {
           </div>
 
           <div className="profile-hub-grid">
+            <Link to="/interactivo" className="profile-hub-card profile-hub-card-featured">
+              <span className="profile-hub-icon">⚡</span>
+              <strong>Espacio interactivo</strong>
+              <p>Talleres, encuestas y polls en vivo con códigos para participantes.</p>
+              <span className="profile-hub-count">{getPlanLabel(profile)}</span>
+            </Link>
+
             <Link to="/favoritos" className="profile-hub-card">
               <span className="profile-hub-icon">☆</span>
               <strong>Favoritos</strong>
@@ -244,14 +252,6 @@ export default function Profile() {
               </span>
             </Link>
 
-            <Link to="/taller" className="profile-hub-card">
-              <span className="profile-hub-icon">🛠</span>
-              <strong>Talleres</strong>
-              <p>Diseña workshops con actividades del banco KitPOP.</p>
-              <span className="profile-hub-count profile-hub-count-muted">
-                Diseñador activo · historial en Fase 6.4
-              </span>
-            </Link>
           </div>
         </section>
       </div>

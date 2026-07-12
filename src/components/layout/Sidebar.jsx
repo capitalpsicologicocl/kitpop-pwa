@@ -234,8 +234,8 @@ export default function Sidebar({ isOpen, onClose }) {
               </Link>
             ))}
 
-            <Link to="/taller" className="kp-menu-cat-btn" onClick={onClose}>
-              Diseñador de talleres
+            <Link to="/interactivo" className="kp-menu-cat-btn" onClick={onClose}>
+              Espacio interactivo
             </Link>
           </div>
         </div>

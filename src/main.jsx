@@ -11,6 +11,7 @@ import './styles/sidebar.css'
 import './styles/categories.css'
 import './styles/activity.css'
 import './styles/auth.css'
+import './styles/interactive.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
