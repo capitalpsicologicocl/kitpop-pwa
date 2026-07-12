@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom'
 
 import { formatItemTime } from '../../services/workshopService'
+import { getPauseLabel, ITEM_TYPE_LABELS } from '../../utils/workshopHelpers'
 
 export default function WorkshopSessionTable({
   session,
   onAddTheory,
   onAddActivity,
+  onAddCustom,
+  onAddPause,
   onSwapActivity,
   onUpdateItem,
   onDeleteItem,
@@ -27,7 +30,7 @@ export default function WorkshopSessionTable({
           {items.length === 0 ? (
             <tr>
               <td colSpan={4} className="workshop-empty-row">
-                Agrega contenido teórico o una actividad del banco KitPOP.
+                Agrega contenido teórico, actividades KitPOP, diseño propio o pausas.
               </td>
             </tr>
           ) : (
@@ -75,6 +78,14 @@ export default function WorkshopSessionTable({
                   {item.item_type === 'theory' && (
                     <span className="workshop-item-tag theory">Teoría</span>
                   )}
+                  {item.item_type === 'custom' && (
+                    <span className="workshop-item-tag custom">Diseño propio</span>
+                  )}
+                  {item.item_type === 'pause' && (
+                    <span className="workshop-item-tag pause">
+                      {getPauseLabel(item.pause_type)}
+                    </span>
+                  )}
                 </td>
 
                 <td data-label="Descripción">
@@ -120,6 +131,12 @@ export default function WorkshopSessionTable({
         </button>
         <button type="button" className="timer-btn timer-btn-primary" onClick={onAddActivity}>
           + Actividad KitPOP
+        </button>
+        <button type="button" className="timer-btn timer-btn-secondary" onClick={onAddCustom}>
+          + Otra actividad de diseño propio
+        </button>
+        <button type="button" className="timer-btn timer-btn-secondary" onClick={onAddPause}>
+          + Pausa
         </button>
       </div>
     </div>

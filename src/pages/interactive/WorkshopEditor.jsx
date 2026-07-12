@@ -4,7 +4,9 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import ActivityPicker from '../../components/workshop/ActivityPicker'
 import DurationSelect from '../../components/workshop/DurationSelect'
+import PausePicker from '../../components/workshop/PausePicker'
 import WorkshopSessionTable from '../../components/workshop/WorkshopSessionTable'
+import WorkshopTimeSummary from '../../components/workshop/WorkshopTimeSummary'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -12,6 +14,7 @@ import {
   deleteWorkshopItem,
   fetchWorkshopById,
   fetchWorkshopSessions,
+  finalizeWorkshopStructure,
   formatSessionDuration,
   syncWorkshopSessionCount,
   updateWorkshop,
@@ -46,9 +49,11 @@ export default function WorkshopEditor() {
   const [loading, setLoading] = useState(true)
   const [savingMeta, setSavingMeta] = useState(false)
   const [syncingSessions, setSyncingSessions] = useState(false)
+  const [finalizing, setFinalizing] = useState(false)
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
   const [picker, setPicker] = useState(null)
+  const [pausePickerSessionId, setPausePickerSessionId] = useState('')
   const journalTimersRef = useRef({})
 
   const loadWorkshop = useCallback(async () => {
@@ -188,7 +193,7 @@ export default function WorkshopEditor() {
           ? Number(form.participantsCount)
           : null,
         sessionCount: Number(form.sessionCount) || 1,
-        status: 'draft',
+        status: workshop.status ?? 'draft',
       })
 
       setWorkshop(updated)
@@ -322,6 +327,91 @@ export default function WorkshopEditor() {
     setPicker({ mode: 'add', sessionId })
   }
 
+  async function handleAddCustom(sessionId) {
+    if (!user) {
+      return
+    }
+
+    const session = sessions.find((entry) => entry.id === sessionId)
+
+    if (!session) {
+      return
+    }
+
+    try {
+      const item = await createWorkshopItem(user.id, sessionId, {
+        sortOrder: session.workshop_items.length,
+        timeMinutes: 20,
+        itemType: 'custom',
+        title: 'Actividad de diseño propio',
+        description: '',
+      })
+
+      appendItemToState(sessionId, item)
+    } catch (createError) {
+      setError(createError.message || 'No se pudo agregar la actividad propia.')
+    }
+  }
+
+  function handleAddPause(sessionId) {
+    setPausePickerSessionId(sessionId)
+  }
+
+  async function handlePauseSelected(option) {
+    if (!user || !pausePickerSessionId) {
+      return
+    }
+
+    const sessionId = pausePickerSessionId
+    setPausePickerSessionId('')
+
+    const session = sessions.find((entry) => entry.id === sessionId)
+
+    if (!session) {
+      return
+    }
+
+    try {
+      const item = await createWorkshopItem(user.id, sessionId, {
+        sortOrder: session.workshop_items.length,
+        timeMinutes: option.minutes,
+        itemType: 'pause',
+        title: option.title,
+        description: '',
+        pauseType: option.type,
+      })
+
+      appendItemToState(sessionId, item)
+    } catch (createError) {
+      setError(createError.message || 'No se pudo agregar la pausa.')
+    }
+  }
+
+  async function handleFinalizeStructure() {
+    if (!user || !workshop) {
+      return
+    }
+
+    if (sessions.length === 0) {
+      setError('Define al menos una sesión antes de finalizar la estructura.')
+      return
+    }
+
+    setFinalizing(true)
+    setError('')
+    setMessage('')
+
+    try {
+      const updated = await finalizeWorkshopStructure(user.id, workshop.id)
+      setWorkshop(updated)
+      navigate(`/talleres/${workshop.id}/resumen`)
+    } catch (finalizeError) {
+      setError(finalizeError.message || 'No se pudo finalizar la estructura.')
+    } finally {
+      setFinalizing(false)
+    }
+  }
+
   function handleSwapActivity(sessionId, itemId) {
     setPicker({ mode: 'swap', sessionId, itemId })
   }
@@ -432,7 +522,7 @@ export default function WorkshopEditor() {
   if (!workshop || !form) {
     return (
       <main id="interactive-view" className="fade-in">
-        <Link to="/interactivo/talleres" className="back-btn">
+        <Link to="/talleres" className="back-btn">
           ← Talleres
         </Link>
         <div className="auth-message error">{error || 'Taller no encontrado.'}</div>
@@ -442,7 +532,7 @@ export default function WorkshopEditor() {
 
   return (
     <main id="interactive-view" className="fade-in workshop-editor">
-      <Link to="/interactivo/talleres" className="back-btn">
+      <Link to="/talleres" className="back-btn">
         ← Talleres
       </Link>
 
@@ -451,6 +541,11 @@ export default function WorkshopEditor() {
         <p className="cv-desc">
           Diseña sesiones con tabla Tiempo · Actividad · Descripción y bitácora por sesión.
         </p>
+        {workshop.status === 'ready' && (
+          <Link to={`/talleres/${workshop.id}/resumen`} className="workshop-view-summary-link">
+            Ver estructura finalizada →
+          </Link>
+        )}
       </div>
 
       {message && <div className="auth-message success">{message}</div>}
@@ -596,6 +691,8 @@ export default function WorkshopEditor() {
         )}
       </section>
 
+      <WorkshopTimeSummary sessions={sessions} />
+
       {sessions.map((session) => (
         <section key={session.id} className="auth-panel workshop-session-panel">
           <div className="workshop-session-head">
@@ -611,6 +708,8 @@ export default function WorkshopEditor() {
             session={session}
             onAddTheory={() => handleAddTheory(session.id)}
             onAddActivity={() => handleAddActivity(session.id)}
+            onAddCustom={() => handleAddCustom(session.id)}
+            onAddPause={() => handleAddPause(session.id)}
             onSwapActivity={(itemId) => handleSwapActivity(session.id, itemId)}
             onUpdateItem={(itemId, patch) => handleUpdateItem(session.id, itemId, patch)}
             onDeleteItem={(itemId) => handleDeleteItem(session.id, itemId)}
@@ -636,13 +735,29 @@ export default function WorkshopEditor() {
         />
       )}
 
+      {pausePickerSessionId && (
+        <PausePicker
+          onSelect={handlePauseSelected}
+          onClose={() => setPausePickerSessionId('')}
+        />
+      )}
+
       <div className="workshop-editor-footer">
         <button
           type="button"
           className="timer-btn timer-btn-ghost"
-          onClick={() => navigate('/interactivo/talleres')}
+          onClick={() => navigate('/talleres')}
         >
           Volver al listado
+        </button>
+
+        <button
+          type="button"
+          className="btn-primary"
+          disabled={finalizing || sessions.length === 0}
+          onClick={handleFinalizeStructure}
+        >
+          {finalizing ? 'Finalizando...' : 'Finalizar estructura del taller'}
         </button>
       </div>
     </main>

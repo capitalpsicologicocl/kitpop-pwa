@@ -39,7 +39,7 @@ export default function QuickGrid() {
         <h2>Diseña un workshop</h2>
         <p>Estructura sesiones y selecciona actividades del banco KitPOP.</p>
 
-        <Link to="/interactivo/talleres" className="btn-primary btn-link">
+        <Link to="/talleres" className="btn-primary btn-link">
           Abrir diseñador
         </Link>
       </div>

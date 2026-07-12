@@ -239,6 +239,7 @@ export async function createWorkshopItem(userId, sessionId, payload) {
       title: payload.title,
       description: payload.description ?? null,
       activity_slug: payload.activitySlug ?? null,
+      pause_type: payload.pauseType ?? null,
     })
     .select()
     .single()
@@ -279,6 +280,10 @@ export async function updateWorkshopItem(userId, itemId, payload) {
     update.activity_slug = payload.activitySlug ?? null
   }
 
+  if (payload.pauseType !== undefined) {
+    update.pause_type = payload.pauseType ?? null
+  }
+
   const { data, error } = await supabase
     .from('workshop_items')
     .update(update)
@@ -304,6 +309,104 @@ export async function deleteWorkshopItem(userId, itemId) {
   if (error) {
     throw error
   }
+}
+
+export async function finalizeWorkshopStructure(userId, workshopId) {
+  const { data, error } = await supabase
+    .from('workshops')
+    .update({
+      status: 'ready',
+      updated_at: new Date().toISOString(),
+    })
+    .eq('user_id', userId)
+    .eq('id', workshopId)
+    .select()
+    .single()
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
+
+export async function duplicateWorkshop(userId, workshopId) {
+  const [source, sessions] = await Promise.all([
+    fetchWorkshopById(userId, workshopId),
+    fetchWorkshopSessions(userId, workshopId),
+  ])
+
+  if (!source) {
+    throw new Error('No encontramos el taller a duplicar.')
+  }
+
+  const { data: copy, error: copyError } = await supabase
+    .from('workshops')
+    .insert({
+      user_id: userId,
+      title: `${source.title} (copia)`,
+      audience: source.audience,
+      organization: source.organization,
+      team: source.team,
+      modality: source.modality,
+      objective: source.objective,
+      participants_count: source.participants_count,
+      session_count: source.session_count,
+      status: 'draft',
+    })
+    .select()
+    .single()
+
+  if (copyError) {
+    throw copyError
+  }
+
+  await ensureAccessCode(userId, 'workshop', copy.id)
+
+  for (const session of sessions) {
+    const { data: newSession, error: sessionError } = await supabase
+      .from('workshop_sessions')
+      .insert({
+        user_id: userId,
+        workshop_id: copy.id,
+        session_number: session.session_number,
+        duration_hours: session.duration_hours ?? 0,
+        duration_minutes: session.duration_minutes ?? 0,
+        journal_notes: session.journal_notes ?? '',
+      })
+      .select()
+      .single()
+
+    if (sessionError) {
+      throw sessionError
+    }
+
+    const items = session.workshop_items ?? []
+
+    if (items.length === 0) {
+      continue
+    }
+
+    const rows = items.map((item) => ({
+      user_id: userId,
+      session_id: newSession.id,
+      sort_order: item.sort_order,
+      time_minutes: item.time_minutes,
+      item_type: item.item_type,
+      title: item.title,
+      description: item.description,
+      activity_slug: item.activity_slug,
+      pause_type: item.pause_type ?? null,
+    }))
+
+    const { error: itemsError } = await supabase.from('workshop_items').insert(rows)
+
+    if (itemsError) {
+      throw itemsError
+    }
+  }
+
+  return copy
 }
 
 export async function deleteWorkshop(userId, workshopId) {

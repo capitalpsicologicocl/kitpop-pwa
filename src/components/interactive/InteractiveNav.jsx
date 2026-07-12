@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const LINKS = [
   { to: '/interactivo', label: 'Resumen', end: true },
-  { to: '/interactivo/talleres', label: 'Talleres' },
   { to: '/interactivo/encuestas', label: 'Encuestas' },
   { to: '/interactivo/en-vivo', label: 'En vivo' },
 ]

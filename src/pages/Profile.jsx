@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 import { fetchJournalEntries } from '../services/journalService'
+import { fetchWorkshops } from '../services/workshopService'
 import { getPlanLabel } from '../utils/planLimits'
 
 function getInitials(name = '', email = '') {
@@ -35,6 +36,7 @@ export default function Profile() {
   } = useAuth()
   const [fullName, setFullName] = useState('')
   const [journalCount, setJournalCount] = useState(0)
+  const [workshopCount, setWorkshopCount] = useState(0)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -51,20 +53,26 @@ export default function Profile() {
 
     let mounted = true
 
-    async function loadJournalCount() {
+    async function loadCounts() {
       try {
-        const entries = await fetchJournalEntries(user.id)
+        const [entries, workshops] = await Promise.all([
+          fetchJournalEntries(user.id),
+          fetchWorkshops(user.id),
+        ])
+
         if (mounted) {
           setJournalCount(entries.length)
+          setWorkshopCount(workshops.length)
         }
       } catch {
         if (mounted) {
           setJournalCount(0)
+          setWorkshopCount(0)
         }
       }
     }
 
-    loadJournalCount()
+    loadCounts()
 
     return () => {
       mounted = false
@@ -227,10 +235,19 @@ export default function Profile() {
           </div>
 
           <div className="profile-hub-grid">
-            <Link to="/interactivo" className="profile-hub-card profile-hub-card-featured">
+            <Link to="/talleres" className="profile-hub-card profile-hub-card-featured">
+              <span className="profile-hub-icon">🛠</span>
+              <strong>Talleres</strong>
+              <p>Diseña sesiones, actividades y pausas. Descarga la estructura en Word o PDF.</p>
+              <span className="profile-hub-count">
+                {workshopCount} taller{workshopCount === 1 ? '' : 'es'}
+              </span>
+            </Link>
+
+            <Link to="/interactivo" className="profile-hub-card">
               <span className="profile-hub-icon">⚡</span>
               <strong>Espacio interactivo</strong>
-              <p>Talleres, encuestas y polls en vivo con códigos para participantes.</p>
+              <p>Encuestas y polls en vivo con códigos para participantes.</p>
               <span className="profile-hub-count">{getPlanLabel(profile)}</span>
             </Link>
 
