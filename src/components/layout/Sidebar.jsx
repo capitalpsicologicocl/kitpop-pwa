@@ -14,6 +14,10 @@ export default function Sidebar({ isOpen, onClose }) {
   const [favoritesOnly, setFavoritesOnly] = useState('all')
 
   const results = useMemo(() => {
+    if (!user) {
+      return []
+    }
+
     const trimmedQuery = query.trim()
 
     if (favoritesOnly === 'fav' && !user) {
@@ -45,6 +49,19 @@ export default function Sidebar({ isOpen, onClose }) {
     if (favoritesOnly === 'fav' && !user) {
       onClose()
       navigate('/login')
+      return
+    }
+
+    if (!user) {
+      onClose()
+      navigate('/login', {
+        state: {
+          from: {
+            pathname: '/buscar',
+            search: trimmedQuery ? `?q=${encodeURIComponent(trimmedQuery)}` : '',
+          },
+        },
+      })
       return
     }
 
@@ -136,103 +153,109 @@ export default function Sidebar({ isOpen, onClose }) {
           )}
         </div>
 
-        <div className="kp-menu-section">
-          <p className="kp-menu-label">Buscar actividades</p>
+        {user ? (
+          <div className="kp-menu-section">
+            <p className="kp-menu-label">Buscar actividades</p>
 
-          <form onSubmit={handleSubmit}>
-            <input
-              className="kp-menu-input"
-              placeholder="Buscar por nombre, objetivo o material."
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
+            <form onSubmit={handleSubmit}>
+              <input
+                className="kp-menu-input"
+                placeholder="Buscar por nombre, objetivo o material."
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
 
-            <div className="kp-menu-filters">
-              <select
-                value={categorySlug}
-                onChange={(event) => setCategorySlug(event.target.value)}
-              >
-                <option value="all">Todas las categorías</option>
-                {categories.map((category) => (
-                  <option key={category.slug} value={category.slug}>
-                    {category.title}
-                  </option>
-                ))}
-              </select>
-
-              <select
-                value={duration}
-                onChange={(event) => setDuration(event.target.value)}
-              >
-                <option value="all">Cualquier duración</option>
-                <option value="short">Hasta 15 min</option>
-                <option value="medium">16 a 35 min</option>
-                <option value="long">36 min o más</option>
-              </select>
-
-              <select
-                value={favoritesOnly}
-                onChange={(event) => setFavoritesOnly(event.target.value)}
-              >
-                <option value="all">Todas</option>
-                <option value="fav">Favoritas</option>
-              </select>
-            </div>
-
-            <button type="submit" className="kp-menu-search-btn">
-              Buscar
-            </button>
-          </form>
-
-          <div className="kp-menu-results">
-            {favoritesOnly === 'fav' && !user ? (
-              <p className="kp-menu-empty">
-                Inicia sesión para filtrar tus actividades favoritas.
-              </p>
-            ) : favoritesOnly === 'fav' && favoriteSlugs.length === 0 ? (
-              <p className="kp-menu-empty">
-                Aún no tienes actividades favoritas guardadas.
-              </p>
-            ) : results.length > 0 ? (
-              results.map((activity) => (
-                <Link
-                  key={activity.slug}
-                  to={`/actividad/${activity.slug}`}
-                  className="kp-menu-result-item"
-                  onClick={onClose}
+              <div className="kp-menu-filters">
+                <select
+                  value={categorySlug}
+                  onChange={(event) => setCategorySlug(event.target.value)}
                 >
-                  <strong>{activity.title}</strong>
-                  <span>{activity.categoryLabel}</span>
-                </Link>
-              ))
-            ) : (
-              <p className="kp-menu-empty">
-                {query.trim()
-                  ? 'No hay coincidencias rápidas. Pulsa Buscar para ver todos los resultados.'
-                  : 'Escribe una palabra para buscar actividades.'}
-              </p>
-            )}
+                  <option value="all">Todas las categorías</option>
+                  {categories.map((category) => (
+                    <option key={category.slug} value={category.slug}>
+                      {category.title}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={duration}
+                  onChange={(event) => setDuration(event.target.value)}
+                >
+                  <option value="all">Cualquier duración</option>
+                  <option value="short">Hasta 15 min</option>
+                  <option value="medium">16 a 35 min</option>
+                  <option value="long">36 min o más</option>
+                </select>
+
+                <select
+                  value={favoritesOnly}
+                  onChange={(event) => setFavoritesOnly(event.target.value)}
+                >
+                  <option value="all">Todas</option>
+                  <option value="fav">Favoritas</option>
+                </select>
+              </div>
+
+              <button type="submit" className="kp-menu-search-btn">
+                Buscar
+              </button>
+            </form>
+
+            <div className="kp-menu-results">
+              {favoritesOnly === 'fav' && favoriteSlugs.length === 0 ? (
+                <p className="kp-menu-empty">
+                  Aún no tienes actividades favoritas guardadas.
+                </p>
+              ) : results.length > 0 ? (
+                results.map((activity) => (
+                  <Link
+                    key={activity.slug}
+                    to={`/actividad/${activity.slug}`}
+                    className="kp-menu-result-item"
+                    onClick={onClose}
+                  >
+                    <strong>{activity.title}</strong>
+                    <span>{activity.categoryLabel}</span>
+                  </Link>
+                ))
+              ) : (
+                <p className="kp-menu-empty">
+                  {query.trim()
+                    ? 'No hay coincidencias rápidas. Pulsa Buscar para ver todos los resultados.'
+                    : 'Escribe una palabra para buscar actividades.'}
+                </p>
+              )}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="kp-menu-section">
+            <p className="kp-menu-label">Banco de actividades</p>
+            <p className="kp-menu-note">
+              Inicia sesión para buscar dinámicas y explorar categorías.
+            </p>
+          </div>
+        )}
 
         <div className="kp-menu-section">
-          <p className="kp-menu-label">Categorías</p>
+          <p className="kp-menu-label">Navegación</p>
 
           <div className="kp-menu-cats">
             <Link to="/" className="kp-menu-cat-btn" onClick={onClose}>
               Inicio
             </Link>
 
-            {categories.map((category) => (
-              <Link
-                key={category.slug}
-                to={`/categoria/${category.slug}`}
-                className="kp-menu-cat-btn"
-                onClick={onClose}
-              >
-                {category.title}
-              </Link>
-            ))}
+            {user &&
+              categories.map((category) => (
+                <Link
+                  key={category.slug}
+                  to={`/categoria/${category.slug}`}
+                  className="kp-menu-cat-btn"
+                  onClick={onClose}
+                >
+                  {category.title}
+                </Link>
+              ))}
 
             <Link to="/interactivo" className="kp-menu-cat-btn" onClick={onClose}>
               Espacio interactivo

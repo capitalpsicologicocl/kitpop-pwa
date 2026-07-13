@@ -292,6 +292,15 @@
   color:var(--g600);
 }
 
+.home-guest-cta {
+  margin-top:18px;
+}
+
+.home-guest-cta .home-panel {
+  max-width:640px;
+  margin:0 auto;
+}
+
 .quick-grid {
   display:grid;
   grid-template-columns:1.2fr .8fr;

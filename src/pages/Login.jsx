@@ -1,15 +1,20 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { signIn } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+
+  const redirectTo = location.state?.from?.pathname
+    ? `${location.state.from.pathname}${location.state.from.search || ''}`
+    : '/'
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -18,7 +23,7 @@ export default function Login() {
 
     try {
       await signIn({ email, password })
-      navigate('/perfil')
+      navigate(redirectTo, { replace: true })
     } catch (submitError) {
       setError(submitError.message || 'No se pudo iniciar sesión.')
     } finally {
@@ -34,7 +39,7 @@ export default function Login() {
 
       <div className="auth-panel">
         <h1>Iniciar sesión</h1>
-        <p>Accede a favoritos, bitácora y tu perfil KitPOP.</p>
+        <p>Accede al banco de actividades, favoritos, bitácora y tu perfil KitPOP.</p>
 
         {error && <div className="auth-message error">{error}</div>}
 
