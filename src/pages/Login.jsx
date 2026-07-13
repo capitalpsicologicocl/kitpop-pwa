@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
+import { formatAuthError } from '../utils/authError'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ export default function Login() {
       await signIn({ email, password })
       navigate(redirectTo, { replace: true })
     } catch (submitError) {
-      setError(submitError.message || 'No se pudo iniciar sesión.')
+      setError(formatAuthError(submitError, 'No se pudo iniciar sesión.'))
     } finally {
       setSubmitting(false)
     }

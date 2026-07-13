@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
+import { formatAuthError } from '../utils/authError'
 
 export default function Register() {
   const { signUp } = useAuth()
@@ -24,7 +25,7 @@ export default function Register() {
         'Cuenta creada. Te enviamos un correo de bienvenida para confirmar tu cuenta. Revisa tu bandeja y spam antes de iniciar sesión.'
       )
     } catch (submitError) {
-      setError(submitError.message || 'No se pudo crear la cuenta.')
+      setError(formatAuthError(submitError, 'No se pudo crear la cuenta.'))
     } finally {
       setSubmitting(false)
     }

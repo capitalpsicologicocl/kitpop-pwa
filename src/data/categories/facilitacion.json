@@ -1,0 +1,622 @@
+{
+  "CATS": {
+    "facilitacion": {
+      "title": "Fundamentos de la <em>Facilitación</em>",
+      "desc": "Guía de autoinstrucción: qué es facilitar, cómo diseñar un proceso participativo y qué habilidades se necesitan. Comprende el oficio antes de elegir dinámicas del Kit.",
+      "lv": "vl-pur",
+      "acts": [
+        "fac-que-es-facilitar",
+        "fac-principios-practica",
+        "fac-rol-facilitador",
+        "fac-disena-4-fases",
+        "fac-tipos-taller",
+        "fac-caja-herramientas",
+        "fac-listo-para-facilitar",
+        "fac-inclusion-accesibilidad",
+        "fac-errores-comunes",
+        "fac-voces-facilitacion",
+        "fac-ruta-formacion"
+      ]
+    }
+  },
+  "A": {
+    "fac-que-es-facilitar": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "¿Qué es <em>facilitar?</em>",
+      "sub": "Definición operativa y cuatro miradas del oficio: técnica, artesanía, arte y disciplina profesional.",
+      "metas": [
+        "10–15 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Marco conceptual",
+          "rows": [
+            {
+              "ic": "book",
+              "h": "Definición operativa",
+              "p": "La facilitación es el proceso mediante el cual una persona —esencialmente neutral y sin autoridad sustantiva sobre las decisiones— ayuda a un grupo a mejorar la forma en que identifica problemas, dialoga, decide y actúa, sin imponer contenidos ni soluciones predeterminadas. (Síntesis a partir de Roger Schwarz y la IAF)"
+            },
+            {
+              "ic": "focus",
+              "h": "Metodología, no contenido",
+              "p": "Quien facilita cuida cómo se conversa, no qué se decide. Trabaja el proceso, no el fondo del tema."
+            },
+            {
+              "ic": "users",
+              "h": "El protagonismo es del grupo",
+              "p": "Un buen proceso deja capacidades instaladas en el equipo, no dependencia de quien facilitó."
+            },
+            {
+              "ic": "shield",
+              "h": "Neutralidad",
+              "p": "No es juez ni autoridad jerárquica del contenido; por eso puede sostener la confianza de todas las partes."
+            }
+          ]
+        },
+        {
+          "t": "Cuatro miradas del oficio",
+          "rows": [
+            {
+              "ic": "tool",
+              "h": "Como técnica",
+              "p": "Conjunto de herramientas y procedimientos (dinámicas, preguntas, formatos) que se aprenden y perfeccionan con la práctica."
+            },
+            {
+              "ic": "craft",
+              "h": "Como oficio",
+              "p": "Artesanía que se adapta al ritmo, lenguaje y realidad de cada grupo."
+            },
+            {
+              "ic": "heart",
+              "h": "Como arte",
+              "p": "Capacidad de leer lo no dicho, sostener el silencio y crear condiciones para que ocurra algo que el grupo no habría logrado solo."
+            },
+            {
+              "ic": "star",
+              "h": "Como disciplina",
+              "p": "Campo con principios, competencias y ética propios, practicado con responsabilidad y evaluado con rigor."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-principios-practica": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Principios que <em>sostienen</em> la práctica",
+      "sub": "Cuatro valores base y cinco competencias-actitud que distinguen una facilitación genuina de la simple conducción de una reunión.",
+      "metas": [
+        "12–18 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Valores base",
+          "rows": [
+            {
+              "ic": "equal",
+              "h": "Igualdad",
+              "p": "Todas las voces valen por igual. Quien facilita es una voz más: comparte conocimiento y también aprende del grupo."
+            },
+            {
+              "ic": "diverse",
+              "h": "Diversidad",
+              "p": "Las diferencias son fuente de riqueza y transformación, incluso cuando generan tensión."
+            },
+            {
+              "ic": "handshake",
+              "h": "Cooperación",
+              "p": "El grupo trabaja en conjunto por su visión, sin competir; se favorece la expresión individual como parte de la construcción colectiva."
+            },
+            {
+              "ic": "care",
+              "h": "Cuidado",
+              "p": "El cuidado de las personas se prioriza sobre el cumplimiento mecánico de objetivos."
+            }
+          ]
+        },
+        {
+          "t": "Competencias-actitud",
+          "rows": [
+            {
+              "ic": "ear",
+              "h": "Escucha activa y empatía",
+              "p": "Atención plena al contenido verbal y a emociones y significados no dichos con palabras."
+            },
+            {
+              "ic": "users",
+              "h": "Participación equitativa",
+              "p": "Diseñar dinámicas que incluyan distintos estilos de comunicación, no solo quienes hablan primero o más fuerte."
+            },
+            {
+              "ic": "balance",
+              "h": "Neutralidad y gestión del poder",
+              "p": "No imponer opiniones sobre el contenido; manejar desequilibrios de poder dentro del grupo."
+            },
+            {
+              "ic": "flex",
+              "h": "Flexibilidad y adaptabilidad",
+              "p": "Ajustar agenda y metodología en tiempo real según lo que el grupo necesita."
+            },
+            {
+              "ic": "spark",
+              "h": "Cocreación",
+              "p": "Confiar en que la inteligencia colectiva supera la suma de capacidades individuales."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-rol-facilitador": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "El rol de quien <em>facilita</em>",
+      "sub": "Guía no protagonista: orquestar tiempo, energía y participación; gestionar conflictos y sintetizar lo que emerge del grupo.",
+      "metas": [
+        "15–20 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Rol central",
+          "rows": [
+            {
+              "ic": "guide",
+              "h": "Guardián del proceso",
+              "p": "No decide qué pensar, sino que protege cómo se puede pensar juntos (Kaner, 2014). Escuchar más que hablar y ceder espacio para que surjan ideas del grupo."
+            },
+            {
+              "ic": "clock",
+              "h": "Tiempo",
+              "p": "Respetar la agenda sin rigidez; saber cuándo acelerar o hacer una pausa según lo que el grupo necesita."
+            },
+            {
+              "ic": "energy",
+              "h": "Energía",
+              "p": "Leer el estado emocional y corporal del grupo; alternar momentos activos y reflexivos."
+            },
+            {
+              "ic": "voice",
+              "h": "Participación",
+              "p": "Activar a quienes están más silenciosos y contener, con respeto, a quienes dominan la conversación."
+            }
+          ]
+        },
+        {
+          "t": "Habilidades distintivas",
+          "rows": [
+            {
+              "ic": "peace",
+              "h": "Gestión de conflictos",
+              "p": "Establecer normas desde el inicio; nombrar dinámicas que obstaculizan; usar preguntas abiertas; separar la idea de la persona."
+            },
+            {
+              "ic": "sync",
+              "h": "Reformular y sintetizar",
+              "p": "Parafrasear con neutralidad, agrupar temas en pizarra visible y construir mapas conceptuales en tiempo real con el grupo."
+            },
+            {
+              "ic": "self",
+              "h": "Autocuidado",
+              "p": "Prepararse antes del taller, hacer pausas, confiar en los recursos del grupo y contar con red de pares facilitadores."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-disena-4-fases": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Diseña tu taller en <em>4 fases</em>",
+      "sub": "Modelo en espiral Visión · Diseño · Actuar · Aprender para construir procesos de facilitación de principio a fin.",
+      "metas": [
+        "15–20 min lectura + checklist",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Cuatro fases",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Fase 1 · Visión",
+              "p": "Clarificar el para qué y resultados esperados (tangibles e intangibles). Identificar no negociables. Definir audiencia y formalizar acuerdos con quien encarga el taller."
+            },
+            {
+              "ic": "plan",
+              "h": "Fase 2 · Diseño",
+              "p": "Definir fecha, duración, lugar y modalidad. Construir agenda en bloques (bienvenida, desarrollo, cierre). Revisar con quien encarga. Planificar comunicación e invitaciones. Conformar equipo de facilitación."
+            },
+            {
+              "ic": "play",
+              "h": "Fase 3 · Actuar",
+              "p": "Reunir materiales. Alinear equipo antes de comenzar. Cuidar energía personal. Facilitar con flexibilidad: la agenda es referencia, no camisa de fuerza."
+            },
+            {
+              "ic": "learn",
+              "h": "Fase 4 · Aprender",
+              "p": "Registrar lo ocurrido. Entregar informe o recomendaciones. Recoger aprendizajes propios y de participantes. Cerrar y celebrar simbólicamente."
+            }
+          ]
+        },
+        {
+          "t": "Estructura simétrica",
+          "rows": [
+            {
+              "ic": "open",
+              "h": "Apertura y cierre",
+              "p": "Toda sesión bien diseñada contempla apertura (presentaciones, expectativas, reglas, objetivos) y cierre firme (síntesis, plan de acción, evaluación). Poca apertura = sesión de instrucciones; apertura sin cierre = sesión de café sin decisiones."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-tipos-taller": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Elige el tipo de <em>taller</em> correcto",
+      "sub": "Cinco tipos de taller según finalidad y métodos característicos — evita mezclar dinámicas de propósitos distintos en una misma sesión.",
+      "metas": [
+        "10–12 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Tipos de taller",
+          "rows": [
+            {
+              "ic": "search",
+              "h": "Diagnóstico participativo",
+              "p": "Comprender colectivamente una realidad. Métodos: mapa de entorno, línea de tiempo, análisis de actores, matriz de problemas."
+            },
+            {
+              "ic": "map",
+              "h": "Planificación estratégica",
+              "p": "Definir visión de futuro y caminos. Métodos: árbol de problemas/objetivos, FODA participativa, mapa de aliados."
+            },
+            {
+              "ic": "book",
+              "h": "Capacitación y formación",
+              "p": "Transferir conocimientos de forma experiencial. Métodos: aprendizaje basado en problemas, juegos de rol, estudio de casos."
+            },
+            {
+              "ic": "spark",
+              "h": "Innovación y creatividad",
+              "p": "Generar ideas nuevas. Métodos: design thinking, SCAMPER, lluvia de ideas divergente/convergente, prototipado."
+            },
+            {
+              "ic": "circle",
+              "h": "Círculos de diálogo",
+              "p": "Escuchar, reflexionar y construir sentido colectivo. Métodos: disposición circular, objeto de la palabra, silencios, enfoque restaurativo."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-caja-herramientas": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Caja de <em>herramientas</em>",
+      "sub": "Técnicas organizadas por momento del taller: apertura, trabajo colectivo, visualización y cierre.",
+      "metas": [
+        "12–15 min referencia",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Por momento del taller",
+          "rows": [
+            {
+              "ic": "open",
+              "h": "Apertura",
+              "p": "Check-in de estado, ronda de expectativas, normas de convivencia, palabra de intención, activación breve."
+            },
+            {
+              "ic": "group",
+              "h": "Trabajo colectivo",
+              "p": "Lluvia de ideas, grupos pequeños, world café, rotación de roles, consulta anónima, dot voting."
+            },
+            {
+              "ic": "visual",
+              "h": "Visualización",
+              "p": "Mapas conceptuales, matrices en pizarra, líneas de tiempo, parking lot, semáforo de acuerdos."
+            },
+            {
+              "ic": "close",
+              "h": "Cierre",
+              "p": "Síntesis participativa, compromisos concretos, evaluación rápida, ronda de aprendizajes, celebración simbólica."
+            }
+          ]
+        },
+        {
+          "t": "Conexión con KitPOP",
+          "rows": [
+            {
+              "ic": "link",
+              "h": "Usar el Kit con intención",
+              "p": "Las categorías PERMA, Equipo, Reunión y demás ya organizan actividades por propósito. Combínalas según el tipo de taller que diseñaste en la fase de Visión."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-listo-para-facilitar": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "¿Estoy list@ para <em>facilitar?</em>",
+      "sub": "Tríada conocimientos-actitudes-habilidades, más ventajas y límites de las metodologías participativas.",
+      "metas": [
+        "15 min lectura + autoevaluación",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Conocimientos",
+          "rows": [
+            {
+              "ic": "book",
+              "h": "Base teórica",
+              "p": "Principios de dinámica grupal, modelos de decisión participativa, técnicas de facilitación y marco ético del oficio."
+            }
+          ]
+        },
+        {
+          "t": "Actitudes",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Postura",
+              "p": "Curiosidad, paciencia, humildad, confianza en el grupo, disposición a soltar el plan cuando el proceso lo pide."
+            }
+          ]
+        },
+        {
+          "t": "Habilidades",
+          "rows": [
+            {
+              "ic": "tool",
+              "h": "Práctica",
+              "p": "Escucha activa, formulación de preguntas, síntesis, manejo del tiempo, lectura de energía grupal, gestión de conflictos."
+            }
+          ]
+        },
+        {
+          "t": "Ventajas y límites",
+          "rows": [
+            {
+              "ic": "plus",
+              "h": "Ventajas de lo participativo",
+              "p": "Mayor compromiso, decisiones más sostenibles, inclusión de voces diversas, aprendizaje colectivo."
+            },
+            {
+              "ic": "minus",
+              "h": "Límites",
+              "p": "Requiere más tiempo que una reunión unidireccional. No resuelve problemas fuera del control del grupo. Depende de autoridad real para implementar acuerdos."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-inclusion-accesibilidad": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Inclusión y <em>accesibilidad</em>",
+      "sub": "Cuatro subtemas con checklist aplicable antes de cada taller para que todas las personas puedan participar.",
+      "metas": [
+        "12 min lectura + checklist",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Checklist previo al taller",
+          "rows": [
+            {
+              "ic": "access",
+              "h": "Accesibilidad física y digital",
+              "p": "¿El espacio (o plataforma) permite participar a personas con movilidad reducida? ¿Hay subtítulos o alternativas para quienes no pueden usar audio?"
+            },
+            {
+              "ic": "lang",
+              "h": "Lenguaje inclusivo",
+              "p": "¿Evitas expresiones que excluyen? ¿Adaptas materiales a distintos niveles de familiaridad con el tema?"
+            },
+            {
+              "ic": "time",
+              "h": "Ritmo y formatos diversos",
+              "p": "¿Combinas dinámicas verbales, escritas y visuales? ¿Das tiempo de procesamiento antes de pedir respuestas?"
+            },
+            {
+              "ic": "power",
+              "h": "Equidad de participación",
+              "p": "¿Diseñaste formas de incluir voces silenciosas? ¿Nombraste explícitamente normas contra interrupciones y microagresiones?"
+            }
+          ]
+        }
+      ]
+    },
+    "fac-errores-comunes": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Errores <em>comunes</em>",
+      "sub": "Cuatro errores frecuentes con señales de alerta y estrategias para evitarlos.",
+      "metas": [
+        "10 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Errores y cómo evitarlos",
+          "rows": [
+            {
+              "ic": "warn",
+              "h": "Improvisar sin diseño",
+              "p": "Se manifiesta cuando no hay objetivos claros ni agenda. Evítalo con las 4 fases de diseño antes de elegir dinámicas del Kit."
+            },
+            {
+              "ic": "warn",
+              "h": "Monopolizar la conversación",
+              "p": "Se manifiesta cuando quien facilita opina sobre el contenido o responde por el grupo. Evítalo reformulando y devolviendo preguntas al grupo."
+            },
+            {
+              "ic": "warn",
+              "h": "Ignorar la energía del grupo",
+              "p": "Se manifiesta cuando se fuerza la agenda mientras el grupo está agotado o en conflicto. Evítalo leyendo señales corporales y ajustando ritmo."
+            },
+            {
+              "ic": "warn",
+              "h": "Cerrar sin síntesis ni acuerdos",
+              "p": "Se manifiesta cuando la sesión termina sin claridad sobre próximos pasos. Evítalo reservando siempre 10–15 minutos para cierre estructurado."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-voces-facilitacion": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Voces de la <em>facilitación</em>",
+      "sub": "Cápsulas inspiradoras de referentes del oficio para sostener la mirada y la ética de quien facilita.",
+      "metas": [
+        "5–8 min lectura",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Referentes",
+          "rows": [
+            {
+              "ic": "quote",
+              "h": "Roger Schwarz",
+              "p": "\"La facilitación ayuda a un grupo a mejorar la forma en que identifica y resuelve problemas, toma decisiones y maneja conflictos — sin imponer contenido.\""
+            },
+            {
+              "ic": "quote",
+              "h": "Sam Kaner",
+              "p": "Quien facilita es guardián del proceso: protege cómo se puede pensar juntos, no qué se debe pensar."
+            },
+            {
+              "ic": "quote",
+              "h": "David Bohm",
+              "p": "El diálogo genuino ocurre cuando las personas suspenden sus supuestos y escuchan para comprender, no para responder."
+            },
+            {
+              "ic": "quote",
+              "h": "Peter Senge",
+              "p": "La confianza del grupo hacia quien facilita se construye en etapas: encuadre, compromiso y verificación."
+            }
+          ]
+        }
+      ]
+    },
+    "fac-ruta-formacion": {
+      "ic": "book",
+      "cat": "Fundamentos de la Facilitación · Guía",
+      "clr": "brand",
+      "name": "Mi ruta de <em>formación</em>",
+      "sub": "Tres niveles de desarrollo como facilitador/a con autoevaluación y siguiente paso sugerido.",
+      "metas": [
+        "15–20 min autoevaluación",
+        "Lectura guiada · Autoinstrucción",
+        "Ideal antes de usar el Kit"
+      ],
+      "mat": [
+        "Bitácora o cuaderno de reflexión",
+        "Acceso al resto de categorías KitPOP"
+      ],
+      "secs": [
+        {
+          "t": "Nivel 1 · Inicio",
+          "rows": [
+            {
+              "ic": "seed",
+              "h": "Facilito actividades puntuales",
+              "p": "¿Conozco al menos 5 dinámicas del Kit y cuándo usarlas? ¿Puedo explicar en una frase qué es facilitar? Siguiente paso: facilitar una reunión corta usando solo check-in + una dinámica + cierre."
+            }
+          ]
+        },
+        {
+          "t": "Nivel 2 · Desarrollo",
+          "rows": [
+            {
+              "ic": "grow",
+              "h": "Diseño procesos completos",
+              "p": "¿Sé identificar qué tipo de taller necesita un grupo? ¿Leo la energía y ajusto la agenda? ¿Gestiono voces dominantes? Siguiente paso: pedir retroalimentación estructurada a participantes después de cada taller."
+            }
+          ]
+        },
+        {
+          "t": "Nivel 3 · Maestría",
+          "rows": [
+            {
+              "ic": "tree",
+              "h": "Procesos complejos y mentoría",
+              "p": "¿Diseño procesos de varias sesiones? ¿Incorporo inclusión y accesibilidad sistemáticamente? ¿Tengo red de pares facilitadores? Siguiente paso: documentar tus diseños como biblioteca personal y mentorear facilitadores de nivel 1."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

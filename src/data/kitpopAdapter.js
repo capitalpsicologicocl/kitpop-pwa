@@ -1,6 +1,19 @@
 import kitpopData from './kitpopData.json'
+import facilitacionData from './categories/facilitacion.json'
+import pnlData from './categories/pnl.json'
 
-const { CATS, A } = kitpopData
+const { CATS, A } = {
+  CATS: {
+    ...kitpopData.CATS,
+    ...facilitacionData.CATS,
+    ...pnlData.CATS,
+  },
+  A: {
+    ...kitpopData.A,
+    ...facilitacionData.A,
+    ...pnlData.A,
+  },
+}
 
 const CATEGORY_SLUG_MAP = {
   perma: 'perma',
@@ -11,6 +24,8 @@ const CATEGORY_SLUG_MAP = {
   conversaciones1a1: 'conversaciones',
   fortalezas: 'fortalezas',
   mindful: 'mindfulness',
+  facilitacion: 'facilitacion',
+  pnl: 'pnl',
 }
 
 const ICON_MAP = {
@@ -22,6 +37,8 @@ const ICON_MAP = {
   conversaciones1a1: '↔',
   fortalezas: '★',
   mindful: '◐',
+  facilitacion: '◎',
+  pnl: '🧠',
 }
 
 const CLASSNAME_MAP = {
@@ -33,7 +50,22 @@ const CLASSNAME_MAP = {
   conversaciones1a1: 'cc-conexion',
   fortalezas: 'cc-perma',
   mindful: 'cc-mindful',
+  facilitacion: 'cc-facilitacion',
+  pnl: 'cc-pnl',
 }
+
+const CATEGORY_ORDER = [
+  'facilitacion',
+  'perma',
+  'equipo',
+  'reunion',
+  'conexion',
+  'reuniones',
+  'conversaciones',
+  'fortalezas',
+  'mindfulness',
+  'pnl',
+]
 
 const SUBTITLE_MAP = {
   perma: 'Bienestar · Psicología Positiva',
@@ -44,6 +76,8 @@ const SUBTITLE_MAP = {
   conversaciones1a1: 'Feedback · Apreciación · Conversaciones difíciles',
   fortalezas: 'VIA · Carácter · Desarrollo',
   mindful: 'Mindfulness · Atención plena',
+  facilitacion: 'Oficio · Diseño · Autoinstrucción',
+  pnl: 'Comunicación · PNL · Recursos personales',
 }
 
 export function stripHtml(html = '') {
@@ -117,18 +151,28 @@ function buildActivity(categoryKey, id) {
   }
 }
 
-export const kitpopCategories = Object.entries(CATS).map(([key, category], index) => ({
-  slug: CATEGORY_SLUG_MAP[key] ?? key,
-  title: stripHtml(category.title),
-  subtitle: SUBTITLE_MAP[key] ?? 'Banco de actividades',
-  description: category.desc,
-  icon: ICON_MAP[key] ?? '✦',
-  className: CLASSNAME_MAP[key] ?? '',
-  order: index + 1,
-  visible: true,
-  showPermaFilter: Boolean(category.showPerma),
-  htmlKey: key,
-}))
+export const kitpopCategories = Object.entries(CATS)
+  .map(([key, category]) => ({
+    slug: CATEGORY_SLUG_MAP[key] ?? key,
+    title: stripHtml(category.title),
+    subtitle: SUBTITLE_MAP[key] ?? 'Banco de actividades',
+    description: category.desc,
+    icon: ICON_MAP[key] ?? '✦',
+    className: CLASSNAME_MAP[key] ?? '',
+    order: 0,
+    visible: true,
+    showPermaFilter: Boolean(category.showPerma),
+    htmlKey: key,
+  }))
+  .sort((a, b) => {
+    const ai = CATEGORY_ORDER.indexOf(a.slug)
+    const bi = CATEGORY_ORDER.indexOf(b.slug)
+    return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi)
+  })
+  .map((category, index) => ({
+    ...category,
+    order: index + 1,
+  }))
 
 export const kitpopActivities = Object.entries(CATS).flatMap(([key, category]) =>
   (category.acts ?? [])

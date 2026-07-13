@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
+import { formatAuthError } from '../utils/authError'
 import { supabase } from '../services/supabaseClient'
 
 export default function ResetPassword() {
@@ -71,7 +72,7 @@ export default function ResetPassword() {
         navigate('/login', { replace: true })
       }, 1800)
     } catch (submitError) {
-      setError(submitError.message || 'No se pudo actualizar la contraseña.')
+      setError(formatAuthError(submitError, 'No se pudo actualizar la contraseña.'))
     } finally {
       setSubmitting(false)
     }

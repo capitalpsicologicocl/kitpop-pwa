@@ -196,6 +196,14 @@
   background:var(--gold);
 }
 
+.cc-facilitacion::after {
+  background:#7C3AED;
+}
+
+.cc-pnl::after {
+  background:#5B21B6;
+}
+
 .cat-icon-box {
   width:42px;
   height:42px;
@@ -231,6 +239,16 @@
   color:var(--gold);
 }
 
+.cc-facilitacion .cat-icon-box {
+  background:#EDE9FE;
+  color:#7C3AED;
+}
+
+.cc-pnl .cat-icon-box {
+  background:#EDE9FE;
+  color:#5B21B6;
+}
+
 .cat-icon-symbol {
   font-size:22px;
   font-weight:800;
@@ -263,6 +281,14 @@
 
 .cc-mindful .cat-tag-lbl {
   color:var(--gold);
+}
+
+.cc-facilitacion .cat-tag-lbl {
+  color:#7C3AED;
+}
+
+.cc-pnl .cat-tag-lbl {
+  color:#5B21B6;
 }
 
 .cat-name {

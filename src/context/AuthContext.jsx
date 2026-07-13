@@ -15,6 +15,7 @@ import {
 import { fetchProfile, updateProfile, uploadAvatar } from '../services/profileService'
 import { supabase } from '../services/supabaseClient'
 import { getLoginUrl, getResetPasswordUrl } from '../utils/authRedirect'
+import { formatAuthError } from '../utils/authError'
 
 const AuthContext = createContext(null)
 
@@ -109,7 +110,7 @@ export function AuthProvider({ children }) {
   }, [])
 
   const signUp = useCallback(async ({ email, password, fullName }) => {
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -121,7 +122,13 @@ export function AuthProvider({ children }) {
     })
 
     if (error) {
-      throw error
+      throw new Error(formatAuthError(error, 'No se pudo crear la cuenta.'))
+    }
+
+    if (data.user && (!data.user.identities || data.user.identities.length === 0)) {
+      throw new Error(
+        'Este correo ya está registrado. Inicia sesión o usa "¿Olvidaste tu contraseña?"'
+      )
     }
   }, [])
 
@@ -131,7 +138,9 @@ export function AuthProvider({ children }) {
     })
 
     if (error) {
-      throw error
+      throw new Error(
+        formatAuthError(error, 'No se pudo enviar el correo de recuperación.')
+      )
     }
   }, [])
 
@@ -139,7 +148,7 @@ export function AuthProvider({ children }) {
     const { error } = await supabase.auth.updateUser({ password })
 
     if (error) {
-      throw error
+      throw new Error(formatAuthError(error, 'No se pudo actualizar la contraseña.'))
     }
   }, [])
 

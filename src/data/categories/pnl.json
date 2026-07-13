@@ -1,0 +1,791 @@
+{
+  "CATS": {
+    "pnl": {
+      "title": "Comunicación y <em>PNL</em>",
+      "desc": "Modelos y estrategias para comprender cómo las personas perciben, organizan y comunican su experiencia. Actividades prácticas, éticas y aplicables a facilitación, liderazgo y trabajo en equipo — sin intervención clínica.",
+      "lv": "vl-pur",
+      "acts": [
+        "cambiando-el-mapa",
+        "filtros-invisibles",
+        "objetivo-bien-construido",
+        "del-problema-a-la-posibilidad",
+        "lenguaje-que-construye",
+        "construyendo-sintonia",
+        "escuchar-mas-alla-palabras",
+        "descubriendo-canal-preferido",
+        "preguntas-que-abren-conversaciones",
+        "cuatro-miradas",
+        "reencuadrar-historias",
+        "metaforas-en-accion",
+        "observador-silencioso",
+        "cadena-de-significados",
+        "creencias-que-impulsan",
+        "calibrando-la-conversacion",
+        "liderar-sin-palabras",
+        "modelando-la-excelencia",
+        "laboratorio-de-rapport",
+        "el-mapa-colectivo"
+      ]
+    }
+  },
+  "A": {
+    "objetivo-bien-construido": {
+      "ic": "target",
+      "cat": "Comunicación y PNL · Planificación",
+      "clr": "brand",
+      "name": "Objetivo <em>Bien Construido</em>",
+      "sub": "Transformar un deseo general en un objetivo claro, específico y accionable.",
+      "metas": [
+        "30 minutos",
+        "Individual",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Ficha de trabajo",
+        "Lápiz"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "Cada participante responde: ¿Qué quiero lograr? ¿Por qué es importante? ¿Cómo sabré que lo conseguí? ¿Qué depende de mí? ¿Cuándo quiero alcanzarlo? ¿Cuál será el primer paso?"
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Qué diferencia existe entre tener un deseo y un objetivo?"
+            }
+          ]
+        }
+      ]
+    },
+    "construyendo-sintonia": {
+      "ic": "sync",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Construyendo <em>Sintonía</em>",
+      "sub": "Actividad orientada a experimentar cómo la conexión interpersonal mejora cuando prestamos atención consciente al ritmo, lenguaje y forma de comunicarnos con otra persona, favoreciendo un clima de confianza para conversaciones más efectivas.",
+      "metas": [
+        "25 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Ninguno",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Formar parejas. --- Page 10 --- 2. Durante dos minutos una persona habla sobre un tema que le resulte agradable. 3. La otra persona sólo escucha. 4. En una segunda ronda el oyente intenta acompasar naturalmente: ○ velocidad al hablar ○ volumen de voz ○ energía ○ postura general ○ ritmo de la conversación 5. No debe imitar ni caricaturizar. 6. Cambiar los roles. 7. Conversar sobre las diferencias percibidas."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿En qué momento sentiste mayor conexión? ● ¿Qué hizo la diferencia? ● ¿Qué aprendiste sobre escuchar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Diversos modelos de comunicación destacan que la sincronía verbal y no verbal favorece la percepción de confianza, empatía y cooperación durante una conversación. Esta actividad adapta ese principio a un contexto de facilitación."
+            }
+          ]
+        }
+      ]
+    },
+    "escuchar-mas-alla-palabras": {
+      "ic": "ear",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Escuchar <em>Más Allá de las Palabras</em>",
+      "sub": "Ejercicio para desarrollar una escucha integral considerando el contenido, el tono emocional y la comunicación no verbal. --- Page 11 ---",
+      "metas": [
+        "30 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Ficha de observación"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Una persona relata una experiencia importante. 2. El oyente no puede interrumpir. 3. Mientras escucha registra: ○ emociones observadas ○ palabras repetidas ○ momentos donde cambia la energía ○ gestos relevantes 4. Finalizado el relato devuelve únicamente observaciones, evitando interpretar o aconsejar. 5. Invertir roles. PREGUNTAS PLENARIA ● ¿Qué fue más difícil observar? ● ¿Qué descubriste que normalmente pasa desapercibido? Actividad 8 Descubriendo el Canal Preferido SLUG: descubriendo-canal-preferido CATEGORÍA: pnl TÍTULO: Descubriendo el Canal Preferido --- Page 12 --- DESCRIPCIÓN: Actividad para reconocer las distintas maneras en que las personas describen sus experiencias y adaptar la comunicación a diferentes estilos. DURACIÓN: 35 minutos MODALIDAD: Grupal MATERIALES: ● Tarjetas ● Plumones PASOS: 1. Dividir el grupo en equipos pequeños. 2. Cada persona cuenta unas vacaciones memorables. 3. Los demás identifican expresiones relacionadas con: ○ imágenes ○ sonidos ○ sensaciones 4. Registrar las palabras utilizadas. 5. Comparar resultados. 6. Reflexionar sobre cómo adaptar nuestro lenguaje según la otra persona."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué fue más difícil observar? ● ¿Qué descubriste que normalmente pasa desapercibido?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La PNL propone que las personas suelen privilegiar determinadas formas de representar sus experiencias mediante el lenguaje. Más allá de la evidencia empírica sobre esta clasificación, observar las preferencias comunicativas puede favorecer una escucha más atenta y flexible."
+            }
+          ]
+        }
+      ]
+    },
+    "descubriendo-canal-preferido": {
+      "ic": "eye",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Descubriendo <em>el Canal Preferido</em>",
+      "sub": "Actividad para reconocer las distintas maneras en que las personas describen sus experiencias y adaptar la comunicación a diferentes estilos.",
+      "metas": [
+        "35 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Dividir el grupo en equipos pequeños. 2. Cada persona cuenta unas vacaciones memorables. 3. Los demás identifican expresiones relacionadas con: ○ imágenes ○ sonidos ○ sensaciones 4. Registrar las palabras utilizadas. 5. Comparar resultados. 6. Reflexionar sobre cómo adaptar nuestro lenguaje según la otra persona."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Todos describimos igual una experiencia? ● ¿Qué descubriste sobre tu manera de comunicar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La PNL propone que las personas suelen privilegiar determinadas formas de representar sus experiencias mediante el lenguaje. Más allá de la evidencia empírica sobre esta clasificación, observar las preferencias comunicativas puede favorecer una escucha más atenta y flexible."
+            }
+          ]
+        }
+      ]
+    },
+    "cuatro-miradas": {
+      "ic": "layers",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Cuatro <em>Miradas</em>",
+      "sub": "Dinámica para ampliar la comprensión de una situación explorándola desde distintas perspectivas antes de actuar.",
+      "metas": [
+        "40 minutos",
+        "Individual o grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Cuatro hojas tamaño carta",
+        "Cinta adhesiva"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Colocar cuatro hojas en el suelo formando cuatro estaciones. 2. Cada estación representa una mirada distinta: ○ Mi perspectiva. ○ La perspectiva de la otra persona. ○ Un observador imparcial. --- Page 15 --- ○ Mi \"yo\" futuro dentro de un año. 3. El participante recorre cada estación respondiendo: ○ ¿Qué veo? ○ ¿Qué siento? ○ ¿Qué recomendaría desde aquí? 4. Registrar los aprendizajes. 5. Compartir voluntariamente."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Cuál fue la perspectiva más difícil? ● ¿Qué cambió en tu comprensión del problema? ● ¿Qué acción concreta realizarás ahora?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Explorar múltiples perspectivas favorece la flexibilidad cognitiva, la empatía y la toma de decisiones más deliberada. Esta dinámica se inspira en ejercicios de cambio de posición perceptiva utilizados en PNL y coaching, adaptados a un contexto de facilitación."
+            }
+          ]
+        }
+      ]
+    },
+    "reencuadrar-historias": {
+      "ic": "refresh",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Reencuadrar <em>Historias</em>",
+      "sub": "Las personas solemos interpretar los acontecimientos desde una única perspectiva. Esta actividad invita al grupo a descubrir cómo una misma experiencia puede adquirir significados completamente distintos dependiendo del marco desde el cual se observa.",
+      "metas": [
+        "40 minutos --- Page 16 ---",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas",
+        "Plumones",
+        "Papelógrafo"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Cada participante escribe una situación difícil que haya vivido en un contexto laboral (sin nombres). 2. Se mezclan todas las tarjetas. 3. Cada persona toma una tarjeta distinta. 4. En equipos deben proponer al menos cuatro interpretaciones diferentes para esa misma situación. 5. Luego responden: ○ ¿Qué oportunidad podría esconder? ○ ¿Qué habilidad podría desarrollarse gracias a esta experiencia? ○ ¿Qué aprendizaje deja? 6. Compartir los principales hallazgos."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué interpretación te sorprendió más? ● ¿Qué cambió al mirar la situación desde otro ángulo? ● ¿Qué ocurre cuando creemos que sólo existe una explicación?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El reencuadre constituye una estrategia ampliamente utilizada en PNL para ampliar la interpretación de una experiencia y favorecer respuestas más flexibles frente a los desafíos."
+            }
+          ]
+        }
+      ]
+    },
+    "metaforas-en-accion": {
+      "ic": "gem",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Metáforas <em>en Acción</em>",
+      "sub": "Las metáforas ayudan a comprender situaciones complejas mediante imágenes simples. Esta dinámica utiliza objetos cotidianos para representar desafíos personales o del equipo y descubrir nuevas formas de afrontarlos.",
+      "metas": [
+        "45 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Objetos variados (llaves, cuerdas, piedras, vasos, juguetes, etc.)"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Disponer diversos objetos sobre una mesa. 2. Cada participante elige uno que represente un desafío actual. 3. Explica por qué lo eligió. 4. Luego debe escoger un segundo objeto que represente un recurso para enfrentar ese desafío. 5. El grupo realiza preguntas para profundizar en la metáfora. 6. Cada participante registra un aprendizaje y una acción concreta."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Por qué elegiste ese objeto? ● ¿Qué representa para ti? ● ¿Qué recurso descubriste gracias a la metáfora?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El uso de metáforas facilita la reflexión, el aprendizaje experiencial y la construcción de nuevos significados, siendo un recurso frecuente en PNL, coaching y procesos de desarrollo personal. --- Page 18 ---"
+            }
+          ]
+        }
+      ]
+    },
+    "observador-silencioso": {
+      "ic": "observe",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "El <em>Observador Silencioso</em>",
+      "sub": "Actividad destinada a entrenar la capacidad de observar antes de interpretar, distinguiendo hechos objetivos de las conclusiones que elaboramos automáticamente.",
+      "metas": [
+        "35 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Video breve (sin audio) o escena preparada por voluntarios."
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "--- Page 19 --- 1. El grupo observa una escena de dos minutos. 2. Individualmente responde: ○ ¿Qué hechos observé? ○ ¿Qué interpretaciones hice? 3. En pequeños grupos clasifican cada afirmación como: ○ Observación. ○ Suposición. ○ Juicio. 4. Elaboran una nueva descripción utilizando únicamente hechos observables. 5. Compartir aprendizajes."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Cuántas veces confundimos hechos con interpretaciones? ● ¿Cómo afecta esto nuestras conversaciones?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La capacidad de diferenciar observaciones de interpretaciones mejora la calidad de la comunicación y reduce errores derivados de los filtros perceptivos."
+            }
+          ]
+        }
+      ]
+    },
+    "cadena-de-significados": {
+      "ic": "chain",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Cadena <em>de Significados</em>",
+      "sub": "Dinámica para visualizar cómo un mismo mensaje puede adquirir distintos significados al pasar por las experiencias, creencias y emociones de cada persona. --- Page 20 ---",
+      "metas": [
+        "40 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. El facilitador presenta una frase breve. Ejemplo: \"Necesitamos conversar.\" 2. Cada participante escribe: ○ ¿Qué interpretó? ○ ¿Qué emoción apareció? ○ ¿Qué acción realizaría? 3. Se comparan las respuestas. 4. El grupo identifica qué elementos influyeron en cada interpretación. 5. Elaboran estrategias para disminuir malos entendidos en la comunicación cotidiana."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Por qué interpretamos distinto una misma frase? ● ¿Qué podemos hacer para verificar que comprendimos correctamente?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Los modelos de comunicación inspirados en la PNL destacan que las personas responden al significado que construyen, más que al mensaje en sí mismo."
+            }
+          ]
+        }
+      ]
+    },
+    "creencias-que-impulsan": {
+      "ic": "star",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Creencias <em>que Impulsan</em>",
+      "sub": "Actividad orientada a reconocer creencias que limitan el desempeño y transformarlas en afirmaciones más útiles para afrontar nuevos desafíos.",
+      "metas": [
+        "45 minutos",
+        "Individual o grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Hoja de trabajo",
+        "Lápiz"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Cada participante escribe una frase que suele repetirse cuando enfrenta un desafío. Ejemplos: ● \"No soy bueno hablando en público.\" ● \"Siempre me cuesta liderar reuniones.\" 2. Analiza: ○ ¿Qué evidencia sostiene esta creencia? ○ ¿Qué evidencia la contradice? ○ ¿Qué efecto tiene mantenerla? 3. Reformula la afirmación en términos más flexibles y orientados al aprendizaje. --- Page 22 --- Ejemplo: \"Todavía estoy desarrollando mis habilidades para hablar frente a grupos.\" 4. Define una acción concreta que permita poner a prueba esa nueva creencia durante la semana. 5. Compartir voluntariamente."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué creencia fue más difícil cuestionar? ● ¿Qué diferencia notas entre una creencia rígida y una orientada al aprendizaje? ● ¿Qué conversación contigo mismo quieres comenzar a cambiar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las creencias influyen en la forma en que interpretamos la realidad y en las acciones que decidimos emprender. Cuestionarlas y reformularlas puede favorecer una mayor flexibilidad psicológica y conductual. Esta actividad adapta principios de PNL y coaching al contexto de facilitación, sin constituir una intervención terapéutica."
+            }
+          ]
+        }
+      ]
+    },
+    "calibrando-la-conversacion": {
+      "ic": "gauge",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Calibrando <em>la Conversación</em>",
+      "sub": "Actividad para desarrollar la capacidad de observar cambios sutiles en la comunicación verbal y no verbal antes de responder, fortaleciendo la presencia y la escucha consciente.",
+      "metas": [
+        "--- Page 23 --- 35 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Ficha de observación",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Formar parejas. 2. Una persona relata una experiencia significativa durante tres minutos. 3. El oyente no puede intervenir. 4. Mientras escucha registra únicamente cambios observables: ○ postura ○ respiración ○ tono de voz ○ velocidad ○ pausas ○ expresión facial 5. Finalizado el relato comparte solamente observaciones objetivas, evitando interpretar emociones o intenciones. 6. Cambiar roles."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué detalles normalmente pasan desapercibidos? ● ¿Qué diferencia existe entre observar e interpretar? ● ¿Cómo puede ayudarte esta habilidad como facilitador?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La observación consciente de la comunicación no verbal favorece una escucha más precisa y disminuye la tendencia a interpretar apresuradamente el comportamiento de los demás. Esta actividad se inspira en ejercicios de calibración descritos en la literatura sobre PNL."
+            }
+          ]
+        }
+      ]
+    },
+    "liderar-sin-palabras": {
+      "ic": "lead",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Liderar <em>sin Palabras</em>",
+      "sub": "Desafío grupal que evidencia la importancia de la comunicación no verbal, la observación mutua y la coordinación espontánea para alcanzar un objetivo común.",
+      "metas": [
+        "30 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Objetos simples",
+        "Espacio amplio"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. El grupo recibe una tarea sencilla (por ejemplo, ordenar objetos según un criterio). 2. Existe una única regla: no pueden hablar. 3. Sólo pueden comunicarse mediante gestos, miradas y movimientos. 4. Finalizada la actividad, analizan cómo surgió el liderazgo, la coordinación y la toma de decisiones."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Quién comenzó a liderar? ● ¿Cómo lograron coordinarse? ● ¿Qué papel tuvo la comunicación no verbal?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "--- Page 25 --- Una parte importante del significado de una interacción depende de elementos no verbales. Experimentar esta limitación permite desarrollar mayor conciencia sobre el lenguaje corporal y la coordinación grupal."
+            }
+          ]
+        }
+      ]
+    },
+    "modelando-la-excelencia": {
+      "ic": "model",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "Modelando <em>la Excelencia</em>",
+      "sub": "Actividad orientada a identificar comportamientos efectivos observando a personas que destacan en una determinada habilidad y traduciendo esas conductas en acciones concretas de aprendizaje.",
+      "metas": [
+        "45 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Page 26 ---",
+        "Papelógrafos",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Cada equipo piensa en una persona que considere excelente en alguna habilidad (liderazgo, comunicación, negociación, facilitación, etc.). 2. Describen únicamente conductas observables: ○ ¿Qué hace? ○ ¿Cómo habla? ○ ¿Cómo escucha? ○ ¿Cómo responde? 3. Identifican patrones comunes. 4. Elaboran una lista de cinco comportamientos que cualquier persona podría comenzar a practicar. 5. Cada participante elige uno para poner en práctica durante la semana."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué diferencia existe entre admirar a alguien y aprender de sus conductas? ● ¿Qué comportamiento comenzarás a practicar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El modelado constituye uno de los principios históricos de la PNL, orientado a identificar patrones observables de desempeño sobresaliente para facilitar el aprendizaje de nuevas habilidades."
+            }
+          ]
+        }
+      ]
+    },
+    "laboratorio-de-rapport": {
+      "ic": "lab",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "--- <em>Page 27 ---</em>",
+      "sub": "Experiencia práctica para explorar distintas maneras de generar confianza y conexión durante una conversación, identificando aquellas que resultan más naturales y efectivas.",
+      "metas": [
+        "45 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas con situaciones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Formar tríos. 2. Dos personas mantienen una conversación mientras la tercera observa. 3. El observador registra: ○ momentos de mayor conexión ○ momentos donde ésta disminuye ○ conductas que favorecen la conversación 4. Rotar los roles. 5. Elaborar colectivamente un \"Manual de Buen Rapport\" con las mejores prácticas observadas."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué conductas fortalecen la confianza? ● ¿Qué acciones rompen rápidamente la conexión? ● ¿Qué aprendiste sobre tu forma de comunicar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La creación de sintonía interpersonal (rapport) constituye uno de los conceptos centrales de la PNL y también ha sido ampliamente estudiada en ámbitos como la psicoterapia, el coaching y la comunicación interpersonal."
+            }
+          ]
+        }
+      ]
+    },
+    "el-mapa-colectivo": {
+      "ic": "compass",
+      "cat": "Comunicación y PNL · Dinámica",
+      "clr": "brand",
+      "name": "El <em>Mapa Colectivo</em>",
+      "sub": "Actividad de cierre que integra los principales aprendizajes de la categoría, invitando al grupo a construir una visión compartida sobre cómo mejorar su comunicación, comprensión mutua y capacidad para afrontar desafíos.",
+      "metas": [
+        "50 minutos",
+        "Grupal",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Papel kraft grande",
+        "Post-it de distintos colores",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "1. Dibujar un gran mapa en el centro de la sala. 2. Cada participante escribe en post-it: ○ un aprendizaje importante ○ una creencia que decidió cuestionar ○ una habilidad que desea seguir desarrollando --- Page 29 --- 3. Los post-it se ubican en distintas zonas del mapa. 4. En conjunto identifican patrones, coincidencias y aprendizajes compartidos. 5. El grupo construye un decálogo de buenas prácticas para futuras conversaciones y trabajo colaborativo. 6. Cada participante escribe un compromiso personal para aplicar durante el próximo mes."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "● ¿Qué aprendizaje cambió más tu manera de comunicar? ● ¿Qué práctica incorporarás desde hoy? ● ¿Qué conversación importante te sientes más preparado para afrontar?"
+            },
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La consolidación del aprendizaje mediante reflexión colectiva, compromiso personal y transferencia a contextos reales favorece la retención y la aplicación práctica de nuevas habilidades comunicacionales. Esta dinámica integra principios presentes en la literatura sobre PNL, aprendizaje experiencial y desarrollo de equipos."
+            }
+          ]
+        }
+      ]
+    },
+    "cambiando-el-mapa": {
+      "ic": "map",
+      "cat": "Comunicación y PNL · Reflexión guiada",
+      "clr": "brand",
+      "name": "Cambiando el <em>Mapa</em>",
+      "sub": "Reconocer que una misma situación puede interpretarse desde distintos marcos de referencia y ampliar la flexibilidad cognitiva antes de tomar decisiones.",
+      "metas": [
+        "20–30 minutos",
+        "Individual / Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Hoja",
+        "Lápiz",
+        "Opcional: post-it"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Paso 1 · Situación",
+              "p": "Cada participante escribe una situación desafiante que esté viviendo actualmente, en una sola frase. Ejemplo: \"Mi equipo no se compromete.\""
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 2 · Interpretación",
+              "p": "Responder: ¿Qué estoy dando por hecho? ¿Qué creo que significa esta situación? ¿Qué emociones aparecen?"
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 3 · Cambiar el mapa",
+              "p": "El facilitador propone cambiar el \"mapa\". Responder imaginando que eres otra persona del equipo, un cliente, un observador externo o tu versión dentro de cinco años."
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 4 · Comparar",
+              "p": "Comparar las respuestas entre participantes o parejas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Qué cambió? ¿Qué supuestos desaparecieron? ¿Qué posibilidades aparecieron?"
+            },
+            {
+              "ic": "light",
+              "h": "Aprendizaje esperado",
+              "p": "Comprender que las interpretaciones no son la realidad sino representaciones personales."
+            }
+          ]
+        }
+      ]
+    },
+    "filtros-invisibles": {
+      "ic": "filter",
+      "cat": "Comunicación y PNL · Autoconocimiento",
+      "clr": "brand",
+      "name": "Filtros <em>Invisibles</em>",
+      "sub": "Identificar los filtros personales que influyen en la manera en que interpretamos una situación.",
+      "metas": [
+        "25 minutos",
+        "Individual / Grupo",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Papel",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "El facilitador presenta una misma situación. Ejemplo: \"El jefe no respondió tu correo.\" Cada participante escribe inmediatamente: ¿Qué pensó? ¿Qué sintió? ¿Qué cree que ocurrió? Después se comparte. Normalmente aparecen interpretaciones completamente distintas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión",
+              "p": "¿Qué influyó? Experiencias previas, creencias, emociones, expectativas, cultura."
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "No reaccionamos a los hechos. Reaccionamos al significado que les damos."
+            }
+          ]
+        }
+      ]
+    },
+    "del-problema-a-la-posibilidad": {
+      "ic": "spark",
+      "cat": "Comunicación y PNL · Reencuadre",
+      "clr": "brand",
+      "name": "Del Problema a la <em>Posibilidad</em>",
+      "sub": "Entrenar la capacidad de cambiar deliberadamente el enfoque frente a una dificultad.",
+      "metas": [
+        "25 minutos",
+        "Individual / Grupo",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Hoja de trabajo",
+        "Lápiz"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "Cada participante escribe un problema. Luego completa tres preguntas: ¿Qué oportunidad podría esconder? ¿Qué podría aprender? ¿Qué haría alguien que ya hubiese resuelto esto? Después comparten en parejas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "Muchas veces cambiar la pregunta cambia completamente la experiencia."
+            }
+          ]
+        }
+      ]
+    },
+    "lenguaje-que-construye": {
+      "ic": "chat",
+      "cat": "Comunicación y PNL · Comunicación",
+      "clr": "brand",
+      "name": "Lenguaje que <em>Construye</em>",
+      "sub": "Tomar conciencia del impacto del lenguaje en la forma en que las personas interpretan una conversación.",
+      "metas": [
+        "30 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas con frases"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "El facilitador entrega frases comunes: \"No puedo.\", \"Siempre pasa lo mismo.\", \"Mi equipo nunca participa.\" La pareja debe reformularlas usando un lenguaje más específico y orientado a posibilidades. Ejemplos: \"No he encontrado todavía una forma que funcione.\", \"En algunas reuniones cuesta participar.\""
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Cómo cambia la emoción al cambiar las palabras? ¿Qué frase genera mayor apertura?"
+            },
+            {
+              "ic": "light",
+              "h": "Aprendizaje esperado",
+              "p": "Pequeñas modificaciones en el lenguaje pueden abrir nuevas alternativas de acción y conversación."
+            }
+          ]
+        }
+      ]
+    },
+    "preguntas-que-abren-conversaciones": {
+      "ic": "question",
+      "cat": "Comunicación y PNL · Comunicación",
+      "clr": "brand",
+      "name": "Preguntas que Abren <em>Conversaciones</em>",
+      "sub": "Entrenar el uso de preguntas abiertas para ampliar perspectivas y generar conversaciones más profundas.",
+      "metas": [
+        "30 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas con preguntas"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "Cada pareja recibe una situación. Ejemplo: \"Mi equipo está desmotivado.\" El desafío consiste en evitar entregar soluciones: solo podrán formular preguntas abiertas durante cinco minutos. Ejemplos: ¿Qué observas exactamente? ¿Cuándo ocurre? ¿Qué ya ha funcionado? ¿Qué sería diferente si esto mejorara? ¿Qué depende de ti? Luego intercambian los roles."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "¿Cómo cambia una conversación cuando dejamos de aconsejar? ¿Qué pregunta generó mayor reflexión?"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

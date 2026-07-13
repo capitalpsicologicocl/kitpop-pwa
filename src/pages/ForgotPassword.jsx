@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
+import { formatAuthError } from '../utils/authError'
 
 export default function ForgotPassword() {
   const { requestPasswordReset } = useAuth()
@@ -22,7 +23,7 @@ export default function ForgotPassword() {
         'Te enviamos un correo con instrucciones para restablecer tu contraseña. Revisa también spam.'
       )
     } catch (submitError) {
-      setError(submitError.message || 'No se pudo enviar el correo de recuperación.')
+      setError(formatAuthError(submitError, 'No se pudo enviar el correo de recuperación.'))
     } finally {
       setSubmitting(false)
     }

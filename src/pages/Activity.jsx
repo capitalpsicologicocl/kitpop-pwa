@@ -25,7 +25,7 @@ export default function Activity() {
   const [favoriteError, setFavoriteError] = useState('')
 
   const isFavorite = favoriteSlugs.includes(slug)
-  const showTimer = activity?.categorySlug !== 'fortalezas'
+  const showTimer = !['fortalezas', 'facilitacion'].includes(activity?.categorySlug)
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
