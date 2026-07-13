@@ -406,6 +406,69 @@ a {
   line-height: 1.6;
 }
 
+/* ── Wellbeing ── */
+.wellbeing-section {
+  margin-bottom: 72px;
+  background: linear-gradient(180deg, var(--white) 0%, var(--brand-l) 100%);
+  border: 1px solid rgba(59, 30, 142, 0.1);
+  border-radius: 24px;
+  padding: 44px 40px;
+}
+
+.wellbeing-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.wellbeing-intro {
+  margin: 0 auto;
+}
+
+.wellbeing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.wellbeing-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow);
+}
+
+.wellbeing-card--perma {
+  border-color: rgba(91, 62, 196, 0.25);
+  background: linear-gradient(160deg, var(--white) 0%, #f5f0ff 100%);
+}
+
+.wellbeing-card--strengths {
+  border-color: rgba(245, 166, 35, 0.35);
+  background: linear-gradient(160deg, var(--white) 0%, #fff8ec 100%);
+}
+
+.wellbeing-card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+  line-height: 1;
+}
+
+.wellbeing-card h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand);
+  margin-bottom: 10px;
+}
+
+.wellbeing-card p {
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.6;
+}
+
 /* ── Learn ── */
 .learn-section {
   margin-bottom: 72px;
@@ -1097,6 +1160,14 @@ body.billing-monthly .price-monthly {
   }
 
   .pricing-grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .wellbeing-section {
+    padding: 32px 22px;
+  }
+
+  .wellbeing-grid {
     grid-template-columns: 1fr;
   }
 }
