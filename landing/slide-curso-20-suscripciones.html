@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>KitPOP — Slide Curso 20 Suscripciones</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Nunito:wght@800;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e4f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .slide {
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #1a0a52 0%, #3b1e8e 42%, #5b3ec4 100%);
+      border-radius: 0;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 48px 56px 40px;
+      flex-shrink: 0;
+      transform-origin: top left;
+    }
+
+    .slide::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -80px;
+      width: 420px;
+      height: 420px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+
+    .slide::after {
+      content: '';
+      position: absolute;
+      bottom: -100px;
+      left: -60px;
+      width: 320px;
+      height: 320px;
+      background: rgba(245,166,35,0.14);
+      border-radius: 50%;
+    }
+
+    .slide > * { position: relative; z-index: 1; }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .logo img {
+      height: 88px;
+      border-radius: 12px;
+    }
+
+    .header-tag {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Offer banner */
+    .offer {
+      background: linear-gradient(90deg, #f5a623 0%, #ffcc00 100%);
+      color: #1f2937;
+      border-radius: 20px;
+      padding: 26px 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    .offer h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .offer h1 em {
+      font-style: normal;
+      color: #3b1e8e;
+    }
+
+    .offer p {
+      font-size: 19px;
+      font-weight: 600;
+      opacity: 0.88;
+      line-height: 1.45;
+    }
+
+    /* Main grid */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 28px 26px;
+      backdrop-filter: blur(8px);
+    }
+
+    .panel h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .panel h2 .ico { font-size: 26px; }
+
+    .panel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .panel li {
+      font-size: 15px;
+      line-height: 1.45;
+      padding-left: 22px;
+      position: relative;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .panel li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #ffcc00;
+      font-weight: 800;
+    }
+
+    .panel li strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .panel--teams {
+      background: rgba(245,166,35,0.22);
+      border-color: rgba(245,166,35,0.45);
+    }
+
+    .panel-subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      margin: -10px 0 16px;
+      line-height: 1.45;
+    }
+
+    .benefit-item--featured {
+      background: rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .benefit-item--featured .benefit-text strong {
+      font-size: 16px;
+      color: #ffcc00;
+    }
+
+    .benefit-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .benefit-item:last-child { margin-bottom: 0; }
+
+    .benefit-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      line-height: 1.2;
+    }
+
+    .benefit-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .benefit-text span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.4;
+    }
+
+    /* Pro box */
+    .pro-box {
+      background: #fff;
+      color: #1f2937;
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .pro-box h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: #3b1e8e;
+      margin-bottom: 8px;
+    }
+
+    .pro-box .sub {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .pro-price {
+      font-family: 'Nunito', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: #3b1e8e;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pro-price small {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .pro-period {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .pro-features {
+      list-style: none;
+      font-size: 13px;
+      color: #4b5563;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pro-features li::before {
+      content: '✓ ';
+      color: #5b3ec4;
+      font-weight: 800;
+    }
+
+    /* Footer */
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .footer-url {
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #ffcc00;
+    }
+
+    .footer-ig {
+      opacity: 0.85;
+      font-size: 15px;
+    }
+
+    /* Scale for preview on smaller screens */
+    @media (max-width: 1960px) {
+      .slide-wrap {
+        transform: scale(0.5);
+        transform-origin: top center;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .slide-wrap { transform: scale(0.35); }
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f2937;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="hint">Vista previa escalada · Abre en Chrome al 100% zoom y captura 1920×1080 px, o imprime como PDF horizontal</p>
+
+  <div class="slide-wrap">
+    <div class="slide">
+
+      <header class="header">
+        <div class="logo">
+          <img src="kitpop-logo.png" alt="KitPOP de Facilitación" />
+        </div>
+        <div class="header-tag">Plataforma de facilitación · Latinoamérica</div>
+      </header>
+
+      <div class="offer">
+        <h1>Este curso incluye: <em>20 suscripciones anuales a KitPOP Pro</em></h1>
+        <p>Herramientas digitales para que equipos de trabajo conecten, colaboren y fortalezcan su cultura — en reuniones, talleres y espacios de bienestar.</p>
+      </div>
+
+      <div class="main">
+
+        <div class="panel">
+          <h2><span class="ico">📦</span> ¿Qué contiene KitPOP?</h2>
+          <ul>
+            <li><strong>Banco de Actividades</strong> — dinámicas de equipo, reuniones, conexión y conversaciones 1 a 1, con guía paso a paso</li>
+            <li><strong>POP Cards PERMA</strong> — talleres de bienestar basados en psicología positiva</li>
+            <li><strong>Bienestar Laboral</strong> — actividades para el contexto organizacional</li>
+            <li><strong>Fortalezas del Carácter</strong> — modelo VIA para desarrollo personal y profesional</li>
+            <li><strong>Aprende a facilitar</strong> — guías y audios formativos</li>
+            <li><strong>Modo interactivo</strong> — encuestas, códigos de acceso y preguntas en vivo</li>
+            <li><strong>Talleres y bitácora</strong> — arma sesiones, guarda favoritos y registra aprendizajes</li>
+          </ul>
+        </div>
+
+        <div class="panel panel--teams">
+          <h2><span class="ico">👥</span> Beneficios para equipos de trabajo</h2>
+          <p class="panel-subtitle">KitPOP está pensado para líderes, RR.HH. y equipos que necesitan dinamizar reuniones y fortalecer la colaboración.</p>
+
+          <div class="benefit-item benefit-item--featured">
+            <span class="benefit-icon">🤝</span>
+            <div class="benefit-text">
+              <strong>Mejora la conexión del equipo</strong>
+              <span>Dinámicas de equipo, reuniones y conversaciones 1 a 1 que fortalecen confianza, comunicación y trabajo colaborativo.</span>
+            </div>
+          </div>
+          <div class="benefit-item benefit-item--featured">
+            <span class="benefit-icon">💼</span>
+            <div class="benefit-text">
+              <strong>Bienestar laboral en la práctica</strong>
+              <span>POP Cards PERMA y actividades de bienestar para espacios que cuidan a las personas y la cultura organizacional.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✨</span>
+            <div class="benefit-text">
+              <strong>Desarrollo personal y profesional</strong>
+              <span>Fortalezas del Carácter (modelo VIA) para que cada integrante conozca y active sus talentos en el trabajo.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">⚡</span>
+            <div class="benefit-text">
+              <strong>Reuniones más participativas</strong>
+              <span>Encuestas y preguntas interactivas en vivo para que el equipo no sea solo audiencia.</span>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">📱</span>
+            <div class="benefit-text">
+              <strong>Listo para usar en cualquier reunión</strong>
+              <span>Desde el celular o computador — sin preparar desde cero cada vez que el equipo se reúne.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pro-box">
+          <div>
+            <h2>Plan Pro</h2>
+            <p class="sub">20 accesos anuales incluidos en este curso</p>
+            <div class="pro-price"><small>USD </small>29</div>
+            <p class="pro-period">Suscripción anual · renovación cada 12 meses</p>
+            <ul class="pro-features">
+              <li>Todo el banco de actividades</li>
+              <li>Guías, audios y contenido de aprendizaje</li>
+              <li>Talleres y sesiones ilimitadas</li>
+              <li>Modo interactivo completo</li>
+              <li>Actualizaciones permanentes</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="footer">
+        <span class="footer-url">kitpopapp.com</span>
+        <span class="footer-ig">@kitpopapp · kitpopapp@gmail.com</span>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
