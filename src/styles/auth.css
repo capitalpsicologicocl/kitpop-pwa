@@ -244,6 +244,22 @@
   text-decoration:none;
 }
 
+.auth-inline-link {
+  text-align:right;
+  margin-top:-4px;
+}
+
+.auth-inline-link a {
+  color:var(--brand);
+  font-size:12px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.auth-inline-link a:hover {
+  text-decoration:underline;
+}
+
 .auth-actions {
   display:flex;
   gap:10px;

@@ -14,6 +14,7 @@ import {
 } from '../services/favoritesService'
 import { fetchProfile, updateProfile, uploadAvatar } from '../services/profileService'
 import { supabase } from '../services/supabaseClient'
+import { getLoginUrl, getResetPasswordUrl } from '../utils/authRedirect'
 
 const AuthContext = createContext(null)
 
@@ -115,8 +116,27 @@ export function AuthProvider({ children }) {
         data: {
           full_name: fullName,
         },
+        emailRedirectTo: getLoginUrl('confirmed=1'),
       },
     })
+
+    if (error) {
+      throw error
+    }
+  }, [])
+
+  const requestPasswordReset = useCallback(async (email) => {
+    const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+      redirectTo: getResetPasswordUrl(),
+    })
+
+    if (error) {
+      throw error
+    }
+  }, [])
+
+  const updatePassword = useCallback(async (password) => {
+    const { error } = await supabase.auth.updateUser({ password })
 
     if (error) {
       throw error
@@ -180,6 +200,8 @@ export function AuthProvider({ children }) {
       signIn,
       signUp,
       signOut,
+      requestPasswordReset,
+      updatePassword,
       saveProfile,
       saveAvatar,
       refreshFavorites,
@@ -195,6 +217,8 @@ export function AuthProvider({ children }) {
       signIn,
       signUp,
       signOut,
+      requestPasswordReset,
+      updatePassword,
       saveProfile,
       saveAvatar,
       refreshFavorites,

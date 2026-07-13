@@ -21,7 +21,7 @@ export default function Register() {
     try {
       await signUp({ email, password, fullName })
       setSuccess(
-        'Cuenta creada. Si Supabase requiere confirmación, revisa tu correo antes de iniciar sesión.'
+        'Cuenta creada. Te enviamos un correo de bienvenida para confirmar tu cuenta. Revisa tu bandeja y spam antes de iniciar sesión.'
       )
     } catch (submitError) {
       setError(submitError.message || 'No se pudo crear la cuenta.')

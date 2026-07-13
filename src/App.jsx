@@ -10,6 +10,8 @@ import Activity from './pages/Activity'
 import SearchResults from './pages/SearchResults'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword'
 import Profile from './pages/Profile'
 import Favorites from './pages/Favorites'
 import Journal from './pages/Journal'
@@ -44,6 +46,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Register />} />
+          <Route path="/recuperar-contrasena" element={<ForgotPassword />} />
+          <Route path="/restablecer-contrasena" element={<ResetPassword />} />
 
           <Route element={<RequireAuth />}>
             <Route path="/categorias" element={<Categories />} />

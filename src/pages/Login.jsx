@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
   const navigate = useNavigate()
   const location = useLocation()
+  const [searchParams] = useSearchParams()
   const { signIn } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -15,6 +16,9 @@ export default function Login() {
   const redirectTo = location.state?.from?.pathname
     ? `${location.state.from.pathname}${location.state.from.search || ''}`
     : '/'
+  const confirmedMessage = searchParams.get('confirmed') === '1'
+    ? '¡Cuenta confirmada! Ya puedes iniciar sesión en KitPOP.'
+    : ''
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -41,6 +45,10 @@ export default function Login() {
         <h1>Iniciar sesión</h1>
         <p>Accede al banco de actividades, favoritos, bitácora y tu perfil KitPOP.</p>
 
+        {confirmedMessage && (
+          <div className="auth-message success">{confirmedMessage}</div>
+        )}
+
         {error && <div className="auth-message error">{error}</div>}
 
         <form className="form-grid" onSubmit={handleSubmit}>
@@ -66,6 +74,10 @@ export default function Login() {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
+          </div>
+
+          <div className="field full auth-inline-link">
+            <Link to="/recuperar-contrasena">¿Olvidaste tu contraseña?</Link>
           </div>
 
           <div className="field full">

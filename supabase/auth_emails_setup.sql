@@ -1,0 +1,27 @@
+-- KitPOP: configuración de correos de auth (Supabase Dashboard)
+-- No ejecutes este archivo como SQL. Es una guía de configuración manual.
+--
+-- 1) Authentication → URL Configuration
+--    Site URL: https://kitpop-pwa.vercel.app
+--    Redirect URLs (añadir todas):
+--      https://kitpop-pwa.vercel.app/login
+--      https://kitpop-pwa.vercel.app/restablecer-contrasena
+--      http://localhost:5173/login
+--      http://localhost:5173/restablecer-contrasena
+--
+-- 2) Authentication → Providers → Email
+--    Activar "Confirm email" (recomendado)
+--    Así el registro envía el correo de bienvenida + confirmación.
+--
+-- 3) Authentication → Email Templates
+--    Confirm signup: pegar supabase/email-templates/confirm-signup.html
+--    Reset password: pegar supabase/email-templates/reset-password.html
+--
+-- 4) (Opcional) Authentication → SMTP Settings
+--    Configura SMTP propio (Resend, SendGrid, etc.) para enviar desde tu dominio.
+--
+-- Subject sugerido Confirm signup:
+--   Bienvenido/a a KitPOP — confirma tu cuenta
+--
+-- Subject sugerido Reset password:
+--   Restablece tu contraseña KitPOP
