@@ -72,7 +72,7 @@ export default function InteractiveWorkshops() {
     setError('')
 
     if (!canCreateResource(profile, 'workshop', workshops.length)) {
-      setError('Alcanzaste el límite de talleres del plan Free. KitPOP Pro llegará en Fase 12.')
+      setError('Alcanzaste el límite de talleres del plan Explorer.')
       return
     }
 

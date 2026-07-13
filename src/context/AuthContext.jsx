@@ -183,6 +183,7 @@ export function AuthProvider({ children }) {
       saveProfile,
       saveAvatar,
       refreshFavorites,
+      refreshProfile,
       toggleFavorite,
       isAuthenticated: Boolean(user),
     }),
@@ -197,6 +198,7 @@ export function AuthProvider({ children }) {
       saveProfile,
       saveAvatar,
       refreshFavorites,
+      refreshProfile,
       toggleFavorite,
     ]
   )

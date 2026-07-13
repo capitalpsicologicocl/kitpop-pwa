@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -72,7 +73,7 @@ export default function InteractiveLive() {
     setError('')
 
     if (!canCreateResource(profile, 'live', sessions.length)) {
-      setError('Alcanzaste el límite de sesiones en vivo del plan Free.')
+      setError('Alcanzaste el límite de sesiones en vivo del plan Explorer.')
       return
     }
 
@@ -121,7 +122,7 @@ export default function InteractiveLive() {
     }
 
     if (!canCreateResource(profile, 'live', sessions.length)) {
-      setError('Alcanzaste el límite del plan Free.')
+      setError('Alcanzaste el límite del plan Explorer.')
       return
     }
 
@@ -170,6 +171,7 @@ export default function InteractiveLive() {
       <InteractiveNav />
 
       {error && <div className="auth-message error">{error}</div>}
+      {isPlanLimitMessage(error) && <PlanUpgradeHint />}
 
       <form className="auth-panel interactive-form" onSubmit={handleCreate}>
         <h3>Nueva sesión en vivo</h3>

@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -75,7 +76,7 @@ export default function InteractiveSurveys() {
     setError('')
 
     if (!canCreateResource(profile, 'survey', surveys.length)) {
-      setError('Alcanzaste el límite de encuestas del plan Free.')
+      setError('Alcanzaste el límite de encuestas del plan Explorer.')
       return
     }
 
@@ -130,7 +131,7 @@ export default function InteractiveSurveys() {
     }
 
     if (!canCreateResource(profile, 'survey', surveys.length)) {
-      setError('Alcanzaste el límite de encuestas del plan Free.')
+      setError('Alcanzaste el límite de encuestas del plan Explorer.')
       return
     }
 
@@ -179,6 +180,7 @@ export default function InteractiveSurveys() {
       <InteractiveNav />
 
       {error && <div className="auth-message error">{error}</div>}
+      {isPlanLimitMessage(error) && <PlanUpgradeHint />}
 
       <form className="auth-panel interactive-form" onSubmit={handleCreate}>
         <h3>Nueva encuesta</h3>

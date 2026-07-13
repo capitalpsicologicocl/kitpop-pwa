@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../context/AuthContext'
+import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createWorkshopDraft,
@@ -71,7 +72,7 @@ export default function Workshops() {
     setError('')
 
     if (!canCreateResource(profile, 'workshop', workshops.length)) {
-      setError('Alcanzaste el límite de talleres del plan Free. KitPOP Pro llegará en Fase 12.')
+      setError('Alcanzaste el límite de talleres del plan Explorer.')
       return
     }
 
@@ -116,7 +117,7 @@ export default function Workshops() {
     }
 
     if (!canCreateResource(profile, 'workshop', workshops.length)) {
-      setError('Alcanzaste el límite de talleres del plan Free.')
+      setError('Alcanzaste el límite de talleres del plan Explorer.')
       return
     }
 
@@ -168,6 +169,7 @@ export default function Workshops() {
       </div>
 
       {error && <div className="auth-message error">{error}</div>}
+      {isPlanLimitMessage(error) && <PlanUpgradeHint />}
 
       <form className="auth-panel interactive-form" onSubmit={handleCreate}>
         <h3>Nuevo taller</h3>

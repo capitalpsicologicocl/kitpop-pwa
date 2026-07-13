@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
+import PlanSection from '../components/profile/PlanSection'
 import { useAuth } from '../context/AuthContext'
 import { fetchJournalEntries } from '../services/journalService'
 import { fetchWorkshops } from '../services/workshopService'
@@ -24,6 +25,7 @@ function getInitials(name = '', email = '') {
 
 export default function Profile() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const fileInputRef = useRef(null)
   const {
     user,
@@ -32,6 +34,7 @@ export default function Profile() {
     loading,
     saveProfile,
     saveAvatar,
+    refreshProfile,
     signOut,
   } = useAuth()
   const [fullName, setFullName] = useState('')
@@ -45,6 +48,24 @@ export default function Profile() {
   useEffect(() => {
     setFullName(profile?.full_name ?? '')
   }, [profile])
+
+  useEffect(() => {
+    const checkoutState = searchParams.get('checkout')
+
+    if (!user || !checkoutState) {
+      return
+    }
+
+    refreshProfile(user.id)
+
+    if (checkoutState === 'success') {
+      setMessage('Pago recibido. Tu plan Pro se activará en unos segundos.')
+    } else if (checkoutState === 'canceled') {
+      setMessage('Checkout cancelado. Puedes activar Pro cuando quieras.')
+    }
+
+    setSearchParams({}, { replace: true })
+  }, [refreshProfile, searchParams, setSearchParams, user])
 
   useEffect(() => {
     if (!user || loading) {
@@ -227,6 +248,8 @@ export default function Profile() {
             </div>
           </form>
         </section>
+
+        <PlanSection profile={profile} />
 
         <section className="profile-section">
           <div className="profile-section-head">
