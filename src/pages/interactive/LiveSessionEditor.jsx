@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import LivePollCard from '../../components/live/LivePollCard'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
+import ExportActions from '../../components/export/ExportActions'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -23,6 +24,14 @@ import {
   computePollResults,
   getLiveStatusLabel,
 } from '../../utils/liveHelpers'
+import {
+  buildLiveSessionResultsDocumentHtml,
+  getLiveSessionResultsFilename,
+} from '../../utils/liveExport'
+import {
+  downloadDocumentWord,
+  printDocumentPdf,
+} from '../../utils/documentExport'
 
 export default function LiveSessionEditor() {
   const { id } = useParams()
@@ -410,8 +419,13 @@ export default function LiveSessionEditor() {
 
   const openPoll = polls.find((poll) => poll.status === 'open')
 
+  function handleDownloadResultsWord() {
+    const html = buildLiveSessionResultsDocumentHtml(session, polls, votes)
+    downloadDocumentWord(html, getLiveSessionResultsFilename(session))
+  }
+
   return (
-    <main id="interactive-view" className="fade-in live-session-editor">
+    <main id="interactive-view" className="fade-in live-session-editor export-document">
       <Link to="/interactivo/en-vivo" className="back-btn">← En vivo</Link>
 
       <div className="page-head">
@@ -421,6 +435,13 @@ export default function LiveSessionEditor() {
           {getLiveStatusLabel(session.status)}
         </span>
       </div>
+
+      {polls.length > 0 && (
+        <ExportActions
+          onDownloadWord={handleDownloadResultsWord}
+          onPrintPdf={printDocumentPdf}
+        />
+      )}
 
       {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}

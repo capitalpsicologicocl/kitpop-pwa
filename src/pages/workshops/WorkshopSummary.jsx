@@ -11,8 +11,10 @@ import {
 import {
   buildWorkshopDocumentHtml,
   downloadWorkshopWord,
+  getWorkshopFilename,
   printWorkshopPdf,
 } from '../../utils/workshopExport'
+import ExportActions from '../../components/export/ExportActions'
 import {
   getPauseLabel,
   getWorkshopStatusLabel,
@@ -99,7 +101,7 @@ export default function WorkshopSummary() {
   }
 
   const timeSummary = getWorkshopTimeSummary(sessions)
-  const filename = workshop.title.replace(/[^\w\s-]/g, '').trim() || 'taller-kitpop'
+  const filename = getWorkshopFilename(workshop)
 
   function handleDownloadWord() {
     const html = buildWorkshopDocumentHtml(workshop, sessions, timeSummary)
@@ -117,14 +119,10 @@ export default function WorkshopSummary() {
         </Link>
       </div>
 
-      <div className="workshop-summary-actions no-print">
-        <button type="button" className="btn-primary" onClick={handleDownloadWord}>
-          Descargar Word
-        </button>
-        <button type="button" className="timer-btn timer-btn-secondary" onClick={printWorkshopPdf}>
-          Descargar PDF
-        </button>
-      </div>
+      <ExportActions
+        onDownloadWord={handleDownloadWord}
+        onPrintPdf={printWorkshopPdf}
+      />
 
       <article className="auth-panel workshop-summary-document">
         <header className="workshop-summary-head">

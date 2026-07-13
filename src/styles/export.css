@@ -1,0 +1,67 @@
+.export-actions {
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:0 0 18px;
+}
+
+@media print {
+  .no-print,
+  .topbar,
+  .kp-menu-toggle,
+  .kp-menu-backdrop,
+  .kp-menu-drawer,
+  .footer,
+  .back-btn,
+  .activity-sticky-tools,
+  .fav-btn,
+  .journal-delete,
+  .survey-management-bar,
+  .survey-questions-panel,
+  .survey-question-list .live-poll-card-actions,
+  .workshop-editor-footer,
+  .interactive-form,
+  .access-code-panel {
+    display:none !important;
+  }
+
+  body {
+    background:#fff;
+  }
+
+  main {
+    max-width:none !important;
+    padding:0 !important;
+  }
+
+  #workshops-view,
+  #interactive-view,
+  #act-view,
+  #journal-view {
+    max-width:none;
+    padding:0;
+  }
+
+  .workshop-summary-document,
+  .auth-panel,
+  .export-document,
+  .activity-hero,
+  .content-card,
+  .journal-item,
+  .survey-result-card {
+    border:none !important;
+    box-shadow:none !important;
+    break-inside:avoid;
+  }
+
+  .activity-pane,
+  .content-grid {
+    display:block;
+  }
+
+  .survey-result-card,
+  .journal-item {
+    page-break-inside:avoid;
+    margin-bottom:18px;
+  }
+}

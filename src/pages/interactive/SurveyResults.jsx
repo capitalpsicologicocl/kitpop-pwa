@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import ExportActions from '../../components/export/ExportActions'
 import { useAuth } from '../../context/AuthContext'
 import {
   fetchSurveyById,
@@ -12,6 +13,14 @@ import {
   getSurveyStatusLabel,
   isLikertType,
 } from '../../utils/surveyHelpers'
+import {
+  buildSurveyResultsDocumentHtml,
+  getSurveyResultsFilename,
+} from '../../utils/surveyExport'
+import {
+  downloadDocumentWord,
+  printDocumentPdf,
+} from '../../utils/documentExport'
 
 function DistributionList({ distribution }) {
   const entries = Object.entries(distribution ?? {})
@@ -110,11 +119,22 @@ export default function SurveyResults() {
     )
   }
 
+  function handleDownloadWord() {
+    const html = buildSurveyResultsDocumentHtml(survey, results)
+    downloadDocumentWord(html, getSurveyResultsFilename(survey))
+  }
+
   return (
-    <main id="interactive-view" className="fade-in survey-results">
+    <main id="interactive-view" className="fade-in survey-results export-document">
       <Link to={`/interactivo/encuestas/${survey.id}`} className="back-btn">
         ← Editar encuesta
       </Link>
+
+      <ExportActions
+        onDownloadWord={handleDownloadWord}
+        onPrintPdf={printDocumentPdf}
+        disabled={results.questions.length === 0}
+      />
 
       <div className="page-head">
         <h1 className="cv-title">Resultados y promedios</h1>

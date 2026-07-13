@@ -12,6 +12,7 @@ import './styles/categories.css'
 import './styles/activity.css'
 import './styles/auth.css'
 import './styles/interactive.css'
+import './styles/export.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

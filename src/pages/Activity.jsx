@@ -3,12 +3,18 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 import { getActivityBySlug } from '../data/kitpopAdapter'
+import ExportActions from '../components/export/ExportActions'
 import ActivityGuide from '../components/activity/ActivityGuide'
 import ActivityHero from '../components/activity/ActivityHero'
 import ActivityJournalForm from '../components/activity/ActivityJournalForm'
 import ActivityScience from '../components/activity/ActivityScience'
 import ActivityTabs from '../components/activity/ActivityTabs'
 import ActivityTimer from '../components/activity/ActivityTimer'
+import {
+  buildActivityGuideDocumentHtml,
+  getActivityGuideFilename,
+} from '../utils/activityExport'
+import { downloadDocumentWord, printDocumentPdf } from '../utils/documentExport'
 
 export default function Activity() {
   const navigate = useNavigate()
@@ -60,14 +66,24 @@ export default function Activity() {
 
   const kitpop = activity.kitpop
 
+  function handleDownloadWord() {
+    const html = buildActivityGuideDocumentHtml(activity)
+    downloadDocumentWord(html, getActivityGuideFilename(activity))
+  }
+
   return (
-    <main id="act-view" className="fade-in">
+    <main id="act-view" className="fade-in export-document">
       <Link
         to={`/categoria/${activity.categorySlug}`}
         className="back-btn"
       >
         ← Volver a la categoría
       </Link>
+
+      <ExportActions
+        onDownloadWord={handleDownloadWord}
+        onPrintPdf={printDocumentPdf}
+      />
 
       {favoriteError && (
         <div className="auth-message error">{favoriteError}</div>

@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
 import { getActivityBySlug } from '../data/kitpopAdapter'
+import ExportActions from '../components/export/ExportActions'
 import {
   deleteJournalEntry,
   fetchJournalEntries,
 } from '../services/journalService'
+import {
+  buildJournalDocumentHtml,
+  getJournalFilename,
+} from '../utils/journalExport'
+import { downloadDocumentWord, printDocumentPdf } from '../utils/documentExport'
 
 function formatDate(value) {
   if (!value) {
@@ -114,10 +120,22 @@ export default function Journal() {
   }
 
   return (
-    <main id="journal-view" className="fade-in">
+    <main id="journal-view" className="fade-in export-document">
       <Link to="/perfil" className="back-btn">
         ← Volver al perfil
       </Link>
+
+      {entries.length > 0 && (
+        <ExportActions
+          onDownloadWord={() =>
+            downloadDocumentWord(
+              buildJournalDocumentHtml(entries),
+              getJournalFilename()
+            )
+          }
+          onPrintPdf={printDocumentPdf}
+        />
+      )}
 
       <div className="page-head">
         <h1 className="cv-title">Bitácora de facilitación</h1>
