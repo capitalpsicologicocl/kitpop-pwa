@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { redirectToBillingPortal, redirectToCheckout } from '../../services/stripeService'
 import {
-  PLANS,
+  getVisiblePlans,
   formatPlanPeriodEnd,
   formatPlanPrice,
   getPlanLabel,
@@ -49,8 +49,8 @@ export default function PlanSection({ profile }) {
       <div className="plan-section-head">
         <h2>Tu plan KitPOP</h2>
         <p>
-          Explorer es gratis. Pro y Pro TEAM desbloquean talleres, encuestas y sesiones
-          en vivo sin límites.
+          Explorer es gratis. Pro desbloquea talleres, encuestas y sesiones en vivo sin
+          límites.
         </p>
       </div>
 
@@ -71,16 +71,15 @@ export default function PlanSection({ profile }) {
         </button>
       </div>
 
-      <div className="plan-cards plan-cards-three">
-        {Object.values(PLANS).map((plan) => {
+      <div className="plan-cards">
+        {getVisiblePlans().map((plan) => {
           const isCurrent = currentPlanId === plan.id
-          const isTeam = plan.id === 'pro_team'
           const isExplorer = plan.id === 'explorer'
 
           return (
             <article
               key={plan.id}
-              className={`plan-card ${isTeam ? 'plan-card-team' : ''} ${isCurrent ? 'plan-card-current' : ''}`}
+              className={`plan-card ${isCurrent ? 'plan-card-current' : ''}`}
             >
               <p className="plan-card-kicker">{plan.kicker}</p>
               <h3>{plan.label}</h3>
@@ -148,9 +147,9 @@ export default function PlanSection({ profile }) {
       </div>
 
       <p className="plan-footnote">
-        Pagos seguros con Stripe. Tarjetas internacionales para LATAM. Pro: USD 2.99/mes
-        o USD 29/año. Pro TEAM: USD 6.99/mes o USD 69/año (2 a 5 facilitadores).
-        Renovación automática hasta que canceles desde el portal de facturación.
+        Pagos seguros con Stripe. Tarjetas internacionales para LATAM. Pro: USD 3.99/mes
+        o USD 29/año. Renovación automática hasta que canceles desde el portal de
+        facturación.
       </p>
     </section>
   )

@@ -15,7 +15,7 @@ export const PLANS = {
     id: 'pro',
     label: 'KitPOP Pro',
     kicker: 'Pro',
-    priceMonthly: 2.99,
+    priceMonthly: 3.99,
     priceYearly: 29,
     features: [
       'Talleres ilimitados',
@@ -59,6 +59,13 @@ export const PLAN_LIMITS = {
 
 const ACTIVE_STATUSES = new Set(['active', 'trialing'])
 const PAID_PLANS = new Set(['pro', 'pro_team'])
+
+/** Planes visibles en la UI (Pro TEAM oculto por ahora). */
+export const VISIBLE_PLAN_IDS = ['explorer', 'pro']
+
+export function getVisiblePlans() {
+  return VISIBLE_PLAN_IDS.map((id) => PLANS[id]).filter(Boolean)
+}
 
 export function normalizePlanId(plan) {
   if (plan === 'free' || !plan) {

@@ -1,4 +1,10 @@
+import { categories } from '../../data/categories'
+import { activities } from '../../data/activities'
+
 export default function Hero() {
+  const categoryCount = categories.length
+  const activityCount = activities.length
+
   return (
     <section className="hero">
       <div className="hero-logo-inbox">
@@ -19,11 +25,11 @@ export default function Hero() {
 
       <div className="hero-stats">
         <div>
-          <span className="stat-n">59</span>
+          <span className="stat-n">{activityCount}</span>
           <span className="stat-l">Actividades</span>
         </div>
         <div>
-          <span className="stat-n">8</span>
+          <span className="stat-n">{categoryCount}</span>
           <span className="stat-l">Categorías</span>
         </div>
         <div>

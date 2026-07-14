@@ -237,6 +237,18 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
         )}
 
+        {user && (
+          <div className="kp-menu-section">
+            <p className="kp-menu-label">Diseño de talleres</p>
+            <Link to="/talleres" className="kp-menu-workshop-btn" onClick={onClose}>
+              <span className="kp-menu-workshop-icon" aria-hidden="true">
+                ◫
+              </span>
+              Diseña tu Workshop
+            </Link>
+          </div>
+        )}
+
         <div className="kp-menu-section">
           <p className="kp-menu-label">Navegación</p>
 

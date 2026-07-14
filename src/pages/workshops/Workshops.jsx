@@ -11,7 +11,7 @@ import {
   fetchWorkshops,
 } from '../../services/workshopService'
 import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
-import { getWorkshopStatusLabel } from '../../utils/workshopHelpers'
+import { getWorkshopStatusLabel, formatWorkshopDate } from '../../utils/workshopHelpers'
 
 export default function Workshops() {
   const navigate = useNavigate()
@@ -232,6 +232,12 @@ export default function Workshops() {
                   <p className="interactive-item-meta">
                     {[workshop.organization, workshop.team].filter(Boolean).join(' · ') ||
                       'Sin organización'}
+                    {workshop.created_at && (
+                      <>
+                        {' · '}
+                        Creado {formatWorkshopDate(workshop.created_at)}
+                      </>
+                    )}
                   </p>
                   <span className={`interactive-status status-${workshop.status}`}>
                     {getWorkshopStatusLabel(workshop.status)}

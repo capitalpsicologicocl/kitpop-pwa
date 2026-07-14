@@ -52,7 +52,7 @@ export async function fetchWorkshops(userId) {
     .from('workshops')
     .select('*')
     .eq('user_id', userId)
-    .order('updated_at', { ascending: false })
+    .order('created_at', { ascending: false })
 
   if (error) {
     throw error

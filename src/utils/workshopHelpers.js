@@ -90,3 +90,21 @@ export function getWorkshopStatusLabel(status) {
 
   return 'Borrador'
 }
+
+export function formatWorkshopDate(iso) {
+  if (!iso) {
+    return ''
+  }
+
+  const date = new Date(iso)
+
+  if (Number.isNaN(date.getTime())) {
+    return ''
+  }
+
+  return date.toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
