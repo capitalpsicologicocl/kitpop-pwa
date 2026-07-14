@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { formatItemTime } from '../../services/workshopService'
-import { getPauseLabel, ITEM_TYPE_LABELS } from '../../utils/workshopHelpers'
+import { getPauseLabel, isWorkshopOpeningItem, ITEM_TYPE_LABELS } from '../../utils/workshopHelpers'
 
 export default function WorkshopSessionTable({
   session,
@@ -34,8 +34,11 @@ export default function WorkshopSessionTable({
               </td>
             </tr>
           ) : (
-            items.map((item) => (
-              <tr key={item.id}>
+            items.map((item) => {
+              const isOpening = isWorkshopOpeningItem(item)
+
+              return (
+              <tr key={item.id} className={isOpening ? 'workshop-opening-row' : undefined}>
                 <td data-label="Tiempo">
                   <input
                     type="number"
@@ -78,8 +81,11 @@ export default function WorkshopSessionTable({
                   {item.item_type === 'theory' && (
                     <span className="workshop-item-tag theory">Teoría</span>
                   )}
-                  {item.item_type === 'custom' && (
+                  {item.item_type === 'custom' && !isOpening && (
                     <span className="workshop-item-tag custom">Diseño propio</span>
+                  )}
+                  {isOpening && (
+                    <span className="workshop-item-tag opening">Apertura estándar</span>
                   )}
                   {item.item_type === 'pause' && (
                     <span className="workshop-item-tag pause">
@@ -110,17 +116,20 @@ export default function WorkshopSessionTable({
                         Cambiar
                       </button>
                     )}
-                    <button
-                      type="button"
-                      className="journal-delete"
-                      onClick={() => onDeleteItem(item.id)}
-                    >
-                      Quitar
-                    </button>
+                    {!isOpening && (
+                      <button
+                        type="button"
+                        className="journal-delete"
+                        onClick={() => onDeleteItem(item.id)}
+                      >
+                        Quitar
+                      </button>
+                    )}
                   </div>
                 </td>
               </tr>
-            ))
+            )
+            })
           )}
         </tbody>
       </table>

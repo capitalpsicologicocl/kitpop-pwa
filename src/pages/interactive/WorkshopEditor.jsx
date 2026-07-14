@@ -12,6 +12,7 @@ import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createWorkshopItem,
   deleteWorkshopItem,
+  ensureWorkshopOpeningItems,
   fetchWorkshopById,
   fetchWorkshopSessions,
   finalizeWorkshopStructure,
@@ -21,6 +22,7 @@ import {
   updateWorkshopItem,
   updateWorkshopSession,
 } from '../../services/workshopService'
+import { getNextWorkshopItemSortOrder } from '../../utils/workshopHelpers'
 
 const MAX_SESSIONS = 12
 
@@ -91,7 +93,8 @@ export default function WorkshopEditor() {
         )
         setSessions(synced)
       } else {
-        setSessions(sessionData)
+        const withOpening = await ensureWorkshopOpeningItems(user.id, id)
+        setSessions(withOpening)
       }
 
       setAccessCode(codes.find((entry) => entry.resource_id === id)?.code ?? '')
@@ -310,7 +313,7 @@ export default function WorkshopEditor() {
 
     try {
       const item = await createWorkshopItem(user.id, sessionId, {
-        sortOrder: session.workshop_items.length,
+        sortOrder: getNextWorkshopItemSortOrder(session),
         timeMinutes: 15,
         itemType: 'theory',
         title: 'Contenido teórico',
@@ -340,7 +343,7 @@ export default function WorkshopEditor() {
 
     try {
       const item = await createWorkshopItem(user.id, sessionId, {
-        sortOrder: session.workshop_items.length,
+        sortOrder: getNextWorkshopItemSortOrder(session),
         timeMinutes: 20,
         itemType: 'custom',
         title: 'Actividad de diseño propio',
@@ -373,7 +376,7 @@ export default function WorkshopEditor() {
 
     try {
       const item = await createWorkshopItem(user.id, sessionId, {
-        sortOrder: session.workshop_items.length,
+        sortOrder: getNextWorkshopItemSortOrder(session),
         timeMinutes: option.minutes,
         itemType: 'pause',
         title: option.title,
@@ -429,7 +432,7 @@ export default function WorkshopEditor() {
         const session = sessions.find((entry) => entry.id === sessionId)
 
         const item = await createWorkshopItem(user.id, sessionId, {
-          sortOrder: session?.workshop_items.length ?? 0,
+          sortOrder: getNextWorkshopItemSortOrder(session),
           timeMinutes: 30,
           itemType: 'activity',
           title: activity.title,

@@ -6,11 +6,12 @@ import {
   sanitizeFilename,
   wrapDocumentHtml,
 } from './documentExport'
-import { getPauseLabel, ITEM_TYPE_LABELS } from './workshopHelpers'
+import { getPauseLabel, ITEM_TYPE_LABELS, isWorkshopOpeningItem } from './workshopHelpers'
 
 function renderItemRow(item) {
-  const typeLabel =
-    item.item_type === 'pause'
+  const typeLabel = isWorkshopOpeningItem(item)
+    ? 'Apertura estándar'
+    : item.item_type === 'pause'
       ? getPauseLabel(item.pause_type)
       : ITEM_TYPE_LABELS[item.item_type] ?? item.item_type
 

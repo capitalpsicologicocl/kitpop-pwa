@@ -4,6 +4,17 @@ export const PAUSE_OPTIONS = [
   { type: 'break', label: 'Solo pausa', defaultMinutes: 10, title: 'Pausa' },
 ]
 
+export const WORKSHOP_OPENING_MARKER = '__workshop_opening__'
+
+export const WORKSHOP_OPENING_ITEM = {
+  timeMinutes: 20,
+  itemType: 'custom',
+  title: 'Bienvenida y Encuadre',
+  description:
+    'Presentación de facilitador(es), presentación del programa, objetivos de la capacitación, metodología de trabajo y acuerdos iniciales de participación.',
+  activitySlug: WORKSHOP_OPENING_MARKER,
+}
+
 export const ITEM_TYPE_LABELS = {
   theory: 'Teoría',
   activity: 'Actividad KitPOP',
@@ -13,6 +24,20 @@ export const ITEM_TYPE_LABELS = {
 
 export function getPauseLabel(pauseType) {
   return PAUSE_OPTIONS.find((option) => option.type === pauseType)?.label ?? 'Pausa'
+}
+
+export function isWorkshopOpeningItem(item) {
+  return item?.activity_slug === WORKSHOP_OPENING_MARKER
+}
+
+export function getNextWorkshopItemSortOrder(session) {
+  const items = session?.workshop_items ?? []
+
+  if (items.length === 0) {
+    return 0
+  }
+
+  return Math.max(...items.map((item) => item.sort_order ?? 0)) + 1
 }
 
 export function getSessionPlannedMinutes(session) {

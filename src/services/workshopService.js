@@ -1,5 +1,51 @@
 import { ensureAccessCode } from './accessCodeService'
 import { supabase } from './supabaseClient'
+import {
+  isWorkshopOpeningItem,
+  WORKSHOP_OPENING_ITEM,
+} from '../utils/workshopHelpers'
+
+export async function ensureWorkshopOpeningItem(userId, sessionId) {
+  const { data: items, error } = await supabase
+    .from('workshop_items')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('session_id', sessionId)
+    .order('sort_order', { ascending: true })
+
+  if (error) {
+    throw error
+  }
+
+  if ((items ?? []).some(isWorkshopOpeningItem)) {
+    return null
+  }
+
+  for (const item of items ?? []) {
+    await updateWorkshopItem(userId, item.id, {
+      sortOrder: (item.sort_order ?? 0) + 1,
+    })
+  }
+
+  return createWorkshopItem(userId, sessionId, {
+    sortOrder: 0,
+    timeMinutes: WORKSHOP_OPENING_ITEM.timeMinutes,
+    itemType: WORKSHOP_OPENING_ITEM.itemType,
+    title: WORKSHOP_OPENING_ITEM.title,
+    description: WORKSHOP_OPENING_ITEM.description,
+    activitySlug: WORKSHOP_OPENING_ITEM.activitySlug,
+  })
+}
+
+export async function ensureWorkshopOpeningItems(userId, workshopId) {
+  const sessions = await fetchWorkshopSessions(userId, workshopId)
+
+  for (const session of sessions) {
+    await ensureWorkshopOpeningItem(userId, session.id)
+  }
+
+  return fetchWorkshopSessions(userId, workshopId)
+}
 
 export async function fetchWorkshops(userId) {
   const { data, error } = await supabase
@@ -113,7 +159,7 @@ export async function syncWorkshopSessionCount(
   const current = await fetchWorkshopSessions(userId, workshopId)
 
   if (desiredCount === current.length) {
-    return current
+    return ensureWorkshopOpeningItems(userId, workshopId)
   }
 
   if (desiredCount > current.length) {
@@ -162,7 +208,7 @@ export async function syncWorkshopSessionCount(
     .eq('user_id', userId)
     .eq('id', workshopId)
 
-  return fetchWorkshopSessions(userId, workshopId)
+  return ensureWorkshopOpeningItems(userId, workshopId)
 }
 
 export async function initializeWorkshopSessions(userId, workshopId, sessions) {
@@ -203,7 +249,7 @@ export async function initializeWorkshopSessions(userId, workshopId, sessions) {
     .eq('user_id', userId)
     .eq('id', workshopId)
 
-  return data ?? []
+  return ensureWorkshopOpeningItems(userId, workshopId)
 }
 
 export async function updateWorkshopSession(userId, sessionId, payload) {
@@ -300,6 +346,21 @@ export async function updateWorkshopItem(userId, itemId, payload) {
 }
 
 export async function deleteWorkshopItem(userId, itemId) {
+  const { data: item, error: fetchError } = await supabase
+    .from('workshop_items')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('id', itemId)
+    .maybeSingle()
+
+  if (fetchError) {
+    throw fetchError
+  }
+
+  if (item && isWorkshopOpeningItem(item)) {
+    throw new Error('La bienvenida y encuadre es un módulo estándar de apertura y no se puede quitar.')
+  }
+
   const { error } = await supabase
     .from('workshop_items')
     .delete()

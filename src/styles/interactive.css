@@ -335,6 +335,15 @@
   color:var(--g600);
 }
 
+.workshop-item-tag.opening {
+  background:#EDE9FE;
+  color:#5B21B6;
+}
+
+.workshop-opening-row {
+  background:#FAF5FF;
+}
+
 .workshop-activity-link {
   display:inline-block;
   margin-top:6px;
