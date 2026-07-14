@@ -1,0 +1,1689 @@
+{
+  "CATS": {
+    "equipo": {
+      "title": "Dinámicas de <em>Equipo</em>",
+      "desc": "Actividades colaborativas que fortalecen las 6C del trabajo en equipo: Complementariedad, Coordinación, Comunicación, Confianza, Compromiso y Construcción de Equipos Positivos.",
+      "lv": "vl-grn",
+      "acts": [
+        "aldeas",
+        "decalogo",
+        "torre-confianza",
+        "mapa-roles-equipo",
+        "acuerdos-equipo"
+      ]
+    },
+    "reunion": {
+      "title": "Dinámicas de <em>Reunión</em>",
+      "desc": "Herramientas para cada momento de tu sesión: apertura, activación, evaluación y cierre con intención y energía.",
+      "lv": "vl-teal",
+      "acts": [
+        "cortito",
+        "cachipun",
+        "compromisos-gratitud",
+        "check-in-estado",
+        "palabra-intencion",
+        "semaforo-equipo",
+        "pasapalabra",
+        "termometro"
+      ]
+    },
+    "conexion": {
+      "title": "Conexión y <em>Compasión</em>",
+      "desc": "Dinámicas de encuentro profundo donde los participantes se ven de verdad — desde la bondad, la mirada genuina y el cuidado mutuo.",
+      "lv": "vl-pur",
+      "acts": [
+        "compartiendo-saberes",
+        "compasion-inter",
+        "historias-nombre",
+        "escucha-espejo",
+        "carta-a-otro"
+      ]
+    }
+  },
+  "A": {
+    "aldeas": {
+      "ic": "village",
+      "cat": "Trabajo en Equipo · Las 6C",
+      "clr": "grn",
+      "name": "Aldeas <em>Colaborativas</em>: Misión Interconectada",
+      "sub": "Sub-equipos representan distintas \"aldeas\" con roles y funciones interdependientes que deben colaborar para diseñar, construir y presentar colectivamente una Ciudad del Futuro Positivo. Cada aldea encarna una de las 6C del trabajo en equipo.",
+      "metas": [
+        "45 minutos",
+        "6 grupos de 5–7 personas",
+        "Alta energía y movimiento"
+      ],
+      "mat": [
+        "Hojas blancas y papel kraft",
+        "Post-its de varios colores",
+        "Marcadores gruesos y finos",
+        "Vasos plásticos",
+        "Plasticina de colores",
+        "Palos de helado",
+        "Tijeras",
+        "Elásticos",
+        "Cartulinas grandes (una por aldea)",
+        "Cinta adhesiva para delimitar espacios"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y marco conceptual",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "Las 6C del trabajo en equipo",
+              "p": "Esta actividad pone en práctica las 6 dimensiones clave del trabajo colaborativo: (1) Complementariedad — reconocer y aprovechar los talentos diversos. (2) Coordinación — gestionar roles, tareas y tiempos. (3) Comunicación — escucha activa, feedback y diálogo empático. (4) Confianza — seguridad psicológica, apertura y respeto. (5) Compromiso — participación activa hacia el propósito compartido. (6) Construcción de Equipos Positivos — prácticas de Psicología Positiva."
+            },
+            {
+              "ic": "star",
+              "h": "¿Por qué funciona?",
+              "p": "La metáfora de las aldeas crea un contexto narrativo que activa el pensamiento sistémico: cada equipo entiende que su éxito depende del éxito de los otros. Esto reproduce en formato lúdico la realidad de la interdependencia organizacional."
+            }
+          ]
+        },
+        {
+          "t": "FASE 1 · Contexto Narrativo y Misión (10 min)",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "La narrativa (leer al grupo)",
+              "p": "\"Ustedes son parte de una comunidad de líderes de distintas aldeas que deben unirse para diseñar la Ciudad del Futuro Positivo. Una ciudad en la que las personas trabajan juntas, se cuidan, lideran con propósito y conviven de forma positiva. Cada aldea tiene talentos únicos. Pero el desafío no es solo diseñar su propio espacio — ¡deben integrarse y colaborar con las otras aldeas para que todo funcione como una sola comunidad!\""
+            },
+            {
+              "ic": "focus",
+              "h": "Misión general",
+              "p": "Diseñar y construir una maqueta colaborativa que represente una Ciudad del Futuro Positivo. Cada aldea construye su zona, pero las zonas deben interconectarse funcional y simbólicamente. Cada aldea representa una de las 6C."
+            }
+          ]
+        },
+        {
+          "t": "FASE 2 · Formación de Aldeas y Roles (10 min)",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "Formar los 6 grupos",
+              "p": "Dividir en 6 aldeas de 5–7 personas. Cada aldea recibe su nombre por sorteo o elección: Aldea del Compromiso · Aldea de la Confianza · Aldea de la Complementariedad · Aldea de la Coordinación · Aldea de la Comunicación · Aldea de la Construcción de Equipos Positivos."
+            },
+            {
+              "ic": "map",
+              "h": "Cada aldea define internamente",
+              "p": "(a) Su PROPÓSITO como aldea — ¿para qué existen en la ciudad? (b) Sus VALORES y principios (escritos). (c) Un SÍMBOLO o bandera que los represente. (d) Un COMPROMISO REAL de cada integrante — algo aplicable desde mañana en su trabajo diario."
+            }
+          ]
+        },
+        {
+          "t": "FASE 3 · Diseño y Construcción (15 min)",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Reglas de construcción",
+              "p": "Cada aldea diseña su zona en una cartulina o espacio delimitado. Las FRONTERAS deben conectarse con las zonas de otras aldeas — no puede haber muros entre ellas. Deben compartir materiales entre aldeas (hacer trueques o préstamos): esto es parte del desafío de coordinación."
+            },
+            {
+              "ic": "focus",
+              "h": "Preguntas guía para la construcción",
+              "p": "¿Cómo se relaciona mi aldea con las otras? ¿Qué necesita mi aldea de las otras para funcionar? ¿Qué le ofrece mi aldea a la ciudad completa? ¿Cómo conectamos los caminos, puentes o flujos entre zonas?"
+            },
+            {
+              "ic": "light",
+              "h": "Rol del facilitador/a durante la construcción",
+              "p": "Circular entre los grupos, observar cómo se comunican, cómo toman decisiones, cómo gestionan los materiales compartidos. Esto servirá para el debriefing. No resolver conflictos — son parte de la dinámica."
+            }
+          ]
+        },
+        {
+          "t": "FASE 4 · Montaje y Presentación (10 min)",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "Ensamblar la ciudad",
+              "p": "Las aldeas unen sus construcciones en el centro del espacio. Una persona por aldea hace un \"recorrido de presentación\" de 2–3 minutos: ¿qué representa su zona? ¿qué aporta a la ciudad? ¿cómo se conecta con las otras aldeas?"
+            },
+            {
+              "ic": "thanks",
+              "h": "Celebración",
+              "p": "Al terminar la presentación, el grupo ve la ciudad completa por primera vez. El/la facilitador/a pregunta: \"¿Qué ven cuando la miran en su conjunto?\" Dar espacio para el asombro colectivo."
+            }
+          ],
+          "cita": "\"El desafío no es solo diseñar su espacio — deben integrarse y colaborar con las otras aldeas para que todo funcione como una sola comunidad.\""
+        },
+        {
+          "t": "Reflexión colectiva — Plenario",
+          "plen": [
+            {
+              "c": "Las 6C en acción",
+              "q": "¿En qué momentos vieron las 6C del trabajo en equipo durante la actividad? ¿Dónde apareció la Confianza? ¿Dónde la Comunicación? ¿Dónde el Compromiso?"
+            },
+            {
+              "c": "Obstáculos reales",
+              "q": "¿Qué dificultades tuvieron que superar? ¿Cómo las resolvieron? ¿Qué dice eso de cómo funciona nuestro equipo real?"
+            },
+            {
+              "c": "La interdependencia",
+              "q": "¿Cómo influyó que las aldeas tenían que conectarse y compartir materiales? ¿Qué pasaría si cada aldea solo se hubiera preocupado de lo suyo?"
+            },
+            {
+              "c": "Transferencia al trabajo real",
+              "q": "¿Qué de lo que vivieron en esta actividad también pasa en su trabajo cotidiano? ¿Qué cambiarían?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El concepto de sinergia (2+2=5) descrito en la literatura sobre equipos de trabajo plantea que la actividad grupal coordinada produce resultados que exceden la suma de las contribuciones individuales, siempre que exista alta interdependencia y objetivos comunes claros (Katzenbach y Smith). La estructura de 'aldeas' interdependientes reproduce en formato lúdico esta lógica: cada subequipo debe complementarse con los demás para lograr el resultado colectivo, lo que favorece la práctica activa de comunicación, coordinación y confianza, variables identificadas como determinantes de la eficacia grupal. Para el/la facilitador/a, esto ofrece una oportunidad de observar en vivo cómo el grupo gestiona la interdependencia antes de trasladar esos aprendizajes a su contexto real de trabajo."
+            }
+          ]
+        }
+      ]
+    },
+    "decalogo": {
+      "ic": "scroll",
+      "cat": "Trabajo en Equipo · PERMA",
+      "clr": "grn",
+      "name": "Decálogo del <em>Bienestar</em>",
+      "sub": "Construcción colaborativa de 10 compromisos de bienestar laboral basados en el modelo PERMA. El equipo reflexiona, propone, vota y co-crea sus propias normas de bienestar — un documento vivo que le pertenece.",
+      "metas": [
+        "45–60 min",
+        "5 grupos (uno por elemento PERMA)",
+        "Alta participación"
+      ],
+      "mat": [
+        "Post-its de 5 colores distintos (un color por elemento PERMA)",
+        "Marcadores",
+        "Pizarra o mural grande",
+        "Pegatinas o puntos de colores para votar (3 por persona)",
+        "Cartulina final para el Decálogo",
+        "Hoja de criterios PERMA para cada grupo"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Por qué un Decálogo propio?",
+              "p": "Los compromisos de bienestar que el propio equipo construye tienen mayor adherencia que los impuestos externamente. Este proceso co-creativo genera apropiación, convierte las conversaciones abstractas sobre bienestar en acciones concretas, y produce un documento que el equipo puede consultar en el tiempo."
+            }
+          ]
+        },
+        {
+          "t": "FASE 1 · Formación y encuadre (5 min)",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Formar los 5 grupos",
+              "p": "5 grupos de 4–6 personas. Asignar un elemento PERMA a cada grupo: Grupo P (Emociones Positivas) · Grupo E (Compromiso) · Grupo R (Relaciones Positivas) · Grupo M (Sentido o Propósito) · Grupo A (Logro o Realización)."
+            },
+            {
+              "ic": "light",
+              "h": "Entregar el contexto",
+              "p": "Cada grupo recibe una tarjeta con la definición de su elemento PERMA y 2–3 preguntas disparadoras. Ejemplo para Grupo R: \"¿Qué prácticas fortalecen las relaciones positivas en nuestro equipo? ¿Qué nos hace sentir que pertenecemos? ¿Qué nos daña como equipo?\""
+            }
+          ]
+        },
+        {
+          "t": "FASE 2 · Reflexión y redacción de compromisos (15 min)",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Identificar situaciones reales",
+              "p": "Cada grupo reflexiona sobre situaciones cotidianas que afectan o favorecen el bienestar en su elemento PERMA. Primero identifican qué obstaculiza y qué potencia ese elemento en su contexto real."
+            },
+            {
+              "ic": "scroll",
+              "h": "Redactar 5 compromisos",
+              "p": "Con esa reflexión, cada grupo redacta 5 compromisos: claros, positivos, realistas y accionables. Formato sugerido: \"En este equipo nos comprometemos a [acción concreta] para que [beneficio esperado].\" Ejemplo: \"Nos comprometemos a agradecer públicamente al menos una vez por semana para fortalecer el reconocimiento mutuo.\""
+            },
+            {
+              "ic": "map",
+              "h": "Criterio de calidad",
+              "p": "Un buen compromiso es: (a) concreto — se puede hacer o no hacer; (b) positivo — dice qué haremos, no qué evitaremos; (c) realista — dentro del control del equipo; (d) medible — en algún momento se puede saber si se cumplió."
+            }
+          ]
+        },
+        {
+          "t": "FASE 3 · Presentación y votación (15 min)",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Presentar al grupo completo",
+              "p": "Cada grupo presenta sus 5 compromisos. El resto puede pedir aclaraciones (no debatir). Se pegan todos los compromisos en la pizarra agrupados por elemento PERMA."
+            },
+            {
+              "ic": "target",
+              "h": "Votación democrática",
+              "p": "Cada persona recibe 3 puntos adhesivos. Los distribuye libremente entre los compromisos que considera más importantes (pueden poner todos en uno si quieren). Votar en silencio y simultáneamente para evitar el sesgo de seguir al líder."
+            }
+          ]
+        },
+        {
+          "t": "FASE 4 · Construir el Decálogo final (10 min)",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Seleccionar los 10",
+              "p": "Se seleccionan los 2 compromisos más votados de cada elemento PERMA (2×5=10). Si hay empate, el grupo vota nuevamente entre los empatados."
+            },
+            {
+              "ic": "spark",
+              "h": "Validar y nombrar",
+              "p": "El grupo vota si está de acuerdo con el Decálogo resultante. Si hay mayoría, se escribe en la cartulina final y se le da nombre oficial. Ejemplo: \"Decálogo del Bienestar — Equipo [nombre] [año].\""
+            },
+            {
+              "ic": "light",
+              "h": "Publicar y dar vida",
+              "p": "Fotografiar, imprimir y pegar el Decálogo en un lugar visible. Revisarlo en 30 y 60 días: ¿Cuáles estamos cumpliendo? ¿Cuáles necesitan trabajo?"
+            }
+          ],
+          "cita": "\"Un equipo con compromisos compartidos construye una cultura de bienestar desde adentro.\""
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "El proceso",
+              "q": "¿Cómo fue este proceso de construcción colectiva? ¿Qué fue lo más valioso?"
+            },
+            {
+              "c": "Prioridad",
+              "q": "¿Cuál de los 10 compromisos te parece el más urgente de implementar? ¿Por qué?"
+            },
+            {
+              "c": "Seguimiento",
+              "q": "¿Cómo vamos a hacer seguimiento de estos compromisos? ¿Quién lidera qué?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las normas de grupo construidas de manera participativa generan mayor apropiación y adherencia que aquellas impuestas externamente, ya que el proceso de discusión y consenso incrementa el compromiso de quienes las redactan (Katzenbach y Smith). Al anclar los compromisos en los cinco elementos del modelo PERMA (Seligman), la actividad traduce un constructo de bienestar abstracto en conductas observables y verificables, lo que facilita su seguimiento posterior. Para el/la facilitador/a, este ejercicio convierte una discusión sobre bienestar en un documento vivo que el equipo puede usar como referencia y revisar periódicamente."
+            }
+          ]
+        }
+      ]
+    },
+    "torre-confianza": {
+      "ic": "village",
+      "cat": "Trabajo en Equipo · Confianza",
+      "clr": "grn",
+      "name": "Desafío de la <em>Torre</em>",
+      "sub": "Los equipos deben construir la torre más alta posible usando espaguetis, cinta adhesiva y un malvavisco en la cima. Una metáfora poderosa sobre comunicación, confianza, liderazgo y cómo los equipos trabajan bajo presión.",
+      "metas": [
+        "25–30 min",
+        "Grupos de 4–6 personas",
+        "Materiales de construcción"
+      ],
+      "mat": [
+        "20 espaguetis sin cocer por equipo",
+        "1 metro de cinta adhesiva",
+        "1 metro de hilo o cuerda",
+        "1 malvavisco por equipo",
+        "Regla para medir",
+        "Temporizador"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué funciona?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "El insight clave",
+              "p": "Este desafío (basado en el Marshmallow Challenge de Tom Wujec) revela dinámicas reales en tiempo real: quién toma el liderazgo, cómo deciden bajo presión, si planifican antes de actuar, cómo manejan el fracaso. Los equipos que más PRUEBAN y AJUSTAN ganan más que los que planifican demasiado."
+            }
+          ]
+        },
+        {
+          "t": "Reglas del desafío",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "Reglas",
+              "p": "18 minutos para construir la torre más alta posible. El malvavisco DEBE estar en la cima. Pueden usar todos los materiales y romper los espaguetis. La torre debe sostenerse sola al terminar."
+            },
+            {
+              "ic": "focus",
+              "h": "El truco del malvavisco",
+              "p": "La mayoría deja el malvavisco para el final... y descubre que es más pesado de lo que parecía y derrumba la estructura. Los equipos exitosos lo prueban desde el principio."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "village",
+              "h": "Paso 1 · Entregar materiales y leer reglas",
+              "p": "Sin dar sugerencias de estrategia. El/la facilitador/a observa y anota: ¿quién habla primero? ¿cómo deciden? ¿hay alguien que no participa? ¿cómo reaccionan al fallar?"
+            },
+            {
+              "ic": "village",
+              "h": "Paso 2 · Los 18 minutos",
+              "p": "No intervenir. Los datos del debriefing son los que hacen valiosa la actividad."
+            },
+            {
+              "ic": "village",
+              "h": "Paso 3 · Medir y celebrar",
+              "p": "Al sonar el timer, medir cada torre que se sostenga. Celebrar al equipo ganador."
+            }
+          ],
+          "cita": "\"Los equipos que más prueban y ajustan ganan más que los que planifican demasiado.\""
+        },
+        {
+          "t": "Debriefing — el verdadero valor",
+          "plen": [
+            {
+              "c": "Dinámica de equipo",
+              "q": "¿Quién lideró? ¿Cómo tomaron las decisiones? ¿Todos participaron igual?"
+            },
+            {
+              "c": "La estrategia",
+              "q": "¿Planificaron primero o construyeron directamente? ¿Cuándo probaron el malvavisco?"
+            },
+            {
+              "c": "Transferencia",
+              "q": "¿Qué de lo que ocurrió aquí también pasa en su trabajo cotidiano?"
+            },
+            {
+              "c": "Confianza",
+              "q": "¿Cómo influyó la confianza (o la falta de ella) en el resultado?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El Desafío de la Torre reproduce el 'Marshmallow Challenge' popularizado por Tom Wujec, cuyos hallazgos muestran que los equipos que prueban y ajustan prototipos tempranamente, en lugar de planificar extensamente antes de actuar, obtienen mejores resultados bajo presión de tiempo. La actividad expone de forma vivencial patrones reales de liderazgo, toma de decisiones y manejo del error que suelen permanecer invisibles en el trabajo cotidiano. Para el/la facilitador/a, el valor no está en la torre en sí, sino en el debriefing: analizar cómo el equipo se coordinó bajo presión ofrece información directa sobre su forma habitual de trabajar junto."
+            }
+          ]
+        }
+      ]
+    },
+    "mapa-roles-equipo": {
+      "ic": "map",
+      "cat": "Trabajo en Equipo · Complementariedad",
+      "clr": "grn",
+      "name": "Mapa de Roles del <em>Equipo</em>",
+      "sub": "El equipo identifica los roles naturales que cada persona cumple — más allá del cargo formal — y mapea cómo se complementan. Reduce fricciones y aprovecha la diversidad de estilos.",
+      "metas": [
+        "35–40 min",
+        "Equipo completo",
+        "Tarjetas de roles"
+      ],
+      "mat": [
+        "Tarjetas impresas o escritas con los 9 roles de Belbin",
+        "Post-its",
+        "Marcadores",
+        "Pizarra grande"
+      ],
+      "secs": [
+        {
+          "t": "Los 9 roles naturales",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Roles de Acción",
+              "p": "(1) Impulsor/a — enérgico/a, trabaja bien bajo presión. (2) Implementador/a — transforma ideas en planes prácticos. (3) Finalizador/a — perfeccionista, detecta errores."
+            },
+            {
+              "ic": "map",
+              "h": "Roles Sociales",
+              "p": "(4) Coordinador/a — orienta hacia objetivos, delega bien. (5) Cohesionador/a — diplomático/a, evita fricciones. (6) Investigador/a de Recursos — extrovertido/a, explora oportunidades."
+            },
+            {
+              "ic": "map",
+              "h": "Roles Mentales",
+              "p": "(7) Cerebro — creativo/a, resuelve problemas difíciles. (8) Monitor/a-Evaluador/a — analítico/a, criterio sólido. (9) Especialista/a — dedicado/a, experto/a en su área."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Leer los roles (5 min)",
+              "p": "El/la facilitador/a explica brevemente cada rol. Dar tiempo para leer las tarjetas con calma."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Auto-asignación (5 min)",
+              "p": "Cada persona elige los 2–3 roles que mejor la describen — no el cargo, sino cómo actúa naturalmente."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Asignación mutua (10 min)",
+              "p": "Opcionalmente: cada persona dice qué rol ve en sus compañeros/as con un ejemplo concreto."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Mapear el equipo (10 min)",
+              "p": "En la pizarra: nombres bajo sus roles. ¿Qué roles están cubiertos? ¿Cuáles faltan? ¿Hay roles duplicados que generan fricción?"
+            }
+          ],
+          "cita": "\"La complementariedad es la fortaleza más poderosa de un equipo diverso.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Complementariedad",
+              "q": "¿Qué roles están bien cubiertos? ¿Cuáles faltan o están sub-cubiertos?"
+            },
+            {
+              "c": "Fricciones",
+              "q": "¿Hay roles que generan fricción cuando dos personas los quieren cumplir?"
+            },
+            {
+              "c": "Alineación",
+              "q": "¿Hay personas asignadas a tareas que no corresponden a sus roles naturales?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La actividad se basa en la teoría de roles de equipo de Meredith Belbin, que identifica nueve patrones de contribución (de acción, sociales y mentales) y sostiene que los equipos más eficaces son aquellos que logran una mezcla complementaria de estos roles, más que la acumulación de un mismo perfil. Belbin advirtió que ningún rol es superior a otro: cada uno aporta fortalezas específicas y también debilidades características que deben gestionarse conscientemente. Para el/la facilitador/a, mapear los roles naturales del equipo permite anticipar fricciones por roles duplicados y detectar vacíos por roles ausentes antes de que se traduzcan en conflictos o cuellos de botella."
+            }
+          ]
+        }
+      ]
+    },
+    "acuerdos-equipo": {
+      "ic": "scroll",
+      "cat": "Trabajo en Equipo · Comunicación",
+      "clr": "grn",
+      "name": "Acuerdos de <em>Equipo</em>",
+      "sub": "El equipo co-crea sus propias normas de convivencia y trabajo colaborativo: cuándo y cómo comunicarse, cómo tomar decisiones, cómo manejar conflictos. Acuerdos que pertenecen al equipo, no impuestos desde afuera.",
+      "metas": [
+        "40–50 min",
+        "Equipo completo",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its de dos colores",
+        "Marcadores",
+        "Pizarra o papel kraft",
+        "Puntos adhesivos para votar",
+        "Hoja final para registrar y firmar los acuerdos"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué es importante?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Acuerdos explícitos = menos conflictos",
+              "p": "Los equipos que tienen acuerdos explícitos sobre cómo trabajar juntos tienen menos conflictos, mejor comunicación y mayor seguridad psicológica. La clave es que los construya el propio equipo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Áreas de acuerdo (5 min)",
+              "p": "4–5 áreas: (1) Comunicación — ¿cuándo y cómo nos comunicamos? (2) Reuniones — ¿cuántas, cuándo, cómo? (3) Toma de decisiones — ¿quién decide qué? (4) Conflictos — ¿cómo los manejamos? (5) Tiempos — horarios, urgencias, disponibilidad."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Propuestas (15 min)",
+              "p": "En subgrupos de 2–3, trabajar 1–2 áreas y proponer 3–5 acuerdos concretos. Formato: \"En este equipo acordamos que [acción concreta y medible].\""
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Presentar y votar (15 min)",
+              "p": "Cada subgrupo presenta. El grupo vota con puntos los acuerdos más importantes."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 4 · Acuerdos finales (10 min)",
+              "p": "Los más votados se escriben en un documento limpio. Todos firman o dan aprobación explícita. Se agenda revisión en 30 días."
+            }
+          ],
+          "cita": "\"Un equipo con acuerdos explícitos tiene menos conflictos y más confianza.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El proceso",
+              "q": "¿Cómo fue construir estos acuerdos juntos? ¿Hubo algo difícil de acordar?"
+            },
+            {
+              "c": "Cumplimiento",
+              "q": "¿Qué haremos cuando alguien no cumpla un acuerdo? ¿Cómo nos lo decimos?"
+            },
+            {
+              "c": "Revisión",
+              "q": "¿Cuándo revisamos si estamos cumpliendo estos acuerdos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Establecer normas explícitas de funcionamiento al inicio de un proceso grupal reduce las discusiones que interrumpen el flujo de trabajo más adelante, un principio central en la preparación de talleres y reuniones (AJ&Smart). La literatura sobre normas de grupo (Schein) distingue entre normas centrales, cuyo incumplimiento genera mayor conflicto, y normas periféricas, que los grupos toleran infringir con más facilidad; por eso conviene priorizar acuerdos sobre comunicación, decisiones y conflicto por sobre detalles menores. Para el/la facilitador/a, que estos acuerdos sean redactados por el propio equipo, y no impuestos, es la variable que más influye en que efectivamente se cumplan."
+            }
+          ]
+        }
+      ]
+    },
+    "cortito": {
+      "ic": "spark",
+      "cat": "Apertura · Presencia",
+      "clr": "grn",
+      "name": "Cortito e <em>Importante</em>",
+      "sub": "Dinámica de apertura de 15 minutos para conectar cuerpo, emoción y mente al inicio de una sesión. Favorece presencia, creatividad inmediata y sentido de importancia personal. Cada participante comparte cómo llega y qué quiere aportar.",
+      "metas": [
+        "15 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio donde todos se vean (círculo o semicírculo)",
+        "Música suave durante la pausa inicial — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "La mayoría de las personas llegan a reuniones y talleres mientras todavía están mentalmente en otra cosa. Esta actividad crea una transición ritual: del \"antes\" al \"aquí\". Conectar cuerpo, emoción y mente en 15 minutos produce presencia real, que mejora radicalmente la calidad de lo que viene después."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Pausa y respiración (2 min)",
+              "p": "El/la facilitador/a pide silencio y dice: \"Por un momento, cierra los ojos. Haz tres respiraciones profundas — inhala contando hasta 4, mantén 4, exhala 4. Siente tu cuerpo apoyado en la silla o en el suelo. Deja ir lo que traías antes de llegar aquí.\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 2 · Dos preguntas (2 min)",
+              "p": "\"Ahora, con los ojos todavía cerrados, piensa en DOS palabras: una que represente CÓMO LLEGAS hoy (una emoción, un estado, una energía), y otra que represente QUÉ QUIERES APORTAR en este espacio hoy (una intención, un valor, una actitud).\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Ronda de check-in (10 min)",
+              "p": "Cada participante dice en 10–15 segundos: \"Llegué [palabra] y quiero aportar [palabra].\" Sin explicar, sin justificar. Solo la palabra. El/la facilitador/a modela comenzando y mantiene el ritmo — si alguien empieza a explicar, lo redirige con amabilidad: \"Gracias, con la palabra es suficiente.\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Cierre colectivo (1 min)",
+              "p": "\"Tomamos una respiración profunda juntos/as. Al exhalar, nos decimos internamente: ¡Aquí estamos!\" El/la facilitador/a puede señalar algún hilo común: \"Escuché muchas palabras de [X]. Con esa energía, comenzamos.\""
+            }
+          ],
+          "cita": "\"Conectar rápidamente cuerpo, emoción y mente favorece presencia, creatividad y sentido de importancia personal.\""
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Los procesos grupales requieren que los participantes dejen atrás el estado mental previo antes de poder involucrarse plenamente; comenzar directamente con el contenido, sin una transición, es señalado como uno de los errores más comunes en la preparación de talleres (AJ&Smart). Una breve pausa de respiración y una ronda de intención funcionan como un ritual de entrada que ancla la atención en el presente antes de comenzar. Para el/la facilitador/a, invertir dos o tres minutos en esta transición mejora la calidad de la participación durante el resto de la sesión, especialmente en grupos que llegan dispersos o con alta carga cognitiva previa."
+            }
+          ]
+        }
+      ]
+    },
+    "cachipun": {
+      "ic": "scissors",
+      "cat": "Activación · Energizador",
+      "clr": "grn",
+      "name": "Cachipún <em>Evolution</em>",
+      "sub": "Dinámica de alta energía donde los participantes evolucionan de ameba a ser humano pleno ganando cachipún, moviéndose por el espacio imitando sonidos y movimientos propios de cada especie. Ideal para activar al grupo y romper el hielo.",
+      "metas": [
+        "10–15 minutos",
+        "Grupo completo",
+        "Espacio amplio"
+      ],
+      "mat": [
+        "Espacio abierto donde moverse libremente",
+        "Música animada y dinámica — muy recomendado",
+        "Señal sonora visible (timbre, silbato, campana)",
+        "Opcional: carteles con la cadena de evolución"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Activar físicamente al grupo, romper jerarquías de forma lúdica, generar risas y conexión espontánea, y crear un estado de energía y disposición positiva para la actividad siguiente. Ideal después de una pausa larga o en un momento de baja energía grupal."
+            }
+          ]
+        },
+        {
+          "t": "La cadena de evolución",
+          "rows": [
+            {
+              "ic": "scissors",
+              "h": "Nivel 1 · Ameba",
+              "p": "Movimiento: arrastrarse lentamente, ondeando los brazos como extensiones del cuerpo. Sonido: \"mmmmm\" grave y lento. Todos comienzan aquí."
+            },
+            {
+              "ic": "scissors",
+              "h": "Nivel 2 · Cangrejo",
+              "p": "Movimiento: caminar de costado con las manos como pinzas. Sonido: \"click click click\"."
+            },
+            {
+              "ic": "scissors",
+              "h": "Nivel 3 · Conejo",
+              "p": "Movimiento: saltos cortos con manos en posición de orejas. Sonido: \"¡Boing! ¡Boing!\"."
+            },
+            {
+              "ic": "scissors",
+              "h": "Nivel 4 · Mono",
+              "p": "Movimiento: saltos con los brazos colgando, rascarse la cabeza. Sonido: \"¡Uh ah ah!\"."
+            },
+            {
+              "ic": "scissors",
+              "h": "Nivel 5 · Humano Pleno",
+              "p": "Movimiento: caminar erguido con pose de superhéroe, pecho inflado. Sonido: \"¡Soy el campeón!\" o simplemente \"¡Woohoo!\". Una vez aquí, el jugador observa y celebra a los demás."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "scissors",
+              "h": "Paso 1 · Explicar la cadena (2 min)",
+              "p": "Mostrar visualmente los 5 niveles. Practicar cada movimiento y sonido en grupo antes de comenzar. Esto es importante — el juego es mucho más divertido cuando todos saben bien qué hacer."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 2 · Comenzar como ameba",
+              "p": "Todos son amebas. Se mueven por el espacio imitando el movimiento y sonido. Al sonar el timbre por primera vez, la persona más cercana es su rival: juegan UN cachipún. Quien gana sube de nivel, quien pierde vuelve a ser ameba."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 3 · Regla clave",
+              "p": "SOLO pueden enfrentarse personas del MISMO nivel: ameba vs ameba, cangrejo vs cangrejo. Si no encuentras a alguien de tu nivel, sigue moviéndote hasta encontrarlo. Para el segundo enfrentamiento en adelante, NO esperan el timbre — buscan activamente a alguien igual."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 4 · El timbre es solo para el inicio",
+              "p": "La señal sonora solo marca el primer enfrentamiento. Después, el juego es continuo y autogestionado. El/la facilitador/a solo observa y anima."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 5 · Celebrar a los Humanos Plenos",
+              "p": "Cuando alguien llega a Humano Pleno, el grupo lo celebra. Esa persona puede animar desde afuera hasta que el juego termine."
+            }
+          ],
+          "cita": "\"Desafiarse juntos impulsa la motivación y el aprendizaje.\""
+        },
+        {
+          "t": "Cierre rápido",
+          "plen": [
+            {
+              "c": "Energía",
+              "q": "¿Cómo está la energía del grupo ahora? ¿Qué cambió desde que comenzamos?"
+            },
+            {
+              "c": "Conexión",
+              "q": "¿Con cuántas personas nuevas interactuaste durante el juego?"
+            },
+            {
+              "c": "Metáfora",
+              "q": "La evolución en este juego requería enfrentarte, perder, y volver a empezar. ¿Eso les dice algo sobre cómo funcionan los equipos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La energía grupal es una variable que el/la facilitador/a debe gestionar activamente, ya que tiende a decaer de forma natural durante sesiones largas o después de una pausa (AJ&Smart). Los energizadores físicos como este, que combinan movimiento, sonido y humor, reducen momentáneamente las jerarquías percibidas y generan un estado de activación compartido que favorece la disposición a participar en la actividad siguiente. Para el/la facilitador/a, este tipo de dinámica es especialmente útil como puente entre bloques de trabajo intensos, cuando se observa fatiga o dispersión en el grupo."
+            }
+          ]
+        }
+      ]
+    },
+    "compromisos-gratitud": {
+      "ic": "flower",
+      "cat": "Cierre · Cohesión",
+      "clr": "grn",
+      "name": "Círculo de Compromisos y <em>Gratitud</em>",
+      "sub": "Al finalizar una sesión, el grupo forma un círculo donde cada persona asume un compromiso individual para el bienestar colectivo y puede añadir un agradecimiento. Fortalece la cohesión y genera resonancia emocional positiva.",
+      "metas": [
+        "20–30 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Tarjetas de compromiso para llevar — opcional",
+        "Lapiceros",
+        "Caja simbólica donde depositar los compromisos — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "flower",
+              "h": "Paso 1 · Formar el gran círculo",
+              "p": "Todos de pie en círculo. El/la facilitador/a dice: \"Vamos a cerrar con dos actos: un compromiso y, si lo desean, un agradecimiento. El compromiso es hacia el equipo. El agradecimiento es opcional y puede ser hacia una persona, hacia el grupo o hacia el proceso.\""
+            },
+            {
+              "ic": "flower",
+              "h": "Paso 2 · El compromiso (30 seg c/u)",
+              "p": "Formato: \"Me comprometo a [acción concreta] para que [beneficio para el equipo o para mí].\" El compromiso debe ser específico, realizable y comenzar pronto — no \"voy a intentar ser mejor\" sino \"voy a llegar a tiempo a las reuniones de los lunes.\""
+            },
+            {
+              "ic": "flower",
+              "h": "Paso 3 · El agradecimiento (opcional)",
+              "p": "Si alguien desea agradecer, lo hace después de su compromiso. Puede ser personal (\"quiero agradecer a [nombre] por...\") o colectivo (\"quiero agradecer a este grupo por...\"). El resto escucha sin aplaudir todavía."
+            },
+            {
+              "ic": "flower",
+              "h": "Paso 4 · Gesto simbólico de cierre",
+              "p": "Al terminar la ronda, el/la facilitador/a propone un gesto colectivo: mano al centro y \"uno, dos, tres... ¡adelante!\", un aplauso conjunto, o una respiración compartida. Esto marca el cierre del espacio."
+            }
+          ],
+          "cita": "\"Fortalecer la cohesión grupal y generar resonancia emocional positiva.\""
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Expresar gratitud y formular compromisos concretos frente al grupo son prácticas asociadas al modelo PERMA de bienestar (Seligman): la primera nutre las emociones positivas y el segundo fortalece el compromiso (engagement) al cerrar la sesión con una acción específica y verificable. La teoría de ampliación y construcción de Fredrickson (broaden-and-build) plantea que las emociones positivas, como la gratitud, amplían el repertorio de pensamiento-acción y construyen recursos sociales duraderos, lo que explica por qué este tipo de cierres fortalece la cohesión grupal más allá del momento puntual. Para el/la facilitador/a, cerrar con un compromiso, no solo con una reflexión, aumenta la probabilidad de que lo trabajado en la sesión se traduzca en una acción real."
+            }
+          ]
+        }
+      ]
+    },
+    "check-in-estado": {
+      "ic": "wave",
+      "cat": "Apertura de Reunión",
+      "clr": "teal",
+      "name": "Check-in del <em>Estado</em>",
+      "sub": "Ronda rápida al inicio de una reunión donde cada persona comparte cómo llega al espacio — en una palabra, un número o una metáfora climática. Permite al/la facilitador/a leer el estado del grupo y ajustar si es necesario.",
+      "metas": [
+        "5–10 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales en versión básica",
+        "Tarjetas de emociones si el grupo no está acostumbrado a nombrar estados",
+        "Dado de caras — opcional y muy útil"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué hacer check-in?",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "El check-in como dato",
+              "p": "No es solo un ritual — es información. Saber que hay 3 personas con energía alta, 2 en amarillo y 1 en rojo ANTES de empezar permite al facilitador/a decidir: ¿seguimos con el plan? ¿hacemos un ajuste? ¿necesitamos hablar de algo antes?"
+            }
+          ]
+        },
+        {
+          "t": "Tres variantes — elige la que se adapte",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Variante A · Check-in numérico",
+              "p": "Cada persona dice un número del 1 al 10 que represente cómo está: 1 = muy abajo, 10 = excelente. Rápido y sin exposición personal. El facilitador puede preguntar a 1–2 personas: \"¿Qué te pone en ese número?\" — solo si la persona parece cómoda."
+            },
+            {
+              "ic": "wave",
+              "h": "Variante B · Check-in climático",
+              "p": "¿Cuál es tu clima interior hoy? Soleado y despejado, nublado con algo de luz, tormenta en camino, viento pero manejable... La metáfora reduce el juicio y facilita la expresión emocional, especialmente en culturas donde \"cómo te sientes\" no es fácil de responder."
+            },
+            {
+              "ic": "wave",
+              "h": "Variante C · Check-in de emoción",
+              "p": "Una palabra que describe la emoción más presente ahora mismo. Solo nombrar — sin explicar ni justificar. Esta variante requiere mayor confianza grupal. Puede ofrecer una lista de emociones si el grupo no está acostumbrado."
+            }
+          ],
+          "cita": "\"Un buen check-in de 5 minutos puede transformar completamente la calidad de lo que viene después.\""
+        },
+        {
+          "t": "Lectura del grupo y ajuste",
+          "plen": [
+            {
+              "c": "Si hay muchos \"bajos\"",
+              "q": "¿Necesitan ajustar la agenda de hoy? ¿Hay algo que el grupo necesita nombrar antes de continuar?"
+            },
+            {
+              "c": "Si hay mucha dispersión",
+              "q": "¿Hay algo colectivo que está afectando al equipo que vale la pena reconocer antes de trabajar?"
+            },
+            {
+              "c": "En virtual",
+              "q": "En videollamada: pedir que escriban su número/palabra en el chat todos al mismo tiempo. Luego el facilitador lee el estado del grupo en voz alta."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Recoger el estado emocional del grupo antes de comenzar no es solo un ritual social sino una fuente de información que permite al/la facilitador/a ajustar la sesión en tiempo real, un principio central en la preparación de talleres (AJ&Smart). Nombrar el propio estado, en vez de ocultarlo, favorece la retroalimentación y la comunicación bidireccional, elementos necesarios para que exista comunicación real dentro de un equipo (Aula Mentor, Comunicación efectiva y trabajo en equipo). Para el/la facilitador/a, un check-in de pocos minutos ofrece una lectura rápida y confiable de la disposición del grupo, útil para decidir si conviene mantener, ajustar o postergar parte de la agenda."
+            }
+          ]
+        }
+      ]
+    },
+    "palabra-intencion": {
+      "ic": "target",
+      "cat": "Apertura de Reunión",
+      "clr": "teal",
+      "name": "Palabra <em>Intención</em>",
+      "sub": "Antes de comenzar cualquier sesión, cada persona elige una palabra que represente su intención: cómo quiere estar, qué quiere aportar, con qué actitud quiere participar. Ancla la presencia y clarifica el propósito individual dentro del colectivo.",
+      "metas": [
+        "5–8 min",
+        "Grupo completo",
+        "Post-its opcionales"
+      ],
+      "mat": [
+        "Sin materiales en versión básica",
+        "Baraja de palabras o cartas si el grupo necesita apoyo para elegir",
+        "Post-its para escribir la palabra y tenerla visible durante toda la sesión"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Invitar la pausa (1 min)",
+              "p": "\"Antes de comenzar, tomemos 30 segundos de silencio. Cierra los ojos o baja la mirada. Pregúntate: ¿Con qué actitud o intención quiero estar en este espacio hoy? ¿Qué quiero aportar?\""
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Ronda de palabras (1 min c/u)",
+              "p": "Por turnos, cada persona dice su palabra en voz alta. Solo la palabra, sin explicación. El/la facilitador/a puede anotar las palabras en la pizarra para que el grupo las vea todas juntas."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Reflexión breve del facilitador/a (1 min)",
+              "p": "Una vez que todos compartieron, el/la facilitador/a señala el mosaico de intenciones: \"Hay palabras de [X], de [Y], de [Z]... Con todas estas intenciones juntas, vamos a [objetivo de la sesión].\""
+            },
+            {
+              "ic": "light",
+              "h": "Potenciador opcional",
+              "p": "Cada persona escribe su palabra en un post-it y lo pega frente a ella durante toda la sesión. Al final, el/la facilitador/a puede preguntar: \"¿Lograste honrar tu intención de hoy?\""
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Fijar una intención personal antes de comenzar activa un mecanismo cercano al de las metas: la literatura sobre motivación muestra que las metas específicas y aceptadas voluntariamente por la persona, no impuestas, mejoran el rendimiento, el interés y la persistencia durante la tarea. Al tratarse de una intención autogenerada y visible durante toda la sesión, la actividad favorece la motivación intrínseca, vinculada a la sensación de autoría sobre la propia conducta. Para el/la facilitador/a, cerrar la sesión retomando esas palabras iniciales, preguntando si se logró honrar la intención, refuerza el sentido de autorresponsabilidad sin necesidad de imponerlo desde afuera."
+            }
+          ]
+        }
+      ]
+    },
+    "semaforo-equipo": {
+      "ic": "light",
+      "cat": "Pulso del Equipo",
+      "clr": "teal",
+      "name": "Semáforo del <em>Equipo</em>",
+      "sub": "Evaluación rápida y visual del estado real del equipo usando el código de colores del semáforo. Permite tomar el pulso grupal en 5 minutos y tomar decisiones de facilitación basadas en datos reales.",
+      "metas": [
+        "5–8 min",
+        "Equipo de trabajo",
+        "Tarjetas de colores o manos"
+      ],
+      "mat": [
+        "Tarjetas de 3 colores por persona (rojo, amarillo, verde)",
+        "Alternativa: levantar 1, 2 o 3 dedos (verde=3, amarillo=2, rojo=1)",
+        "Pizarra para registrar el resultado grupal",
+        "Opcional: hacer la votación digital con Mentimeter"
+      ],
+      "secs": [
+        {
+          "t": "Los tres estados — explicar claramente",
+          "rows": [
+            {
+              "ic": "light",
+              "h": "Verde · Todo bien",
+              "p": "\"Estoy con energía, foco y disponibilidad. Tengo lo que necesito para trabajar bien hoy. Puedo dar el 100%.\""
+            },
+            {
+              "ic": "light",
+              "h": "Amarillo · Alerta",
+              "p": "\"Estoy presente pero algo me distrae o me pesa. Puedo trabajar, pero hay algo que me ocupa por dentro. Puede ser cansancio, preocupación o falta de información.\""
+            },
+            {
+              "ic": "light",
+              "h": "Rojo · Necesito atención",
+              "p": "\"Estoy con dificultades reales para estar aquí hoy. Algo importante me está afectando — puede ser personal, laboral o contextual. Necesito que el equipo o el facilitador lo sepa.\""
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "light",
+              "h": "Paso 1 · Encuadre",
+              "p": "Explicar los tres estados claramente. Luego: \"Esto no es una queja ni una debilidad — es información. Cuando sabemos cómo está el equipo, podemos trabajar juntos/as de manera más inteligente.\""
+            },
+            {
+              "ic": "light",
+              "h": "Paso 2 · Votación simultánea",
+              "p": "Todos muestran su color/dedos al mismo tiempo (cuenta regresiva: 3, 2, 1... ¡ya!). Importante: simultáneo para evitar el sesgo de seguir a los demás, especialmente hacia las jefaturas."
+            },
+            {
+              "ic": "light",
+              "h": "Paso 3 · Leer el resultado",
+              "p": "El/la facilitador/a describe lo que ve: \"Tenemos X verdes, X amarillos, X rojos.\" Sin juicio, sin interpretar. Solo describir."
+            },
+            {
+              "ic": "light",
+              "h": "Paso 4 · Decisión de facilitación",
+              "p": "Si hay muchos rojos o amarillos, el facilitador decide en ese momento si ajustar la agenda, hacer espacio para nombrar lo que hay, o continuar con el plan pero con más cuidado."
+            }
+          ],
+          "cita": "\"No podemos facilitar bien sin saber cómo está la gente. El semáforo nos da información en segundos.\""
+        },
+        {
+          "t": "Protocolos según resultado",
+          "plen": [
+            {
+              "c": "Mayoría verde",
+              "q": "Continuar con el plan. Opcional: preguntar a 1–2 amarillos si hay algo que el grupo debería saber."
+            },
+            {
+              "c": "Mayoría amarillo",
+              "q": "¿Hay algo contextual que está afectando al equipo? ¿Quieren nombrarlo antes de seguir? Dar espacio breve (5 min) para lo que haya."
+            },
+            {
+              "c": "Uno o más rojos",
+              "q": "No ignorar. Preguntar privadamente (o en plenario si la persona parece abierta): \"¿Hay algo que necesites que el equipo sepa?\" No presionar. El rojo es una señal de cuidado."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La votación simultánea y visual del estado del equipo reduce el sesgo de conformidad, es decir, la tendencia a alinear la propia respuesta con la de otros, especialmente frente a figuras de autoridad, lo que aumenta la fiabilidad de la información recogida. Compartir abiertamente el propio estado, sin ser juzgado por ello, es consistente con los factores que la literatura de equipos asocia a la cohesión y a un clima de confianza (Desarrollo de equipos de trabajo y dirección participativa). Para el/la facilitador/a, esta lectura rápida del pulso grupal entrega una base objetiva, no una impresión personal, para decidir si ajustar la agenda o abrir espacio a lo que el equipo necesita nombrar."
+            }
+          ]
+        }
+      ]
+    },
+    "pasapalabra": {
+      "ic": "target",
+      "cat": "Energizador Temático",
+      "clr": "teal",
+      "name": "Pasapalabra <em>Temático</em>",
+      "sub": "El grupo define conceptos clave del tema del taller o reunión en UNA sola palabra diferente a la original. Activa el conocimiento previo, genera risas y conecta al grupo con el contenido antes de empezar.",
+      "metas": [
+        "8–12 min",
+        "Grupo completo o subgrupos",
+        "Pizarra o pantalla"
+      ],
+      "mat": [
+        "Pizarra o pantalla donde todos vean",
+        "Marcadores o pointer",
+        "Lista preparada de 10–15 conceptos del tema del día",
+        "Timer visible (10 segundos por concepto)",
+        "Música de cuenta regresiva — opcional y muy efectivo"
+      ],
+      "secs": [
+        {
+          "t": "Preparación del facilitador/a",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Cómo preparar los conceptos",
+              "p": "Antes de la sesión, prepara 10–15 términos o conceptos directamente relacionados con el contenido del día. Para un taller de comunicación: \"escucha activa\", \"asertividad\", \"empatía\", \"conflicto\", \"feedback\". Para uno de liderazgo: \"delegación\", \"confianza\", \"visión\", \"propósito\", \"influencia\"."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Explicar las reglas",
+              "p": "El facilitador/a muestra el concepto en pantalla o lo dice en voz alta. El grupo (o un equipo si están en subgrupos) tiene 10 segundos para definirlo en UNA sola palabra diferente al concepto original. No se puede usar la misma palabra ni palabras derivadas."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · La dinámica en grupos",
+              "p": "En grupos de 5–6, el primer equipo que dice su palabra suma un punto. Si el resto del grupo acepta la definición como válida, se cuenta. Si no, no vale. El facilitador arbitra con sentido del humor."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Ritmo y energía",
+              "p": "El ritmo es lo que hace poderosa esta dinámica. Pasar rápido de concepto en concepto — no dar tiempo para pensar demasiado. La presión del tiempo genera risas, creatividad espontánea y conexión entre los participantes."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Cierre temático",
+              "p": "Al terminar, el/la facilitador/a pregunta: \"¿Alguna de las definiciones que dimos captura mejor el concepto que la palabra original?\" Esto abre naturalmente la conversación sobre el contenido del taller."
+            }
+          ],
+          "cita": "\"Activar el conocimiento previo con energía es el mejor puente hacia el aprendizaje.\""
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Pedir al grupo que redefina conceptos ya conocidos en una palabra distinta obliga a una recuperación activa de información desde la memoria, un mecanismo que la investigación en aprendizaje asocia con una comprensión más duradera que la simple exposición pasiva al contenido. El componente lúdico y de tiempo limitado añade activación emocional, lo que, de acuerdo con el principio de energía en facilitación (AJ&Smart), favorece la disposición del grupo para el contenido que viene después. Para el/la facilitador/a, esta actividad funciona además como diagnóstico rápido: las definiciones que da el grupo revelan qué tan familiarizado está con los conceptos antes de profundizar en ellos."
+            }
+          ]
+        }
+      ]
+    },
+    "termometro": {
+      "ic": "therm",
+      "cat": "Evaluación · Cierre",
+      "clr": "teal",
+      "name": "Termómetro del <em>Aprendizaje</em>",
+      "sub": "Al finalizar un taller o sesión, cada persona evalúa visualmente su nivel de comprensión del contenido. Permite al/la facilitador/a detectar en tiempo real si hay algo que necesita refuerzo antes de cerrar.",
+      "metas": [
+        "5–10 min",
+        "Grupo completo",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its de 2 colores distintos (uno para nivel de comprensión, otro para pendientes)",
+        "Marcadores",
+        "Pizarra o papel kraft con un termómetro dibujado (escala 0–100%)",
+        "Alternativa digital: Mentimeter, Miro, o un simple formulario en Google Forms"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "therm",
+              "h": "Paso 1 · Dibujar el termómetro",
+              "p": "En la pizarra, dibujar un termómetro grande con escala de 0 a 100%. Marcas sugeridas: 0% (no entendí nada), 25% (entendí poco), 50% (la mitad), 75% (bastante bien), 100% (muy claro)."
+            },
+            {
+              "ic": "therm",
+              "h": "Paso 2 · Evaluar en silencio (2 min)",
+              "p": "Cada persona toma un post-it del primer color y escribe: ¿En qué porcentaje siento que me quedó claro el contenido de hoy? Lo pega en el nivel correspondiente del termómetro. En silencio y sin mirar lo que hacen los demás."
+            },
+            {
+              "ic": "therm",
+              "h": "Paso 3 · Pendientes y preguntas (opcional)",
+              "p": "Post-it del segundo color: ¿Qué me quedó pendiente, confuso o querría profundizar? Se pegan al lado del termómetro en una zona etiquetada \"Pendientes\"."
+            },
+            {
+              "ic": "therm",
+              "h": "Paso 4 · Leer el termómetro",
+              "p": "El/la facilitador/a lee en voz alta el resultado: \"Veo que la temperatura promedio del grupo es X%. Hay [n] pendientes.\" Sin juzgar — solo describir."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 5 · Ajuste antes de cerrar",
+              "p": "Si la temperatura está baja o hay muchos pendientes similares, el facilitador puede decidir reforzar un concepto, resolver dudas o agendar una sesión de seguimiento."
+            }
+          ],
+          "cita": "\"El aprendizaje que no se evalúa se evapora. El termómetro hace visible lo invisible.\""
+        },
+        {
+          "t": "Lectura y acción",
+          "plen": [
+            {
+              "c": "Temperatura del grupo",
+              "q": "¿Cuál es la temperatura promedio? ¿Hay mucha variabilidad entre los participantes? ¿Qué indica eso?"
+            },
+            {
+              "c": "Pendientes comunes",
+              "q": "¿Hay preguntas o pendientes que se repiten? Esos son los temas que más necesitan refuerzo."
+            },
+            {
+              "c": "Cierre",
+              "q": "¿Qué harán con lo que aprendieron hoy? ¿Cuándo lo aplicarán por primera vez?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Recoger una autoevaluación visual e inmediata del nivel de comprensión hace explícito lo que de otro modo permanecería implícito, un mecanismo asociado a los procesos de evaluación y retroalimentación que la literatura sobre equipos de trabajo señala como necesarios para el ajuste continuo del desempeño y del proceso grupal. Que la evaluación se realice en silencio y sin observar a los demás reduce el sesgo social y aumenta la honestidad de las respuestas. Para el/la facilitador/a, esta información sirve para decidir, antes de cerrar la sesión, si conviene reforzar algún contenido o simplemente confirmar que el grupo se retira con claridad."
+            }
+          ]
+        }
+      ]
+    },
+    "compartiendo-saberes": {
+      "ic": "heart",
+      "cat": "Conexión · Compasión",
+      "clr": "pur",
+      "name": "Compartiendo <em>Saberes</em>",
+      "sub": "Dinámica en duplas rotativas donde cada persona regala un saber genuino — general o personalizado — mirando a los ojos, desde la bondad, el respeto y la escucha activa. Una de las dinámicas más transformadoras para generar conexión profunda y sentido de comunidad.",
+      "metas": [
+        "15 minutos totales",
+        "Duplas rotativas",
+        "3–4 rondas"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio abierto para que las personas puedan moverse y formar nuevas duplas",
+        "Temporizador (usar esta app)",
+        "Música suave ambiental — opcional pero muy recomendado"
+      ],
+      "hasTimer": true,
+      "totalRondas": 4,
+      "fases": [
+        {
+          "dur": 120,
+          "badge": "Persona A",
+          "title": "Comparte tu <em>saber</em>",
+          "instr": "Mira a los ojos a tu compañero/a.<br><strong>Comparte desde el corazón.</strong>",
+          "trans": false
+        },
+        {
+          "dur": 0,
+          "trans": true,
+          "tT": "Momento de <em>agradecer</em>",
+          "tD": "Persona B: recibe el regalo con gratitud. Solo agradecer — sin comentar ni opinar."
+        },
+        {
+          "dur": 120,
+          "badge": "Persona B",
+          "title": "Tu turno: comparte tu <em>saber</em>",
+          "instr": "Mira a los ojos a tu compañero/a.<br><strong>Es tu turno de regalar.</strong>",
+          "trans": false
+        },
+        {
+          "dur": 0,
+          "trans": true,
+          "tT": "Momento de <em>agradecer</em>",
+          "tD": "Persona A: recibe el regalo con gratitud. Solo agradecer — sin comentar ni opinar."
+        },
+        {
+          "dur": 0,
+          "trans": true,
+          "tT": "¡Ronda <em>completa</em>!",
+          "tD": "Busca una nueva dupla. Salúdate, conecta con la mirada y prepárate para regalar de nuevo."
+        }
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "¿Para qué sirve?",
+              "p": "Esta dinámica genera conexión genuina entre personas que quizás no se conocen bien. A diferencia de una presentación o un networking convencional, aquí el acto de regalar un saber desde la compasión activa la escucha real y el reconocimiento mutuo. En 15 minutos, las personas pueden vivir algo significativo que difícilmente ocurre en semanas de trabajo cotidiano."
+            }
+          ]
+        },
+        {
+          "t": "Encuadre del espacio — decir antes de comenzar",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Lenguaje asertivo",
+              "p": "Habla desde el \"yo\" — desde tu propia experiencia. No impongas ni aconsejes como experto/a. Usa frases como: \"Algo que a mí me ha servido es...\", \"Lo que yo veo en ti es...\", \"Un aprendizaje que llevo conmigo y que siento que podría servirte es...\""
+            },
+            {
+              "ic": "eye",
+              "h": "Mirada y presencia plena",
+              "p": "Pide que se miren a los ojos de manera sostenida y abierta durante toda la conversación. No es un duelo — es un acto de reconocimiento. La mirada dice \"estoy aquí contigo\" antes de que salga cualquier palabra. Si alguien siente incomodidad, está bien — es parte del proceso."
+            },
+            {
+              "ic": "heart",
+              "h": "Compasión y bondad genuina",
+              "p": "Antes de hablar, toma un segundo para conectar con algo genuinamente bueno que ves en la persona de enfrente. El saber se entrega desde ahí — no desde la superioridad ni desde la lástima, sino desde el cuidado real."
+            },
+            {
+              "ic": "observe",
+              "h": "Escucha activa sin interrupciones",
+              "p": "Quien recibe el saber escucha en SILENCIO TOTAL durante los 2 minutos completos. Sin preguntas, sin comentarios, sin completar frases. Solo presencia. Al terminar, solo hay gratitud — no debate, no opinión, no \"sí pero...\"."
+            },
+            {
+              "ic": "scroll",
+              "h": "Respeto y no juicio",
+              "p": "No hay saberes correctos ni incorrectos, importantes ni triviales. Todo lo que se comparte tiene valor porque viene de la experiencia genuina de quien lo ofrece. Todo lo que se comparte queda en el espacio de esa dupla."
+            }
+          ],
+          "cita": "\"Tiene mucho más valor si es un saber PENSADO PARA ESTA PERSONA: una fortaleza que ves en ella que todavía no ha desplegado, una habilidad que sientes que podría potenciar, algo tuyo que sientes que a esta persona le haría bien. Ese es el regalo más valioso.\""
+        },
+        {
+          "t": "¿Qué saber regalar? — explicar antes de comenzar",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Un saber general — válido y valioso",
+              "p": "Una convicción de vida, algo que aprendiste con los años, una práctica que te ha funcionado, una verdad que llevas contigo. Ejemplo: \"Algo que aprendí tarde pero que cambió mi vida es que pedir ayuda es una fortaleza, no una debilidad.\""
+            },
+            {
+              "ic": "impact",
+              "h": "Un saber personalizado — el más poderoso",
+              "p": "Observa a quien tienes enfrente. ¿Ves en ella/él una fortaleza que no ha desarrollado del todo? ¿Una habilidad que podría potenciar? ¿Algo que tú tienes y sientes que a esa persona le haría bien? Eso es el regalo más poderoso. Ejemplo: \"Veo en ti una capacidad de escucha que pocas personas tienen. Mi saber para ti es que no la des por obvia — es una habilidad extraordinaria que deberías usar más conscientemente en tu liderazgo.\""
+            }
+          ]
+        },
+        {
+          "t": "Cierre en plenario — preguntas para el grupo",
+          "plen": [
+            {
+              "c": "¿Qué sintieron?",
+              "q": "¿Qué les pasó por dentro durante esta dinámica — al dar, al recibir, al mirarse a los ojos?"
+            },
+            {
+              "c": "¿Qué les pasó?",
+              "q": "¿Hubo algo que los sorprendió — en lo que recibieron, en lo que eligieron dar, o en cómo se sintieron al ser vistos de verdad?"
+            },
+            {
+              "c": "¿Para qué les sirve?",
+              "q": "¿Qué se llevan de esto? ¿Hay algún saber recibido que quieran comenzar a practicar?"
+            },
+            {
+              "c": "Profundizar — opcional",
+              "q": "¿Qué descubriste de ti mismo/a al pensar qué saber regalar? ¿Qué dice eso de lo que valoras?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El acto de compartir un saber genuino desde la bondad activa una interacción de reciprocidad positiva que, de acuerdo con la teoría de ampliación y construcción de Fredrickson, contribuye a construir recursos sociales duraderos (confianza, vínculo, sentido de pertenencia) a partir de breves episodios de emoción positiva compartida. El contacto visual sostenido y la escucha sin interrupción refuerzan además la sensación de reconocimiento mutuo, elemento central de la empatía (Aula Mentor, Comunicación efectiva y trabajo en equipo). Para el/la facilitador/a, la fuerza de esta dinámica está en su brevedad: en pocos minutos genera una experiencia de conexión que rara vez ocurre espontáneamente en el trabajo cotidiano."
+            }
+          ]
+        }
+      ]
+    },
+    "compasion-inter": {
+      "ic": "eye",
+      "cat": "Conexión · Compasión",
+      "clr": "pur",
+      "name": "Práctica: Compasión <em>Interpersonal</em>",
+      "sub": "Espacio seguro y humano para encontrarnos, reconocernos y conectarnos con otra persona desde la mirada compasiva. Cultivar la empatía y la comprensión profunda hacia otro ser humano, reconociendo su historia, su vulnerabilidad y su valor.",
+      "metas": [
+        "30 minutos",
+        "Duplas",
+        "Espacio tranquilo"
+      ],
+      "mat": [
+        "Sillas frente a frente, a distancia cómoda",
+        "Espacio tranquilo sin interrupciones ni ruidos",
+        "Música ambiental suave sin letra — muy recomendado",
+        "Sin teléfonos ni dispositivos visibles"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "La compasión interpersonal es la capacidad de reconocer la humanidad compartida en el otro — sus luchas, sus esperanzas, sus miedos — y responder con calidez y cuidado. Esta práctica genera conexión profunda entre personas que quizás comparten trabajo pero no se conocen de verdad."
+            }
+          ]
+        },
+        {
+          "t": "FASE 1 · Encuadre (5 min)",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Las palabras del facilitador/a",
+              "p": "\"Esta es una experiencia de encuentro humano. Vamos a practicar la compasión no como un concepto, sino como una forma de presencia atenta, amable y respetuosa hacia otra persona. No hay nada que hacer bien o mal aquí. Solo hay que estar.\" Invitar a encontrar una dupla y sentarse frente a frente. Acordar quién será A y quién B."
+            }
+          ]
+        },
+        {
+          "t": "FASE 2 · Conexión inicial (3 min)",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Guía para el facilitador/a",
+              "p": "Con ambos de ojos cerrados: \"Cierra los ojos y simplemente siente la presencia de la persona que tienes frente a ti. Respira con calma. Reconoce que hay un ser humano frente a ti — único e irrepetible — viviendo su propia historia, con sus propias alegrías y desafíos.\" Silencio de 2–3 minutos."
+            }
+          ]
+        },
+        {
+          "t": "FASE 3 · Reconocer la humanidad del otro (7 min)",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Etapa A mira a B",
+              "p": "La persona A abre los ojos, B los mantiene cerrados. El facilitador guía a A: \"Observa a la persona frente a ti. Reconoce que llegó hasta aquí gracias al cuidado y afecto de muchas personas. Imagina que esta persona también ha sentido frustración y decepción, pero que, al igual que tú, anhela ser feliz y alcanzar bienestar.\" Silencio de 2–3 minutos. Luego A cierra los ojos."
+            },
+            {
+              "ic": "eye",
+              "h": "Etapa B mira a A",
+              "p": "Ahora B abre los ojos y A los mantiene cerrados. Guiar: \"B, observa a la persona frente a ti. Imagina que alguna vez fue un niño o una niña de 3 o 4 años, curioso/a, con ganas de jugar y descubrir el mundo. Reconoce que, a pesar del paso del tiempo, esa esencia aún habita en ella.\" Silencio de 2–3 minutos. B cierra los ojos."
+            }
+          ]
+        },
+        {
+          "t": "FASE 4 · Mirada compartida y cierre (10 min)",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Mirada compartida (3 min)",
+              "p": "Ambos abren los ojos y se miran mutuamente durante 1–2 minutos en silencio. El facilitador guía con voz suave: \"Permite que tus ojos encuentren los de la otra persona. No necesitas decir nada. Simplemente reconoce la humanidad compartida. Puede surgir incomodidad, ternura o gratitud — todo está bien.\""
+            },
+            {
+              "ic": "heart",
+              "h": "Diálogo libre (7 min)",
+              "p": "Invitar a conversar libremente sobre lo vivido: \"¿Cómo me sentí al mirar y ser mirado con atención plena? ¿Qué descubrí sobre mí o sobre el otro/a? ¿Qué aprendí sobre la compasión?\" Sin interpretar ni analizar — solo compartir desde el corazón."
+            }
+          ],
+          "cita": "\"No buscamos conclusiones. Solo compartir desde el corazón, con respeto, sencillez y gratitud.\""
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "Experiencia",
+              "q": "¿Cómo fue para ti mirar y ser mirado/a con atención plena? ¿Qué fue lo más difícil? ¿Lo más valioso?"
+            },
+            {
+              "c": "Descubrimiento",
+              "q": "¿Qué descubriste sobre ti mismo/a o sobre el otro/a que no sabías o no habías notado?"
+            },
+            {
+              "c": "Compasión aplicada",
+              "q": "¿Cómo cambiaría el trabajo cotidiano si trajéramos más de esta mirada compasiva a nuestras interacciones diarias?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Esta práctica guía a los participantes a reconocer la humanidad compartida del otro (sus luchas, esperanzas y vulnerabilidades), un componente central de la compasión que la evidencia sugiere que se asocia con mayor calidez interpersonal y menor juicio hacia los demás. Al enfocar la atención en la historia y las emociones de la otra persona, en lugar de en el rol laboral que cumple, la actividad favorece una forma de empatía más profunda que la que ocurre habitualmente en interacciones de trabajo. Para el/la facilitador/a, sostener el silencio y el ritmo pausado de las instrucciones es clave: esta práctica pierde su efecto si se apresura."
+            }
+          ]
+        }
+      ]
+    },
+    "historias-nombre": {
+      "ic": "cards",
+      "cat": "Conexión · Confianza",
+      "clr": "pur",
+      "name": "Historias Detrás del <em>Nombre</em>",
+      "sub": "Cada integrante comparte brevemente algo de su historia personal, origen o una anécdota significativa que cuente quién es más allá de su rol. Humaniza las relaciones, facilita la conexión emocional y genera un ambiente más cercano y auténtico.",
+      "metas": [
+        "20–25 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio circular y cómodo",
+        "Música suave al inicio mientras llegan — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "cards",
+              "h": "Paso 1 · Encuadre",
+              "p": "El grupo forma un círculo. El/la facilitador/a dice: \"Nos conocemos del trabajo, pero muchas veces no sabemos mucho de la historia de las personas que nos rodean. Vamos a cambiar eso. En 1–2 minutos, cada persona va a compartir algo de su historia que normalmente no contamos en el trabajo — algo sobre tu origen, tu familia, un momento que te definió, algo que pocas personas saben de ti.\""
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 2 · Modelar (el facilitador/a primero)",
+              "p": "El/la facilitador/a comparte SU historia primero. Esto es clave — establece el nivel de apertura esperado y reduce el miedo a \"revelar demasiado\". Debe ser genuino, con algo de profundidad, pero no necesariamente dramático."
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 3 · Ronda completa (1–2 min c/u)",
+              "p": "Por turnos, cada persona comparte. El grupo escucha en silencio activo — sin interrumpir, sin comentar. Si alguien quiere pasar o compartir algo más superficial, está bien — no forzar."
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 4 · Reconocimiento al final",
+              "p": "Al terminar cada historia, el grupo puede hacer un pequeño gesto de reconocimiento (aplauso breve, \"gracias\"). Al finalizar la ronda, el/la facilitador/a puede señalar: \"¿Qué conexiones notan entre las historias que escucharon?\""
+            }
+          ],
+          "cita": "\"Conocerse más allá del rol fortalece la confianza y la empatía.\""
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "Sorpresa",
+              "q": "¿Qué descubriste de un compañero/a que no sabías? ¿Qué te sorprendió?"
+            },
+            {
+              "c": "Conexión",
+              "q": "¿Hay algo en las historias que escuchaste que conecta con tu propia historia?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Cómo cambia el trabajo saber más de la historia de las personas que te rodean?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Compartir historias personales que van más allá del rol laboral favorece la autorrevelación (self-disclosure), un mecanismo ampliamente vinculado en la literatura de comunicación interpersonal al desarrollo de confianza y cercanía entre las personas. Que el/la facilitador/a modele primero su propia historia reduce el riesgo percibido de exponerse y calibra el nivel de apertura esperado por el grupo. Para el/la facilitador/a, esta actividad es especialmente útil en equipos que llevan tiempo trabajando juntos pero que se conocen principalmente por su función, no por su historia."
+            }
+          ]
+        }
+      ]
+    },
+    "escucha-espejo": {
+      "ic": "eye",
+      "cat": "Conexión · Escucha Activa",
+      "clr": "pur",
+      "name": "Escucha <em>Espejo</em>",
+      "sub": "En triadas, una persona habla, otra escucha con atención plena y la tercera observa la interacción. La persona que escucha solo puede reflejar lo que oyó — sin opinar, sin aconsejar, sin interrumpir. Desarrolla la escucha profunda y la empatía real.",
+      "metas": [
+        "25–30 min",
+        "Triadas",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio donde las triadas puedan conversar sin interferirse",
+        "Tarjeta con el rol del Observador/a — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Los tres roles",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Rol A · Quien Habla",
+              "p": "Elige un tema sobre el que quiera reflexionar: un desafío que enfrenta, una decisión pendiente, algo que le preocupa. Habla durante 3–4 minutos sin interrupciones."
+            },
+            {
+              "ic": "eye",
+              "h": "Rol B · El Espejo",
+              "p": "Solo escucha. Al terminar, tiene 90 segundos para reflejar lo escuchado: \"Lo que escuché fue... / Noté que cuando hablaste de [X] algo cambió en tu tono...\" NO opinar, NO aconsejar, NO preguntar. Solo reflejar."
+            },
+            {
+              "ic": "eye",
+              "h": "Rol C · El Observador/a",
+              "p": "Observa en silencio. Al finalizar comparte: \"Lo que noté fue... / Vi que [B] hizo [X] que parecía ayudar / Vi que [A] reaccionó cuando...\""
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Explicar roles (3 min)",
+              "p": "Énfasis en la restricción del Espejo: no opinar, no aconsejar, no preguntar — solo reflejar lo que oyó."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Ronda 1 (8 min)",
+              "p": "A habla (3–4 min), B refleja (90 seg), C observa y comparte (1 min). Silencio de integración (30 seg)."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Rotar (x2)",
+              "p": "Rotar hasta que todos hayan pasado por los tres roles. Total: ~24 min."
+            }
+          ],
+          "cita": "\"La empatía fortalece el trabajo colaborativo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El rol más difícil",
+              "q": "¿Cuál de los tres roles fue el más desafiante? ¿Por qué?"
+            },
+            {
+              "c": "Cómo escuchas",
+              "q": "¿Qué descubriste sobre cómo escuchas habitualmente? ¿Qué haces mientras el otro habla?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Cómo cambiaría el equipo si escucháramos así en las reuniones cotidianas?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La escucha activa, definida como el conjunto de comportamientos que facilitan comprender genuinamente el mensaje del otro sin interrumpir, aconsejar ni juzgar, es una de las habilidades sociales con mayor impacto documentado en la calidad de las relaciones interpersonales y laborales (Aula Mentor, Comunicación efectiva y trabajo en equipo). Al restringir explícitamente a quien escucha a solo reflejar, sin opinar ni preguntar, la actividad aísla y entrena esta habilidad de forma deliberada, algo que rara vez ocurre en conversaciones cotidianas donde tendemos a responder en lugar de escuchar. Para el/la facilitador/a, el rol de observador/a añade una capa adicional de aprendizaje: ver la escucha desde afuera hace visibles patrones que son difíciles de notar desde dentro de la conversación."
+            }
+          ]
+        }
+      ]
+    },
+    "carta-a-otro": {
+      "ic": "scroll",
+      "cat": "Conexión · Reconocimiento",
+      "clr": "pur",
+      "name": "Carta a <em>Otro/a</em>",
+      "sub": "Cada persona escribe una carta breve a un compañero/a expresando algo genuino: lo que valora, lo que ve en él/ella, un agradecimiento pendiente o un deseo para su camino. Se entrega en mano con un momento de lectura compartida.",
+      "metas": [
+        "25–30 min",
+        "Grupo completo",
+        "Papel y lápiz"
+      ],
+      "mat": [
+        "Papel de carta o hoja A5 por persona",
+        "Lapiceros o bolígrafos",
+        "Sobres — opcional",
+        "Música suave durante la escritura"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Las cosas más importantes que nos queremos decir entre compañeros/as rara vez se dicen. Esta dinámica crea el espacio para que ocurra: no en una conversación donde es difícil encontrar las palabras, sino en la escritura, que permite ir a fondo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Asignación (2 min)",
+              "p": "El/la facilitador/a asigna a quién le escribirá cada persona — al azar o intencional. Ideal: asignar a alguien con quien no haya mucha cercanía habitual, para generar sorpresa."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Escribir la carta (10–12 min)",
+              "p": "Música suave, silencio, tiempo. La carta puede incluir: algo que valoras de esa persona, algo que ves en ella que quizás ella no ve, un agradecimiento específico, algo que le deseas para el camino."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Entregar y leer (10 min)",
+              "p": "Cada persona entrega su carta. 5 minutos de lectura silenciosa. Luego: \"¿Alguien quiere compartir algo de lo que recibió o escribió?\""
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 4 · Guardar como tesoro",
+              "p": "\"Esta carta dice algo real sobre cómo te ven. Guárdala para los días difíciles.\""
+            }
+          ],
+          "cita": "\"Las cosas más importantes que nos queremos decir rara vez se dicen. Esta es tu oportunidad.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Escribir",
+              "q": "¿Cómo fue para ti encontrar qué escribirle a esa persona? ¿Qué surgió en ti?"
+            },
+            {
+              "c": "Recibir",
+              "q": "¿Cómo fue leer lo que alguien escribió sobre ti? ¿Hubo algo que no esperabas?"
+            },
+            {
+              "c": "Lo no dicho",
+              "q": "¿Hay algo que hubieras querido escribirle a alguien más? ¿Puedes hacerlo después?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La expresión escrita de reconocimiento y gratitud hacia otra persona fortalece el elemento de Relaciones Positivas del modelo PERMA (Seligman), y su formato escrito, a diferencia de una expresión verbal espontánea, permite una elaboración más profunda y deliberada del mensaje. La teoría de ampliación y construcción de Fredrickson sostiene que este tipo de intercambios de emoción positiva no solo se sienten bien en el momento, sino que construyen recursos relacionales que perduran en el tiempo. Para el/la facilitador/a, sugerir que la carta se guarde 'para los días difíciles' extiende el efecto de la actividad más allá de la sesión misma."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

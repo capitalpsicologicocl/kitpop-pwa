@@ -3,6 +3,7 @@ import facilitacionData from './categories/facilitacion.json'
 import pnlData from './categories/pnl.json'
 import permaData from './categories/perma.json'
 import fortalezasData from './categories/fortalezas.json'
+import equipoReunionConexionData from './categories/equipo-reunion-conexion.json'
 
 const { CATS, A } = {
   CATS: {
@@ -11,6 +12,7 @@ const { CATS, A } = {
     ...pnlData.CATS,
     ...permaData.CATS,
     ...fortalezasData.CATS,
+    ...equipoReunionConexionData.CATS,
   },
   A: {
     ...kitpopData.A,
@@ -18,6 +20,7 @@ const { CATS, A } = {
     ...pnlData.A,
     ...permaData.A,
     ...fortalezasData.A,
+    ...equipoReunionConexionData.A,
   },
 }
 
