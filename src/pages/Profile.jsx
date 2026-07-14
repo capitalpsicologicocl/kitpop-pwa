@@ -6,7 +6,6 @@ import { useAuth } from '../context/AuthContext'
 import { fetchJournalEntries } from '../services/journalService'
 import { syncPayPalSubscription } from '../services/paypalService'
 import { fetchWorkshops } from '../services/workshopService'
-import { getPlanLabel } from '../utils/planLimits'
 
 function getInitials(name = '', email = '') {
   const source = name.trim() || email.trim()
@@ -45,6 +44,7 @@ export default function Profile() {
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [uploadingAvatar, setUploadingAvatar] = useState(false)
+  const [facilitationFilter, setFacilitationFilter] = useState('todas')
 
   useEffect(() => {
     setFullName(profile?.full_name ?? '')
@@ -193,6 +193,68 @@ export default function Profile() {
 
   const displayName = profile?.full_name?.trim() || 'Facilitador/a KitPOP'
   const initials = getInitials(profile?.full_name, user.email)
+  const activeTab = searchParams.get('tab') === 'plan'
+    ? 'plan'
+    : searchParams.get('tab') === 'cuenta'
+      ? 'cuenta'
+      : 'facilitacion'
+
+  function setProfileTab(tab) {
+    if (tab === 'facilitacion') {
+      setSearchParams({}, { replace: true })
+      return
+    }
+
+    setSearchParams({ tab }, { replace: true })
+  }
+
+  const hubCards = [
+    {
+      id: 'talleres',
+      filter: 'talleres',
+      to: '/talleres',
+      icon: '🛠',
+      title: 'Talleres / Workshops',
+      copy: 'Diseña sesiones, actividades y pausas. Descarga la estructura en Word o PDF.',
+      count: `${workshopCount} taller${workshopCount === 1 ? '' : 'es'}`,
+      featured: true,
+    },
+    {
+      id: 'reuniones',
+      filter: 'reuniones',
+      to: '/interactivo',
+      icon: '⚡',
+      title: 'Reuniones interactivas',
+      copy: 'Encuestas y polls en vivo con códigos para participantes.',
+      count: 'Encuestas · En vivo',
+    },
+    {
+      id: 'favoritos',
+      filter: 'todas',
+      to: '/favoritos',
+      icon: '☆',
+      title: 'Favoritos',
+      copy: 'Actividades que marcaste para usar después.',
+      count: `${favoriteSlugs.length} guardada${favoriteSlugs.length === 1 ? '' : 's'}`,
+    },
+    {
+      id: 'bitacora',
+      filter: 'todas',
+      to: '/bitacora',
+      icon: '📓',
+      title: 'Bitácora',
+      copy: 'Registros de sesiones y aprendizajes de facilitación.',
+      count: `${journalCount} registro${journalCount === 1 ? '' : 's'}`,
+    },
+  ]
+
+  const visibleHubCards = hubCards.filter((card) => {
+    if (facilitationFilter === 'todas') {
+      return true
+    }
+
+    return card.filter === facilitationFilter
+  })
 
   return (
     <main id="profile-view" className="fade-in">
@@ -201,6 +263,37 @@ export default function Profile() {
       </Link>
 
       <div className="profile-hub">
+        <div className="profile-tabs" role="tablist" aria-label="Secciones del perfil">
+          <button
+            type="button"
+            role="tab"
+            className={`profile-tab-btn${activeTab === 'facilitacion' ? ' active' : ''}`}
+            aria-selected={activeTab === 'facilitacion'}
+            onClick={() => setProfileTab('facilitacion')}
+          >
+            Facilitación
+          </button>
+          <button
+            type="button"
+            role="tab"
+            className={`profile-tab-btn${activeTab === 'cuenta' ? ' active' : ''}`}
+            aria-selected={activeTab === 'cuenta'}
+            onClick={() => setProfileTab('cuenta')}
+          >
+            Cuenta
+          </button>
+          <button
+            type="button"
+            role="tab"
+            className={`profile-tab-btn${activeTab === 'plan' ? ' active' : ''}`}
+            aria-selected={activeTab === 'plan'}
+            onClick={() => setProfileTab('plan')}
+          >
+            Plan
+          </button>
+        </div>
+
+        {activeTab === 'cuenta' && (
         <section className="auth-panel profile-card">
           <div className="profile-head">
             <div className="profile-avatar-wrap">
@@ -237,7 +330,6 @@ export default function Profile() {
             <div className="profile-head-copy">
               <h1>{displayName}</h1>
               <p>{user.email}</p>
-              <span className="profile-badge">{getPlanLabel(profile)}</span>
             </div>
           </div>
 
@@ -265,55 +357,57 @@ export default function Profile() {
             </div>
           </form>
         </section>
+        )}
 
-        <PlanSection
-          profile={profile}
-          onPlanChange={() => user && refreshProfile(user.id)}
-        />
+        {activeTab === 'plan' && (
+          <PlanSection
+            profile={profile}
+            onPlanChange={() => user && refreshProfile(user.id)}
+          />
+        )}
 
+        {activeTab === 'facilitacion' && (
         <section className="profile-section">
           <div className="profile-section-head">
             <h2>Tu espacio de facilitación</h2>
-            <p>Accede a tus recursos guardados y herramientas de trabajo.</p>
+            <p>Diseño de talleres / reuniones y herramientas interactivas.</p>
+          </div>
+
+          <div className="facilitation-filter-tabs" role="tablist" aria-label="Filtrar herramientas">
+            {[
+              { id: 'todas', label: 'Todas' },
+              { id: 'talleres', label: 'Talleres / Workshops' },
+              { id: 'reuniones', label: 'Reuniones' },
+            ].map((option) => (
+              <button
+                key={option.id}
+                type="button"
+                role="tab"
+                className={`facilitation-filter-btn${facilitationFilter === option.id ? ' active' : ''}`}
+                aria-selected={facilitationFilter === option.id}
+                onClick={() => setFacilitationFilter(option.id)}
+              >
+                {option.label}
+              </button>
+            ))}
           </div>
 
           <div className="profile-hub-grid">
-            <Link to="/talleres" className="profile-hub-card profile-hub-card-featured">
-              <span className="profile-hub-icon">🛠</span>
-              <strong>Talleres</strong>
-              <p>Diseña sesiones, actividades y pausas. Descarga la estructura en Word o PDF.</p>
-              <span className="profile-hub-count">
-                {workshopCount} taller{workshopCount === 1 ? '' : 'es'}
-              </span>
-            </Link>
-
-            <Link to="/interactivo" className="profile-hub-card">
-              <span className="profile-hub-icon">⚡</span>
-              <strong>Espacio interactivo</strong>
-              <p>Encuestas y polls en vivo con códigos para participantes.</p>
-              <span className="profile-hub-count">{getPlanLabel(profile)}</span>
-            </Link>
-
-            <Link to="/favoritos" className="profile-hub-card">
-              <span className="profile-hub-icon">☆</span>
-              <strong>Favoritos</strong>
-              <p>Actividades que marcaste para usar después.</p>
-              <span className="profile-hub-count">
-                {favoriteSlugs.length} guardada{favoriteSlugs.length === 1 ? '' : 's'}
-              </span>
-            </Link>
-
-            <Link to="/bitacora" className="profile-hub-card">
-              <span className="profile-hub-icon">📓</span>
-              <strong>Bitácora</strong>
-              <p>Registros de sesiones y aprendizajes de facilitación.</p>
-              <span className="profile-hub-count">
-                {journalCount} registro{journalCount === 1 ? '' : 's'}
-              </span>
-            </Link>
-
+            {visibleHubCards.map((card) => (
+              <Link
+                key={card.id}
+                to={card.to}
+                className={`profile-hub-card${card.featured ? ' profile-hub-card-featured' : ''}`}
+              >
+                <span className="profile-hub-icon">{card.icon}</span>
+                <strong>{card.title}</strong>
+                <p>{card.copy}</p>
+                <span className="profile-hub-count">{card.count}</span>
+              </Link>
+            ))}
           </div>
         </section>
+        )}
       </div>
     </main>
   )

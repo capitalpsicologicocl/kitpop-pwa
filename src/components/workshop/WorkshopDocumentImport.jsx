@@ -25,6 +25,8 @@ function readFileAsBase64(file) {
 export default function WorkshopDocumentImport({
   useKitpopActivities,
   onUseKitpopChange,
+  includeTheoryModules,
+  onIncludeTheoryChange,
   onApplyExtracted,
   disabled = false,
 }) {
@@ -117,6 +119,30 @@ export default function WorkshopDocumentImport({
         </label>
       </fieldset>
 
+      <fieldset className="workshop-kitpop-choice">
+        <legend>¿Incluir módulos teóricos del documento o contenidos?</legend>
+        <label className="workshop-kitpop-option">
+          <input
+            type="radio"
+            name="includeTheoryModules"
+            checked={includeTheoryModules}
+            disabled={disabled || parsing || applying}
+            onChange={() => onIncludeTheoryChange(true)}
+          />
+          <span>Sí, módulos teóricos + actividades prácticas</span>
+        </label>
+        <label className="workshop-kitpop-option">
+          <input
+            type="radio"
+            name="includeTheoryModules"
+            checked={!includeTheoryModules}
+            disabled={disabled || parsing || applying}
+            onChange={() => onIncludeTheoryChange(false)}
+          />
+          <span>No, solo actividades prácticas</span>
+        </label>
+      </fieldset>
+
       <input
         ref={inputRef}
         type="file"
@@ -196,13 +222,23 @@ export default function WorkshopDocumentImport({
             {extracted.objective && (
               <>
                 <dt>Objetivo y contenidos</dt>
-                <dd>{extracted.objective}</dd>
+                <dd className="workshop-document-rich">{extracted.objective}</dd>
               </>
             )}
+            {extracted.contentOutline?.map((module) => (
+              <div key={module.moduleNumber} className="workshop-document-module">
+                <dt>Módulo {module.moduleNumber}</dt>
+                <dd>
+                  {module.title && <strong>{module.title}</strong>}
+                  {module.objectives && <p>{module.objectives}</p>}
+                  {module.contents && <p>{module.contents}</p>}
+                </dd>
+              </div>
+            ))}
             {extracted.modulesSummary && (
               <>
-                <dt>Resumen de módulos</dt>
-                <dd>{extracted.modulesSummary}</dd>
+                <dt>Resumen del programa</dt>
+                <dd className="workshop-document-rich">{extracted.modulesSummary}</dd>
               </>
             )}
           </dl>

@@ -104,20 +104,26 @@ export async function createWorkshopDraft(userId, payload) {
 }
 
 export async function updateWorkshop(userId, workshopId, payload) {
+  const update = {
+    title: payload.title,
+    audience: payload.audience ?? null,
+    organization: payload.organization ?? null,
+    team: payload.team ?? null,
+    modality: payload.modality ?? 'Presencial',
+    objective: payload.objective ?? null,
+    participants_count: payload.participantsCount ?? null,
+    session_count: payload.sessionCount ?? 1,
+    status: payload.status ?? 'draft',
+    updated_at: new Date().toISOString(),
+  }
+
+  if (payload.journalNotes !== undefined) {
+    update.journal_notes = payload.journalNotes
+  }
+
   const { data, error } = await supabase
     .from('workshops')
-    .update({
-      title: payload.title,
-      audience: payload.audience ?? null,
-      organization: payload.organization ?? null,
-      team: payload.team ?? null,
-      modality: payload.modality ?? 'Presencial',
-      objective: payload.objective ?? null,
-      participants_count: payload.participantsCount ?? null,
-      session_count: payload.sessionCount ?? 1,
-      status: payload.status ?? 'draft',
-      updated_at: new Date().toISOString(),
-    })
+    .update(update)
     .eq('user_id', userId)
     .eq('id', workshopId)
     .select()
@@ -128,6 +134,14 @@ export async function updateWorkshop(userId, workshopId, payload) {
   }
 
   return data
+}
+
+export async function reorderWorkshopItems(userId, orderedItemIds) {
+  await Promise.all(
+    orderedItemIds.map((itemId, index) =>
+      updateWorkshopItem(userId, itemId, { sortOrder: index })
+    )
+  )
 }
 
 export async function fetchWorkshopSessions(userId, workshopId) {

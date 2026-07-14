@@ -5,7 +5,7 @@ import { getAuthenticatedUser } from './_lib/supabase.js'
 
 const PARSE_SYSTEM = `Eres un analista de documentos formativos. Extraes metadatos estructurados de Términos de Referencia, propuestas de taller, planes de capacitación o documentos similares. Respondes solo con JSON válido.`
 
-const PARSE_PROMPT = `Lee el documento y extrae los datos del taller.
+const PARSE_PROMPT = `Lee el documento y extrae los datos del taller con el máximo detalle posible.
 
 Devuelve SOLO JSON válido, sin markdown, con esta forma exacta:
 {
@@ -25,6 +25,15 @@ Devuelve SOLO JSON válido, sin markdown, con esta forma exacta:
       "label": "Módulo 1"
     }
   ],
+  "contentOutline": [
+    {
+      "moduleNumber": 1,
+      "title": "",
+      "objectives": "",
+      "contents": "",
+      "durationMinutes": null
+    }
+  ],
   "modulesSummary": "",
   "confidence": "high|medium|low"
 }
@@ -32,10 +41,12 @@ Devuelve SOLO JSON válido, sin markdown, con esta forma exacta:
 Reglas:
 - Si un dato no aparece en el documento, usa "" para strings o null para números.
 - modality debe ser "Presencial", "Online" o "Híbrido" (infierelo solo si hay pistas claras).
-- objective debe reunir objetivos, contenidos y temas principales del documento.
-- sessionCount debe coincidir con la cantidad de sesiones/módulos identificados (mínimo 1).
-- sessions debe tener una entrada por cada sesión/módulo con tiempos razonables si aparecen horas en el documento.
-- No inventes organizaciones, cifras ni módulos que no estén respaldados por el texto.`
+- objective: texto COMPLETO y detallado con objetivos generales, resultados de aprendizaje, competencias, metodología y temas transversales del documento. No resumas en una frase; conserva la riqueza del TDR.
+- contentOutline: un objeto por cada módulo/unidad/sesión identificada. objectives y contents deben ser extensos y fieles al documento (viñetas, temas, subtemas).
+- modulesSummary: síntesis narrativa de la estructura del programa (2-4 párrafos si hay información).
+- sessionCount debe coincidir con sesiones/módulos identificados (mínimo 1).
+- sessions: una entrada por sesión con tiempos del documento.
+- No inventes organizaciones, cifras ni módulos sin respaldo en el texto.`
 
 function parseBody(req) {
   try {
@@ -98,6 +109,18 @@ function normalizeExtracted(raw) {
 
   const participantsCount = Number(raw?.participantsCount)
 
+  const contentOutline = (Array.isArray(raw?.contentOutline) ? raw.contentOutline : [])
+    .map((entry, index) => ({
+      moduleNumber: Number(entry.moduleNumber) || index + 1,
+      title: String(entry.title ?? '').trim(),
+      objectives: String(entry.objectives ?? '').trim(),
+      contents: String(entry.contents ?? '').trim(),
+      durationMinutes: Number.isFinite(Number(entry.durationMinutes))
+        ? Number(entry.durationMinutes)
+        : null,
+    }))
+    .filter((entry) => entry.title || entry.objectives || entry.contents)
+
   return {
     title: String(raw?.title ?? '').trim(),
     organization: String(raw?.organization ?? '').trim(),
@@ -110,6 +133,7 @@ function normalizeExtracted(raw) {
       : null,
     sessionCount,
     sessions,
+    contentOutline,
     modulesSummary: String(raw?.modulesSummary ?? '').trim(),
     confidence: ['high', 'medium', 'low'].includes(raw?.confidence)
       ? raw.confidence
@@ -124,7 +148,7 @@ async function parseWithAnthropic(document) {
     const rawText = await callAnthropicMessages({
       model,
       system: PARSE_SYSTEM,
-      maxTokens: 2048,
+      maxTokens: 4096,
       temperature: 0.2,
       messages: [
         {

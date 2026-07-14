@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
-import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import ActivityPicker from '../../components/workshop/ActivityPicker'
 import DurationSelect from '../../components/workshop/DurationSelect'
 import PausePicker from '../../components/workshop/PausePicker'
@@ -10,7 +9,6 @@ import WorkshopSessionTable from '../../components/workshop/WorkshopSessionTable
 import WorkshopTimeSummary from '../../components/workshop/WorkshopTimeSummary'
 import { useAuth } from '../../context/AuthContext'
 import { generateWorkshopProposal } from '../../services/aiWorkshopService'
-import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createWorkshopItem,
   deleteWorkshopItem,
@@ -20,12 +18,14 @@ import {
   fetchWorkshopSessions,
   finalizeWorkshopStructure,
   formatSessionDuration,
+  reorderWorkshopItems,
   syncWorkshopSessionCount,
   updateWorkshop,
   updateWorkshopItem,
   updateWorkshopSession,
 } from '../../services/workshopService'
 import {
+  formatExtractedObjective,
   getNextWorkshopItemSortOrder,
   isWorkshopOpeningItem,
 } from '../../utils/workshopHelpers'
@@ -58,8 +58,8 @@ export default function WorkshopEditor() {
 
   const [workshop, setWorkshop] = useState(null)
   const [sessions, setSessions] = useState([])
-  const [accessCode, setAccessCode] = useState('')
   const [form, setForm] = useState(null)
+  const [workshopJournal, setWorkshopJournal] = useState('')
   const [loading, setLoading] = useState(true)
   const [savingMeta, setSavingMeta] = useState(false)
   const [syncingSessions, setSyncingSessions] = useState(false)
@@ -71,8 +71,10 @@ export default function WorkshopEditor() {
   const [generatingAi, setGeneratingAi] = useState(false)
   const [aiPreview, setAiPreview] = useState(null)
   const [useKitpopActivities, setUseKitpopActivities] = useState(true)
+  const [includeTheoryModules, setIncludeTheoryModules] = useState(true)
   const aiPanelRef = useRef(null)
   const journalTimersRef = useRef({})
+  const workshopJournalTimerRef = useRef(null)
 
   const loadWorkshop = useCallback(async () => {
     if (!user || !id) {
@@ -83,10 +85,9 @@ export default function WorkshopEditor() {
     setError('')
 
     try {
-      const [workshopData, sessionData, codes] = await Promise.all([
+      const [workshopData, sessionData] = await Promise.all([
         fetchWorkshopById(user.id, id),
         fetchWorkshopSessions(user.id, id),
-        fetchAccessCodesByType(user.id, 'workshop'),
       ])
 
       if (!workshopData) {
@@ -97,6 +98,7 @@ export default function WorkshopEditor() {
 
       setWorkshop(workshopData)
       setForm(mapWorkshopToForm(workshopData))
+      setWorkshopJournal(workshopData.journal_notes ?? '')
 
       if (
         (workshopData.session_count ?? 1) > 0 &&
@@ -112,8 +114,6 @@ export default function WorkshopEditor() {
         const withOpening = await ensureWorkshopOpeningItems(user.id, id)
         setSessions(withOpening)
       }
-
-      setAccessCode(codes.find((entry) => entry.resource_id === id)?.code ?? '')
     } catch (loadError) {
       setError(loadError.message || 'No se pudo cargar el taller.')
     } finally {
@@ -312,6 +312,7 @@ export default function WorkshopEditor() {
   useEffect(
     () => () => {
       Object.values(journalTimersRef.current).forEach(clearTimeout)
+      clearTimeout(workshopJournalTimerRef.current)
     },
     []
   )
@@ -422,7 +423,7 @@ export default function WorkshopEditor() {
       team: extracted.team || form.team,
       audience: extracted.audience || form.audience,
       modality: extracted.modality || form.modality,
-      objective: extracted.objective || form.objective,
+      objective: formatExtractedObjective(extracted) || form.objective,
       participantsCount:
         extracted.participantsCount != null
           ? extracted.participantsCount
@@ -517,7 +518,10 @@ export default function WorkshopEditor() {
         status: workshop.status ?? 'draft',
       })
 
-      const payload = await generateWorkshopProposal(workshop.id, { useKitpopActivities })
+      const payload = await generateWorkshopProposal(workshop.id, {
+        useKitpopActivities,
+        includeTheoryModules,
+      })
       setAiPreview(payload.proposal)
       setMessage('Propuesta generada. Revisa el resumen abajo y aplícala al taller.')
       await refreshProfile(user.id)
@@ -549,6 +553,79 @@ export default function WorkshopEditor() {
     } finally {
       setGeneratingAi(false)
     }
+  }
+
+  async function handleMoveItem(sessionId, itemId, direction) {
+    if (!user) {
+      return
+    }
+
+    const session = sessions.find((entry) => entry.id === sessionId)
+
+    if (!session) {
+      return
+    }
+
+    const items = session.workshop_items ?? []
+    const index = items.findIndex((item) => item.id === itemId)
+
+    if (index === -1) {
+      return
+    }
+
+    const targetIndex = index + direction
+
+    if (targetIndex < 0 || targetIndex >= items.length) {
+      return
+    }
+
+    if (isWorkshopOpeningItem(items[index]) || isWorkshopOpeningItem(items[targetIndex])) {
+      return
+    }
+
+    const reordered = [...items]
+    const [moved] = reordered.splice(index, 1)
+    reordered.splice(targetIndex, 0, moved)
+
+    updateSessionInState(sessionId, { workshop_items: reordered })
+
+    try {
+      await reorderWorkshopItems(
+        user.id,
+        reordered.map((item) => item.id)
+      )
+    } catch (moveError) {
+      setError(moveError.message || 'No se pudo reordenar.')
+      loadWorkshop()
+    }
+  }
+
+  function handleWorkshopJournalChange(notes) {
+    if (!user || !workshop) {
+      return
+    }
+
+    setWorkshopJournal(notes)
+    clearTimeout(workshopJournalTimerRef.current)
+
+    workshopJournalTimerRef.current = setTimeout(async () => {
+      try {
+        await updateWorkshop(user.id, workshop.id, {
+          title: form.title.trim(),
+          organization: form.organization.trim(),
+          team: form.team.trim(),
+          audience: form.audience.trim(),
+          modality: form.modality,
+          objective: form.objective.trim(),
+          participantsCount: form.participantsCount ? Number(form.participantsCount) : null,
+          sessionCount: Number(form.sessionCount) || 1,
+          status: workshop.status ?? 'draft',
+          journalNotes: notes,
+        })
+      } catch (journalError) {
+        setError(journalError.message || 'No se pudo guardar la bitácora general.')
+      }
+    }, 600)
   }
 
   async function handleFinalizeStructure() {
@@ -705,6 +782,7 @@ export default function WorkshopEditor() {
       </Link>
 
       <div className="page-head">
+        <p className="workshop-editor-kicker">Diseño de talleres / reuniones</p>
         <h1 className="cv-title">{workshop.title}</h1>
         <p className="cv-desc">
           Diseña sesiones con tabla Tiempo · Actividad · Descripción y bitácora por sesión.
@@ -719,11 +797,11 @@ export default function WorkshopEditor() {
       {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}
 
-      <AccessCodePanel code={accessCode} resourceLabel="Taller" />
-
       <WorkshopDocumentImport
         useKitpopActivities={useKitpopActivities}
         onUseKitpopChange={setUseKitpopActivities}
+        includeTheoryModules={includeTheoryModules}
+        onIncludeTheoryChange={setIncludeTheoryModules}
         onApplyExtracted={handleApplyExtracted}
         disabled={savingMeta || syncingSessions || generatingAi}
       />
@@ -798,7 +876,7 @@ export default function WorkshopEditor() {
             <label htmlFor="editor-objective">Objetivo y contenidos</label>
             <textarea
               id="editor-objective"
-              rows={3}
+              rows={10}
               value={form.objective}
               onChange={(event) => setForm({ ...form, objective: event.target.value })}
             />
@@ -815,9 +893,13 @@ export default function WorkshopEditor() {
           <div>
             <h3>Diseño con IA</h3>
             <p className="workshop-section-copy">
-              {useKitpopActivities
-                ? 'Genera una propuesta de sesiones con actividades del banco KitPOP según el objetivo del taller.'
-                : 'Genera una propuesta de sesiones con actividades propias diseñadas por IA según el objetivo del taller.'}
+              {includeTheoryModules
+                ? useKitpopActivities
+                  ? 'Genera módulos teóricos (máx. 30 min) alternados con actividades KitPOP según el objetivo del taller.'
+                  : 'Genera módulos teóricos (máx. 30 min) alternados con actividades propias según el objetivo del taller.'
+                : useKitpopActivities
+                  ? 'Genera una propuesta con actividades prácticas del banco KitPOP según el objetivo del taller.'
+                  : 'Genera una propuesta con actividades prácticas propias según el objetivo del taller.'}
             </p>
           </div>
           <div className="workshop-ai-quota">
@@ -969,6 +1051,7 @@ export default function WorkshopEditor() {
             onSwapActivity={(itemId) => handleSwapActivity(session.id, itemId)}
             onUpdateItem={(itemId, patch) => handleUpdateItem(session.id, itemId, patch)}
             onDeleteItem={(itemId) => handleDeleteItem(session.id, itemId)}
+            onMoveItem={(itemId, direction) => handleMoveItem(session.id, itemId, direction)}
           />
 
           <div className="field workshop-journal-field">
@@ -983,6 +1066,24 @@ export default function WorkshopEditor() {
           </div>
         </section>
       ))}
+
+      <section className="auth-panel workshop-journal-general">
+        <h3>Bitácora general del taller</h3>
+        <p className="workshop-section-copy">
+          Registro completo del taller: aprendizajes, ajustes, participación y notas para futuras
+          versiones. Complementa la bitácora por sesión.
+        </p>
+        <div className="field workshop-journal-field">
+          <label htmlFor="workshop-journal-general">Bitácora del taller completo</label>
+          <textarea
+            id="workshop-journal-general"
+            rows={8}
+            placeholder="Ej.: qué funcionó bien, qué cambiarías, observaciones del grupo, acuerdos de seguimiento..."
+            value={workshopJournal}
+            onChange={(event) => handleWorkshopJournalChange(event.target.value)}
+          />
+        </div>
+      </section>
 
       {picker && (
         <ActivityPicker

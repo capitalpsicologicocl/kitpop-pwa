@@ -214,6 +214,13 @@ export default function WorkshopSummary() {
             )}
           </section>
         ))}
+
+        {workshop.journal_notes && (
+          <section className="workshop-summary-journal workshop-summary-journal-general">
+            <h2>Bitácora general del taller</h2>
+            <p>{workshop.journal_notes}</p>
+          </section>
+        )}
       </article>
     </main>
   )

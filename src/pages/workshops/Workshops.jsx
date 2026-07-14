@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
 import { useAuth } from '../../context/AuthContext'
 import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
@@ -10,7 +11,7 @@ import {
   duplicateWorkshop,
   fetchWorkshops,
 } from '../../services/workshopService'
-import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
+import { canCreateResource } from '../../utils/planLimits'
 import { getWorkshopStatusLabel, formatWorkshopDate } from '../../utils/workshopHelpers'
 
 export default function Workshops() {
@@ -160,12 +161,12 @@ export default function Workshops() {
       </Link>
 
       <div className="page-head">
-        <h1 className="cv-title">Diseño de talleres</h1>
+        <h1 className="cv-title">Diseño de talleres / reuniones</h1>
         <p className="cv-desc">
-          Crea, edita y duplica tus talleres. Cuando finalices la estructura podrás
+          Crea, edita y duplica tus talleres o workshops. Cuando finalices la estructura podrás
           descargarla en Word o PDF.
         </p>
-        <span className="profile-badge">{getPlanLabel(profile)}</span>
+        <CompactPlanStrip profile={profile} />
       </div>
 
       {error && <div className="auth-message error">{error}</div>}

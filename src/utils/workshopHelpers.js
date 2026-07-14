@@ -108,3 +108,45 @@ export function formatWorkshopDate(iso) {
     day: 'numeric',
   })
 }
+
+export function formatExtractedObjective(extracted) {
+  const parts = []
+
+  if (extracted.objective) {
+    parts.push(extracted.objective.trim())
+  }
+
+  if (extracted.contentOutline?.length) {
+    parts.push('\n\n--- Contenidos por módulo ---\n')
+
+    for (const module of extracted.contentOutline) {
+      const lines = []
+
+      if (module.title) {
+        lines.push(`Módulo ${module.moduleNumber}: ${module.title}`)
+      }
+
+      if (module.objectives) {
+        lines.push(`Objetivos: ${module.objectives}`)
+      }
+
+      if (module.contents) {
+        lines.push(`Contenidos: ${module.contents}`)
+      }
+
+      if (module.durationMinutes) {
+        lines.push(`Duración sugerida: ${module.durationMinutes} min`)
+      }
+
+      if (lines.length) {
+        parts.push(lines.join('\n'))
+      }
+    }
+  }
+
+  if (extracted.modulesSummary) {
+    parts.push(`\n\n--- Resumen del programa ---\n${extracted.modulesSummary.trim()}`)
+  }
+
+  return parts.join('\n').trim()
+}

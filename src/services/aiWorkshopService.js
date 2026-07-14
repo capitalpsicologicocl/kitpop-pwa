@@ -45,7 +45,10 @@ export async function parseWorkshopDocument({ fileName, mimeType, base64Data }) 
   return payload
 }
 
-export async function generateWorkshopProposal(workshopId, { useKitpopActivities = true } = {}) {
+export async function generateWorkshopProposal(
+  workshopId,
+  { useKitpopActivities = true, includeTheoryModules = true } = {}
+) {
   const token = await getAccessToken()
 
   if (!token) {
@@ -58,7 +61,7 @@ export async function generateWorkshopProposal(workshopId, { useKitpopActivities
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ workshopId, useKitpopActivities }),
+    body: JSON.stringify({ workshopId, useKitpopActivities, includeTheoryModules }),
   })
 
   const payload = await readJsonResponse(response).catch(() => ({}))

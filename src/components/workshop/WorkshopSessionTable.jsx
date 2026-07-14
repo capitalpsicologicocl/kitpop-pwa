@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { formatItemTime } from '../../services/workshopService'
-import { getPauseLabel, isWorkshopOpeningItem, ITEM_TYPE_LABELS } from '../../utils/workshopHelpers'
+import { getPauseLabel, isWorkshopOpeningItem } from '../../utils/workshopHelpers'
 
 export default function WorkshopSessionTable({
   session,
@@ -12,6 +12,7 @@ export default function WorkshopSessionTable({
   onSwapActivity,
   onUpdateItem,
   onDeleteItem,
+  onMoveItem,
 }) {
   const items = session.workshop_items ?? []
 
@@ -34,8 +35,10 @@ export default function WorkshopSessionTable({
               </td>
             </tr>
           ) : (
-            items.map((item) => {
+            items.map((item, index) => {
               const isOpening = isWorkshopOpeningItem(item)
+              const canMoveUp = !isOpening && index > (isWorkshopOpeningItem(items[0]) ? 1 : 0)
+              const canMoveDown = !isOpening && index < items.length - 1
 
               return (
               <tr key={item.id} className={isOpening ? 'workshop-opening-row' : undefined}>
@@ -101,12 +104,34 @@ export default function WorkshopSessionTable({
                     onChange={(event) =>
                       onUpdateItem(item.id, { description: event.target.value })
                     }
-                    rows={3}
+                    rows={5}
                   />
                 </td>
 
                 <td data-label="Acciones">
                   <div className="workshop-row-actions">
+                    {!isOpening && onMoveItem && (
+                      <div className="workshop-reorder-btns">
+                        <button
+                          type="button"
+                          className="workshop-reorder-btn"
+                          disabled={!canMoveUp}
+                          aria-label="Subir fila"
+                          onClick={() => onMoveItem(item.id, -1)}
+                        >
+                          ↑
+                        </button>
+                        <button
+                          type="button"
+                          className="workshop-reorder-btn"
+                          disabled={!canMoveDown}
+                          aria-label="Bajar fila"
+                          onClick={() => onMoveItem(item.id, 1)}
+                        >
+                          ↓
+                        </button>
+                      </div>
+                    )}
                     {item.item_type === 'activity' && (
                       <button
                         type="button"

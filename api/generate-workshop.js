@@ -31,6 +31,10 @@ function clampMinutes(value, fallback = 15) {
   return Math.min(180, Math.round(minutes))
 }
 
+function clampTheoryMinutes(value, fallback = 20) {
+  return Math.min(30, clampMinutes(value, fallback))
+}
+
 function clampDurationPart(value, max) {
   const number = Number(value)
   if (!Number.isFinite(number) || number < 0) {
@@ -121,7 +125,10 @@ function normalizeProposal(rawProposal, sessions, useKitpopActivities = true) {
 
       normalizedItems.push({
         itemType,
-        timeMinutes: clampMinutes(item.timeMinutes, itemType === 'pause' ? 15 : 20),
+        timeMinutes:
+          itemType === 'theory'
+            ? clampTheoryMinutes(item.timeMinutes)
+            : clampMinutes(item.timeMinutes, itemType === 'pause' ? 15 : 20),
         title,
         description,
         activitySlug: itemType === 'activity' ? activitySlug : null,
@@ -174,7 +181,21 @@ function buildWorkshopBrief(workshop, sessions) {
   }
 }
 
-function buildKitpopPrompt({ brief, catalog }) {
+function buildTheoryRules(includeTheoryModules) {
+  if (!includeTheoryModules) {
+    return `- Enfócate en actividades prácticas. Usa "theory" solo si es imprescindible (máx 15 min).
+- Prioriza actividades prácticas variadas.`
+  }
+
+  return `- INCLUYE módulos teóricos basados en el objective del brief (contenidos del TDR).
+- Estructura pedagógica por sesión: bloques teóricos (itemType "theory", máx 30 min c/u) alternados con 1-2 actividades prácticas relacionadas.
+- Títulos teóricos: "Módulo N — [tema]" o "Módulo N — Teórico parte X" si el contenido supera 30 min.
+- Descripciones teóricas: contenido sustantivo del brief (conceptos, objetivos, puntos clave). NO uses placeholders genéricos.
+- Si un módulo tiene mucho contenido: Teórico parte 1 → actividad → Teórico parte 2 → actividad.
+- Cada bloque teórico debe aportar contenido concreto extraído o inferido del objective del brief.`
+}
+
+function buildKitpopPrompt({ brief, catalog, includeTheoryModules }) {
   const compactCatalog = catalog.map((entry) => ({
     slug: entry.slug,
     title: entry.title,
@@ -182,7 +203,7 @@ function buildKitpopPrompt({ brief, catalog }) {
     durationMinutes: entry.durationMinutes,
   }))
 
-  return `Diseña un taller formativo usando EXCLUSIVAMENTE actividades del catálogo KitPOP cuando elijas itemType "activity".
+  return `Diseña un taller formativo usando actividades del catálogo KitPOP (itemType "activity" + activitySlug exacto) y módulos teóricos cuando corresponda.
 
 Brief del taller:
 ${JSON.stringify(brief, null, 2)}
@@ -194,10 +215,10 @@ Reglas:
 - Devuelve SOLO JSON válido, sin markdown.
 - Una entrada por cada sesión del brief (mismo sessionNumber).
 - NO incluyas bienvenida ni encuadre inicial; el editor ya la agrega.
-- Prioriza actividades reales del catálogo (itemType "activity" + activitySlug exacto).
-- Usa "theory" para bloques expositivos breves, "pause" para coffee/lunch/break, "custom" solo si no hay actividad adecuada.
+${buildTheoryRules(includeTheoryModules)}
+- Usa "activity" con activitySlug del catálogo para dinámicas prácticas.
+- Usa "pause" para coffee/lunch/break, "custom" solo si no hay actividad KitPOP adecuada.
 - La suma de timeMinutes por sesión debe aproximarse al tiempo planificado (±15 min).
-- Incluye variedad: apertura, desarrollo, cierre/reflexión.
 - Descripciones en español LATAM, tono profesional y cálido para facilitadores.
 - Evita repetir la misma activitySlug en el taller completo salvo que sea imprescindible.
 
@@ -212,10 +233,16 @@ Formato exacto:
       "narrative": "Hilo conductor de la sesión",
       "items": [
         {
+          "itemType": "theory",
+          "timeMinutes": 25,
+          "title": "Módulo 1 — Introducción al tema",
+          "description": "Contenido teórico detallado del módulo"
+        },
+        {
           "itemType": "activity",
           "timeMinutes": 25,
           "title": "Título visible",
-          "description": "Qué se logra y cómo facilitarlo en 1-2 frases",
+          "description": "Qué se logra y cómo facilitarlo",
           "activitySlug": "slug-del-catalogo"
         }
       ]
@@ -224,7 +251,7 @@ Formato exacto:
 }`
 }
 
-function buildCustomPrompt({ brief }) {
+function buildCustomPrompt({ brief, includeTheoryModules }) {
   return `Diseña un taller formativo con actividades propias (NO uses catálogo externo).
 
 Brief del taller:
@@ -234,12 +261,11 @@ Reglas:
 - Devuelve SOLO JSON válido, sin markdown.
 - Una entrada por cada sesión del brief (mismo sessionNumber).
 - NO incluyas bienvenida ni encuadre inicial; el editor ya la agrega.
+${buildTheoryRules(includeTheoryModules)}
 - Usa SOLO itemType "theory", "custom" o "pause". Nunca uses "activity" ni activitySlug.
-- "custom" = dinámica o ejercicio grupal con título y descripción concretos para el facilitador.
-- "theory" = bloque expositivo breve.
+- "custom" = dinámica o ejercicio grupal con título y descripción concretos.
 - "pause" = coffee/lunch/break con pauseType correspondiente.
 - La suma de timeMinutes por sesión debe aproximarse al tiempo planificado (±15 min).
-- Incluye variedad: apertura, desarrollo, cierre/reflexión.
 - Descripciones en español LATAM, tono profesional y cálido para facilitadores.
 
 Formato exacto:
@@ -253,10 +279,16 @@ Formato exacto:
       "narrative": "Hilo conductor de la sesión",
       "items": [
         {
+          "itemType": "theory",
+          "timeMinutes": 25,
+          "title": "Módulo 1 — Teórico parte 1",
+          "description": "Contenido teórico detallado"
+        },
+        {
           "itemType": "custom",
           "timeMinutes": 25,
           "title": "Título visible",
-          "description": "Qué se logra y cómo facilitarlo en 1-2 frases"
+          "description": "Qué se logra y cómo facilitarlo"
         }
       ]
     }
@@ -279,6 +311,7 @@ export default async function handler(req, res) {
     const body = parseBody(req)
     const workshopId = String(body.workshopId ?? '').trim()
     const useKitpopActivities = body.useKitpopActivities !== false
+    const includeTheoryModules = body.includeTheoryModules !== false
 
     if (!workshopId) {
       return res.status(400).json({ error: 'Falta workshopId.' })
@@ -338,8 +371,8 @@ export default async function handler(req, res) {
       : `Eres un diseñador experto de talleres y reuniones. Creas secuencias pedagógicas con actividades originales, teóricas y pausas, adaptadas al brief del cliente.`
 
     const userPrompt = useKitpopActivities
-      ? buildKitpopPrompt({ brief, catalog })
-      : buildCustomPrompt({ brief })
+      ? buildKitpopPrompt({ brief, catalog, includeTheoryModules })
+      : buildCustomPrompt({ brief, includeTheoryModules })
 
     const rawText = await callAnthropic({
       model,
@@ -359,6 +392,7 @@ export default async function handler(req, res) {
       proposal,
       model,
       useKitpopActivities,
+      includeTheoryModules,
       usage: buildAiUsageResponse(updatedProfile),
     })
   } catch (error) {

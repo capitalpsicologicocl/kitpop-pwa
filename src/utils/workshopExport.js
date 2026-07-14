@@ -100,6 +100,12 @@ export function buildWorkshopDocumentHtml(workshop, sessions, timeSummary) {
     </div>
 
     ${sessionsHtml}
+
+    ${
+      workshop.journal_notes
+        ? `<section><h2>Bitácora general del taller</h2><p>${escapeHtml(workshop.journal_notes)}</p></section>`
+        : ''
+    }
   `
 
   return wrapDocumentHtml({
