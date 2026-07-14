@@ -19,6 +19,11 @@ export function extractScienceRows(sections = []) {
 
   sections.forEach((section) => {
     ;(section.rows || []).forEach((row) => {
+      if (row.ic === 'science') {
+        rows.push(row)
+        return
+      }
+
       const text = `${section.t || ''} ${row.h || ''}`.toLowerCase()
 
       if (SCIENCE_PATTERN.test(text)) {

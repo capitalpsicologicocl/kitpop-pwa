@@ -1,0 +1,1775 @@
+{
+  "CATS": {
+    "perma": {
+      "title": "POP Cards <em>PERMA</em>",
+      "desc": "Actividades del modelo PERMA de Seligman con fundamento científico. Filtra por P (Emociones Positivas), E (Compromiso), R (Relaciones), M (Sentido), A (Logro). Incluye rituales individuales y dinámicas de equipo.",
+      "lv": "",
+      "showPerma": true,
+      "acts": [
+        "ronda-noticias",
+        "cadena-agradecimiento",
+        "momento-wow",
+        "circulo-cierre",
+        "tres-cosas-buenas",
+        "saboreo-consciente",
+        "bloque-enfoque",
+        "mapa-fortalezas",
+        "job-crafting-perma",
+        "carta-primer-dia",
+        "espacio-inspirador",
+        "cafe-conectar",
+        "mis-tres-apoyos",
+        "apreciograma",
+        "conversaciones-conectan",
+        "perma-pulso-equipo",
+        "historias-impacto",
+        "mision-frase",
+        "linea-vida-equipo",
+        "proposito-tres-niveles",
+        "elogio-constructivo",
+        "bitacora-avances",
+        "escalera-proyecto"
+      ]
+    }
+  },
+  "A": {
+    "ronda-noticias": {
+      "ic": "news",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "Ronda de <em>Buenas Noticias</em>",
+      "sub": "Cada persona comparte una noticia positiva laboral o personal antes de comenzar la jornada o reunión. Refuerza la conexión, el optimismo y la cohesión del equipo desde el primer minuto.",
+      "metas": [
+        "10–15 min",
+        "Grupo completo",
+        "Sin materiales",
+        "Ideal para apertura de reunión"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio en círculo donde todos se vean",
+        "Objeto de turno opcional (pelota, piedra)",
+        "Temporizador si el grupo es grande"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Generar un estado emocional positivo al inicio del espacio compartido. Las emociones positivas compartidas al comienzo de una reunión aumentan la apertura, la creatividad y la disposición a colaborar."
+            },
+            {
+              "ic": "focus",
+              "h": "Evidencia",
+              "p": "Basado en la investigación de Barbara Fredrickson sobre Emociones Positivas (modelo PERMA de Seligman): compartir lo positivo amplía el repertorio de pensamiento y acción del equipo, y construye resiliencia colectiva."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "news",
+              "h": "Paso 1 · Invitar (1 min)",
+              "p": "El/la facilitador/a invita al grupo: \"Vamos a comenzar con una ronda de buenas noticias. Puede ser algo laboral o personal — un logro, algo que aprendiste, algo que te alegró esta semana. No tiene que ser extraordinario: lo cotidiano también cuenta.\""
+            },
+            {
+              "ic": "news",
+              "h": "Paso 2 · Modelar (30 seg)",
+              "p": "El/la facilitador/a comienza compartiendo SU propia noticia positiva. Esto rompe el hielo y muestra el nivel de profundidad esperado."
+            },
+            {
+              "ic": "news",
+              "h": "Paso 3 · Ronda completa",
+              "p": "Cada persona comparte en 30–60 segundos. El resto escucha en silencio activo — sin interrumpir, sin comentar. Al terminar cada turno, el grupo puede celebrar brevemente (aplauso, \"gracias\")."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Cierre (1 min)",
+              "p": "El/la facilitador/a señala algún hilo común: \"Escuché X, Y, Z... hay mucha energía en este grupo hoy. Con eso, comenzamos.\""
+            }
+          ],
+          "cita": "\"Las emociones positivas compartidas fortalecen la unión del equipo y aumentan la resiliencia.\" — Modelo PERMA, Seligman"
+        },
+        {
+          "t": "Variantes y adaptaciones",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Versión rápida (5 min)",
+              "p": "Solo 3–4 personas comparten voluntariamente. Útil cuando el tiempo es muy limitado."
+            },
+            {
+              "ic": "focus",
+              "h": "Versión virtual",
+              "p": "En videollamada, usar el chat para que todos escriban su noticia primero, y luego el facilitador/a llama a algunos a compartir verbalmente."
+            },
+            {
+              "ic": "light",
+              "h": "Con objeto de turno",
+              "p": "Una pelota, piedra o cualquier objeto circula por el grupo. Solo quien lo tiene habla. Esto regula los tiempos y da estructura."
+            }
+          ]
+        },
+        {
+          "t": "Cierre en plenario",
+          "plen": [
+            {
+              "c": "¿Cómo está la energía?",
+              "q": "¿Cómo te sientes ahora comparado con cómo llegaste a este espacio?"
+            },
+            {
+              "c": "Patrones del grupo",
+              "q": "¿Qué notan de lo que se compartió? ¿Hay algo en común en las buenas noticias de hoy?"
+            },
+            {
+              "c": "Transferencia",
+              "q": "¿Podríamos hacer esto como ritual de apertura en todas nuestras reuniones?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Basado en la teoría broaden-and-build de Barbara Fredrickson (2001): las emociones positivas compartidas amplían el repertorio cognitivo y conductual del equipo. La revisión narrativa PERMA-P (Hernández, 2026) sintetiza evidencia de que practicas como gratitud, saboreo y afecto positivo en contextos grupales se asocian con mayor bienestar y colaboración, con efectos pequeños a moderados según meta-análisis de intervenciones de psicología positiva (Bolier et al., 2013; Carr et al., 2021)."
+            }
+          ]
+        }
+      ]
+    },
+    "cadena-agradecimiento": {
+      "ic": "thanks",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "Cadena de <em>Agradecimientos</em>",
+      "sub": "El equipo se reúne en círculo. Una persona inicia agradeciendo a un compañero/a por una acción, actitud o gesto específico. La cadena recorre al equipo completo hasta que todos hayan dado y recibido gratitud.",
+      "metas": [
+        "15–20 min",
+        "Grupo completo",
+        "Sin materiales",
+        "Ideal para cierre de proyecto o etapa"
+      ],
+      "mat": [
+        "Sin materiales (versión básica)",
+        "Opcional: tarjetas donde escribir el agradecimiento para que la persona se lo lleve",
+        "Espacio en círculo"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Reforzar los vínculos del equipo, generar reconocimiento mutuo y fortalecer la cohesión. Compartir gratitud activa emociones positivas en quien da Y en quien recibe, multiplicando la energía colectiva."
+            },
+            {
+              "ic": "heart",
+              "h": "Encuadre para el grupo",
+              "p": "Explica antes de comenzar: \"Este ejercicio es de reconocimiento genuino y específico. No se trata de decir algo bonito por cumplir — sino de nombrar una acción real, una actitud concreta, un gesto que te impactó. Eso es lo que hace poderoso al agradecimiento.\""
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "Paso 1 · Postura y círculo",
+              "p": "El grupo se organiza en círculo — todos visibles entre sí. Pide un momento de silencio para conectar: \"Cierra los ojos un segundo. Piensa en alguien de este grupo que haya hecho algo que te impactó positivamente esta semana o en este proyecto.\""
+            },
+            {
+              "ic": "thanks",
+              "h": "Paso 2 · Formato del agradecimiento",
+              "p": "El formato es: \"Quiero agradecer a [nombre] porque [acción específica] y el impacto que tuvo en mí/en el equipo fue [impacto concreto].\" Ejemplo: \"Quiero agradecer a Ana porque cuando tuvimos el problema del lunes, ella se quedó hasta tarde buscando la solución, y eso me permitió llegar tranquila al cliente.\""
+            },
+            {
+              "ic": "thanks",
+              "h": "Paso 3 · La cadena",
+              "p": "Quien inicia elige a alguien del grupo para agradecer. Esa persona recibe el agradecimiento con un simple \"gracias\" — sin minimizar (\"ay, no fue nada\") ni justificar. Luego esa misma persona agradece a otra, y así sucesivamente hasta que todos hayan dado y recibido."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Cierre",
+              "p": "El/la facilitador/a cierra la cadena con una observación del grupo: \"Hoy se nombraron X cosas. Todas son reales, todas importan. Eso es el equipo que somos.\""
+            }
+          ],
+          "cita": "\"Compartir gratitud multiplica la energía positiva en el equipo.\""
+        },
+        {
+          "t": "Notas para el facilitador/a",
+          "rows": [
+            {
+              "ic": "light",
+              "h": "Si alguien no recibe agradecimiento",
+              "p": "Vigilar que todos reciban. Si alguien queda sin recibir, el/la facilitador/a puede cerrar el círculo agradeciendo a esa persona o invitando a alguien a completarlo."
+            },
+            {
+              "ic": "observe",
+              "h": "Si el grupo es grande (+15 personas)",
+              "p": "Hacer la cadena en subgrupos de 8–10 personas simultáneamente. Luego una ronda voluntaria de 3–4 personas en plenario."
+            }
+          ]
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "¿Cómo fue dar?",
+              "q": "¿Cómo fue para ti dar un agradecimiento en voz alta, frente al grupo?"
+            },
+            {
+              "c": "¿Cómo fue recibir?",
+              "q": "¿Cómo te sentiste cuando te nombraron? ¿Fue fácil recibir o te costó?"
+            },
+            {
+              "c": "Cultura del equipo",
+              "q": "¿Con qué frecuencia nos agradecemos así en el día a día? ¿Qué cambiaría si lo hiciéramos más seguido?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La gratitud interpersonal activa emociones positivas en quien da y en quien recibe, fortaleciendo vínculos (componente R del PERMA). Meta-análisis sobre intervenciones de gratitud reportan mejoras modestas en bienestar (Dickens, 2017; Emmons & McCullough, 2003). En equipos, el reconocimiento específico —no genérico— aumenta cohesión y reduce conflictos latentes."
+            }
+          ]
+        }
+      ]
+    },
+    "momento-wow": {
+      "ic": "wow",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "Momento <em>WOW</em> Colectivo",
+      "sub": "Cada integrante recuerda y comparte una experiencia laboral que generó alegría, gratitud o inspiración. Estas historias fortalecen el sentido colectivo del trabajo y generan emoción compartida.",
+      "metas": [
+        "20–25 min",
+        "Grupo completo",
+        "Post-its y marcadores"
+      ],
+      "mat": [
+        "Post-its de colores (2 por persona)",
+        "Marcadores",
+        "Pizarra o mural grande",
+        "Papel kraft si no hay pizarra",
+        "Opcional: música suave de fondo"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Las historias positivas inspiran y construyen confianza. Narrar experiencias de impacto activa la memoria emocional del equipo y refuerza el sentido de propósito colectivo. Ideal para equipos que están en un momento de desgaste o transición."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Paso 1 · Reflexión individual (5 min)",
+              "p": "Cada persona recibe 2 post-its. Consigna: \"Recuerda un momento WOW de tu trabajo — una situación donde sentiste alegría, orgullo, gratitud o inspiración. Puede ser reciente o de hace tiempo. Escribe en un post-it: ¿qué pasó? y en el otro: ¿cómo te hizo sentir?\""
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 2 · Compartir en grupo",
+              "p": "Por turnos (1–2 min por persona), cada persona comparte su momento WOW. El grupo escucha en silencio — sin interrumpir, sin comentar todavía. El/la facilitador/a pega los post-its en el mural."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 3 · Mapear y conectar (5 min)",
+              "p": "Una vez que todos compartieron, el/la facilitador/a agrupa los post-its por temas emergentes: ¿Cuántos hablan de impacto en personas? ¿Cuántos de trabajo en equipo? ¿Cuántos de resolver desafíos? Esto hace visible los patrones de significado del grupo."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Nombrar lo que vemos",
+              "p": "El/la facilitador/a señala los patrones: \"Lo que escucho es que nuestros momentos WOW están relacionados con... Eso dice algo sobre quiénes somos como equipo.\""
+            }
+          ],
+          "cita": "\"Las historias positivas inspiran y construyen confianza.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "Patrones del grupo",
+              "q": "¿Qué tienen en común los momentos WOW que compartimos? ¿Qué dice eso de nosotros como equipo?"
+            },
+            {
+              "c": "Condiciones",
+              "q": "¿Qué condiciones estaban presentes cuando ocurrieron esos momentos? ¿Cómo podemos crear esas condiciones más seguido?"
+            },
+            {
+              "c": "Acción",
+              "q": "¿Qué podemos hacer diferente a partir de mañana para generar más de estos momentos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El saboreo (savoring) prolonga y intensifica experiencias positivas mediante atención deliberada (Klibert et al., 2022). Narrar momentos de impacto en grupo activa memoria emocional positiva y construye identidad colectiva, conectando P (emociones) con M (sentido). La evidencia sugiere que compartir lo positivo en contexto seguro multiplica su efecto relacional."
+            }
+          ]
+        }
+      ]
+    },
+    "circulo-cierre": {
+      "ic": "moon",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "Círculo de <em>Cierre Positivo</em>",
+      "sub": "Ritual de cierre donde cada integrante comparte algo bueno que experimentó en la jornada o reunión. Ayuda a cerrar con gratitud, revalorizar lo vivido y mantener presente que incluso en días complejos siempre hay algo positivo que destacar.",
+      "metas": [
+        "8–12 min",
+        "Grupo completo",
+        "Sin materiales",
+        "Ideal para cierre de jornada o reunión"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio en círculo",
+        "Objeto de turno si el grupo es grande (pelota, vela, piedra)"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Los rituales de cierre colectivos aumentan el bienestar individual y fortalecen el sentido de pertenencia al grupo. Cerrar una reunión o jornada nombrando lo positivo activa la memoria emocional positiva del equipo y mejora la predisposición para la próxima vez."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "moon",
+              "h": "Paso 1 · Invitar al círculo",
+              "p": "El/la facilitador/a invita al grupo a formar un círculo físico — si es posible de pie. Dice: \"Vamos a cerrar con algo que a veces no hacemos: nombrar lo bueno de hoy. Antes de irnos, cada uno va a compartir algo positivo que vivió — un aprendizaje, un momento que le gustó, algo que lo alegró, algo que le sorprendió bien.\""
+            },
+            {
+              "ic": "moon",
+              "h": "Paso 2 · Ronda de cierre",
+              "p": "Por turnos (20–30 seg por persona), cada integrante comparte. El/la facilitador/a puede modelar comenzando: \"A mí hoy me alegró que...\" El resto escucha sin comentar."
+            },
+            {
+              "ic": "moon",
+              "h": "Paso 3 · Cierre del facilitador/a",
+              "p": "El/la facilitador/a cierra la ronda con una síntesis breve: \"Hoy vivimos [X]. Eso habla de quiénes somos como equipo. Nos vemos [próxima vez].\" Si hay intención para la próxima sesión, se nombra aquí."
+            },
+            {
+              "ic": "spark",
+              "h": "Gesto de cierre (opcional)",
+              "p": "Un gesto simbólico final: mano al centro, aplauso colectivo, una respiración juntos, o un breve silencio de reconocimiento. Esto marca la transición."
+            }
+          ],
+          "cita": "\"Los rituales colectivos cierran el día con bienestar compartido.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "¿Cómo te vas?",
+              "q": "¿Cómo te sientes comparado a cómo llegaste al inicio de esta jornada/reunión?"
+            },
+            {
+              "c": "Lo más valioso",
+              "q": "¿Qué es lo más valioso que te llevas de hoy?"
+            },
+            {
+              "c": "Compromiso",
+              "q": "¿Con qué intención o compromiso te vas?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Los rituales de cierre que nombran lo positivo favorecen consolidación emocional y pertenencia grupal. Desde PERMA-P, cerrar conscientemente la jornada reduce el sesgo de negatividad retrospectiva y entrena la regulación de emociones positivas (saboreo y gratitud breve). La flexibilidad emocional —no positividad forzada— es clave para bienestar sostenible (Houben et al., 2015)."
+            }
+          ]
+        }
+      ]
+    },
+    "tres-cosas-buenas": {
+      "ic": "star",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "Tres <em>Cosas Buenas</em>",
+      "sub": "Ritual breve —individual o en equipo— para registrar tres experiencias positivas del día o de la semana. Entrena la atención hacia lo que funciona y construye un repertorio de gratitud cotidiana.",
+      "metas": [
+        "5–10 min",
+        "Individual o equipo",
+        "Bitácora o app",
+        "Ritual diario o semanal"
+      ],
+      "mat": [
+        "Cuaderno, app de notas o plantilla KitPOP",
+        "2–5 min de silencio inicial",
+        "Opcional: compartir en ronda de 1 min"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Entrenar la detección de lo positivo cotidiano, contrarrestando el sesgo de negatividad. Ideal como cierre de jornada personal o apertura semanal de equipo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "edit",
+              "h": "Paso 1 · Tres columnas (3 min)",
+              "p": "Anota tres cosas que fueron bien hoy/esta semana. Para cada una responde: ¿Qué pasó? ¿Qué rol tuviste tú? ¿Cómo te sentiste?"
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 2 · Profundizar una (2 min)",
+              "p": "Elige la más significativa y escribe por qué importó —conecta con una fortaleza tuya o de alguien del equipo."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Compartir (opcional, 5 min)",
+              "p": "En equipo: una persona comparte solo UNA cosa buena en 60 segundos. Sin comentarios, solo escucha. Rotar semanalmente quién abre."
+            }
+          ],
+          "cita": "\"Lo que apreciamos, aprecia.\" — Emmons & McCullough"
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Patrón",
+              "q": "¿Qué tipo de cosas buenas aparecen más seguido? ¿Qué dice de ti o del equipo?"
+            },
+            {
+              "c": "Transferencia",
+              "q": "¿Podemos hacer de esto un ritual fijo —al cerrar el día o la semana?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Intervención clásica de psicología positiva: Emmons & McCullough (2003) demostraron que contar bendiciones mejora bienestar subjetivo. Meta-análisis confirman efectos modestos de prácticas de gratitud (Dickens, 2017). En PERMA-P, registrar lo positivo entrena saboreo y reduce «dampening» —minimizar lo bueno— (Hernández, 2026)."
+            }
+          ]
+        }
+      ]
+    },
+    "saboreo-consciente": {
+      "ic": "sun",
+      "cat": "PERMA · P — Emociones Positivas",
+      "perma": "P",
+      "clr": "brand",
+      "name": "<em>Saboreo</em> Consciente",
+      "sub": "Práctica guiada para prolongar e intensificar una experiencia positiva reciente —laboral o personal— mediante atención plena al recuerdo. Individual o en parejas.",
+      "metas": [
+        "10–15 min",
+        "Individual o duplas",
+        "Sin materiales",
+        "Tras un logro o momento agradable"
+      ],
+      "mat": [
+        "Espacio tranquilo",
+        "Opcional: objeto simbólico del momento a saborear"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "sun",
+              "h": "Paso 1 · Elegir el momento (1 min)",
+              "p": "Recuerda algo positivo de las últimas 48 horas —un logro, un gesto, un aprendizaje, un encuentro."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Revivir con los sentidos (4 min)",
+              "p": "Cierra los ojos. ¿Qué veías? ¿Qué escuchabas? ¿Qué sentías en el cuerpo? Permanece en el recuerdo sin apresurarte."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 3 · Ampliar (3 min)",
+              "p": "Pregunta: ¿Qué hizo especial este momento? ¿Quién contribuyó? ¿Cómo puedo crear condiciones para repetirlo?"
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Compartir en dupla (5 min)",
+              "p": "Si es grupal: en parejas, comparte solo la sensación principal —no la historia completa— y escucha la de tu compañero/a."
+            }
+          ],
+          "cita": "\"Saborear es estirar lo bueno.\" — Bryant & Veroff"
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El saboreo (savoring) busca aumentar intensidad y duración de emociones positivas mediante atención deliberada. Meta-análisis reportan efectos pequeños a moderados en bienestar (Klibert et al., 2022). En PERMA-P, saborear no depende de más eventos externos: transforma cómo procesamos lo que ya ocurrió (Hernández, 2026)."
+            }
+          ]
+        }
+      ]
+    },
+    "bloque-enfoque": {
+      "ic": "focus",
+      "cat": "PERMA · E — Compromiso",
+      "perma": "E",
+      "clr": "brand",
+      "name": "Bloques de <em>Enfoque Compartido</em>",
+      "sub": "El equipo acuerda trabajar en paralelo y en silencio durante un período definido en tareas prioritarias. Al terminar, comparten avances para reconocer el esfuerzo y motivarse mutuamente. Fomenta el estado de flow colectivo.",
+      "metas": [
+        "30–45 min activos",
+        "Equipo de trabajo",
+        "Sin interrupción"
+      ],
+      "mat": [
+        "Cada persona su material de trabajo propio",
+        "Temporizador visible para todos",
+        "Música instrumental sin letra — opcional",
+        "Sin notificaciones activas (modo avión o silencio)"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "¿Para qué sirve?",
+              "p": "El estado de flow (Csikszentmihalyi) ocurre cuando hay concentración profunda en una tarea desafiante. Los bloques de enfoque compartido crean las condiciones colectivas para ese estado, eliminando las interrupciones sociales que fragmentan el trabajo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "Paso 1 · Definir antes del bloque (5 min)",
+              "p": "Cada persona define EN VOZ ALTA una sola tarea prioritaria para el bloque: \"Yo voy a [tarea específica].\" Esto crea compromiso social y claridad de foco. No vale decir \"voy a trabajar en mis pendientes\" — debe ser algo concreto."
+            },
+            {
+              "ic": "focus",
+              "h": "Paso 2 · Configurar el ambiente",
+              "p": "Silenciar teléfonos. Cerrar chats y redes. Poner música instrumental si el grupo lo prefiere. El facilitador/a activa el temporizador visible: 25 min (técnica Pomodoro) o el tiempo acordado."
+            },
+            {
+              "ic": "focus",
+              "h": "Paso 3 · Bloque de trabajo en silencio",
+              "p": "Todos trabajan en paralelo. Sin reuniones, sin consultas, sin interrupciones. Si alguien necesita algo urgente, escríbelo en un papel para después. El silencio compartido no es incómodo — es energizante."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Compartir avances (5–10 min)",
+              "p": "Al sonar el timer, cada persona comparte brevemente (30 seg): \"Logré [X]. El próximo paso es [Y].\" El grupo reconoce con aplausos o un \"bien hecho\". No se comenta ni se da retroalimentación — solo se reconoce."
+            }
+          ],
+          "cita": "\"El flow colectivo aumenta el foco y la creatividad del equipo.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Notas para el facilitador/a",
+          "rows": [
+            {
+              "ic": "light",
+              "h": "Técnica Pomodoro",
+              "p": "25 min de trabajo + 5 min de descanso. Después de 4 bloques, descanso largo (15–30 min). Puedes hacer 2 bloques seguidos con descanso entre ellos."
+            },
+            {
+              "ic": "observe",
+              "h": "Resistencia inicial",
+              "p": "Es normal que al principio el grupo sienta incomodidad con el silencio. Normalízalo: \"Los primeros minutos pueden sentirse raros. Eso pasa siempre. Sigan.\""
+            }
+          ]
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "¿Cómo fue la experiencia?",
+              "q": "¿Cómo fue concentrarte sabiendo que todos a tu alrededor también lo estaban haciendo?"
+            },
+            {
+              "c": "Calidad del trabajo",
+              "q": "¿Lograste más en este bloque de lo que normalmente logras en el mismo tiempo? ¿Por qué crees que es?"
+            },
+            {
+              "c": "Implementación",
+              "q": "¿Podrían incluir un bloque de enfoque compartido en su rutina semanal? ¿Cuándo y cómo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Inspirado en el concepto de flow de Csíkszentmihályi y en el engagement (E) del PERMA: estados de absorción profunda con metas claras y feedback inmediato. Meta-análisis reciente vincula flow laboral con bienestar y desempeño (Liu et al., 2023). El modelo demandas-recursos (Bakker & Demerouti, 2017) subraya que el engagement sostenible requiere recuperación, no solo intensidad."
+            }
+          ]
+        }
+      ]
+    },
+    "mapa-fortalezas": {
+      "ic": "map",
+      "cat": "PERMA · E — Compromiso",
+      "perma": "E",
+      "clr": "brand",
+      "name": "Mapa de <em>Fortalezas</em>",
+      "sub": "Cada persona identifica una fortaleza VIA y la comparte con el grupo. El equipo construye un mapa de talentos y acuerda cómo alinearlo con proyectos. Recomendado tras la actividad «Test Oficial VIA».",
+      "metas": [
+        "25–30 min",
+        "Grupos de 4–8",
+        "Tarjetas y marcadores"
+      ],
+      "mat": [
+        "Tarjetas grandes o post-its (1 por persona)",
+        "Marcadores de colores",
+        "Pizarra o cartulina grande para el mapa colectivo",
+        "Opcional: imprimir lista de Fortalezas VIA para referencia"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Cuando los equipos conocen y usan sus fortalezas individuales, el compromiso aumenta significativamente. Esta actividad hace visible el \"capital de talentos\" del equipo y genera conversaciones sobre cómo alinearlo con los objetivos colectivos."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Identificar la fortaleza (5 min)",
+              "p": "Cada persona recibe una tarjeta grande. Consigna: \"Identifica tu mayor fortaleza — algo en lo que genuinamente destacas y que aporta valor al equipo. Puede ser una habilidad técnica, una habilidad de relación, una forma de pensar. Escríbela grande en tu tarjeta y agrega 2 ejemplos concretos de cuándo la usas.\""
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Ronda de presentación (10 min)",
+              "p": "Por turnos, cada persona presenta su fortaleza en 60 segundos: \"Mi fortaleza es [X]. La uso cuando [ejemplo 1] y también cuando [ejemplo 2].\" El grupo puede sumar: \"Yo también veo en ti la fortaleza de [Y]\" — solo si es genuino."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Construir el mapa colectivo (10 min)",
+              "p": "Se pegan todas las tarjetas en la pizarra. El facilitador/a pregunta: \"¿Qué vemos aquí? ¿Qué fortalezas tenemos como equipo? ¿Hay algo que nos falta? ¿Hay talentos que no estamos usando lo suficiente?\" Agrupar por categorías emergentes."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Conectar con los proyectos",
+              "p": "Para cada proyecto o desafío actual del equipo, identificar qué fortalezas del mapa son más relevantes. ¿Quién debería liderar qué?"
+            }
+          ],
+          "cita": "\"El compromiso crece cuando usamos nuestras fortalezas en equipo.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "Descubrimientos",
+              "q": "¿Hubo alguna fortaleza de un compañero/a que no conocías o que te sorprendió? ¿Cuál?"
+            },
+            {
+              "c": "Uso actual",
+              "q": "¿Estamos aprovechando bien las fortalezas de todos en el equipo? ¿Qué cambiaría si lo hiciéramos mejor?"
+            },
+            {
+              "c": "Acción concreta",
+              "q": "¿Hay alguien con una fortaleza que podría tomar más protagonismo en algún proyecto actual? ¿Cuál?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Seligman y Peterson identificaron 24 fortalezas de carácter agrupadas en seis virtudes (VIA). Usar fortalezas signature en el trabajo aumenta engagement y bienestar (Niemiec, 2018; Linley et al., 2010). Esta actividad hace visible el capital de talentos del equipo antes de asignar roles, alineando E (compromiso) con fortalezas reales."
+            }
+          ]
+        }
+      ]
+    },
+    "job-crafting-perma": {
+      "ic": "briefcase",
+      "cat": "PERMA · E — Compromiso",
+      "perma": "E",
+      "clr": "brand",
+      "name": "<em>Job Crafting</em> en Equipo",
+      "sub": "Sesión estructurada para rediseñar tareas, relaciones y significado del rol dentro de los límites reales del puesto. Aumenta engagement al alinear trabajo con fortalezas y valores.",
+      "metas": [
+        "45–60 min",
+        "Equipo o subgrupos",
+        "Post-its y pizarra",
+        "Trimestral o tras restructuración"
+      ],
+      "mat": [
+        "Plantilla job crafting (tareas / relaciones / significado)",
+        "Post-its de tres colores",
+        "Acuerdos con liderazgo sobre límites de cambio"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "briefcase",
+              "h": "Paso 1 · Mapa actual (10 min)",
+              "p": "Cada persona lista: 3 tareas que energizan, 3 que drenan, 3 relaciones clave, 1 aspecto de significado que ya existe."
+            },
+            {
+              "ic": "briefcase",
+              "h": "Paso 2 · Tres tipos de crafting (15 min)",
+              "p": "Task crafting: ¿Qué puedo hacer más/menos/diferente? Relational crafting: ¿Con quién quiero colaborar más? Cognitive crafting: ¿Cómo puedo reencuadrar una tarea aburrida conectándola con impacto?"
+            },
+            {
+              "ic": "briefcase",
+              "h": "Paso 3 · Propuesta al equipo (15 min)",
+              "p": "Compartir UNA propuesta concreta y negociable. El equipo responde: ¿Qué apoyo necesitas? ¿Qué intercambio es justo?"
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Compromiso",
+              "p": "Registrar 1–2 cambios acordados con responsable y fecha de revisión en 30 días."
+            }
+          ],
+          "cita": "\"No necesitas otro trabajo para tener otro trabajo.\" — Berg, Dutton & Wrzesniewski"
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Job crafting —rediseñar activamente tareas, relaciones y significado del rol— aumenta engagement con efectos respaldados por meta-análisis (Oprea et al., 2019; Sakuraya et al., 2020). El modelo demandas-recursos (Bakker & Demerouti, 2017) explica por qué alinear trabajo con fortalezas y autonomía sostiene E del PERMA sin exigir sobretrabajo."
+            }
+          ]
+        }
+      ]
+    },
+    "carta-primer-dia": {
+      "ic": "scroll",
+      "cat": "PERMA · E — Compromiso",
+      "perma": "E",
+      "clr": "brand",
+      "name": "Carta al <em>Primer Día</em>",
+      "sub": "En duplas, los integrantes escriben un mensaje a su \"yo del primer día\" en el equipo. Comparten expectativas, aprendizajes y desafíos superados. Reactiva el sentido de propósito y valora el camino recorrido juntos.",
+      "metas": [
+        "20–25 min",
+        "Duplas o grupo completo",
+        "Papel y lápiz"
+      ],
+      "mat": [
+        "Papel y lápiz por persona",
+        "Espacio tranquilo",
+        "Música suave — opcional",
+        "Sobres para guardar la carta — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Invitar la reflexión (2 min)",
+              "p": "Dice el/la facilitador/a: \"Viaja mentalmente a tu primer día en este equipo. ¿Cómo llegaste? ¿Qué esperabas? ¿Qué no sabías aún? ¿Qué te daba curiosidad o miedo?\""
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Escribir la carta (8 min)",
+              "p": "Cada persona escribe a su \"yo del primer día\": qué aprendiste, qué desafío superaste que parecía imposible, qué personas te cambiaron, qué te sorprendió para bien, y qué le dirías hoy a ese yo de entonces."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Compartir en duplas (8 min)",
+              "p": "En parejas, cada persona comparte lo más significativo — no la carta completa. La dupla escucha con atención plena. Turnos de 3–4 min."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Plenario (5 min)",
+              "p": "\"¿Hay alguna frase de tu carta que quieras regalarle al grupo?\""
+            }
+          ],
+          "cita": "\"Recordar los inicios reactiva la motivación colectiva.\""
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "El camino",
+              "q": "¿Qué logros o aprendizajes no habías valorado suficientemente hasta hoy?"
+            },
+            {
+              "c": "Cambio",
+              "q": "¿Cómo eres diferente hoy en comparación a ese primer día?"
+            },
+            {
+              "c": "El futuro",
+              "q": "¿Qué quieres que el \"yo del futuro\" pueda decir sobre este período?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La narrativa autobiográfica sobre el propio recorrido activa identidad y motivación (componentes E y M del PERMA). Revisar expectativas iniciales versus aprendizajes consolidados favorece coherencia narrativa y sentido de progreso, factores asociados con persistencia y bienestar en equipos de trabajo."
+            }
+          ]
+        }
+      ]
+    },
+    "espacio-inspirador": {
+      "ic": "impact",
+      "cat": "PERMA · E — Compromiso",
+      "perma": "E",
+      "clr": "brand",
+      "name": "Espacio <em>Inspirador</em>",
+      "sub": "Cada integrante trae un objeto o imagen que lo inspire y lo presenta al grupo explicando por qué lo motiva. Compartir estos símbolos personales genera conexión emocional y enriquece el ambiente de trabajo.",
+      "metas": [
+        "20–25 min",
+        "Grupo completo",
+        "Objeto personal o imagen"
+      ],
+      "mat": [
+        "Cada persona trae un objeto o imagen (avisar con 24–48 hrs de anticipación)",
+        "Pantalla para imágenes digitales",
+        "Papel para notar observaciones — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "impact",
+              "h": "Preparación previa",
+              "p": "Avisar con anticipación: \"Trae un objeto físico o imagen que represente algo que te inspire en tu vida o trabajo. Puede ser cualquier cosa — una foto, una herramienta, un libro, un recuerdo.\""
+            },
+            {
+              "ic": "impact",
+              "h": "Presentación (2 min c/u)",
+              "p": "¿Qué es? ¿Por qué lo elegiste? ¿Qué te inspira de él? ¿Cómo se conecta con tu trabajo o con quién eres en este equipo?"
+            },
+            {
+              "ic": "impact",
+              "h": "Una pregunta del grupo",
+              "p": "Después de cada presentación, el grupo puede hacer UNA sola pregunta de curiosidad genuina — no de análisis ni de juicio."
+            },
+            {
+              "ic": "impact",
+              "h": "Mapa de inspiraciones",
+              "p": "El/la facilitador/a anota en la pizarra palabras clave que emergen. Al final: un \"mapa de lo que nos inspira como equipo\"."
+            }
+          ],
+          "cita": "\"La inspiración compartida enciende la energía del equipo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sorpresas",
+              "q": "¿Hubo algún objeto que te sorprendió? ¿Qué dice de tu compañero/a?"
+            },
+            {
+              "c": "Colectivo",
+              "q": "¿Qué tienen en común las fuentes de inspiración del equipo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Conectar objetos personales con significado activa motivación intrínseca y autenticidad (Self-Determination Theory). Compartir fuentes de inspiración en equipo humaniza relaciones (R) y revela valores compartidos que sustentan engagement (E), sin exigir vulnerabilidad clínica."
+            }
+          ]
+        }
+      ]
+    },
+    "cafe-conectar": {
+      "ic": "wow",
+      "cat": "PERMA · R — Relaciones Positivas",
+      "perma": "R",
+      "clr": "brand",
+      "name": "Café para <em>Conectar</em>",
+      "sub": "Integrantes que normalmente no interactúan se dividen en duplas o triadas y comparten un café mientras conversan sobre motivaciones, intereses o desafíos personales. Rompe barreras y humaniza las relaciones.",
+      "metas": [
+        "20–30 min",
+        "Duplas o triadas",
+        "Café o infusión"
+      ],
+      "mat": [
+        "Café, té o infusión para todos",
+        "Espacio cómodo e informal",
+        "Tarjetas con preguntas disparadoras — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Paso 1 · Formar las duplas o triadas",
+              "p": "Juntar personas que no se conozcan mucho o que no trabajen directamente juntas. Sortear al azar o asignación intencional del/la facilitador/a."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 2 · Preguntas guía (15–20 min)",
+              "p": "Conversar libremente. Si el grupo no está acostumbrado a charlas personales, usar preguntas disparadoras: ¿Qué te trajo a este trabajo? / ¿Qué te recarga fuera del trabajo? / ¿Cuál ha sido tu mayor aprendizaje este año? / ¿Qué te daría orgullo lograr en los próximos meses?"
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 3 · Descubrimientos (5 min)",
+              "p": "\"¿Alguien quiere compartir algo que descubrió de su compañero/a?\""
+            }
+          ],
+          "cita": "\"Conectarse en lo humano fortalece la confianza.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Descubriste",
+              "q": "¿Hay algo de tu compañero/a que cambia cómo lo/la ves en el trabajo?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Cómo cambiaría el ambiente si tuviéramos estas conversaciones más seguido?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las relaciones positivas (R) son pilar del PERMA: el apoyo social percibido se asocia consistentemente con menor depresión y mayor bienestar (Rueger et al., 2016). El contacto informal entre personas que no interactúan habitualmente reduce barreras jerárquicas y construye capital social, base de confianza en equipos (Holt-Lunstad, 2024)."
+            }
+          ]
+        }
+      ]
+    },
+    "mis-tres-apoyos": {
+      "ic": "heart",
+      "cat": "PERMA · R — Relaciones Positivas",
+      "perma": "R",
+      "clr": "brand",
+      "name": "Mis Tres <em>Apoyos</em>",
+      "sub": "Cada persona identifica a tres colegas que han sido clave en su camino laboral y comparte con el grupo su importancia. Hace visible la red de apoyo que sostiene al equipo y fortalece los lazos de confianza mutua.",
+      "metas": [
+        "20 min",
+        "Grupo completo",
+        "Papel y lápiz"
+      ],
+      "mat": [
+        "Papel y lápiz por persona",
+        "Pizarra para el mapa colectivo — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Paso 1 · Reflexión individual (5 min)",
+              "p": "\"Piensa en tres personas de este equipo (o de tu vida laboral) que han sido clave en tu camino. No necesariamente las que más te gustan — sino las que más han contribuido a tu crecimiento o que te apoyaron en momentos difíciles.\""
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 2 · Compartir en grupo (2 min c/u)",
+              "p": "Cada persona nombra a sus tres apoyos y dice brevemente por qué. Las personas nombradas solo escuchan — no comentan."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 3 · Mapa de redes",
+              "p": "El/la facilitador/a traza conexiones en la pizarra: cada persona es un nodo, y se conectan quienes se nombraron mutuamente. El mapa revela la red de apoyo real del equipo."
+            }
+          ],
+          "cita": "\"Los apoyos internos son redes de contención.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "La red",
+              "q": "¿Qué ven en el mapa? ¿Hay personas muy conectadas? ¿Alguna menos?"
+            },
+            {
+              "c": "Lo no dicho",
+              "q": "¿Le dijiste alguna vez a tus apoyos lo que significan para ti?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Mapear redes de apoyo hace visible la estructura relacional del equipo. La literatura PERMA-R distingue cantidad versus calidad de vínculos: lo subjetivo (sentirse apoyado) predice mejor el bienestar que el simple conteo de contactos (Wang et al., 2018). Nombrar apoyos en voz alta refuerza gratitud y reciprocidad."
+            }
+          ]
+        }
+      ]
+    },
+    "apreciograma": {
+      "ic": "thanks",
+      "cat": "PERMA · R — Relaciones Positivas",
+      "perma": "R",
+      "clr": "brand",
+      "name": "El <em>Apreciograma</em>",
+      "sub": "Cada integrante escribe su nombre en una hoja que circula por el grupo. Los demás escriben una cualidad positiva o aporte que valoran. Al final, todos reciben su hoja llena de reconocimientos.",
+      "metas": [
+        "20–25 min",
+        "Grupo completo",
+        "Hojas y lápices"
+      ],
+      "mat": [
+        "Una hoja A4 por persona",
+        "Lápices o bolígrafos para todos",
+        "Espacio donde las hojas puedan circular cómodamente"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "Paso 1",
+              "p": "Cada persona escribe su nombre en la parte superior de una hoja y la pasa a la derecha."
+            },
+            {
+              "ic": "thanks",
+              "h": "Paso 2 · Escribir en silencio (8–10 min)",
+              "p": "Al recibir una hoja, se escribe UNA cualidad positiva, un aporte valorado o reconocimiento específico. Luego se pasa. Se repite hasta que cada hoja vuelve a su dueño/a."
+            },
+            {
+              "ic": "thanks",
+              "h": "Paso 3 · Leer y compartir",
+              "p": "2 minutos de lectura silenciosa. Luego, voluntariamente: \"¿Alguien quiere compartir algo que le llegó especialmente?\""
+            }
+          ],
+          "cita": "\"El aprecio mutuo fortalece los lazos y eleva el ánimo colectivo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Lo que recibiste",
+              "q": "¿Hubo algún reconocimiento que no esperabas?"
+            },
+            {
+              "c": "Cultura",
+              "q": "¿Qué pasaría si el aprecio mutuo fuera parte de nuestra cultura cotidiana?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Basado en prácticas apreciativas y reconocimiento mutuo anónimo. El feedback positivo específico fortalece autoeficacia y pertenencia (A y R del PERMA). Meta-evidencia sobre intervenciones de psicología positiva respalda beneficios promedio en bienestar cuando el reconocimiento es concreto y creíble (Carr et al., 2021)."
+            }
+          ]
+        }
+      ]
+    },
+    "conversaciones-conectan": {
+      "ic": "wave",
+      "cat": "PERMA · R — Relaciones Positivas",
+      "perma": "R",
+      "clr": "brand",
+      "name": "Conversaciones que <em>Conectan</em>",
+      "sub": "Duplas rotativas con preguntas graduadas en profundidad —de lo ligero a lo significativo— para construir confianza sin forzar intimidad. Basado en el principio de autorrevelación progresiva.",
+      "metas": [
+        "15–20 min",
+        "Duplas rotativas",
+        "Tarjetas de preguntas"
+      ],
+      "mat": [
+        "Tarjetas con preguntas — preparar con anticipación o leer en voz alta",
+        "Espacio donde las duplas puedan conversar"
+      ],
+      "secs": [
+        {
+          "t": "Preguntas por nivel",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Nivel 1 · Ligeras",
+              "p": "¿Qué música escuchas cuando necesitas energía? / ¿Cuál es tu lugar favorito en el mundo? / ¿Qué serie o película recomendarías sin dudar?"
+            },
+            {
+              "ic": "wave",
+              "h": "Nivel 2 · Personales",
+              "p": "¿Qué actividad fuera del trabajo te recarga completamente? / ¿Qué fue lo más valioso que aprendiste en el último año? / ¿Cuál es el mejor consejo que alguien te ha dado?"
+            },
+            {
+              "ic": "wave",
+              "h": "Nivel 3 · Reflexivas",
+              "p": "¿Cuál es una creencia que tenías hace 5 años y que hoy ya no sostienes? / ¿Qué cambiarías de cómo trabajas si pudieras?"
+            },
+            {
+              "ic": "heart",
+              "h": "Nivel 4 · Conexión (solo equipos con confianza)",
+              "p": "¿Qué valor personal guía tus decisiones importantes? / ¿Qué aprendiste de alguien que te desafió? / ¿Qué te gustaría que este equipo supiera de ti que aún no sabe?"
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Elegir el nivel",
+              "p": "Según el nivel de confianza del grupo: nivel 1 para grupos nuevos, nivel 2–3 para equipos con historia."
+            },
+            {
+              "ic": "wave",
+              "h": "Duplas al azar (15 min)",
+              "p": "Mezclar personas que no se conozcan mucho. Cada dupla tiene 5 min para 2–3 preguntas. Rotar y repetir con nueva dupla."
+            },
+            {
+              "ic": "wave",
+              "h": "Ronda final (5 min)",
+              "p": "\"¿Alguien quiere compartir algo que descubrió?\""
+            }
+          ],
+          "cita": "\"Conectar desde lo cotidiano nos recuerda que somos más que trabajo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sorpresas",
+              "q": "¿Hubo algo que te sorprendió de alguien que ya conocías?"
+            },
+            {
+              "c": "Ambiente",
+              "q": "¿Cómo está el ambiente del equipo ahora comparado con el inicio?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las conversaciones graduadas en profundidad facilitan autorrevelación controlada y confianza interpersonal, principio validado en investigación sobre intimidad progresiva (Aron et al., 1997). En PERMA-R, la calidad relacional —escucha, reciprocidad, curiosidad genuina— predice bienestar más que la frecuencia de contacto (Taşfiliz et al., 2018)."
+            }
+          ]
+        }
+      ]
+    },
+    "perma-pulso-equipo": {
+      "ic": "therm",
+      "cat": "PERMA · Diagnóstico de equipo",
+      "perma": "P",
+      "clr": "brand",
+      "name": "PERMA <em>Pulso</em> del Equipo",
+      "sub": "Check-in rápido de los cinco pilares PERMA en escala 1–10. Permite detectar desbalances, priorizar conversaciones y medir evolución mes a mes.",
+      "metas": [
+        "15–20 min",
+        "Equipo completo",
+        "Pizarra o mural digital",
+        "Mensual o trimestral"
+      ],
+      "mat": [
+        "Pizarra o Miro con 5 columnas: P · E · R · M · A",
+        "Post-its de colores (uno por persona)",
+        "Plantilla PERMA-Pulso (opcional)"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "therm",
+              "h": "Paso 1 · Autoevaluación silenciosa (3 min)",
+              "p": "Cada persona anota del 1 al 10: P (¿Cuánta energía positiva siento en el trabajo?), E (¿Estoy absorbedo/a en lo que hago?), R (¿Me siento conectado/a con el equipo?), M (¿Mi trabajo tiene sentido?), A (¿Percibo avances y logros?)."
+            },
+            {
+              "ic": "therm",
+              "h": "Paso 2 · Promedios anónimos (5 min)",
+              "p": "Recoger puntuaciones (anónimas o en confianza). Calcular promedio por pilar en la pizarra. No juzgar: observar el perfil."
+            },
+            {
+              "ic": "focus",
+              "h": "Paso 3 · Un pilar bajo (7 min)",
+              "p": "Si algún pilar promedia bajo 6, el grupo elige UNO para conversar: ¿Qué lo está afectando? ¿Una acción pequeña para las próximas dos semanas?"
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Un pilar alto (3 min)",
+              "p": "Celebrar el pilar más fuerte: ¿Qué lo sostiene? ¿Cómo protegerlo?"
+            }
+          ],
+          "cita": "\"Lo que se mide, se puede cuidar.\" — PERMA-Profiler, Butler & Kern (2016)"
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El PERMA-Profiler (Butler & Kern, 2016) mide los cinco componentes del bienestar de Seligman de forma breve y diferenciada. Usar los cinco pilares evita colapsar bienestar en un solo indicador y permite detectar perfiles (p. ej., alto logro con bajo sentido). La revisión PERMA organizacional (164 Press, 2024) respalda su aplicación en contextos laborales latinoamericanos."
+            }
+          ]
+        }
+      ]
+    },
+    "historias-impacto": {
+      "ic": "impact",
+      "cat": "PERMA · M — Sentido",
+      "perma": "M",
+      "clr": "brand",
+      "name": "Historias de <em>Impacto</em>",
+      "sub": "Cada integrante comparte una experiencia donde su labor tuvo un efecto positivo real en usuarios, clientes, compañeros o la comunidad. Escuchar el impacto real fortalece la motivación y el sentido colectivo del trabajo.",
+      "metas": [
+        "20–25 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales especiales",
+        "Espacio cómodo",
+        "Papel para anotar insights del grupo",
+        "Opcional: mural con la pregunta disparadora"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "El Sentido o Propósito (M del modelo PERMA) se activa cuando conectamos el trabajo cotidiano con el impacto que genera en otras personas. Esta actividad es especialmente poderosa en momentos de desgaste o cuando el equipo siente que su trabajo \"no importa\"."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "impact",
+              "h": "Paso 1 · Reflexión individual (3 min)",
+              "p": "Consigna: \"Recuerda una situación donde tu trabajo — o el trabajo de este equipo — tuvo un impacto positivo real en alguien. Puede ser un usuario que te lo agradeció, un cliente que cambió gracias a lo que hiciste, un colega que pudiste apoyar en un momento difícil. Anota: ¿qué pasó? ¿a quién impactó? ¿cómo lo supiste?\""
+            },
+            {
+              "ic": "impact",
+              "h": "Paso 2 · Ronda de historias (2 min c/u)",
+              "p": "Cada persona comparte su historia. El grupo escucha en silencio — sin aplaudir todavía, sin interrumpir. El/la facilitador/a puede preguntar al final de cada historia: \"¿Qué significó eso para ti?\""
+            },
+            {
+              "ic": "impact",
+              "h": "Paso 3 · Mapear el impacto (5 min)",
+              "p": "El/la facilitador/a pregunta: \"¿Qué patrones ven en estas historias? ¿A quién impactamos más frecuentemente? ¿Cuál es el hilo común entre todas estas historias?\" Anotar en pizarra."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · La frase del equipo",
+              "p": "Invitar al grupo a completar: \"Como equipo, nuestro trabajo importa porque...\" Buscar una frase que el grupo sienta verdadera."
+            }
+          ],
+          "cita": "\"Reconocer el impacto conecta el trabajo con un propósito mayor.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "Sentido personal",
+              "q": "¿Cómo cambia tu perspectiva sobre tu trabajo después de escuchar estas historias?"
+            },
+            {
+              "c": "Impacto oculto",
+              "q": "¿Hay impactos de nuestro trabajo que normalmente no vemos o no nos contamos? ¿Cuáles?"
+            },
+            {
+              "c": "Acción",
+              "q": "¿Cómo podemos hacer más visible el impacto de nuestro trabajo en el día a día?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El sentido (M) del PERMA se activa cuando conectamos el trabajo cotidiano con impacto en otros. Wrzesniewski et al. muestran que percibir propósito en la labor predice engagement y satisfacción. Escuchar historias de impacto real contrarresta desgaste y anhedonia laboral, reconectando con el «para qué» del equipo."
+            }
+          ]
+        }
+      ]
+    },
+    "mision-frase": {
+      "ic": "target",
+      "cat": "PERMA · M — Sentido",
+      "perma": "M",
+      "clr": "brand",
+      "name": "Misión en <em>Una Frase</em>",
+      "sub": "El equipo redacta colectivamente una frase que sintetice su propósito común. Analiza avances y puntos de mejora. Alinea la identidad grupal y refuerza la dirección compartida.",
+      "metas": [
+        "30–35 min",
+        "Equipo completo",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its de dos colores",
+        "Marcadores",
+        "Pizarra o papel kraft grande",
+        "Puntos adhesivos para votar"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Reflexión (5 min)",
+              "p": "Cada persona responde en post-its: ¿Para qué existe este equipo? ¿A quién le cambia la vida lo que hacemos? ¿Qué pasaría si desapareciéramos mañana?"
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Subgrupos (10 min)",
+              "p": "En grupos de 3–4, compartir post-its y proponer una frase de propósito: \"Existimos para [acción] + [a quién] + [para que].\""
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Votar y refinar (10 min)",
+              "p": "Cada subgrupo comparte su frase. El grupo vota por los elementos que más resuenan. Con los más votados, co-construir una frase final."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Validar",
+              "p": "\"¿Podemos todos comprometernos con esto?\" La frase se escribe grande y se fotografía."
+            }
+          ],
+          "cita": "\"Un equipo con propósito trabaja con mayor sentido y dirección.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "¿Qué tan cerca?",
+              "q": "Del 1 al 10, ¿qué tan alineado está nuestro trabajo cotidiano con esta misión?"
+            },
+            {
+              "c": "Brechas",
+              "q": "¿Qué haríamos diferente si esta frase fuera nuestra guía diaria?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Co-construir propósito compartido alinea identidad grupal y dirección (M del PERMA). Seligman (2018) sitúa el meaning como pertenencia a algo mayor que uno mismo. La co-creación de una frase de misión aumenta compromiso cuando el grupo valida auténticamente la formulación, no cuando se impone desde arriba."
+            }
+          ]
+        }
+      ]
+    },
+    "linea-vida-equipo": {
+      "ic": "spark",
+      "cat": "PERMA · M — Sentido",
+      "perma": "M",
+      "clr": "brand",
+      "name": "Línea de Vida del <em>Equipo</em>",
+      "sub": "El grupo dibuja colectivamente una línea de tiempo con hitos, aprendizajes y momentos significativos. Énfasis en logros y victorias. Refuerza la identidad grupal y valora la historia colectiva.",
+      "metas": [
+        "30–40 min",
+        "Equipo completo",
+        "Papel kraft y marcadores"
+      ],
+      "mat": [
+        "Papel kraft o papel de rollo largo (mínimo 2 metros)",
+        "Marcadores de varios colores",
+        "Cinta adhesiva",
+        "Post-its de dos colores",
+        "Fotos del equipo — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Montar la línea",
+              "p": "Pegar el papel kraft en la pared horizontalmente. Trazar una línea con el inicio del equipo a la izquierda y el presente a la derecha. Dividir en períodos según la historia del equipo."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 2 · Recordar hitos (10 min)",
+              "p": "Post-its de dos colores: uno para MOMENTOS DIFÍCILES y otro para LOGROS/VICTORIAS. En silencio, cada quien anota los hitos que recuerda y los pega en el período correspondiente."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Narrar la historia (15 min)",
+              "p": "Recorrido de izquierda a derecha. Para cada hito importante, invitar a alguien a contar qué pasó y qué significó."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · El patrón",
+              "p": "\"¿Cómo superamos los momentos difíciles? ¿Qué dice de nosotros como equipo?\""
+            }
+          ],
+          "cita": "\"La trayectoria compartida da sentido al presente.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Orgullo",
+              "q": "¿De qué estamos más orgullosos al mirar esta línea de tiempo?"
+            },
+            {
+              "c": "Resiliencia",
+              "q": "¿Qué recurso colectivo usamos para superar los momentos difíciles?"
+            },
+            {
+              "c": "Futuro",
+              "q": "¿Cuál sería el próximo hito que queremos agregar?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La identidad narrativa colectiva integra logros y adversidades superadas, fortaleciendo resiliencia grupal (M y A del PERMA). Revisar hitos compartidos activa orgullo y aprendizaje organizacional, conectando pasado y presente con dirección futura —práctica alineada con indagación apreciativa en contextos organizacionales."
+            }
+          ]
+        }
+      ]
+    },
+    "proposito-tres-niveles": {
+      "ic": "compass",
+      "cat": "PERMA · M — Sentido",
+      "perma": "M",
+      "clr": "brand",
+      "name": "Propósito en <em>Tres Niveles</em>",
+      "sub": "Reflexión individual sobre el trabajo como job (sustento), career (trayectoria) y calling (vocación). Alinea la labor cotidiana con sentido personal y profesional.",
+      "metas": [
+        "25–30 min",
+        "Individual",
+        "Papel y lápiz",
+        "Ideal tras cambio de rol o burnout leve"
+      ],
+      "mat": [
+        "Plantilla de tres columnas",
+        "Espacio tranquilo",
+        "Opcional: compartir en plenario voluntario"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "compass",
+              "h": "Job · El trabajo como sustento",
+              "p": "¿Qué te da este trabajo en lo material y práctico? ¿Qué habilidades estás desarrollando aunque no sean tu pasión?"
+            },
+            {
+              "ic": "compass",
+              "h": "Career · El trabajo como trayectoria",
+              "p": "¿Hacia dónde te acerca este rol en 3–5 años? ¿Qué puertas abre? ¿Qué red estás construyendo?"
+            },
+            {
+              "ic": "compass",
+              "h": "Calling · El trabajo como vocación",
+              "p": "¿En qué momentos sientes que tu labor importa más allá del sueldo? ¿A quién ayudas? ¿Qué fortalezas tuyas brillan ahí?"
+            },
+            {
+              "ic": "spark",
+              "h": "Integración",
+              "p": "Completa: «Hoy elijo ver mi trabajo como... porque...» Define una micro-acción esta semana que conecte al menos dos niveles."
+            }
+          ],
+          "cita": "\"El sentido emerge cuando conectamos lo que hacemos con quiénes somos.\" — Wrzesniewski et al."
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Wrzesniewski et al. distinguen job, career y calling como orientaciones al trabajo. Percibir la labor como calling se asocia con mayor engagement y satisfacción, pero job crafting —rediseñar tareas y relaciones— puede aumentar sentido sin cambiar de empleo (Wrzesniewski & Dutton, 2001). Conecta directamente con M (meaning) del PERMA (Seligman, 2018)."
+            }
+          ]
+        }
+      ]
+    },
+    "elogio-constructivo": {
+      "ic": "trophy",
+      "cat": "PERMA · A — Logro",
+      "perma": "A",
+      "clr": "brand",
+      "name": "Ronda del <em>Elogio Constructivo</em>",
+      "sub": "Cada integrante destaca una fortaleza concreta o acción específica de otro miembro del equipo. La retroalimentación positiva y el reconocimiento genuino generan confianza y fortalecen la cultura apreciativa.",
+      "metas": [
+        "15–20 min",
+        "Grupo o equipo",
+        "Tarjetas opcionales"
+      ],
+      "mat": [
+        "Tarjetas o post-its (uno por persona)",
+        "Lapiceros",
+        "Caja simbólica donde depositar las tarjetas (opcional)",
+        "Espacio en círculo"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "El reconocimiento específico y genuino es uno de los factores más poderosos de compromiso y bienestar en equipos. Esta actividad formaliza algo que debería ocurrir naturalmente pero raramente lo hace: decirle a alguien, en voz alta y frente al grupo, lo que valoras de ellos."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "trophy",
+              "h": "Paso 1 · Preparación silenciosa (3 min)",
+              "p": "Cada persona piensa en UN compañero/a y anota: (a) una fortaleza o acción concreta y reciente que quiere reconocer, y (b) el impacto que eso tuvo. Importante: debe ser algo real y específico, no un cumplido genérico."
+            },
+            {
+              "ic": "trophy",
+              "h": "Paso 2 · Formato del elogio",
+              "p": "El formato es: \"Quiero reconocer a [nombre] por [acción/fortaleza específica]. Eso me impactó porque [impacto concreto].\" Ejemplo: \"Quiero reconocer a Pedro por la forma en que manejó la reunión del martes con el cliente difícil. Su calma e inteligencia emocional hicieron que saliéramos adelante cuando yo ya había perdido la paciencia.\""
+            },
+            {
+              "ic": "trophy",
+              "h": "Paso 3 · Ronda de elogios",
+              "p": "Por turnos, cada persona entrega su elogio directamente a la persona, mirándola a los ojos. El grupo escucha. El silencio entre elogio y elogio es parte de la dinámica — no hay que llenarlo."
+            },
+            {
+              "ic": "thanks",
+              "h": "Paso 4 · Recibir con dignidad",
+              "p": "Quien recibe el elogio responde solo con: \"Gracias, me alegra que lo hayas notado\" o simplemente \"Gracias.\" NO minimiza (\"ay, no fue para tanto\"), NO desvía (\"tú también lo hiciste bien\"), NO explica. Recibir con dignidad es una habilidad que también se practica."
+            }
+          ],
+          "cita": "\"El feedback positivo es una herramienta poderosa de crecimiento.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "¿Cómo fue dar el elogio?",
+              "q": "¿Qué se sintió decirle algo positivo a alguien en voz alta y frente al grupo?"
+            },
+            {
+              "c": "¿Cómo fue recibirlo?",
+              "q": "¿Cómo fue para ti recibir el reconocimiento? ¿Te costó aceptarlo? ¿Por qué?"
+            },
+            {
+              "c": "Frecuencia",
+              "q": "¿Con qué frecuencia nos reconocemos así en el equipo? ¿Qué pasaría si lo hiciéramos más?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El reconocimiento específico de fortalezas observadas en otros activa emociones positivas, refuerza conductas deseadas y construye cultura apreciativa (P, R y A). Las intervenciones basadas en fortalezas del carácter (VIA/Niemiec, 2018) muestran que el feedback anclado en fortalezas concretas es más duradero que el elogio genérico."
+            }
+          ]
+        }
+      ]
+    },
+    "bitacora-avances": {
+      "ic": "scroll",
+      "cat": "PERMA · A — Logro",
+      "perma": "A",
+      "clr": "brand",
+      "name": "Bitácora de <em>Avances Colectivos</em>",
+      "sub": "El equipo lleva un registro visible de sus progresos semanales. Analizan propulsores y obstaculizadores. Revisar estos avances fortalece la percepción de logro y genera orgullo compartido.",
+      "metas": [
+        "20 min semanal",
+        "Equipo completo",
+        "Pizarra o tablero digital"
+      ],
+      "mat": [
+        "Pizarra o tablero visible permanentemente",
+        "Post-its de tres colores",
+        "Marcadores",
+        "Digital: Notion, Trello o Miro"
+      ],
+      "secs": [
+        {
+          "t": "Estructura semanal",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Tres secciones fijas",
+              "p": "(1) LOGRAMOS ESTA SEMANA — avances concretos por pequeños que sean. (2) NOS COSTÓ — obstáculos y bloqueos sin buscar culpables. (3) LA PRÓXIMA SEMANA — compromisos específicos del equipo."
+            },
+            {
+              "ic": "scroll",
+              "h": "La reunión de bitácora (20 min)",
+              "p": "Cada semana: (5 min) cada persona anota sus logros en post-its. (5 min) se leen en voz alta — el equipo celebra cada logro. (5 min) se nombran los obstáculos. (5 min) se definen 3 compromisos para la semana."
+            },
+            {
+              "ic": "spark",
+              "h": "Celebrar también lo pequeño",
+              "p": "La bitácora hace visible lo que normalmente se invisibiliza. Celebrar lo pequeño construye cultura de reconocimiento."
+            }
+          ],
+          "cita": "\"Celebrar avances aumenta la motivación del equipo.\""
+        },
+        {
+          "t": "Revisión mensual",
+          "plen": [
+            {
+              "c": "Patrón de logros",
+              "q": "¿Qué tipo de logros aparecen más? ¿Qué dice de las fortalezas del equipo?"
+            },
+            {
+              "c": "Obstáculos recurrentes",
+              "q": "¿Hay obstáculos que aparecen semana a semana? ¿Qué cambiar estructuralmente?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El principio de progreso (Amabile & Kramer, 2011) demuestra que registrar avances —aunque pequeños— aumenta motivación intrínseca. En PERMA-A (logro), hacer visible el progreso semanal combate invisibilización del esfuerzo y fortalece autoeficacia colectiva, especialmente en proyectos de largo aliento."
+            }
+          ]
+        }
+      ]
+    },
+    "escalera-proyecto": {
+      "ic": "map",
+      "cat": "PERMA · A — Logro",
+      "perma": "A",
+      "clr": "brand",
+      "name": "Escalera del <em>Proyecto</em>",
+      "sub": "El equipo construye una escalera simbólica con los pasos necesarios para alcanzar una meta, asignando responsabilidades en cada peldaño. Ver el camino claro motiva y ordena los esfuerzos colectivos.",
+      "metas": [
+        "30–40 min",
+        "Equipo completo",
+        "Pizarra y post-its"
+      ],
+      "mat": [
+        "Pizarra o papel kraft",
+        "Marcadores de dos colores",
+        "Post-its (uno por tarea)",
+        "Cinta adhesiva"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Definir la meta (5 min)",
+              "p": "\"En [plazo], habremos logrado [resultado concreto y medible].\""
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Dibujar la escalera (5 min)",
+              "p": "Escalera de 5–8 peldaños. Abajo: punto actual (hoy). Arriba: la meta. Los peldaños intermedios son los pasos necesarios."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Llenar los peldaños (15 min)",
+              "p": "Para cada peldaño: nombre de la tarea + responsable + fecha límite. Escribir en post-its y pegar en el peldaño."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Revisión",
+              "p": "En la siguiente reunión: ¿cuántos peldaños subimos? ¿Qué necesita ajuste?"
+            }
+          ],
+          "cita": "\"Los logros colectivos fortalecen la autoeficacia del equipo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Claridad",
+              "q": "¿Cómo se siente tener el camino visible y organizado?"
+            },
+            {
+              "c": "Compromiso",
+              "q": "¿Todos sienten que su peldaño es justo y alcanzable?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Descomponer metas en pasos secuenciales con responsables claros activa logro (A) y engagement (E). La meta-análisis sobre goal setting (Locke & Latham) respalda metas específicas y desafiantes con feedback. Visualizar el camino reduce ansiedad ante la incertidumbre y distribuye carga equitativa en el equipo."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,17 +1,23 @@
 import kitpopData from './kitpopData.json'
 import facilitacionData from './categories/facilitacion.json'
 import pnlData from './categories/pnl.json'
+import permaData from './categories/perma.json'
+import fortalezasData from './categories/fortalezas.json'
 
 const { CATS, A } = {
   CATS: {
     ...kitpopData.CATS,
     ...facilitacionData.CATS,
     ...pnlData.CATS,
+    ...permaData.CATS,
+    ...fortalezasData.CATS,
   },
   A: {
     ...kitpopData.A,
     ...facilitacionData.A,
     ...pnlData.A,
+    ...permaData.A,
+    ...fortalezasData.A,
   },
 }
 
@@ -179,6 +185,8 @@ export const kitpopActivities = Object.entries(CATS).flatMap(([key, category]) =
     .map((id) => buildActivity(key, id))
     .filter(Boolean)
 )
+
+export const ACTIVITY_COUNT = kitpopActivities.length
 
 export function getActivityBySlug(slug) {
   return kitpopActivities.find((activity) => activity.slug === slug)

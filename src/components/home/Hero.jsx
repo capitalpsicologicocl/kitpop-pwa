@@ -1,9 +1,9 @@
 import { categories } from '../../data/categories'
-import { activities } from '../../data/activities'
+import { ACTIVITY_COUNT } from '../../data/kitpopAdapter'
 
 export default function Hero() {
   const categoryCount = categories.length
-  const activityCount = activities.length
+  const activityCount = ACTIVITY_COUNT
 
   return (
     <section className="hero">

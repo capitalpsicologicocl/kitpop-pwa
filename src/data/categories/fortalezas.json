@@ -1,0 +1,932 @@
+{
+  "CATS": {
+    "fortalezas": {
+      "title": "Fortalezas del <em>Carácter</em>",
+      "desc": "Modelo VIA de 24 fortalezas en seis virtudes universales (Peterson & Seligman). Teoría, test oficial, intervenciones individuales y dinámicas de equipo con base en Niemiec (2018).",
+      "lv": "vl-perma",
+      "acts": [
+        "fc-intro",
+        "fc-test-via",
+        "fc-sabiduria",
+        "fc-valor",
+        "fc-humanidad",
+        "fc-justicia",
+        "fc-moderacion",
+        "fc-trascendencia",
+        "fc-spotting-parejas",
+        "fc-feedback-fortalezas",
+        "fc-matriz-uso",
+        "fc-equipo-por-virtudes",
+        "fc-activacion-semanal"
+      ]
+    }
+  },
+  "A": {
+    "fc-intro": {
+      "ic": "star",
+      "cat": "Fortalezas del Carácter · Introducción",
+      "clr": "brand",
+      "name": "¿Qué son las <em>Fortalezas del Carácter</em>?",
+      "sub": "Marco introductorio para comprender el modelo VIA, su relación con la Psicología Positiva y su aplicación al liderazgo, el desarrollo profesional y el crecimiento personal.",
+      "metas": [
+        "15–20 min lectura guiada",
+        "Uso individual o grupal",
+        "Ideal para abrir la sección"
+      ],
+      "mat": [
+        "Pizarra o documento compartido",
+        "Lista de fortalezas VIA",
+        "Bitácora personal o cuaderno de reflexión"
+      ],
+      "secs": [
+        {
+          "t": "Marco conceptual",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Definición",
+              "p": "Las fortalezas del carácter son rasgos positivos de la personalidad que expresan las mejores cualidades de una persona. Reflejan modos de pensar, sentir y actuar que contribuyen al bienestar propio, al bienestar de otras personas y a la construcción de relaciones más saludables."
+            },
+            {
+              "ic": "light",
+              "h": "Origen del modelo",
+              "p": "El modelo más reconocido fue propuesto por Martin Seligman y Christopher Peterson. Identifica 24 fortalezas agrupadas en seis virtudes universales: Sabiduría y Conocimiento, Valor, Humanidad, Justicia, Moderación y Trascendencia."
+            },
+            {
+              "ic": "focus",
+              "h": "Relación con la Psicología Organizacional Positiva",
+              "p": "En contextos laborales, las fortalezas permiten mirar el desarrollo desde los recursos, talentos y posibilidades de las personas. Algunas actividades de KitPOP se basan en esta mirada: identificar lo que funciona, reconocer capacidades, activar conversaciones apreciativas y diseñar acciones concretas desde lo mejor de cada persona y equipo."
+            }
+          ]
+        },
+        {
+          "t": "Aplicación al liderazgo y desarrollo",
+          "rows": [
+            {
+              "ic": "leadership",
+              "h": "Liderazgo",
+              "p": "Un liderazgo basado en fortalezas ayuda a reconocer talentos, distribuir mejor los roles, aumentar la confianza y facilitar conversaciones de desarrollo. No se trata de ignorar brechas, sino de abordarlas desde recursos reales."
+            },
+            {
+              "ic": "briefcase",
+              "h": "Desarrollo profesional",
+              "p": "Conocer las propias fortalezas permite tomar mejores decisiones de carrera, diseñar metas más auténticas, mejorar el desempeño y encontrar formas de aportar valor desde un estilo personal."
+            },
+            {
+              "ic": "heart",
+              "h": "Desarrollo personal",
+              "p": "Trabajar con fortalezas favorece autoconocimiento, bienestar, resiliencia y sentido. La pregunta central no es solo “¿qué me falta?”, sino también “¿qué tengo disponible y cómo puedo usarlo mejor?”."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Peterson y Seligman (2004) clasificaron 24 fortalezas de carácter en seis virtudes universales tras revisión intercultural. Las fortalezas son rasgos morales que expresan lo mejor de la persona y se asocian con bienestar, resiliencia y relaciones saludables. Niemiec (2018) propone usarlas como lente de desarrollo, no de déficit."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-test-via": {
+      "ic": "check",
+      "cat": "Fortalezas del Carácter · Test VIA",
+      "clr": "brand",
+      "name": "Aplicarse el <em>Test Oficial VIA</em>",
+      "sub": "Indicaciones para identificar las fortalezas principales mediante el cuestionario oficial y usarlas como punto de partida para reflexión personal, liderazgo y desarrollo profesional.",
+      "metas": [
+        "20–30 min",
+        "Aplicación individual",
+        "Requiere conexión a internet"
+      ],
+      "mat": [
+        "Computador o celular",
+        "Correo electrónico para registro en VIA Institute",
+        "Bitácora para anotar top 5 fortalezas"
+      ],
+      "secs": [
+        {
+          "t": "Indicaciones",
+          "rows": [
+            {
+              "ic": "check",
+              "h": "Paso 1 · Ingresar al test oficial",
+              "p": "Abre el sitio oficial de VIA Institute on Character desde este enlace: <a href=\"https://www.viacharacter.org/\" style=\"color:var(--brand);font-weight:700;\">www.viacharacter.org</a>. Luego busca la opción para realizar el VIA Character Strengths Survey."
+            },
+            {
+              "ic": "edit",
+              "h": "Paso 2 · Responder con calma",
+              "p": "Completa el cuestionario pensando en cómo eres habitualmente, no solo en cómo te gustaría ser. Evita responder desde un ideal; busca reconocer patrones reales de conducta."
+            },
+            {
+              "ic": "star",
+              "h": "Paso 3 · Registrar tus fortalezas principales",
+              "p": "Al finalizar, anota tus primeras cinco fortalezas. Estas suelen llamarse fortalezas distintivas, porque tienden a sentirse naturales, energizantes y auténticas cuando las usamos."
+            },
+            {
+              "ic": "link",
+              "h": "Enlaces útiles",
+              "p": "Sitio oficial: <a href=\"https://www.viacharacter.org/\" style=\"color:var(--brand);font-weight:700;\">VIA Institute</a>. Test de fortalezas: <a href=\"https://www.viacharacter.org/survey/account/register\" style=\"color:var(--brand);font-weight:700;\">VIA Survey</a>."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El VIA Character Strengths Survey (viacharacter.org) es el instrumento psicométrico más validado para identificar las 24 fortalezas. Las cinco superiores suelen sentirse naturales, energizantes y auténticas —fortalezas signature— (Peterson & Seligman, 2004). Conocerlas es punto de partida para intervenciones basadas en fortalezas (Niemiec, 2018)."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-sabiduria": {
+      "ic": "light",
+      "cat": "Virtud · Sabiduría y Conocimiento",
+      "clr": "brand",
+      "name": "Sabiduría y <em>Conocimiento</em>",
+      "sub": "Fortalezas cognitivas vinculadas a adquirir, integrar y usar conocimiento: creatividad, curiosidad, juicio crítico, amor por aprender y perspectiva.",
+      "metas": [
+        "5 fortalezas",
+        "Liderazgo reflexivo",
+        "Aprendizaje continuo"
+      ],
+      "mat": [
+        "Bitácora de aprendizaje",
+        "Lista de desafíos actuales",
+        "Espacio para conversación o journaling"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "light",
+              "h": "Qué desarrolla",
+              "p": "Esta virtud reúne fortalezas cognitivas que ayudan a explorar, aprender, pensar con profundidad y ofrecer una mirada amplia. En liderazgo, permite tomar mejores decisiones, innovar, aprender del error y ampliar perspectivas antes de actuar."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Creatividad",
+              "p": "Capacidad de pensar en nuevas soluciones y formas de hacer las cosas. En liderazgo permite diseñar alternativas, desbloquear problemas y proponer mejoras."
+            },
+            {
+              "ic": "question",
+              "h": "Curiosidad",
+              "p": "Interés por explorar, descubrir y comprender. En desarrollo profesional impulsa conversaciones, aprendizaje y apertura a nuevas experiencias."
+            },
+            {
+              "ic": "eye",
+              "h": "Apertura y juicio crítico",
+              "p": "Capacidad de analizar con profundidad, considerar evidencia y cambiar de opinión cuando aparecen nuevos antecedentes. Ayuda a decidir sin precipitarse."
+            },
+            {
+              "ic": "book",
+              "h": "Amor por aprender",
+              "p": "Tendencia a adquirir nuevos conocimientos y capacidades de manera sistemática. Fortalece la actualización profesional y la adaptabilidad."
+            },
+            {
+              "ic": "compass",
+              "h": "Perspectiva",
+              "p": "Capacidad de ofrecer consejos sabios y mirar las situaciones con amplitud. En liderazgo ayuda a orientar, contener y conectar decisiones con sentido."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "edit",
+              "h": "Desafío creativo",
+              "p": "Elige un problema cotidiano y escribe tres soluciones posibles antes de decidir. Pregunta: ¿qué alternativa no estoy viendo todavía?"
+            },
+            {
+              "ic": "question",
+              "h": "Curiosidad aplicada",
+              "p": "Agenda una conversación con alguien de otra área y pregúntale: ¿qué parte de tu trabajo debería comprender mejor para colaborar contigo?"
+            },
+            {
+              "ic": "eye",
+              "h": "Juicio crítico",
+              "p": "Antes de una decisión importante, redacta argumentos a favor y en contra. Luego busca una opinión distinta a la tuya."
+            },
+            {
+              "ic": "book",
+              "h": "Aprendizaje semanal",
+              "p": "Define una microhabilidad para aprender esta semana y enseña a otra persona lo aprendido en 5 minutos."
+            },
+            {
+              "ic": "compass",
+              "h": "Perspectiva",
+              "p": "Recuerda una dificultad pasada y responde: ¿qué aprendí que podría servirle hoy a otra persona?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las fortalezas cognitivas (creatividad, curiosidad, juicio, amor por aprender, perspectiva) facilitan aprendizaje organizacional y decisiones complejas. En liderazgo, la perspectiva y el juicio crítico predicen calidad de decisiones bajo incertidumbre (Peterson & Seligman, 2004; Niemiec, 2018)."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-valor": {
+      "ic": "flame",
+      "cat": "Virtud · Valor",
+      "clr": "sky",
+      "name": "Valor",
+      "sub": "Fortalezas emocionales para avanzar frente a dificultad interna o externa: valentía, perseverancia, honestidad y vitalidad/entusiasmo.",
+      "metas": [
+        "4 fortalezas",
+        "Coraje profesional",
+        "Energía para actuar"
+      ],
+      "mat": [
+        "Lista de metas o conversaciones pendientes",
+        "Bitácora personal",
+        "Plan de acción semanal"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "flame",
+              "h": "Qué desarrolla",
+              "p": "Valor implica sostener metas, convicciones y energía incluso cuando existen obstáculos, miedo, cansancio o incomodidad. En liderazgo permite enfrentar conversaciones necesarias, avanzar con foco y actuar con autenticidad."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "shield",
+              "h": "Valentía",
+              "p": "Capacidad de defender lo correcto y actuar según convicciones, incluso ante oposición o dificultad."
+            },
+            {
+              "ic": "target",
+              "h": "Perseverancia",
+              "p": "Capacidad de completar lo que se inicia y seguir un plan de acción a pesar de los obstáculos."
+            },
+            {
+              "ic": "check",
+              "h": "Honestidad",
+              "p": "Actuar de forma genuina y auténtica, asumir responsabilidad por sentimientos y acciones, y decir la verdad con respeto."
+            },
+            {
+              "ic": "therm",
+              "h": "Vitalidad / entusiasmo",
+              "p": "Abordar la vida y el trabajo con energía, presencia y motivación, evitando hacer las cosas a medias."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "shield",
+              "h": "Valentía cotidiana",
+              "p": "Identifica una conversación que has evitado. Escribe una frase inicial respetuosa para abrirla esta semana."
+            },
+            {
+              "ic": "target",
+              "h": "Perseverancia",
+              "p": "Divide una meta grande en tres pasos pequeños. Completa el primero en las próximas 24 horas."
+            },
+            {
+              "ic": "check",
+              "h": "Honestidad profesional",
+              "p": "Pregúntate: ¿en qué situación estoy diciendo “sí” cuando en realidad necesito negociar, pedir ayuda o poner un límite?"
+            },
+            {
+              "ic": "therm",
+              "h": "Vitalidad",
+              "p": "Elige una tarea rutinaria y agrega una condición que aumente energía: música, foco breve, colaboración o cierre visible."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Valor (valentía, perseverancia, honestidad, vitalidad) sostiene acción frente a obstáculos. Meta-análisis vinculan perseverancia y grit con logro a largo plazo (Duckworth et al., 2007). En equipos, la honestidad respetuosa y la valentía interpersonal habilitan conversaciones difíciles necesarias."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-humanidad": {
+      "ic": "heart",
+      "cat": "Virtud · Humanidad",
+      "clr": "pur",
+      "name": "Humanidad",
+      "sub": "Fortalezas interpersonales orientadas a cuidar, conectar y construir vínculos genuinos: amor, bondad e inteligencia social.",
+      "metas": [
+        "3 fortalezas",
+        "Conexión genuina",
+        "Cuidado relacional"
+      ],
+      "mat": [
+        "Espacio de conversación",
+        "Preguntas de escucha",
+        "Bitácora de vínculos significativos"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Qué desarrolla",
+              "p": "Humanidad reúne fortalezas que nos permiten cuidar, comprender y conectar con otras personas. En liderazgo se expresa como cercanía, empatía, escucha y capacidad de leer necesidades relacionales."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Amor",
+              "p": "Valorar vínculos cercanos y relaciones donde existe cariño, reciprocidad y confianza."
+            },
+            {
+              "ic": "hands",
+              "h": "Bondad",
+              "p": "Ser amable y generoso, ayudar, cuidar o hacer favores con cariño."
+            },
+            {
+              "ic": "eye",
+              "h": "Inteligencia social",
+              "p": "Comprender emociones, motivos y dinámicas sociales propias y de otras personas para conectar mejor."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Relación significativa",
+              "p": "Dedica 10 minutos sin distracciones a conversar con alguien importante. Pregunta: ¿qué necesitas de mí esta semana?"
+            },
+            {
+              "ic": "hands",
+              "h": "Acto de bondad",
+              "p": "Realiza un gesto concreto de ayuda sin esperar reconocimiento. Luego observa cómo cambia el clima de la relación."
+            },
+            {
+              "ic": "eye",
+              "h": "Lectura social",
+              "p": "Antes de responder en una conversación difícil, intenta nombrar internamente: ¿qué puede estar sintiendo la otra persona?, ¿qué necesito comprender antes de opinar?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Amor, bondad e inteligencia social son fortalezas interpersonales centrales en clima laboral. La compasión y el cuidado mutuo se asocian con menor burnout y mayor engagement (Kirby et al., 2017). Desarrollarlas fortalece el componente R del PERMA desde un enfoque basado en fortalezas."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-justicia": {
+      "ic": "team",
+      "cat": "Virtud · Justicia",
+      "clr": "teal",
+      "name": "Justicia",
+      "sub": "Fortalezas cívicas para construir comunidad saludable: liderazgo, equidad y trabajo en equipo.",
+      "metas": [
+        "3 fortalezas",
+        "Vida en comunidad",
+        "Liderazgo colaborativo"
+      ],
+      "mat": [
+        "Mapa de roles",
+        "Acuerdos de equipo",
+        "Pizarra o documento compartido"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "team",
+              "h": "Qué desarrolla",
+              "p": "Justicia integra fortalezas que permiten coordinar acciones, cuidar la equidad y construir comunidades laborales saludables. En liderazgo facilita decisiones justas, colaboración y responsabilidad compartida."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "leadership",
+              "h": "Liderazgo",
+              "p": "Motivar a un grupo a cumplir metas preservando buenas relaciones, organizar actividades y velar por su realización."
+            },
+            {
+              "ic": "scale",
+              "h": "Equidad",
+              "p": "Tratar a las personas con justicia, evitando sesgos personales y dando oportunidades justas."
+            },
+            {
+              "ic": "team",
+              "h": "Trabajo en equipo",
+              "p": "Participar y trabajar bien como parte de un grupo, cumplir compromisos y aportar al objetivo común."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "leadership",
+              "h": "Liderazgo facilitador",
+              "p": "En tu próxima reunión, abre con objetivo, acuerdos y ronda breve de voces. Pregunta: ¿qué necesita este grupo para avanzar mejor?"
+            },
+            {
+              "ic": "scale",
+              "h": "Equidad en decisiones",
+              "p": "Antes de asignar una tarea, revisa: ¿a quién estoy cargando más?, ¿quién no ha tenido oportunidad de participar o liderar?"
+            },
+            {
+              "ic": "team",
+              "h": "Compromiso visible",
+              "p": "Cierra una reunión con compromisos claros: quién hará qué, cuándo y con qué apoyo."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Liderazgo, equidad y trabajo en equipo son fortalezas cívicas esenciales en organizaciones. Equipos con liderazgo facilitador y distribución justa de roles muestran mayor engagement (Decuypere & Schaufeli, 2021). Estas fortalezas conectan desarrollo personal con justicia organizacional."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-moderacion": {
+      "ic": "balance",
+      "cat": "Virtud · Moderación",
+      "clr": "pur",
+      "name": "Moderación",
+      "sub": "Fortalezas que protegen contra excesos y favorecen equilibrio: autorregulación, humildad, perdón y prudencia.",
+      "metas": [
+        "4 fortalezas",
+        "Autogestión",
+        "Equilibrio profesional"
+      ],
+      "mat": [
+        "Bitácora de autocontrol",
+        "Lista de decisiones pendientes",
+        "Espacio de reflexión individual"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "balance",
+              "h": "Qué desarrolla",
+              "p": "Moderación ayuda a regular impulsos, emociones y decisiones. En liderazgo permite responder en vez de reaccionar, reconocer errores, decidir con cautela y sostener relaciones sanas."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Autorregulación",
+              "p": "Regular lo que uno siente y hace, actuar con disciplina y manejar apetitos o emociones."
+            },
+            {
+              "ic": "flower",
+              "h": "Humildad",
+              "p": "Dejar que los logros y acciones hablen por sí mismos, actuando sin pretensión."
+            },
+            {
+              "ic": "heart",
+              "h": "Perdón",
+              "p": "Aceptar defectos, otorgar segundas oportunidades y no actuar desde la venganza."
+            },
+            {
+              "ic": "alert",
+              "h": "Prudencia",
+              "p": "Tomar decisiones con cautela, evitar riesgos innecesarios y prevenir arrepentimientos futuros."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Pausa de autorregulación",
+              "p": "Antes de responder un mensaje difícil, respira 4 veces y escribe una respuesta en borrador. Revisa tono, objetivo y consecuencia."
+            },
+            {
+              "ic": "flower",
+              "h": "Humildad práctica",
+              "p": "Reconoce públicamente el aporte de otra persona en un logro compartido."
+            },
+            {
+              "ic": "heart",
+              "h": "Perdón y aprendizaje",
+              "p": "Piensa en una tensión pendiente y responde: ¿qué puedo soltar?, ¿qué límite o aprendizaje necesito conservar?"
+            },
+            {
+              "ic": "alert",
+              "h": "Prudencia",
+              "p": "Antes de una decisión importante, formula: ¿qué podría salir mal?, ¿qué información me falta?, ¿qué opción reduce daño sin bloquear avance?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Autorregulación, humildad, perdón y prudencia protegen contra excesos de otras fortalezas. Niemiec (2018) destaca el sobreuso y subuso de fortalezas: una fortaleza usada en exceso puede volverse limitante (p. ej., prudencia excesiva → parálisis). La moderación equilibra el perfil de carácter."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-trascendencia": {
+      "ic": "spark",
+      "cat": "Virtud · Trascendencia",
+      "clr": "sky",
+      "name": "Trascendencia",
+      "sub": "Fortalezas que conectan con significado, esperanza y algo más grande: humor, gratitud, esperanza, espiritualidad y aprecio de la belleza y excelencia.",
+      "metas": [
+        "5 fortalezas",
+        "Sentido y propósito",
+        "Bienestar cotidiano"
+      ],
+      "mat": [
+        "Bitácora de gratitud",
+        "Preguntas de propósito",
+        "Espacio para cierre reflexivo"
+      ],
+      "secs": [
+        {
+          "t": "Definición de la virtud",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Qué desarrolla",
+              "p": "Trascendencia conecta a las personas con significado, propósito, belleza, esperanza y gratitud. En liderazgo ayuda a sostener motivación, reconocer avances y conectar el trabajo con impacto."
+            }
+          ]
+        },
+        {
+          "t": "Fortalezas incluidas",
+          "rows": [
+            {
+              "ic": "smile",
+              "h": "Humor",
+              "p": "Capacidad de hacer reír, aliviar tensiones y conectar con otros desde una energía lúdica y cercana."
+            },
+            {
+              "ic": "star",
+              "h": "Gratitud",
+              "p": "Reconocer y agradecer las cosas buenas que suceden, expresando aprecio de manera consciente."
+            },
+            {
+              "ic": "sun",
+              "h": "Esperanza",
+              "p": "Esperar lo mejor del futuro y trabajar activamente para lograrlo."
+            },
+            {
+              "ic": "compass",
+              "h": "Espiritualidad",
+              "p": "Tener creencias o sentido de propósito que orientan la conducta y entregan bienestar."
+            },
+            {
+              "ic": "eye",
+              "h": "Aprecio de la belleza y excelencia",
+              "p": "Notar y valorar belleza, excelencia o habilidad en la naturaleza, el arte, la ciencia, el trabajo o experiencias cotidianas."
+            }
+          ]
+        },
+        {
+          "t": "Mini actividades y desafíos",
+          "rows": [
+            {
+              "ic": "smile",
+              "h": "Humor cuidadoso",
+              "p": "Abre una reunión con una pregunta liviana o anécdota breve que genere cercanía sin burlarse de nadie."
+            },
+            {
+              "ic": "star",
+              "h": "Gratitud específica",
+              "p": "Agradece a alguien por una acción concreta, nombrando qué hizo y por qué fue valioso."
+            },
+            {
+              "ic": "sun",
+              "h": "Esperanza activa",
+              "p": "Escribe un escenario deseado para los próximos 3 meses y define una acción pequeña para acercarte esta semana."
+            },
+            {
+              "ic": "compass",
+              "h": "Propósito",
+              "p": "Completa la frase: “Mi trabajo importa porque…” y compártela con alguien de confianza."
+            },
+            {
+              "ic": "eye",
+              "h": "Belleza y excelencia",
+              "p": "Durante un día, registra tres momentos de excelencia que observes en otras personas. Al menos uno debe ser comunicado."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Gratitud, esperanza, humor, espiritualidad y apreciación de belleza conectan con trascendencia y sentido (M del PERMA). Intervenciones de gratitud y asombro muestran efectos positivos en bienestar (Dickens, 2017; Monroy & Keltner, 2022). Son fortalezas clave para sostener optimismo realista en equipos."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-spotting-parejas": {
+      "ic": "eye",
+      "cat": "Fortalezas del Carácter · Equipo",
+      "clr": "brand",
+      "name": "Strength <em>Spotting</em> en Parejas",
+      "sub": "Cada persona observa y nombra fortalezas VIA concretas en su compañero/a durante una tarea o conversación. Entrena el reconocimiento basado en evidencia conductual, no en cumplidos genéricos.",
+      "metas": [
+        "20–25 min",
+        "Duplas",
+        "Lista VIA de referencia",
+        "Tras proyecto o retro"
+      ],
+      "mat": [
+        "Lista de 24 fortalezas VIA (impresa o digital)",
+        "Ficha: fortaleza + conducta observada + impacto",
+        "Temporizador"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Observar (10 min)",
+              "p": "En duplas, compartan brevemente un desafío reciente del trabajo. Mientras uno habla, el otro escucha buscando activamente 2 fortalezas VIA en acción —no rasgos abstractos, sino conductas concretas."
+            },
+            {
+              "ic": "star",
+              "h": "Paso 2 · Nombrar con precisión (5 min)",
+              "p": "Formato: «Observé tu fortaleza de [X] cuando [conducta específica]. Eso impactó en [resultado].» Usar vocabulario VIA."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Intercambiar roles",
+              "p": "Repetir. Cerrar: ¿Alguna fortaleza nombrada te sorprendió? ¿La reconoces como tuya?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Strength spotting es intervención central en la guía de Niemiec (2018): reconocer fortalezas en otros aumenta vínculo, autoeficacia y uso de fortalezas propias. Proctor et al. (2011) mostraron que intervenciones breves de fortalezas mejoran bienestar cuando incluyen identificación, uso y reconocimiento mutuo."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-feedback-fortalezas": {
+      "ic": "chat",
+      "cat": "Fortalezas del Carácter · Feedback",
+      "clr": "brand",
+      "name": "Feedback con <em>Fortalezas</em>",
+      "sub": "Estructura de conversación 1:1 para entregar reconocimiento o feedback de mejora anclado en fortalezas VIA —qué fortaleza está en juego y cómo usarla mejor.",
+      "metas": [
+        "15–20 min",
+        "Conversación 1:1",
+        "Ficha de feedback VIA",
+        "Liderazgo y pares"
+      ],
+      "mat": [
+        "Top 5 fortalezas de cada persona (ideal: test VIA previo)",
+        "Plantilla: Fortaleza → Evidencia → Impacto → Siguiente paso"
+      ],
+      "secs": [
+        {
+          "t": "Estructura de la conversación",
+          "rows": [
+            {
+              "ic": "chat",
+              "h": "1 · Fortaleza observada",
+              "p": "«En [situación], vi tu fortaleza de [VIA] cuando [conducta].»"
+            },
+            {
+              "ic": "chat",
+              "h": "2 · Impacto",
+              "p": "«Eso generó [efecto concreto en el equipo/proyecto/persona].»"
+            },
+            {
+              "ic": "chat",
+              "h": "3 · Potenciar o calibrar",
+              "p": "Para reconocimiento: «¿Cómo podrías usar más esta fortaleza en X?» Para mejora: «¿Qué fortaleza complementaria podría equilibrar [sobreuso]?»"
+            },
+            {
+              "ic": "spark",
+              "h": "4 · Acuerdo",
+              "p": "Una acción concreta en 7 días. Agendar seguimiento breve."
+            }
+          ],
+          "cita": "\"El feedback más duradero nombra lo que la persona ya es.\" — Niemiec, 2018"
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El feedback basado en fortalezas (strengths-based feedback) contrasta con el enfoque por déficit. Linley & Harrington (2006) reportan que trabajar desde fortalezas signature mejora desempeño y bienestar. Niemiec (2018) advierte calibrar sobreuso: una fortaleza en exceso puede obstaculizar —p. ej., honestidad sin tacto."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-matriz-uso": {
+      "ic": "balance",
+      "cat": "Fortalezas del Carácter · Autoconocimiento",
+      "clr": "brand",
+      "name": "Matriz de <em>Uso</em> de Fortalezas",
+      "sub": "Mapea cada fortaleza signature en subuso, uso óptimo o sobreuso. Herramienta individual para calibrar el carácter en contextos laborales concretos.",
+      "metas": [
+        "30 min",
+        "Individual",
+        "Top 5 VIA",
+        "Ideal tras test oficial"
+      ],
+      "mat": [
+        "Top 5 fortalezas del test VIA",
+        "Matriz 5×3 (subuso / óptimo / sobreuso)",
+        "Ejemplos de situaciones laborales recientes"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "balance",
+              "h": "Por cada fortaleza top",
+              "p": "Describe: ¿Cuándo la uso poco (subuso)? ¿Cuándo en medida justa (óptimo)? ¿Cuándo en exceso (sobreuso)? Ejemplo: Perseverancia en subuso → abandono prematuro; en sobreuso → no delegar."
+            },
+            {
+              "ic": "focus",
+              "h": "Elegir una calibración",
+              "p": "Selecciona UNA fortaleza para ajustar esta semana. Si es subuso: una situación donde usarla más. Si es sobreuso: una fortaleza complementaria que equilibre."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Peterson y Seligman (2004) y Niemiec (2018) enfatizan que las fortalezas tienen «sombra»: cada virtud puede sobreutilizarse. La matriz de uso convierte el perfil VIA en guía de conducta situacional, no en etiqueta fija —principio clave de intervenciones basadas en fortalezas en organizaciones."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-equipo-por-virtudes": {
+      "ic": "team",
+      "cat": "Fortalezas del Carácter · Equipo",
+      "clr": "brand",
+      "name": "Equipo por <em>Virtudes</em>",
+      "sub": "Mapa colectivo de las seis virtudes VIA: el equipo distribuye sus fortalezas predominantes y detecta vacíos o excesos en el perfil grupal.",
+      "metas": [
+        "40–50 min",
+        "Equipo 5–15 personas",
+        "Test VIA previo recomendado",
+        "Onboarding o planificación"
+      ],
+      "mat": [
+        "Pizarra con 6 columnas (virtudes VIA)",
+        "Post-its: nombre + fortaleza top de cada persona",
+        "Lista de 24 fortalezas"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones",
+          "rows": [
+            {
+              "ic": "team",
+              "h": "Paso 1 · Aportar fortaleza top (10 min)",
+              "p": "Cada persona coloca su fortaleza #1 del VIA en la columna de virtud correspondiente. Si no hizo el test: elige la que más resuene de la lista."
+            },
+            {
+              "ic": "team",
+              "h": "Paso 2 · Leer el mapa (10 min)",
+              "p": "¿Qué virtudes están sobrepobladas? ¿Cuáles vacías? ¿Es un problema para nuestros objetivos actuales?"
+            },
+            {
+              "ic": "team",
+              "h": "Paso 3 · Diseñar complemento (15 min)",
+              "p": "Para un proyecto concreto: ¿Qué virtud necesitamos activar más? ¿Quién puede liderar con su fortaleza? ¿Necesitamos aliado externo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El modelo VIA agrupa 24 fortalezas en seis virtudes universales (Peterson & Seligman, 2004). Equipos diversos en virtudes suelen resolver problemas complejos mejor que grupos homogéneos (Ruch et al., 2010). Mapear virtudes colectivas orienta asignación de roles desde recursos, no desde déficits —enfoque central de psicología organizacional positiva."
+            }
+          ]
+        }
+      ]
+    },
+    "fc-activacion-semanal": {
+      "ic": "target",
+      "cat": "Fortalezas del Carácter · Individual",
+      "clr": "brand",
+      "name": "Activación <em>Semanal</em> de Fortaleza",
+      "sub": "Compromiso individual de usar deliberadamente una fortaleza signature cada semana en una situación laboral específica. Seguimiento en 5 minutos el viernes.",
+      "metas": [
+        "5 min planificación + 5 min cierre",
+        "Individual",
+        "Bitácora",
+        "Semanal"
+      ],
+      "mat": [
+        "Top 5 VIA anotadas",
+        "Plantilla: Fortaleza → Situación → Acción → Resultado"
+      ],
+      "secs": [
+        {
+          "t": "Ritual semanal",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Lunes · Elegir",
+              "p": "Selecciona UNA fortaleza signature y UNA situación de la semana (reunión, proyecto, conversación difícil) donde la usarás deliberadamente."
+            },
+            {
+              "ic": "edit",
+              "h": "Durante la semana · Actuar",
+              "p": "Antes de la situación, pregúntate: «¿Cómo se vería [fortaleza] aquí?» Anota brevemente después qué hiciste."
+            },
+            {
+              "ic": "spark",
+              "h": "Viernes · Revisar (5 min)",
+              "p": "¿La usé? ¿Qué efecto tuvo? ¿Qué fortaleza elijo la próxima semana? Opcional: compartir en stand-up de equipo."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Seligman et al. (2005) mostraron que usar fortalezas signature en contextos nuevos aumenta felicidad y reduce depresión durante meses. Niemiec (2018) recomienda ciclos de activación deliberada —no solo identificar fortalezas— como ingrediente activo de intervenciones VIA. La repetición semanal construye hábito de aplicación consciente."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
