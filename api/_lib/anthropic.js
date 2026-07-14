@@ -50,7 +50,18 @@ export async function callAnthropicMessages({
   const payload = await response.json().catch(() => ({}))
 
   if (!response.ok) {
-    const detail = payload?.error?.message || payload?.error || 'Error al llamar a Anthropic.'
+    const detail =
+      payload?.error?.message ||
+      payload?.error?.type ||
+      payload?.error ||
+      'Error al llamar a Anthropic.'
+
+    if (String(detail).includes('model') || payload?.error?.type === 'not_found_error') {
+      throw new Error(
+        `Modelo de IA no disponible (${payload?.error?.message ?? detail}). Contacta soporte si persiste.`
+      )
+    }
+
     throw new Error(detail)
   }
 
