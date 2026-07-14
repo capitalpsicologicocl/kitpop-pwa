@@ -1,4 +1,4 @@
-const PAID_PLANS = new Set(['pro', 'pro_team'])
+const PAID_PLANS = new Set(['pro', 'pro_studio', 'pro_team'])
 const ACTIVE_STATUSES = new Set(['active', 'trialing'])
 
 export function profileHasActivePaidPlan(profile) {

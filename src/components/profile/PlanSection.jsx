@@ -7,9 +7,11 @@ import {
   getVisiblePlans,
   formatPlanPeriodEnd,
   formatPlanPrice,
+  getAiGenerationRemaining,
   getPlanLabel,
   getSubscriptionStatusLabel,
   getUserPlan,
+  formatAiLimitLabel,
   hasPaidPlan,
 } from '../../utils/planLimits'
 
@@ -22,6 +24,8 @@ export default function PlanSection({ profile, onPlanChange }) {
   const isPaid = hasPaidPlan(profile)
   const periodEnd = formatPlanPeriodEnd(profile)
   const hasPayPalSubscription = Boolean(profile?.paypal_subscription_id)
+  const aiRemaining = getAiGenerationRemaining(profile)
+  const aiLimitLabel = formatAiLimitLabel(currentPlanId)
 
   async function handleCancelSubscription() {
     const confirmed = window.confirm(
@@ -58,8 +62,8 @@ export default function PlanSection({ profile, onPlanChange }) {
       <div className="plan-section-head">
         <h2>Tu plan KitPOP</h2>
         <p>
-          Explorer es gratis. Pro desbloquea talleres, encuestas y sesiones en vivo sin
-          límites.
+          Explorer es gratis (incluye 2 diseños con IA de prueba). Pro desbloquea
+          talleres sin límites y 18 diseños con IA al mes.
         </p>
       </div>
 
@@ -127,6 +131,15 @@ export default function PlanSection({ profile, onPlanChange }) {
             <strong>Renovación / vigencia:</strong> {periodEnd}
           </p>
         )}
+        <p>
+          <strong>Diseños con IA:</strong> {aiLimitLabel}
+          {Number.isFinite(aiRemaining) && (
+            <>
+              {' '}
+              · <strong>{aiRemaining}</strong> disponibles ahora
+            </>
+          )}
+        </p>
       </div>
 
       {message && <div className="auth-message success">{message}</div>}
