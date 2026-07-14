@@ -1,0 +1,3114 @@
+{
+  "CATS": {
+    "mindful": {
+      "title": "Mindfulness en <em>Equipo</em>",
+      "desc": "Prácticas de atención plena diseñadas para contextos de equipo, reuniones, talleres y capacitaciones.",
+      "lv": "vl-sky",
+      "acts": [
+        "minuto-presencia",
+        "respiracion-444",
+        "escaneo-corporal",
+        "atencion-entorno",
+        "observa-nombra",
+        "mindful-caminar",
+        "mindful-escucha",
+        "mindful-stop",
+        "mindful-anclaje-54321",
+        "mindful-comer",
+        "mindful-transicion-reuniones",
+        "mindful-gratitud-equipo",
+        "mindful-pensamientos-nubes",
+        "mindful-mano-corazon",
+        "mindful-pausa-antes-decidir"
+      ]
+    },
+    "conversaciones1a1": {
+      "title": "Conversaciones <em>1 a 1</em>",
+      "desc": "Herramientas para feedback, apreciación y conversaciones difíciles en contextos laborales.",
+      "lv": "vl-pur",
+      "acts": [
+        "entrevista-apreciativa-1a1",
+        "feedback-sandwich-1a1",
+        "conversacion-dificil-1a1",
+        "conversacion-checkin-1a1",
+        "conversacion-escucha-activa-1a1",
+        "conversacion-establecer-limites-1a1",
+        "conversacion-reconocimiento-1a1",
+        "conversacion-delegar-1a1",
+        "conversacion-desarrollo-1a1",
+        "conversacion-desacuerdo-1a1"
+      ]
+    },
+    "reuniones": {
+      "title": "Reuniones <em>Efectivas</em>",
+      "desc": "Metodologías ágiles y estructuras para facilitar reuniones presenciales y virtuales más productivas.",
+      "lv": "vl-teal",
+      "acts": [
+        "activacion-rapida",
+        "daily-scrum",
+        "kanban-visual",
+        "retrospectiva",
+        "lean-coffee",
+        "decision-dot",
+        "parking-lot",
+        "reunion-check-in-objetivo",
+        "reunion-brainwriting-silencioso",
+        "reunion-premortem",
+        "reunion-check-out",
+        "reunion-agenda-visual"
+      ]
+    }
+  },
+  "A": {
+    "minuto-presencia": {
+      "ic": "breath",
+      "cat": "Mindfulness · Apertura",
+      "clr": "sky",
+      "name": "Minuto de Presencia <em>Compartida</em>",
+      "sub": "Antes de comenzar una reunión o taller, el equipo dedica 1–2 minutos en silencio para respirar conscientemente y centrar la atención en el presente. Simple, poderoso y reproducible.",
+      "metas": [
+        "3–5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio tranquilo",
+        "Música de meditación suave — opcional",
+        "Cuenco tibetano o campanita para marcar inicio y cierre — opcional y muy efectivo"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones para el facilitador/a",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Cómo conducir la práctica",
+              "p": "Hablar con voz calmada, pausada y suave — significativamente más lento que lo habitual. Las pausas son parte de la guía. Ejemplo de guión completo: \"Antes de comenzar, quiero invitarlos a algo simple. Cierren los ojos — o si prefieren, bajen la mirada al suelo. [pausa 5 seg] Lleven su atención a la respiración. Solo observen: el aire entrando... y saliendo. [pausa 10 seg] Si aparecen pensamientos sobre lo que tienen que hacer después, sobre la reunión de ayer, sobre el mensaje que no respondieron — solo nótenlos y déjenlos ir. No hay que resolver nada ahora. [pausa 10 seg] Inhalen lentamente contando hasta cuatro. Uno... dos... tres... cuatro. Mantengan. Uno... dos... tres... cuatro. Y exhalen suavemente. Uno... dos... tres... cuatro. [repetir 2–3 veces] Cuando estén listos, abran los ojos suavemente. Bienvenidos/as.\""
+            },
+            {
+              "ic": "light",
+              "h": "Señal de cierre",
+              "p": "Marcar el final con una señal suave: una campanita, un cuenco tibetano, o simplemente decir \"bienvenidos/as\" con voz suave. Dar 5–10 segundos de silencio adicional antes de comenzar la sesión."
+            },
+            {
+              "ic": "observe",
+              "h": "Manejo de la incomodidad",
+              "p": "En algunos equipos o culturas organizacionales, el silencio compartido puede generar incomodidad inicial. Normalizarlo: \"Sé que esto puede sentirse raro al principio. Eso pasa siempre. Solo dense la oportunidad.\""
+            }
+          ],
+          "cita": "\"La atención plena en equipo mejora la conexión y la concentración colectiva.\" — POP Cards PERMA Team"
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Mindfulness se define clásicamente como la conciencia que surge de prestar atención, con intención, al momento presente, de manera no enjuiciadora (Kabat-Zinn, 2001). Los programas de reducción de estrés basados en mindfulness (MBSR) muestran que incluso prácticas breves de anclaje atencional grupal, sostenidas en el tiempo, favorecen la transición desde el estado disperso propio del multitasking hacia un estado de mayor presencia y receptividad (Kabat-Zinn, 1990). En el contexto organizacional, esta transición reduce el arrastre cognitivo de la actividad previa —una reunión anterior, un correo pendiente— hacia el espacio de trabajo grupal que está por comenzar. La brevedad de la práctica es intencional: la evidencia sobre microprácticas de atención plena sugiere que la frecuencia y la repetición importan más que la duración de cada sesión individual. Para el/la facilitador/a, este minuto de silencio compartido funciona como un ritual de apertura replicable en cualquier reunión, que no requiere entrenamiento previo del grupo para generar un cambio perceptible en el tono de la sala."
+            }
+          ]
+        }
+      ]
+    },
+    "respiracion-444": {
+      "ic": "breath",
+      "cat": "Mindfulness · Regulación",
+      "clr": "sky",
+      "name": "Respiración Colectiva <em>4-4-4</em>",
+      "sub": "El equipo practica respiración consciente: inhalar 4 segundos, mantener 4 y exhalar 4. Se repite tres veces en conjunto. Regula la energía grupal, reduce el estrés y sincroniza al equipo antes de una tarea importante.",
+      "metas": [
+        "5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio cómodo donde todos puedan sentarse con la columna recta",
+        "Música suave sin letra — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Guía completa para el facilitador/a",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Postura (30 seg)",
+              "p": "\"Siéntense cómodamente, con la columna erguida — no rígida, sino alerta. Los pies apoyados en el suelo. Las manos sobre los muslos. Si pueden, cierren los ojos o bajen la mirada.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Primera respiración",
+              "p": "\"Vamos a respirar juntos. Cuando yo diga ya, inhalan durante 4 tiempos, mantienen 4 tiempos, exhalan 4 tiempos. ¿Listos? Ya... Inhalen: uno... dos... tres... cuatro. Mantengan: uno... dos... tres... cuatro. Exhalen: uno... dos... tres... cuatro.\" [Pausa breve]"
+            },
+            {
+              "ic": "breath",
+              "h": "Segunda y tercera respiración",
+              "p": "Repetir dos veces más con el mismo ritmo. En la tercera, el facilitador puede decir: \"En esta última exhalación, suelten lo que no necesitan traer a este espacio.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Integración (30 seg)",
+              "p": "\"Noten cómo está el cuerpo ahora. Comparen con hace 2 minutos. Abran los ojos cuando estén listos.\""
+            },
+            {
+              "ic": "observe",
+              "h": "Efecto fisiológico",
+              "p": "La respiración 4-4-4 activa el sistema nervioso parasimpático (el \"freno\" fisiológico), reduciendo la frecuencia cardíaca y el cortisol. En contextos de alta presión o estrés grupal, 5 minutos de respiración colectiva tienen un efecto measurable en la calidad de la comunicación posterior."
+            }
+          ],
+          "cita": "\"Respirar juntos armoniza el ritmo del equipo y reduce el estrés colectivo.\""
+        },
+        {
+          "t": "Reflexión breve post-práctica",
+          "plen": [
+            {
+              "c": "Cuerpo",
+              "q": "¿Qué cambió en tu cuerpo o mente después de respirar conscientemente?"
+            },
+            {
+              "c": "Grupal",
+              "q": "¿Qué se siente respirar en sincronía con otras personas?"
+            },
+            {
+              "c": "Uso cotidiano",
+              "q": "¿En qué momentos del trabajo podrías usar esta práctica por tu cuenta?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La respiración lenta y pautada activa preferentemente la rama parasimpática del sistema nervioso autónomo, lo que la teoría polivagal (Porges, 2011, 2020) describe como una vía de regulación fisiológica que reduce la frecuencia cardíaca y favorece estados de mayor calma y disponibilidad social. Patrones de respiración estructurada como el 4-4-4 se utilizan en protocolos de mindfulness y autorregulación emocional para profesionales bajo alta demanda (Alarcón, 2020), precisamente porque no requieren silencio prolongado ni entrenamiento previo para producir un efecto perceptible en pocos minutos. Practicarla en grupo añade un componente de sincronía interpersonal: cuando varias personas respiran al mismo ritmo y en el mismo espacio, se favorece la coherencia atencional colectiva. Para el/la facilitador/a, esta dinámica es especialmente útil antes de conversaciones de alta exigencia emocional o decisiones bajo presión, ya que ofrece una forma breve de bajar la activación fisiológica del grupo sin necesidad de detener la sesión por mucho tiempo."
+            }
+          ]
+        }
+      ]
+    },
+    "escaneo-corporal": {
+      "ic": "body",
+      "cat": "Mindfulness · Presencia Somática",
+      "clr": "sky",
+      "name": "Escaneo Corporal <em>en Equipo</em>",
+      "sub": "Un/a facilitador/a guía al grupo para recorrer mentalmente el cuerpo de pies a cabeza, observando tensiones, sensaciones o zonas de bloqueo sin juzgar. Al finalizar, cada persona comparte en una sola palabra cómo se siente.",
+      "metas": [
+        "8–12 min",
+        "Grupo completo",
+        "Espacio silencioso"
+      ],
+      "mat": [
+        "Espacio donde todos puedan sentarse cómodamente",
+        "Sillas o colchonetas si es disponible",
+        "Música ambiental muy suave sin letra (rango 40–60Hz)",
+        "Apagar pantallas y dispositivos"
+      ],
+      "secs": [
+        {
+          "t": "Guía completa para el facilitador/a",
+          "rows": [
+            {
+              "ic": "body",
+              "h": "Inicio — anclar en el cuerpo",
+              "p": "\"Cierra los ojos. Siente el contacto de tu cuerpo con la silla o el suelo. El peso de tus piernas. El contacto de tus pies con el suelo. [pausa 10 seg] Sin tratar de cambiar nada — solo notar.\""
+            },
+            {
+              "ic": "body",
+              "h": "Recorrido ascendente",
+              "p": "Guiar lentamente (15–20 seg en cada zona): \"Lleva tu atención a los PIES. ¿Hay tensión, calor, frío? Solo nota. [pausa] Sube a las PIERNAS. Las pantorrillas, las rodillas, los muslos. ¿Están tensos o relajados? [pausa] ABDOMEN. ¿Cómo respira tu abdomen? ¿Está contraído o suelto? [pausa] PECHO. ¿Cómo se siente el corazón? [pausa] HOMBROS. Los hombros son el archivo emocional del día. ¿Están cargados o libres? [pausa] CUELLO Y MANDÍBULA — dos zonas donde guardamos mucho. Solo nota. [pausa] ROSTRO. La frente, los ojos, la boca. ¿Hay tensión? ¿Puedes soltar algo?\""
+            },
+            {
+              "ic": "body",
+              "h": "Regreso y apertura",
+              "p": "\"Vuelve a tu respiración. Siente el cuerpo completo. Cuando estés listo/a, abre los ojos suavemente. Sin apurarse.\""
+            },
+            {
+              "ic": "body",
+              "h": "Compartir en una palabra",
+              "p": "Ronda rápida: cada persona dice en UNA sola palabra cómo se siente después del escaneo. No explicar — solo la palabra."
+            }
+          ],
+          "cita": "\"La conciencia corporal compartida ayuda a liberar tensiones y recuperar equilibrio.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sensaciones",
+              "q": "¿En qué zona del cuerpo encontraste más tensión o incomodidad? ¿Te sorprendió?"
+            },
+            {
+              "c": "Habitual",
+              "q": "¿Cuándo fue la última vez que prestaste atención a tu cuerpo durante la jornada laboral?"
+            },
+            {
+              "c": "Integración",
+              "q": "¿Cómo podrías hacer mini-escaneos corporales de 1 minuto durante tu jornada, especialmente antes de reuniones importantes?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El escaneo corporal es uno de los ejercicios centrales de los programas MBSR desarrollados por Jon Kabat-Zinn (2007), quien lo describe como una ‘vía regia’ hacia el momento presente porque ancla la atención en sensaciones físicas concretas, más difíciles de evadir que los pensamientos. La práctica sistemática de notar tensión, temperatura o bloqueo en distintas zonas del cuerpo sin intentar modificarlas de inmediato entrena la interocepción, la capacidad de percibir señales internas del propio organismo, que en contextos laborales suele estar disminuida por la exigencia de mantenerse ‘siempre activo’. La evidencia sugiere que gran parte del estrés acumulado en jornadas de alta demanda se somatiza —se aloja en el cuerpo— antes de hacerse consciente como pensamiento o emoción, por lo que el cuerpo funciona como una señal temprana de sobrecarga. Para el/la facilitador/a, esta práctica es valiosa como chequeo colectivo de estado antes de sesiones largas o decisiones importantes, ya que hace visible, en pocos minutos, cuánta tensión física está cargando el equipo sin que nadie lo haya verbalizado todavía."
+            }
+          ]
+        }
+      ]
+    },
+    "atencion-entorno": {
+      "ic": "observe",
+      "cat": "Mindfulness · Apertura de Sentidos",
+      "clr": "sky",
+      "name": "Atención Plena al <em>Entorno</em>",
+      "sub": "Durante una pausa breve, el equipo se detiene y observa sonidos, colores, texturas y sensaciones del entorno sin juzgar ni comentar. Luego comparten brevemente lo que notaron. Cultiva presencia y conexión sensorial.",
+      "metas": [
+        "8–10 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Si es posible, salir al exterior o a un espacio diferente al habitual",
+        "Cuaderno para notar observaciones — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "observe",
+              "h": "Paso 1 · Invitar la detención",
+              "p": "El/la facilitador/a dice: \"Vamos a detenernos por 3 minutos. No hay nada que hacer, nada que resolver. Solo vamos a observar lo que nos rodea — con todos los sentidos. Sonidos, colores, texturas, olores, temperatura. Sin comentar, sin juzgar. Solo notar.\""
+            },
+            {
+              "ic": "observe",
+              "h": "Paso 2 · 3 minutos de observación silenciosa",
+              "p": "El grupo observa en silencio. El/la facilitador/a también practica — esto es fundamental. Si el facilitador/a mira el reloj o el teléfono, el grupo lo hará también."
+            },
+            {
+              "ic": "observe",
+              "h": "Paso 3 · Compartir descubrimientos (1 min c/u)",
+              "p": "Ronda rápida: \"¿Qué notaste que normalmente no notas?\" No se trata de lo más extraordinario — a veces lo más valioso es \"noté el ruido del aire acondicionado que llevo escuchando sin escuchar durante meses\" o \"noté que la planta de la esquina tiene nuevas hojas\"."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · La pregunta del facilitador/a",
+              "p": "\"¿Cuánto de nuestra jornada vivimos en piloto automático, sin realmente notar lo que nos rodea? ¿Qué cambiaría si trajéramos más de esta atención a nuestro trabajo?\""
+            }
+          ],
+          "cita": "\"Observar el entorno con calma amplía la conciencia del aquí y el ahora.\""
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "Presencia habitual",
+              "q": "¿Cuánto porcentaje de tu jornada laboral vives en piloto automático?"
+            },
+            {
+              "c": "Lo que notaste",
+              "q": "¿Qué fue lo más sorprendente de lo que observaste?"
+            },
+            {
+              "c": "Práctica",
+              "q": "¿Cómo podrías integrar micro-pausas de atención al entorno en tu jornada diaria?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La atención plena al entorno corresponde a lo que la literatura de mindfulness denomina apertura sensorial u observación de mente abierta: dirigir la atención, con curiosidad y sin juicio, a los estímulos del presente —sonidos, texturas, colores— tal como lo describe Kabat-Zinn (2001) en su definición clásica de la práctica. Una revisión de intervenciones de mindfulness en contextos laborales (Lomas et al., 2017) sugiere que estos ejercicios breves de apertura sensorial se asocian con mejoras en el bienestar percibido y con una reducción del funcionamiento en ‘piloto automático’, el estado en que se ejecutan tareas familiares sin registro consciente de la experiencia. Al pedir que se note algo que ‘normalmente no se nota’, la actividad interrumpe deliberadamente ese piloto automático y reactiva el registro consciente del entorno inmediato. Para el/la facilitador/a, esta dinámica es útil como pausa activa entre bloques largos de trabajo, ya que no requiere cerrar los ojos ni adoptar una postura especial, lo que la hace fácilmente aceptable incluso en equipos poco familiarizados con prácticas contemplativas."
+            }
+          ]
+        }
+      ]
+    },
+    "observa-nombra": {
+      "ic": "eye",
+      "cat": "Mindfulness · Foco Atencional",
+      "clr": "sky",
+      "name": "Observa y <em>Nombra</em>",
+      "sub": "Cada persona elige un objeto cualquiera del entorno, lo observa con atención plena durante 30 segundos notando cada detalle, y lo describe brevemente al grupo. Entrena la atención sostenida y ayuda a \"aterrizar\" antes de una sesión.",
+      "metas": [
+        "5–8 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Entorno con objetos visibles (interior o exterior)",
+        "Opcional: traer objetos interesantes de textura, forma o color"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Elegir el objeto (30 seg)",
+              "p": "\"Mira a tu alrededor y elige UN objeto — cualquiera. No tiene que ser especial ni significativo. Puede ser tu taza de café, una silla, una planta, una ventana, el suelo. Lo que elijas es perfecto.\""
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Observar en silencio (30–60 seg)",
+              "p": "\"Ahora, durante 30 segundos, obsérva ese objeto como si fuera la primera vez que lo ves. Nota su color — ¿hay variaciones? Su forma — ¿es perfectamente regular o tiene irregularidades? Su textura — ¿cómo crees que se sentiría al tacto? La luz que recibe — ¿tiene sombras? ¿brillos? Solo observar.\""
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Compartir la observación",
+              "p": "Por turnos: \"El objeto que elegí fue [X]. Lo que noté que normalmente no había notado fue [Y].\" El énfasis está en la EXPERIENCIA de observar, no en describir el objeto. Ejemplo: \"Elegí mi taza de café. Lo que noté fue que tiene pequeñas burbujas en el esmalte que nunca había visto aunque la uso todos los días.\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Reflexión final",
+              "p": "\"¿Cuándo fue la última vez que realmente MIRASTE algo así, con esa atención?\" Esta pregunta abre naturalmente la conversación sobre la presencia en el trabajo."
+            }
+          ],
+          "cita": "\"Llevar la atención al presente facilita la claridad mental y el trabajo consciente.\""
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Investigación en neurociencia afectiva muestra que poner en palabras una experiencia perceptual o emocional —lo que se conoce como etiquetado afectivo o labeling (Lieberman et al., 2007)— reduce la reactividad de estructuras cerebrales asociadas a la activación emocional y facilita un procesamiento más regulado de la experiencia. Aplicado a la observación de un objeto cotidiano, este mismo mecanismo de nombrar con precisión lo observado entrena la atención sostenida, uno de los componentes centrales de mindfulness (Kabat-Zinn, 2001), y genera una forma de desidentificación cognitiva: la persona deja de operar en automático y pasa a relacionarse con el estímulo de manera deliberada y consciente. Elegir un objeto sin importancia especial es clave: demuestra que la calidad de la atención, y no la relevancia del objeto, es lo que produce la experiencia de presencia. Para el/la facilitador/a, este ejercicio es una manera rápida y accesible de entrenar el ‘músculo’ atencional del grupo antes de tareas que requieren foco sostenido, sin necesidad de vocabulario técnico ni de justificar la práctica en términos terapéuticos."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-caminar": {
+      "ic": "wave",
+      "cat": "Mindfulness · Movimiento Consciente",
+      "clr": "sky",
+      "name": "Caminata <em>Consciente</em>",
+      "sub": "El grupo camina lentamente durante unos minutos prestando atención plena a las sensaciones del movimiento, en lugar de conversar o revisar el teléfono. Ideal para pausas activas y para personas a quienes les cuesta la quietud sentada.",
+      "metas": [
+        "6–8 min",
+        "Grupo completo",
+        "Espacio para caminar (pasillo, patio, sala amplia)"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Espacio despejado de al menos 8–10 pasos en línea recta o un circuito",
+        "Calzado cómodo"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Encuadre inicial",
+              "p": "\"Vamos a caminar los próximos minutos, pero de una manera distinta a como caminamos normalmente. No hay que llegar a ningún lugar. El objetivo es solo caminar, sintiendo cada paso.\""
+            },
+            {
+              "ic": "wave",
+              "h": "Primeros pasos",
+              "p": "\"Comiencen a caminar más lento de lo habitual. Sientan cómo el talón toca el suelo, luego la planta, luego los dedos. Noten el peso pasando de un pie al otro.\" [caminar en silencio 2 min]"
+            },
+            {
+              "ic": "wave",
+              "h": "Ampliar la atención",
+              "p": "\"Ahora, sin dejar de sentir sus pasos, amplíen la atención al entorno: la temperatura del aire, los sonidos, la luz.\" [caminar en silencio 2 min más]"
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "\"Detengan sus pasos donde estén. Una última respiración profunda. Abran los ojos si los tenían cerrados y, en silencio, regresemos al espacio de trabajo.\""
+            }
+          ],
+          "cita": "\"Caminar con atención convierte un desplazamiento cualquiera en una pausa de presencia.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "En espacio reducido",
+              "p": "Si no hay espacio para caminar en línea recta, se puede hacer un circuito corto de ida y vuelta, o incluso caminar en el mismo lugar."
+            },
+            {
+              "ic": "wave",
+              "h": "Para personas con movilidad reducida",
+              "p": "El ejercicio se adapta fácilmente a estar de pie con pequeños desplazamientos de peso, o sentado moviendo conscientemente los pies."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión breve",
+          "plen": [
+            {
+              "c": "Diferencia",
+              "q": "¿En qué se sintió distinta esta caminata de caminar 'en piloto automático'?"
+            },
+            {
+              "c": "Cuerpo",
+              "q": "¿Qué notaron en su cuerpo que no habían notado antes de empezar?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿En qué trayecto cotidiano —de una reunión a otra, del auto a la oficina— podrían aplicar esto?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La meditación caminando es una de las prácticas formales incluidas en los programas MBSR (Kabat-Zinn, 1990) junto a la respiración y el escaneo corporal, pensada específicamente para personas que encuentran difícil sostener la quietud de una meditación sentada. Al anclar la atención en una sensación kinestésica concreta —el contacto del pie con el suelo— en lugar de un objeto puramente mental, la práctica reduce la carga atencional necesaria para mantenerse presente, lo que la hace especialmente accesible para grupos sin experiencia previa en meditación. El monje y maestro Thich Nhat Hanh popularizó variantes de esta práctica como herramienta de transición entre actividades, no solo como ejercicio contemplativo aislado. En un contexto de equipo, caminar juntos en silencio también reduce momentáneamente la presión de tener que conversar o rendir, algo poco frecuente en jornadas laborales saturadas de interacción. Para el/la facilitador/a, esta actividad es una alternativa valiosa cuando el grupo lleva mucho tiempo sentado, ya que combina el beneficio atencional de mindfulness con la activación física que el cuerpo necesita."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-escucha": {
+      "ic": "chat",
+      "cat": "Mindfulness · Escucha",
+      "clr": "sky",
+      "name": "Escucha Consciente en <em>Duplas</em>",
+      "sub": "En parejas, una persona habla durante dos minutos sobre un tema simple mientras la otra escucha en silencio total, sin preparar respuesta ni interrumpir. Luego se invierten los roles. Entrena la escucha plena, poco común en el día a día laboral.",
+      "metas": [
+        "10 min",
+        "Parejas",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Espacio donde las parejas puedan hablar sin interferirse entre sí",
+        "Temporizador"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "chat",
+              "h": "Encuadre",
+              "p": "\"Vamos a practicar un tipo de escucha distinta a la habitual. Mientras su compañero/a habla, su única tarea es escuchar. No van a responder, no van a dar consejos, no van a preparar lo que dirán después. Solo escuchar.\""
+            },
+            {
+              "ic": "chat",
+              "h": "Ronda 1 (2 min)",
+              "p": "Cada pareja elige quién habla primero sobre: \"Algo que estás disfrutando de tu trabajo últimamente.\" La otra persona escucha en silencio, sin asentir de forma exagerada ni interrumpir, solo con atención genuina."
+            },
+            {
+              "ic": "chat",
+              "h": "Ronda 2 (2 min)",
+              "p": "Se invierten los roles con el mismo tema u otro que el facilitador proponga."
+            },
+            {
+              "ic": "light",
+              "h": "Cierre en pareja (1 min)",
+              "p": "\"Cuéntale a tu compañero/a, en una frase, qué fue lo que más te quedó de lo que dijo — no lo que tú pensaste mientras hablaba, sino lo que realmente escuchaste.\""
+            }
+          ],
+          "cita": "\"Escuchar sin preparar la respuesta es uno de los regalos más simples y más escasos que podemos darle a otra persona.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "chat",
+              "h": "Sin gestos",
+              "p": "Para profundizar el ejercicio, se puede pedir que quien escucha mantenga también el rostro neutro, sin asentir ni sonreír, notando cuánto cuesta resistir el impulso de reaccionar."
+            },
+            {
+              "ic": "chat",
+              "h": "Virtual",
+              "p": "En videollamada, funciona igual en salas separadas (breakout rooms) de dos personas, con cámara encendida y micrófono de quien escucha apagado."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Como quien habla",
+              "q": "¿Cómo se sintió hablar sabiendo que la otra persona no iba a interrumpir?"
+            },
+            {
+              "c": "Como quien escucha",
+              "q": "¿Qué impulsos notaron —de opinar, de comparar, de resolver— mientras escuchaban en silencio?"
+            },
+            {
+              "c": "Cotidiano",
+              "q": "¿Qué porcentaje de las conversaciones de su día a día son realmente escucha, y cuánto es 'esperar el turno para hablar'?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La escucha activa, formulada originalmente por Carl Rogers (1951) dentro de la terapia centrada en la persona, describe una forma de atención que suspende deliberadamente la evaluación, el consejo y la preparación de la propia respuesta mientras el otro habla. La investigación sobre comunicación interpersonal muestra que la mayoría de las conversaciones cotidianas están dominadas por lo que suele llamarse 'escuchar para responder' en lugar de 'escuchar para comprender', un patrón que reduce la sensación de ser realmente escuchado en quien habla. Aplicado a mindfulness, este ejercicio traslada el principio de atención plena, sin juicio, del objeto interno (respiración, cuerpo) al objeto interpersonal: la persona que habla. El silencio impuesto sobre quien escucha no busca incomodar, sino hacer visible cuánto del hábito conversacional automático consiste en interrumpir, aconsejar o desviar el foco hacia uno mismo. Para el/la facilitador/a, este ejercicio es una manera directa de mejorar, en minutos, la calidad de escucha del equipo antes de conversaciones importantes, sin necesidad de explicar teoría de comunicación de forma extensa."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-stop": {
+      "ic": "focus",
+      "cat": "Mindfulness · Micro-práctica",
+      "clr": "sky",
+      "name": "Técnica <em>STOP</em>",
+      "sub": "Un micro-ejercicio de cuatro pasos (Stop, Take a breath, Observe, Proceed) para interrumpir la reactividad automática en medio de una jornada intensa. Se enseña una vez en grupo y luego cada persona puede usarlo por su cuenta, en cualquier momento.",
+      "metas": [
+        "4–5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Se recomienda un recordatorio visual (tarjeta, post-it) para practicar después de la sesión"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "Presentar la técnica",
+              "p": "\"Les voy a enseñar una herramienta de cuatro pasos que pueden usar solos, en cualquier momento del día, cuando sientan que están reaccionando en piloto automático o bajo estrés: se llama STOP.\""
+            },
+            {
+              "ic": "focus",
+              "h": "S — Stop (Detente)",
+              "p": "\"El primer paso es literal: deja lo que estás haciendo por un momento. Suelta el mouse, el teléfono, la conversación mental.\""
+            },
+            {
+              "ic": "breath",
+              "h": "T — Take a breath (Respira)",
+              "p": "\"Haz una respiración consciente, un poco más profunda de lo habitual.\" [practicar en grupo, una respiración]"
+            },
+            {
+              "ic": "observe",
+              "h": "O — Observe (Observa)",
+              "p": "\"Nota qué está pasando: en tu cuerpo, en tus emociones, en tus pensamientos. Sin cambiar nada, solo notar.\""
+            },
+            {
+              "ic": "target",
+              "h": "P — Proceed (Continúa)",
+              "p": "\"Ahora, elige conscientemente cómo continuar — puede ser lo mismo que ibas a hacer, o algo distinto, pero ya no en automático.\""
+            }
+          ],
+          "cita": "\"STOP no cambia la situación, cambia si respondemos desde la reactividad o desde la elección.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "Versión exprés (10 segundos)",
+              "p": "Para usar en medio de una reunión tensa: solo Stop y una respiración, sin verbalizar los otros pasos, ya interrumpe el piloto automático."
+            },
+            {
+              "ic": "focus",
+              "h": "Recordatorio físico",
+              "p": "Sugerir a cada persona que elija un objeto cotidiano (el mouse, la taza, el celular) como disparador: cada vez que lo tome, recordar el STOP."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Momentos de uso",
+              "q": "¿En qué momentos de tu semana laboral te habría servido aplicar STOP antes de reaccionar?"
+            },
+            {
+              "c": "Práctica",
+              "q": "¿Qué disparador o recordatorio te ayudaría a acordarte de usarlo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La técnica STOP es una micro-práctica ampliamente utilizada en programas de mindfulness basados en MBSR y en su variante clínica MBCT, popularizada en manuales de práctica breve como los de Stahl y Goldstein (2010), diseñada para interrumpir cadenas automáticas de reactividad antes de que se traduzcan en una respuesta impulsiva. Su valor principal es estructural: al fragmentar la pausa en pasos verbalizables (detenerse, respirar, observar, continuar), convierte un proceso interno difícil de sostener —'estar presente'— en una secuencia de acciones concretas que cualquier persona puede ejecutar en segundos, incluso sin entrenamiento contemplativo previo. El paso de observación es clave desde la perspectiva de la regulación emocional: nombrar y notar lo que ocurre internamente, sin intentar cambiarlo de inmediato, reduce la intensidad de la reacción automática antes de decidir cómo actuar. A diferencia de otras prácticas de mindfulness que requieren varios minutos, STOP está diseñado para usarse en segundos, en medio de una tarea, lo que la hace especialmente aplicable a contextos de alta exigencia. Para el/la facilitador/a, enseñar esta técnica una sola vez en grupo entrega a cada persona una herramienta autónoma y reutilizable, sin depender de futuras sesiones facilitadas."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-anclaje-54321": {
+      "ic": "eye",
+      "cat": "Mindfulness · Regulación",
+      "clr": "sky",
+      "name": "Anclaje Sensorial <em>5-4-3-2-1</em>",
+      "sub": "Técnica de anclaje que recorre los cinco sentidos (5 cosas que ves, 4 que escuchas, 3 que sientes al tacto, 2 que hueles, 1 que saboreas) para devolver la atención al presente cuando el grupo llega disperso o activado a una sesión.",
+      "metas": [
+        "5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Espacio con estímulos sensoriales variados (sonidos, objetos, texturas cercanas)"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Encuadre",
+              "p": "\"Vamos a hacer un ejercicio breve para anclarnos en este espacio y este momento, usando los cinco sentidos.\""
+            },
+            {
+              "ic": "eye",
+              "h": "5 — Vista",
+              "p": "\"Miren a su alrededor y, en silencio, identifiquen mentalmente 5 cosas que pueden ver. No hace falta decirlas en voz alta.\" [pausa 20 seg]"
+            },
+            {
+              "ic": "observe",
+              "h": "4 — Oído",
+              "p": "\"Ahora, 4 sonidos distintos que puedan escuchar, desde el más cercano al más lejano.\" [pausa 15 seg]"
+            },
+            {
+              "ic": "body",
+              "h": "3 — Tacto",
+              "p": "\"3 sensaciones táctiles: la silla bajo tu cuerpo, la ropa sobre tu piel, la temperatura del aire.\" [pausa 15 seg]"
+            },
+            {
+              "ic": "observe",
+              "h": "2 — Olfato",
+              "p": "\"2 olores que puedas percibir, aunque sean sutiles.\" [pausa 10 seg]"
+            },
+            {
+              "ic": "observe",
+              "h": "1 — Gusto",
+              "p": "\"1 sabor presente en tu boca en este momento, aunque sea neutro.\" [pausa 10 seg] \"Con eso, estamos de vuelta aquí.\""
+            }
+          ],
+          "cita": "\"Los cinco sentidos son la puerta más rápida de regreso al presente.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Versión corta (5-4)",
+              "p": "Si el tiempo es muy acotado, se puede hacer solo con vista y oído, los dos sentidos más fáciles de nombrar en grupo."
+            },
+            {
+              "ic": "eye",
+              "h": "Virtual",
+              "p": "En reuniones online funciona igual, pidiendo a cada persona que lo haga desde su propio espacio antes de compartir la pantalla."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Antes y después",
+              "q": "¿Cómo estaba tu atención antes del ejercicio, comparada con ahora?"
+            },
+            {
+              "c": "Uso personal",
+              "q": "¿En qué momento de dispersión o ansiedad podrías usar esta técnica por tu cuenta?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La técnica 5-4-3-2-1 es un procedimiento de anclaje (grounding) ampliamente utilizado en intervenciones de regulación de la activación, cuyo mecanismo consiste en desplazar deliberadamente la atención desde el contenido mental —preocupaciones, rumiación, activación fisiológica— hacia estímulos sensoriales externos concretos y verificables. Este tipo de anclaje sensorial es coherente con los principios de la teoría polivagal (Porges, 2011), que describe cómo orientar la atención hacia señales externas seguras del entorno favorece estados de mayor regulación autonómica. A diferencia de las prácticas de mindfulness que piden observar la experiencia interna sin cambiarla, el anclaje sensorial cumple una función distinta y complementaria: interrumpir de forma activa un estado de dispersión o sobreactivación antes de que interfiera con el trabajo grupal que sigue. La progresión descendente de cinco a un sentido facilita el seguimiento incluso para grupos grandes o con distintos niveles de familiaridad con mindfulness, ya que no requiere cerrar los ojos ni adoptar posturas especiales. Para el/la facilitador/a, esta técnica es particularmente útil como apertura de sesiones que siguen a momentos de alta carga —después de una noticia difícil, una discusión tensa o una jornada saturada de reuniones."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-comer": {
+      "ic": "star",
+      "cat": "Mindfulness · Atención Sensorial",
+      "clr": "sky",
+      "name": "Comer con <em>Atención Plena</em>",
+      "sub": "Ejercicio clásico de introducción a mindfulness: comer un pequeño alimento (una uva pasa, una almendra, un trozo de chocolate) durante varios minutos, prestando atención completa a cada sensación del proceso. Suele generar asombro por lo automático que es comer habitualmente.",
+      "metas": [
+        "8–10 min",
+        "Grupo completo",
+        "Un alimento pequeño por persona"
+      ],
+      "mat": [
+        "Un alimento pequeño por persona (uva pasa, almendra, trozo de fruta o chocolate)",
+        "Servilletas o platos pequeños",
+        "Verificar alergias antes de elegir el alimento"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Entrega del alimento",
+              "p": "\"Les voy a pedir que, por unos minutos, coman este [alimento] como si nunca antes lo hubieran probado. Todavía no lo coman, solo tómenlo en la mano.\""
+            },
+            {
+              "ic": "star",
+              "h": "Observar antes de comer (1 min)",
+              "p": "\"Obsérvenlo como si vinieran de otro planeta. Su color, su forma, su textura al tacto entre los dedos, cómo refleja la luz.\""
+            },
+            {
+              "ic": "star",
+              "h": "Oler (30 seg)",
+              "p": "\"Acérquenlo a la nariz. ¿Qué aroma tiene? ¿Hay más de un aroma?\""
+            },
+            {
+              "ic": "star",
+              "h": "Llevarlo a la boca sin masticar (30 seg)",
+              "p": "\"Pónganlo en la boca, pero todavía no mastiquen. Noten la textura con la lengua, el impulso de morder.\""
+            },
+            {
+              "ic": "star",
+              "h": "Masticar lentamente (1–2 min)",
+              "p": "\"Ahora, muerdan una sola vez y noten qué pasa: el sabor, la textura que cambia. Sigan masticando muy lento, notando cada cambio, hasta tragar conscientemente.\""
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "\"¿Cómo fue comer así, comparado con cómo comemos normalmente?\""
+            }
+          ],
+          "cita": "\"Comemos cientos de veces al año en piloto automático. Una sola vez con atención plena revela cuánto nos perdemos.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Con bebida",
+              "p": "El ejercicio se puede adaptar a tomar un sorbo de agua o té con la misma atención sensorial completa."
+            },
+            {
+              "ic": "star",
+              "h": "Formato reducido",
+              "p": "Si el tiempo es muy limitado, se puede acortar a solo la fase de masticación consciente, sin las fases de observación previa."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sorpresa",
+              "q": "¿Qué notaron que normalmente no notan al comer?"
+            },
+            {
+              "c": "Piloto automático",
+              "q": "¿En qué otras actividades cotidianas —caminar, escribir un correo, saludar— actúan de forma similarmente automática?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿Podrían aplicar este nivel de atención a la próxima comida del día?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El ejercicio de comer con atención plena, popularizado como 'la meditación de la uva pasa', es uno de los ejercicios introductorios más utilizados en los programas MBSR de Jon Kabat-Zinn (1990) precisamente porque produce un contraste muy nítido entre la experiencia habitual de comer —rápida, automática, a menudo simultánea con otra tarea— y la experiencia de comer con atención sensorial completa. La literatura sobre alimentación consciente (mindful eating, Kristeller y Wolever, 2011) muestra que dirigir la atención deliberada a las señales sensoriales de la comida no solo modifica la percepción de sabor, sino que también favorece un mayor registro de saciedad y disfrute, en contraste con el comer distraído. Como ejercicio introductorio de mindfulness, su fuerza pedagógica radica en usar una actividad tan común y tan automatizada que el contraste resulta memorable sin necesidad de explicación teórica adicional: basta con vivirlo una vez. Para el/la facilitador/a, este ejercicio funciona especialmente bien como primera experiencia de mindfulness para un equipo que nunca ha practicado, porque no requiere silencio prolongado ni posturas especiales, y genera casi siempre asombro genuino y una conversación espontánea al finalizar."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-transicion-reuniones": {
+      "ic": "target",
+      "cat": "Mindfulness · Transiciones",
+      "clr": "sky",
+      "name": "Transición Consciente entre <em>Reuniones</em>",
+      "sub": "Un protocolo breve de 2 minutos para cerrar mentalmente una reunión antes de abrir la siguiente, evitando el arrastre de atención de una tarea a otra. Especialmente útil en jornadas con reuniones consecutivas sin pausa.",
+      "metas": [
+        "2 min entre reuniones",
+        "Individual o grupal",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Puede practicarse individualmente o al inicio de la siguiente reunión con todo el grupo"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a o para uso individual",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Cerrar lo anterior (30 seg)",
+              "p": "\"Antes de entrar a esta reunión, tómense 30 segundos para cerrar mentalmente la anterior. ¿Qué queda pendiente de ahí? Anótenlo en una palabra si lo necesitan, y suéltenlo por ahora.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Respiración de transición (30 seg)",
+              "p": "\"Hagan tres respiraciones un poco más profundas de lo habitual, notando cómo el cuerpo se desacelera levemente.\""
+            },
+            {
+              "ic": "target",
+              "h": "Abrir lo nuevo (1 min)",
+              "p": "\"Ahora, pregúntense: ¿para qué estoy en esta próxima reunión? ¿Qué necesito traer de mí a este espacio?\" Si se hace en grupo, cada persona puede compartir en una palabra su foco para la reunión que comienza."
+            }
+          ],
+          "cita": "\"Lo que no se cierra conscientemente, se arrastra a la siguiente reunión sin que nadie lo note.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Uso individual entre reuniones",
+              "p": "Cada persona puede aplicar esta transición por su cuenta, en el pasillo o frente a la pantalla, sin necesidad de un facilitador."
+            },
+            {
+              "ic": "target",
+              "h": "Como apertura de reunión con todo el grupo",
+              "p": "El/la facilitador/a puede guiarlo como los primeros dos minutos de cualquier reunión que sigue inmediatamente a otra."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Frecuencia",
+              "q": "¿Cuántas reuniones consecutivas, sin pausa real, suelen tener en una jornada típica?"
+            },
+            {
+              "c": "Costo",
+              "q": "¿Qué notan cuando entran a una reunión sin haber cerrado la anterior?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación sobre cambio de tareas (task switching) describe un fenómeno conocido como residuo atencional (attention residue): cuando una persona pasa de una tarea a otra sin una transición deliberada, parte de su atención permanece enganchada en la tarea anterior, reduciendo el desempeño en la nueva (Leroy, 2009). Este efecto es especialmente relevante en jornadas laborales con reuniones consecutivas, donde rara vez existe una pausa real entre un tema y el siguiente. Los principios de mindfulness aplicados a la transición —cerrar deliberadamente lo anterior antes de abrir lo nuevo— no eliminan el residuo atencional, pero la evidencia sobre microprácticas atencionales sugiere que hacerlo consciente reduce su interferencia, al permitir a la persona reconocer y soltar, aunque sea parcialmente, lo que traía de la actividad previa. La estructura breve de esta práctica —cerrar, respirar, abrir— es deliberadamente mínima para poder aplicarse entre reuniones reales sin generar más retraso del que busca evitar. Para el/la facilitador/a, esta transición es una de las intervenciones de mindfulness con mayor retorno práctico inmediato, porque ataca directamente uno de los mayores costos ocultos de la cultura de reuniones consecutivas."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-gratitud-equipo": {
+      "ic": "thanks",
+      "cat": "Mindfulness · Gratitud",
+      "clr": "sky",
+      "name": "Ronda de Gratitud <em>Exprés</em>",
+      "sub": "Al cierre de una sesión o jornada, cada persona nombra en una frase breve algo o alguien del equipo por lo que siente gratitud esa semana. Un ritual de menos de cinco minutos que cierra con un tono distinto al del contenido de trabajo.",
+      "metas": [
+        "3–5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Funciona mejor si se convierte en ritual recurrente (semanal, o al cierre de cada sesión larga)"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "Encuadre",
+              "p": "\"Antes de cerrar, vamos a hacer una ronda rápida de gratitud. En una frase corta, algo o alguien de esta semana de trabajo por lo que estén agradecidos. No tiene que ser grande.\""
+            },
+            {
+              "ic": "thanks",
+              "h": "Ronda",
+              "p": "El/la facilitador/a modela primero con un ejemplo breve y concreto, luego cada persona comparte en orden, sin comentarios entre turnos, para mantener el ritmo ágil."
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "\"Gracias por compartir. Cerramos la semana con esto presente.\""
+            }
+          ],
+          "cita": "\"Nombrar en voz alta lo que agradecemos lo hace más real que solo pensarlo.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "Gratitud dirigida",
+              "p": "En lugar de un tema libre, se puede pedir específicamente algo que un/a compañero/a de equipo hizo esta semana que ayudó."
+            },
+            {
+              "ic": "thanks",
+              "h": "Formato escrito",
+              "p": "Para grupos grandes o con poco tiempo, se puede hacer por escrito en un canal compartido en lugar de en voz alta."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Tono",
+              "q": "¿Cómo cambia el ánimo del grupo al cerrar así, comparado con cerrar directamente con la lista de pendientes?"
+            },
+            {
+              "c": "Frecuencia",
+              "q": "¿Con qué periodicidad les gustaría sostener este ritual?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación sobre gratitud en psicología positiva (Emmons y McCullough, 2003) muestra que expresar gratitud de forma regular y específica —no genérica— se asocia con mayor bienestar subjetivo y mejor calidad percibida de las relaciones, tanto en quien la expresa como en quien la recibe. A diferencia de un diario de gratitud individual, esta práctica traslada el mecanismo a un formato grupal y breve: verbalizar en voz alta, frente al equipo, tiene un componente social adicional que un registro privado no tiene, ya que refuerza directamente el vínculo entre las personas nombradas y hace visible el reconocimiento mutuo dentro del grupo. La brevedad del ritual —menos de cinco minutos— es intencional: la evidencia sobre prácticas de bienestar en el trabajo sugiere que la repetición sostenida en el tiempo produce mayor efecto acumulado que una sesión aislada más extensa, por lo que conviene diseñarlo como hábito recurrente y no como actividad única. Para el/la facilitador/a, cerrar sesiones de trabajo intensas con este ritual cumple una función adicional de regulación del tono emocional grupal, evitando que el equipo termine la jornada enfocado únicamente en lo pendiente o lo que faltó."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-pensamientos-nubes": {
+      "ic": "wave",
+      "cat": "Mindfulness · Defusión Cognitiva",
+      "clr": "sky",
+      "name": "Pensamientos como <em>Nubes</em>",
+      "sub": "Una breve meditación guiada que invita a observar los pensamientos como nubes que pasan por el cielo, sin aferrarse a ellos ni empujarlos. Útil para equipos atrapados en rumiación sobre un problema difícil antes de retomar el trabajo con más claridad.",
+      "metas": [
+        "5–6 min",
+        "Grupo completo",
+        "Espacio tranquilo"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio donde el grupo pueda sentarse cómodamente con los ojos cerrados o la mirada baja"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Encuadre",
+              "p": "\"Vamos a hacer un ejercicio breve para observar nuestros pensamientos de una manera distinta. Pueden cerrar los ojos o bajar la mirada.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Anclar en la respiración (30 seg)",
+              "p": "\"Empiecen notando su respiración, sin cambiarla, solo observando el ir y venir del aire.\""
+            },
+            {
+              "ic": "wave",
+              "h": "La metáfora del cielo",
+              "p": "\"Imaginen que su mente es como el cielo, amplio y abierto. Y que cada pensamiento que aparece es como una nube que cruza ese cielo. Algunas nubes son pequeñas y pasan rápido. Otras son grandes y se quedan más tiempo. Su tarea no es detener las nubes ni empujarlas —solo notar que aparecen, y dejarlas pasar.\""
+            },
+            {
+              "ic": "wave",
+              "h": "Práctica en silencio (2 min)",
+              "p": "\"Durante el siguiente minuto y medio, observen qué pensamientos aparecen como nubes. Si se enganchan con uno y se van con él, está bien — cuando lo noten, vuelvan a ser el cielo que observa.\""
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "\"Vuelvan lentamente la atención a la respiración, y cuando estén listos, abran los ojos.\""
+            }
+          ],
+          "cita": "\"No eres tus pensamientos. Eres el cielo por el que pasan.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Enfocada en un problema",
+              "p": "Antes de comenzar, se puede pedir al grupo que traiga a la mente un problema o preocupación específica del trabajo, y aplicar la metáfora de las nubes a los pensamientos que surjan sobre ese tema en particular."
+            },
+            {
+              "ic": "wave",
+              "h": "Variante con río",
+              "p": "Como alternativa a las nubes, se puede usar la imagen de hojas flotando en un río, la misma lógica de observar sin aferrarse."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Experiencia",
+              "q": "¿Qué tipo de pensamientos aparecieron con más frecuencia?"
+            },
+            {
+              "c": "Distancia",
+              "q": "¿Notaron alguna diferencia entre 'tener' un pensamiento y 'ser' ese pensamiento?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿Cómo podría ayudarles esta metáfora la próxima vez que un pensamiento repetitivo los distraiga en el trabajo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La metáfora de los pensamientos como nubes que cruzan el cielo es una de las técnicas centrales de defusión cognitiva desarrolladas en la Terapia de Aceptación y Compromiso (Hayes, Strosahl y Wilson, 1999), un enfoque que integra principios de mindfulness con la psicología conductual contemporánea. La defusión cognitiva describe el proceso de tomar distancia de un pensamiento —observarlo en lugar de fusionarse con él y tratarlo como un hecho o una orden a seguir— lo que reduce su capacidad de dictar la conducta o la emoción de forma automática. En contextos organizacionales, no clínicos, esta técnica se traduce en un recurso práctico para equipos que quedan atrapados en rumiación sobre un problema sin poder avanzar: la metáfora ofrece una forma accesible de reconocer que un pensamiento recurrente ('esto no va a funcionar', 'siempre pasa lo mismo') es un evento mental transitorio y no una verdad fija sobre la situación. Para el/la facilitador/a, esta práctica es especialmente útil como puente antes de retomar una conversación de resolución de problemas que se había estancado en pensamientos repetitivos, ya que crea distancia psicológica sin negar ni suprimir la preocupación de fondo."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-mano-corazon": {
+      "ic": "heart",
+      "cat": "Mindfulness · Autocompasión",
+      "clr": "sky",
+      "name": "Mano en el <em>Corazón</em>",
+      "sub": "Un gesto breve y simple de autocompasión: colocar la mano sobre el pecho mientras se pronuncia mentalmente una frase de cuidado propio, especialmente útil tras una jornada o semana particularmente exigente.",
+      "metas": [
+        "3 min",
+        "Individual o grupal",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Puede practicarse individualmente en cualquier momento del día o guiado en grupo al cierre de una sesión demandante"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Encuadre",
+              "p": "\"Este ha sido un [día/semana] exigente. Vamos a hacer un gesto muy simple de cuidado hacia nosotros mismos, algo que pueden repetir por su cuenta cuando lo necesiten.\""
+            },
+            {
+              "ic": "heart",
+              "h": "El gesto",
+              "p": "\"Coloquen una mano sobre su pecho, a la altura del corazón. Sientan el calor y la presión suave de su propia mano.\""
+            },
+            {
+              "ic": "heart",
+              "h": "La frase",
+              "p": "\"En silencio, repitan mentalmente algo como: 'Esto ha sido difícil. Estoy haciendo lo que puedo. Merezco un momento de cuidado.' Pueden usar sus propias palabras.\" [pausa 30 seg]"
+            },
+            {
+              "ic": "breath",
+              "h": "Cierre",
+              "p": "\"Hagan una respiración profunda, y cuando estén listos, bajen la mano.\""
+            }
+          ],
+          "cita": "\"El mismo cuidado que ofrecemos a otros, a veces necesitamos ofrecérnoslo a nosotros mismos.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Uso individual",
+              "p": "Este gesto puede practicarse en cualquier momento del día, sin necesidad de facilitación, especialmente antes o después de una situación tensa."
+            },
+            {
+              "ic": "heart",
+              "h": "Dirigido a un/a colega",
+              "p": "En equipos con alta confianza, se puede adaptar preguntando a cada persona en qué momento de la semana le hubiera servido este gesto, sin necesidad de compartir detalles privados."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sensación",
+              "q": "¿Qué notaron en su cuerpo al hacer este gesto?"
+            },
+            {
+              "c": "Frecuencia",
+              "q": "¿Con qué frecuencia se ofrecen a sí mismos el mismo cuidado que le ofrecen a un/a colega que está pasando un mal momento?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El contacto físico suave y autoadministrado —como colocar una mano sobre el pecho— es uno de los gestos centrales de las prácticas de autocompasión desarrolladas por Kristin Neff y Christopher Germer (2017), quienes documentan que el tacto reconfortante activa respuestas fisiológicas de calma similares a las que genera el contacto de otra persona, incluyendo la liberación de oxitocina asociada a estados de seguridad y vínculo. La autocompasión, a diferencia de la autoestima, no depende de evaluarse positivamente sino de tratarse con la misma amabilidad que se ofrecería a alguien querido que estuviera sufriendo, un componente que la literatura asocia con mejor regulación emocional y menor autocrítica frente a las dificultades. En contextos laborales de alta exigencia, este tipo de prácticas breves no buscan sustituir el descanso ni resolver la fuente del estrés, sino ofrecer un microrrecurso inmediato de regulación disponible en cualquier momento del día. Para el/la facilitador/a, introducir este gesto en el equipo, especialmente después de periodos intensos, valida explícitamente que el cansancio y la dificultad son parte legítima del trabajo, y no algo que deba ocultarse o superarse en silencio."
+            }
+          ]
+        }
+      ]
+    },
+    "mindful-pausa-antes-decidir": {
+      "ic": "target",
+      "cat": "Mindfulness · Toma de Decisiones",
+      "clr": "sky",
+      "name": "Pausa de un Minuto antes de <em>Decidir</em>",
+      "sub": "Antes de una decisión importante en una reunión, el grupo hace una pausa de un minuto en silencio para notar la propia reacción —racional y emocional— antes de votar u opinar en voz alta. Reduce la influencia del primer opinante y la reactividad grupal.",
+      "metas": [
+        "2–3 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Ideal justo antes de una votación, decisión importante o cierre de un debate"
+      ],
+      "secs": [
+        {
+          "t": "Guía para el facilitador/a",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Encuadre",
+              "p": "\"Antes de decidir sobre esto, vamos a tomarnos un minuto de silencio. No para pensar más rápido, sino para notar con más claridad qué piensa y siente cada uno antes de hablar.\""
+            },
+            {
+              "ic": "breath",
+              "h": "El minuto (60 seg)",
+              "p": "\"Cierren los ojos si quieren, o bajen la mirada. Pregúntense en silencio: ¿qué opción me hace sentido? ¿Qué reacción tengo en el cuerpo frente a cada opción? No hay que decidir todavía, solo notar.\" [silencio 60 segundos, con temporizador visible]"
+            },
+            {
+              "ic": "target",
+              "h": "Retomar",
+              "p": "\"Cuando estén listos, abran los ojos. Ahora sí, continuamos la conversación o la votación.\""
+            }
+          ],
+          "cita": "\"Un minuto de silencio antes de decidir suele valer más que diez minutos de debate apresurado.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Antes de dot voting",
+              "p": "Esta pausa combina especialmente bien justo antes de una votación con puntos, reforzando la independencia del juicio individual antes de votar."
+            },
+            {
+              "ic": "target",
+              "h": "Registro escrito",
+              "p": "Durante el minuto, cada persona puede anotar en una palabra su inclinación inicial, para comparar después con la decisión final del grupo."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Cambio",
+              "q": "¿Su primera reacción cambió después del minuto de silencio, o se confirmó?"
+            },
+            {
+              "c": "Calidad de la decisión",
+              "q": "¿Sintieron que decidieron con más claridad después de la pausa?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación sobre toma de decisiones grupales muestra que las opiniones expresadas primero —especialmente por personas con más autoridad o más volumen de voz— sesgan sistemáticamente las respuestas posteriores del grupo, un patrón relacionado con los efectos de anclaje y conformidad documentados desde los estudios clásicos de Solomon Asch sobre presión de grupo. Introducir una pausa de silencio antes de opinar o votar interrumpe ese efecto de arrastre, dando a cada persona un espacio breve para formar su propio juicio antes de que la conversación grupal lo module. Desde la perspectiva de mindfulness, esta pausa también cumple una función de regulación: decidir bajo activación emocional o presión de tiempo tiende a favorecer respuestas más reactivas y menos deliberadas, mientras que una breve pausa atencional permite distinguir la reacción inicial del juicio más reflexivo que sigue. La brevedad de la práctica —un minuto— es deliberada para que pueda integrarse dentro de una reunión real sin percibirse como una interrupción excesiva del flujo de trabajo. Para el/la facilitador/a, este recurso es especialmente valioso justo antes de decisiones que generan divergencia de opiniones o cuando el grupo muestra señales de estar decidiendo más por inercia social que por convicción genuina."
+            }
+          ]
+        }
+      ]
+    },
+    "entrevista-apreciativa-1a1": {
+      "ic": "thanks",
+      "cat": "Conversaciones 1 a 1 · Apreciativa",
+      "clr": "pur",
+      "name": "Entrevista <em>Apreciativa</em>",
+      "sub": "Conversación guiada para descubrir fortalezas, momentos de orgullo y condiciones que permiten que una persona dé lo mejor de sí. Útil para liderazgo, mentoría, clima laboral y desarrollo.",
+      "metas": [
+        "30–45 min",
+        "2 personas",
+        "Formato presencial o virtual",
+        "Ideal para liderazgo positivo"
+      ],
+      "mat": [
+        "Pauta de preguntas",
+        "Hoja de notas",
+        "Espacio privado y sin interrupciones",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Estructura sugerida",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "1 · Abrir desde el cuidado",
+              "p": "Explica que la conversación busca mirar lo que sí funciona y aprender de eso. Aclara que no es una evaluación ni una entrevista de control."
+            },
+            {
+              "ic": "star",
+              "h": "2 · Explorar momentos de alto valor",
+              "p": "Pregunta: “Cuéntame una experiencia reciente en la que sentiste que hiciste un buen aporte o trabajaste en tu mejor versión”. Profundiza en qué pasó, qué hizo la persona y qué condiciones ayudaron."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · Identificar fortalezas y recursos",
+              "p": "Ayuda a nombrar patrones: habilidades, valores, apoyos, formas de organizarse, vínculos o condiciones del entorno que facilitaron ese buen desempeño."
+            },
+            {
+              "ic": "target",
+              "h": "4 · Proyectar acciones",
+              "p": "Cierra con una pregunta práctica: “¿Qué podríamos repetir, cuidar o diseñar para que esto ocurra más seguido?” Termina con uno o dos acuerdos concretos."
+            }
+          ],
+          "cita": "“Quiero que conversemos sobre momentos en que has sentido que aportas desde tu mejor versión, para aprender de eso y proyectarlo.”"
+        },
+        {
+          "t": "Preguntas poderosas",
+          "plen": [
+            {
+              "c": "Historia",
+              "q": "¿Qué experiencia reciente te hizo sentir orgullo de tu trabajo o de tu aporte?"
+            },
+            {
+              "c": "Fortalezas",
+              "q": "¿Qué fortalezas tuyas estuvieron presentes en esa situación?"
+            },
+            {
+              "c": "Condiciones",
+              "q": "¿Qué personas, recursos o condiciones hicieron posible ese buen resultado?"
+            },
+            {
+              "c": "Futuro",
+              "q": "¿Qué pequeño cambio ayudaría a que eso ocurra con más frecuencia?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La indagación apreciativa (Cooperrider y Srivastva, 1987) propone que las organizaciones y las personas crecen en la dirección de aquello que investigan con atención: si una conversación se centra en preguntar por lo que funciona, moviliza más recursos y compromiso que una conversación centrada en el déficit. Este marco se apoya en literatura de psicología positiva sobre fortalezas (Peterson y Seligman, 2004), que muestra que identificar y nombrar momentos de buen desempeño ayuda a reconocer patrones replicables de éxito, en lugar de atribuirlos al azar. La estructura en cuatro pasos de la actividad —abrir desde el cuidado, explorar el momento de valor, nombrar fortalezas, proyectar acción— sigue de cerca el ciclo clásico de indagación apreciativa (descubrir, soñar, diseñar, destino). Para el/la facilitador/a o líder que la aplica, esta conversación ofrece una alternativa poderosa a la reunión de desempeño centrada en corregir errores, especialmente útil cuando el objetivo es fortalecer la motivación y la relación de confianza antes de abordar temas más desafiantes."
+            }
+          ]
+        }
+      ]
+    },
+    "feedback-sandwich-1a1": {
+      "ic": "scroll",
+      "cat": "Conversaciones 1 a 1 · Feedback",
+      "clr": "pur",
+      "name": "Feedback con método del <em>Sándwich</em>",
+      "sub": "Actividad para preparar y practicar una conversación de retroalimentación equilibrada: reconocer, abordar una mejora específica y cerrar con confianza y acuerdo.",
+      "metas": [
+        "20–30 min",
+        "2 personas",
+        "Feedback breve y cuidado",
+        "Requiere ejemplos concretos"
+      ],
+      "mat": [
+        "Situación específica a conversar",
+        "Hoja de preparación",
+        "Espacio privado",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Método paso a paso",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "1 · Capa positiva: reconocimiento real",
+              "p": "Comienza con una observación concreta sobre algo que la persona hace bien. Evita elogios genéricos. Usa hechos: “He visto que en…”"
+            },
+            {
+              "ic": "focus",
+              "h": "2 · Centro: mejora específica",
+              "p": "Presenta una conducta observable, su impacto y la expectativa. Fórmula útil: “Cuando ocurre X, impacta en Y. Lo que necesitamos es Z”."
+            },
+            {
+              "ic": "target",
+              "h": "3 · Cierre: confianza y acuerdo",
+              "p": "Termina reforzando la capacidad de la persona y acordando una acción pequeña, observable y con fecha o momento de revisión."
+            }
+          ],
+          "cita": "“Quiero compartirte algo que valoro, una mejora concreta que veo necesaria y un acuerdo para avanzar.”"
+        },
+        {
+          "t": "Guía de preparación",
+          "plen": [
+            {
+              "c": "Reconocer",
+              "q": "¿Qué conducta positiva específica quiero destacar?"
+            },
+            {
+              "c": "Mejorar",
+              "q": "¿Qué conducta observable necesita ajuste y cuál es su impacto?"
+            },
+            {
+              "c": "Acordar",
+              "q": "¿Qué acción concreta pediremos o construiremos juntos?"
+            },
+            {
+              "c": "Cuidar",
+              "q": "¿Qué tono y momento ayudan a que la conversación sea recibida con respeto?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El método del sándwich —positivo, mejora, positivo— es una de las técnicas de feedback más enseñadas en entornos organizacionales, pero la evidencia sobre su eficacia es mixta: el metaanálisis de Kluger y DeNisi (1996), con más de 600 estudios, encontró que un tercio de las intervenciones de feedback reducen el desempeño en lugar de mejorarlo, especialmente cuando el mensaje central queda diluido entre dos capas de elogio. Por eso, alternativas como el modelo SBI (Situación-Comportamiento-Impacto) o el feedforward (Goldsmith) priorizan la especificidad conductual por sobre la estructura formulaica. La actividad conserva el formato sándwich por su accesibilidad para quienes recien practican dar feedback, pero lo ancla en observaciones concretas y verificables —“he visto que en...”, “cuando ocurre X, impacta en Y”— precisamente para evitar la vaguedad que la evidencia identifica como el principal punto débil del método. Para el/la facilitador/a, esto significa enseñar el sándwich como punto de partida, subrayando que la calidad de la capa central, no la estructura en sí, es lo que determina si el feedback será recibido y aplicado."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-dificil-1a1": {
+      "ic": "impact",
+      "cat": "Conversaciones 1 a 1 · Conversaciones difíciles",
+      "clr": "pur",
+      "name": "Cómo afrontar <em>Conversaciones Difíciles</em>",
+      "sub": "Marco simple para preparar y conducir conversaciones sensibles sin evitarlas ni escalar el conflicto. Ordena hechos, emociones, necesidades y acuerdos.",
+      "metas": [
+        "30–45 min",
+        "2 personas",
+        "Alta confianza psicológica",
+        "Preparación previa recomendada"
+      ],
+      "mat": [
+        "Pauta de preparación",
+        "Lugar privado",
+        "Agua y pausa disponible",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Marco CUIDA",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "C · Contexto y propósito",
+              "p": "Abre explicando por qué es importante conversar y qué intención positiva tienes. Ejemplo: cuidar la relación, mejorar coordinación o resolver una tensión."
+            },
+            {
+              "ic": "focus",
+              "h": "U · Ubicar hechos observables",
+              "p": "Describe situaciones concretas sin interpretar intenciones. Habla desde lo observado: fechas, conductas, efectos y ejemplos puntuales."
+            },
+            {
+              "ic": "breath",
+              "h": "I · Integrar emociones y necesidades",
+              "p": "Nombra con calma cómo te impacta y qué necesitas para avanzar. Invita a la otra persona a explicar su mirada sin interrumpir."
+            },
+            {
+              "ic": "target",
+              "h": "D · Definir acuerdos",
+              "p": "Construyan uno o dos acuerdos claros: qué cambia, quién hace qué, desde cuándo y cómo se revisará."
+            },
+            {
+              "ic": "thanks",
+              "h": "A · Agradecer y asegurar seguimiento",
+              "p": "Cierra reconociendo la disposición a conversar. Agenda una revisión breve si el tema requiere seguimiento."
+            }
+          ],
+          "cita": "“Quiero conversar algo importante con respeto. Mi intención no es culpar, sino entender qué pasó y acordar cómo seguimos.”"
+        },
+        {
+          "t": "Preguntas para facilitar",
+          "plen": [
+            {
+              "c": "Hechos",
+              "q": "¿Qué ocurrió concretamente y qué evidencia tengo?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Qué efecto tuvo en mí, en el equipo o en el trabajo?"
+            },
+            {
+              "c": "Escucha",
+              "q": "¿Qué necesito comprender de la mirada de la otra persona?"
+            },
+            {
+              "c": "Acuerdo",
+              "q": "¿Qué cambio mínimo sería un avance real después de esta conversación?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El marco de conversaciones cruciales (Patterson, Grenny, McMillan y Switzler, 2002) sostiene que las conversaciones de mayor impacto suelen ser también las que más se evitan, y que su éxito depende menos del contenido que de mantener un clima de seguridad durante el intercambio. Ese clima está estrechamente vinculado al concepto de seguridad psicológica (Edmondson, 1999), la creencia compartida de que es posible expresar desacuerdos, dudas o errores sin temor a consecuencias negativas para la relación o el estatus. El marco CUIDA de la actividad opera sobre ambos principios: separa hechos observables de interpretaciones, da espacio explícito a la emoción y a la necesidad antes de pasar a acuerdos, y cierra reconociendo la disposición a conversar, elementos que la literatura asocia con conversaciones difíciles que fortalecen la relación en lugar de deteriorarla. Para el/la facilitador/a o líder que la utiliza, el punto crítico no es evitar el conflicto sino estructurarlo: nombrar la intención positiva al inicio reduce significativamente la probabilidad de que la otra persona entre en actitud defensiva desde el primer minuto."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-checkin-1a1": {
+      "ic": "heart",
+      "cat": "Conversaciones 1 a 1 · Apertura",
+      "clr": "pur",
+      "name": "Check-in Emocional <em>Breve</em>",
+      "sub": "Los primeros 2-3 minutos de cualquier conversación 1:1, dedicados exclusivamente a preguntar genuinamente cómo está la otra persona, antes de entrar en la agenda de trabajo. Un hábito simple con efecto acumulado alto en la calidad del vínculo.",
+      "metas": [
+        "2–3 min al inicio de cualquier 1:1",
+        "2 personas",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Requiere disposición genuina de escuchar la respuesta, no solo formularla como trámite"
+      ],
+      "secs": [
+        {
+          "t": "Cómo hacerlo",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "La pregunta",
+              "p": "Antes de abrir la agenda de la reunión, preguntar con genuino interés: \"Antes de entrar en los temas, ¿cómo estás llegando hoy?\" o \"¿Cómo ha estado tu semana, más allá del trabajo?\""
+            },
+            {
+              "ic": "heart",
+              "h": "Escuchar sin apurar",
+              "p": "Dar espacio real a la respuesta, sin mirar el reloj ni interrumpir para pasar al siguiente punto. Si la respuesta es breve (\"bien, todo normal\"), está bien — no forzar profundidad."
+            },
+            {
+              "ic": "heart",
+              "h": "Transición natural",
+              "p": "Una vez que la persona ha compartido lo que quiera compartir, hacer un puente suave: \"Gracias por contarme. Ahora sí, veamos los temas de hoy.\""
+            }
+          ],
+          "cita": "\"Preguntar cómo está alguien y realmente esperar la respuesta cambia el tono de toda la conversación que sigue.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Escala rápida",
+              "p": "Para equipos con poco tiempo, se puede pedir un número del 1 al 5 sobre cómo llega la persona, con la opción de explicar brevemente si quiere."
+            },
+            {
+              "ic": "heart",
+              "h": "Virtual",
+              "p": "En videollamada, mantener la cámara encendida durante este momento ayuda a captar señales no verbales que se pierden en texto."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas para el líder",
+          "plen": [
+            {
+              "c": "Consistencia",
+              "q": "¿Practico este check-in en todas mis 1:1, o solo cuando 'hay tiempo'?"
+            },
+            {
+              "c": "Autenticidad",
+              "q": "¿Estoy preguntando por trámite o porque realmente quiero saber?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La calidad de la relación entre líder y colaborador es uno de los predictores más consistentes de compromiso y desempeño en la literatura organizacional, y dedicar tiempo explícito al estado de la persona —más allá de la tarea— es una de las prácticas más citadas en investigación sobre liderazgo relacional. Investigadores del clima laboral asocian los check-ins breves y sostenidos con mayor percepción de apoyo social en el trabajo, un factor protector frente al estrés y al desgaste (burnout) documentado en múltiples estudios organizacionales. El efecto de esta práctica no depende de su duración —apenas dos o tres minutos— sino de su consistencia: la literatura sobre hábitos relacionales sugiere que gestos breves pero repetidos regularmente generan más confianza acumulada que gestos ocasionales más extensos. El riesgo principal, señalado también en esta literatura, es que la pregunta se vuelva un trámite vacío ('¿cómo estás?' seguido de no esperar respuesta), lo que anula su efecto e incluso puede percibirse como falta de interés genuino. Para el/la líder que la practica, este check-in no reemplaza conversaciones más profundas cuando son necesarias, pero establece una base de conexión regular que hace más natural sostener esas conversaciones cuando llegan."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-escucha-activa-1a1": {
+      "ic": "chat",
+      "cat": "Conversaciones 1 a 1 · Escucha",
+      "clr": "pur",
+      "name": "Escucha Activa en <em>Espejo</em>",
+      "sub": "Práctica estructurada donde una persona comparte una situación laboral y la otra solo puede responder reflejando lo que escuchó ('lo que entiendo es que...'), sin dar opinión ni consejo, hasta confirmar que la persona se sintió comprendida.",
+      "metas": [
+        "15–20 min",
+        "2 personas",
+        "Espacio privado"
+      ],
+      "mat": [
+        "Espacio sin interrupciones",
+        "Situación real y actual de una de las dos personas",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Cómo hacerlo",
+          "rows": [
+            {
+              "ic": "chat",
+              "h": "1 · Compartir (3–4 min)",
+              "p": "Una persona comparte una situación laboral que le está costando resolver o que le genera dudas, sin que la otra interrumpa."
+            },
+            {
+              "ic": "chat",
+              "h": "2 · Reflejar, no aconsejar",
+              "p": "Quien escuchó responde únicamente reflejando: \"Lo que entiendo es que...\", \"Suena como si sintieras...\", sin agregar su propia opinión ni sugerir soluciones todavía."
+            },
+            {
+              "ic": "chat",
+              "h": "3 · Confirmar o corregir",
+              "p": "Quien compartió confirma si el reflejo fue preciso, o lo corrige: \"Casi, pero en realidad lo que más me pesa es...\". Se repite el ciclo de reflejo hasta que la persona sienta que fue comprendida con precisión."
+            },
+            {
+              "ic": "focus",
+              "h": "4 · Recién ahí, opinar (si se pide)",
+              "p": "Solo después de que la persona confirme sentirse comprendida, y si ella lo pide explícitamente, quien escuchó puede ofrecer su perspectiva u opinión."
+            }
+          ],
+          "cita": "\"Ser comprendido antes de recibir consejos cambia por completo cómo se recibe cualquier consejo después.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "chat",
+              "h": "Rotación de roles",
+              "p": "Si el tiempo lo permite, ambas personas practican los dos roles, invirtiendo quién comparte y quién refleja."
+            },
+            {
+              "ic": "chat",
+              "h": "Tema no laboral",
+              "p": "Para practicar la técnica sin la presión de un tema real de trabajo, se puede empezar con un tema neutro antes de aplicarla a una situación real."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Como quien compartió",
+              "q": "¿Cómo se sintió ser escuchado/a sin recibir consejos de inmediato?"
+            },
+            {
+              "c": "Como quien escuchó",
+              "q": "¿Qué impulso notaste de saltar directo a opinar o resolver?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿En qué conversación reciente el reflejo habría cambiado el resultado?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La técnica de reflejo o parafraseo activo proviene directamente de la terapia centrada en la persona de Carl Rogers (1951), quien identificó la comprensión empática precisa —demostrarle al otro que se comprendió con exactitud lo que quiso decir, antes de reaccionar u opinar— como uno de los factores centrales de una comunicación genuinamente útil. La investigación posterior en comunicación interpersonal ha confirmado que la mayoría de las conversaciones cotidianas, especialmente en contextos de trabajo, saltan directamente al consejo o la evaluación, sin pasar antes por la etapa de comprensión, lo que suele generar la sensación de no haber sido realmente escuchado. Estructurar deliberadamente la conversación para prohibir el consejo hasta que la comprensión esté confirmada obliga a practicar una secuencia poco habitual, incluso incómoda al principio, pero que revela con claridad cuánto del hábito conversacional consiste en prepararse para responder en lugar de comprender primero. Para el/la facilitador/a o líder que introduce esta práctica, su mayor valor no está en resolver el problema de fondo más rápido, sino en fortalecer la calidad del vínculo antes de cualquier intento de solución, lo que suele hacer que la solución posterior se reciba con mucha menor resistencia."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-establecer-limites-1a1": {
+      "ic": "target",
+      "cat": "Conversaciones 1 a 1 · Asertividad",
+      "clr": "pur",
+      "name": "Establecer Límites con <em>Respeto</em>",
+      "sub": "Marco práctico para preparar y comunicar un límite —decir que no, pedir que algo cambie, proteger tiempo o carga de trabajo— sin agresividad ni disculpas excesivas, sosteniendo la relación mientras se protege el propio espacio.",
+      "metas": [
+        "20–25 min de preparación + conversación",
+        "2 personas o uso individual de preparación",
+        "Ideal con anticipación"
+      ],
+      "mat": [
+        "Pauta de preparación",
+        "Situación real que requiera poner un límite",
+        "Espacio privado para la conversación"
+      ],
+      "secs": [
+        {
+          "t": "Estructura para preparar el límite",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "1 · Nombrar el límite con claridad",
+              "p": "Antes de la conversación, escribir en una frase simple y directa qué se necesita: \"No puedo tomar esta tarea adicional esta semana\", \"Necesito que las reuniones terminen a la hora acordada\"."
+            },
+            {
+              "ic": "heart",
+              "h": "2 · Reconocer sin sobre-disculparse",
+              "p": "Practicar decir el límite sin encadenar múltiples disculpas ni justificaciones excesivas. Una explicación breve es suficiente; explicar de más suele debilitar el mensaje."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · Ofrecer una alternativa si aplica",
+              "p": "Cuando sea posible, acompañar el límite con una alternativa concreta: \"No puedo esta semana, pero puedo la próxima\" o \"No puedo hacer esto, pero sí puedo apoyar en X\"."
+            },
+            {
+              "ic": "thanks",
+              "h": "4 · Sostener con calma ante la reacción",
+              "p": "Prepararse para que la otra persona reaccione con sorpresa o insistencia, y practicar repetir el límite con calma sin necesidad de defenderlo de forma extensa."
+            }
+          ],
+          "cita": "\"Un límite dicho con calma y sin disculpas excesivas se sostiene mejor que uno envuelto en explicaciones.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Ensayo previo",
+              "p": "Antes de la conversación real, se puede ensayar la frase del límite en voz alta con un/a colega de confianza, ajustando el tono."
+            },
+            {
+              "ic": "target",
+              "h": "Límites recurrentes",
+              "p": "Para límites que se repiten (por ejemplo, mensajes fuera de horario), conviene comunicarlos una sola vez de forma clara en lugar de renegociarlos cada vez que ocurren."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas de preparación",
+          "plen": [
+            {
+              "c": "Claridad",
+              "q": "¿Cuál es exactamente el límite que necesito poner, en una frase?"
+            },
+            {
+              "c": "Temor",
+              "q": "¿Qué me preocupa que pase si lo digo con claridad?"
+            },
+            {
+              "c": "Costo de no decirlo",
+              "q": "¿Qué me está costando, a mí o a mi trabajo, no haber puesto este límite antes?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La literatura clásica sobre conducta asertiva (Alberti y Emmons, 1970) distingue la asertividad tanto de la pasividad —ceder sistemáticamente para evitar el conflicto— como de la agresividad, definiéndola como la capacidad de expresar necesidades, opiniones y límites propios de forma directa y respetuosa, sin vulnerar los derechos del otro. La investigación sobre carga laboral y agotamiento (burnout) asocia consistentemente la dificultad para poner límites con mayor riesgo de sobrecarga crónica, ya que la acumulación de compromisos no expresados o no sostenidos tiende a erosionar tanto el bienestar como, paradójicamente, la calidad del trabajo entregado. Un patrón frecuente que la literatura sobre asertividad identifica como debilitante es el exceso de justificación: encadenar múltiples explicaciones o disculpas diluye el mensaje central y abre espacio a la negociación de algo que la persona ya había decidido que no podía sostener. La estructura de esta actividad busca precisamente entrenar la brevedad y la calma como componentes centrales de un límite bien comunicado, más que la cantidad de argumentos utilizados para justificarlo. Para quien facilita esta conversación consigo mismo o con otra persona, el objetivo no es evitar toda incomodidad —poner un límite genuino casi siempre genera algo de tensión inicial— sino sostenerlo sin escalar el conflicto ni retractarse bajo presión."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-reconocimiento-1a1": {
+      "ic": "star",
+      "cat": "Conversaciones 1 a 1 · Reconocimiento",
+      "clr": "pur",
+      "name": "El Arte de <em>Reconocer</em>",
+      "sub": "Guía para dar reconocimiento genuino y específico a un/a colega o colaborador/a, evitando el elogio vago ('buen trabajo') y anclando el reconocimiento en una conducta observable y su impacto real.",
+      "metas": [
+        "10–15 min",
+        "2 personas",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Situación específica reciente que se quiera reconocer",
+        "Espacio breve y sin apuro"
+      ],
+      "secs": [
+        {
+          "t": "Estructura del reconocimiento",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "1 · Ser específico, no genérico",
+              "p": "En lugar de \"buen trabajo\", nombrar exactamente qué se hizo: \"La forma en que manejaste la reunión difícil con el cliente el martes...\""
+            },
+            {
+              "ic": "target",
+              "h": "2 · Nombrar el impacto real",
+              "p": "Conectar la conducta con su efecto concreto: \"...eso evitó que perdiéramos la cuenta y le dio confianza al resto del equipo.\""
+            },
+            {
+              "ic": "heart",
+              "h": "3 · Decirlo cerca del momento",
+              "p": "El reconocimiento pierde fuerza cuanto más tiempo pasa entre la conducta y el momento en que se nombra. Idealmente, dentro de los días siguientes."
+            },
+            {
+              "ic": "thanks",
+              "h": "4 · Sin condicionar con un 'pero'",
+              "p": "Evitar mezclar el reconocimiento con una crítica en la misma frase (\"buen trabajo, pero...\"), lo que anula el efecto del reconocimiento inicial."
+            }
+          ],
+          "cita": "\"El reconocimiento específico se recuerda. El reconocimiento genérico se olvida al día siguiente.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Reconocimiento entre pares",
+              "p": "Esta estructura funciona igual entre colegas del mismo nivel, no solo de líder a colaborador/a."
+            },
+            {
+              "ic": "star",
+              "h": "Reconocimiento público vs privado",
+              "p": "Preguntar o inferir si la persona prefiere el reconocimiento en privado o frente al equipo — no todas las personas se sienten cómodas siendo destacadas públicamente."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas de preparación",
+          "plen": [
+            {
+              "c": "Especificidad",
+              "q": "¿Puedo nombrar exactamente qué hizo la persona, con un ejemplo concreto?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Qué cambió o mejoró gracias a esa conducta específica?"
+            },
+            {
+              "c": "Oportunidad",
+              "q": "¿Hay algo que quiero reconocerle a alguien esta semana y todavía no lo he dicho?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación organizacional sobre compromiso laboral asocia consistentemente el reconocimiento frecuente y específico con mayor motivación, retención y desempeño percibido, siendo uno de los hallazgos más replicados en estudios a gran escala sobre clima laboral (Gallup y otras firmas de investigación organizacional). La clave que distingue un reconocimiento efectivo de uno que pasa desapercibido es, según esta literatura, la especificidad: nombrar la conducta concreta y su impacto real, en lugar de elogios genéricos que la persona no puede vincular con una acción propia y por lo tanto no logra internalizar ni repetir de forma consciente. La cercanía temporal entre la conducta y el reconocimiento también es relevante: cuanto más tiempo pasa, menor es el efecto motivacional y más difícil resulta para quien reconoce recordar los detalles que hacen el mensaje creíble y específico. Un error frecuente que la literatura de feedback identifica es mezclar el reconocimiento con una crítica en la misma conversación, lo que la persona suele recordar solo por la parte negativa, anulando el efecto positivo del reconocimiento inicial. Para el/la líder o colega que practica esto de forma sostenida, la evidencia sugiere que la frecuencia del reconocimiento específico importa más que la formalidad u ocasión en la que se entrega."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-delegar-1a1": {
+      "ic": "map",
+      "cat": "Conversaciones 1 a 1 · Delegación",
+      "clr": "pur",
+      "name": "Delegar con <em>Claridad</em>",
+      "sub": "Estructura para delegar una tarea o responsabilidad de forma que la persona que la recibe entienda con precisión el objetivo, el nivel de autonomía y los límites de la delegación, evitando ambigüedad que después se traduce en frustración mutua.",
+      "metas": [
+        "15–20 min",
+        "2 personas",
+        "Ideal con la tarea ya definida de antemano"
+      ],
+      "mat": [
+        "Descripción clara de la tarea a delegar",
+        "Espacio sin interrupciones",
+        "Calendario para acordar fecha de revisión"
+      ],
+      "secs": [
+        {
+          "t": "Estructura de la conversación",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "1 · El qué y el para qué",
+              "p": "Explicar con claridad qué se está delegando y por qué es importante, conectándolo con un objetivo mayor: \"Te voy a pedir que lideres X, porque...\""
+            },
+            {
+              "ic": "target",
+              "h": "2 · El nivel de autonomía",
+              "p": "Aclarar explícitamente cuánta libertad tiene la persona: \"Puedes decidir tú el cómo\", \"Necesito que me consultes antes de decisiones de más de X\", \"Avísame solo si hay un problema\". La ambigüedad aquí es la causa más común de fricción posterior."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · Recursos y apoyo disponible",
+              "p": "Confirmar qué recursos, información o apoyo tiene disponible la persona, y quién puede ayudarla si se atasca."
+            },
+            {
+              "ic": "scroll",
+              "h": "4 · Punto de revisión",
+              "p": "Acordar explícitamente cuándo y cómo se revisará el avance, en lugar de dejarlo indefinido — esto evita tanto el micromanagement como el abandono total."
+            }
+          ],
+          "cita": "\"La mayoría de los conflictos por delegación no son de habilidad, son de expectativas nunca aclaradas.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Delegación progresiva",
+              "p": "Para tareas nuevas o personas con menos experiencia en el tema, se puede acordar un nivel de autonomía menor al inicio, que se amplía en revisiones sucesivas a medida que se genera confianza."
+            },
+            {
+              "ic": "map",
+              "h": "Confirmar comprensión",
+              "p": "Cerrar pidiendo a la persona que resuma con sus propias palabras qué entendió, para detectar malentendidos antes de que la tarea avance."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas de preparación para quien delega",
+          "plen": [
+            {
+              "c": "Claridad propia",
+              "q": "¿Tengo yo claro el objetivo y el nivel de autonomía antes de esta conversación, o lo estoy improvisando?"
+            },
+            {
+              "c": "Confianza",
+              "q": "¿Estoy delegando la tarea completa, o solo delegando la ejecución mientras me reservo todas las decisiones?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La ambigüedad de rol —no saber con precisión qué se espera, con cuánta autonomía y bajo qué criterios de éxito— es uno de los principales predictores de estrés laboral identificados en la investigación clásica sobre tensión de rol (Kahn et al., 1964), y sigue siendo un hallazgo replicado en estudios contemporáneos sobre delegación y liderazgo. Modelos de liderazgo situacional (Hersey y Blanchard) sostienen que el nivel de dirección y autonomía que un líder ofrece debe ajustarse al nivel de competencia y confianza de la persona en la tarea específica, y que comunicar ese nivel de forma explícita —en lugar de asumir que se entiende implícitamente— reduce significativamente la fricción posterior. La conversación estructurada en esta actividad aborda directamente ese punto ciego: la mayoría de los conflictos posteriores a una delegación no surgen porque la persona no supiera hacer la tarea, sino porque el nivel de autonomía esperado nunca se aclaró explícitamente, generando frustración tanto en quien delega (que siente que no se hizo lo acordado) como en quien recibe la tarea (que siente que fue corregido por algo que nadie le explicó). Para quien delega, esta estructura convierte una instrucción implícita y ambigua en un acuerdo explícito y verificable, lo que reduce tanto el riesgo de micromanagement como el de abandono sin seguimiento."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-desarrollo-1a1": {
+      "ic": "spark",
+      "cat": "Conversaciones 1 a 1 · Desarrollo",
+      "clr": "pur",
+      "name": "Conversación de <em>Desarrollo</em>",
+      "sub": "Espacio dedicado a explorar hacia dónde quiere crecer una persona dentro de su rol o carrera, separado deliberadamente de la conversación de desempeño, para que la exploración de intereses no se mezcle con la evaluación de resultados.",
+      "metas": [
+        "30–40 min",
+        "2 personas",
+        "Sin evaluación de desempeño en la misma conversación"
+      ],
+      "mat": [
+        "Pauta de preguntas",
+        "Espacio privado y sin interrupciones",
+        "Idealmente programada con anticipación, no improvisada"
+      ],
+      "secs": [
+        {
+          "t": "Estructura sugerida",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "1 · Qué energiza actualmente",
+              "p": "Preguntar qué partes del trabajo actual generan más energía y compromiso genuino, y cuáles generan lo contrario."
+            },
+            {
+              "ic": "target",
+              "h": "2 · Hacia dónde quiere crecer",
+              "p": "Explorar sin presuponer una única dirección: puede ser profundizar en la especialidad actual, ampliar hacia liderazgo, o incluso explorar un área distinta dentro de la organización."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · Qué se necesita para llegar ahí",
+              "p": "Identificar juntos qué habilidades, experiencias o apoyos concretos ayudarían a avanzar en esa dirección."
+            },
+            {
+              "ic": "scroll",
+              "h": "4 · Un paso concreto próximo",
+              "p": "Cerrar con una acción pequeña y realista en el corto plazo, evitando que la conversación quede solo como una intención abstracta."
+            }
+          ],
+          "cita": "\"Una conversación de desarrollo genuina no presupone hacia dónde debería crecer la persona, lo pregunta.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Separar de la evaluación",
+              "p": "Se recomienda explícitamente no combinar esta conversación con la evaluación de desempeño del mismo período, para que la exploración de intereses no se sienta condicionada por una calificación."
+            },
+            {
+              "ic": "spark",
+              "h": "Frecuencia",
+              "p": "Funciona mejor como conversación periódica (cada trimestre o semestre) más que como evento único anual."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas poderosas",
+          "plen": [
+            {
+              "c": "Energía",
+              "q": "¿Qué parte de tu trabajo actual te hace perder la noción del tiempo?"
+            },
+            {
+              "c": "Visión",
+              "q": "¿Cómo te imaginas tu rol o tu trabajo dentro de dos años?"
+            },
+            {
+              "c": "Obstáculo",
+              "q": "¿Qué sientes que te está frenando para moverte hacia ahí?"
+            },
+            {
+              "c": "Apoyo",
+              "q": "¿Qué tipo de apoyo de mi parte o de la organización te sería más útil ahora?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La teoría de la autodeterminación (Deci y Ryan, 2000) identifica tres necesidades psicológicas básicas asociadas a la motivación intrínseca sostenida: autonomía, competencia y relación. Las conversaciones de desarrollo genuinas —que preguntan hacia dónde quiere crecer la persona en lugar de asumirlo— alimentan directamente estas tres necesidades: autonomía al dejar que la persona defina su propia dirección, competencia al identificar juntos qué habilidades desarrollar, y relación al dedicar tiempo y atención genuina a su trayectoria dentro de la organización. La literatura sobre gestión del talento recomienda de forma consistente separar estas conversaciones de la evaluación formal de desempeño, ya que mezclar ambas suele inhibir la honestidad de la persona sobre sus intereses reales, por temor a que una aspiración de cambio se interprete como insatisfacción o bajo compromiso con el rol actual. La ausencia de conversaciones de desarrollo periódicas está asociada en estudios de retención con mayor intención de rotación, especialmente entre profesionales con alto potencial que perciben pocas oportunidades de crecimiento visible. Para el/la líder que la conduce, el valor de esta conversación no está en tener siempre una respuesta o un plan de carrera ya armado, sino en sostener el espacio de exploración genuina, incluso cuando la dirección que emerge no es la que el líder hubiera anticipado."
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-desacuerdo-1a1": {
+      "ic": "impact",
+      "cat": "Conversaciones 1 a 1 · Desacuerdo Constructivo",
+      "clr": "pur",
+      "name": "Disentir sin Romper el <em>Vínculo</em>",
+      "sub": "Marco breve para expresar un desacuerdo genuino con una decisión, idea o forma de trabajar de otra persona, sin evitarlo por miedo al conflicto ni expresarlo de forma que dañe la relación.",
+      "metas": [
+        "15–20 min",
+        "2 personas",
+        "Preparación previa recomendada"
+      ],
+      "mat": [
+        "Claridad previa sobre el punto específico de desacuerdo",
+        "Espacio privado",
+        "Disposición genuina a escuchar la otra postura"
+      ],
+      "secs": [
+        {
+          "t": "Estructura de la conversación",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "1 · Nombrar el desacuerdo, no la persona",
+              "p": "Enfocar el desacuerdo en la idea o decisión, no en la persona: \"No estoy de acuerdo con este enfoque\" en lugar de \"Creo que te equivocaste\"."
+            },
+            {
+              "ic": "focus",
+              "h": "2 · Explicar el razonamiento, no solo la conclusión",
+              "p": "Compartir el porqué del desacuerdo, con datos u observaciones concretas, no solo la afirmación de que algo está mal."
+            },
+            {
+              "ic": "chat",
+              "h": "3 · Preguntar antes de insistir",
+              "p": "Después de expresar el punto de vista, preguntar genuinamente: \"¿Qué es lo que yo podría no estar viendo?\" — abrir espacio real a que la otra postura tenga fundamentos válidos."
+            },
+            {
+              "ic": "thanks",
+              "h": "4 · Aceptar el resultado con integridad",
+              "p": "Si después de la conversación la decisión se mantiene distinta a la propuesta, comprometerse a apoyarla genuinamente en lugar de sabotearla en silencio (\"disentir y comprometerse\")."
+            }
+          ],
+          "cita": "\"El desacuerdo bien manejado no debilita la relación, la fortalece; el desacuerdo evitado la erosiona en silencio.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "impact",
+              "h": "Desacuerdo con la jefatura",
+              "p": "Enmarcar el desacuerdo desde la intención de aportar, no de confrontar: \"Quiero compartir una preocupación porque me importa que esto salga bien.\""
+            },
+            {
+              "ic": "impact",
+              "h": "Desacuerdo entre pares",
+              "p": "Entre colegas del mismo nivel, es especialmente útil el paso de preguntar antes de insistir, para evitar que la conversación se convierta en una competencia de argumentos."
+            }
+          ]
+        },
+        {
+          "t": "Preguntas de preparación",
+          "plen": [
+            {
+              "c": "Punto específico",
+              "q": "¿Con qué, exactamente, estoy en desacuerdo — la decisión, el proceso, o el resultado esperado?"
+            },
+            {
+              "c": "Intención",
+              "q": "¿Mi intención al plantear esto es aportar, o solo tener razón?"
+            },
+            {
+              "c": "Después",
+              "q": "¿Podré comprometerme genuinamente con la decisión final, incluso si no cambia?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación sobre conflicto en equipos de trabajo distingue entre conflicto de tarea —desacuerdos sobre ideas, decisiones o formas de hacer el trabajo— y conflicto de relación —tensiones personales—, mostrando que el primero, cuando se maneja de forma constructiva, puede mejorar la calidad de las decisiones grupales, mientras que el segundo tiende a deteriorar el desempeño y el bienestar del equipo (De Dreu y Weingart, 2003). El riesgo central de las conversaciones de desacuerdo mal gestionadas es que un conflicto de tarea legítimo escale hacia un conflicto de relación, algo que ocurre con más frecuencia cuando el desacuerdo se dirige a la persona en lugar de a la idea, o cuando se expresa sin espacio genuino para escuchar la otra postura. Este tipo de conversaciones también depende directamente del nivel de seguridad psicológica del equipo (Edmondson, 1999): en equipos donde disentir se percibe como riesgoso para el estatus o la relación, las personas tienden a callar desacuerdos legítimos, lo que en la literatura sobre toma de decisiones se asocia con peores resultados grupales por ausencia de perspectivas divergentes. El principio de 'disentir y comprometerse', usado en metodologías ágiles y de liderazgo, formaliza el paso final de esta actividad: expresar el desacuerdo con honestidad, pero apoyar genuinamente la decisión final del grupo una vez tomada, en lugar de sabotearla pasivamente. Para quien facilita esta conversación consigo mismo o con otra persona, el objetivo no es evitar el desacuerdo ni ganar el argumento, sino sostenerlo sin dañar la relación que hace posible seguir trabajando juntos."
+            }
+          ]
+        }
+      ]
+    },
+    "activacion-rapida": {
+      "ic": "spark",
+      "cat": "Reuniones Efectivas · Activación",
+      "clr": "teal",
+      "name": "Activación <em>Rápida</em>",
+      "sub": "Secuencia de 3 pasos en 5 minutos para pasar del modo \"disperso\" al modo \"presente\" antes de una reunión. Combina movimiento, respiración y declaración de foco. Simple, efectiva y reproducible.",
+      "metas": [
+        "5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Espacio para moverse brevemente",
+        "Música dinámica durante los 2 primeros pasos — opcional y muy recomendado"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué activar antes de una reunión?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "El estado importa",
+              "p": "Las personas llegamos a las reuniones cargadas de otras reuniones, correos pendientes, preocupaciones y multitasking. Sin una transición, los primeros 10–15 minutos de cualquier reunión se pierden mientras las personas \"aterrizan\". La activación comprime esa transición a 5 minutos."
+            }
+          ]
+        },
+        {
+          "t": "Los tres pasos",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Activar el cuerpo (1–2 min)",
+              "p": "\"De pie. Sacudan los brazos y manos (como si sacudieran agua). Rotar los hombros hacia atrás 5 veces. Estirar el cuello suavemente de lado a lado. Dar unos saltos suaves en el lugar. El cuerpo activo activa la mente.\" El/la facilitador/a hace los movimientos también."
+            },
+            {
+              "ic": "breath",
+              "h": "Paso 2 · Anclar la respiración (1 min)",
+              "p": "\"Inhalen profundo por la nariz contando 4 tiempos. Mantengan 4. Exhalen por la boca contando 4. Repitan dos veces. En cada exhalación, dejen ir lo que traían de antes.\" Hacer esto 2–3 veces en grupo."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Declarar el foco (2 min)",
+              "p": "Ronda ultrarrápida: cada persona dice en UNA sola palabra qué trae a esta reunión — su foco o intención. Sin explicar. Solo la palabra. El/la facilitador/a anota en la pizarra o simplemente escucha."
+            },
+            {
+              "ic": "spark",
+              "h": "Transición",
+              "p": "El/la facilitador/a dice: \"Con eso, comenzamos.\" Pasar inmediatamente al primer punto de la agenda."
+            }
+          ],
+          "cita": "\"Una reunión que comienza activada termina con más energía y mejores resultados.\""
+        },
+        {
+          "t": "Adaptación virtual",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "En videollamada",
+              "p": "Cámara encendida para todos (obligatorio en activación virtual). Paso 1: cada persona hace los movimientos en su silla o de pie si puede. Paso 2: se hace igual. Paso 3: en el chat — todos escriben su palabra al mismo tiempo y la publican simultáneamente."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La literatura sobre facilitación de talleres y sprints (AJ&Smart, Workshopper) documenta que los primeros minutos de una reunión determinan en gran medida el nivel de energía y participación del resto de la sesión, y que las personas rara vez llegan mentalmente listas de forma espontánea tras haber estado en otra actividad. La cognición corporeizada (embodied cognition) sugiere que el estado físico influye directamente sobre el estado cognitivo: activar el cuerpo mediante movimiento breve facilita también la disposición atencional, un principio usado deliberadamente en esta secuencia de tres pasos. La combinación de movimiento, respiración y declaración verbal de foco actúa como un ritual de transición que comprime en minutos lo que de otro modo tomaría —de forma no intencional y menos eficaz— los primeros 10 a 15 minutos de la reunión. Para el/la facilitador/a, esta breve secuencia es una inversión de bajo costo con retorno alto: cuesta cinco minutos, pero reduce sustancialmente el tiempo que el grupo tarda en estar realmente presente y disponible para el trabajo que sigue."
+            }
+          ]
+        }
+      ]
+    },
+    "daily-scrum": {
+      "ic": "focus",
+      "cat": "Reuniones Efectivas · Scrum",
+      "clr": "teal",
+      "name": "Daily Scrum <em>(Stand-up Diario)</em>",
+      "sub": "Reunión diaria de máximo 15 minutos de pie donde el equipo sincroniza avances, bloqueos y prioridades del día. Formato ágil de Scrum que mantiene la alineación sin necesidad de reuniones largas de seguimiento.",
+      "metas": [
+        "15 min exactos",
+        "Equipo de trabajo",
+        "De pie — sin sillas"
+      ],
+      "mat": [
+        "Reloj o temporizador visible para todos",
+        "Tablero Kanban o pizarra con las tareas del sprint — muy recomendado",
+        "Sin laptops ni teléfonos (solo quien toma notas)"
+      ],
+      "secs": [
+        {
+          "t": "Las tres preguntas del Daily",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "1 · ¿Qué hice ayer?",
+              "p": "Máximo 60 segundos por persona. Solo hechos concretos y relevantes para el equipo. No es un reporte de estatus para la jefatura — es sincronía entre pares. Si lo que hiciste ayer no afecta al equipo, se omite."
+            },
+            {
+              "ic": "focus",
+              "h": "2 · ¿Qué haré hoy?",
+              "p": "Un compromiso claro, específico y medible para el día. \"Voy a avanzar en el informe\" no es suficiente. \"Voy a terminar la sección 3 del informe y enviársela a María para revisión\" sí lo es."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · ¿Hay algo que me bloquea?",
+              "p": "Esta es la pregunta más valiosa del Daily. Un bloqueo es cualquier cosa que impide avanzar: falta de información, dependencia de otra persona, herramienta que no funciona, decisión pendiente. Los bloqueos NO se resuelven en el Daily — se anotan y se agenda una conversación separada."
+            }
+          ]
+        },
+        {
+          "t": "Reglas no negociables del Daily",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "De pie, siempre",
+              "p": "Estar de pie mantiene la reunión corta. La incomodidad física del pie es un recordatorio constante de que esto debe terminar en 15 minutos. En virtual: cámara encendida y NO sentarse durante el Daily."
+            },
+            {
+              "ic": "focus",
+              "h": "15 minutos duros",
+              "p": "El temporizador es visible y se respeta. Al sonar, la reunión termina — aunque no todos hayan hablado. Si hay personas que siempre hablan demasiado, el/la facilitador/a puede asignar 2 minutos por persona."
+            },
+            {
+              "ic": "focus",
+              "h": "Bloqueos al backlog, no a debate",
+              "p": "Si alguien dice \"tengo un bloqueo con X\", se anota y se dice \"¿quién puede ayudar a [nombre] después del Daily?\" Resolver el bloqueo en el Daily convierte 15 minutos en 1 hora."
+            },
+            {
+              "ic": "focus",
+              "h": "No es reunión de jefatura",
+              "p": "La jefatura escucha si quiere, pero no es la protagonista. El Daily es del equipo para el equipo. Si la jefatura empieza a hacer preguntas o dar instrucciones, el facilitador/a redirige."
+            }
+          ],
+          "cita": "\"El Daily no es una reunión de estatus para el jefe/a. Es un momento de sincronía del equipo para el equipo.\""
+        },
+        {
+          "t": "Variantes y adaptaciones",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Walking Daily",
+              "p": "Hacer el Daily caminando — en círculo o por un pasillo. Activa el cuerpo y mantiene la energía alta."
+            },
+            {
+              "ic": "light",
+              "h": "Daily asíncrono",
+              "p": "Para equipos remotos en distintas zonas horarias: cada persona graba un audio/video de 2 minutos respondiendo las 3 preguntas, o lo escribe en un canal de Slack/Teams antes de las 9am. El equipo lo revisa a su ritmo."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El Daily Scrum es uno de los eventos formales descritos en la Scrum Guide (Schwaber y Sutherland), diseñado para inspeccionar el avance hacia el objetivo del sprint y ajustar el plan de trabajo del equipo día a día. Su valor no radica en el reporte de estatus hacia la jefatura, sino en los tres pilares empíricos de Scrum —transparencia, inspección y adaptación—: el equipo hace visible su propio trabajo, lo revisa entre pares y ajusta el rumbo con la frecuencia suficiente para detectar bloqueos antes de que escalen. El límite estricto de 15 minutos y la postura de pie no son detalles arbitrarios sino mecanismos deliberados de time-boxing que, según la literatura ágil, mantienen la reunión enfocada en coordinación breve y no en resolución de problemas extensa. Para el/la facilitador/a, sostener estas reglas —bloqueos al backlog, no al debate; protagonismo del equipo, no de la jefatura— es lo que distingue un Daily efectivo de una reunión de estatus disfrazada, motivo más común por el que los equipos terminan abandonando la práctica."
+            }
+          ]
+        }
+      ]
+    },
+    "kanban-visual": {
+      "ic": "scroll",
+      "cat": "Reuniones Efectivas · Kanban",
+      "clr": "teal",
+      "name": "Tablero Kanban <em>Visual</em>",
+      "sub": "Sistema visual de gestión del flujo de trabajo en equipo. Columnas Por Hacer → En Progreso → Hecho. Cada tarea es una tarjeta que se mueve según su estado. Hace visible el flujo real del equipo en tiempo real.",
+      "metas": [
+        "Setup inicial: 20–30 min",
+        "Revisión diaria: 5 min",
+        "Post-its y pizarra o herramienta digital"
+      ],
+      "mat": [
+        "Pizarra grande o pared",
+        "Post-its de 3 colores (uno por tipo de tarea o por persona)",
+        "Marcadores gruesos",
+        "Cinta adhesiva para las columnas",
+        "Digital: Trello, Notion, Asana, GitHub Projects o Miro"
+      ],
+      "secs": [
+        {
+          "t": "Estructura del tablero",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Columna 1 · Por Hacer (Backlog)",
+              "p": "Todo lo que debe hacerse, ordenado por prioridad de arriba hacia abajo. La tarjeta más arriba es la más urgente o prioritaria. No debe tener más de 10–15 ítems visibles a la vez — si hay más, crear un \"backlog extendido\" aparte."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna 2 · En Progreso (WIP)",
+              "p": "Solo lo que se está haciendo AHORA MISMO. La regla de oro: limitar el WIP a 2–3 tarjetas por persona. Más de eso es multitasking disfrazado. Cuando el WIP está lleno, no se agrega nada nuevo hasta terminar lo que hay."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna 3 · Hecho (Done)",
+              "p": "Tareas completadas. No borrarlas inmediatamente — dejarlas visibles durante la semana como recordatorio de los avances. El \"Hecho\" es la zona de celebración del tablero."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna extra · Bloqueado",
+              "p": "Tarjetas que no pueden avanzar por algún motivo externo. Hacer los bloqueos visibles genera urgencia para desbloquearlos. Una tarjeta en \"Bloqueado\" por más de 2 días es una alarma que el equipo debe atender."
+            }
+          ]
+        },
+        {
+          "t": "Cómo usar el tablero en reuniones",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "Revisión diaria (5 min, en el Daily)",
+              "p": "Frente al tablero: ¿Hay algo nuevo que agregar? ¿Alguna tarjeta que se puede mover a \"Hecho\"? ¿Hay bloqueos nuevos? El tablero debe actualizarse DURANTE la reunión, no después."
+            },
+            {
+              "ic": "scroll",
+              "h": "Revisión semanal (15–20 min)",
+              "p": "Al final de la semana: contar el \"Hecho\". Celebrar los avances. Mover lo que no se terminó. Priorizar el backlog para la semana siguiente."
+            },
+            {
+              "ic": "light",
+              "h": "Señales de alerta",
+              "p": "Una tarjeta en \"En Progreso\" por más de 3 días: probable bloqueo o subestimación. WIP siempre lleno: el equipo está sobrecargado. Backlog que crece más rápido que el Done: hay un problema de priorización o capacidad."
+            }
+          ],
+          "cita": "\"Lo que no se ve, no se gestiona. El tablero Kanban hace visible el flujo real del equipo.\""
+        },
+        {
+          "t": "Revisión semanal · Plenario",
+          "plen": [
+            {
+              "c": "¿Qué se terminó?",
+              "q": "Revisar el Done. ¿Qué se logró esta semana? Nombrar cada ítem completado — aunque parezca pequeño."
+            },
+            {
+              "c": "¿Qué está bloqueado?",
+              "q": "¿Qué lleva más de 2 días sin moverse? ¿Quién puede desbloquearlo?"
+            },
+            {
+              "c": "¿Qué aprendemos?",
+              "q": "¿Estimamos bien los tiempos? ¿Hay tareas que siempre se demoran más? ¿Por qué?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El método Kanban, sistematizado por David Anderson (2010) a partir de los sistemas de producción de Toyota, se basa en hacer visible el flujo de trabajo y limitar el trabajo en progreso (WIP) para evitar la sobrecarga y el multitasking encubierto. La teoría de colas y la ley de Little, en las que se apoya el método, muestran que reducir la cantidad de tareas simultáneas en curso disminuye el tiempo que cada una tarda en completarse, un principio contraintuitivo para equipos acostumbrados a medir el progreso por cuántas cosas se empiezan y no por cuántas se terminan. El tablero cumple una función adicional de gestión visual: las columnas y los bloqueos visibles generan una presión social suave hacia la acción que los reportes escritos rara vez logran. Para el/la facilitador/a, el indicador más valioso del tablero no es el volumen de tarjetas en ‘Hecho’, sino las tarjetas que llevan varios días sin moverse, ya que señalan con precisión dónde está realmente atascado el flujo del equipo."
+            }
+          ]
+        }
+      ]
+    },
+    "retrospectiva": {
+      "ic": "star",
+      "cat": "Reuniones Efectivas · Mejora Continua",
+      "clr": "teal",
+      "name": "Retrospectiva del <em>Equipo</em>",
+      "sub": "Reunión estructurada al final de un sprint, proyecto o período para reflexionar colectivamente sobre qué funcionó, qué mejorar y qué probar diferente. El motor de la mejora continua en equipos ágiles.",
+      "metas": [
+        "45–60 min",
+        "Equipo completo",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its de 3 colores distintos (uno por columna Start/Stop/Continue)",
+        "Marcadores gruesos",
+        "Pizarra o papel kraft grande",
+        "Pegatinas o puntos de colores para votar (3 por persona)",
+        "Digital: Miro, FigJam, EasyRetro o Metroretro"
+      ],
+      "secs": [
+        {
+          "t": "¿Cuándo hacer una retrospectiva?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Contextos ideales",
+              "p": "Al final de un sprint (si el equipo trabaja con Scrum), al cierre de un proyecto, al terminar un semestre o año, después de un evento o despliegue importante, o cuando el equipo detecta que algo no está funcionando bien y necesita hablar de ello."
+            }
+          ]
+        },
+        {
+          "t": "Estructura Start · Stop · Continue",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "STOP · Dejar de hacer (10 min)",
+              "p": "¿Qué deberíamos ELIMINAR porque no nos ayuda, nos quita energía o nos bloquea? No se trata de buscar culpables — se trata de identificar prácticas, procesos o comportamientos que el equipo decide cambiar. Cada persona escribe 2–3 post-its."
+            },
+            {
+              "ic": "star",
+              "h": "START · Empezar a hacer (10 min)",
+              "p": "¿Qué deberíamos COMENZAR a hacer que todavía no hacemos? Nuevas prácticas, rituales, herramientas o conductas que el equipo cree que mejorarían su funcionamiento. 2–3 post-its por persona."
+            },
+            {
+              "ic": "star",
+              "h": "CONTINUE · Seguir haciendo (10 min)",
+              "p": "¿Qué está funcionando bien y debemos MANTENER? Reconocer lo positivo antes de cambiar es fundamental — evita que el equipo cambie cosas que sí funcionan por el impulso de \"mejorar todo\"."
+            },
+            {
+              "ic": "target",
+              "h": "Votar y priorizar (10 min)",
+              "p": "Pegar todos los post-its en sus columnas correspondientes. Agrupar los similares. Cada persona tiene 3 puntos adhesivos para votar por los ítems más importantes (pueden concentrar todos en uno). Sin comentar durante la votación."
+            },
+            {
+              "ic": "scroll",
+              "h": "Compromisos concretos (10 min)",
+              "p": "Los 2–3 ítems más votados de Stop y Start se convierten en COMPROMISOS con responsable y fecha: \"¿Quién lo lidera? ¿Cuándo lo revisamos?\" Una retrospectiva sin compromisos es solo una conversación."
+            }
+          ],
+          "cita": "\"Una retrospectiva sin compromisos es solo una conversación. Los compromisos son lo que la hacen valiosa.\""
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "Una palabra",
+              "q": "Cada persona dice en una palabra cómo se va de esta retrospectiva."
+            },
+            {
+              "c": "Compromiso personal",
+              "q": "¿Cuál es TU compromiso personal para el próximo período?"
+            },
+            {
+              "c": "Seguimiento",
+              "q": "¿Cuándo revisamos si cumplimos los compromisos de hoy?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las retrospectivas ágiles formalizan, en un ritual periódico, el ciclo de mejora continua descrito por Deming (planificar-hacer-verificar-actuar), aplicándolo no al producto sino al propio proceso de trabajo del equipo. La literatura sobre aprendizaje organizacional sostiene que los equipos que reflexionan explícitamente sobre su forma de trabajar, y no solo sobre sus resultados, desarrollan mayor capacidad de adaptación frente a cambios de contexto. La estructura Start-Stop-Continue, ampliamente documentada en la práctica ágil (Derby y Larsen), separa deliberadamente el reconocimiento de lo que funciona de la identificación de lo que debe cambiar, evitando el sesgo negativo que suele dominar las conversaciones de revisión cuando no se estructuran. El paso de votación y priorización antes de definir compromisos responde a la evidencia sobre sobrecarga de intenciones: los equipos que intentan cambiar demasiadas cosas a la vez rara vez sostienen ninguna. Para el/la facilitador/a, el criterio de éxito de una retrospectiva no es la cantidad de temas discutidos, sino que cada compromiso quede con responsable y fecha de revisión."
+            }
+          ]
+        }
+      ]
+    },
+    "lean-coffee": {
+      "ic": "wow",
+      "cat": "Reuniones Efectivas · Autoorganización",
+      "clr": "teal",
+      "name": "Lean <em>Coffee</em>",
+      "sub": "Formato de reunión autoorganizada sin agenda previa. Los participantes proponen temas, votan y discuten en orden de prioridad con tiempos acotados. Democratiza la agenda y garantiza que se discuta lo más relevante para el grupo.",
+      "metas": [
+        "30–60 min",
+        "4–12 personas",
+        "Post-its y timer"
+      ],
+      "mat": [
+        "Post-its (varios por persona)",
+        "Marcadores",
+        "Superficie plana visible para todos",
+        "Timer de 5 minutos",
+        "Café o infusión — muy recomendado, da nombre a la metodología"
+      ],
+      "secs": [
+        {
+          "t": "¿Qué es Lean Coffee?",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Origen",
+              "p": "Creado en Seattle en 2009 por Jim Benson y Jeremy Lightsmith como formato de \"unconference\" — reuniones sin agenda impuesta donde el grupo decide qué discutir. Se llama \"coffee\" porque originalmente se hacía en cafeterías."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Paso 1 · Proponer temas (5 min)",
+              "p": "Cada persona escribe los temas que quiere discutir en post-its separados (uno por tema). Sin filtrar ni autocensurarse — todo vale. El límite es que sean temas que la persona genuinamente quiere conversar con el grupo."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 2 · Presentar y votar (5–8 min)",
+              "p": "Cada persona pega sus post-its y los presenta en 20–30 segundos. Sin debate todavía. Luego, todos votan poniendo una marca (punto, checkmark) en los temas que quieren discutir. Sin límite de votos por persona — marcar todos los que te importan."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 3 · Ordenar por prioridad",
+              "p": "Ordenar los post-its por cantidad de votos, de más a menos. Esta es la agenda. El tema más votado se discute primero."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 4 · Discutir con timer (el corazón del método)",
+              "p": "Se discute el tema más votado durante 5 minutos. Al sonar el timer: votación rápida con el pulgar — ¿seguimos con este tema 5 minutos más o pasamos al siguiente? Mayoría decide. Si se continúa, otro timer de 5 min. Si no, siguiente tema."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 5 · Capturar acciones al final de cada tema",
+              "p": "Antes de pasar al siguiente tema: ¿Hay alguna acción concreta que surja de esta conversación? ¿Quién la toma? ¿Cuándo? Una persona designada toma nota. Sin acción capturada, el tema queda en el aire."
+            }
+          ],
+          "cita": "\"El Lean Coffee democratiza la reunión: todos proponen, todos votan, todos participan.\""
+        },
+        {
+          "t": "Cuándo usar Lean Coffee",
+          "plen": [
+            {
+              "c": "Ideal para",
+              "q": "Reuniones de equipo sin agenda clara, sesiones de brainstorming, reuniones de team building, conversaciones sobre mejoras de proceso, o cuando hay muchos temas urgentes y no se sabe por dónde empezar."
+            },
+            {
+              "c": "No ideal para",
+              "q": "Decisiones urgentes que requieren información previa, reuniones con un solo objetivo claro, o grupos muy grandes (+20 personas)."
+            },
+            {
+              "c": "En virtual",
+              "q": "Usar Miro, FigJam o Jamboard para los post-its. El timer compartido en pantalla. La votación puede ser con emojis en el chat o con la herramienta de votación de la plataforma."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Lean Coffee, creado por Jim Benes y Jeremy Lightsmith (2013) en Seattle, aplica principios de lean y kanban —flujo visible, límites de tiempo, decisión colectiva— a un formato de reunión sin agenda predefinida. La literatura sobre facilitación participativa sostiene que las reuniones con agenda impuesta desde arriba tienden a excluir temas que el grupo considera relevantes pero que nadie se atreve a proponer formalmente, mientras que un formato de votación abierta y silenciosa democratiza qué se discute y reduce la influencia desproporcionada de quienes hablan primero o con más autoridad. El uso de temporizadores cortos y la votación de continuar o pasar al siguiente tema —el corazón del método— evita que una sola conversación consuma el tiempo disponible del grupo, un problema frecuente en reuniones sin estructura. Para el/la facilitador/a, Lean Coffee es especialmente útil cuando hay múltiples temas urgentes y ninguna jerarquía clara entre ellos, porque delega en el propio grupo la decisión de qué merece tiempo, en lugar de que esa decisión recaiga en una sola persona."
+            }
+          ]
+        }
+      ]
+    },
+    "decision-dot": {
+      "ic": "target",
+      "cat": "Reuniones Efectivas · Decisión Grupal",
+      "clr": "teal",
+      "name": "Dot Voting <em>— Votación con Puntos</em>",
+      "sub": "Técnica ágil de toma de decisiones grupal para priorizar opciones de forma rápida, visual y democrática. Cada persona tiene un número limitado de votos y los distribuye libremente entre las opciones disponibles.",
+      "metas": [
+        "5–10 min",
+        "Cualquier tamaño de grupo",
+        "Post-its y pegatinas o marcadores"
+      ],
+      "mat": [
+        "Opciones escritas en post-its o pizarra",
+        "Puntos adhesivos (3 por persona) — o pueden marcar con un punto de marcador",
+        "Cronómetro para la votación simultánea",
+        "Opcional: Mentimeter, Poll Everywhere o Miro para versión digital"
+      ],
+      "secs": [
+        {
+          "t": "¿Cuándo usar Dot Voting?",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Situaciones ideales",
+              "p": "Para priorizar entre múltiples propuestas, iniciativas, temas de backlog, ideas de brainstorming o criterios de evaluación. Es especialmente útil cuando hay muchas opciones y el debate se está volviendo circular o está dominado por pocas voces."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Preparar las opciones",
+              "p": "Las opciones están escritas claramente en post-its o en la pizarra, visibles para todos. Si son generadas por el grupo, dar 2 minutos para leerlas todas antes de votar."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Explicar las reglas",
+              "p": "Cada persona recibe 3–5 puntos (o el número que el facilitador decida). Pueden distribuirlos como quieran: un punto a cada una, todos en una sola, o cualquier combinación. Única regla: no poner más de la mitad de los puntos en una sola opción (a menos que el facilitador decida no tener ese límite)."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Votar en SILENCIO y SIMULTÁNEAMENTE",
+              "p": "Esta es la regla más importante. Todos votan al mismo tiempo — cuenta regresiva: \"3, 2, 1, voten.\" El silencio evita el sesgo de seguir al líder o a la jefatura. Si alguien vota primero, los demás tienden a copiar."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Contar y decidir",
+              "p": "Contar los puntos. Las opciones con más votos son las prioritarias. Si hay empate entre las dos opciones principales, hacer una segunda votación solo entre ellas."
+            },
+            {
+              "ic": "light",
+              "h": "Paso 5 · Lo que no ganó",
+              "p": "Las opciones con pocos o ningún voto NO se descartan permanentemente — van al backlog. Esto es importante para que nadie sienta que su idea fue \"rechazada\"."
+            }
+          ],
+          "cita": "\"La votación con puntos hace visible el consenso latente del grupo en menos de 10 minutos.\""
+        },
+        {
+          "t": "Después de votar",
+          "plen": [
+            {
+              "c": "Las más votadas",
+              "q": "¿Hay sorpresas en el resultado? ¿Coincide con lo que esperaban?"
+            },
+            {
+              "c": "Siguiente paso",
+              "q": "Las 1–3 opciones más votadas pasan a la siguiente fase de trabajo. ¿Quién lidera cada una? ¿Cuándo?"
+            },
+            {
+              "c": "Las menos votadas",
+              "q": "¿Hay alguna opción con pocos votos que alguien crea que es importante? Dar espacio breve para ese argumento antes de cerrar."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El dot voting es una técnica de decisión grupal ampliamente usada en design thinking y facilitación ágil para reducir la parálisis por análisis cuando existen muchas opciones y el debate verbal se vuelve circular o queda dominado por pocas voces. La regla de votar en silencio y de forma simultánea no es un detalle menor: la investigación sobre dinámicas grupales muestra que las opiniones expresadas primero, especialmente por figuras de autoridad, sesgan sistemáticamente las respuestas posteriores del grupo, un efecto de anclaje y conformidad documentado desde los estudios clásicos de conformidad de Asch. Votar antes de hablar preserva la independencia del juicio individual y solo después expone el resultado a discusión colectiva. Para el/la facilitador/a, el valor de esta técnica está en hacer visible en minutos un consenso que de otro modo tomaría mucho más tiempo de debate en descubrirse, sin que eso implique descartar permanentemente las opciones menos votadas, que pueden quedar disponibles para una futura priorización."
+            }
+          ]
+        }
+      ]
+    },
+    "parking-lot": {
+      "ic": "map",
+      "cat": "Reuniones Efectivas · Facilitación",
+      "clr": "teal",
+      "name": "Parking Lot <em>(Aparcadero de Ideas)</em>",
+      "sub": "Herramienta visual para capturar temas importantes que surgen durante una reunión pero que no pertenecen a la agenda actual. Evita desvíos sin perder ideas valiosas. Mantiene el foco sin silenciar la creatividad del grupo.",
+      "metas": [
+        "Setup: 2 min",
+        "Uso durante toda la sesión",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Espacio delimitado en pizarra o pared",
+        "Post-its de un color específico (diferente al resto)",
+        "Marcador para escribir la etiqueta \"Parking Lot\"",
+        "Opcional: columna en tablero digital Miro, Mural o Trello"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué usar Parking Lot?",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "El dilema del facilitador/a",
+              "p": "En toda reunión aparecen temas importantes pero fuera de agenda. Sin Parking Lot, tienes dos opciones malas: ignorar el tema (la persona siente que su idea no importa) o abrirlo (la reunión se desvía y pierde su objetivo). El Parking Lot es la tercera opción."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Crear la zona AL INICIO",
+              "p": "Antes de que comience la reunión, delimitar una zona claramente etiquetada \"Parking Lot\" o \"Aparcadero\" en la pizarra o pared. Explicar al grupo: \"Durante la reunión, si surge un tema importante que no está en la agenda de hoy, lo anotamos aquí para no perderlo y lo revisamos al final.\""
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Capturar en el momento",
+              "p": "Cuando durante la reunión alguien dice algo como \"ah, eso me recuerda que también deberíamos hablar de...\", el/la facilitador/a dice: \"Ese es un tema importante. Lo ponemos en el Parking Lot para no perderlo.\" Escribir el tema en un post-it y pegarlo. Sin debate, sin interrumpir la reunión."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Revisar al final (5 min)",
+              "p": "Los últimos 5 minutos de toda reunión se reservan para revisar el Parking Lot. Para cada post-it: ¿Se resolvió durante la reunión? (se saca). ¿Necesita una conversación propia? (se agenda). ¿Hay alguien que se responsabiliza? (se asigna)."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Los tres destinos de cada ítem",
+              "p": "(a) RESUELTO: se respondió durante la reunión — se marca como cerrado. (b) AGENDA: merece una reunión o conversación propia — se anota con fecha y responsable. (c) ASIGNADO: alguien toma acción individual — se anota nombre y plazo."
+            }
+          ],
+          "cita": "\"El Parking Lot respeta tanto la agenda como las ideas emergentes. Nada se pierde, nada se desvía.\""
+        },
+        {
+          "t": "Revisión del Parking Lot",
+          "plen": [
+            {
+              "c": "Temas urgentes",
+              "q": "¿Hay algún tema del Parking Lot que requiera atención inmediata antes de que terminemos?"
+            },
+            {
+              "c": "Seguimiento",
+              "q": "¿Quién se responsabiliza de cada ítem que quedó pendiente? ¿Cuándo?"
+            },
+            {
+              "c": "Patrón",
+              "q": "Si el Parking Lot tiene muchos ítems semana a semana, puede ser señal de que la agenda de las reuniones no está capturando bien las necesidades del equipo."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El ‘aparcadero de ideas’ es una técnica clásica de facilitación de reuniones (Doyle y Straus, 1976, retomada en manuales posteriores de facilitación participativa) diseñada para resolver una tensión estructural de toda reunión: cómo mantener el foco en la agenda sin invalidar ideas legítimas que surgen fuera de ella. Ignorar esas ideas genera el efecto documentado en la literatura sobre normas de equipo (Schein) de que las personas dejan de proponer si perciben que sus aportes no se registran, mientras que abrir cada desvío rompe la estructura y extiende la reunión más allá de lo planificado. El Parking Lot resuelve esta tensión con un mecanismo simple: captura visual inmediata sin debate, y revisión explícita al cierre para decidir el destino de cada ítem. Para el/la facilitador/a, un Parking Lot que se revisa consistentemente al final de cada reunión —y no solo se llena— es también un diagnóstico útil sobre la agenda: si acumula muchos ítems semana tras semana, probablemente la agenda no está capturando bien lo que el equipo necesita conversar."
+            }
+          ]
+        }
+      ]
+    },
+    "reunion-check-in-objetivo": {
+      "ic": "target",
+      "cat": "Reuniones Efectivas · Apertura",
+      "clr": "teal",
+      "name": "Check-in de Objetivo y <em>Roles</em>",
+      "sub": "Los primeros 2 minutos de cualquier reunión, dedicados a confirmar en voz alta el objetivo de la reunión y el rol de cada persona presente (decide, informa, opina, ejecuta). Evita el problema más común de las reuniones: no tener claro para qué están todos ahí.",
+      "metas": [
+        "2–3 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Requiere que quien convoca la reunión haya definido el objetivo de antemano"
+      ],
+      "secs": [
+        {
+          "t": "Cómo hacerlo",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "1 · Nombrar el objetivo",
+              "p": "Quien facilita dice en voz alta, en una frase, el propósito de la reunión: \"Estamos aquí para decidir X\", \"Estamos aquí para informarnos sobre Y\", \"Estamos aquí para generar ideas sobre Z\"."
+            },
+            {
+              "ic": "focus",
+              "h": "2 · Nombrar el tipo de reunión",
+              "p": "Aclarar si es una reunión de decisión, de información, de generación de ideas o de coordinación — cada tipo requiere una dinámica distinta y evita expectativas cruzadas."
+            },
+            {
+              "ic": "map",
+              "h": "3 · Confirmar roles",
+              "p": "Aclarar brevemente quién decide (si aplica), quién presenta información, y quién está ahí principalmente para opinar o ejecutar después."
+            },
+            {
+              "ic": "light",
+              "h": "4 · Chequeo rápido",
+              "p": "Preguntar: \"¿Alguien tiene un objetivo distinto en mente para esta reunión?\" — esto evita descubrir a mitad de camino que había expectativas distintas sobre para qué se convocó."
+            }
+          ],
+          "cita": "\"La causa más frecuente de reuniones improductivas no es la falta de tiempo, es la falta de claridad sobre para qué están todos ahí.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Objetivo en la invitación",
+              "p": "Idealmente, el objetivo ya debería estar escrito en la invitación a la reunión; este check-in lo confirma en voz alta y da espacio a ajustarlo si es necesario."
+            },
+            {
+              "ic": "target",
+              "h": "Reuniones recurrentes",
+              "p": "Para reuniones que se repiten semanalmente, este chequeo puede acortarse a solo confirmar si el objetivo habitual sigue vigente esta semana."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión de cierre de la práctica",
+          "plen": [
+            {
+              "c": "Claridad previa",
+              "q": "¿Cuántas reuniones de esta semana tenían un objetivo verdaderamente claro antes de empezar?"
+            },
+            {
+              "c": "Costo",
+              "q": "¿Qué reuniones recientes se habrían acortado o cancelado si este chequeo se hubiera hecho antes?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación sobre ciencia de las reuniones (meeting science, Rogelberg y colaboradores) identifica la falta de claridad sobre el propósito y los roles como una de las causas más citadas de insatisfacción y baja productividad percibida en reuniones de trabajo. El clásico manual de facilitación de Doyle y Straus (1976) propone precisamente clarificar el objetivo y los roles al inicio como el primer paso de cualquier reunión bien facilitada, distinguiendo entre reuniones de decisión, información, generación de ideas o coordinación, ya que cada tipo requiere una dinámica de participación distinta y genera expectativas diferentes en los asistentes. Cuando ese objetivo no se explicita, es frecuente que distintos participantes lleguen con expectativas incompatibles —alguien espera decidir mientras otro solo espera informarse—, lo que genera fricción difícil de rastrear hasta su causa real. El costo de este chequeo es mínimo, apenas dos o tres minutos, mientras que el costo de omitirlo puede ser una reunión completa que termina sin resultado claro porque nunca hubo consenso real sobre para qué se había convocado. Para el/la facilitador/a, este ritual de apertura es una de las intervenciones de menor esfuerzo y mayor retorno disponibles para mejorar la productividad general de la cultura de reuniones de un equipo."
+            }
+          ]
+        }
+      ]
+    },
+    "reunion-brainwriting-silencioso": {
+      "ic": "spark",
+      "cat": "Reuniones Efectivas · Generación de Ideas",
+      "clr": "teal",
+      "name": "Brainwriting <em>Silencioso</em>",
+      "sub": "Alternativa al brainstorming verbal tradicional: cada persona escribe sus ideas en silencio durante unos minutos antes de compartirlas, evitando que las primeras voces o las más dominantes condicionen las que vienen después.",
+      "metas": [
+        "15–20 min",
+        "4–12 personas",
+        "Post-its o documento compartido"
+      ],
+      "mat": [
+        "Post-its o papel, uno por idea",
+        "Marcadores",
+        "Pizarra o documento digital compartido para agrupar ideas",
+        "Temporizador"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Plantear la pregunta (2 min)",
+              "p": "El/la facilitador/a escribe la pregunta o desafío de forma clara y visible para todos: \"¿Cómo podríamos reducir el tiempo de onboarding de nuevas personas?\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 2 · Escritura silenciosa (5–7 min)",
+              "p": "Cada persona escribe tantas ideas como pueda, una por post-it, en completo silencio, sin comentar ni mostrar sus ideas todavía a los demás."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Publicar sin explicar (3–4 min)",
+              "p": "Cada persona pega sus post-its en la pizarra o documento compartido, sin explicarlos en voz alta todavía. Se puede leer lo que otros escribieron."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Agrupar en silencio o casi silencio",
+              "p": "Entre todos, agrupan los post-its similares en categorías, con mínima conversación, guiados por el/la facilitador/a."
+            },
+            {
+              "ic": "chat",
+              "h": "Paso 5 · Discusión recién ahora",
+              "p": "Solo después de tener las ideas agrupadas y visibles, se abre la conversación verbal para explorar las categorías más prometedoras."
+            }
+          ],
+          "cita": "\"El silencio inicial no apaga las ideas, las protege de apagarse antes de nacer.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Rotación de hojas",
+              "p": "En una variante clásica de brainwriting, cada persona pasa su hoja de ideas a la persona de al lado después de unos minutos, quien construye sobre esas ideas en lugar de empezar desde cero."
+            },
+            {
+              "ic": "spark",
+              "h": "Virtual",
+              "p": "En un documento compartido o pizarra digital (Miro, FigJam), cada persona escribe en su propia columna simultáneamente, sin ver la de los demás hasta un momento acordado."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Cantidad y diversidad",
+              "q": "¿Surgieron más ideas, o ideas más diversas, que en un brainstorming verbal habitual?"
+            },
+            {
+              "c": "Participación",
+              "q": "¿Participaron personas que normalmente hablan menos en las reuniones grupales?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La investigación experimental sobre generación de ideas en grupo muestra de forma consistente que el brainstorming verbal tradicional produce, en la práctica, menos ideas y de menor diversidad que la generación individual silenciosa seguida de puesta en común, un hallazgo documentado desde los estudios de Diehl y Stroebe (1987) sobre lo que denominaron bloqueo de producción: mientras una persona habla, las demás no pueden generar ni registrar sus propias ideas, y además tienden a autocensurarse por temor a la evaluación social o a repetir lo ya dicho. El brainwriting silencioso ataca directamente ambos problemas: al escribir antes de hablar, cada persona genera sus ideas sin interferencia ni comparación inmediata, y al publicar las ideas de forma anónima o casi anónima antes de discutirlas, se reduce la influencia desproporcionada de las primeras voces o de las personas con más autoridad o extroversión, un efecto de conformidad social bien documentado en la investigación sobre dinámicas grupales. La secuencia de silencio antes de conversación no busca eliminar la discusión verbal, sino postergarla hasta que el conjunto completo de ideas individuales ya esté disponible para el grupo, evitando que la conversación temprana limite prematuramente el espacio de posibilidades exploradas. Para el/la facilitador/a, esta técnica es especialmente valiosa en equipos donde unas pocas voces suelen dominar la conversación, ya que redistribuye estructuralmente la participación sin necesidad de pedirlo explícitamente."
+            }
+          ]
+        }
+      ]
+    },
+    "reunion-premortem": {
+      "ic": "eye",
+      "cat": "Reuniones Efectivas · Gestión de Riesgo",
+      "clr": "teal",
+      "name": "Premortem de <em>Decisión</em>",
+      "sub": "Antes de lanzar un proyecto o tomar una decisión importante, el equipo imagina que ya fracasó estrepitosamente y trabaja hacia atrás para identificar por qué, revelando riesgos que el optimismo inicial suele ocultar.",
+      "metas": [
+        "30–40 min",
+        "Equipo completo involucrado en la decisión",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its",
+        "Pizarra o papel grande",
+        "Descripción clara del proyecto o decisión a analizar"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Plantear el escenario (2 min)",
+              "p": "El/la facilitador/a dice: \"Imaginemos que estamos seis meses en el futuro. Este proyecto fracasó por completo, de forma notoria. Nuestra tarea ahora es entender qué pasó.\""
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Escritura individual silenciosa (5–8 min)",
+              "p": "Cada persona escribe, en post-its individuales, las razones específicas por las que —en este escenario imaginado— el proyecto fracasó. Se anima a ser lo más concreto y específico posible."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Compartir y agrupar (10 min)",
+              "p": "Cada persona comparte sus razones brevemente, se agrupan en categorías temáticas (por ejemplo: recursos, comunicación, supuestos equivocados, dependencias externas)."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Priorizar los riesgos más probables o graves (5–8 min)",
+              "p": "Votación rápida (dot voting) sobre cuáles de estos riesgos identificados son más probables o tendrían mayor impacto si ocurrieran."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 5 · Definir mitigaciones (10 min)",
+              "p": "Para los riesgos priorizados, el equipo define acciones concretas de prevención o mitigación, con responsable, antes de que el proyecto comience."
+            }
+          ],
+          "cita": "\"Es mucho más fácil prevenir un fracaso imaginado con anticipación que explicar uno real después de que ocurrió.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Premortem exprés",
+              "p": "Para decisiones más pequeñas, se puede acortar a solo 10-15 minutos con escritura individual y una ronda rápida de riesgos principales."
+            },
+            {
+              "ic": "eye",
+              "h": "Antes de cada hito",
+              "p": "En proyectos largos, se puede repetir un premortem breve antes de cada fase o hito importante, no solo al inicio."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "Riesgos ocultos",
+              "q": "¿Surgió algún riesgo que nadie había mencionado en las conversaciones previas de planificación?"
+            },
+            {
+              "c": "Acción",
+              "q": "¿Qué mitigación concreta vamos a implementar antes de comenzar?"
+            },
+            {
+              "c": "Costumbre",
+              "q": "¿En qué otras decisiones importantes deberíamos aplicar este ejercicio de forma habitual?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La técnica del premortem fue desarrollada por el psicólogo Gary Klein (2007) como una aplicación práctica de lo que denominó prospective hindsight: proyectar mentalmente un fracaso futuro como si ya hubiera ocurrido facilita identificar causas que, en un análisis de riesgo convencional orientado hacia adelante, suelen pasar desapercibidas debido al exceso de confianza (overconfidence bias) que acompaña a la etapa inicial de entusiasmo por un proyecto nuevo. La investigación sobre sesgos cognitivos en la toma de decisiones muestra que las personas subestiman sistemáticamente la probabilidad de fracaso de sus propios planes, un patrón que se atenúa cuando se les pide justificar por qué algo ya falló, en lugar de predecir si podría fallar. El formato de escritura individual y silenciosa antes de la puesta en común, igual que en el brainwriting, evita que el optimismo compartido del grupo —o la opinión de quien tiene más autoridad— module prematuramente qué riesgos se consideran dignos de mencionar. A diferencia de un análisis de riesgos tradicional, que suele sentirse como un trámite burocrático, el formato narrativo del premortem ('imaginemos que ya fracasó') tiende a generar respuestas más concretas y menos genéricas. Para el/la facilitador/a, esta actividad es especialmente valiosa antes de decisiones de alto costo o proyectos con muchas dependencias, ya que convierte la identificación de riesgos en un ejercicio activo y hasta creativo, en lugar de una revisión pasiva de una lista de verificación."
+            }
+          ]
+        }
+      ]
+    },
+    "reunion-check-out": {
+      "ic": "scroll",
+      "cat": "Reuniones Efectivas · Cierre",
+      "clr": "teal",
+      "name": "Check-out y Cierre de <em>Reunión</em>",
+      "sub": "Los últimos 3-5 minutos de cualquier reunión, dedicados a confirmar acuerdos, responsables y fechas, y a una ronda breve de cierre. Evita el problema común de reuniones que terminan sin que quede claro qué se decidió ni quién hace qué.",
+      "metas": [
+        "3–5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Notas de la reunión visibles (pizarra, documento compartido)",
+        "Temporizador para respetar el tiempo de cierre"
+      ],
+      "secs": [
+        {
+          "t": "Cómo hacerlo",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "1 · Repasar acuerdos y responsables",
+              "p": "Quien facilita lee en voz alta, o pide a alguien que lea, la lista de decisiones tomadas y acciones acordadas, con nombre de responsable y fecha para cada una."
+            },
+            {
+              "ic": "target",
+              "h": "2 · Confirmar comprensión compartida",
+              "p": "Preguntar: \"¿Alguien entendió algo distinto sobre lo que acordamos?\" — dar espacio real a corregir malentendidos antes de que la reunión termine."
+            },
+            {
+              "ic": "map",
+              "h": "3 · Revisar el Parking Lot si existe",
+              "p": "Si se usó un Parking Lot durante la reunión, revisarlo brevemente: qué se resolvió, qué queda pendiente y con quién."
+            },
+            {
+              "ic": "chat",
+              "h": "4 · Ronda de cierre (1 min)",
+              "p": "Ronda ultrarrápida: cada persona dice en una palabra cómo se va de la reunión, o si le queda algo sin decir."
+            }
+          ],
+          "cita": "\"Una reunión sin cierre claro es una reunión que probablemente se repetirá, sin haber avanzado.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Envío inmediato de resumen",
+              "p": "Idealmente, la lista de acuerdos se envía por escrito al grupo inmediatamente después de la reunión, mientras está fresca y visible."
+            },
+            {
+              "ic": "scroll",
+              "h": "Check-out breve",
+              "p": "Para reuniones cortas o muy frecuentes, se puede acortar solo al paso 1 (repasar acuerdos), sin la ronda de cierre emocional."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Claridad",
+              "q": "¿Todos los presentes podrían repetir, sin dudar, qué se acordó y quién lo hace?"
+            },
+            {
+              "c": "Hábito",
+              "q": "¿Con qué frecuencia las reuniones de este equipo terminan sin un cierre claro como este?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El ciclo de aprendizaje experiencial de Kolb (1984) sostiene que la reflexión explícita sobre una experiencia —y no solo la experiencia misma— es lo que consolida el aprendizaje y permite convertirlo en acción futura, un principio directamente aplicable al cierre de una reunión: sin un momento dedicado a consolidar lo decidido, gran parte de lo discutido se diluye o se recuerda de forma distinta por cada participante. La investigación sobre ciencia de las reuniones señala que uno de los defectos más comunes y más costosos de las reuniones de trabajo es terminar sin que exista claridad compartida sobre qué se decidió, quién es responsable de cada acción y para cuándo, lo que frecuentemente obliga a repetir la misma conversación en la siguiente reunión. Pedir explícitamente que alguien confirme su comprensión antes de cerrar reduce el riesgo de que distintas personas se retiren con interpretaciones distintas del mismo acuerdo, un problema que suele descubrirse recién cuando ya es tarde para corregirlo sin fricción. La brevedad de este cierre —tres a cinco minutos— es intencional: no busca reabrir la discusión, sino sellar lo ya decidido con la claridad suficiente para que cada persona sepa exactamente qué hacer al salir de la sala. Para el/la facilitador/a, sostener este cierre de forma consistente es una de las prácticas con mayor impacto acumulado en la percepción de que las reuniones del equipo realmente producen resultados y no solo conversación."
+            }
+          ]
+        }
+      ]
+    },
+    "reunion-agenda-visual": {
+      "ic": "map",
+      "cat": "Reuniones Efectivas · Diseño de Agenda",
+      "clr": "teal",
+      "name": "Agenda Visual con <em>Tiempos</em>",
+      "sub": "Diseñar y mostrar visiblemente, desde el inicio de la reunión, cada punto de la agenda con su tiempo asignado, de modo que todo el grupo pueda ver cuánto tiempo queda para cada tema y ajustar el ritmo de la conversación en consecuencia.",
+      "metas": [
+        "Setup: 5–10 min de preparación previa",
+        "Uso durante toda la reunión",
+        "Pizarra o documento visible"
+      ],
+      "mat": [
+        "Agenda preparada de antemano por quien convoca",
+        "Pizarra, papel grande o documento proyectado",
+        "Temporizador visible para cada bloque"
+      ],
+      "secs": [
+        {
+          "t": "Cómo prepararla y usarla",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "1 · Preparar la agenda antes",
+              "p": "Quien convoca define de antemano cada punto a tratar, con un tiempo estimado realista para cada uno, sumando al total de la reunión. Menos puntos con más tiempo suele funcionar mejor que muchos puntos apretados."
+            },
+            {
+              "ic": "map",
+              "h": "2 · Mostrarla visible desde el inicio",
+              "p": "Al comenzar, mostrar la agenda completa con los tiempos asignados a cada punto, para que todos sepan qué esperar y cuánto tiempo hay disponible para cada tema."
+            },
+            {
+              "ic": "target",
+              "h": "3 · Marcar el avance en vivo",
+              "p": "A medida que avanza la reunión, tachar o marcar visualmente los puntos completados, y anunciar cuando un bloque de tiempo está por terminar: \"Nos quedan 2 minutos en este punto.\""
+            },
+            {
+              "ic": "scroll",
+              "h": "4 · Decidir en el momento qué hacer con los desbordes",
+              "p": "Si un tema se extiende más de lo previsto, decidir explícitamente en el momento: ¿le quitamos tiempo a otro punto, lo movemos a un Parking Lot, o extendemos la reunión con acuerdo del grupo?"
+            }
+          ],
+          "cita": "\"Una agenda visible con tiempos convierte el paso del tiempo en información compartida, no en una sorpresa al final.\""
+        },
+        {
+          "t": "Variantes",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Agenda colaborativa",
+              "p": "Para reuniones de equipo recurrentes, se puede abrir la agenda a que cualquier persona agregue puntos con anticipación, con su propio tiempo estimado."
+            },
+            {
+              "ic": "map",
+              "h": "Virtual",
+              "p": "En reuniones online, la agenda puede quedar fija en la parte superior de la pantalla compartida o del documento colaborativo durante toda la sesión."
+            }
+          ]
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Precisión de estimación",
+              "q": "¿Los tiempos estimados se ajustaron a la realidad, o subestimamos sistemáticamente algunos puntos?"
+            },
+            {
+              "c": "Disciplina",
+              "q": "¿Qué costó más: definir los tiempos, o respetarlos durante la reunión?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La ley de Parkinson —el trabajo se expande hasta ocupar todo el tiempo disponible para completarlo— es frecuentemente citada en la literatura de facilitación y gestión del tiempo como explicación de por qué las reuniones sin límites de tiempo explícitos para cada punto tienden a extenderse más allá de lo necesario, incluso cuando el contenido a tratar no lo requiere. Investigación sobre ciencia de las reuniones (Rogelberg) documenta que la ausencia de una agenda visible y con tiempos asignados es uno de los factores más asociados a la percepción de que una reunión fue improductiva, independientemente de la calidad del contenido discutido. El principio de timeboxing, ampliamente utilizado en metodologías ágiles de gestión de proyectos, aplica directamente aquí: asignar un límite de tiempo fijo a cada actividad concentra la atención y la energía del grupo dentro de ese marco, en lugar de permitir que la conversación se disperse de forma indefinida. Hacer visible el avance del tiempo durante la reunión —no solo al planificarla— convierte una limitación potencialmente frustrante en información compartida que el grupo puede usar para autorregular su propio ritmo de conversación, en lugar de que solo quien facilita cargue con esa responsabilidad en silencio. Para el/la facilitador/a, esta práctica es una de las más simples de implementar y, según la evidencia disponible sobre percepción de productividad en reuniones, una de las que genera un cambio más perceptible en la experiencia del grupo con relativamente poco esfuerzo de diseño previo."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

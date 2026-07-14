@@ -1,0 +1,1290 @@
+{
+  "CATS": {
+    "pnl": {
+      "acts": [
+        "cambiando-el-mapa",
+        "filtros-invisibles",
+        "objetivo-bien-construido",
+        "del-problema-a-la-posibilidad",
+        "lenguaje-que-construye",
+        "preguntas-que-abren-conversaciones"
+      ]
+    },
+    "mindful": {
+      "acts": [
+        "minuto-presencia",
+        "respiracion-444",
+        "escaneo-corporal",
+        "atencion-entorno",
+        "observa-nombra"
+      ]
+    },
+    "conversaciones1a1": {
+      "acts": [
+        "entrevista-apreciativa-1a1",
+        "feedback-sandwich-1a1",
+        "conversacion-dificil-1a1"
+      ]
+    },
+    "reuniones": {
+      "acts": [
+        "activacion-rapida",
+        "daily-scrum",
+        "kanban-visual",
+        "retrospectiva",
+        "lean-coffee",
+        "decision-dot",
+        "parking-lot"
+      ]
+    }
+  },
+  "A": {
+    "cambiando-el-mapa": {
+      "ic": "map",
+      "cat": "Comunicación y PNL · Reflexión guiada",
+      "clr": "brand",
+      "name": "Cambiando el <em>Mapa</em>",
+      "sub": "Reconocer que una misma situación puede interpretarse desde distintos marcos de referencia y ampliar la flexibilidad cognitiva antes de tomar decisiones.",
+      "metas": [
+        "20–30 minutos",
+        "Individual / Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Hoja",
+        "Lápiz",
+        "Opcional: post-it"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Paso 1 · Situación",
+              "p": "Cada participante escribe una situación desafiante que esté viviendo actualmente, en una sola frase. Ejemplo: \"Mi equipo no se compromete.\""
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 2 · Interpretación",
+              "p": "Responder: ¿Qué estoy dando por hecho? ¿Qué creo que significa esta situación? ¿Qué emociones aparecen?"
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 3 · Cambiar el mapa",
+              "p": "El facilitador propone cambiar el \"mapa\". Responder imaginando que eres otra persona del equipo, un cliente, un observador externo o tu versión dentro de cinco años."
+            },
+            {
+              "ic": "steps",
+              "h": "Paso 4 · Comparar",
+              "p": "Comparar las respuestas entre participantes o parejas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Qué cambió? ¿Qué supuestos desaparecieron? ¿Qué posibilidades aparecieron?"
+            },
+            {
+              "ic": "light",
+              "h": "Aprendizaje esperado",
+              "p": "Comprender que las interpretaciones no son la realidad sino representaciones personales."
+            }
+          ]
+        }
+      ]
+    },
+    "filtros-invisibles": {
+      "ic": "filter",
+      "cat": "Comunicación y PNL · Autoconocimiento",
+      "clr": "brand",
+      "name": "Filtros <em>Invisibles</em>",
+      "sub": "Identificar los filtros personales que influyen en la manera en que interpretamos una situación.",
+      "metas": [
+        "25 minutos",
+        "Individual / Grupo",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Papel",
+        "Plumones"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "El facilitador presenta una misma situación. Ejemplo: \"El jefe no respondió tu correo.\" Cada participante escribe inmediatamente: ¿Qué pensó? ¿Qué sintió? ¿Qué cree que ocurrió? Después se comparte. Normalmente aparecen interpretaciones completamente distintas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión",
+              "p": "¿Qué influyó? Experiencias previas, creencias, emociones, expectativas, cultura."
+            },
+            {
+              "ic": "light",
+              "h": "Cierre",
+              "p": "No reaccionamos a los hechos. Reaccionamos al significado que les damos."
+            }
+          ]
+        }
+      ]
+    },
+    "objetivo-bien-construido": {
+      "ic": "target",
+      "cat": "Comunicación y PNL · Planificación",
+      "clr": "brand",
+      "name": "Objetivo <em>Bien Construido</em>",
+      "sub": "Transformar un deseo general en un objetivo claro, específico y accionable.",
+      "metas": [
+        "30 minutos",
+        "Individual",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Ficha de trabajo",
+        "Lápiz"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "Cada participante responde: ¿Qué quiero lograr? ¿Por qué es importante? ¿Cómo sabré que lo conseguí? ¿Qué depende de mí? ¿Cuándo quiero alcanzarlo? ¿Cuál será el primer paso?"
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Qué diferencia existe entre tener un deseo y un objetivo?"
+            }
+          ]
+        }
+      ]
+    },
+    "del-problema-a-la-posibilidad": {
+      "ic": "spark",
+      "cat": "Comunicación y PNL · Reencuadre",
+      "clr": "brand",
+      "name": "Del Problema a la <em>Posibilidad</em>",
+      "sub": "Entrenar la capacidad de cambiar deliberadamente el enfoque frente a una dificultad.",
+      "metas": [
+        "25 minutos",
+        "Individual / Grupo",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Hoja de trabajo",
+        "Lápiz"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "Cada participante escribe un problema. Luego completa tres preguntas: ¿Qué oportunidad podría esconder? ¿Qué podría aprender? ¿Qué haría alguien que ya hubiese resuelto esto? Después comparten en parejas."
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "Muchas veces cambiar la pregunta cambia completamente la experiencia."
+            }
+          ]
+        }
+      ]
+    },
+    "lenguaje-que-construye": {
+      "ic": "chat",
+      "cat": "Comunicación y PNL · Comunicación",
+      "clr": "brand",
+      "name": "Lenguaje que <em>Construye</em>",
+      "sub": "Tomar conciencia del impacto del lenguaje en la forma en que las personas interpretan una conversación.",
+      "metas": [
+        "30 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas con frases"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Desarrollo",
+              "p": "El facilitador entrega frases comunes: \"No puedo.\", \"Siempre pasa lo mismo.\", \"Mi equipo nunca participa.\" La pareja debe reformularlas usando un lenguaje más específico y orientado a posibilidades. Ejemplos: \"No he encontrado todavía una forma que funcione.\", \"En algunas reuniones cuesta participar.\""
+            },
+            {
+              "ic": "chat",
+              "h": "Reflexión plenaria",
+              "p": "¿Cómo cambia la emoción al cambiar las palabras? ¿Qué frase genera mayor apertura?"
+            },
+            {
+              "ic": "light",
+              "h": "Aprendizaje esperado",
+              "p": "Pequeñas modificaciones en el lenguaje pueden abrir nuevas alternativas de acción y conversación."
+            }
+          ]
+        }
+      ]
+    },
+    "preguntas-que-abren-conversaciones": {
+      "ic": "question",
+      "cat": "Comunicación y PNL · Comunicación",
+      "clr": "brand",
+      "name": "Preguntas que Abren <em>Conversaciones</em>",
+      "sub": "Entrenar el uso de preguntas abiertas para ampliar perspectivas y generar conversaciones más profundas.",
+      "metas": [
+        "30 minutos",
+        "Parejas",
+        "Ética · No clínica · Aplicación práctica"
+      ],
+      "mat": [
+        "Tarjetas con preguntas"
+      ],
+      "secs": [
+        {
+          "t": "Guía de facilitación",
+          "rows": [
+            {
+              "ic": "steps",
+              "h": "Pasos",
+              "p": "Cada pareja recibe una situación. Ejemplo: \"Mi equipo está desmotivado.\" El desafío consiste en evitar entregar soluciones: solo podrán formular preguntas abiertas durante cinco minutos. Ejemplos: ¿Qué observas exactamente? ¿Cuándo ocurre? ¿Qué ya ha funcionado? ¿Qué sería diferente si esto mejorara? ¿Qué depende de ti? Luego intercambian los roles."
+            },
+            {
+              "ic": "chat",
+              "h": "Preguntas plenarias",
+              "p": "¿Cómo cambia una conversación cuando dejamos de aconsejar? ¿Qué pregunta generó mayor reflexión?"
+            }
+          ]
+        }
+      ]
+    },
+    "minuto-presencia": {
+      "ic": "breath",
+      "cat": "Mindfulness · Apertura",
+      "clr": "sky",
+      "name": "Minuto de Presencia <em>Compartida</em>",
+      "sub": "Antes de comenzar una reunión o taller, el equipo dedica 1–2 minutos en silencio para respirar conscientemente y centrar la atención en el presente. Simple, poderoso y reproducible.",
+      "metas": [
+        "3–5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio tranquilo",
+        "Música de meditación suave — opcional",
+        "Cuenco tibetano o campanita para marcar inicio y cierre — opcional y muy efectivo"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones para el facilitador/a",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Cómo conducir la práctica",
+              "p": "Hablar con voz calmada, pausada y suave — significativamente más lento que lo habitual. Las pausas son parte de la guía. Ejemplo de guión completo: \"Antes de comenzar, quiero invitarlos a algo simple. Cierren los ojos — o si prefieren, bajen la mirada al suelo. [pausa 5 seg] Lleven su atención a la respiración. Solo observen: el aire entrando... y saliendo. [pausa 10 seg] Si aparecen pensamientos sobre lo que tienen que hacer después, sobre la reunión de ayer, sobre el mensaje que no respondieron — solo nótenlos y déjenlos ir. No hay que resolver nada ahora. [pausa 10 seg] Inhalen lentamente contando hasta cuatro. Uno... dos... tres... cuatro. Mantengan. Uno... dos... tres... cuatro. Y exhalen suavemente. Uno... dos... tres... cuatro. [repetir 2–3 veces] Cuando estén listos, abran los ojos suavemente. Bienvenidos/as.\""
+            },
+            {
+              "ic": "light",
+              "h": "Señal de cierre",
+              "p": "Marcar el final con una señal suave: una campanita, un cuenco tibetano, o simplemente decir \"bienvenidos/as\" con voz suave. Dar 5–10 segundos de silencio adicional antes de comenzar la sesión."
+            },
+            {
+              "ic": "observe",
+              "h": "Manejo de la incomodidad",
+              "p": "En algunos equipos o culturas organizacionales, el silencio compartido puede generar incomodidad inicial. Normalizarlo: \"Sé que esto puede sentirse raro al principio. Eso pasa siempre. Solo dense la oportunidad.\""
+            }
+          ],
+          "cita": "\"La atención plena en equipo mejora la conexión y la concentración colectiva.\" — POP Cards PERMA Team"
+        }
+      ]
+    },
+    "respiracion-444": {
+      "ic": "breath",
+      "cat": "Mindfulness · Regulación",
+      "clr": "sky",
+      "name": "Respiración Colectiva <em>4-4-4</em>",
+      "sub": "El equipo practica respiración consciente: inhalar 4 segundos, mantener 4 y exhalar 4. Se repite tres veces en conjunto. Regula la energía grupal, reduce el estrés y sincroniza al equipo antes de una tarea importante.",
+      "metas": [
+        "5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio cómodo donde todos puedan sentarse con la columna recta",
+        "Música suave sin letra — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Guía completa para el facilitador/a",
+          "rows": [
+            {
+              "ic": "breath",
+              "h": "Postura (30 seg)",
+              "p": "\"Siéntense cómodamente, con la columna erguida — no rígida, sino alerta. Los pies apoyados en el suelo. Las manos sobre los muslos. Si pueden, cierren los ojos o bajen la mirada.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Primera respiración",
+              "p": "\"Vamos a respirar juntos. Cuando yo diga ya, inhalan durante 4 tiempos, mantienen 4 tiempos, exhalan 4 tiempos. ¿Listos? Ya... Inhalen: uno... dos... tres... cuatro. Mantengan: uno... dos... tres... cuatro. Exhalen: uno... dos... tres... cuatro.\" [Pausa breve]"
+            },
+            {
+              "ic": "breath",
+              "h": "Segunda y tercera respiración",
+              "p": "Repetir dos veces más con el mismo ritmo. En la tercera, el facilitador puede decir: \"En esta última exhalación, suelten lo que no necesitan traer a este espacio.\""
+            },
+            {
+              "ic": "breath",
+              "h": "Integración (30 seg)",
+              "p": "\"Noten cómo está el cuerpo ahora. Comparen con hace 2 minutos. Abran los ojos cuando estén listos.\""
+            },
+            {
+              "ic": "observe",
+              "h": "Efecto fisiológico",
+              "p": "La respiración 4-4-4 activa el sistema nervioso parasimpático (el \"freno\" fisiológico), reduciendo la frecuencia cardíaca y el cortisol. En contextos de alta presión o estrés grupal, 5 minutos de respiración colectiva tienen un efecto measurable en la calidad de la comunicación posterior."
+            }
+          ],
+          "cita": "\"Respirar juntos armoniza el ritmo del equipo y reduce el estrés colectivo.\""
+        },
+        {
+          "t": "Reflexión breve post-práctica",
+          "plen": [
+            {
+              "c": "Cuerpo",
+              "q": "¿Qué cambió en tu cuerpo o mente después de respirar conscientemente?"
+            },
+            {
+              "c": "Grupal",
+              "q": "¿Qué se siente respirar en sincronía con otras personas?"
+            },
+            {
+              "c": "Uso cotidiano",
+              "q": "¿En qué momentos del trabajo podrías usar esta práctica por tu cuenta?"
+            }
+          ]
+        }
+      ]
+    },
+    "escaneo-corporal": {
+      "ic": "body",
+      "cat": "Mindfulness · Presencia Somática",
+      "clr": "sky",
+      "name": "Escaneo Corporal <em>en Equipo</em>",
+      "sub": "Un/a facilitador/a guía al grupo para recorrer mentalmente el cuerpo de pies a cabeza, observando tensiones, sensaciones o zonas de bloqueo sin juzgar. Al finalizar, cada persona comparte en una sola palabra cómo se siente.",
+      "metas": [
+        "8–12 min",
+        "Grupo completo",
+        "Espacio silencioso"
+      ],
+      "mat": [
+        "Espacio donde todos puedan sentarse cómodamente",
+        "Sillas o colchonetas si es disponible",
+        "Música ambiental muy suave sin letra (rango 40–60Hz)",
+        "Apagar pantallas y dispositivos"
+      ],
+      "secs": [
+        {
+          "t": "Guía completa para el facilitador/a",
+          "rows": [
+            {
+              "ic": "body",
+              "h": "Inicio — anclar en el cuerpo",
+              "p": "\"Cierra los ojos. Siente el contacto de tu cuerpo con la silla o el suelo. El peso de tus piernas. El contacto de tus pies con el suelo. [pausa 10 seg] Sin tratar de cambiar nada — solo notar.\""
+            },
+            {
+              "ic": "body",
+              "h": "Recorrido ascendente",
+              "p": "Guiar lentamente (15–20 seg en cada zona): \"Lleva tu atención a los PIES. ¿Hay tensión, calor, frío? Solo nota. [pausa] Sube a las PIERNAS. Las pantorrillas, las rodillas, los muslos. ¿Están tensos o relajados? [pausa] ABDOMEN. ¿Cómo respira tu abdomen? ¿Está contraído o suelto? [pausa] PECHO. ¿Cómo se siente el corazón? [pausa] HOMBROS. Los hombros son el archivo emocional del día. ¿Están cargados o libres? [pausa] CUELLO Y MANDÍBULA — dos zonas donde guardamos mucho. Solo nota. [pausa] ROSTRO. La frente, los ojos, la boca. ¿Hay tensión? ¿Puedes soltar algo?\""
+            },
+            {
+              "ic": "body",
+              "h": "Regreso y apertura",
+              "p": "\"Vuelve a tu respiración. Siente el cuerpo completo. Cuando estés listo/a, abre los ojos suavemente. Sin apurarse.\""
+            },
+            {
+              "ic": "body",
+              "h": "Compartir en una palabra",
+              "p": "Ronda rápida: cada persona dice en UNA sola palabra cómo se siente después del escaneo. No explicar — solo la palabra."
+            }
+          ],
+          "cita": "\"La conciencia corporal compartida ayuda a liberar tensiones y recuperar equilibrio.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sensaciones",
+              "q": "¿En qué zona del cuerpo encontraste más tensión o incomodidad? ¿Te sorprendió?"
+            },
+            {
+              "c": "Habitual",
+              "q": "¿Cuándo fue la última vez que prestaste atención a tu cuerpo durante la jornada laboral?"
+            },
+            {
+              "c": "Integración",
+              "q": "¿Cómo podrías hacer mini-escaneos corporales de 1 minuto durante tu jornada, especialmente antes de reuniones importantes?"
+            }
+          ]
+        }
+      ]
+    },
+    "atencion-entorno": {
+      "ic": "observe",
+      "cat": "Mindfulness · Apertura de Sentidos",
+      "clr": "sky",
+      "name": "Atención Plena al <em>Entorno</em>",
+      "sub": "Durante una pausa breve, el equipo se detiene y observa sonidos, colores, texturas y sensaciones del entorno sin juzgar ni comentar. Luego comparten brevemente lo que notaron. Cultiva presencia y conexión sensorial.",
+      "metas": [
+        "8–10 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Si es posible, salir al exterior o a un espacio diferente al habitual",
+        "Cuaderno para notar observaciones — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "observe",
+              "h": "Paso 1 · Invitar la detención",
+              "p": "El/la facilitador/a dice: \"Vamos a detenernos por 3 minutos. No hay nada que hacer, nada que resolver. Solo vamos a observar lo que nos rodea — con todos los sentidos. Sonidos, colores, texturas, olores, temperatura. Sin comentar, sin juzgar. Solo notar.\""
+            },
+            {
+              "ic": "observe",
+              "h": "Paso 2 · 3 minutos de observación silenciosa",
+              "p": "El grupo observa en silencio. El/la facilitador/a también practica — esto es fundamental. Si el facilitador/a mira el reloj o el teléfono, el grupo lo hará también."
+            },
+            {
+              "ic": "observe",
+              "h": "Paso 3 · Compartir descubrimientos (1 min c/u)",
+              "p": "Ronda rápida: \"¿Qué notaste que normalmente no notas?\" No se trata de lo más extraordinario — a veces lo más valioso es \"noté el ruido del aire acondicionado que llevo escuchando sin escuchar durante meses\" o \"noté que la planta de la esquina tiene nuevas hojas\"."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · La pregunta del facilitador/a",
+              "p": "\"¿Cuánto de nuestra jornada vivimos en piloto automático, sin realmente notar lo que nos rodea? ¿Qué cambiaría si trajéramos más de esta atención a nuestro trabajo?\""
+            }
+          ],
+          "cita": "\"Observar el entorno con calma amplía la conciencia del aquí y el ahora.\""
+        },
+        {
+          "t": "Reflexión de cierre",
+          "plen": [
+            {
+              "c": "Presencia habitual",
+              "q": "¿Cuánto porcentaje de tu jornada laboral vives en piloto automático?"
+            },
+            {
+              "c": "Lo que notaste",
+              "q": "¿Qué fue lo más sorprendente de lo que observaste?"
+            },
+            {
+              "c": "Práctica",
+              "q": "¿Cómo podrías integrar micro-pausas de atención al entorno en tu jornada diaria?"
+            }
+          ]
+        }
+      ]
+    },
+    "observa-nombra": {
+      "ic": "eye",
+      "cat": "Mindfulness · Foco Atencional",
+      "clr": "sky",
+      "name": "Observa y <em>Nombra</em>",
+      "sub": "Cada persona elige un objeto cualquiera del entorno, lo observa con atención plena durante 30 segundos notando cada detalle, y lo describe brevemente al grupo. Entrena la atención sostenida y ayuda a \"aterrizar\" antes de una sesión.",
+      "metas": [
+        "5–8 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Entorno con objetos visibles (interior o exterior)",
+        "Opcional: traer objetos interesantes de textura, forma o color"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Elegir el objeto (30 seg)",
+              "p": "\"Mira a tu alrededor y elige UN objeto — cualquiera. No tiene que ser especial ni significativo. Puede ser tu taza de café, una silla, una planta, una ventana, el suelo. Lo que elijas es perfecto.\""
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Observar en silencio (30–60 seg)",
+              "p": "\"Ahora, durante 30 segundos, obsérva ese objeto como si fuera la primera vez que lo ves. Nota su color — ¿hay variaciones? Su forma — ¿es perfectamente regular o tiene irregularidades? Su textura — ¿cómo crees que se sentiría al tacto? La luz que recibe — ¿tiene sombras? ¿brillos? Solo observar.\""
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Compartir la observación",
+              "p": "Por turnos: \"El objeto que elegí fue [X]. Lo que noté que normalmente no había notado fue [Y].\" El énfasis está en la EXPERIENCIA de observar, no en describir el objeto. Ejemplo: \"Elegí mi taza de café. Lo que noté fue que tiene pequeñas burbujas en el esmalte que nunca había visto aunque la uso todos los días.\""
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Reflexión final",
+              "p": "\"¿Cuándo fue la última vez que realmente MIRASTE algo así, con esa atención?\" Esta pregunta abre naturalmente la conversación sobre la presencia en el trabajo."
+            }
+          ],
+          "cita": "\"Llevar la atención al presente facilita la claridad mental y el trabajo consciente.\""
+        }
+      ]
+    },
+    "entrevista-apreciativa-1a1": {
+      "ic": "thanks",
+      "cat": "Conversaciones 1 a 1 · Apreciativa",
+      "clr": "pur",
+      "name": "Entrevista <em>Apreciativa</em>",
+      "sub": "Conversación guiada para descubrir fortalezas, momentos de orgullo y condiciones que permiten que una persona dé lo mejor de sí. Útil para liderazgo, mentoría, clima laboral y desarrollo.",
+      "metas": [
+        "30–45 min",
+        "2 personas",
+        "Formato presencial o virtual",
+        "Ideal para liderazgo positivo"
+      ],
+      "mat": [
+        "Pauta de preguntas",
+        "Hoja de notas",
+        "Espacio privado y sin interrupciones",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Estructura sugerida",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "1 · Abrir desde el cuidado",
+              "p": "Explica que la conversación busca mirar lo que sí funciona y aprender de eso. Aclara que no es una evaluación ni una entrevista de control."
+            },
+            {
+              "ic": "star",
+              "h": "2 · Explorar momentos de alto valor",
+              "p": "Pregunta: “Cuéntame una experiencia reciente en la que sentiste que hiciste un buen aporte o trabajaste en tu mejor versión”. Profundiza en qué pasó, qué hizo la persona y qué condiciones ayudaron."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · Identificar fortalezas y recursos",
+              "p": "Ayuda a nombrar patrones: habilidades, valores, apoyos, formas de organizarse, vínculos o condiciones del entorno que facilitaron ese buen desempeño."
+            },
+            {
+              "ic": "target",
+              "h": "4 · Proyectar acciones",
+              "p": "Cierra con una pregunta práctica: “¿Qué podríamos repetir, cuidar o diseñar para que esto ocurra más seguido?” Termina con uno o dos acuerdos concretos."
+            }
+          ],
+          "cita": "“Quiero que conversemos sobre momentos en que has sentido que aportas desde tu mejor versión, para aprender de eso y proyectarlo.”"
+        },
+        {
+          "t": "Preguntas poderosas",
+          "plen": [
+            {
+              "c": "Historia",
+              "q": "¿Qué experiencia reciente te hizo sentir orgullo de tu trabajo o de tu aporte?"
+            },
+            {
+              "c": "Fortalezas",
+              "q": "¿Qué fortalezas tuyas estuvieron presentes en esa situación?"
+            },
+            {
+              "c": "Condiciones",
+              "q": "¿Qué personas, recursos o condiciones hicieron posible ese buen resultado?"
+            },
+            {
+              "c": "Futuro",
+              "q": "¿Qué pequeño cambio ayudaría a que eso ocurra con más frecuencia?"
+            }
+          ]
+        }
+      ]
+    },
+    "feedback-sandwich-1a1": {
+      "ic": "scroll",
+      "cat": "Conversaciones 1 a 1 · Feedback",
+      "clr": "pur",
+      "name": "Feedback con método del <em>Sándwich</em>",
+      "sub": "Actividad para preparar y practicar una conversación de retroalimentación equilibrada: reconocer, abordar una mejora específica y cerrar con confianza y acuerdo.",
+      "metas": [
+        "20–30 min",
+        "2 personas",
+        "Feedback breve y cuidado",
+        "Requiere ejemplos concretos"
+      ],
+      "mat": [
+        "Situación específica a conversar",
+        "Hoja de preparación",
+        "Espacio privado",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Método paso a paso",
+          "rows": [
+            {
+              "ic": "thanks",
+              "h": "1 · Capa positiva: reconocimiento real",
+              "p": "Comienza con una observación concreta sobre algo que la persona hace bien. Evita elogios genéricos. Usa hechos: “He visto que en…”"
+            },
+            {
+              "ic": "focus",
+              "h": "2 · Centro: mejora específica",
+              "p": "Presenta una conducta observable, su impacto y la expectativa. Fórmula útil: “Cuando ocurre X, impacta en Y. Lo que necesitamos es Z”."
+            },
+            {
+              "ic": "target",
+              "h": "3 · Cierre: confianza y acuerdo",
+              "p": "Termina reforzando la capacidad de la persona y acordando una acción pequeña, observable y con fecha o momento de revisión."
+            }
+          ],
+          "cita": "“Quiero compartirte algo que valoro, una mejora concreta que veo necesaria y un acuerdo para avanzar.”"
+        },
+        {
+          "t": "Guía de preparación",
+          "plen": [
+            {
+              "c": "Reconocer",
+              "q": "¿Qué conducta positiva específica quiero destacar?"
+            },
+            {
+              "c": "Mejorar",
+              "q": "¿Qué conducta observable necesita ajuste y cuál es su impacto?"
+            },
+            {
+              "c": "Acordar",
+              "q": "¿Qué acción concreta pediremos o construiremos juntos?"
+            },
+            {
+              "c": "Cuidar",
+              "q": "¿Qué tono y momento ayudan a que la conversación sea recibida con respeto?"
+            }
+          ]
+        }
+      ]
+    },
+    "conversacion-dificil-1a1": {
+      "ic": "impact",
+      "cat": "Conversaciones 1 a 1 · Conversaciones difíciles",
+      "clr": "pur",
+      "name": "Cómo afrontar <em>Conversaciones Difíciles</em>",
+      "sub": "Marco simple para preparar y conducir conversaciones sensibles sin evitarlas ni escalar el conflicto. Ordena hechos, emociones, necesidades y acuerdos.",
+      "metas": [
+        "30–45 min",
+        "2 personas",
+        "Alta confianza psicológica",
+        "Preparación previa recomendada"
+      ],
+      "mat": [
+        "Pauta de preparación",
+        "Lugar privado",
+        "Agua y pausa disponible",
+        "Temporizador editable"
+      ],
+      "secs": [
+        {
+          "t": "Marco CUIDA",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "C · Contexto y propósito",
+              "p": "Abre explicando por qué es importante conversar y qué intención positiva tienes. Ejemplo: cuidar la relación, mejorar coordinación o resolver una tensión."
+            },
+            {
+              "ic": "focus",
+              "h": "U · Ubicar hechos observables",
+              "p": "Describe situaciones concretas sin interpretar intenciones. Habla desde lo observado: fechas, conductas, efectos y ejemplos puntuales."
+            },
+            {
+              "ic": "breath",
+              "h": "I · Integrar emociones y necesidades",
+              "p": "Nombra con calma cómo te impacta y qué necesitas para avanzar. Invita a la otra persona a explicar su mirada sin interrumpir."
+            },
+            {
+              "ic": "target",
+              "h": "D · Definir acuerdos",
+              "p": "Construyan uno o dos acuerdos claros: qué cambia, quién hace qué, desde cuándo y cómo se revisará."
+            },
+            {
+              "ic": "thanks",
+              "h": "A · Agradecer y asegurar seguimiento",
+              "p": "Cierra reconociendo la disposición a conversar. Agenda una revisión breve si el tema requiere seguimiento."
+            }
+          ],
+          "cita": "“Quiero conversar algo importante con respeto. Mi intención no es culpar, sino entender qué pasó y acordar cómo seguimos.”"
+        },
+        {
+          "t": "Preguntas para facilitar",
+          "plen": [
+            {
+              "c": "Hechos",
+              "q": "¿Qué ocurrió concretamente y qué evidencia tengo?"
+            },
+            {
+              "c": "Impacto",
+              "q": "¿Qué efecto tuvo en mí, en el equipo o en el trabajo?"
+            },
+            {
+              "c": "Escucha",
+              "q": "¿Qué necesito comprender de la mirada de la otra persona?"
+            },
+            {
+              "c": "Acuerdo",
+              "q": "¿Qué cambio mínimo sería un avance real después de esta conversación?"
+            }
+          ]
+        }
+      ]
+    },
+    "activacion-rapida": {
+      "ic": "spark",
+      "cat": "Reuniones Efectivas · Activación",
+      "clr": "teal",
+      "name": "Activación <em>Rápida</em>",
+      "sub": "Secuencia de 3 pasos en 5 minutos para pasar del modo \"disperso\" al modo \"presente\" antes de una reunión. Combina movimiento, respiración y declaración de foco. Simple, efectiva y reproducible.",
+      "metas": [
+        "5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales",
+        "Espacio para moverse brevemente",
+        "Música dinámica durante los 2 primeros pasos — opcional y muy recomendado"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué activar antes de una reunión?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "El estado importa",
+              "p": "Las personas llegamos a las reuniones cargadas de otras reuniones, correos pendientes, preocupaciones y multitasking. Sin una transición, los primeros 10–15 minutos de cualquier reunión se pierden mientras las personas \"aterrizan\". La activación comprime esa transición a 5 minutos."
+            }
+          ]
+        },
+        {
+          "t": "Los tres pasos",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Activar el cuerpo (1–2 min)",
+              "p": "\"De pie. Sacudan los brazos y manos (como si sacudieran agua). Rotar los hombros hacia atrás 5 veces. Estirar el cuello suavemente de lado a lado. Dar unos saltos suaves en el lugar. El cuerpo activo activa la mente.\" El/la facilitador/a hace los movimientos también."
+            },
+            {
+              "ic": "breath",
+              "h": "Paso 2 · Anclar la respiración (1 min)",
+              "p": "\"Inhalen profundo por la nariz contando 4 tiempos. Mantengan 4. Exhalen por la boca contando 4. Repitan dos veces. En cada exhalación, dejen ir lo que traían de antes.\" Hacer esto 2–3 veces en grupo."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Declarar el foco (2 min)",
+              "p": "Ronda ultrarrápida: cada persona dice en UNA sola palabra qué trae a esta reunión — su foco o intención. Sin explicar. Solo la palabra. El/la facilitador/a anota en la pizarra o simplemente escucha."
+            },
+            {
+              "ic": "spark",
+              "h": "Transición",
+              "p": "El/la facilitador/a dice: \"Con eso, comenzamos.\" Pasar inmediatamente al primer punto de la agenda."
+            }
+          ],
+          "cita": "\"Una reunión que comienza activada termina con más energía y mejores resultados.\""
+        },
+        {
+          "t": "Adaptación virtual",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "En videollamada",
+              "p": "Cámara encendida para todos (obligatorio en activación virtual). Paso 1: cada persona hace los movimientos en su silla o de pie si puede. Paso 2: se hace igual. Paso 3: en el chat — todos escriben su palabra al mismo tiempo y la publican simultáneamente."
+            }
+          ]
+        }
+      ]
+    },
+    "daily-scrum": {
+      "ic": "focus",
+      "cat": "Reuniones Efectivas · Scrum",
+      "clr": "teal",
+      "name": "Daily Scrum <em>(Stand-up Diario)</em>",
+      "sub": "Reunión diaria de máximo 15 minutos de pie donde el equipo sincroniza avances, bloqueos y prioridades del día. Formato ágil de Scrum que mantiene la alineación sin necesidad de reuniones largas de seguimiento.",
+      "metas": [
+        "15 min exactos",
+        "Equipo de trabajo",
+        "De pie — sin sillas"
+      ],
+      "mat": [
+        "Reloj o temporizador visible para todos",
+        "Tablero Kanban o pizarra con las tareas del sprint — muy recomendado",
+        "Sin laptops ni teléfonos (solo quien toma notas)"
+      ],
+      "secs": [
+        {
+          "t": "Las tres preguntas del Daily",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "1 · ¿Qué hice ayer?",
+              "p": "Máximo 60 segundos por persona. Solo hechos concretos y relevantes para el equipo. No es un reporte de estatus para la jefatura — es sincronía entre pares. Si lo que hiciste ayer no afecta al equipo, se omite."
+            },
+            {
+              "ic": "focus",
+              "h": "2 · ¿Qué haré hoy?",
+              "p": "Un compromiso claro, específico y medible para el día. \"Voy a avanzar en el informe\" no es suficiente. \"Voy a terminar la sección 3 del informe y enviársela a María para revisión\" sí lo es."
+            },
+            {
+              "ic": "focus",
+              "h": "3 · ¿Hay algo que me bloquea?",
+              "p": "Esta es la pregunta más valiosa del Daily. Un bloqueo es cualquier cosa que impide avanzar: falta de información, dependencia de otra persona, herramienta que no funciona, decisión pendiente. Los bloqueos NO se resuelven en el Daily — se anotan y se agenda una conversación separada."
+            }
+          ]
+        },
+        {
+          "t": "Reglas no negociables del Daily",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "De pie, siempre",
+              "p": "Estar de pie mantiene la reunión corta. La incomodidad física del pie es un recordatorio constante de que esto debe terminar en 15 minutos. En virtual: cámara encendida y NO sentarse durante el Daily."
+            },
+            {
+              "ic": "focus",
+              "h": "15 minutos duros",
+              "p": "El temporizador es visible y se respeta. Al sonar, la reunión termina — aunque no todos hayan hablado. Si hay personas que siempre hablan demasiado, el/la facilitador/a puede asignar 2 minutos por persona."
+            },
+            {
+              "ic": "focus",
+              "h": "Bloqueos al backlog, no a debate",
+              "p": "Si alguien dice \"tengo un bloqueo con X\", se anota y se dice \"¿quién puede ayudar a [nombre] después del Daily?\" Resolver el bloqueo en el Daily convierte 15 minutos en 1 hora."
+            },
+            {
+              "ic": "focus",
+              "h": "No es reunión de jefatura",
+              "p": "La jefatura escucha si quiere, pero no es la protagonista. El Daily es del equipo para el equipo. Si la jefatura empieza a hacer preguntas o dar instrucciones, el facilitador/a redirige."
+            }
+          ],
+          "cita": "\"El Daily no es una reunión de estatus para el jefe/a. Es un momento de sincronía del equipo para el equipo.\""
+        },
+        {
+          "t": "Variantes y adaptaciones",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Walking Daily",
+              "p": "Hacer el Daily caminando — en círculo o por un pasillo. Activa el cuerpo y mantiene la energía alta."
+            },
+            {
+              "ic": "light",
+              "h": "Daily asíncrono",
+              "p": "Para equipos remotos en distintas zonas horarias: cada persona graba un audio/video de 2 minutos respondiendo las 3 preguntas, o lo escribe en un canal de Slack/Teams antes de las 9am. El equipo lo revisa a su ritmo."
+            }
+          ]
+        }
+      ]
+    },
+    "kanban-visual": {
+      "ic": "scroll",
+      "cat": "Reuniones Efectivas · Kanban",
+      "clr": "teal",
+      "name": "Tablero Kanban <em>Visual</em>",
+      "sub": "Sistema visual de gestión del flujo de trabajo en equipo. Columnas Por Hacer → En Progreso → Hecho. Cada tarea es una tarjeta que se mueve según su estado. Hace visible el flujo real del equipo en tiempo real.",
+      "metas": [
+        "Setup inicial: 20–30 min",
+        "Revisión diaria: 5 min",
+        "Post-its y pizarra o herramienta digital"
+      ],
+      "mat": [
+        "Pizarra grande o pared",
+        "Post-its de 3 colores (uno por tipo de tarea o por persona)",
+        "Marcadores gruesos",
+        "Cinta adhesiva para las columnas",
+        "Digital: Trello, Notion, Asana, GitHub Projects o Miro"
+      ],
+      "secs": [
+        {
+          "t": "Estructura del tablero",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Columna 1 · Por Hacer (Backlog)",
+              "p": "Todo lo que debe hacerse, ordenado por prioridad de arriba hacia abajo. La tarjeta más arriba es la más urgente o prioritaria. No debe tener más de 10–15 ítems visibles a la vez — si hay más, crear un \"backlog extendido\" aparte."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna 2 · En Progreso (WIP)",
+              "p": "Solo lo que se está haciendo AHORA MISMO. La regla de oro: limitar el WIP a 2–3 tarjetas por persona. Más de eso es multitasking disfrazado. Cuando el WIP está lleno, no se agrega nada nuevo hasta terminar lo que hay."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna 3 · Hecho (Done)",
+              "p": "Tareas completadas. No borrarlas inmediatamente — dejarlas visibles durante la semana como recordatorio de los avances. El \"Hecho\" es la zona de celebración del tablero."
+            },
+            {
+              "ic": "scroll",
+              "h": "Columna extra · Bloqueado",
+              "p": "Tarjetas que no pueden avanzar por algún motivo externo. Hacer los bloqueos visibles genera urgencia para desbloquearlos. Una tarjeta en \"Bloqueado\" por más de 2 días es una alarma que el equipo debe atender."
+            }
+          ]
+        },
+        {
+          "t": "Cómo usar el tablero en reuniones",
+          "rows": [
+            {
+              "ic": "focus",
+              "h": "Revisión diaria (5 min, en el Daily)",
+              "p": "Frente al tablero: ¿Hay algo nuevo que agregar? ¿Alguna tarjeta que se puede mover a \"Hecho\"? ¿Hay bloqueos nuevos? El tablero debe actualizarse DURANTE la reunión, no después."
+            },
+            {
+              "ic": "scroll",
+              "h": "Revisión semanal (15–20 min)",
+              "p": "Al final de la semana: contar el \"Hecho\". Celebrar los avances. Mover lo que no se terminó. Priorizar el backlog para la semana siguiente."
+            },
+            {
+              "ic": "light",
+              "h": "Señales de alerta",
+              "p": "Una tarjeta en \"En Progreso\" por más de 3 días: probable bloqueo o subestimación. WIP siempre lleno: el equipo está sobrecargado. Backlog que crece más rápido que el Done: hay un problema de priorización o capacidad."
+            }
+          ],
+          "cita": "\"Lo que no se ve, no se gestiona. El tablero Kanban hace visible el flujo real del equipo.\""
+        },
+        {
+          "t": "Revisión semanal · Plenario",
+          "plen": [
+            {
+              "c": "¿Qué se terminó?",
+              "q": "Revisar el Done. ¿Qué se logró esta semana? Nombrar cada ítem completado — aunque parezca pequeño."
+            },
+            {
+              "c": "¿Qué está bloqueado?",
+              "q": "¿Qué lleva más de 2 días sin moverse? ¿Quién puede desbloquearlo?"
+            },
+            {
+              "c": "¿Qué aprendemos?",
+              "q": "¿Estimamos bien los tiempos? ¿Hay tareas que siempre se demoran más? ¿Por qué?"
+            }
+          ]
+        }
+      ]
+    },
+    "retrospectiva": {
+      "ic": "star",
+      "cat": "Reuniones Efectivas · Mejora Continua",
+      "clr": "teal",
+      "name": "Retrospectiva del <em>Equipo</em>",
+      "sub": "Reunión estructurada al final de un sprint, proyecto o período para reflexionar colectivamente sobre qué funcionó, qué mejorar y qué probar diferente. El motor de la mejora continua en equipos ágiles.",
+      "metas": [
+        "45–60 min",
+        "Equipo completo",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Post-its de 3 colores distintos (uno por columna Start/Stop/Continue)",
+        "Marcadores gruesos",
+        "Pizarra o papel kraft grande",
+        "Pegatinas o puntos de colores para votar (3 por persona)",
+        "Digital: Miro, FigJam, EasyRetro o Metroretro"
+      ],
+      "secs": [
+        {
+          "t": "¿Cuándo hacer una retrospectiva?",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Contextos ideales",
+              "p": "Al final de un sprint (si el equipo trabaja con Scrum), al cierre de un proyecto, al terminar un semestre o año, después de un evento o despliegue importante, o cuando el equipo detecta que algo no está funcionando bien y necesita hablar de ello."
+            }
+          ]
+        },
+        {
+          "t": "Estructura Start · Stop · Continue",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "STOP · Dejar de hacer (10 min)",
+              "p": "¿Qué deberíamos ELIMINAR porque no nos ayuda, nos quita energía o nos bloquea? No se trata de buscar culpables — se trata de identificar prácticas, procesos o comportamientos que el equipo decide cambiar. Cada persona escribe 2–3 post-its."
+            },
+            {
+              "ic": "star",
+              "h": "START · Empezar a hacer (10 min)",
+              "p": "¿Qué deberíamos COMENZAR a hacer que todavía no hacemos? Nuevas prácticas, rituales, herramientas o conductas que el equipo cree que mejorarían su funcionamiento. 2–3 post-its por persona."
+            },
+            {
+              "ic": "star",
+              "h": "CONTINUE · Seguir haciendo (10 min)",
+              "p": "¿Qué está funcionando bien y debemos MANTENER? Reconocer lo positivo antes de cambiar es fundamental — evita que el equipo cambie cosas que sí funcionan por el impulso de \"mejorar todo\"."
+            },
+            {
+              "ic": "target",
+              "h": "Votar y priorizar (10 min)",
+              "p": "Pegar todos los post-its en sus columnas correspondientes. Agrupar los similares. Cada persona tiene 3 puntos adhesivos para votar por los ítems más importantes (pueden concentrar todos en uno). Sin comentar durante la votación."
+            },
+            {
+              "ic": "scroll",
+              "h": "Compromisos concretos (10 min)",
+              "p": "Los 2–3 ítems más votados de Stop y Start se convierten en COMPROMISOS con responsable y fecha: \"¿Quién lo lidera? ¿Cuándo lo revisamos?\" Una retrospectiva sin compromisos es solo una conversación."
+            }
+          ],
+          "cita": "\"Una retrospectiva sin compromisos es solo una conversación. Los compromisos son lo que la hacen valiosa.\""
+        },
+        {
+          "t": "Plenario de cierre",
+          "plen": [
+            {
+              "c": "Una palabra",
+              "q": "Cada persona dice en una palabra cómo se va de esta retrospectiva."
+            },
+            {
+              "c": "Compromiso personal",
+              "q": "¿Cuál es TU compromiso personal para el próximo período?"
+            },
+            {
+              "c": "Seguimiento",
+              "q": "¿Cuándo revisamos si cumplimos los compromisos de hoy?"
+            }
+          ]
+        }
+      ]
+    },
+    "lean-coffee": {
+      "ic": "wow",
+      "cat": "Reuniones Efectivas · Autoorganización",
+      "clr": "teal",
+      "name": "Lean <em>Coffee</em>",
+      "sub": "Formato de reunión autoorganizada sin agenda previa. Los participantes proponen temas, votan y discuten en orden de prioridad con tiempos acotados. Democratiza la agenda y garantiza que se discuta lo más relevante para el grupo.",
+      "metas": [
+        "30–60 min",
+        "4–12 personas",
+        "Post-its y timer"
+      ],
+      "mat": [
+        "Post-its (varios por persona)",
+        "Marcadores",
+        "Superficie plana visible para todos",
+        "Timer de 5 minutos",
+        "Café o infusión — muy recomendado, da nombre a la metodología"
+      ],
+      "secs": [
+        {
+          "t": "¿Qué es Lean Coffee?",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Origen",
+              "p": "Creado en Seattle en 2009 por Jim Benson y Jeremy Lightsmith como formato de \"unconference\" — reuniones sin agenda impuesta donde el grupo decide qué discutir. Se llama \"coffee\" porque originalmente se hacía en cafeterías."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "wow",
+              "h": "Paso 1 · Proponer temas (5 min)",
+              "p": "Cada persona escribe los temas que quiere discutir en post-its separados (uno por tema). Sin filtrar ni autocensurarse — todo vale. El límite es que sean temas que la persona genuinamente quiere conversar con el grupo."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 2 · Presentar y votar (5–8 min)",
+              "p": "Cada persona pega sus post-its y los presenta en 20–30 segundos. Sin debate todavía. Luego, todos votan poniendo una marca (punto, checkmark) en los temas que quieren discutir. Sin límite de votos por persona — marcar todos los que te importan."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 3 · Ordenar por prioridad",
+              "p": "Ordenar los post-its por cantidad de votos, de más a menos. Esta es la agenda. El tema más votado se discute primero."
+            },
+            {
+              "ic": "wow",
+              "h": "Paso 4 · Discutir con timer (el corazón del método)",
+              "p": "Se discute el tema más votado durante 5 minutos. Al sonar el timer: votación rápida con el pulgar — ¿seguimos con este tema 5 minutos más o pasamos al siguiente? Mayoría decide. Si se continúa, otro timer de 5 min. Si no, siguiente tema."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 5 · Capturar acciones al final de cada tema",
+              "p": "Antes de pasar al siguiente tema: ¿Hay alguna acción concreta que surja de esta conversación? ¿Quién la toma? ¿Cuándo? Una persona designada toma nota. Sin acción capturada, el tema queda en el aire."
+            }
+          ],
+          "cita": "\"El Lean Coffee democratiza la reunión: todos proponen, todos votan, todos participan.\""
+        },
+        {
+          "t": "Cuándo usar Lean Coffee",
+          "plen": [
+            {
+              "c": "Ideal para",
+              "q": "Reuniones de equipo sin agenda clara, sesiones de brainstorming, reuniones de team building, conversaciones sobre mejoras de proceso, o cuando hay muchos temas urgentes y no se sabe por dónde empezar."
+            },
+            {
+              "c": "No ideal para",
+              "q": "Decisiones urgentes que requieren información previa, reuniones con un solo objetivo claro, o grupos muy grandes (+20 personas)."
+            },
+            {
+              "c": "En virtual",
+              "q": "Usar Miro, FigJam o Jamboard para los post-its. El timer compartido en pantalla. La votación puede ser con emojis en el chat o con la herramienta de votación de la plataforma."
+            }
+          ]
+        }
+      ]
+    },
+    "decision-dot": {
+      "ic": "target",
+      "cat": "Reuniones Efectivas · Decisión Grupal",
+      "clr": "teal",
+      "name": "Dot Voting <em>— Votación con Puntos</em>",
+      "sub": "Técnica ágil de toma de decisiones grupal para priorizar opciones de forma rápida, visual y democrática. Cada persona tiene un número limitado de votos y los distribuye libremente entre las opciones disponibles.",
+      "metas": [
+        "5–10 min",
+        "Cualquier tamaño de grupo",
+        "Post-its y pegatinas o marcadores"
+      ],
+      "mat": [
+        "Opciones escritas en post-its o pizarra",
+        "Puntos adhesivos (3 por persona) — o pueden marcar con un punto de marcador",
+        "Cronómetro para la votación simultánea",
+        "Opcional: Mentimeter, Poll Everywhere o Miro para versión digital"
+      ],
+      "secs": [
+        {
+          "t": "¿Cuándo usar Dot Voting?",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Situaciones ideales",
+              "p": "Para priorizar entre múltiples propuestas, iniciativas, temas de backlog, ideas de brainstorming o criterios de evaluación. Es especialmente útil cuando hay muchas opciones y el debate se está volviendo circular o está dominado por pocas voces."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Preparar las opciones",
+              "p": "Las opciones están escritas claramente en post-its o en la pizarra, visibles para todos. Si son generadas por el grupo, dar 2 minutos para leerlas todas antes de votar."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Explicar las reglas",
+              "p": "Cada persona recibe 3–5 puntos (o el número que el facilitador decida). Pueden distribuirlos como quieran: un punto a cada una, todos en una sola, o cualquier combinación. Única regla: no poner más de la mitad de los puntos en una sola opción (a menos que el facilitador decida no tener ese límite)."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Votar en SILENCIO y SIMULTÁNEAMENTE",
+              "p": "Esta es la regla más importante. Todos votan al mismo tiempo — cuenta regresiva: \"3, 2, 1, voten.\" El silencio evita el sesgo de seguir al líder o a la jefatura. Si alguien vota primero, los demás tienden a copiar."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Contar y decidir",
+              "p": "Contar los puntos. Las opciones con más votos son las prioritarias. Si hay empate entre las dos opciones principales, hacer una segunda votación solo entre ellas."
+            },
+            {
+              "ic": "light",
+              "h": "Paso 5 · Lo que no ganó",
+              "p": "Las opciones con pocos o ningún voto NO se descartan permanentemente — van al backlog. Esto es importante para que nadie sienta que su idea fue \"rechazada\"."
+            }
+          ],
+          "cita": "\"La votación con puntos hace visible el consenso latente del grupo en menos de 10 minutos.\""
+        },
+        {
+          "t": "Después de votar",
+          "plen": [
+            {
+              "c": "Las más votadas",
+              "q": "¿Hay sorpresas en el resultado? ¿Coincide con lo que esperaban?"
+            },
+            {
+              "c": "Siguiente paso",
+              "q": "Las 1–3 opciones más votadas pasan a la siguiente fase de trabajo. ¿Quién lidera cada una? ¿Cuándo?"
+            },
+            {
+              "c": "Las menos votadas",
+              "q": "¿Hay alguna opción con pocos votos que alguien crea que es importante? Dar espacio breve para ese argumento antes de cerrar."
+            }
+          ]
+        }
+      ]
+    },
+    "parking-lot": {
+      "ic": "map",
+      "cat": "Reuniones Efectivas · Facilitación",
+      "clr": "teal",
+      "name": "Parking Lot <em>(Aparcadero de Ideas)</em>",
+      "sub": "Herramienta visual para capturar temas importantes que surgen durante una reunión pero que no pertenecen a la agenda actual. Evita desvíos sin perder ideas valiosas. Mantiene el foco sin silenciar la creatividad del grupo.",
+      "metas": [
+        "Setup: 2 min",
+        "Uso durante toda la sesión",
+        "Post-its y pizarra"
+      ],
+      "mat": [
+        "Espacio delimitado en pizarra o pared",
+        "Post-its de un color específico (diferente al resto)",
+        "Marcador para escribir la etiqueta \"Parking Lot\"",
+        "Opcional: columna en tablero digital Miro, Mural o Trello"
+      ],
+      "secs": [
+        {
+          "t": "¿Por qué usar Parking Lot?",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "El dilema del facilitador/a",
+              "p": "En toda reunión aparecen temas importantes pero fuera de agenda. Sin Parking Lot, tienes dos opciones malas: ignorar el tema (la persona siente que su idea no importa) o abrirlo (la reunión se desvía y pierde su objetivo). El Parking Lot es la tercera opción."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Crear la zona AL INICIO",
+              "p": "Antes de que comience la reunión, delimitar una zona claramente etiquetada \"Parking Lot\" o \"Aparcadero\" en la pizarra o pared. Explicar al grupo: \"Durante la reunión, si surge un tema importante que no está en la agenda de hoy, lo anotamos aquí para no perderlo y lo revisamos al final.\""
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Capturar en el momento",
+              "p": "Cuando durante la reunión alguien dice algo como \"ah, eso me recuerda que también deberíamos hablar de...\", el/la facilitador/a dice: \"Ese es un tema importante. Lo ponemos en el Parking Lot para no perderlo.\" Escribir el tema en un post-it y pegarlo. Sin debate, sin interrumpir la reunión."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Revisar al final (5 min)",
+              "p": "Los últimos 5 minutos de toda reunión se reservan para revisar el Parking Lot. Para cada post-it: ¿Se resolvió durante la reunión? (se saca). ¿Necesita una conversación propia? (se agenda). ¿Hay alguien que se responsabiliza? (se asigna)."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Los tres destinos de cada ítem",
+              "p": "(a) RESUELTO: se respondió durante la reunión — se marca como cerrado. (b) AGENDA: merece una reunión o conversación propia — se anota con fecha y responsable. (c) ASIGNADO: alguien toma acción individual — se anota nombre y plazo."
+            }
+          ],
+          "cita": "\"El Parking Lot respeta tanto la agenda como las ideas emergentes. Nada se pierde, nada se desvía.\""
+        },
+        {
+          "t": "Revisión del Parking Lot",
+          "plen": [
+            {
+              "c": "Temas urgentes",
+              "q": "¿Hay algún tema del Parking Lot que requiera atención inmediata antes de que terminemos?"
+            },
+            {
+              "c": "Seguimiento",
+              "q": "¿Quién se responsabiliza de cada ítem que quedó pendiente? ¿Cuándo?"
+            },
+            {
+              "c": "Patrón",
+              "q": "Si el Parking Lot tiene muchos ítems semana a semana, puede ser señal de que la agenda de las reuniones no está capturando bien las necesidades del equipo."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

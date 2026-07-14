@@ -4,6 +4,7 @@ import pnlData from './categories/pnl.json'
 import permaData from './categories/perma.json'
 import fortalezasData from './categories/fortalezas.json'
 import equipoReunionConexionData from './categories/equipo-reunion-conexion.json'
+import mindfulConversacionesReunionesData from './categories/mindful-conversaciones-reuniones.json'
 
 const { CATS, A } = {
   CATS: {
@@ -13,6 +14,7 @@ const { CATS, A } = {
     ...permaData.CATS,
     ...fortalezasData.CATS,
     ...equipoReunionConexionData.CATS,
+    ...mindfulConversacionesReunionesData.CATS,
   },
   A: {
     ...kitpopData.A,
@@ -21,6 +23,7 @@ const { CATS, A } = {
     ...permaData.A,
     ...fortalezasData.A,
     ...equipoReunionConexionData.A,
+    ...mindfulConversacionesReunionesData.A,
   },
 }
 
