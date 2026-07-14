@@ -5,14 +5,17 @@ import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import ActivityPicker from '../../components/workshop/ActivityPicker'
 import DurationSelect from '../../components/workshop/DurationSelect'
 import PausePicker from '../../components/workshop/PausePicker'
+import WorkshopDocumentImport from '../../components/workshop/WorkshopDocumentImport'
 import WorkshopSessionTable from '../../components/workshop/WorkshopSessionTable'
 import WorkshopTimeSummary from '../../components/workshop/WorkshopTimeSummary'
 import { useAuth } from '../../context/AuthContext'
+import { generateWorkshopProposal } from '../../services/aiWorkshopService'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createWorkshopItem,
   deleteWorkshopItem,
   ensureWorkshopOpeningItems,
+  applyAiWorkshopProposal,
   fetchWorkshopById,
   fetchWorkshopSessions,
   finalizeWorkshopStructure,
@@ -22,7 +25,16 @@ import {
   updateWorkshopItem,
   updateWorkshopSession,
 } from '../../services/workshopService'
-import { getNextWorkshopItemSortOrder } from '../../utils/workshopHelpers'
+import {
+  getNextWorkshopItemSortOrder,
+  isWorkshopOpeningItem,
+} from '../../utils/workshopHelpers'
+import {
+  canUseAiGeneration,
+  formatAiLimitLabel,
+  getAiGenerationRemaining,
+  getUserPlan,
+} from '../../utils/planLimits'
 
 const MAX_SESSIONS = 12
 
@@ -42,7 +54,7 @@ function mapWorkshopToForm(workshop) {
 export default function WorkshopEditor() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { user, loading: authLoading } = useAuth()
+  const { user, profile, refreshProfile, loading: authLoading } = useAuth()
 
   const [workshop, setWorkshop] = useState(null)
   const [sessions, setSessions] = useState([])
@@ -56,6 +68,9 @@ export default function WorkshopEditor() {
   const [message, setMessage] = useState('')
   const [picker, setPicker] = useState(null)
   const [pausePickerSessionId, setPausePickerSessionId] = useState('')
+  const [generatingAi, setGeneratingAi] = useState(false)
+  const [aiPreview, setAiPreview] = useState(null)
+  const [useKitpopActivities, setUseKitpopActivities] = useState(true)
   const journalTimersRef = useRef({})
 
   const loadWorkshop = useCallback(async () => {
@@ -390,6 +405,149 @@ export default function WorkshopEditor() {
     }
   }
 
+  async function handleApplyExtracted(extracted) {
+    if (!user || !workshop || !form) {
+      return
+    }
+
+    const sessionCount = Math.min(
+      MAX_SESSIONS,
+      Math.max(1, Number(extracted.sessionCount) || 1)
+    )
+
+    const nextForm = {
+      title: extracted.title || form.title,
+      organization: extracted.organization || form.organization,
+      team: extracted.team || form.team,
+      audience: extracted.audience || form.audience,
+      modality: extracted.modality || form.modality,
+      objective: extracted.objective || form.objective,
+      participantsCount:
+        extracted.participantsCount != null
+          ? extracted.participantsCount
+          : form.participantsCount,
+      sessionCount,
+    }
+
+    setForm(nextForm)
+
+    const updated = await updateWorkshop(user.id, workshop.id, {
+      title: nextForm.title.trim(),
+      organization: nextForm.organization.trim(),
+      team: nextForm.team.trim(),
+      audience: nextForm.audience.trim(),
+      modality: nextForm.modality,
+      objective: nextForm.objective.trim(),
+      participantsCount: nextForm.participantsCount
+        ? Number(nextForm.participantsCount)
+        : null,
+      sessionCount,
+      status: workshop.status ?? 'draft',
+    })
+
+    setWorkshop(updated)
+
+    const nextSessions = await syncWorkshopSessionCount(user.id, workshop.id, sessionCount)
+
+    for (const sessionData of extracted.sessions ?? []) {
+      const session = nextSessions.find(
+        (entry) => entry.session_number === sessionData.sessionNumber
+      )
+
+      if (!session) {
+        continue
+      }
+
+      await updateWorkshopSession(user.id, session.id, {
+        durationHours: sessionData.durationHours ?? session.duration_hours ?? 2,
+        durationMinutes: sessionData.durationMinutes ?? session.duration_minutes ?? 0,
+      })
+    }
+
+    await loadWorkshop()
+    setMessage('Documento aplicado al taller. Revisa los datos y genera la propuesta con IA.')
+  }
+
+  async function handleGenerateAi() {
+    if (!user || !workshop) {
+      return
+    }
+
+    if (sessions.length === 0) {
+      setError('Define al menos una sesión antes de generar con IA.')
+      return
+    }
+
+    if (!form?.objective?.trim()) {
+      setError('Completa el objetivo del taller antes de generar con IA.')
+      return
+    }
+
+    const hasDesignedItems = sessions.some((session) =>
+      (session.workshop_items ?? []).some((item) => !isWorkshopOpeningItem(item))
+    )
+
+    if (hasDesignedItems) {
+      const confirmed = window.confirm(
+        'La IA reemplazará las actividades actuales de cada sesión (se conserva la bienvenida y encuadre). ¿Continuar?'
+      )
+
+      if (!confirmed) {
+        return
+      }
+    }
+
+    setGeneratingAi(true)
+    setError('')
+    setMessage('')
+
+    try {
+      await updateWorkshop(user.id, workshop.id, {
+        title: form.title.trim(),
+        organization: form.organization.trim(),
+        team: form.team.trim(),
+        audience: form.audience.trim(),
+        modality: form.modality,
+        objective: form.objective.trim(),
+        participantsCount: form.participantsCount
+          ? Number(form.participantsCount)
+          : null,
+        sessionCount: Number(form.sessionCount) || 1,
+        status: workshop.status ?? 'draft',
+      })
+
+      const payload = await generateWorkshopProposal(workshop.id, { useKitpopActivities })
+      setAiPreview(payload.proposal)
+      setMessage('Propuesta generada. Revisa y aplícala al taller.')
+      await refreshProfile(user.id)
+    } catch (generateError) {
+      setError(generateError.message || 'No se pudo generar la propuesta con IA.')
+    } finally {
+      setGeneratingAi(false)
+    }
+  }
+
+  async function handleApplyAiPreview() {
+    if (!user || !workshop || !aiPreview) {
+      return
+    }
+
+    setGeneratingAi(true)
+    setError('')
+    setMessage('')
+
+    try {
+      const nextSessions = await applyAiWorkshopProposal(user.id, workshop.id, aiPreview)
+      setSessions(nextSessions)
+      setAiPreview(null)
+      setMessage('Propuesta de IA aplicada al taller.')
+    } catch (applyError) {
+      setError(applyError.message || 'No se pudo aplicar la propuesta de IA.')
+    } finally {
+      setGeneratingAi(false)
+    }
+  }
+
   async function handleFinalizeStructure() {
     if (!user || !workshop) {
       return
@@ -533,6 +691,10 @@ export default function WorkshopEditor() {
     )
   }
 
+  const aiRemaining = getAiGenerationRemaining(profile)
+  const aiLimitLabel = formatAiLimitLabel(getUserPlan(profile))
+  const canUseAi = canUseAiGeneration(profile)
+
   return (
     <main id="interactive-view" className="fade-in workshop-editor">
       <Link to="/talleres" className="back-btn">
@@ -555,6 +717,13 @@ export default function WorkshopEditor() {
       {error && <div className="auth-message error">{error}</div>}
 
       <AccessCodePanel code={accessCode} resourceLabel="Taller" />
+
+      <WorkshopDocumentImport
+        useKitpopActivities={useKitpopActivities}
+        onUseKitpopChange={setUseKitpopActivities}
+        onApplyExtracted={handleApplyExtracted}
+        disabled={savingMeta || syncingSessions || generatingAi}
+      />
 
       <form className="auth-panel interactive-form workshop-meta-form" onSubmit={handleSaveMeta}>
         <h3>Datos del taller</h3>
@@ -637,6 +806,87 @@ export default function WorkshopEditor() {
           {savingMeta ? 'Guardando...' : 'Guardar datos'}
         </button>
       </form>
+
+      <section className="auth-panel workshop-ai-panel">
+        <div className="workshop-ai-head">
+          <div>
+            <h3>Diseño con IA</h3>
+            <p className="workshop-section-copy">
+              {useKitpopActivities
+                ? 'Genera una propuesta de sesiones con actividades del banco KitPOP según el objetivo del taller.'
+                : 'Genera una propuesta de sesiones con actividades propias diseñadas por IA según el objetivo del taller.'}
+            </p>
+          </div>
+          <div className="workshop-ai-quota">
+            <strong>{aiLimitLabel}</strong>
+            {Number.isFinite(aiRemaining) && (
+              <span>
+                {aiRemaining} disponible{aiRemaining === 1 ? '' : 's'} ahora
+              </span>
+            )}
+          </div>
+        </div>
+
+        <div className="workshop-ai-actions">
+          <button
+            type="button"
+            className="btn-primary"
+            disabled={generatingAi || !canUseAi || sessions.length === 0}
+            onClick={handleGenerateAi}
+          >
+            {generatingAi ? 'Generando...' : 'Generar propuesta con IA'}
+          </button>
+
+          {!canUseAi && (
+            <Link to="/perfil" className="workshop-ai-upgrade">
+              Ver planes →
+            </Link>
+          )}
+        </div>
+
+        {aiPreview && (
+          <div className="workshop-ai-preview">
+            {aiPreview.rationale && (
+              <p className="workshop-ai-rationale">{aiPreview.rationale}</p>
+            )}
+
+            {aiPreview.sessions?.map((session) => (
+              <div key={session.sessionNumber} className="workshop-ai-preview-session">
+                <h4>Sesión {session.sessionNumber}</h4>
+                {session.narrative && (
+                  <p className="interactive-item-meta">{session.narrative}</p>
+                )}
+                <ul>
+                  {session.items?.map((item, index) => (
+                    <li key={`${session.sessionNumber}-${index}`}>
+                      <strong>{item.timeMinutes} min</strong> · {item.title}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            <div className="workshop-ai-preview-actions">
+              <button
+                type="button"
+                className="timer-btn timer-btn-secondary"
+                disabled={generatingAi}
+                onClick={() => setAiPreview(null)}
+              >
+                Descartar
+              </button>
+              <button
+                type="button"
+                className="btn-primary"
+                disabled={generatingAi}
+                onClick={handleApplyAiPreview}
+              >
+                {generatingAi ? 'Aplicando...' : 'Aplicar al taller'}
+              </button>
+            </div>
+          </div>
+        )}
+      </section>
 
       <section className="auth-panel workshop-sessions-setup">
         <h3>Sesiones</h3>

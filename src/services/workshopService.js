@@ -372,6 +372,48 @@ export async function deleteWorkshopItem(userId, itemId) {
   }
 }
 
+export async function applyAiWorkshopProposal(userId, workshopId, proposal) {
+  const sessions = await fetchWorkshopSessions(userId, workshopId)
+
+  for (const sessionProposal of proposal.sessions ?? []) {
+    const session = sessions.find(
+      (entry) => entry.session_number === sessionProposal.sessionNumber
+    )
+
+    if (!session) {
+      continue
+    }
+
+    await updateWorkshopSession(userId, session.id, {
+      durationHours: sessionProposal.durationHours ?? session.duration_hours ?? 0,
+      durationMinutes: sessionProposal.durationMinutes ?? session.duration_minutes ?? 0,
+    })
+
+    for (const item of session.workshop_items ?? []) {
+      if (!isWorkshopOpeningItem(item)) {
+        await deleteWorkshopItem(userId, item.id)
+      }
+    }
+
+    let sortOrder = 1
+
+    for (const item of sessionProposal.items ?? []) {
+      await createWorkshopItem(userId, session.id, {
+        sortOrder,
+        timeMinutes: item.timeMinutes,
+        itemType: item.itemType,
+        title: item.title,
+        description: item.description,
+        activitySlug: item.activitySlug,
+        pauseType: item.pauseType,
+      })
+      sortOrder += 1
+    }
+  }
+
+  return fetchWorkshopSessions(userId, workshopId)
+}
+
 export async function finalizeWorkshopStructure(userId, workshopId) {
   const { data, error } = await supabase
     .from('workshops')
