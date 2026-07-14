@@ -9,7 +9,17 @@
         "decalogo",
         "torre-confianza",
         "mapa-roles-equipo",
-        "acuerdos-equipo"
+        "acuerdos-equipo",
+        "vuelo-de-gansos",
+        "etapas-del-equipo",
+        "sociograma-confianza",
+        "objetivos-smart-equipo",
+        "decision-en-equipo",
+        "mapa-interdependencia",
+        "rejilla-liderazgo",
+        "holgazaneria-cero",
+        "carta-desde-el-futuro",
+        "feedback-360-breve"
       ]
     },
     "reunion": {
@@ -24,7 +34,17 @@
         "palabra-intencion",
         "semaforo-equipo",
         "pasapalabra",
-        "termometro"
+        "termometro",
+        "quien-esta-a-tu-lado",
+        "formula-clara-instrucciones",
+        "regla-de-tres-mensajes",
+        "mapa-de-expectativas",
+        "tres-prioridades-hoy",
+        "puno-a-cinco",
+        "ronda-de-tiempo-igual",
+        "bitacora-de-compromisos",
+        "una-palabra-de-cierre",
+        "cadena-de-energia"
       ]
     },
     "conexion": {
@@ -36,7 +56,12 @@
         "compasion-inter",
         "historias-nombre",
         "escucha-espejo",
-        "carta-a-otro"
+        "carta-a-otro",
+        "galeria-de-gratitud",
+        "mapa-de-apoyos",
+        "presencia-compartida",
+        "momentos-que-nos-unen",
+        "reconociendo-al-otro"
       ]
     }
   },
@@ -1680,6 +1705,2011 @@
               "ic": "science",
               "h": "Evidencia y fundamento",
               "p": "La expresión escrita de reconocimiento y gratitud hacia otra persona fortalece el elemento de Relaciones Positivas del modelo PERMA (Seligman), y su formato escrito, a diferencia de una expresión verbal espontánea, permite una elaboración más profunda y deliberada del mensaje. La teoría de ampliación y construcción de Fredrickson sostiene que este tipo de intercambios de emoción positiva no solo se sienten bien en el momento, sino que construyen recursos relacionales que perduran en el tiempo. Para el/la facilitador/a, sugerir que la carta se guarde 'para los días difíciles' extiende el efecto de la actividad más allá de la sesión misma."
+            }
+          ]
+        }
+      ]
+    },
+    "vuelo-de-gansos": {
+      "ic": "wave",
+      "cat": "Trabajo en Equipo · Cohesión y Apoyo Mutuo",
+      "clr": "grn",
+      "name": "El Vuelo de los <em>Gansos</em>",
+      "sub": "Metáfora basada en el patrón de vuelo en V de los gansos migratorios para reflexionar sobre liderazgo rotativo, apoyo mutuo y sincronía en el trabajo de equipo. El grupo compara su propia dinámica con los principios que sostienen el vuelo grupal.",
+      "metas": [
+        "30-35 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Papelógrafo o pizarra",
+        "Marcadores",
+        "Imagen o dibujo de gansos en vuelo — opcional",
+        "Tarjetas con los 4 principios"
+      ],
+      "secs": [
+        {
+          "t": "El relato (leer al grupo)",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "La metáfora",
+              "p": "Cuenta la narrativa del vuelo en V de los gansos: cada ave que bate sus alas genera una corriente de aire que ayuda a la que va detrás, aumentando en conjunto la capacidad de vuelo más de un 70% respecto de volar en solitario. Cuando un ganso se sale de la formación siente la resistencia del aire y regresa a la fila; cuando el líder se cansa, cede su lugar a otro; y cuando un ganso se lastima, dos compañeros lo acompañan hasta que se recupera."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Paso 1 · Leer el relato (5 min)",
+              "p": "Leer la narrativa completa al grupo, sin explicar aún su relación con el trabajo en equipo."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 2 · Identificar los 4 principios (10 min)",
+              "p": "En subgrupos de 3-4, identifican qué principio de la formación en V (liderazgo rotativo, apoyo mutuo, sincronía, cuidado del que cae) reconocen o no en su propio equipo, con un ejemplo concreto."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 3 · Compartir en plenario (10 min)",
+              "p": "Cada subgrupo comparte su hallazgo más relevante con el grupo completo."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 4 · Compromiso",
+              "p": "Cada persona elige un principio que quiere fortalecer y lo dice en una frase."
+            }
+          ],
+          "cita": "\"Solos llegamos más rápido, juntos llegamos más lejos.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Liderazgo rotativo",
+              "q": "¿En nuestro equipo el liderazgo se comparte o siempre recae en la misma persona?"
+            },
+            {
+              "c": "Apoyo mutuo",
+              "q": "¿Qué hacemos cuando un compañero/a atraviesa un momento difícil?"
+            },
+            {
+              "c": "Sincronía",
+              "q": "¿Qué nos falta para sincronizar mejor nuestro ritmo de trabajo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La metáfora del vuelo en V ilustra de forma accesible principios documentados en la literatura sobre equipos de trabajo: la interdependencia y el liderazgo compartido incrementan el desempeño colectivo por sobre la suma de los esfuerzos individuales, el mismo principio de sinergia (Katzenbach y Smith) que explica por qué 2+2 puede ser 5 en un equipo bien coordinado. El relato también ejemplifica el liderazgo situacional: quien lidera cambia según el desgaste y el contexto, en lugar de sostenerse en una sola persona de forma permanente. Para el/la facilitador/a, esta actividad funciona bien como apertura de una conversación sobre roles de apoyo, porque ofrece una imagen concreta y memorable antes de pedir al equipo que hable de sus propias dinámicas, que suelen ser más difíciles de nombrar en abstracto."
+            }
+          ]
+        }
+      ]
+    },
+    "etapas-del-equipo": {
+      "ic": "map",
+      "cat": "Trabajo en Equipo · Desarrollo de Equipos",
+      "clr": "grn",
+      "name": "¿En qué <em>Etapa</em> Estamos?",
+      "sub": "El equipo se ubica colectivamente en una de las cinco etapas de desarrollo grupal (Formación, Agitación, Normalización, Realización, Agotamiento) y conversa sobre qué necesita para avanzar de forma saludable.",
+      "metas": [
+        "35-40 min",
+        "Equipo completo",
+        "5 carteles con las etapas"
+      ],
+      "mat": [
+        "5 carteles grandes, uno por etapa",
+        "Post-its",
+        "Marcadores",
+        "Cinta adhesiva"
+      ],
+      "secs": [
+        {
+          "t": "Las 5 etapas de un equipo",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Formación",
+              "p": "El equipo recién se conforma. Hay ilusión, cordialidad y aún poco conocimiento mutuo; se evitan los conflictos."
+            },
+            {
+              "ic": "map",
+              "h": "Agitación",
+              "p": "Aparecen las primeras fricciones y diferencias de carácter mientras cada quien busca su lugar en el grupo."
+            },
+            {
+              "ic": "map",
+              "h": "Normalización",
+              "p": "El equipo desarrolla interdependencia real: se expresan opiniones con más libertad y se supera el enfrentamiento personal."
+            },
+            {
+              "ic": "map",
+              "h": "Realización",
+              "p": "Etapa de madurez: el equipo está acoplado, es productivo y resuelve con soltura."
+            },
+            {
+              "ic": "map",
+              "h": "Agotamiento",
+              "p": "El proyecto está por cerrarse, el entusiasmo puede decaer y conviene cerrar bien antes de comenzar algo nuevo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Explicar las etapas (5 min)",
+              "p": "Distribuir los 5 carteles en el espacio y explicar brevemente cada uno."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Ubicación individual (3 min)",
+              "p": "Cada persona se ubica físicamente junto al cartel que mejor representa dónde percibe que está el equipo hoy, en silencio."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Conversar en subgrupos (10 min)",
+              "p": "En los grupos formados según dónde se pararon, conversan por qué eligieron esa etapa, con evidencia concreta."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Plenario (12 min)",
+              "p": "Cada subgrupo comparte su lectura. El/la facilitador/a busca patrones y diferencias de percepción."
+            }
+          ],
+          "cita": "\"No hay una etapa mala. Cada una tiene su propia tarea pendiente.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Diferencias de percepción",
+              "q": "¿Por qué algunas personas ven al equipo en una etapa distinta a la mayoría?"
+            },
+            {
+              "c": "Lo pendiente",
+              "q": "¿Qué tendríamos que resolver para avanzar a la siguiente etapa?"
+            },
+            {
+              "c": "Ciclos",
+              "q": "¿Hemos pasado por estas etapas antes, con otros proyectos o integrantes?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La actividad se basa en el modelo clásico de desarrollo de equipos que describe cinco fases secuenciales (formación, agitación, normalización, realización y agotamiento), cada una con tareas emocionales y de tarea específicas que el equipo debe resolver antes de avanzar de forma sólida a la siguiente. Hacer visible en qué etapa se percibe el equipo reduce la sensación de que el conflicto propio de la fase de agitación es un fracaso, cuando en realidad es una etapa esperable del desarrollo grupal. Para el/la facilitador/a, esta autodiagnosis colectiva ofrece un lenguaje compartido para nombrar la etapa del equipo sin personalizar las tensiones, y orienta qué tipo de intervención es más útil en cada momento."
+            }
+          ]
+        }
+      ]
+    },
+    "sociograma-confianza": {
+      "ic": "map",
+      "cat": "Trabajo en Equipo · Confianza",
+      "clr": "grn",
+      "name": "Sociograma de <em>Confianza</em>",
+      "sub": "El equipo construye un mapa visual de las relaciones de apoyo y colaboración entre sus integrantes, identificando nodos de conexión fuerte y también vínculos que podrían fortalecerse.",
+      "metas": [
+        "40 min",
+        "Equipo completo (ideal 6-12 personas)",
+        "Papel kraft grande"
+      ],
+      "mat": [
+        "Papel kraft o pizarra grande",
+        "Post-its con el nombre de cada persona",
+        "Lana o cinta de colores para trazar conexiones",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Las relaciones de confianza dentro de un equipo rara vez se hacen explícitas; existen conexiones fuertes y otras casi inexistentes, y esto rara vez se conversa abiertamente. Visualizar el mapa de confianza real del equipo, sin juicio, es el primer paso para fortalecer los vínculos que lo necesitan."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Preparar el mapa (3 min)",
+              "p": "Colocar los post-it con los nombres de todos/as en círculo sobre el papel kraft."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Trazar conexiones (10 min)",
+              "p": "Cada persona traza, en silencio, una línea hacia las 2-3 personas a quienes recurriría con más confianza frente a un desafío de trabajo. No hace falta explicar por qué."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Observar el patrón (10 min)",
+              "p": "En conjunto observan el mapa resultante: ¿hay nodos muy conectados? ¿hay personas con pocas conexiones entrantes? Sin señalar a nadie con juicio, solo describir el patrón."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Conversar en parejas (10 min)",
+              "p": "En parejas o tríos, conversan qué conexión del equipo les gustaría fortalecer este mes."
+            }
+          ],
+          "cita": "\"La confianza no se decreta, se construye conexión a conexión.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El patrón",
+              "q": "¿Qué patrón general observamos en el mapa? ¿Nos sorprende?"
+            },
+            {
+              "c": "Vínculos por fortalecer",
+              "q": "¿Qué conexión, sin necesidad de nombrar personas, creemos que el equipo en general necesita fortalecer?"
+            },
+            {
+              "c": "Acción",
+              "q": "¿Qué haremos concretamente para ampliar la red de confianza del equipo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La técnica se inspira en el sociograma, un instrumento clásico para representar visualmente las relaciones de un grupo y detectar patrones de cohesión, aislamiento o subgrupos que de otro modo permanecen implícitos. La cohesión grupal, el lazo que hace que los miembros se perciban como 'parte de' un equipo, está asociada a una mayor productividad, según la literatura sobre desarrollo de equipos. Para el/la facilitador/a, este ejercicio entrega información valiosa sin necesidad de preguntar directamente 'en quién confías', y abre una conversación constructiva sobre cómo ampliar deliberadamente la red de apoyo del equipo."
+            }
+          ]
+        }
+      ]
+    },
+    "objetivos-smart-equipo": {
+      "ic": "target",
+      "cat": "Trabajo en Equipo · Foco y Dirección",
+      "clr": "grn",
+      "name": "Objetivos que <em>Enfocan</em>",
+      "sub": "El equipo redacta o revisa sus objetivos de rendimiento aplicando cinco criterios de calidad: específicos, medibles, orientados a la acción, centrados en resultados y enmarcados en el tiempo. Convierte deseos generales en metas accionables.",
+      "metas": [
+        "40-45 min",
+        "Equipo completo",
+        "Ficha de criterios"
+      ],
+      "mat": [
+        "Ficha con los 5 criterios impresa",
+        "Post-its",
+        "Pizarra o papel kraft",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Los 5 criterios de un buen objetivo",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Criterios de calidad",
+              "p": "Un objetivo bien construido es específico y claro (cualquiera fuera del equipo puede entenderlo), medible (se puede verificar su cumplimiento), orientado a la acción (comienza con un verbo), centrado en resultados (explica el qué, no solo el cómo) y enmarcado en el tiempo (tiene una fecha límite clara)."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Escritura individual (2 min)",
+              "p": "Cada persona escribe individualmente un objetivo actual del equipo tal como lo entiende hoy."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Comparar en parejas (5 min)",
+              "p": "En parejas, comparan sus versiones: ¿coinciden? ¿hay diferencias de interpretación?"
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Reescribir con los 5 criterios (15 min)",
+              "p": "En subgrupos de 3-4, toman uno de los objetivos y lo reescriben aplicando los 5 criterios."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Presentar y decidir (15 min)",
+              "p": "Presentan su versión reescrita al grupo completo; el equipo elige o combina la formulación final."
+            }
+          ],
+          "cita": "\"Empieza con los objetivos y después elabora tus planes, no al revés.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Claridad previa",
+              "q": "¿Qué tan alineados estábamos antes de este ejercicio sobre qué es lo que realmente perseguimos?"
+            },
+            {
+              "c": "El primer paso",
+              "q": "Con el objetivo ya reformulado, ¿cuál es el primer paso concreto que daremos esta semana?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La actividad aplica un conjunto de criterios de calidad para la definición de metas descrito en la literatura sobre equipos de trabajo, que coincide con los hallazgos de la teoría de fijación de metas: las metas específicas, desafiantes y aceptadas por quienes las persiguen mejoran significativamente el rendimiento, el esfuerzo y la persistencia frente a metas vagas o impuestas. Que el objetivo sea reformulado por el propio equipo, y no solo comunicado desde arriba, aumenta la probabilidad de que sea aceptado como propio, condición necesaria para que una meta sea motivante. Para el/la facilitador/a, este ejercicio suele revelar que distintas personas del mismo equipo tenían interpretaciones distintas del objetivo compartido, lo cual ya es, en sí mismo, un hallazgo valioso."
+            }
+          ]
+        }
+      ]
+    },
+    "decision-en-equipo": {
+      "ic": "scroll",
+      "cat": "Trabajo en Equipo · Toma de Decisiones",
+      "clr": "grn",
+      "name": "¿Cómo <em>Decidimos</em>?",
+      "sub": "El equipo experimenta y compara distintos métodos de toma de decisiones grupal (unilateral, consultivo, por voto y por consenso) frente a un mismo escenario, y reflexiona sobre cuál usa habitualmente y cuál necesitaría usar más.",
+      "metas": [
+        "40 min",
+        "Grupos de 4-6",
+        "Tarjetas de escenario y métodos"
+      ],
+      "mat": [
+        "Tarjetas con el escenario a decidir",
+        "Tarjetas con los 4 métodos de decisión",
+        "Cronómetro",
+        "Pizarra"
+      ],
+      "secs": [
+        {
+          "t": "Los 4 métodos",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Unilateral",
+              "p": "Una persona decide y comunica. Rápido, pero puede generar menos apoyo del grupo."
+            },
+            {
+              "ic": "scroll",
+              "h": "Consultivo",
+              "p": "Una persona decide, pero después de escuchar a todos/as. Más información, algo más lento."
+            },
+            {
+              "ic": "scroll",
+              "h": "Voto por mayoría",
+              "p": "Gana la opción con más apoyo. Rápido y participativo, pero puede dejar a una minoría insatisfecha."
+            },
+            {
+              "ic": "scroll",
+              "h": "Consenso",
+              "p": "Se decide solo cuando todos/as apoyan la decisión, aunque no sea la opción ideal de cada uno. El más lento, pero el que genera mayor compromiso posterior."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Asignar métodos",
+              "p": "Presentar el mismo escenario de decisión a 4 subgrupos distintos."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Decidir con tiempo límite",
+              "p": "Cada subgrupo debe decidir usando el método asignado, con un tiempo límite distinto según el método: unilateral 2 min, consultivo 5 min, voto 5 min, consenso 10 min."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Presentar",
+              "p": "Cada subgrupo presenta su decisión y cómo llegó a ella."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 4 · Comparar",
+              "p": "El grupo completo compara: ¿qué método fue más rápido? ¿cuál generó mayor conformidad con el resultado?"
+            }
+          ],
+          "cita": "\"No existe el método perfecto, existe el método adecuado para cada decisión.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El método habitual",
+              "q": "¿Qué método usa nuestro equipo con más frecuencia en el día a día?"
+            },
+            {
+              "c": "Costo y beneficio",
+              "q": "¿En qué tipo de decisiones vale la pena invertir más tiempo en consenso? ¿En cuáles no?"
+            },
+            {
+              "c": "Ajuste",
+              "q": "¿Hay alguna decisión reciente donde usamos el método equivocado para la situación?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Cada uno de los cuatro métodos de decisión grupal tiene ventajas y costos documentados en la literatura sobre equipos de trabajo: el modo unilateral prioriza la velocidad, el consultivo suma información sin perderla del todo, el voto mayoritario facilita la participación pero puede generar una dinámica de ganadores y perdedores, y el consenso, el más costoso en tiempo, es el que genera mayor compromiso posterior con la decisión tomada. Practicar los cuatro métodos frente a un mismo escenario permite al equipo experimentar la diferencia real entre ellos, en lugar de discutirla solo en abstracto. Para el/la facilitador/a, el valor de esta actividad está en ayudar al equipo a elegir conscientemente el método según el tipo de decisión, en vez de usar siempre el mismo por costumbre."
+            }
+          ]
+        }
+      ]
+    },
+    "mapa-interdependencia": {
+      "ic": "map",
+      "cat": "Trabajo en Equipo · Coordinación",
+      "clr": "grn",
+      "name": "Mapa de <em>Interdependencia</em>",
+      "sub": "El equipo visualiza de qué depende cada persona para hacer bien su trabajo y de quién dependen los demás de ella, haciendo explícita la red de coordinación que sostiene el trabajo cotidiano.",
+      "metas": [
+        "35 min",
+        "Equipo completo",
+        "Post-its de 2 colores"
+      ],
+      "mat": [
+        "Post-its de 2 colores",
+        "Pizarra o papel kraft grande",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Gran parte de los cuellos de botella en un equipo ocurren porque las dependencias entre personas no están explícitas. Este mapa hace visible, de forma simple, la red real de coordinación que sostiene el trabajo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · Necesito de...",
+              "p": "Cada persona escribe en post-its de un color: '¿de quién necesito algo (información, aprobación, entregable) para hacer bien mi trabajo?'"
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Me necesitan para...",
+              "p": "En post-its del segundo color: '¿quién necesita algo de mí para hacer el suyo?'"
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Construir el mapa",
+              "p": "Todos pegan sus post-its en la pizarra, cerca del nombre de la persona correspondiente, formando un mapa de flechas."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Observar juntos",
+              "p": "En conjunto observan el mapa: ¿hay dependencias que sorprenden? ¿hay algún punto único de fallo, una sola persona de la que dependen muchas otras?"
+            }
+          ],
+          "cita": "\"La coordinación invisible es la que más problemas genera cuando falla.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Sorpresas",
+              "q": "¿Qué dependencia nos sorprendió al verla escrita?"
+            },
+            {
+              "c": "Puntos críticos",
+              "q": "¿Hay algún cuello de botella, una persona de la que dependen muchas cosas?"
+            },
+            {
+              "c": "Mejora",
+              "q": "¿Qué acuerdo de coordinación podríamos crear a partir de este mapa?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La coordinación, uno de los componentes centrales del trabajo en equipo junto a la complementariedad, la comunicación, la confianza y el compromiso, depende de que las personas conozcan explícitamente de quién dependen y quién depende de ellas para completar su trabajo. Cuando estas dependencias permanecen implícitas, es más probable que generen retrasos o fricciones que se atribuyen erróneamente a falta de compromiso individual. Para el/la facilitador/a, este mapa suele revelar 'puntos únicos de fallo', personas de las que depende una parte desproporcionada del equipo, que conviene abordar de forma preventiva."
+            }
+          ]
+        }
+      ]
+    },
+    "rejilla-liderazgo": {
+      "ic": "star",
+      "cat": "Trabajo en Equipo · Liderazgo",
+      "clr": "grn",
+      "name": "La <em>Rejilla</em> del Liderazgo",
+      "sub": "El equipo se ubica en la rejilla gerencial (orientación a la tarea versus orientación a las personas) para reflexionar sobre el estilo de liderazgo predominante y su efecto en el clima y los resultados del equipo.",
+      "metas": [
+        "35-40 min",
+        "Equipo + líder",
+        "Rejilla dibujada en papelógrafo"
+      ],
+      "mat": [
+        "Papelógrafo con la rejilla dibujada (eje X: tarea, eje Y: personas, escala 1-9)",
+        "Post-its",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Los 5 estilos de la rejilla",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "1.1 Administración empobrecida",
+              "p": "Baja preocupación por la tarea y por las personas. Bajo involucramiento general."
+            },
+            {
+              "ic": "star",
+              "h": "1.9 Club campestre",
+              "p": "Alta orientación a las personas, baja a la tarea. Buen clima, pero puede faltar foco en resultados."
+            },
+            {
+              "ic": "star",
+              "h": "9.1 Autócrata de la tarea",
+              "p": "Alta orientación a la tarea, baja a las personas. Resultados, pero a costa del clima."
+            },
+            {
+              "ic": "star",
+              "h": "5.5 En suficiencia",
+              "p": "Orientación media en ambos ejes, un equilibrio moderado sin destacar en ninguno."
+            },
+            {
+              "ic": "star",
+              "h": "9.9 Coordinador de equipo",
+              "p": "Alta orientación tanto a la tarea como a las personas. El estilo más asociado a equipos de alto desempeño y buen clima simultáneamente."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "Paso 1 · Explicar los estilos (5 min)",
+              "p": "Explicar brevemente los 5 estilos y los dos ejes de la rejilla."
+            },
+            {
+              "ic": "star",
+              "h": "Paso 2 · Ubicación individual (5 min)",
+              "p": "Cada persona, en silencio, marca con un post-it dónde percibe que se ubica el liderazgo real del equipo hoy, no el ideal."
+            },
+            {
+              "ic": "star",
+              "h": "Paso 3 · Mostrar el patrón (5 min)",
+              "p": "El/la facilitador/a agrupa los post-its y muestra el patrón: ¿hay consenso o dispersión en las percepciones?"
+            },
+            {
+              "ic": "star",
+              "h": "Paso 4 · Conversar el camino (15 min)",
+              "p": "En conjunto conversan qué necesitarían para acercarse al estilo 9.9 (coordinador de equipo)."
+            }
+          ],
+          "cita": "\"El liderazgo que solo cuida los resultados, o solo cuida a las personas, deja algo importante sin atender.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Percepción compartida",
+              "q": "¿Coincidimos en dónde ubicamos el liderazgo actual, o hay percepciones muy distintas?"
+            },
+            {
+              "c": "Efecto en el equipo",
+              "q": "¿Cómo se siente trabajar bajo este estilo? ¿Qué genera y qué limita?"
+            },
+            {
+              "c": "Acción concreta",
+              "q": "¿Qué acción, por parte de quién, ayudaría a movernos hacia el 9.9?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La rejilla gerencial describe cinco estilos de liderazgo resultantes de combinar dos orientaciones independientes, hacia la tarea y hacia las personas, y sostiene que el estilo 9.9, de alta orientación simultánea a ambas dimensiones, es el que con mayor frecuencia se asocia a equipos con buenos resultados y buen clima laboral. Ubicar colectivamente al equipo en la rejilla, en lugar de discutir el liderazgo en abstracto, ofrece un lenguaje común y menos personal para hablar de un tema sensible. Para el/la facilitador/a, ver el grado de consenso o dispersión entre las percepciones del grupo es, en sí mismo, un dato relevante: una alta dispersión suele indicar que el liderazgo se ejerce de forma distinta según la persona o el contexto."
+            }
+          ]
+        }
+      ]
+    },
+    "holgazaneria-cero": {
+      "ic": "target",
+      "cat": "Trabajo en Equipo · Compromiso",
+      "clr": "grn",
+      "name": "Contribución <em>Visible</em>",
+      "sub": "Actividad para hacer visibles las contribuciones individuales dentro de una tarea grupal, contrarrestando la tendencia a esforzarse menos cuando el aporte personal se diluye en el grupo (holgazanería social).",
+      "metas": [
+        "30 min",
+        "Grupos de 4-6",
+        "Tarea grupal breve"
+      ],
+      "mat": [
+        "Una tarea grupal breve y concreta (armar algo, resolver un caso)",
+        "Hoja de registro individual",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Qué es la holgazanería social?",
+              "p": "Es la tendencia documentada a esforzarse menos cuando se trabaja en grupo que cuando se trabaja solo, especialmente cuando las contribuciones individuales son anónimas o difíciles de distinguir de las del resto. Desaparece cuando los miembros del grupo perciben que su aporte específico es observado y valorado."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · La tarea",
+              "p": "Dar al grupo una tarea breve y concreta con un resultado tangible, por ejemplo diseñar una propuesta en 15 minutos."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Declarar el aporte",
+              "p": "Antes de comenzar, cada persona anota en su hoja qué tarea específica va a asumir dentro del grupo."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Nombrar el aporte al final",
+              "p": "Al finalizar, cada persona describe en voz alta su contribución específica, no en general, sino el aporte concreto que hizo."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Conversar el balance",
+              "p": "El grupo identifica si hubo contribuciones desiguales y conversa, sin culpar, sobre qué ayudaría a distribuir mejor el esfuerzo la próxima vez."
+            }
+          ],
+          "cita": "\"Lo que se hace visible, se valora, y lo que se valora, se sostiene.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Distribución del esfuerzo",
+              "q": "¿El esfuerzo se distribuyó parejo o hubo desbalance? ¿Por qué?"
+            },
+            {
+              "c": "Visibilidad",
+              "q": "¿Cambia algo saber que tu contribución específica será nombrada al final?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿Cómo podríamos hacer visibles las contribuciones individuales en nuestro trabajo cotidiano, sin caer en microgestión?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La holgazanería social es un fenómeno documentado en la literatura sobre equipos de trabajo: las personas tienden a esforzarse menos en tareas grupales que en tareas individuales, particularmente cuando su contribución específica no puede distinguirse de la del resto del grupo. La misma literatura señala que este efecto disminuye, y puede desaparecer, cuando los miembros perciben que sus esfuerzos individuales están siendo observados y reconocidos de forma diferenciada. Para el/la facilitador/a, esta actividad no busca señalar a quién se esfuerza menos, sino demostrar de forma vivencial que hacer visibles las contribuciones específicas, sin necesidad de vigilancia, es suficiente para activar un mayor compromiso individual dentro del trabajo grupal."
+            }
+          ]
+        }
+      ]
+    },
+    "carta-desde-el-futuro": {
+      "ic": "scroll",
+      "cat": "Trabajo en Equipo · Visión Compartida",
+      "clr": "grn",
+      "name": "Carta desde el <em>Futuro</em>",
+      "sub": "El equipo se proyecta un año adelante y escribe colectivamente una carta describiendo cómo luce el equipo cuando ha logrado su mejor versión, generando una visión compartida que orienta las decisiones del presente.",
+      "metas": [
+        "40-45 min",
+        "Equipo completo",
+        "Papel grande y lápices"
+      ],
+      "mat": [
+        "Papel grande o cartulina",
+        "Lápices o marcadores",
+        "Música ambiental suave — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Los equipos que comparten una imagen concreta y positiva de su futuro deseado tienden a alinear mejor sus decisiones cotidianas hacia esa dirección, en comparación con equipos que operan solo reaccionando a la urgencia del día a día."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Visualización guiada (3 min)",
+              "p": "Invitar a una breve visualización: 'cierren los ojos, es exactamente un año desde hoy, nuestro equipo logró aquello que se propuso, ¿qué se ve, se escucha y se siente en este equipo?'"
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Escritura individual (5 min)",
+              "p": "Cada persona escribe 3-5 frases sobre lo que imaginó."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Integrar en subgrupos (10 min)",
+              "p": "En subgrupos, comparten sus frases y las integran en un párrafo colectivo."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 4 · Carta final",
+              "p": "El equipo completo redacta una carta desde el futuro final, combinando lo mejor de cada subgrupo, y la deja visible en el espacio de trabajo."
+            }
+          ],
+          "cita": "\"Un equipo que puede describir su futuro con detalle, tiene más probabilidades de construirlo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Coincidencias",
+              "q": "¿Qué elementos se repitieron en las visiones de distintas personas?"
+            },
+            {
+              "c": "Brecha",
+              "q": "¿Qué tan lejos estamos hoy de esa imagen futura? ¿Qué es lo primero que cambiaría?"
+            },
+            {
+              "c": "Próximo paso",
+              "q": "¿Qué haremos esta semana que nos acerque, aunque sea un poco, a esa carta?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La construcción colectiva de una visión de futuro compartida es identificada en la literatura de liderazgo de equipos como uno de los ingredientes esenciales de un buen líder de equipo: destacar y explicar con claridad el objetivo y el enfoque del equipo para que sus esfuerzos se dirijan hacia una misma dirección. Escribir la visión en forma de carta, con detalle sensorial, la vuelve más concreta y memorable que una declaración de objetivos abstracta, lo cual facilita que efectivamente oriente decisiones cotidianas. Para el/la facilitador/a, esta actividad funciona especialmente bien al inicio de un ciclo de trabajo y puede retomarse más adelante como punto de referencia para evaluar el avance real del equipo."
+            }
+          ]
+        }
+      ]
+    },
+    "feedback-360-breve": {
+      "ic": "eye",
+      "cat": "Trabajo en Equipo · Retroalimentación",
+      "clr": "grn",
+      "name": "Ronda de <em>Feedback</em> 360",
+      "sub": "Cada integrante del equipo recibe retroalimentación breve y estructurada de sus compañeros/as sobre una fortaleza a mantener y una oportunidad de mejora, en un formato seguro, específico y orientado al futuro.",
+      "metas": [
+        "45-50 min",
+        "Equipo completo (hasta 10 personas)",
+        "Hojas de feedback"
+      ],
+      "mat": [
+        "Una hoja por persona con su nombre en la parte superior",
+        "Lápices",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Por qué en formato escrito y estructurado?",
+              "p": "La retroalimentación honesta entre pares rara vez ocurre de forma espontánea porque genera incomodidad. Un formato escrito, dentro del grupo y con una estructura clara (una fortaleza, una oportunidad) reduce esa barrera y aumenta la probabilidad de que el feedback sea específico y útil."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Colocar las hojas",
+              "p": "Cada persona coloca su hoja con su nombre en un punto visible del espacio."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Circular y escribir (10-15 min)",
+              "p": "Todos/as circulan y escriben en cada hoja ajena: una fortaleza que valoran de esa persona en el trabajo en equipo, y una sugerencia concreta de algo que podría fortalecer aún más. En silencio."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Leer en silencio (5 min)",
+              "p": "Cada persona recoge su hoja y la lee individualmente, en silencio."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 4 · Compartir voluntariamente",
+              "p": "Quien quiera comparte un aprendizaje o una sorpresa de lo que leyó, sin necesidad de leer las frases textuales en voz alta."
+            }
+          ],
+          "cita": "\"El feedback que no se pide, y que llega con cuidado, suele ser el más valioso.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Patrones",
+              "q": "¿Hubo algo que se repitió en varias hojas? ¿Qué te dice eso?"
+            },
+            {
+              "c": "Sorpresas",
+              "q": "¿Hubo algo que no esperabas leer?"
+            },
+            {
+              "c": "Acción",
+              "q": "¿Qué vas a hacer con la sugerencia que recibiste?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La evaluación y retroalimentación regular del trabajo en equipo es señalada en la literatura sobre equipos como necesaria para detectar a tiempo posibles deficiencias y conocer cómo perciben los demás el propio desempeño. Que el feedback provenga de varios pares a la vez, en lugar de una sola fuente, reduce el peso subjetivo de una única opinión y ofrece una imagen más representativa del efecto real de la propia conducta en el equipo. Para el/la facilitador/a, encuadrar la actividad explícitamente en un formato de 'una fortaleza, una oportunidad' evita que la retroalimentación se convierta en una lista de críticas, y mantiene el ejercicio dentro de un espacio psicológicamente seguro."
+            }
+          ]
+        }
+      ]
+    },
+    "quien-esta-a-tu-lado": {
+      "ic": "spark",
+      "cat": "Apertura · Rompehielo",
+      "clr": "teal",
+      "name": "¿Quién Está a tu <em>Lado</em>?",
+      "sub": "Icebreaker clásico en grupos de 3-5 personas: cada quien comparte su nombre, su primer trabajo (por informal que haya sido) y algo que aprendió de esa experiencia. Funciona igual de bien entre personas que ya se conocen o que recién se encuentran.",
+      "metas": [
+        "10-12 min",
+        "Grupos de 3-5",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio para formar pequeños grupos"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Formar grupos pequeños (1 min)",
+              "p": "Grupos de 3 a 5 personas, idealmente mezclando a quienes se conocen poco entre sí."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 2 · El/la facilitador/a modela primero (1 min)",
+              "p": "Comparte su propio nombre, su primer trabajo, por más simple o informal que fue, y algo que aprendió de él, para dar el ejemplo del nivel de apertura esperado."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Ronda en grupos (6-8 min)",
+              "p": "Cada persona comparte lo mismo dentro de su grupo pequeño: nombre, primer trabajo, y un aprendizaje de esa experiencia."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Cierre breve",
+              "p": "Opcionalmente, 2-3 personas comparten con el grupo completo el aprendizaje más curioso o inesperado que escucharon."
+            }
+          ],
+          "cita": "\"El primer trabajo de alguien casi siempre saca una sonrisa, y abre la puerta a conocerse de verdad.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Lo inesperado",
+              "q": "¿Qué primer trabajo te sorprendió más?"
+            },
+            {
+              "c": "Lo compartido",
+              "q": "¿Qué tienen en común los aprendizajes que escuchaste, aunque los trabajos fueran distintos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Este icebreaker sigue el principio de que el inicio de una sesión determina en gran medida la energía y disposición del resto del encuentro: comenzar directamente con el contenido, sin activar primero al grupo, es señalado como uno de los errores más frecuentes en la facilitación de talleres (AJ&Smart). Preguntar por el primer trabajo, en lugar de por el cargo actual, nivela la conversación entre personas de distinta jerarquía y reduce naturalmente la formalidad. Para el/la facilitador/a, que quien facilita comparta primero su propia historia es clave: modela el nivel de apertura esperado y reduce la incomodidad inicial del grupo."
+            }
+          ]
+        }
+      ]
+    },
+    "formula-clara-instrucciones": {
+      "ic": "target",
+      "cat": "Facilitación · Claridad",
+      "clr": "teal",
+      "name": "La Fórmula <em>Qué-Por Qué-Cómo</em>",
+      "sub": "Ejercicio breve para que quienes facilitan reuniones o talleres practiquen dar instrucciones completas usando la fórmula Qué, Por qué y Cómo, evitando el error más común al explicar una actividad.",
+      "metas": [
+        "20 min",
+        "Parejas o grupo pequeño",
+        "Tarjetas con actividades"
+      ],
+      "mat": [
+        "Tarjetas con el nombre de actividades o procesos cotidianos para explicar",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "La fórmula",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Qué – Por qué – Cómo",
+              "p": "Toda instrucción clara responde tres preguntas: QUÉ vamos a hacer (el nombre y en qué consiste), POR QUÉ lo vamos a hacer (el propósito, lo que ganamos con ello) y CÓMO lo vamos a hacer (los pasos concretos, con un ejemplo). Omitir cualquiera de las tres, especialmente el 'por qué', es el error más frecuente al dar instrucciones en un grupo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Recibir la tarjeta",
+              "p": "En parejas, cada persona recibe una tarjeta con una actividad o proceso para explicar."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Explicar en 90 segundos",
+              "p": "Explica a su pareja usando explícitamente la fórmula Qué-Por qué-Cómo."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Feedback",
+              "p": "La pareja que escucha da feedback: ¿faltó alguna de las tres partes? ¿fue clara?"
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Repetir con roles invertidos",
+              "p": "Cambian de rol y repiten con una segunda tarjeta."
+            }
+          ],
+          "cita": "\"El 'por qué' es lo primero que se olvida, y lo primero que la gente necesita para comprometerse.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El eslabón débil",
+              "q": "¿Cuál de las tres partes (qué, por qué, cómo) te cuesta más incluir naturalmente?"
+            },
+            {
+              "c": "Aplicación",
+              "q": "¿En qué instrucción real de esta semana podrías aplicar la fórmula completa?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Dar instrucciones claras es señalado en la literatura sobre facilitación como una de las tareas que más dificultad genera, debido a lo que se conoce como la 'maldición del conocimiento': quien conoce bien una actividad tiende a omitir detalles que le parecen obvios pero que no lo son para quien la escucha por primera vez (AJ&Smart). La fórmula Qué-Por qué-Cómo actúa como una lista de verificación simple que reduce sistemáticamente ese sesgo. Para el/la facilitador/a, practicar esta fórmula en un contexto de bajo riesgo facilita internalizarla antes de aplicarla en una reunión real donde el costo de una instrucción confusa es mayor."
+            }
+          ]
+        }
+      ]
+    },
+    "regla-de-tres-mensajes": {
+      "ic": "spark",
+      "cat": "Facilitación · Comunicación",
+      "clr": "teal",
+      "name": "La Regla de las <em>Tres Veces</em>",
+      "sub": "Ejercicio para practicar la repetición estratégica de mensajes clave, no de forma idéntica sino con distintos ejemplos o formulaciones, de modo que la información importante llegue efectivamente a todo el grupo.",
+      "metas": [
+        "15-20 min",
+        "Grupo completo o subgrupos",
+        "Tarjeta con mensaje clave"
+      ],
+      "mat": [
+        "Tarjetas con un mensaje o instrucción clave para transmitir",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Por qué repetir tres veces?",
+              "p": "Ningún grupo mantiene atención sostenida durante toda una sesión: es esperable que algunas personas no escuchen un mensaje importante la primera vez que se dice. Decir un mensaje clave de tres formas distintas aumenta considerablemente la proporción de personas que efectivamente lo reciben."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "spark",
+              "h": "Paso 1 · Recibir el mensaje",
+              "p": "Cada persona recibe un mensaje clave que debe comunicar a un grupo pequeño."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 2 · Decirlo de tres formas",
+              "p": "Debe decirlo tres veces de forma distinta: primero de manera directa, segundo con un ejemplo concreto, tercero resumido en una frase memorable."
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 3 · Feedback",
+              "p": "El grupo que escucha da feedback: ¿en qué momento (primera, segunda o tercera vez) el mensaje quedó más claro?"
+            },
+            {
+              "ic": "spark",
+              "h": "Paso 4 · Rotar",
+              "p": "Rotar roles y repetir con otro mensaje."
+            }
+          ],
+          "cita": "\"No es repetir lo mismo tres veces, es decir lo mismo importante de tres formas distintas.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El momento de claridad",
+              "q": "¿En qué repetición el mensaje se volvió realmente claro para ti?"
+            },
+            {
+              "c": "Mensajes propios",
+              "q": "¿Qué mensaje importante de tu trabajo cotidiano podrías empezar a repetir de tres formas distintas?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La llamada 'regla de las tres veces' parte de un principio simple mencionado en la literatura de facilitación: la atención sostenida durante una sesión completa no es realista, por lo que decir algo importante una sola vez no garantiza que el grupo completo lo reciba (AJ&Smart). Practicar esta habilidad con retroalimentación inmediata permite calibrar de forma concreta cuánta variación en la forma de decir algo es realmente necesaria. Para el/la facilitador/a, esta técnica es especialmente útil para instrucciones críticas, donde el costo de que una parte del grupo no haya escuchado es alto."
+            }
+          ]
+        }
+      ]
+    },
+    "mapa-de-expectativas": {
+      "ic": "map",
+      "cat": "Apertura de Reunión",
+      "clr": "teal",
+      "name": "Mapa de <em>Expectativas</em>",
+      "sub": "Al inicio de una sesión, cada participante nombra brevemente qué espera obtener de ella. El/la facilitador/a recoge estas expectativas de forma visible, lo que aumenta el sentido de pertenencia y permite ajustar el enfoque si es necesario.",
+      "metas": [
+        "8-10 min",
+        "Grupo completo",
+        "Post-its o pizarra"
+      ],
+      "mat": [
+        "Post-its",
+        "Pizarra o papel kraft dividido en zonas",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · La pregunta (1 min)",
+              "p": "El/la facilitador/a pregunta: '¿qué esperas obtener de esta sesión? ¿qué la haría valiosa para ti?'"
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Escritura individual (2 min)",
+              "p": "Cada persona escribe su expectativa en un post-it, en pocas palabras."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Pegar y agrupar (3 min)",
+              "p": "Todos pegan su post-it en la pizarra. El/la facilitador/a agrupa visualmente las expectativas similares."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Encuadre honesto (2 min)",
+              "p": "El/la facilitador/a señala qué expectativas se cubrirán hoy directamente, cuáles parcialmente y cuáles quedarán para otro momento, sin prometer de más."
+            }
+          ],
+          "cita": "\"Preguntar qué esperan no es una formalidad, es la forma más rápida de saber si vamos por buen camino.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Coincidencias",
+              "q": "¿Qué expectativas se repitieron más? ¿Qué nos dice eso sobre lo que el grupo necesita?"
+            },
+            {
+              "c": "Lo no cubierto",
+              "q": "¿Qué haremos con las expectativas que no alcanzaremos a cubrir hoy?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Preguntar explícitamente qué esperan las personas de una sesión, además de comunicar la agenda, es identificado en la literatura de facilitación como un paso que aumenta la sensación de ser escuchado/a y ayuda a quien facilita a priorizar los temas que realmente importan al grupo (AJ&Smart). Que el/la facilitador/a registre visiblemente las expectativas, y no solo las escuche, envía la señal de que se están tomando en serio, lo cual incrementa la receptividad del grupo hacia el resto de la sesión. Para el/la facilitador/a, ser honesto/a sobre qué expectativas no se cubrirán en esta sesión específica evita la frustración posterior de promesas implícitas no cumplidas."
+            }
+          ]
+        }
+      ]
+    },
+    "tres-prioridades-hoy": {
+      "ic": "target",
+      "cat": "Apertura de Reunión · Foco",
+      "clr": "teal",
+      "name": "Nuestras Tres <em>Prioridades</em> de Hoy",
+      "sub": "Antes de comenzar una reunión con agenda extensa, el equipo acuerda colectivamente cuáles son las tres prioridades reales de la sesión, evitando que temas menores consuman el tiempo destinado a lo verdaderamente importante.",
+      "metas": [
+        "5-8 min",
+        "Grupo completo",
+        "Pizarra visible"
+      ],
+      "mat": [
+        "Pizarra o pantalla compartida",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Revisar la agenda (2 min)",
+              "p": "El/la facilitador/a muestra la agenda completa de la sesión, con todos los temas propuestos."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Votación rápida (2 min)",
+              "p": "Cada persona nombra en voz alta o levanta la mano por los 3 temas que considera más urgentes de resolver hoy."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Confirmar las 3 prioridades (2 min)",
+              "p": "El/la facilitador/a anuncia las 3 prioridades con más apoyo y las marca visiblemente en la agenda."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Encuadre del resto (1 min)",
+              "p": "Los temas restantes quedan explícitamente como 'si el tiempo alcanza' o se agendan para otra instancia."
+            }
+          ],
+          "cita": "\"Todo es importante, pero no todo cabe hoy.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Alineación",
+              "q": "¿Coincidimos fácilmente en las 3 prioridades, o hubo tensión sobre qué era más urgente?"
+            },
+            {
+              "c": "Disciplina",
+              "q": "¿Cómo nos ayudaremos mutuamente a no desviarnos hacia temas fuera de las 3 prioridades?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Contar con una agenda visible reduce la sensación de desorientación del grupo y ayuda a que las personas no se pregunten constantemente qué viene después, lo cual mejora el foco durante la sesión (AJ&Smart). Reducir explícitamente una agenda extensa a tres prioridades acordadas colectivamente aplica, además, un principio elemental de gestión del tiempo grupal: cuando todo es prioritario, nada realmente lo es. Para el/la facilitador/a, este acuerdo inicial se convierte en una herramienta de gestión durante la reunión misma: si la conversación se desvía, basta con recordar las tres prioridades acordadas por el propio grupo para reencauzarla."
+            }
+          ]
+        }
+      ]
+    },
+    "puno-a-cinco": {
+      "ic": "target",
+      "cat": "Toma de Decisiones · Pulso Rápido",
+      "clr": "teal",
+      "name": "Puño a <em>Cinco</em>",
+      "sub": "Técnica rápida de verificación de consenso: frente a una propuesta, cada persona levanta entre 0 y 5 dedos para indicar su nivel de apoyo, permitiendo detectar en segundos si existe acuerdo suficiente para avanzar.",
+      "metas": [
+        "3-5 min por votación",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos"
+      ],
+      "secs": [
+        {
+          "t": "La escala",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Puño cerrado (0)",
+              "p": "Bloqueo total: 'no puedo apoyar esto y necesito que lo conversemos antes de avanzar.'"
+            },
+            {
+              "ic": "target",
+              "h": "1-2 dedos",
+              "p": "Dudas importantes: 'tengo reservas serias que me gustaría plantear antes de decidir.'"
+            },
+            {
+              "ic": "target",
+              "h": "3 dedos",
+              "p": "Apoyo moderado: 'no es mi opción ideal, pero puedo respaldarla y avanzar.'"
+            },
+            {
+              "ic": "target",
+              "h": "4-5 dedos",
+              "p": "Apoyo fuerte a total: 'estoy de acuerdo y comprometido/a con esta decisión.'"
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "target",
+              "h": "Paso 1 · Presentar la propuesta",
+              "p": "Presentar la propuesta con claridad antes de pedir la votación."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 2 · Votación simultánea",
+              "p": "Contar '1, 2, 3, ya' para que todos levanten sus dedos al mismo tiempo, evitando el sesgo de seguir a los demás."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 3 · Leer el resultado",
+              "p": "El/la facilitador/a observa el resultado: si hay mayoría en 4-5, avanzar. Si hay varios en 0-2, preguntar directamente a esas personas qué necesitarían ver para subir su número."
+            },
+            {
+              "ic": "target",
+              "h": "Paso 4 · Ajustar y repetir",
+              "p": "Ajustar la propuesta si es necesario y repetir la votación."
+            }
+          ],
+          "cita": "\"En 5 segundos sabemos si tenemos acuerdo real o solo silencio incómodo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Lo que separa un 3 de un 5",
+              "q": "¿Qué diferencia hay entre apoyar 'lo suficiente' (3) y apoyar 'con convicción' (5)?"
+            },
+            {
+              "c": "Bloqueos",
+              "q": "Cuando alguien marca 0-1, ¿qué necesitamos hacer como grupo para no ignorarlo?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Esta técnica de verificación de consenso ofrece una alternativa rápida entre el modo de decisión por voto de mayoría simple y el modo de consenso completo, ambos descritos en la literatura sobre toma de decisiones en equipos, permitiendo capturar matices de apoyo que un simple 'sí o no' no reflejaría. Que la votación sea simultánea, y no secuencial, es clave: reduce el sesgo de conformidad, la tendencia de las personas a alinear su respuesta con la de quienes votaron antes. Para el/la facilitador/a, esta herramienta es particularmente útil en reuniones con múltiples decisiones pequeñas, donde el consenso completo sería demasiado lento pero un simple voto de mayoría podría dejar objeciones importantes sin escuchar."
+            }
+          ]
+        }
+      ]
+    },
+    "ronda-de-tiempo-igual": {
+      "ic": "wave",
+      "cat": "Facilitación · Participación Equitativa",
+      "clr": "teal",
+      "name": "Ronda de <em>Tiempo Igual</em>",
+      "sub": "Dinámica para asegurar que todas las voces del equipo tengan el mismo espacio para hablar durante una discusión, usando un turno visual que se pasa de persona en persona antes de abrir el debate libre.",
+      "metas": [
+        "15-20 min",
+        "Grupo completo",
+        "Objeto para pasar — opcional"
+      ],
+      "mat": [
+        "Un objeto simple para pasar de mano en mano — opcional",
+        "Cronómetro"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Por qué necesitamos esto?",
+              "p": "En las discusiones abiertas, las personas con estilos de comunicación más directos o con mayor jerarquía tienden a ocupar más tiempo de palabra, mientras que otras voces, igualmente valiosas, quedan sin espacio. Esta ronda asegura una primera vuelta equitativa antes de abrir el debate espontáneo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "wave",
+              "h": "Paso 1 · Presentar el tema",
+              "p": "Presentar la pregunta o el tema a discutir con claridad."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 2 · Explicar la regla",
+              "p": "Solo quien tiene el objeto o el turno señalado puede hablar, durante un máximo de 60-90 segundos. Nadie interrumpe."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 3 · Rondar",
+              "p": "El objeto pasa de persona en persona en un orden claro hasta que todos/as hayan hablado una vez."
+            },
+            {
+              "ic": "wave",
+              "h": "Paso 4 · Abrir el debate",
+              "p": "Recién después de la ronda completa, se abre la conversación libre sobre lo escuchado."
+            }
+          ],
+          "cita": "\"Antes de debatir, escuchemos a todos por igual.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Voces distintas",
+              "q": "¿Escuchamos algo que no se habría dicho en una discusión abierta sin esta estructura?"
+            },
+            {
+              "c": "Aplicación futura",
+              "q": "¿En qué otras reuniones nuestras valdría la pena usar esta ronda?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La comunicación eficaz dentro de un equipo requiere que sus integrantes puedan intercambiar información y retroalimentación de forma bidireccional, condición que se dificulta cuando la palabra se concentra sistemáticamente en las mismas personas (Aula Mentor, Comunicación efectiva y trabajo en equipo). Estructurar una primera ronda de participación igualitaria, antes de abrir el debate libre, es una técnica sencilla para contrarrestar ese desequilibrio sin necesidad de señalar directamente a quién habla de más o de menos. Para el/la facilitador/a, esta ronda suele revelar perspectivas que en una discusión espontánea no habrían emergido, simplemente porque no hubo una pausa suficiente para que esas voces encontraran su espacio."
+            }
+          ]
+        }
+      ]
+    },
+    "bitacora-de-compromisos": {
+      "ic": "scroll",
+      "cat": "Cierre de Reunión · Accountability",
+      "clr": "teal",
+      "name": "Bitácora de <em>Compromisos</em>",
+      "sub": "Al cierre de una reunión, cada acuerdo o tarea se registra públicamente con responsable y fecha, generando un documento vivo que el equipo puede revisar en la siguiente sesión. Convierte las buenas intenciones en compromisos verificables.",
+      "metas": [
+        "10 min",
+        "Grupo completo",
+        "Pizarra o documento compartido"
+      ],
+      "mat": [
+        "Pizarra o documento digital compartido",
+        "Plantilla simple: Qué / Quién / Cuándo",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "scroll",
+              "h": "Paso 1 · Revisar lo conversado (2 min)",
+              "p": "El/la facilitador/a recorre brevemente los temas tratados en la sesión y pregunta: '¿qué acuerdos concretos salieron de aquí?'"
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 2 · Registrar cada compromiso (5 min)",
+              "p": "Por cada acuerdo, se anota en la plantilla: QUÉ se hará exactamente, QUIÉN es responsable, y CUÁNDO estará listo. Ningún compromiso queda sin estas tres columnas completas."
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 3 · Confirmación en voz alta (2 min)",
+              "p": "Cada responsable confirma verbalmente su compromiso: 'sí, me hago cargo de esto para el [fecha].'"
+            },
+            {
+              "ic": "scroll",
+              "h": "Paso 4 · Compartir el registro",
+              "p": "La bitácora se comparte con todo el equipo al finalizar, y se revisa al inicio de la siguiente reunión."
+            }
+          ],
+          "cita": "\"Un acuerdo sin responsable y sin fecha no es un acuerdo, es un buen deseo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Claridad",
+              "q": "¿Los compromisos quedaron lo suficientemente específicos como para saber, sin ambigüedad, si se cumplieron?"
+            },
+            {
+              "c": "Revisión",
+              "q": "¿Cómo revisaremos estos compromisos la próxima vez que nos reunamos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El seguimiento y la evaluación regular del trabajo son señalados en la literatura sobre equipos como necesarios para detectar a tiempo desviaciones y sostener el avance hacia los objetivos; sin un mecanismo de registro, incluso los acuerdos tomados con buena disposición tienden a diluirse en el tiempo. Que cada compromiso incluya explícitamente responsable y fecha, y no solo la acción, es lo que lo convierte en un acuerdo verificable en lugar de una intención genérica. Para el/la facilitador/a, revisar la bitácora al inicio de la siguiente reunión, antes de pasar a nuevos temas, es lo que sostiene la práctica en el tiempo."
+            }
+          ]
+        }
+      ]
+    },
+    "una-palabra-de-cierre": {
+      "ic": "flower",
+      "cat": "Cierre de Reunión",
+      "clr": "teal",
+      "name": "Una Palabra de <em>Cierre</em>",
+      "sub": "Ronda breve de cierre donde cada persona resume en una sola palabra cómo se va de la sesión. Simple, rápida y efectiva para marcar el fin del espacio y dar una última lectura del estado del grupo.",
+      "metas": [
+        "3-5 min",
+        "Grupo completo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "flower",
+              "h": "Paso 1 · Encuadre (30 seg)",
+              "p": "El/la facilitador/a dice: 'para cerrar, cada uno va a decir una sola palabra: cómo se va de esta sesión. Solo la palabra, sin explicar.'"
+            },
+            {
+              "ic": "flower",
+              "h": "Paso 2 · Ronda (2-3 min)",
+              "p": "Por turnos, cada persona dice su palabra. El/la facilitador/a puede modelar primero."
+            },
+            {
+              "ic": "flower",
+              "h": "Paso 3 · Cierre del facilitador/a (1 min)",
+              "p": "Al terminar la ronda, el/la facilitador/a puede señalar un patrón y cerrar formalmente el espacio."
+            }
+          ],
+          "cita": "\"A veces una palabra dice más que un resumen entero.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "El patrón",
+              "q": "¿Qué patrón general escuchamos en las palabras del grupo?"
+            },
+            {
+              "c": "Diferencia con la apertura",
+              "q": "¿Cómo cambió la palabra con la que llegamos respecto a la palabra con la que nos vamos?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Así como el check-in al inicio de una sesión entrega información valiosa sobre el estado del grupo, un check-out breve al cierre cumple una función equivalente: ofrece una lectura rápida de cómo el grupo se retira, dato útil para el/la facilitador/a al planificar la siguiente sesión. Que se pida una sola palabra, sin justificación, reduce la barrera de tiempo que a veces hace que los cierres de reunión se omitan por falta de minutos. Para el/la facilitador/a, cerrar formalmente el espacio con este pequeño ritual, en lugar de simplemente dejar de hablar, marca con claridad el fin del encuentro."
+            }
+          ]
+        }
+      ]
+    },
+    "cadena-de-energia": {
+      "ic": "scissors",
+      "cat": "Activación · Energizador",
+      "clr": "teal",
+      "name": "Cadena de <em>Energía</em>",
+      "sub": "Energizador rítmico y breve donde el grupo construye colectivamente una secuencia de sonidos y movimientos que se repite y crece, generando activación física y atención compartida en menos de cinco minutos.",
+      "metas": [
+        "5 min",
+        "Grupo completo, en círculo",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio para estar de pie en círculo"
+      ],
+      "secs": [
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "scissors",
+              "h": "Paso 1 · Explicar la mecánica (1 min)",
+              "p": "El grupo se pone de pie en círculo. La primera persona hace un gesto y sonido breve, por ejemplo un aplauso o chasquido."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 2 · La cadena crece (2-3 min)",
+              "p": "La persona siguiente repite el gesto anterior y agrega uno propio. Cada persona repite toda la secuencia acumulada antes de agregar la suya."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 3 · Vuelta completa",
+              "p": "Al llegar de nuevo a la primera persona, todo el grupo repite la cadena completa al unísono."
+            },
+            {
+              "ic": "scissors",
+              "h": "Paso 4 · Cierre con aplauso colectivo",
+              "p": "Terminar con un aplauso grupal simultáneo."
+            }
+          ],
+          "cita": "\"Cinco minutos de ritmo compartido pueden cambiar la energía de toda una sala.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Atención",
+              "q": "¿Qué tuviste que hacer para recordar toda la secuencia?"
+            },
+            {
+              "c": "Energía",
+              "q": "¿Cómo cambió la energía del grupo entre el inicio y el final de la actividad?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La energía del grupo es una variable que decae de forma natural en sesiones largas y que el/la facilitador/a debe gestionar activamente incorporando momentos de activación física breve entre bloques de trabajo (AJ&Smart). El componente de atención compartida, recordar y repetir una secuencia colectiva creciente, añade además un desafío cognitivo leve que ayuda a anclar la atención del grupo en el presente. Para el/la facilitador/a, esta actividad es útil como transición rápida entre dos bloques de contenido, especialmente cuando el tiempo disponible es muy limitado."
+            }
+          ]
+        }
+      ]
+    },
+    "galeria-de-gratitud": {
+      "ic": "heart",
+      "cat": "Conexión · Gratitud",
+      "clr": "pur",
+      "name": "Galería de <em>Gratitud</em>",
+      "sub": "Cada persona escribe notas breves de agradecimiento genuino hacia distintos compañeros/as y las coloca en una galería que todo el equipo recorre en silencio, como una exposición de reconocimiento mutuo.",
+      "metas": [
+        "25-30 min",
+        "Grupo completo",
+        "Post-its de colores"
+      ],
+      "mat": [
+        "Post-its de colores",
+        "Marcadores",
+        "Pizarra o pared amplia dividida por persona"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "¿Para qué sirve?",
+              "p": "El reconocimiento genuino entre compañeros/as rara vez se expresa espontáneamente en el trabajo cotidiano. Esta actividad crea un espacio dedicado exclusivamente a hacerlo, en un formato que permite a cada persona recibir varios reconocimientos simultáneos y leerlos con calma."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Paso 1 · Preparar los espacios",
+              "p": "Colocar un espacio con el nombre de cada persona en la pared o pizarra."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 2 · Escribir con especificidad (10 min)",
+              "p": "Cada participante escribe al menos 3 notas de agradecimiento genuino hacia distintos compañeros/as, algo específico, no un elogio genérico."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 3 · Pegar las notas",
+              "p": "Las notas se pegan en el espacio correspondiente a cada persona, de forma anónima o firmada, según lo que el grupo prefiera."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 4 · Recorrer la galería (10 min)",
+              "p": "Todos recorren la galería en silencio, leyendo lo que recibieron y lo que otros recibieron."
+            }
+          ],
+          "cita": "\"Lo que agradecemos en voz baja, merece decirse en voz alta.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Recibir",
+              "q": "¿Cómo fue leer varios reconocimientos juntos? ¿Hubo alguno que no esperabas?"
+            },
+            {
+              "c": "Dar",
+              "q": "¿Fue fácil o difícil encontrar algo específico que agradecer a cada persona?"
+            },
+            {
+              "c": "Práctica futura",
+              "q": "¿Cómo podríamos incorporar más reconocimiento genuino en nuestro día a día?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La expresión de gratitud es una de las prácticas con mayor evidencia dentro del modelo PERMA de bienestar (Seligman), asociada al fortalecimiento tanto de las emociones positivas como de las relaciones dentro de un grupo. La teoría de ampliación y construcción de Fredrickson explica el mecanismo: los episodios breves de emoción positiva compartida amplían el repertorio de pensamiento y acción de las personas y construyen recursos sociales que perduran más allá del momento puntual. Para el/la facilitador/a, pedir que el agradecimiento sea específico, y no un elogio genérico, es la variable que más influye en que la persona que lo recibe realmente lo sienta como auténtico."
+            }
+          ]
+        }
+      ]
+    },
+    "mapa-de-apoyos": {
+      "ic": "map",
+      "cat": "Conexión · Apoyo Social",
+      "clr": "pur",
+      "name": "Mapa de <em>Apoyos</em>",
+      "sub": "Cada persona identifica y comparte, dentro de un espacio seguro, quiénes son las personas del equipo a las que recurre en distintos tipos de necesidad, reconociendo la red de apoyo social que ya existe, muchas veces sin nombrarse.",
+      "metas": [
+        "30 min",
+        "Grupo completo o subgrupos",
+        "Papel y post-its"
+      ],
+      "mat": [
+        "Papel individual con el propio nombre al centro",
+        "Post-its",
+        "Marcadores"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Las personas suelen contar con más apoyo del que perciben conscientemente, porque rara vez se detienen a nombrarlo. Hacer explícita esta red de apoyo social fortalece el sentido de pertenencia y ayuda a identificar también los vacíos que convendría atender."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "map",
+              "h": "Paso 1 · El nombre al centro",
+              "p": "Cada persona dibuja su nombre al centro de una hoja."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 2 · Nombrar la red",
+              "p": "Alrededor, escribe los nombres de compañeros/as a quienes recurriría para: una duda técnica, un momento emocionalmente difícil, celebrar un logro."
+            },
+            {
+              "ic": "map",
+              "h": "Paso 3 · Compartir en confianza",
+              "p": "En parejas o tríos, comparten voluntariamente su mapa: ¿coinciden los nombres en las tres categorías, o son personas distintas para cada necesidad?"
+            },
+            {
+              "ic": "map",
+              "h": "Paso 4 · Cierre en plenario",
+              "p": "Sin exponer nombres, cada persona comparte un aprendizaje sobre su propia red de apoyo."
+            }
+          ],
+          "cita": "\"Nombrar el apoyo que ya tenemos es el primer paso para valorarlo, y para pedirlo cuando lo necesitamos.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Diversidad de apoyos",
+              "q": "¿Las mismas personas aparecen en las tres categorías, o tu red de apoyo se distribuye entre distintas personas según la necesidad?"
+            },
+            {
+              "c": "Vacíos",
+              "q": "¿Hay algún tipo de apoyo para el que sientes que tu red es más débil?"
+            },
+            {
+              "c": "Reciprocidad",
+              "q": "¿Eres tú también parte de la red de apoyo de otras personas del equipo, en las mismas categorías?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La percepción de contar con apoyo social disponible está asociada, de acuerdo con la teoría de ampliación y construcción de Fredrickson, a una mayor capacidad de las personas para afrontar el estrés y sostener emociones positivas en el tiempo, ya que las relaciones de confianza construidas funcionan como un recurso psicológico duradero. Hacer explícita esta red, en lugar de asumir que existe de forma difusa, ayuda a las personas a reconocer con quién efectivamente cuentan, además de identificar los vacíos donde la red podría ser más débil de lo que asumían. Para el/la facilitador/a, esta actividad conviene encuadrarla con cuidado, dejando claro que no hay una 'red ideal', para evitar que se convierta en una comparación incómoda entre participantes."
+            }
+          ]
+        }
+      ]
+    },
+    "presencia-compartida": {
+      "ic": "eye",
+      "cat": "Conexión · Presencia",
+      "clr": "pur",
+      "name": "Presencia <em>Compartida</em>",
+      "sub": "Práctica breve en parejas de respiración consciente compartida y contacto visual sostenido, sin palabras, para experimentar la conexión que se genera simplemente al estar plenamente presente con otra persona.",
+      "metas": [
+        "10-12 min",
+        "Parejas",
+        "Espacio tranquilo"
+      ],
+      "mat": [
+        "Sillas o cojines frente a frente",
+        "Espacio silencioso",
+        "Música ambiental muy suave — opcional"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Gran parte de nuestras interacciones cotidianas ocurren con atención parcial: pensando en lo que sigue, revisando el teléfono, o formulando la próxima respuesta mientras el otro aún habla. Esta práctica aísla deliberadamente el componente de presencia plena, sin el contenido de una conversación, para experimentarlo en su forma más simple."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "eye",
+              "h": "Paso 1 · Encuadre (1 min)",
+              "p": "'Vamos a practicar simplemente estar presentes con otra persona, sin hablar. No es un duelo de miradas, es un acto de atención genuina.' Formar parejas y sentarse frente a frente, a una distancia cómoda."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 2 · Respiración compartida (3 min)",
+              "p": "Ambos cierran los ojos y respiran con calma durante un minuto, sintiendo la presencia del otro sin verla."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 3 · Mirada sostenida (3-4 min)",
+              "p": "Abren los ojos lentamente y sostienen la mirada, en silencio, respirando con calma. Si surge la risa nerviosa o la incomodidad, está bien, simplemente vuelven a la respiración."
+            },
+            {
+              "ic": "eye",
+              "h": "Paso 4 · Cierre suave (1-2 min)",
+              "p": "Al sonar una señal suave, agradecen a su pareja con un gesto, sin necesidad de palabras."
+            }
+          ],
+          "cita": "\"A veces la conexión más honesta no necesita ninguna palabra.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "La experiencia",
+              "q": "¿Qué fue lo más difícil de sostener: el silencio, la mirada, o ambos?"
+            },
+            {
+              "c": "Lo que surgió",
+              "q": "¿Qué emoción apareció durante el ejercicio, si es que apareció alguna?"
+            },
+            {
+              "c": "Comparación",
+              "q": "¿En qué se diferencia esta forma de conexión de una conversación habitual?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las prácticas de atención plena compartida, en las que dos personas sostienen presencia consciente conjunta sin el contenido habitual de una conversación, se relacionan con el componente de presencia atenta que sostiene la compasión, entendida como una forma de estar con el otro reconociendo su humanidad sin necesidad de resolver ni opinar. Que la práctica se realice en silencio elimina las distracciones del contenido verbal y permite que las personas experimenten, de forma más directa, el efecto de la atención sostenida en la calidad del vínculo. Para el/la facilitador/a, esta actividad requiere un encuadre cuidadoso y un grupo con cierto nivel de confianza previa; la risa nerviosa o la incomodidad inicial son reacciones normales y no un signo de que la práctica no está funcionando."
+            }
+          ]
+        }
+      ]
+    },
+    "momentos-que-nos-unen": {
+      "ic": "cards",
+      "cat": "Conexión · Narrativa Colectiva",
+      "clr": "pur",
+      "name": "Momentos que Nos <em>Unen</em>",
+      "sub": "El equipo construye colectivamente una línea de tiempo con los momentos compartidos que más recuerdan (logros, desafíos superados juntos, anécdotas), fortaleciendo el sentido de identidad y pertenencia grupal.",
+      "metas": [
+        "35-40 min",
+        "Grupo completo",
+        "Papel largo o pizarra"
+      ],
+      "mat": [
+        "Papel kraft largo o pizarra amplia",
+        "Post-its",
+        "Marcadores de colores"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "star",
+              "h": "¿Para qué sirve?",
+              "p": "Los equipos construyen su identidad, en gran parte, a partir de la historia compartida que recuerdan y que se cuentan entre sí. Hacer explícita esa historia colectiva, con sus logros y también sus momentos difíciles superados juntos, fortalece el sentido de pertenencia al grupo."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "cards",
+              "h": "Paso 1 · Trazar la línea de tiempo (2 min)",
+              "p": "Dibujar una línea horizontal larga en el papel kraft, marcando el inicio del equipo o del proyecto hasta hoy."
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 2 · Recordar en silencio (5 min)",
+              "p": "Cada persona escribe en post-its 2-3 momentos que recuerde como significativos para el equipo: un logro, un desafío superado, una anécdota que los marcó."
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 3 · Construir la línea juntos (15 min)",
+              "p": "Todos pegan sus post-its en el punto correspondiente de la línea de tiempo. El grupo observa el resultado colectivo, completando entre todos los detalles de cada momento."
+            },
+            {
+              "ic": "cards",
+              "h": "Paso 4 · Narrar la historia (10 min)",
+              "p": "Voluntariamente, distintas personas van narrando en voz alta la historia del equipo, siguiendo la línea de tiempo construida."
+            }
+          ],
+          "cita": "\"Un equipo que conoce su propia historia, sabe mejor hacia dónde quiere ir.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Lo recurrente",
+              "q": "¿Qué tipo de momentos aparecieron más: logros, desafíos, anécdotas cotidianas?"
+            },
+            {
+              "c": "Lo que aprendimos",
+              "q": "¿Qué aprendimos de nosotros mismos como equipo al ver esta línea de tiempo completa?"
+            },
+            {
+              "c": "El próximo capítulo",
+              "q": "¿Qué momento nos gustaría agregar a esta línea de tiempo en los próximos meses?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "La construcción de una narrativa compartida sobre la historia del grupo está asociada al desarrollo de una identidad grupal, que la literatura sobre equipos de trabajo señala como un factor que potencia el compromiso y la implicación de sus integrantes entre sí y con la tarea. Recordar colectivamente tanto los logros como los desafíos superados juntos reactiva, además, emociones positivas compartidas que, de acuerdo con la teoría de ampliación y construcción de Fredrickson, refuerzan los lazos sociales del grupo. Para el/la facilitador/a, esta actividad es especialmente potente en equipos que atraviesan un momento de cansancio o desmotivación, porque reconecta al grupo con el sentido y el camino recorrido antes de proyectar lo que viene."
+            }
+          ]
+        }
+      ]
+    },
+    "reconociendo-al-otro": {
+      "ic": "heart",
+      "cat": "Conexión · Reconocimiento",
+      "clr": "pur",
+      "name": "Reconociendo al <em>Otro</em>",
+      "sub": "Ronda oral y pública donde cada persona reconoce en voz alta, frente al grupo completo, una cualidad o aporte genuino de un compañero/a específico. A diferencia de la carta escrita, aquí el reconocimiento se dice y se recibe en el momento, frente a todos.",
+      "metas": [
+        "25-30 min",
+        "Grupo completo (hasta 12 personas)",
+        "Sin materiales"
+      ],
+      "mat": [
+        "Sin materiales físicos",
+        "Espacio en círculo"
+      ],
+      "secs": [
+        {
+          "t": "Objetivo y propósito",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "¿Para qué sirve?",
+              "p": "Recibir un reconocimiento en público, frente al grupo completo, tiene un efecto distinto al de recibirlo en privado: valida socialmente el aporte de la persona frente a sus pares, lo cual refuerza tanto la autoestima individual como la cohesión del equipo en su conjunto."
+            }
+          ]
+        },
+        {
+          "t": "Instrucciones paso a paso",
+          "rows": [
+            {
+              "ic": "heart",
+              "h": "Paso 1 · Encuadre (2 min)",
+              "p": "El grupo se sienta en círculo. El/la facilitador/a explica: 'vamos a reconocer en voz alta algo genuino de un compañero/a. Debe ser específico, no un elogio genérico, y dicho mirando a la persona.'"
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 2 · El/la facilitador/a modela primero (2 min)",
+              "p": "Reconoce a alguien del grupo con un ejemplo concreto, mostrando el nivel de especificidad esperado."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 3 · Ronda abierta (15-18 min)",
+              "p": "Voluntariamente, distintas personas reconocen a un compañero/a, mirándolo/a directamente. Quien recibe el reconocimiento solo agradece, sin minimizarlo ni comentarlo en exceso."
+            },
+            {
+              "ic": "heart",
+              "h": "Paso 4 · Verificar que nadie quede fuera (3 min)",
+              "p": "El/la facilitador/a observa discretamente si alguna persona no recibió ningún reconocimiento durante la ronda y, de ser así, ofrece uno propio antes de cerrar."
+            }
+          ],
+          "cita": "\"Lo que se dice en público, se siente distinto, y se recuerda más tiempo.\""
+        },
+        {
+          "t": "Reflexión",
+          "plen": [
+            {
+              "c": "Recibir en público",
+              "q": "¿Cómo se sintió recibir el reconocimiento frente a todo el grupo, en comparación con recibirlo en privado?"
+            },
+            {
+              "c": "Dar en público",
+              "q": "¿Fue más fácil o más difícil reconocer a alguien sabiendo que todo el grupo escuchaba?"
+            },
+            {
+              "c": "Cultura",
+              "q": "¿Cómo cambiaría nuestro equipo si este tipo de reconocimiento público fuera más frecuente?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El reconocimiento social explícito hacia el desempeño y los esfuerzos de una persona es señalado en la literatura sobre motivación de equipos como un factor clave tanto para la motivación individual como grupal, y puede ir desde una simple expresión verbal de aprecio hasta gestos más elaborados de reconocimiento colectivo. Que el reconocimiento ocurra frente al grupo completo, y no en privado, añade un componente de validación social que refuerza el sentido de pertenencia tanto de quien lo recibe como del resto del grupo que es testigo. Para el/la facilitador/a, verificar activamente que ninguna persona quede sin recibir reconocimiento durante la ronda es un paso importante para que la actividad no termine, sin intención, reforzando dinámicas de exclusión ya existentes en el grupo."
             }
           ]
         }
