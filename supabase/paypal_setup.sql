@@ -1,0 +1,75 @@
+-- KitPOP: configuración PayPal Subscriptions (Dashboard manual)
+-- No ejecutes este archivo como SQL. Es una guía paso a paso.
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 1 — Cuenta PayPal Business (Chile)
+-- ═══════════════════════════════════════════════════════════════
+-- 1) https://www.paypal.com/cl/business → crear cuenta Business
+-- 2) Verificar identidad y vincular cuenta bancaria chilena
+-- 3) Activar "Pagos recurrentes" / Subscriptions en el dashboard
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 2 — App REST API (Developer)
+-- ═══════════════════════════════════════════════════════════════
+-- 1) https://developer.paypal.com/dashboard/applications
+-- 2) Create App → nombre "KitPOP" → tipo Merchant
+-- 3) Sandbox primero: copia Client ID y Secret
+-- 4) Cuando estés listo: Live credentials (mismo app, pestaña Live)
+--
+-- Variables Vercel (Production + Preview para pruebas):
+--   PAYPAL_CLIENT_ID=...
+--   PAYPAL_CLIENT_SECRET=...
+--   PAYPAL_MODE=sandbox          (cambiar a "live" en producción)
+--   PAYPAL_WEBHOOK_ID=...
+--   PAYPAL_PLAN_PRO_MONTHLY=P-...
+--   PAYPAL_PLAN_PRO_YEARLY=P-...
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 3 — Crear planes de suscripción
+-- ═══════════════════════════════════════════════════════════════
+-- Dashboard → Products → Subscriptions → Create Plan
+--
+-- Plan A — KitPOP Pro Mensual
+--   Product name: KitPOP Pro
+--   Billing cycle: Every 1 month
+--   Price: USD 3.99
+--   Copiar Plan ID → PAYPAL_PLAN_PRO_MONTHLY
+--
+-- Plan B — KitPOP Pro Anual
+--   Product name: KitPOP Pro Anual
+--   Billing cycle: Every 1 year
+--   Price: USD 29.00
+--   Copiar Plan ID → PAYPAL_PLAN_PRO_YEARLY
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 4 — Webhook
+-- ═══════════════════════════════════════════════════════════════
+-- Developer Dashboard → tu app → Webhooks → Add Webhook
+-- URL: https://app.kitpopapp.com/api/paypal-webhook
+--
+-- Eventos a suscribir:
+--   BILLING.SUBSCRIPTION.ACTIVATED
+--   BILLING.SUBSCRIPTION.UPDATED
+--   BILLING.SUBSCRIPTION.CANCELLED
+--   BILLING.SUBSCRIPTION.SUSPENDED
+--   BILLING.SUBSCRIPTION.EXPIRED
+--   PAYMENT.SALE.COMPLETED
+--
+-- Copiar Webhook ID → PAYPAL_WEBHOOK_ID
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 5 — Supabase
+-- ═══════════════════════════════════════════════════════════════
+-- Ejecutar: supabase/paypal_v1.sql
+--
+-- ═══════════════════════════════════════════════════════════════
+-- PARTE 6 — Probar (Sandbox)
+-- ═══════════════════════════════════════════════════════════════
+-- 1) PAYPAL_MODE=sandbox en Vercel → Redeploy
+-- 2) Perfil → Activar Pro → login con cuenta Sandbox Buyer
+--    (Developer Dashboard → Sandbox → Accounts)
+-- 3) Tras aprobar, vuelves a /perfil con plan Pro activo
+-- 4) Webhook debe actualizar profiles.plan = 'pro'
+--
+-- Flujo usuario final:
+--   Explorer (gratis) → Perfil → Activar Pro → PayPal → Pro activo

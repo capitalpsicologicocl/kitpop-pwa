@@ -149,21 +149,3 @@ export async function ensureStripeCustomer({ stripe, supabaseAdmin, user, profil
 
   return customer.id
 }
-
-export function profileHasActivePaidPlan(profile) {
-  const plan = profile?.plan
-
-  if (!plan || !['pro', 'pro_team'].includes(plan)) {
-    return false
-  }
-
-  if (['active', 'trialing'].includes(profile.subscription_status)) {
-    return true
-  }
-
-  if (profile.plan_period_end) {
-    return new Date(profile.plan_period_end).getTime() > Date.now()
-  }
-
-  return false
-}

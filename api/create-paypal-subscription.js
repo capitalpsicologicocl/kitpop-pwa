@@ -1,16 +1,16 @@
 import { profileHasActivePaidPlan } from './_lib/billing.js'
 import {
-  ensureStripeCustomer,
-  getStripe,
-  getStripePriceId,
-} from './_lib/stripe.js'
+  createPayPalSubscription,
+  getPayPalApprovalUrl,
+  getPayPalPlanId,
+} from './_lib/paypal.js'
 import {
   getAppOrigin,
   getAuthenticatedUser,
   getSupabaseAdmin,
 } from './_lib/supabase.js'
 
-function parseCheckoutBody(req) {
+function parseBody(req) {
   let body = {}
 
   try {
@@ -40,14 +40,13 @@ export default async function handler(req, res) {
       return res.status(401).json({ error: 'Debes iniciar sesión.' })
     }
 
-    const { planTier, billingInterval } = parseCheckoutBody(req)
-    const stripe = getStripe()
+    const { planTier, billingInterval } = parseBody(req)
     const supabaseAdmin = getSupabaseAdmin()
     const origin = getAppOrigin(req)
 
     const { data: profile, error: profileError } = await supabaseAdmin
       .from('profiles')
-      .select('plan, subscription_status, stripe_customer_id, plan_period_end')
+      .select('plan, subscription_status, plan_period_end, paypal_subscription_id')
       .eq('id', user.id)
       .maybeSingle()
 
@@ -61,45 +60,32 @@ export default async function handler(req, res) {
       })
     }
 
-    const customerId = await ensureStripeCustomer({
-      stripe,
-      supabaseAdmin,
-      user,
-      profile,
+    const planId = getPayPalPlanId(planTier, billingInterval)
+    const returnUrl = `${origin}/perfil?checkout=success`
+    const cancelUrl = `${origin}/perfil?checkout=canceled`
+
+    const subscription = await createPayPalSubscription({
+      planId,
+      userId: user.id,
+      userEmail: user.email,
+      returnUrl,
+      cancelUrl,
     })
 
-    const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
-      customer: customerId,
-      client_reference_id: user.id,
-      line_items: [
-        {
-          price: getStripePriceId(planTier, billingInterval),
-          quantity: 1,
-        },
-      ],
-      allow_promotion_codes: true,
-      success_url: `${origin}/perfil?checkout=success`,
-      cancel_url: `${origin}/perfil?checkout=canceled`,
-      metadata: {
-        user_id: user.id,
-        plan_tier: planTier,
-        billing_interval: billingInterval,
-      },
-      subscription_data: {
-        metadata: {
-          user_id: user.id,
-          plan_tier: planTier,
-          billing_interval: billingInterval,
-        },
-      },
-    })
+    const approvalUrl = getPayPalApprovalUrl(subscription)
 
-    return res.status(200).json({ url: session.url })
+    if (!approvalUrl) {
+      throw new Error('PayPal no devolvió URL de aprobación.')
+    }
+
+    return res.status(200).json({
+      url: approvalUrl,
+      subscriptionId: subscription.id,
+    })
   } catch (error) {
-    console.error('create-checkout-session', error)
+    console.error('create-paypal-subscription', error)
     return res.status(500).json({
-      error: error.message || 'No se pudo iniciar el checkout.',
+      error: error.message || 'No se pudo iniciar el pago con PayPal.',
     })
   }
 }

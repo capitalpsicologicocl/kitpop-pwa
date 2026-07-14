@@ -4,6 +4,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import PlanSection from '../components/profile/PlanSection'
 import { useAuth } from '../context/AuthContext'
 import { fetchJournalEntries } from '../services/journalService'
+import { syncPayPalSubscription } from '../services/paypalService'
 import { fetchWorkshops } from '../services/workshopService'
 import { getPlanLabel } from '../utils/planLimits'
 
@@ -51,20 +52,36 @@ export default function Profile() {
 
   useEffect(() => {
     const checkoutState = searchParams.get('checkout')
+    const subscriptionId = searchParams.get('subscription_id')
 
     if (!user || !checkoutState) {
       return
     }
 
-    refreshProfile(user.id)
+    async function handleCheckoutReturn() {
+      if (checkoutState === 'success') {
+        if (subscriptionId) {
+          try {
+            await syncPayPalSubscription(subscriptionId)
+            setMessage('¡KitPOP Pro activado! Ya puedes crear sin límites.')
+          } catch {
+            setMessage(
+              'Pago recibido. Tu plan Pro se activará en unos segundos.'
+            )
+          }
+        } else {
+          setMessage('Pago recibido. Tu plan Pro se activará en unos segundos.')
+        }
 
-    if (checkoutState === 'success') {
-      setMessage('Pago recibido. Tu plan Pro se activará en unos segundos.')
-    } else if (checkoutState === 'canceled') {
-      setMessage('Checkout cancelado. Puedes activar Pro cuando quieras.')
+        await refreshProfile(user.id)
+      } else if (checkoutState === 'canceled') {
+        setMessage('Pago cancelado. Puedes activar Pro cuando quieras.')
+      }
+
+      setSearchParams({}, { replace: true })
     }
 
-    setSearchParams({}, { replace: true })
+    handleCheckoutReturn()
   }, [refreshProfile, searchParams, setSearchParams, user])
 
   useEffect(() => {
@@ -249,7 +266,10 @@ export default function Profile() {
           </form>
         </section>
 
-        <PlanSection profile={profile} />
+        <PlanSection
+          profile={profile}
+          onPlanChange={() => user && refreshProfile(user.id)}
+        />
 
         <section className="profile-section">
           <div className="profile-section-head">

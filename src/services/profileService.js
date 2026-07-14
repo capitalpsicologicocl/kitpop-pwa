@@ -7,7 +7,7 @@ const ALLOWED_AVATAR_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gi
 export async function fetchProfile(userId) {
   const { data, error } = await supabase
     .from('profiles')
-    .select('full_name, avatar_url, plan, subscription_status, stripe_customer_id, plan_period_end')
+    .select('full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end')
     .eq('id', userId)
     .maybeSingle()
 
@@ -25,7 +25,7 @@ export async function updateProfile(userId, fullName) {
       id: userId,
       full_name: fullName,
     })
-    .select('full_name, avatar_url, plan, subscription_status, stripe_customer_id, plan_period_end')
+    .select('full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end')
     .single()
 
   if (error) {
@@ -70,7 +70,7 @@ export async function uploadAvatar(userId, file) {
       id: userId,
       avatar_url: avatarUrl,
     })
-    .select('full_name, avatar_url, plan, subscription_status, stripe_customer_id, plan_period_end')
+    .select('full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end')
     .single()
 
   if (error) {

@@ -3,7 +3,7 @@ export function getAuthSiteUrl() {
     return window.location.origin
   }
 
-  return import.meta.env.VITE_APP_URL || 'https://kitpop-pwa.vercel.app'
+  return import.meta.env.VITE_APP_URL || 'https://app.kitpopapp.com'
 }
 
 export function getLoginUrl(query = '') {

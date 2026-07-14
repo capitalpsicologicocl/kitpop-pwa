@@ -2,8 +2,10 @@
 -- No ejecutes este archivo como SQL. Es una guía de configuración manual.
 --
 -- 1) Authentication → URL Configuration
---    Site URL: https://kitpop-pwa.vercel.app
+--    Site URL: https://app.kitpopapp.com
 --    Redirect URLs (añadir todas):
+--      https://app.kitpopapp.com/login
+--      https://app.kitpopapp.com/restablecer-contrasena
 --      https://kitpop-pwa.vercel.app/login
 --      https://kitpop-pwa.vercel.app/restablecer-contrasena
 --      http://localhost:5173/login

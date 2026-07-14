@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { redirectToBillingPortal, redirectToCheckout } from '../../services/stripeService'
+import {
+  cancelPayPalSubscription,
+  redirectToPayPalCheckout,
+} from '../../services/paypalService'
 import {
   getVisiblePlans,
   formatPlanPeriodEnd,
@@ -12,34 +15,49 @@ import {
   hasPaidPlan,
 } from '../../utils/planLimits'
 
-export default function PlanSection({ profile }) {
+export default function PlanSection({ profile, onPlanChange }) {
   const [billingInterval, setBillingInterval] = useState('yearly')
   const [loadingPlan, setLoadingPlan] = useState('')
   const [error, setError] = useState('')
+  const [message, setMessage] = useState('')
   const currentPlanId = getUserPlan(profile)
   const isPaid = hasPaidPlan(profile)
   const periodEnd = formatPlanPeriodEnd(profile)
+  const hasPayPalSubscription = Boolean(profile?.paypal_subscription_id)
 
   async function handleUpgrade(planTier) {
     setError('')
+    setMessage('')
     setLoadingPlan(planTier)
 
     try {
-      await redirectToCheckout(planTier, billingInterval)
+      await redirectToPayPalCheckout(planTier, billingInterval)
     } catch (upgradeError) {
       setError(upgradeError.message || 'No se pudo iniciar el pago.')
       setLoadingPlan('')
     }
   }
 
-  async function handleManageBilling() {
+  async function handleCancelSubscription() {
+    const confirmed = window.confirm(
+      '¿Cancelar KitPOP Pro? Mantendrás acceso hasta el fin del periodo pagado y no se renovará automáticamente.'
+    )
+
+    if (!confirmed) {
+      return
+    }
+
     setError('')
-    setLoadingPlan('portal')
+    setMessage('')
+    setLoadingPlan('cancel')
 
     try {
-      await redirectToBillingPortal()
-    } catch (portalError) {
-      setError(portalError.message || 'No se pudo abrir el portal de facturación.')
+      await cancelPayPalSubscription()
+      setMessage('Suscripción cancelada. Tu acceso Pro sigue vigente hasta la fecha de renovación.')
+      onPlanChange?.()
+    } catch (cancelError) {
+      setError(cancelError.message || 'No se pudo cancelar la suscripción.')
+    } finally {
       setLoadingPlan('')
     }
   }
@@ -104,7 +122,7 @@ export default function PlanSection({ profile }) {
                   onClick={() => handleUpgrade(plan.id)}
                 >
                   {loadingPlan === plan.id
-                    ? 'Redirigiendo a Stripe...'
+                    ? 'Redirigiendo a PayPal...'
                     : `Activar ${plan.kicker}`}
                 </button>
               )}
@@ -125,17 +143,18 @@ export default function PlanSection({ profile }) {
         )}
       </div>
 
+      {message && <div className="auth-message success">{message}</div>}
       {error && <div className="auth-message error">{error}</div>}
 
       <div className="auth-actions">
-        {isPaid && (
+        {isPaid && hasPayPalSubscription && (
           <button
             type="button"
-            className="btn-primary"
+            className="btn-secondary"
             disabled={Boolean(loadingPlan)}
-            onClick={handleManageBilling}
+            onClick={handleCancelSubscription}
           >
-            {loadingPlan === 'portal' ? 'Abriendo...' : 'Gestionar suscripción'}
+            {loadingPlan === 'cancel' ? 'Cancelando...' : 'Cancelar renovación'}
           </button>
         )}
 
@@ -147,9 +166,9 @@ export default function PlanSection({ profile }) {
       </div>
 
       <p className="plan-footnote">
-        Pagos seguros con Stripe. Tarjetas internacionales para LATAM. Pro: USD 3.99/mes
-        o USD 29/año. Renovación automática hasta que canceles desde el portal de
-        facturación.
+        Pagos seguros con PayPal. Tarjeta o cuenta PayPal desde Chile y LATAM. Pro: USD
+        3.99/mes o USD 29/año. Renovación automática hasta que canceles desde aquí o
+        desde tu cuenta PayPal.
       </p>
     </section>
   )

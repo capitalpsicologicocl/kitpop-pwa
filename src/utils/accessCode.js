@@ -16,7 +16,7 @@ export function normalizeAccessCode(code = '') {
 
 export function getParticipantUrl(code) {
   const origin =
-    typeof window !== 'undefined' ? window.location.origin : 'https://kitpop-pwa.vercel.app'
+    typeof window !== 'undefined' ? window.location.origin : 'https://app.kitpopapp.com'
 
   return `${origin}/p/${normalizeAccessCode(code)}`
 }
