@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import {
-  cancelPayPalSubscription,
-  redirectToPayPalCheckout,
-} from '../../services/paypalService'
+import PayPalSubscribeButtons from './PayPalSubscribeButtons'
+import { cancelPayPalSubscription } from '../../services/paypalService'
 import {
   getVisiblePlans,
   formatPlanPeriodEnd,
@@ -24,19 +22,6 @@ export default function PlanSection({ profile, onPlanChange }) {
   const isPaid = hasPaidPlan(profile)
   const periodEnd = formatPlanPeriodEnd(profile)
   const hasPayPalSubscription = Boolean(profile?.paypal_subscription_id)
-
-  async function handleUpgrade(planTier) {
-    setError('')
-    setMessage('')
-    setLoadingPlan(planTier)
-
-    try {
-      await redirectToPayPalCheckout(planTier, billingInterval)
-    } catch (upgradeError) {
-      setError(upgradeError.message || 'No se pudo iniciar el pago.')
-      setLoadingPlan('')
-    }
-  }
 
   async function handleCancelSubscription() {
     const confirmed = window.confirm(
@@ -60,6 +45,12 @@ export default function PlanSection({ profile, onPlanChange }) {
     } finally {
       setLoadingPlan('')
     }
+  }
+
+  function handleSubscribeSuccess() {
+    setError('')
+    setMessage('¡KitPOP Pro activado! Ya puedes crear sin límites.')
+    onPlanChange?.()
   }
 
   return (
@@ -115,16 +106,11 @@ export default function PlanSection({ profile, onPlanChange }) {
               {isCurrent && <span className="plan-card-badge">Plan actual</span>}
 
               {!isExplorer && !isPaid && (
-                <button
-                  type="button"
-                  className="btn-primary plan-card-btn"
-                  disabled={Boolean(loadingPlan)}
-                  onClick={() => handleUpgrade(plan.id)}
-                >
-                  {loadingPlan === plan.id
-                    ? 'Redirigiendo a PayPal...'
-                    : `Activar ${plan.kicker}`}
-                </button>
+                <PayPalSubscribeButtons
+                  billingInterval={billingInterval}
+                  onSuccess={handleSubscribeSuccess}
+                  onError={setError}
+                />
               )}
             </article>
           )
@@ -166,9 +152,9 @@ export default function PlanSection({ profile, onPlanChange }) {
       </div>
 
       <p className="plan-footnote">
-        Pagos seguros con PayPal. Puedes pagar con tarjeta de crédito o débito
-        sin cuenta PayPal (opción “Pagar con tarjeta”). Pro: USD 3.99/mes o USD
-        29/año. Renovación automática hasta que canceles.
+        Elige <strong>Débito o crédito</strong> para pagar sin cuenta PayPal, o{' '}
+        <strong>PayPal</strong> si ya tienes una. Pro: USD 3.99/mes o USD 29/año.
+        Renovación automática hasta que canceles.
       </p>
     </section>
   )

@@ -429,6 +429,20 @@
   margin-top:12px;
 }
 
+.plan-paypal-buttons {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:12px;
+  min-height:100px;
+}
+
+.plan-paypal-loading {
+  margin-top:12px;
+  font-size:13px;
+  color:var(--g500);
+}
+
 .plan-card {
   border:1.5px solid var(--g200);
   border-radius:18px;

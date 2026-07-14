@@ -30,6 +30,31 @@ async function postPayPalEndpoint(path, body = {}) {
   return payload
 }
 
+export async function fetchPayPalConfig(billingInterval) {
+  const token = await getAccessToken()
+
+  if (!token) {
+    throw new Error('Debes iniciar sesión para continuar.')
+  }
+
+  const response = await fetch(
+    `/api/paypal-config?billingInterval=${encodeURIComponent(billingInterval)}`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
+
+  const payload = await response.json().catch(() => ({}))
+
+  if (!response.ok) {
+    throw new Error(payload.error || 'No se pudo cargar PayPal.')
+  }
+
+  return payload
+}
+
 export async function startPayPalSubscription({ planTier, billingInterval }) {
   const payload = await postPayPalEndpoint('/api/create-paypal-subscription', {
     planTier,
