@@ -1,14 +1,19 @@
-import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import facilitacion from '../../src/data/categories/facilitacion.json' with { type: 'json' }
+import fortalezas from '../../src/data/categories/fortalezas.json' with { type: 'json' }
+import equipoReunionConexion from '../../src/data/categories/equipo-reunion-conexion.json' with { type: 'json' }
+import mindfulConversacionesReuniones from '../../src/data/categories/mindful-conversaciones-reuniones.json' with { type: 'json' }
+import perma from '../../src/data/categories/perma.json' with { type: 'json' }
+import pnl from '../../src/data/categories/pnl.json' with { type: 'json' }
+import kitpopData from '../../src/data/kitpopData.json' with { type: 'json' }
 
 const DATA_FILES = [
-  'src/data/kitpopData.json',
-  'src/data/categories/facilitacion.json',
-  'src/data/categories/pnl.json',
-  'src/data/categories/perma.json',
-  'src/data/categories/fortalezas.json',
-  'src/data/categories/equipo-reunion-conexion.json',
-  'src/data/categories/mindful-conversaciones-reuniones.json',
+  kitpopData,
+  facilitacion,
+  pnl,
+  perma,
+  fortalezas,
+  equipoReunionConexion,
+  mindfulConversacionesReuniones,
 ]
 
 const CATEGORY_SLUG_MAP = {
@@ -50,9 +55,7 @@ function loadMergedData() {
   let CATS = {}
   let A = {}
 
-  for (const relativePath of DATA_FILES) {
-    const absolutePath = join(process.cwd(), relativePath)
-    const data = JSON.parse(readFileSync(absolutePath, 'utf8'))
+  for (const data of DATA_FILES) {
     CATS = { ...CATS, ...data.CATS }
     A = { ...A, ...data.A }
   }

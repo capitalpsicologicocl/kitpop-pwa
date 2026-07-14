@@ -71,6 +71,7 @@ export default function WorkshopEditor() {
   const [generatingAi, setGeneratingAi] = useState(false)
   const [aiPreview, setAiPreview] = useState(null)
   const [useKitpopActivities, setUseKitpopActivities] = useState(true)
+  const aiPanelRef = useRef(null)
   const journalTimersRef = useRef({})
 
   const loadWorkshop = useCallback(async () => {
@@ -518,10 +519,12 @@ export default function WorkshopEditor() {
 
       const payload = await generateWorkshopProposal(workshop.id, { useKitpopActivities })
       setAiPreview(payload.proposal)
-      setMessage('Propuesta generada. Revisa y aplícala al taller.')
+      setMessage('Propuesta generada. Revisa el resumen abajo y aplícala al taller.')
       await refreshProfile(user.id)
+      aiPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } catch (generateError) {
       setError(generateError.message || 'No se pudo generar la propuesta con IA.')
+      aiPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } finally {
       setGeneratingAi(false)
     }
@@ -807,7 +810,7 @@ export default function WorkshopEditor() {
         </button>
       </form>
 
-      <section className="auth-panel workshop-ai-panel">
+      <section ref={aiPanelRef} className="auth-panel workshop-ai-panel">
         <div className="workshop-ai-head">
           <div>
             <h3>Diseño con IA</h3>

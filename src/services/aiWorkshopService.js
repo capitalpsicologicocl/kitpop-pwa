@@ -5,6 +5,21 @@ async function getAccessToken() {
   return data.session?.access_token ?? null
 }
 
+async function readJsonResponse(response) {
+  const contentType = response.headers.get('content-type') ?? ''
+
+  if (!contentType.includes('application/json')) {
+    const preview = (await response.text()).slice(0, 120).trim()
+    throw new Error(
+      preview
+        ? `Respuesta inválida del servidor: ${preview}`
+        : 'Respuesta inválida del servidor. Recarga la página e intenta de nuevo.'
+    )
+  }
+
+  return response.json()
+}
+
 export async function parseWorkshopDocument({ fileName, mimeType, base64Data }) {
   const token = await getAccessToken()
 
@@ -21,7 +36,7 @@ export async function parseWorkshopDocument({ fileName, mimeType, base64Data }) 
     body: JSON.stringify({ fileName, mimeType, base64Data }),
   })
 
-  const payload = await response.json().catch(() => ({}))
+  const payload = await readJsonResponse(response).catch(() => ({}))
 
   if (!response.ok) {
     throw new Error(payload.error || 'No se pudo leer el documento.')
@@ -46,10 +61,14 @@ export async function generateWorkshopProposal(workshopId, { useKitpopActivities
     body: JSON.stringify({ workshopId, useKitpopActivities }),
   })
 
-  const payload = await response.json().catch(() => ({}))
+  const payload = await readJsonResponse(response).catch(() => ({}))
 
   if (!response.ok) {
     throw new Error(payload.error || 'No se pudo generar la propuesta con IA.')
+  }
+
+  if (!payload?.proposal?.sessions?.length) {
+    throw new Error('La IA no devolvió una propuesta válida. Intenta de nuevo.')
   }
 
   return payload

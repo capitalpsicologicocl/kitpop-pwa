@@ -345,7 +345,7 @@ export default async function handler(req, res) {
       model,
       system,
       user: userPrompt,
-      maxTokens: 4096,
+      maxTokens: 8192,
     })
 
     const rawProposal = parseJsonFromModel(rawText)
