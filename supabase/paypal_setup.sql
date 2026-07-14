@@ -7,6 +7,9 @@
 -- 1) https://www.paypal.com/cl/business → crear cuenta Business
 -- 2) Verificar identidad y vincular cuenta bancaria chilena
 -- 3) Activar "Pagos recurrentes" / Subscriptions en el dashboard
+-- 4) Cuenta PayPal opcional (pago con tarjeta sin login PayPal):
+--    Configuración → Pagos web → Preferencias del sitio web →
+--    "Cuenta PayPal opcional" → Activado (On)
 --
 -- ═══════════════════════════════════════════════════════════════
 -- PARTE 2 — App REST API (Developer)

@@ -137,9 +137,9 @@ export async function createPayPalSubscription({
       locale: 'es-CL',
       shipping_preference: 'NO_SHIPPING',
       user_action: 'SUBSCRIBE_NOW',
+      landing_page: 'BILLING',
       payment_method: {
-        payer_selected: 'PAYPAL',
-        payee_preferred: 'IMMEDIATE_PAYMENT_REQUIRED',
+        payee_preferred: 'UNRESTRICTED',
       },
       return_url: returnUrl,
       cancel_url: cancelUrl,

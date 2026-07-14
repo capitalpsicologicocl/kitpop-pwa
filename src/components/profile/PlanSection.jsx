@@ -166,9 +166,9 @@ export default function PlanSection({ profile, onPlanChange }) {
       </div>
 
       <p className="plan-footnote">
-        Pagos seguros con PayPal. Tarjeta o cuenta PayPal desde Chile y LATAM. Pro: USD
-        3.99/mes o USD 29/año. Renovación automática hasta que canceles desde aquí o
-        desde tu cuenta PayPal.
+        Pagos seguros con PayPal. Puedes pagar con tarjeta de crédito o débito
+        sin cuenta PayPal (opción “Pagar con tarjeta”). Pro: USD 3.99/mes o USD
+        29/año. Renovación automática hasta que canceles.
       </p>
     </section>
   )
