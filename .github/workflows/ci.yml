@@ -26,6 +26,20 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Verify Supabase secrets
+        run: |
+          missing=0
+          for key in VITE_SUPABASE_URL VITE_SUPABASE_ANON_KEY; do
+            if [ -z "${!key}" ]; then
+              echo "::error::Missing GitHub secret: $key (Settings → Secrets and variables → Actions)"
+              missing=1
+            fi
+          done
+          exit $missing
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
       - name: Build
         run: npm run build
         env:
