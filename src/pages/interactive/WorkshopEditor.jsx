@@ -5,7 +5,9 @@ import ActivityPicker from '../../components/workshop/ActivityPicker'
 import DurationSelect from '../../components/workshop/DurationSelect'
 import PausePicker from '../../components/workshop/PausePicker'
 import WorkshopDocumentImport from '../../components/workshop/WorkshopDocumentImport'
+import AiProgressPanel, { WORKSHOP_GENERATE_STEPS } from '../../components/workshop/AiProgressPanel'
 import WorkshopSessionTable from '../../components/workshop/WorkshopSessionTable'
+import { ListPageSkeleton } from '../../components/ui/Skeleton'
 import WorkshopTimeSummary from '../../components/workshop/WorkshopTimeSummary'
 import { useAuth } from '../../context/AuthContext'
 import { generateWorkshopProposal } from '../../services/aiWorkshopService'
@@ -69,6 +71,7 @@ export default function WorkshopEditor() {
   const [picker, setPicker] = useState(null)
   const [pausePickerSessionId, setPausePickerSessionId] = useState('')
   const [generatingAi, setGeneratingAi] = useState(false)
+  const [aiProgressStep, setAiProgressStep] = useState(0)
   const [aiPreview, setAiPreview] = useState(null)
   const [useKitpopActivities, setUseKitpopActivities] = useState(true)
   const [includeTheoryModules, setIncludeTheoryModules] = useState(true)
@@ -500,6 +503,7 @@ export default function WorkshopEditor() {
     }
 
     setGeneratingAi(true)
+    setAiProgressStep(0)
     setError('')
     setMessage('')
 
@@ -518,10 +522,14 @@ export default function WorkshopEditor() {
         status: workshop.status ?? 'draft',
       })
 
+      setAiProgressStep(1)
+
       const payload = await generateWorkshopProposal(workshop.id, {
         useKitpopActivities,
         includeTheoryModules,
       })
+
+      setAiProgressStep(2)
       setAiPreview(payload.proposal)
       setMessage('Propuesta generada. Revisa el resumen abajo y aplícala al taller.')
       await refreshProfile(user.id)
@@ -531,6 +539,7 @@ export default function WorkshopEditor() {
       aiPanelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } finally {
       setGeneratingAi(false)
+      setAiProgressStep(0)
     }
   }
 
@@ -744,8 +753,8 @@ export default function WorkshopEditor() {
 
   if (authLoading || loading) {
     return (
-      <main id="interactive-view" className="fade-in">
-        <p className="auth-loading">Cargando diseño del taller...</p>
+      <main id="interactive-view" className="fade-in workshop-editor-loading">
+        <ListPageSkeleton rows={3} showForm />
       </main>
     )
   }
@@ -928,6 +937,14 @@ export default function WorkshopEditor() {
             </Link>
           )}
         </div>
+
+        {generatingAi && (
+          <AiProgressPanel
+            steps={WORKSHOP_GENERATE_STEPS}
+            activeStep={aiProgressStep}
+            title="Generando propuesta de taller"
+          />
+        )}
 
         {aiPreview && (
           <div className="workshop-ai-preview">

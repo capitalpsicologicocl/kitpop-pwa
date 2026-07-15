@@ -1376,14 +1376,15 @@
     display:block;
     border:1px solid var(--g200);
     border-radius:12px;
-    margin-bottom:10px;
-    padding:8px;
+    margin-bottom:12px;
+    padding:10px 12px;
+    background:#fff;
   }
 
   .workshop-session-table td {
     display:block;
     border:none;
-    padding:6px 4px;
+    padding:8px 0;
   }
 
   .workshop-session-table td::before {
@@ -1393,6 +1394,37 @@
     font-weight:800;
     text-transform:uppercase;
     color:var(--g500);
-    margin-bottom:4px;
+    margin-bottom:6px;
+  }
+
+  .workshop-cell-textarea {
+    min-height:120px;
+  }
+
+  .workshop-row-actions {
+    flex-wrap:wrap;
+    gap:8px;
+  }
+
+  .workshop-table-actions {
+    flex-direction:column;
+  }
+
+  .workshop-table-actions .timer-btn {
+    width:100%;
+  }
+
+  .survey-distribution-list li {
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+  }
+
+  .survey-result-card {
+    padding:14px;
+  }
+
+  .survey-text-answers blockquote {
+    font-size:14px;
   }
 }

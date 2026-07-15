@@ -2,6 +2,7 @@ import Hero from '../components/home/Hero'
 import CategoryGrid from '../components/home/CategoryGrid'
 import QuickGrid from '../components/home/QuickGrid'
 import GuestSignupCTA from '../components/auth/GuestSignupCTA'
+import { CategoryGridSkeleton } from '../components/ui/Skeleton'
 import { useAuth } from '../context/AuthContext'
 
 export default function Home() {
@@ -10,7 +11,9 @@ export default function Home() {
   if (loading) {
     return (
       <main id="home" className="fade-in">
-        <p className="auth-loading">Cargando...</p>
+        <Hero />
+        <p className="sec-lbl">Explora por categoría</p>
+        <CategoryGridSkeleton />
       </main>
     )
   }

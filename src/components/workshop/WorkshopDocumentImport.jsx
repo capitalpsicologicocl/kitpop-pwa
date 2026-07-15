@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 
+import AiProgressPanel, { DOCUMENT_PARSE_STEPS } from './AiProgressPanel'
 import { parseWorkshopDocument } from '../../services/aiWorkshopService'
 
 const ACCEPT =
@@ -33,6 +34,7 @@ export default function WorkshopDocumentImport({
   const inputRef = useRef(null)
   const [selectedFile, setSelectedFile] = useState(null)
   const [parsing, setParsing] = useState(false)
+  const [parseStep, setParseStep] = useState(0)
   const [applying, setApplying] = useState(false)
   const [error, setError] = useState('')
   const [extracted, setExtracted] = useState(null)
@@ -56,21 +58,25 @@ export default function WorkshopDocumentImport({
 
     setSelectedFile(file)
     setParsing(true)
+    setParseStep(0)
 
     try {
       const base64Data = await readFileAsBase64(file)
+      setParseStep(1)
       const payload = await parseWorkshopDocument({
         fileName: file.name,
         mimeType: file.type,
         base64Data,
       })
 
+      setParseStep(2)
       setExtracted(payload.extracted)
     } catch (parseError) {
       setError(parseError.message || 'No se pudo leer el documento.')
       setSelectedFile(null)
     } finally {
       setParsing(false)
+      setParseStep(0)
     }
   }
 
@@ -169,6 +175,14 @@ export default function WorkshopDocumentImport({
         <p className="workshop-document-file">
           Archivo: <strong>{selectedFile.name}</strong>
         </p>
+      )}
+
+      {parsing && (
+        <AiProgressPanel
+          steps={DOCUMENT_PARSE_STEPS}
+          activeStep={parseStep}
+          title="Leyendo documento de referencia"
+        />
       )}
 
       {error && <div className="auth-message error">{error}</div>}

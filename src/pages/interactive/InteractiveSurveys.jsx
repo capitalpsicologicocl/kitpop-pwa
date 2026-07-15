@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { ListPageSkeleton } from '../../components/ui/Skeleton'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
 import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
@@ -13,7 +15,7 @@ import {
   fetchSurveys,
   isSurveySetupError,
 } from '../../services/surveyService'
-import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
+import { canCreateResource } from '../../utils/planLimits'
 import { getSurveyStatusLabel, getSurveyTypeLabel, LIKERT_SCALE_INFO, LIKERT_SCALES } from '../../utils/surveyHelpers'
 
 export default function InteractiveSurveys() {
@@ -152,7 +154,7 @@ export default function InteractiveSurveys() {
   if (authLoading || loading) {
     return (
       <main id="interactive-view" className="fade-in">
-        <p className="auth-loading">Cargando encuestas...</p>
+        <ListPageSkeleton rows={4} />
       </main>
     )
   }
@@ -174,7 +176,7 @@ export default function InteractiveSurveys() {
       <div className="page-head">
         <h1 className="cv-title">Encuestas</h1>
         <p className="cv-desc">Satisfacción y feedback con respuestas anónimas por código.</p>
-        <span className="profile-badge">{getPlanLabel(profile)}</span>
+        <CompactPlanStrip profile={profile} />
       </div>
 
       <InteractiveNav />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { ListPageSkeleton } from '../../components/ui/Skeleton'
 import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
 import { useAuth } from '../../context/AuthContext'
 import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
@@ -139,7 +140,7 @@ export default function Workshops() {
   if (authLoading || loading) {
     return (
       <main id="workshops-view" className="fade-in">
-        <p className="auth-loading">Cargando talleres...</p>
+        <ListPageSkeleton rows={5} />
       </main>
     )
   }

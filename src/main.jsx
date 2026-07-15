@@ -13,6 +13,7 @@ import './styles/activity.css'
 import './styles/auth.css'
 import './styles/interactive.css'
 import './styles/export.css'
+import './styles/skeleton.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

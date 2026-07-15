@@ -1,9 +1,10 @@
 import CategoryGrid from '../components/home/CategoryGrid'
 import GuestSignupCTA from '../components/auth/GuestSignupCTA'
+import { CategoryGridSkeleton } from '../components/ui/Skeleton'
 import { useAuth } from '../context/AuthContext'
 
 export default function Categories() {
-  const { user } = useAuth()
+  const { user, loading } = useAuth()
 
   return (
     <main id="categories-view" className="fade-in">
@@ -14,7 +15,7 @@ export default function Categories() {
         </p>
       </div>
 
-      <CategoryGrid />
+      {loading ? <CategoryGridSkeleton /> : <CategoryGrid />}
 
       {!user && <GuestSignupCTA variant="category" />}
     </main>

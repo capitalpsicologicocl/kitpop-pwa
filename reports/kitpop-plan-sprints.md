@@ -58,17 +58,17 @@
 
 ---
 
-## Sprint 3 — UX polish (Semana 5–6)
+## Sprint 3 — UX polish (Semana 5–6) ✅ En curso
 
 **Meta:** subir UX de 6.5 → ~7.5.
 
-| Tarea | Impacto | Entregable |
-|-------|---------|------------|
-| Skeletons en listas | Medio | Categorías, talleres, encuestas, live |
-| Tablas responsive móvil | Alto | Cards en `<720px` en editor taller y resultados |
-| Feedback IA intermedio | Alto | Pasos: parseo → catálogo → propuesta; barra progreso |
-| Mejorar auth wall | Medio | Guest ve banco; login solo para guardar/exportar/IA |
-| CompactPlanStrip en más vistas | Bajo | Encuestas, live cuando límite Explorer |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Skeletons en listas | ✅ | Talleres, encuestas, live, categorías, editor |
+| Tablas responsive móvil | ✅ | Cards taller + resultados encuesta |
+| Feedback IA intermedio | ✅ | `AiProgressPanel` en documento + generación |
+| Mejorar auth wall | ✅ | Bitácora actividad con `GuestLoginGate` |
+| CompactPlanStrip en más vistas | ✅ | Encuestas y en vivo |
 
 ---
 

@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 
 import { useAuth } from '../../context/AuthContext'
+import GuestLoginGate from '../auth/GuestLoginGate'
 import { createJournalEntry } from '../../services/journalService'
 
 export default function ActivityJournalForm({
   activitySlug,
   activityTitle,
 }) {
-  const navigate = useNavigate()
   const { user } = useAuth()
   const [entryDate, setEntryDate] = useState('')
   const [organization, setOrganization] = useState('')
@@ -19,16 +18,18 @@ export default function ActivityJournalForm({
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
+  if (!user) {
+    return (
+      <div className="activity-pane">
+        <GuestLoginGate featureLabel="Bitácora de facilitación" />
+      </div>
+    )
+  }
+
   async function handleSubmit(event) {
     event.preventDefault()
     setMessage('')
     setError('')
-
-    if (!user) {
-      navigate('/login')
-      return
-    }
-
     setSubmitting(true)
 
     try {
@@ -62,13 +63,6 @@ export default function ActivityJournalForm({
           <p className="profile-meta">
             Actividad: <strong>{activityTitle}</strong>
           </p>
-        )}
-
-        {!user && (
-          <div className="auth-message info">
-            <Link to="/login">Inicia sesión</Link> para guardar registros en
-            Supabase.
-          </div>
         )}
 
         {message && <div className="auth-message success">{message}</div>}

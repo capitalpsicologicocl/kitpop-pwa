@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { ListPageSkeleton } from '../../components/ui/Skeleton'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
 import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
@@ -13,7 +15,7 @@ import {
   fetchLiveSessions,
   isLiveSetupError,
 } from '../../services/liveSessionService'
-import { canCreateResource, getPlanLabel } from '../../utils/planLimits'
+import { canCreateResource } from '../../utils/planLimits'
 import { getLiveStatusLabel } from '../../utils/liveHelpers'
 
 export default function InteractiveLive() {
@@ -143,7 +145,7 @@ export default function InteractiveLive() {
   if (authLoading || loading) {
     return (
       <main id="interactive-view" className="fade-in">
-        <p className="auth-loading">Cargando sesiones en vivo...</p>
+        <ListPageSkeleton rows={4} />
       </main>
     )
   }
@@ -165,7 +167,7 @@ export default function InteractiveLive() {
       <div className="page-head">
         <h1 className="cv-title">En vivo</h1>
         <p className="cv-desc">Polls sincronizados con participantes en tiempo real.</p>
-        <span className="profile-badge">{getPlanLabel(profile)}</span>
+        <CompactPlanStrip profile={profile} />
       </div>
 
       <InteractiveNav />
