@@ -2,11 +2,14 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { useAuth } from '../../context/AuthContext'
+import WorkshopObjectiveSections from '../../components/workshop/WorkshopObjectiveSections'
+import WorkshopSummarySessionTable, {
+  WorkshopSummarySessionMeta,
+} from '../../components/workshop/WorkshopSummarySessionTable'
 import {
   fetchWorkshopById,
   fetchWorkshopSessions,
   formatItemTime,
-  formatSessionDuration,
 } from '../../services/workshopService'
 import {
   buildWorkshopDocumentHtml,
@@ -17,10 +20,8 @@ import {
 import ExportActions from '../../components/export/ExportActions'
 import ExportProGate from '../../components/export/ExportProGate'
 import {
-  getPauseLabel,
   getWorkshopStatusLabel,
   getWorkshopTimeSummary,
-  ITEM_TYPE_LABELS,
 } from '../../utils/workshopHelpers'
 
 export default function WorkshopSummary() {
@@ -118,6 +119,12 @@ export default function WorkshopSummary() {
         <Link to="/talleres" className="back-btn">
           Listado de talleres
         </Link>
+        <Link
+          to={`/talleres/${workshop.id}#workshop-journal-general`}
+          className="back-btn workshop-summary-journal-link"
+        >
+          Bitácora del taller
+        </Link>
       </div>
 
       <ExportProGate profile={profile} featureLabel="del taller">
@@ -137,15 +144,34 @@ export default function WorkshopSummary() {
         </header>
 
         <section className="workshop-summary-meta">
-          {workshop.organization && <p><strong>Organización:</strong> {workshop.organization}</p>}
-          {workshop.team && <p><strong>Equipo / área:</strong> {workshop.team}</p>}
-          {workshop.audience && <p><strong>Público:</strong> {workshop.audience}</p>}
-          {workshop.modality && <p><strong>Modalidad:</strong> {workshop.modality}</p>}
-          {workshop.participants_count && (
-            <p><strong>Participantes:</strong> {workshop.participants_count}</p>
+          {workshop.organization && (
+            <p>
+              <strong>Organización:</strong> {workshop.organization}
+            </p>
           )}
-          {workshop.objective && <p><strong>Objetivo:</strong> {workshop.objective}</p>}
+          {workshop.team && (
+            <p>
+              <strong>Equipo / área:</strong> {workshop.team}
+            </p>
+          )}
+          {workshop.audience && (
+            <p>
+              <strong>Público:</strong> {workshop.audience}
+            </p>
+          )}
+          {workshop.modality && (
+            <p>
+              <strong>Modalidad:</strong> {workshop.modality}
+            </p>
+          )}
+          {workshop.participants_count && (
+            <p>
+              <strong>Participantes:</strong> {workshop.participants_count}
+            </p>
+          )}
         </section>
+
+        <WorkshopObjectiveSections objective={workshop.objective} />
 
         <section className="workshop-time-summary compact">
           <h2>Resumen de tiempos</h2>
@@ -163,51 +189,19 @@ export default function WorkshopSummary() {
 
         {sessions.map((session) => (
           <section key={session.id} className="workshop-summary-session">
-            <h2>Sesión {session.session_number}</h2>
-            <p className="interactive-item-meta">
-              Tiempo programado: {formatSessionDuration(session.duration_hours, session.duration_minutes)}
-              {' · '}
-              Tiempo diseñado:{' '}
-              {formatItemTime(
-                (session.workshop_items ?? []).reduce(
-                  (total, item) => total + (item.time_minutes ?? 0),
-                  0
-                )
-              )}
-            </p>
+            <div className="workshop-summary-session-head">
+              <h2>Sesión {session.session_number}</h2>
+              <Link
+                to={`/talleres/${workshop.id}#journal-${session.id}`}
+                className="workshop-summary-journal-link no-print"
+              >
+                Bitácora de sesión
+              </Link>
+            </div>
 
-            <table className="workshop-session-table workshop-summary-table">
-              <thead>
-                <tr>
-                  <th>Tiempo</th>
-                  <th>Actividad / módulo</th>
-                  <th>Descripción</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(session.workshop_items ?? []).length === 0 ? (
-                  <tr>
-                    <td colSpan={3}>Sin ítems en esta sesión.</td>
-                  </tr>
-                ) : (
-                  session.workshop_items.map((item) => (
-                    <tr key={item.id}>
-                      <td>{formatItemTime(item.time_minutes)}</td>
-                      <td>
-                        <strong>{item.title}</strong>
-                        <br />
-                        <small>
-                          {item.item_type === 'pause'
-                            ? getPauseLabel(item.pause_type)
-                            : ITEM_TYPE_LABELS[item.item_type]}
-                        </small>
-                      </td>
-                      <td>{item.description || '—'}</td>
-                    </tr>
-                  ))
-                )}
-              </tbody>
-            </table>
+            <WorkshopSummarySessionMeta session={session} />
+
+            <WorkshopSummarySessionTable session={session} />
 
             {session.journal_notes && (
               <div className="workshop-summary-journal">
@@ -220,7 +214,15 @@ export default function WorkshopSummary() {
 
         {workshop.journal_notes && (
           <section className="workshop-summary-journal workshop-summary-journal-general">
-            <h2>Bitácora general del taller</h2>
+            <div className="workshop-summary-session-head">
+              <h2>Bitácora general del taller</h2>
+              <Link
+                to={`/talleres/${workshop.id}#workshop-journal-general`}
+                className="workshop-summary-journal-link no-print"
+              >
+                Editar bitácora
+              </Link>
+            </div>
             <p>{workshop.journal_notes}</p>
           </section>
         )}

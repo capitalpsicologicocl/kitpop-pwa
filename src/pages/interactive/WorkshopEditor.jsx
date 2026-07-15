@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import ActivityPicker from '../../components/workshop/ActivityPicker'
 import DurationSelect from '../../components/workshop/DurationSelect'
@@ -56,6 +56,7 @@ function mapWorkshopToForm(workshop) {
 export default function WorkshopEditor() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const location = useLocation()
   const { user, profile, refreshProfile, loading: authLoading } = useAuth()
 
   const [workshop, setWorkshop] = useState(null)
@@ -136,6 +137,25 @@ export default function WorkshopEditor() {
 
     loadWorkshop()
   }, [authLoading, loadWorkshop, user])
+
+  useEffect(() => {
+    if (loading || !location.hash) {
+      return
+    }
+
+    const targetId = location.hash.slice(1)
+    const target = document.getElementById(targetId)
+
+    if (!target) {
+      return
+    }
+
+    const timer = window.setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 150)
+
+    return () => window.clearTimeout(timer)
+  }, [loading, location.hash, sessions.length])
 
   function updateSessionInState(sessionId, patch) {
     setSessions((current) =>
@@ -1049,7 +1069,7 @@ export default function WorkshopEditor() {
       <WorkshopTimeSummary sessions={sessions} />
 
       {sessions.map((session) => (
-        <section key={session.id} className="auth-panel workshop-session-panel">
+        <section key={session.id} id={`session-${session.id}`} className="auth-panel workshop-session-panel">
           <div className="workshop-session-head">
             <div>
               <h3>Sesión {session.session_number}</h3>
@@ -1071,7 +1091,7 @@ export default function WorkshopEditor() {
             onMoveItem={(itemId, direction) => handleMoveItem(session.id, itemId, direction)}
           />
 
-          <div className="field workshop-journal-field">
+          <div id={`journal-${session.id}`} className="field workshop-journal-field">
             <label htmlFor={`journal-${session.id}`}>Bitácora de sesión</label>
             <textarea
               id={`journal-${session.id}`}
@@ -1084,16 +1104,16 @@ export default function WorkshopEditor() {
         </section>
       ))}
 
-      <section className="auth-panel workshop-journal-general">
+      <section id="workshop-journal-general" className="auth-panel workshop-journal-general">
         <h3>Bitácora general del taller</h3>
         <p className="workshop-section-copy">
           Registro completo del taller: aprendizajes, ajustes, participación y notas para futuras
           versiones. Complementa la bitácora por sesión.
         </p>
         <div className="field workshop-journal-field">
-          <label htmlFor="workshop-journal-general">Bitácora del taller completo</label>
+          <label htmlFor="workshop-journal-general-input">Bitácora del taller completo</label>
           <textarea
-            id="workshop-journal-general"
+            id="workshop-journal-general-input"
             rows={8}
             placeholder="Ej.: qué funcionó bien, qué cambiarías, observaciones del grupo, acuerdos de seguimiento..."
             value={workshopJournal}

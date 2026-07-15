@@ -8,6 +8,7 @@ import {
   incrementAiUsage,
 } from './_lib/aiUsage.js'
 import { callAnthropic, parseJsonFromModel } from './_lib/anthropic.js'
+import { enforceAiRateLimit } from './_lib/rateLimit.js'
 import { getActivityBySlug, getKitpopActivityCatalog } from './_lib/kitpopCatalog.js'
 import { getAuthenticatedUser, getSupabaseAdmin } from './_lib/supabase.js'
 
@@ -328,6 +329,21 @@ export default async function handler(req, res) {
       return res.status(403).json({
         error: 'No te quedan diseños con IA disponibles. Mejora a Pro o espera al próximo mes.',
         usage: buildAiUsageResponse(profile),
+      })
+    }
+
+    const rateLimit = await enforceAiRateLimit(
+      supabaseAdmin,
+      user.id,
+      profile,
+      'generate-workshop'
+    )
+
+    if (!rateLimit.allowed) {
+      return res.status(429).json({
+        error: 'Demasiadas solicitudes de IA en poco tiempo. Intenta de nuevo en unos minutos.',
+        retryAfter: rateLimit.retryAfter,
+        limit: rateLimit.limit,
       })
     }
 

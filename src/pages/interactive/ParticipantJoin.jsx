@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import LiveParticipantPoll from '../../components/live/LiveParticipantPoll'
 import SurveyParticipantForm from '../../components/survey/SurveyParticipantForm'
 import { getLiveSessionForParticipant } from '../../services/liveSessionService'
+import { subscribeLiveSessionRealtime } from '../../services/livePollRealtime'
 import { getSurveyForParticipant } from '../../services/surveyService'
 import { resolveAccessCode } from '../../services/accessCodeService'
 import { getParticipantToken as getLiveToken } from '../../utils/liveHelpers'
@@ -84,11 +85,21 @@ export default function ParticipantJoin() {
       return undefined
     }
 
-    const intervalId = setInterval(() => {
-      loadLive(session.resource_id).catch(() => {})
-    }, 4000)
+    const resourceId = session.resource_id
 
-    return () => clearInterval(intervalId)
+    const unsubscribe = subscribeLiveSessionRealtime(resourceId, {
+      onBroadcast: () => {
+        loadLive(resourceId).catch(() => {})
+      },
+      onPollChange: () => {
+        loadLive(resourceId).catch(() => {})
+      },
+      onSessionChange: () => {
+        loadLive(resourceId).catch(() => {})
+      },
+    })
+
+    return unsubscribe
   }, [loadLive, session])
 
   const normalizedCode = normalizeAccessCode(code)

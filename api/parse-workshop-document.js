@@ -1,7 +1,9 @@
 import { AI_MODELS } from './_lib/aiPlanLimits.js'
 import { callAnthropicMessages, parseJsonFromModel } from './_lib/anthropic.js'
 import { extractDocumentText } from './_lib/documentText.js'
-import { getAuthenticatedUser } from './_lib/supabase.js'
+import { enforceAiRateLimit } from './_lib/rateLimit.js'
+import { fetchProfileForAi } from './_lib/aiUsage.js'
+import { getAuthenticatedUser, getSupabaseAdmin } from './_lib/supabase.js'
 
 const PARSE_SYSTEM = `Eres un analista de documentos formativos. Extraes metadatos estructurados de Términos de Referencia, propuestas de taller, planes de capacitación o documentos similares. Respondes solo con JSON válido.`
 
@@ -200,6 +202,24 @@ export default async function handler(req, res) {
 
     if (!user) {
       return res.status(401).json({ error: 'Debes iniciar sesión.' })
+    }
+
+    const supabaseAdmin = getSupabaseAdmin()
+    const profile = await fetchProfileForAi(supabaseAdmin, user.id)
+
+    const rateLimit = await enforceAiRateLimit(
+      supabaseAdmin,
+      user.id,
+      profile,
+      'parse-workshop-document'
+    )
+
+    if (!rateLimit.allowed) {
+      return res.status(429).json({
+        error: 'Demasiadas importaciones de documento en poco tiempo. Intenta de nuevo en unos minutos.',
+        retryAfter: rateLimit.retryAfter,
+        limit: rateLimit.limit,
+      })
     }
 
     const body = parseBody(req)

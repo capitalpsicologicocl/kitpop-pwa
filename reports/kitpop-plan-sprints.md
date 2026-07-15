@@ -72,17 +72,26 @@
 
 ---
 
-## Sprint 4 — Estabilidad y realtime (Semana 7–9)
+## Sprint 4 — Estabilidad y realtime (Semana 7–9) ✅ En curso
 
 **Meta:** confianza para escalar tráfico pagado.
 
-| Tarea | Impacto | Entregable |
-|-------|---------|------------|
-| Supabase Realtime en live | Medio | Reemplazar polling 3–4s por canal `live_polls` |
-| Tests E2E Playwright | Alto | Flujos: guest browse → registro → checkout sandbox → export gated → taller IA |
-| CI en GitHub Actions | Alto | `npm run build` + E2E en PR |
-| Webhook PayPal idempotente | Medio | Log + retry en `api/paypal-webhook` |
-| Rate limit APIs IA | Medio | Por usuario + plan |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Supabase Realtime en live | ✅ | Canal `live_polls:{sessionId}` + broadcast participantes |
+| Tests E2E Playwright | ✅ | `e2e/sprint4.spec.js` — guest, auth gates, export |
+| CI en GitHub Actions | ✅ | `.github/workflows/ci.yml` — lint + build + E2E |
+| Webhook PayPal idempotente | ✅ | `webhook_events` + `api/_lib/webhookEvents.js` |
+| Rate limit APIs IA | ✅ | `api_rate_limits` + `api/_lib/rateLimit.js` |
+
+**Checklist deploy Sprint 4**
+
+1. Supabase SQL: `live_polls_realtime.sql`, `webhook_events_v1.sql`, `api_rate_limits_v1.sql`
+2. Redeploy Production (Realtime + APIs)
+3. Verificar sesión en vivo: votos sin polling 3 s
+4. GitHub Actions: primer run en PR/push a `main`
+
+**E2E opcionales (secrets GitHub):** `E2E_TEST_EMAIL`, `E2E_TEST_PASSWORD`, `E2E_PAYPAL_SANDBOX=1`
 
 ---
 

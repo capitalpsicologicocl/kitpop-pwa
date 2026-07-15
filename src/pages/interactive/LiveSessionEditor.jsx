@@ -21,6 +21,10 @@ import {
   updateLiveSessionStatus,
 } from '../../services/liveSessionService'
 import {
+  broadcastLiveSessionState,
+  subscribeLiveSessionRealtime,
+} from '../../services/livePollRealtime'
+import {
   buildDefaultLivePoll,
   computePollResults,
   getLiveStatusLabel,
@@ -119,21 +123,44 @@ export default function LiveSessionEditor() {
   }, [authLoading, loadSession, user])
 
   useEffect(() => {
-    if (!user || !id || session?.status !== 'live') {
+    if (!id || session?.status !== 'live') {
       return undefined
     }
 
-    const intervalId = setInterval(async () => {
-      try {
-        const voteData = await fetchLivePollVotes(user.id, id)
-        setVotes(voteData)
-      } catch {
-        // ignore polling errors
-      }
-    }, 3000)
+    const unsubscribe = subscribeLiveSessionRealtime(id, {
+      onVoteInsert: (vote) => {
+        setVotes((current) => {
+          if (current.some((entry) => entry.id === vote.id)) {
+            return current
+          }
 
-    return () => clearInterval(intervalId)
-  }, [id, session?.status, user])
+          return [...current, vote]
+        })
+      },
+      onPollChange: (poll) => {
+        setPolls((current) =>
+          current.map((entry) => (entry.id === poll.id ? { ...entry, ...poll } : entry))
+        )
+      },
+      onSessionChange: (updated) => {
+        setSession((current) => (current ? { ...current, ...updated } : current))
+      },
+    })
+
+    return unsubscribe
+  }, [id, session?.status])
+
+  async function notifyParticipants(kind, extra = {}) {
+    if (!session?.id) {
+      return
+    }
+
+    try {
+      await broadcastLiveSessionState(session.id, { kind, ...extra })
+    } catch {
+      // Realtime broadcast es best-effort; los cambios en DB siguen siendo la fuente de verdad.
+    }
+  }
 
   async function handleSaveMeta(event) {
     event.preventDefault()
@@ -273,6 +300,7 @@ export default function LiveSessionEditor() {
           status: poll.id === updated.id ? 'open' : poll.status === 'open' ? 'closed' : poll.status,
         }))
       )
+      await notifyParticipants('poll_opened', { pollId: updated.id })
       setMessage('Poll abierto. Los participantes pueden votar.')
     } catch (openError) {
       setError(openError.message || 'No se pudo abrir el poll.')
@@ -294,6 +322,7 @@ export default function LiveSessionEditor() {
       setPolls((current) =>
         current.map((poll) => (poll.id === pollId ? { ...poll, status: 'closed' } : poll))
       )
+      await notifyParticipants('poll_closed', { pollId })
       setMessage('Poll cerrado.')
     } catch (closeError) {
       setError(closeError.message || 'No se pudo cerrar el poll.')
@@ -318,6 +347,7 @@ export default function LiveSessionEditor() {
     try {
       const updated = await updateLiveSessionStatus(user.id, session.id, 'live')
       setSession(updated)
+      await notifyParticipants('session_status', { status: 'live' })
       setMessage('Sesión en vivo. Abre un poll para recibir votos.')
     } catch (liveError) {
       setError(liveError.message || 'No se pudo activar la sesión.')
@@ -336,6 +366,7 @@ export default function LiveSessionEditor() {
     try {
       const updated = await updateLiveSessionStatus(user.id, session.id, 'paused')
       setSession(updated)
+      await notifyParticipants('session_status', { status: 'paused' })
       setMessage('Sesión pausada.')
     } catch (pauseError) {
       setError(pauseError.message || 'No se pudo pausar.')
@@ -354,6 +385,7 @@ export default function LiveSessionEditor() {
     try {
       const updated = await updateLiveSessionStatus(user.id, session.id, 'live')
       setSession(updated)
+      await notifyParticipants('session_status', { status: 'live' })
       setMessage('Sesión reactivada.')
     } catch (reactivateError) {
       setError(reactivateError.message || 'No se pudo reactivar.')
@@ -385,6 +417,7 @@ export default function LiveSessionEditor() {
           poll.status === 'open' ? { ...poll, status: 'closed' } : poll
         )
       )
+      await notifyParticipants('session_status', { status: 'closed' })
       setMessage('Sesión finalizada.')
     } catch (finalizeError) {
       setError(finalizeError.message || 'No se pudo finalizar.')
@@ -515,7 +548,7 @@ export default function LiveSessionEditor() {
 
         {openPoll && session.status === 'live' && (
           <p className="live-active-hint">
-            Poll activo: <strong>{openPoll.prompt}</strong> — los votos se actualizan cada 3 s.
+            Poll activo: <strong>{openPoll.prompt}</strong> — los votos llegan en tiempo real.
           </p>
         )}
       </section>

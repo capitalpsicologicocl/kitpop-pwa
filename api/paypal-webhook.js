@@ -4,6 +4,11 @@ import {
   verifyPayPalWebhook,
 } from './_lib/paypal.js'
 import { getSupabaseAdmin, readRawBody } from './_lib/supabase.js'
+import {
+  claimWebhookEvent,
+  completeWebhookEvent,
+  failWebhookEvent,
+} from './_lib/webhookEvents.js'
 
 export const config = {
   api: {
@@ -25,10 +30,33 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
+  let eventRowId = null
+
   try {
     const rawBody = await readRawBody(req)
     const event = await verifyPayPalWebhook(req, rawBody)
     const supabaseAdmin = getSupabaseAdmin()
+    const transmissionId = req.headers['paypal-transmission-id']
+    const dedupeKey = transmissionId || event.id
+
+    const claim = await claimWebhookEvent(supabaseAdmin, {
+      provider: 'paypal',
+      dedupeKey,
+      eventId: event.id,
+      eventType: event.event_type,
+      payload: event,
+    })
+
+    eventRowId = claim.eventRowId
+
+    if (!claim.claimed) {
+      return res.status(200).json({
+        received: true,
+        duplicate: true,
+        inFlight: Boolean(claim.inFlight),
+      })
+    }
+
     const resource = event.resource ?? {}
     const subscriptionId = resource.id || resource.billing_agreement_id
 
@@ -55,10 +83,20 @@ export default async function handler(req, res) {
         break
     }
 
+    await completeWebhookEvent(supabaseAdmin, eventRowId)
+
     return res.status(200).json({ received: true })
   } catch (error) {
     console.error('paypal-webhook', error)
-    return res.status(400).json({
+
+    try {
+      const supabaseAdmin = getSupabaseAdmin()
+      await failWebhookEvent(supabaseAdmin, eventRowId, error.message)
+    } catch (logError) {
+      console.error('paypal-webhook-log', logError)
+    }
+
+    return res.status(500).json({
       error: error.message || 'Webhook error',
     })
   }

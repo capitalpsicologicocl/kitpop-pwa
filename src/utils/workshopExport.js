@@ -6,7 +6,59 @@ import {
   sanitizeFilename,
   wrapDocumentHtml,
 } from './documentExport'
-import { getPauseLabel, ITEM_TYPE_LABELS, isWorkshopOpeningItem } from './workshopHelpers'
+import { getPauseLabel, ITEM_TYPE_LABELS, isWorkshopOpeningItem, parseWorkshopObjectiveText } from './workshopHelpers'
+
+function renderObjectiveHtml(objective) {
+  const parsed = parseWorkshopObjectiveText(objective)
+
+  if (!parsed) {
+    return ''
+  }
+
+  const parts = []
+
+  if (parsed.generalDescription) {
+    parts.push(
+      `<h2>Descripción general</h2><p>${escapeHtml(parsed.generalDescription)}</p>`
+    )
+  }
+
+  if (parsed.modules.length > 0) {
+    parts.push('<h2>Contenidos por módulo</h2>')
+
+    for (const module of parsed.modules) {
+      parts.push(
+        `<h3>Módulo ${module.moduleNumber}${module.title ? `: ${escapeHtml(module.title)}` : ''}</h3>`
+      )
+
+      if (module.durationMinutes != null) {
+        parts.push(
+          `<p><em>Duración sugerida: ${module.durationMinutes} min</em></p>`
+        )
+      }
+
+      if (module.objectives) {
+        parts.push(
+          `<p><strong>Objetivos:</strong> ${escapeHtml(module.objectives)}</p>`
+        )
+      }
+
+      if (module.contents) {
+        parts.push(
+          `<p><strong>Contenidos:</strong> ${escapeHtml(module.contents)}</p>`
+        )
+      }
+    }
+  }
+
+  if (parsed.programSummary) {
+    parts.push(
+      `<h2>Resumen del programa</h2><p>${escapeHtml(parsed.programSummary)}</p>`
+    )
+  }
+
+  return parts.join('\n')
+}
 
 function renderItemRow(item) {
   const typeLabel = isWorkshopOpeningItem(item)
@@ -34,7 +86,6 @@ export function buildWorkshopDocumentHtml(workshop, sessions, timeSummary) {
     ['Público', workshop.audience],
     ['Modalidad', workshop.modality],
     ['Participantes', workshop.participants_count],
-    ['Objetivo', workshop.objective],
   ]
     .filter(([, value]) => value)
     .map(
@@ -90,6 +141,8 @@ export function buildWorkshopDocumentHtml(workshop, sessions, timeSummary) {
     <p>Diseño de taller — KitPOP</p>
 
     <table>${metaRows}</table>
+
+    ${renderObjectiveHtml(workshop.objective)}
 
     <div class="summary">
       <strong>Resumen de tiempos</strong><br />

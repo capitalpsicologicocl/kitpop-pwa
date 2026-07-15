@@ -150,3 +150,109 @@ export function formatExtractedObjective(extracted) {
 
   return parts.join('\n').trim()
 }
+
+function normalizeObjectiveText(text) {
+  return text
+    .replace(/\r\n/g, '\n')
+    .replace(/\s+(?=---\s*Contenidos por módulo\s*---)/gi, '\n\n')
+    .replace(/\s+(?=---\s*Resumen del programa\s*---)/gi, '\n\n')
+    .replace(/\s+(?=Módulo\s+\d+\s*[:：])/gi, '\n\n')
+    .replace(/([^\n])\s+(?=Objetivos?\s*[:：])/gi, '$1\n')
+    .replace(/([^\n])\s+(?=Contenidos?\s*[:：])/gi, '$1\n')
+    .replace(/([^\n])\s+(?=Duración\s+sugerida\s*[:：])/gi, '$1\n')
+    .trim()
+}
+
+const MODULE_HEADER_PATTERN = /(?:^|\n)\s*Módulo\s+(\d+)\s*[:：]\s*/im
+const OBJECTIVES_PATTERN =
+  /(?:^|\n)\s*Objetivos?\s*[:：]\s*([\s\S]*?)(?=(?:\n\s*Contenidos?\s*[:：]|\n\s*Duración\s+sugerida\s*[:：]|$))/im
+const CONTENTS_PATTERN =
+  /(?:^|\n)\s*Contenidos?\s*[:：]\s*([\s\S]*?)(?=(?:\n\s*Duración\s+sugerida\s*[:：]|$))/im
+const DURATION_PATTERN = /(?:^|\n)\s*Duración\s+sugerida\s*[:：]\s*(\d+)/im
+
+function parseModuleBlock(chunk) {
+  const headerMatch = chunk.match(/^\s*Módulo\s+(\d+)\s*[:：]\s*(.+?)(?:\n|$)/im)
+
+  if (!headerMatch) {
+    return null
+  }
+
+  const moduleNumber = Number(headerMatch[1])
+  const title = headerMatch[2].trim()
+  const rest = chunk.slice(headerMatch[0].length)
+
+  const objectivesMatch = rest.match(OBJECTIVES_PATTERN)
+  const contentsMatch = rest.match(CONTENTS_PATTERN)
+  const durationMatch = rest.match(DURATION_PATTERN)
+
+  let objectives = objectivesMatch?.[1]?.trim() ?? ''
+  let contents = contentsMatch?.[1]?.trim() ?? ''
+
+  if (!objectives && !contents) {
+    contents = rest.trim()
+  }
+
+  return {
+    moduleNumber,
+    title,
+    objectives,
+    contents,
+    durationMinutes: durationMatch ? Number(durationMatch[1]) : null,
+  }
+}
+
+function parseModuleBlocks(modulesText) {
+  if (!modulesText?.trim()) {
+    return []
+  }
+
+  return modulesText
+    .split(/(?=(?:^|\n)\s*Módulo\s+\d+\s*[:：])/im)
+    .map((chunk) => parseModuleBlock(chunk))
+    .filter(Boolean)
+}
+
+/**
+ * Separa el campo `objective` mezclado (descripción + módulos + resumen) en bloques legibles.
+ */
+export function parseWorkshopObjectiveText(raw) {
+  if (!raw?.trim()) {
+    return null
+  }
+
+  let text = normalizeObjectiveText(raw.trim())
+  let programSummary = ''
+
+  const summarySplit = text.split(/\n*---\s*Resumen del programa\s*---\n*/i)
+
+  if (summarySplit.length > 1) {
+    text = summarySplit[0].trim()
+    programSummary = summarySplit.slice(1).join('\n').trim()
+  }
+
+  let generalDescription = text
+  let modulesText = ''
+
+  const contentSplit = text.split(/\n*---\s*Contenidos por módulo\s*---\n*/i)
+
+  if (contentSplit.length > 1) {
+    generalDescription = contentSplit[0].trim()
+    modulesText = contentSplit.slice(1).join('\n').trim()
+  } else {
+    const moduleStart = text.search(MODULE_HEADER_PATTERN)
+
+    if (moduleStart >= 0) {
+      generalDescription = text.slice(0, moduleStart).trim()
+      modulesText = text.slice(moduleStart).trim()
+    }
+  }
+
+  const modules = parseModuleBlocks(modulesText)
+
+  return {
+    generalDescription,
+    programSummary,
+    modules,
+    hasStructure: modules.length > 0 || Boolean(programSummary),
+  }
+}
