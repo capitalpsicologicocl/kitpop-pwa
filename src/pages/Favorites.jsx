@@ -2,16 +2,17 @@ import { Link } from 'react-router-dom'
 
 import ActivityList from '../components/categories/ActivityList'
 import { useAuth } from '../context/AuthContext'
-import { activities } from '../data/activities'
+import { useActivityIndex } from '../hooks/useContent'
 
 export default function Favorites() {
-  const { user, loading, favoriteSlugs } = useAuth()
+  const { user, loading: authLoading, favoriteSlugs } = useAuth()
+  const { index, loading: indexLoading } = useActivityIndex()
 
-  const favoriteActivities = activities.filter((activity) =>
+  const favoriteActivities = index.filter((activity) =>
     favoriteSlugs.includes(activity.slug)
   )
 
-  if (loading) {
+  if (authLoading || indexLoading) {
     return (
       <main id="favorites-view" className="fade-in">
         <p className="auth-loading">Cargando favoritos...</p>
@@ -20,11 +21,11 @@ export default function Favorites() {
   }
 
   if (!user) {
-  return (
-    <main id="favorites-view" className="fade-in">
-      <Link to="/perfil" className="back-btn">
-        ← Volver al perfil
-      </Link>
+    return (
+      <main id="favorites-view" className="fade-in">
+        <Link to="/perfil" className="back-btn">
+          ← Volver al perfil
+        </Link>
 
         <div className="page-head">
           <h1 className="cv-title">Favoritos</h1>

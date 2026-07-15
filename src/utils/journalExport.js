@@ -1,4 +1,4 @@
-import { getActivityBySlug } from '../data/kitpopAdapter'
+import { loadActivityIndex } from '../data/contentLoader'
 import { escapeHtml, sanitizeFilename, wrapDocumentHtml } from './documentExport'
 
 function formatJournalDate(value) {
@@ -9,13 +9,15 @@ function formatJournalDate(value) {
   return new Date(`${value}T12:00:00`).toLocaleDateString('es-CL')
 }
 
-export function buildJournalDocumentHtml(entries) {
+export async function buildJournalDocumentHtml(entries) {
+  const index = await loadActivityIndex()
+  const titleBySlug = Object.fromEntries(index.map((item) => [item.slug, item.title]))
+
   const entriesHtml = (entries ?? [])
     .map((entry) => {
-      const activity = entry.activity_slug
-        ? getActivityBySlug(entry.activity_slug)
-        : null
-      const title = activity?.title || 'Registro de facilitación'
+      const title = entry.activity_slug
+        ? titleBySlug[entry.activity_slug] || 'Registro de facilitación'
+        : 'Registro de facilitación'
 
       const meta = [
         formatJournalDate(entry.entry_date),

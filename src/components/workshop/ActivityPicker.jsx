@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react'
 
-import { activities } from '../../data/activities'
 import { categories } from '../../data/categories'
-import { stripHtml } from '../../data/kitpopAdapter'
+import { stripHtml } from '../../data/contentLoader'
+import { useActivityIndex } from '../../hooks/useContent'
 
 function matchesActivity(activity, query, categorySlug) {
   if (categorySlug !== 'all' && activity.categorySlug !== categorySlug) {
@@ -20,7 +20,7 @@ function matchesActivity(activity, query, categorySlug) {
       activity.title,
       activity.description,
       activity.categoryLabel,
-      activity.kitpop?.sub,
+      activity.subcategory,
     ].join(' ')
   ).toLowerCase()
 
@@ -30,13 +30,14 @@ function matchesActivity(activity, query, categorySlug) {
 export default function ActivityPicker({ onSelect, onClose }) {
   const [query, setQuery] = useState('')
   const [categorySlug, setCategorySlug] = useState('all')
+  const { index, loading } = useActivityIndex()
 
   const results = useMemo(
     () =>
-      activities
+      index
         .filter((activity) => matchesActivity(activity, query, categorySlug))
         .slice(0, 24),
-    [query, categorySlug]
+    [index, query, categorySlug]
   )
 
   return (
@@ -80,24 +81,24 @@ export default function ActivityPicker({ onSelect, onClose }) {
           </select>
         </div>
 
-        <div className="workshop-picker-list">
-          {results.length === 0 ? (
-            <p className="interactive-item-meta">No hay actividades con ese filtro.</p>
-          ) : (
-            results.map((activity) => (
-              <button
-                key={activity.slug}
-                type="button"
-                className="workshop-picker-item"
-                onClick={() => onSelect(activity)}
-              >
-                <strong>{activity.title}</strong>
-                <span>{activity.categoryLabel}</span>
-                <p>{activity.description}</p>
-              </button>
-            ))
-          )}
-        </div>
+        {loading ? (
+          <p className="auth-loading">Cargando banco de actividades…</p>
+        ) : (
+          <ul className="workshop-picker-results">
+            {results.map((activity) => (
+              <li key={activity.slug}>
+                <button type="button" onClick={() => onSelect(activity)}>
+                  <strong>{activity.title}</strong>
+                  <span>{activity.description}</span>
+                </button>
+              </li>
+            ))}
+
+            {results.length === 0 && (
+              <li className="workshop-picker-empty">Sin resultados para esta búsqueda.</li>
+            )}
+          </ul>
+        )}
       </div>
     </div>
   )

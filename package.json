@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "generate:favicons": "node scripts/generate-favicons.mjs"
+    "generate:favicons": "node scripts/generate-favicons.mjs",
+    "generate:activity-index": "node scripts/generate-activity-index.mjs"
   },
   "dependencies": {
     "@paypal/react-paypal-js": "^10.1.2",

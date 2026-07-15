@@ -1,5 +1,5 @@
 import { categories } from '../../data/categories'
-import { ACTIVITY_COUNT } from '../../data/kitpopAdapter'
+import { ACTIVITY_COUNT } from '../../data/categoriesIndex'
 import HeroAppMockup from './HeroAppMockup'
 
 export default function Hero() {

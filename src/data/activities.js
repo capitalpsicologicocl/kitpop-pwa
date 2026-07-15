@@ -1,1 +1,1 @@
-export { kitpopActivities as activities } from './kitpopAdapter'
+export { loadAllActivityContent as loadActivities } from './contentLoader'

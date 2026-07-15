@@ -1,1 +1,1 @@
-export { kitpopCategories as categories } from './kitpopAdapter'
+export { categories } from './categoriesIndex'

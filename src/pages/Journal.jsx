@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
-import { getActivityBySlug } from '../data/kitpopAdapter'
+import { useActivityIndex } from '../hooks/useContent'
 import ExportActions from '../components/export/ExportActions'
 import ExportProGate from '../components/export/ExportProGate'
 import EmptyState from '../components/ui/EmptyState'
@@ -26,6 +26,7 @@ function formatDate(value) {
 
 export default function Journal() {
   const { user, profile, loading: authLoading } = useAuth()
+  const { index: activityIndex } = useActivityIndex()
   const [entries, setEntries] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -121,6 +122,10 @@ export default function Journal() {
     )
   }
 
+  const titleBySlug = Object.fromEntries(
+    activityIndex.map((item) => [item.slug, item.title])
+  )
+
   return (
     <main id="journal-view" className="fade-in export-document">
       <Link to="/perfil" className="back-btn">
@@ -130,12 +135,10 @@ export default function Journal() {
       {entries.length > 0 && (
         <ExportProGate profile={profile} featureLabel="de bitácora">
           <ExportActions
-            onDownloadWord={() =>
-              downloadDocumentWord(
-                buildJournalDocumentHtml(entries),
-                getJournalFilename()
-              )
-            }
+            onDownloadWord={async () => {
+              const html = await buildJournalDocumentHtml(entries)
+              downloadDocumentWord(html, getJournalFilename())
+            }}
             onPrintPdf={printDocumentPdf}
           />
         </ExportProGate>
@@ -160,14 +163,14 @@ export default function Journal() {
       ) : (
         <div className="journal-list">
           {entries.map((entry) => {
-            const activity = entry.activity_slug
-              ? getActivityBySlug(entry.activity_slug)
+            const activityTitle = entry.activity_slug
+              ? titleBySlug[entry.activity_slug]
               : null
 
             return (
               <article key={entry.id} className="journal-item">
                 <div className="journal-item-head">
-                  <h3>{activity?.title || 'Registro de facilitación'}</h3>
+                  <h3>{activityTitle || 'Registro de facilitación'}</h3>
 
                   {entry.activity_slug && (
                     <Link to={`/actividad/${entry.activity_slug}`}>

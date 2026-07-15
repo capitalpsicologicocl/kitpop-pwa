@@ -1,20 +1,28 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import { categories } from '../data/categories'
 import ActivityList from '../components/categories/ActivityList'
 import PermaFilters from '../components/categories/PermaFilters'
 import GuestSignupCTA from '../components/auth/GuestSignupCTA'
+import { categories } from '../data/categories'
 import { useAuth } from '../context/AuthContext'
+import { useCategoryActivities } from '../hooks/useContent'
 
 export default function Category() {
   const { slug } = useParams()
   const { user } = useAuth()
   const [permaFilter, setPermaFilter] = useState('all')
 
-  const category = categories.find(
-    (item) => item.slug === slug
-  )
+  const category = categories.find((item) => item.slug === slug)
+  const { activities, loading } = useCategoryActivities(slug)
+
+  const visibleActivities = useMemo(() => {
+    if (permaFilter === 'all') {
+      return activities
+    }
+
+    return activities.filter((activity) => activity.permaElement === permaFilter)
+  }, [activities, permaFilter])
 
   if (!category) {
     return (
@@ -56,9 +64,11 @@ export default function Category() {
       )}
 
       <ActivityList
+        items={visibleActivities}
+        loading={loading}
         categorySlug={category.slug}
         categoryIcon={category.icon}
-        permaFilter={category.showPermaFilter ? permaFilter : 'all'}
+        permaFilter="all"
       />
 
       {!user && <GuestSignupCTA variant="category" />}

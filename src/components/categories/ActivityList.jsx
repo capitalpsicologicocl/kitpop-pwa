@@ -1,6 +1,5 @@
-import { activities } from '../../data/activities'
 import { categories } from '../../data/categories'
-import ActivityCard from './ActivityCard'
+import ActivityCard, { ActivityListSkeleton } from './ActivityCard'
 import EmptyState from '../ui/EmptyState'
 
 function getCategoryIcon(categorySlug) {
@@ -12,13 +11,18 @@ export default function ActivityList({
   categoryIcon = 'perma-star',
   permaFilter = 'all',
   items = null,
+  loading = false,
   useActivityIcons = false,
   emptyTitle = 'No hay actividades disponibles.',
   emptyDescription = 'Esta categoría aún no tiene actividades cargadas en la aplicación.',
   emptyVariant = 'list',
 }) {
-  const filteredActivities = items ?? activities.filter((activity) => {
-    if (activity.categorySlug !== categorySlug) {
+  if (loading) {
+    return <ActivityListSkeleton />
+  }
+
+  const filteredActivities = (items ?? []).filter((activity) => {
+    if (categorySlug && activity.categorySlug !== categorySlug) {
       return false
     }
 

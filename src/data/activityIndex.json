@@ -1,0 +1,2517 @@
+[
+  {
+    "slug": "laboratorio-de-rapport",
+    "categorySlug": "pnl",
+    "title": "--- Page 27 ---",
+    "description": "Experiencia práctica para explorar distintas maneras de generar confianza y conexión durante una conversación, identificando aquellas que resultan más naturales y efectivas.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "45 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "decision-en-equipo",
+    "categorySlug": "equipo",
+    "title": "¿Cómo Decidimos?",
+    "description": "El equipo experimenta y compara distintos métodos de toma de decisiones grupal (unilateral, consultivo, por voto y por consenso) frente a un mismo escenario, y reflexiona sobre cuál usa habitualmente y cuál necesitaría usar más.",
+    "categoryLabel": "Trabajo en Equipo · Toma de Decisiones",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "40 min",
+      "Grupos de 4-6",
+      "Tarjetas de escenario y métodos"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "etapas-del-equipo",
+    "categorySlug": "equipo",
+    "title": "¿En qué Etapa Estamos?",
+    "description": "El equipo se ubica colectivamente en una de las cinco etapas de desarrollo grupal (Formación, Agitación, Normalización, Realización, Agotamiento) y conversa sobre qué necesita para avanzar de forma saludable.",
+    "categoryLabel": "Trabajo en Equipo · Desarrollo de Equipos",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "35-40 min",
+      "Equipo completo",
+      "5 carteles con las etapas"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "fac-listo-para-facilitar",
+    "categorySlug": "facilitacion",
+    "title": "¿Estoy list@ para facilitar?",
+    "description": "Tríada conocimientos-actitudes-habilidades, más ventajas y límites de las metodologías participativas.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15 min lectura + autoevaluación",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "fac-que-es-facilitar",
+    "categorySlug": "facilitacion",
+    "title": "¿Qué es facilitar?",
+    "description": "Definición operativa y cuatro miradas del oficio: técnica, artesanía, arte y disciplina profesional.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "10–15 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "fc-intro",
+    "categorySlug": "fortalezas",
+    "title": "¿Qué son las Fortalezas del Carácter?",
+    "description": "Marco introductorio para comprender el modelo VIA, su relación con la Psicología Positiva y su aplicación al liderazgo, el desarrollo profesional y el crecimiento personal.",
+    "categoryLabel": "Fortalezas del Carácter · Introducción",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "15–20 min lectura guiada",
+      "Uso individual o grupal",
+      "Ideal para abrir la sección"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "quien-esta-a-tu-lado",
+    "categorySlug": "reunion",
+    "title": "¿Quién Está a tu Lado?",
+    "description": "Icebreaker clásico en grupos de 3-5 personas: cada quien comparte su nombre, su primer trabajo (por informal que haya sido) y algo que aprendió de esa experiencia. Funciona igual de bien entre personas que ya se conocen o que recién se encuentran.",
+    "categoryLabel": "Apertura · Rompehielo",
+    "subcategory": "Apertura",
+    "permaElement": null,
+    "metas": [
+      "10-12 min",
+      "Grupos de 3-5",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "activacion-rapida",
+    "categorySlug": "reuniones",
+    "title": "Activación Rápida",
+    "description": "Secuencia de 3 pasos en 5 minutos para pasar del modo \"disperso\" al modo \"presente\" antes de una reunión. Combina movimiento, respiración y declaración de foco. Simple, efectiva y reproducible.",
+    "categoryLabel": "Reuniones Efectivas · Activación",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "fc-activacion-semanal",
+    "categorySlug": "fortalezas",
+    "title": "Activación Semanal de Fortaleza",
+    "description": "Compromiso individual de usar deliberadamente una fortaleza signature cada semana en una situación laboral específica. Seguimiento en 5 minutos el viernes.",
+    "categoryLabel": "Fortalezas del Carácter · Individual",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "5 min planificación + 5 min cierre",
+      "Individual",
+      "Bitácora",
+      "Semanal"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "acuerdos-equipo",
+    "categorySlug": "equipo",
+    "title": "Acuerdos de Equipo",
+    "description": "El equipo co-crea sus propias normas de convivencia y trabajo colaborativo: cuándo y cómo comunicarse, cómo tomar decisiones, cómo manejar conflictos. Acuerdos que pertenecen al equipo, no impuestos desde afuera.",
+    "categoryLabel": "Trabajo en Equipo · Comunicación",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "40–50 min",
+      "Equipo completo",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 50
+    }
+  },
+  {
+    "slug": "reunion-agenda-visual",
+    "categorySlug": "reuniones",
+    "title": "Agenda Visual con Tiempos",
+    "description": "Diseñar y mostrar visiblemente, desde el inicio de la reunión, cada punto de la agenda con su tiempo asignado, de modo que todo el grupo pueda ver cuánto tiempo queda para cada tema y ajustar el ritmo de la conversación en consecuencia.",
+    "categoryLabel": "Reuniones Efectivas · Diseño de Agenda",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "Setup: 5–10 min de preparación previa",
+      "Uso durante toda la reunión",
+      "Pizarra o documento visible"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "aldeas",
+    "categorySlug": "equipo",
+    "title": "Aldeas Colaborativas: Misión Interconectada",
+    "description": "Sub-equipos representan distintas \"aldeas\" con roles y funciones interdependientes que deben colaborar para diseñar, construir y presentar colectivamente una Ciudad del Futuro Positivo. Cada aldea encarna una de las 6C del trabajo en equipo.",
+    "categoryLabel": "Trabajo en Equipo · Las 6C",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "45 minutos",
+      "6 grupos de 5–7 personas",
+      "Alta energía y movimiento"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "mindful-anclaje-54321",
+    "categorySlug": "mindfulness",
+    "title": "Anclaje Sensorial 5-4-3-2-1",
+    "description": "Técnica de anclaje que recorre los cinco sentidos (5 cosas que ves, 4 que escuchas, 3 que sientes al tacto, 2 que hueles, 1 que saboreas) para devolver la atención al presente cuando el grupo llega disperso o activado a una sesión.",
+    "categoryLabel": "Mindfulness · Regulación",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "fc-test-via",
+    "categorySlug": "fortalezas",
+    "title": "Aplicarse el Test Oficial VIA",
+    "description": "Indicaciones para identificar las fortalezas principales mediante el cuestionario oficial y usarlas como punto de partida para reflexión personal, liderazgo y desarrollo profesional.",
+    "categoryLabel": "Fortalezas del Carácter · Test VIA",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "20–30 min",
+      "Aplicación individual",
+      "Requiere conexión a internet"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "atencion-entorno",
+    "categorySlug": "mindfulness",
+    "title": "Atención Plena al Entorno",
+    "description": "Durante una pausa breve, el equipo se detiene y observa sonidos, colores, texturas y sensaciones del entorno sin juzgar ni comentar. Luego comparten brevemente lo que notaron. Cultiva presencia y conexión sensorial.",
+    "categoryLabel": "Mindfulness · Apertura de Sentidos",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "8–10 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "bitacora-avances",
+    "categorySlug": "perma",
+    "title": "Bitácora de Avances Colectivos",
+    "description": "El equipo lleva un registro visible de sus progresos semanales. Analizan propulsores y obstaculizadores. Revisar estos avances fortalece la percepción de logro y genera orgullo compartido.",
+    "categoryLabel": "PERMA · A — Logro",
+    "subcategory": "A",
+    "permaElement": "A",
+    "metas": [
+      "20 min semanal",
+      "Equipo completo",
+      "Pizarra o tablero digital"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "bitacora-de-compromisos",
+    "categorySlug": "reunion",
+    "title": "Bitácora de Compromisos",
+    "description": "Al cierre de una reunión, cada acuerdo o tarea se registra públicamente con responsable y fecha, generando un documento vivo que el equipo puede revisar en la siguiente sesión. Convierte las buenas intenciones en compromisos verificables.",
+    "categoryLabel": "Cierre de Reunión · Accountability",
+    "subcategory": "Cierre de Reunión",
+    "permaElement": null,
+    "metas": [
+      "10 min",
+      "Grupo completo",
+      "Pizarra o documento compartido"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "bloque-enfoque",
+    "categorySlug": "perma",
+    "title": "Bloques de Enfoque Compartido",
+    "description": "El equipo acuerda trabajar en paralelo y en silencio durante un período definido en tareas prioritarias. Al terminar, comparten avances para reconocer el esfuerzo y motivarse mutuamente. Fomenta el estado de flow colectivo.",
+    "categoryLabel": "PERMA · E — Compromiso",
+    "subcategory": "E",
+    "permaElement": "E",
+    "metas": [
+      "30–45 min activos",
+      "Equipo de trabajo",
+      "Sin interrupción"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "reunion-brainwriting-silencioso",
+    "categorySlug": "reuniones",
+    "title": "Brainwriting Silencioso",
+    "description": "Alternativa al brainstorming verbal tradicional: cada persona escribe sus ideas en silencio durante unos minutos antes de compartirlas, evitando que las primeras voces o las más dominantes condicionen las que vienen después.",
+    "categoryLabel": "Reuniones Efectivas · Generación de Ideas",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "15–20 min",
+      "4–12 personas",
+      "Post-its o documento compartido"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "cachipun",
+    "categorySlug": "reunion",
+    "title": "Cachipún Evolution",
+    "description": "Dinámica de alta energía donde los participantes evolucionan de ameba a ser humano pleno ganando cachipún, moviéndose por el espacio imitando sonidos y movimientos propios de cada especie. Ideal para activar al grupo y romper el hielo.",
+    "categoryLabel": "Activación · Energizador",
+    "subcategory": "Activación",
+    "permaElement": null,
+    "metas": [
+      "10–15 minutos",
+      "Grupo completo",
+      "Espacio amplio"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "cadena-agradecimiento",
+    "categorySlug": "perma",
+    "title": "Cadena de Agradecimientos",
+    "description": "El equipo se reúne en círculo. Una persona inicia agradeciendo a un compañero/a por una acción, actitud o gesto específico. La cadena recorre al equipo completo hasta que todos hayan dado y recibido gratitud.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "15–20 min",
+      "Grupo completo",
+      "Sin materiales",
+      "Ideal para cierre de proyecto o etapa"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "cadena-de-energia",
+    "categorySlug": "reunion",
+    "title": "Cadena de Energía",
+    "description": "Energizador rítmico y breve donde el grupo construye colectivamente una secuencia de sonidos y movimientos que se repite y crece, generando activación física y atención compartida en menos de cinco minutos.",
+    "categoryLabel": "Activación · Energizador",
+    "subcategory": "Activación",
+    "permaElement": null,
+    "metas": [
+      "5 min",
+      "Grupo completo, en círculo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "cadena-de-significados",
+    "categorySlug": "pnl",
+    "title": "Cadena de Significados",
+    "description": "Dinámica para visualizar cómo un mismo mensaje puede adquirir distintos significados al pasar por las experiencias, creencias y emociones de cada persona. --- Page 20 ---",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "40 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "cafe-conectar",
+    "categorySlug": "perma",
+    "title": "Café para Conectar",
+    "description": "Integrantes que normalmente no interactúan se dividen en duplas o triadas y comparten un café mientras conversan sobre motivaciones, intereses o desafíos personales. Rompe barreras y humaniza las relaciones.",
+    "categoryLabel": "PERMA · R — Relaciones Positivas",
+    "subcategory": "R",
+    "permaElement": "R",
+    "metas": [
+      "20–30 min",
+      "Duplas o triadas",
+      "Café o infusión"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "fac-caja-herramientas",
+    "categorySlug": "facilitacion",
+    "title": "Caja de herramientas",
+    "description": "Técnicas organizadas por momento del taller: apertura, trabajo colectivo, visualización y cierre.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "12–15 min referencia",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "calibrando-la-conversacion",
+    "categorySlug": "pnl",
+    "title": "Calibrando la Conversación",
+    "description": "Actividad para desarrollar la capacidad de observar cambios sutiles en la comunicación verbal y no verbal antes de responder, fortaleciendo la presencia y la escucha consciente.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "--- Page 23 --- 35 minutos",
+      "Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "cambiando-el-mapa",
+    "categorySlug": "pnl",
+    "title": "Cambiando el Mapa",
+    "description": "Reconocer que una misma situación puede interpretarse desde distintos marcos de referencia y ampliar la flexibilidad cognitiva antes de tomar decisiones.",
+    "categoryLabel": "Comunicación y PNL · Reflexión guiada",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "20–30 minutos",
+      "Individual / Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "mindful-caminar",
+    "categorySlug": "mindfulness",
+    "title": "Caminata Consciente",
+    "description": "El grupo camina lentamente durante unos minutos prestando atención plena a las sensaciones del movimiento, en lugar de conversar o revisar el teléfono. Ideal para pausas activas y para personas a quienes les cuesta la quietud sentada.",
+    "categoryLabel": "Mindfulness · Movimiento Consciente",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "6–8 min",
+      "Grupo completo",
+      "Espacio para caminar (pasillo, patio, sala amplia)"
+    ],
+    "duration": {
+      "total": 8
+    }
+  },
+  {
+    "slug": "carta-a-otro",
+    "categorySlug": "conexion",
+    "title": "Carta a Otro/a",
+    "description": "Cada persona escribe una carta breve a un compañero/a expresando algo genuino: lo que valora, lo que ve en él/ella, un agradecimiento pendiente o un deseo para su camino. Se entrega en mano con un momento de lectura compartida.",
+    "categoryLabel": "Conexión · Reconocimiento",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "25–30 min",
+      "Grupo completo",
+      "Papel y lápiz"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "carta-primer-dia",
+    "categorySlug": "perma",
+    "title": "Carta al Primer Día",
+    "description": "En duplas, los integrantes escriben un mensaje a su \"yo del primer día\" en el equipo. Comparten expectativas, aprendizajes y desafíos superados. Reactiva el sentido de propósito y valora el camino recorrido juntos.",
+    "categoryLabel": "PERMA · E — Compromiso",
+    "subcategory": "E",
+    "permaElement": "E",
+    "metas": [
+      "20–25 min",
+      "Duplas o grupo completo",
+      "Papel y lápiz"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "carta-desde-el-futuro",
+    "categorySlug": "equipo",
+    "title": "Carta desde el Futuro",
+    "description": "El equipo se proyecta un año adelante y escribe colectivamente una carta describiendo cómo luce el equipo cuando ha logrado su mejor versión, generando una visión compartida que orienta las decisiones del presente.",
+    "categoryLabel": "Trabajo en Equipo · Visión Compartida",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "40-45 min",
+      "Equipo completo",
+      "Papel grande y lápices"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "reunion-check-in-objetivo",
+    "categorySlug": "reuniones",
+    "title": "Check-in de Objetivo y Roles",
+    "description": "Los primeros 2 minutos de cualquier reunión, dedicados a confirmar en voz alta el objetivo de la reunión y el rol de cada persona presente (decide, informa, opina, ejecuta). Evita el problema más común de las reuniones: no tener claro para qué están todos ahí.",
+    "categoryLabel": "Reuniones Efectivas · Apertura",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "2–3 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 3
+    }
+  },
+  {
+    "slug": "check-in-estado",
+    "categorySlug": "reunion",
+    "title": "Check-in del Estado",
+    "description": "Ronda rápida al inicio de una reunión donde cada persona comparte cómo llega al espacio — en una palabra, un número o una metáfora climática. Permite al/la facilitador/a leer el estado del grupo y ajustar si es necesario.",
+    "categoryLabel": "Apertura de Reunión",
+    "subcategory": "Apertura de Reunión",
+    "permaElement": null,
+    "metas": [
+      "5–10 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "conversacion-checkin-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Check-in Emocional Breve",
+    "description": "Los primeros 2-3 minutos de cualquier conversación 1:1, dedicados exclusivamente a preguntar genuinamente cómo está la otra persona, antes de entrar en la agenda de trabajo. Un hábito simple con efecto acumulado alto en la calidad del vínculo.",
+    "categoryLabel": "Conversaciones 1 a 1 · Apertura",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "2–3 min al inicio de cualquier 1:1",
+      "2 personas",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 3
+    }
+  },
+  {
+    "slug": "reunion-check-out",
+    "categorySlug": "reuniones",
+    "title": "Check-out y Cierre de Reunión",
+    "description": "Los últimos 3-5 minutos de cualquier reunión, dedicados a confirmar acuerdos, responsables y fechas, y a una ronda breve de cierre. Evita el problema común de reuniones que terminan sin que quede claro qué se decidió ni quién hace qué.",
+    "categoryLabel": "Reuniones Efectivas · Cierre",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "3–5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "circulo-cierre",
+    "categorySlug": "perma",
+    "title": "Círculo de Cierre Positivo",
+    "description": "Ritual de cierre donde cada integrante comparte algo bueno que experimentó en la jornada o reunión. Ayuda a cerrar con gratitud, revalorizar lo vivido y mantener presente que incluso en días complejos siempre hay algo positivo que destacar.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "8–12 min",
+      "Grupo completo",
+      "Sin materiales",
+      "Ideal para cierre de jornada o reunión"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "compromisos-gratitud",
+    "categorySlug": "reunion",
+    "title": "Círculo de Compromisos y Gratitud",
+    "description": "Al finalizar una sesión, el grupo forma un círculo donde cada persona asume un compromiso individual para el bienestar colectivo y puede añadir un agradecimiento. Fortalece la cohesión y genera resonancia emocional positiva.",
+    "categoryLabel": "Cierre · Cohesión",
+    "subcategory": "Cierre",
+    "permaElement": null,
+    "metas": [
+      "20–30 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "mindful-comer",
+    "categorySlug": "mindfulness",
+    "title": "Comer con Atención Plena",
+    "description": "Ejercicio clásico de introducción a mindfulness: comer un pequeño alimento (una uva pasa, una almendra, un trozo de chocolate) durante varios minutos, prestando atención completa a cada sensación del proceso. Suele generar asombro por lo automático que es comer habitualmente.",
+    "categoryLabel": "Mindfulness · Atención Sensorial",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "8–10 min",
+      "Grupo completo",
+      "Un alimento pequeño por persona"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "conversacion-dificil-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Cómo afrontar Conversaciones Difíciles",
+    "description": "Marco simple para preparar y conducir conversaciones sensibles sin evitarlas ni escalar el conflicto. Ordena hechos, emociones, necesidades y acuerdos.",
+    "categoryLabel": "Conversaciones 1 a 1 · Conversaciones difíciles",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "30–45 min",
+      "2 personas",
+      "Alta confianza psicológica",
+      "Preparación previa recomendada"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "compartiendo-saberes",
+    "categorySlug": "conexion",
+    "title": "Compartiendo Saberes",
+    "description": "Dinámica en duplas rotativas donde cada persona regala un saber genuino — general o personalizado — mirando a los ojos, desde la bondad, el respeto y la escucha activa. Una de las dinámicas más transformadoras para generar conexión profunda y sentido de comunidad.",
+    "categoryLabel": "Conexión · Compasión",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "15 minutos totales",
+      "Duplas rotativas",
+      "3–4 rondas"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "construyendo-sintonia",
+    "categorySlug": "pnl",
+    "title": "Construyendo Sintonía",
+    "description": "Actividad orientada a experimentar cómo la conexión interpersonal mejora cuando prestamos atención consciente al ritmo, lenguaje y forma de comunicarnos con otra persona, favoreciendo un clima de confianza para conversaciones más efectivas.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "25 minutos",
+      "Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "holgazaneria-cero",
+    "categorySlug": "equipo",
+    "title": "Contribución Visible",
+    "description": "Actividad para hacer visibles las contribuciones individuales dentro de una tarea grupal, contrarrestando la tendencia a esforzarse menos cuando el aporte personal se diluye en el grupo (holgazanería social).",
+    "categoryLabel": "Trabajo en Equipo · Compromiso",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "30 min",
+      "Grupos de 4-6",
+      "Tarea grupal breve"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "conversacion-desarrollo-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Conversación de Desarrollo",
+    "description": "Espacio dedicado a explorar hacia dónde quiere crecer una persona dentro de su rol o carrera, separado deliberadamente de la conversación de desempeño, para que la exploración de intereses no se mezcle con la evaluación de resultados.",
+    "categoryLabel": "Conversaciones 1 a 1 · Desarrollo",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "30–40 min",
+      "2 personas",
+      "Sin evaluación de desempeño en la misma conversación"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "conversaciones-conectan",
+    "categorySlug": "perma",
+    "title": "Conversaciones que Conectan",
+    "description": "Duplas rotativas con preguntas graduadas en profundidad —de lo ligero a lo significativo— para construir confianza sin forzar intimidad. Basado en el principio de autorrevelación progresiva.",
+    "categoryLabel": "PERMA · R — Relaciones Positivas",
+    "subcategory": "R",
+    "permaElement": "R",
+    "metas": [
+      "15–20 min",
+      "Duplas rotativas",
+      "Tarjetas de preguntas"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "cortito",
+    "categorySlug": "reunion",
+    "title": "Cortito e Importante",
+    "description": "Dinámica de apertura de 15 minutos para conectar cuerpo, emoción y mente al inicio de una sesión. Favorece presencia, creatividad inmediata y sentido de importancia personal. Cada participante comparte cómo llega y qué quiere aportar.",
+    "categoryLabel": "Apertura · Presencia",
+    "subcategory": "Apertura",
+    "permaElement": null,
+    "metas": [
+      "15 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "creencias-que-impulsan",
+    "categorySlug": "pnl",
+    "title": "Creencias que Impulsan",
+    "description": "Actividad orientada a reconocer creencias que limitan el desempeño y transformarlas en afirmaciones más útiles para afrontar nuevos desafíos.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "45 minutos",
+      "Individual o grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "cuatro-miradas",
+    "categorySlug": "pnl",
+    "title": "Cuatro Miradas",
+    "description": "Dinámica para ampliar la comprensión de una situación explorándola desde distintas perspectivas antes de actuar.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "40 minutos",
+      "Individual o grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "daily-scrum",
+    "categorySlug": "reuniones",
+    "title": "Daily Scrum (Stand-up Diario)",
+    "description": "Reunión diaria de máximo 15 minutos de pie donde el equipo sincroniza avances, bloqueos y prioridades del día. Formato ágil de Scrum que mantiene la alineación sin necesidad de reuniones largas de seguimiento.",
+    "categoryLabel": "Reuniones Efectivas · Scrum",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "15 min exactos",
+      "Equipo de trabajo",
+      "De pie — sin sillas"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "decalogo",
+    "categorySlug": "equipo",
+    "title": "Decálogo del Bienestar",
+    "description": "Construcción colaborativa de 10 compromisos de bienestar laboral basados en el modelo PERMA. El equipo reflexiona, propone, vota y co-crea sus propias normas de bienestar — un documento vivo que le pertenece.",
+    "categoryLabel": "Trabajo en Equipo · PERMA",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "45–60 min",
+      "5 grupos (uno por elemento PERMA)",
+      "Alta participación"
+    ],
+    "duration": {
+      "total": 60
+    }
+  },
+  {
+    "slug": "del-problema-a-la-posibilidad",
+    "categorySlug": "pnl",
+    "title": "Del Problema a la Posibilidad",
+    "description": "Entrenar la capacidad de cambiar deliberadamente el enfoque frente a una dificultad.",
+    "categoryLabel": "Comunicación y PNL · Reencuadre",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "25 minutos",
+      "Individual / Grupo",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "conversacion-delegar-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Delegar con Claridad",
+    "description": "Estructura para delegar una tarea o responsabilidad de forma que la persona que la recibe entienda con precisión el objetivo, el nivel de autonomía y los límites de la delegación, evitando ambigüedad que después se traduce en frustración mutua.",
+    "categoryLabel": "Conversaciones 1 a 1 · Delegación",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "15–20 min",
+      "2 personas",
+      "Ideal con la tarea ya definida de antemano"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "torre-confianza",
+    "categorySlug": "equipo",
+    "title": "Desafío de la Torre",
+    "description": "Los equipos deben construir la torre más alta posible usando espaguetis, cinta adhesiva y un malvavisco en la cima. Una metáfora poderosa sobre comunicación, confianza, liderazgo y cómo los equipos trabajan bajo presión.",
+    "categoryLabel": "Trabajo en Equipo · Confianza",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "25–30 min",
+      "Grupos de 4–6 personas",
+      "Materiales de construcción"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "descubriendo-canal-preferido",
+    "categorySlug": "pnl",
+    "title": "Descubriendo el Canal Preferido",
+    "description": "Actividad para reconocer las distintas maneras en que las personas describen sus experiencias y adaptar la comunicación a diferentes estilos.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "35 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "conversacion-desacuerdo-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Disentir sin Romper el Vínculo",
+    "description": "Marco breve para expresar un desacuerdo genuino con una decisión, idea o forma de trabajar de otra persona, sin evitarlo por miedo al conflicto ni expresarlo de forma que dañe la relación.",
+    "categoryLabel": "Conversaciones 1 a 1 · Desacuerdo Constructivo",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "15–20 min",
+      "2 personas",
+      "Preparación previa recomendada"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "fac-disena-4-fases",
+    "categorySlug": "facilitacion",
+    "title": "Diseña tu taller en 4 fases",
+    "description": "Modelo en espiral Visión · Diseño · Actuar · Aprender para construir procesos de facilitación de principio a fin.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15–20 min lectura + checklist",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "decision-dot",
+    "categorySlug": "reuniones",
+    "title": "Dot Voting — Votación con Puntos",
+    "description": "Técnica ágil de toma de decisiones grupal para priorizar opciones de forma rápida, visual y democrática. Cada persona tiene un número limitado de votos y los distribuye libremente entre las opciones disponibles.",
+    "categoryLabel": "Reuniones Efectivas · Decisión Grupal",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "5–10 min",
+      "Cualquier tamaño de grupo",
+      "Post-its y pegatinas o marcadores"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "apreciograma",
+    "categorySlug": "perma",
+    "title": "El Apreciograma",
+    "description": "Cada integrante escribe su nombre en una hoja que circula por el grupo. Los demás escriben una cualidad positiva o aporte que valoran. Al final, todos reciben su hoja llena de reconocimientos.",
+    "categoryLabel": "PERMA · R — Relaciones Positivas",
+    "subcategory": "R",
+    "permaElement": "R",
+    "metas": [
+      "20–25 min",
+      "Grupo completo",
+      "Hojas y lápices"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "conversacion-reconocimiento-1a1",
+    "categorySlug": "conversaciones",
+    "title": "El Arte de Reconocer",
+    "description": "Guía para dar reconocimiento genuino y específico a un/a colega o colaborador/a, evitando el elogio vago ('buen trabajo') y anclando el reconocimiento en una conducta observable y su impacto real.",
+    "categoryLabel": "Conversaciones 1 a 1 · Reconocimiento",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "10–15 min",
+      "2 personas",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "el-mapa-colectivo",
+    "categorySlug": "pnl",
+    "title": "El Mapa Colectivo",
+    "description": "Actividad de cierre que integra los principales aprendizajes de la categoría, invitando al grupo a construir una visión compartida sobre cómo mejorar su comunicación, comprensión mutua y capacidad para afrontar desafíos.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "50 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 50
+    }
+  },
+  {
+    "slug": "observador-silencioso",
+    "categorySlug": "pnl",
+    "title": "El Observador Silencioso",
+    "description": "Actividad destinada a entrenar la capacidad de observar antes de interpretar, distinguiendo hechos objetivos de las conclusiones que elaboramos automáticamente.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "35 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "fac-rol-facilitador",
+    "categorySlug": "facilitacion",
+    "title": "El rol de quien facilita",
+    "description": "Guía no protagonista: orquestar tiempo, energía y participación; gestionar conflictos y sintetizar lo que emerge del grupo.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15–20 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "vuelo-de-gansos",
+    "categorySlug": "equipo",
+    "title": "El Vuelo de los Gansos",
+    "description": "Metáfora basada en el patrón de vuelo en V de los gansos migratorios para reflexionar sobre liderazgo rotativo, apoyo mutuo y sincronía en el trabajo de equipo. El grupo compara su propia dinámica con los principios que sostienen el vuelo grupal.",
+    "categoryLabel": "Trabajo en Equipo · Cohesión y Apoyo Mutuo",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "30-35 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "fac-tipos-taller",
+    "categorySlug": "facilitacion",
+    "title": "Elige el tipo de taller correcto",
+    "description": "Cinco tipos de taller según finalidad y métodos característicos — evita mezclar dinámicas de propósitos distintos en una misma sesión.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "10–12 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "entrevista-apreciativa-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Entrevista Apreciativa",
+    "description": "Conversación guiada para descubrir fortalezas, momentos de orgullo y condiciones que permiten que una persona dé lo mejor de sí. Útil para liderazgo, mentoría, clima laboral y desarrollo.",
+    "categoryLabel": "Conversaciones 1 a 1 · Apreciativa",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "30–45 min",
+      "2 personas",
+      "Formato presencial o virtual",
+      "Ideal para liderazgo positivo"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "fc-equipo-por-virtudes",
+    "categorySlug": "fortalezas",
+    "title": "Equipo por Virtudes",
+    "description": "Mapa colectivo de las seis virtudes VIA: el equipo distribuye sus fortalezas predominantes y detecta vacíos o excesos en el perfil grupal.",
+    "categoryLabel": "Fortalezas del Carácter · Equipo",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "40–50 min",
+      "Equipo 5–15 personas",
+      "Test VIA previo recomendado",
+      "Onboarding o planificación"
+    ],
+    "duration": {
+      "total": 50
+    }
+  },
+  {
+    "slug": "fac-errores-comunes",
+    "categorySlug": "facilitacion",
+    "title": "Errores comunes",
+    "description": "Cuatro errores frecuentes con señales de alerta y estrategias para evitarlos.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "10 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "escalera-proyecto",
+    "categorySlug": "perma",
+    "title": "Escalera del Proyecto",
+    "description": "El equipo construye una escalera simbólica con los pasos necesarios para alcanzar una meta, asignando responsabilidades en cada peldaño. Ver el camino claro motiva y ordena los esfuerzos colectivos.",
+    "categoryLabel": "PERMA · A — Logro",
+    "subcategory": "A",
+    "permaElement": "A",
+    "metas": [
+      "30–40 min",
+      "Equipo completo",
+      "Pizarra y post-its"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "escaneo-corporal",
+    "categorySlug": "mindfulness",
+    "title": "Escaneo Corporal en Equipo",
+    "description": "Un/a facilitador/a guía al grupo para recorrer mentalmente el cuerpo de pies a cabeza, observando tensiones, sensaciones o zonas de bloqueo sin juzgar. Al finalizar, cada persona comparte en una sola palabra cómo se siente.",
+    "categoryLabel": "Mindfulness · Presencia Somática",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "8–12 min",
+      "Grupo completo",
+      "Espacio silencioso"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "conversacion-escucha-activa-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Escucha Activa en Espejo",
+    "description": "Práctica estructurada donde una persona comparte una situación laboral y la otra solo puede responder reflejando lo que escuchó ('lo que entiendo es que...'), sin dar opinión ni consejo, hasta confirmar que la persona se sintió comprendida.",
+    "categoryLabel": "Conversaciones 1 a 1 · Escucha",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "15–20 min",
+      "2 personas",
+      "Espacio privado"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "mindful-escucha",
+    "categorySlug": "mindfulness",
+    "title": "Escucha Consciente en Duplas",
+    "description": "En parejas, una persona habla durante dos minutos sobre un tema simple mientras la otra escucha en silencio total, sin preparar respuesta ni interrumpir. Luego se invierten los roles. Entrena la escucha plena, poco común en el día a día laboral.",
+    "categoryLabel": "Mindfulness · Escucha",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "10 min",
+      "Parejas",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "escucha-espejo",
+    "categorySlug": "conexion",
+    "title": "Escucha Espejo",
+    "description": "En triadas, una persona habla, otra escucha con atención plena y la tercera observa la interacción. La persona que escucha solo puede reflejar lo que oyó — sin opinar, sin aconsejar, sin interrumpir. Desarrolla la escucha profunda y la empatía real.",
+    "categoryLabel": "Conexión · Escucha Activa",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "25–30 min",
+      "Triadas",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "escuchar-mas-alla-palabras",
+    "categorySlug": "pnl",
+    "title": "Escuchar Más Allá de las Palabras",
+    "description": "Ejercicio para desarrollar una escucha integral considerando el contenido, el tono emocional y la comunicación no verbal. --- Page 11 ---",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "espacio-inspirador",
+    "categorySlug": "perma",
+    "title": "Espacio Inspirador",
+    "description": "Cada integrante trae un objeto o imagen que lo inspire y lo presenta al grupo explicando por qué lo motiva. Compartir estos símbolos personales genera conexión emocional y enriquece el ambiente de trabajo.",
+    "categoryLabel": "PERMA · E — Compromiso",
+    "subcategory": "E",
+    "permaElement": "E",
+    "metas": [
+      "20–25 min",
+      "Grupo completo",
+      "Objeto personal o imagen"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "conversacion-establecer-limites-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Establecer Límites con Respeto",
+    "description": "Marco práctico para preparar y comunicar un límite —decir que no, pedir que algo cambie, proteger tiempo o carga de trabajo— sin agresividad ni disculpas excesivas, sosteniendo la relación mientras se protege el propio espacio.",
+    "categoryLabel": "Conversaciones 1 a 1 · Asertividad",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "20–25 min de preparación + conversación",
+      "2 personas o uso individual de preparación",
+      "Ideal con anticipación"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "fc-feedback-fortalezas",
+    "categorySlug": "fortalezas",
+    "title": "Feedback con Fortalezas",
+    "description": "Estructura de conversación 1:1 para entregar reconocimiento o feedback de mejora anclado en fortalezas VIA —qué fortaleza está en juego y cómo usarla mejor.",
+    "categoryLabel": "Fortalezas del Carácter · Feedback",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "15–20 min",
+      "Conversación 1:1",
+      "Ficha de feedback VIA",
+      "Liderazgo y pares"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "feedback-sandwich-1a1",
+    "categorySlug": "conversaciones",
+    "title": "Feedback con método del Sándwich",
+    "description": "Actividad para preparar y practicar una conversación de retroalimentación equilibrada: reconocer, abordar una mejora específica y cerrar con confianza y acuerdo.",
+    "categoryLabel": "Conversaciones 1 a 1 · Feedback",
+    "subcategory": "Conversaciones 1 a 1",
+    "permaElement": null,
+    "metas": [
+      "20–30 min",
+      "2 personas",
+      "Feedback breve y cuidado",
+      "Requiere ejemplos concretos"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "filtros-invisibles",
+    "categorySlug": "pnl",
+    "title": "Filtros Invisibles",
+    "description": "Identificar los filtros personales que influyen en la manera en que interpretamos una situación.",
+    "categoryLabel": "Comunicación y PNL · Autoconocimiento",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "25 minutos",
+      "Individual / Grupo",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "galeria-de-gratitud",
+    "categorySlug": "conexion",
+    "title": "Galería de Gratitud",
+    "description": "Cada persona escribe notas breves de agradecimiento genuino hacia distintos compañeros/as y las coloca en una galería que todo el equipo recorre en silencio, como una exposición de reconocimiento mutuo.",
+    "categoryLabel": "Conexión · Gratitud",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "25-30 min",
+      "Grupo completo",
+      "Post-its de colores"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "historias-impacto",
+    "categorySlug": "perma",
+    "title": "Historias de Impacto",
+    "description": "Cada integrante comparte una experiencia donde su labor tuvo un efecto positivo real en usuarios, clientes, compañeros o la comunidad. Escuchar el impacto real fortalece la motivación y el sentido colectivo del trabajo.",
+    "categoryLabel": "PERMA · M — Sentido",
+    "subcategory": "M",
+    "permaElement": "M",
+    "metas": [
+      "20–25 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "historias-nombre",
+    "categorySlug": "conexion",
+    "title": "Historias Detrás del Nombre",
+    "description": "Cada integrante comparte brevemente algo de su historia personal, origen o una anécdota significativa que cuente quién es más allá de su rol. Humaniza las relaciones, facilita la conexión emocional y genera un ambiente más cercano y auténtico.",
+    "categoryLabel": "Conexión · Confianza",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "20–25 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "fc-humanidad",
+    "categorySlug": "fortalezas",
+    "title": "Humanidad",
+    "description": "Fortalezas interpersonales orientadas a cuidar, conectar y construir vínculos genuinos: amor, bondad e inteligencia social.",
+    "categoryLabel": "Virtud · Humanidad",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "3 fortalezas",
+      "Conexión genuina",
+      "Cuidado relacional"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "fac-inclusion-accesibilidad",
+    "categorySlug": "facilitacion",
+    "title": "Inclusión y accesibilidad",
+    "description": "Cuatro subtemas con checklist aplicable antes de cada taller para que todas las personas puedan participar.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "12 min lectura + checklist",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "job-crafting-perma",
+    "categorySlug": "perma",
+    "title": "Job Crafting en Equipo",
+    "description": "Sesión estructurada para rediseñar tareas, relaciones y significado del rol dentro de los límites reales del puesto. Aumenta engagement al alinear trabajo con fortalezas y valores.",
+    "categoryLabel": "PERMA · E — Compromiso",
+    "subcategory": "E",
+    "permaElement": "E",
+    "metas": [
+      "45–60 min",
+      "Equipo o subgrupos",
+      "Post-its y pizarra",
+      "Trimestral o tras restructuración"
+    ],
+    "duration": {
+      "total": 60
+    }
+  },
+  {
+    "slug": "fc-justicia",
+    "categorySlug": "fortalezas",
+    "title": "Justicia",
+    "description": "Fortalezas cívicas para construir comunidad saludable: liderazgo, equidad y trabajo en equipo.",
+    "categoryLabel": "Virtud · Justicia",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "3 fortalezas",
+      "Vida en comunidad",
+      "Liderazgo colaborativo"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "formula-clara-instrucciones",
+    "categorySlug": "reunion",
+    "title": "La Fórmula Qué-Por Qué-Cómo",
+    "description": "Ejercicio breve para que quienes facilitan reuniones o talleres practiquen dar instrucciones completas usando la fórmula Qué, Por qué y Cómo, evitando el error más común al explicar una actividad.",
+    "categoryLabel": "Facilitación · Claridad",
+    "subcategory": "Facilitación",
+    "permaElement": null,
+    "metas": [
+      "20 min",
+      "Parejas o grupo pequeño",
+      "Tarjetas con actividades"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "regla-de-tres-mensajes",
+    "categorySlug": "reunion",
+    "title": "La Regla de las Tres Veces",
+    "description": "Ejercicio para practicar la repetición estratégica de mensajes clave, no de forma idéntica sino con distintos ejemplos o formulaciones, de modo que la información importante llegue efectivamente a todo el grupo.",
+    "categoryLabel": "Facilitación · Comunicación",
+    "subcategory": "Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15-20 min",
+      "Grupo completo o subgrupos",
+      "Tarjeta con mensaje clave"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "rejilla-liderazgo",
+    "categorySlug": "equipo",
+    "title": "La Rejilla del Liderazgo",
+    "description": "El equipo se ubica en la rejilla gerencial (orientación a la tarea versus orientación a las personas) para reflexionar sobre el estilo de liderazgo predominante y su efecto en el clima y los resultados del equipo.",
+    "categoryLabel": "Trabajo en Equipo · Liderazgo",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "35-40 min",
+      "Equipo + líder",
+      "Rejilla dibujada en papelógrafo"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "lean-coffee",
+    "categorySlug": "reuniones",
+    "title": "Lean Coffee",
+    "description": "Formato de reunión autoorganizada sin agenda previa. Los participantes proponen temas, votan y discuten en orden de prioridad con tiempos acotados. Democratiza la agenda y garantiza que se discuta lo más relevante para el grupo.",
+    "categoryLabel": "Reuniones Efectivas · Autoorganización",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "30–60 min",
+      "4–12 personas",
+      "Post-its y timer"
+    ],
+    "duration": {
+      "total": 60
+    }
+  },
+  {
+    "slug": "lenguaje-que-construye",
+    "categorySlug": "pnl",
+    "title": "Lenguaje que Construye",
+    "description": "Tomar conciencia del impacto del lenguaje en la forma en que las personas interpretan una conversación.",
+    "categoryLabel": "Comunicación y PNL · Comunicación",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "liderar-sin-palabras",
+    "categorySlug": "pnl",
+    "title": "Liderar sin Palabras",
+    "description": "Desafío grupal que evidencia la importancia de la comunicación no verbal, la observación mutua y la coordinación espontánea para alcanzar un objetivo común.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "linea-vida-equipo",
+    "categorySlug": "perma",
+    "title": "Línea de Vida del Equipo",
+    "description": "El grupo dibuja colectivamente una línea de tiempo con hitos, aprendizajes y momentos significativos. Énfasis en logros y victorias. Refuerza la identidad grupal y valora la historia colectiva.",
+    "categoryLabel": "PERMA · M — Sentido",
+    "subcategory": "M",
+    "permaElement": "M",
+    "metas": [
+      "30–40 min",
+      "Equipo completo",
+      "Papel kraft y marcadores"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "mindful-mano-corazon",
+    "categorySlug": "mindfulness",
+    "title": "Mano en el Corazón",
+    "description": "Un gesto breve y simple de autocompasión: colocar la mano sobre el pecho mientras se pronuncia mentalmente una frase de cuidado propio, especialmente útil tras una jornada o semana particularmente exigente.",
+    "categoryLabel": "Mindfulness · Autocompasión",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "3 min",
+      "Individual o grupal",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 3
+    }
+  },
+  {
+    "slug": "mapa-de-apoyos",
+    "categorySlug": "conexion",
+    "title": "Mapa de Apoyos",
+    "description": "Cada persona identifica y comparte, dentro de un espacio seguro, quiénes son las personas del equipo a las que recurre en distintos tipos de necesidad, reconociendo la red de apoyo social que ya existe, muchas veces sin nombrarse.",
+    "categoryLabel": "Conexión · Apoyo Social",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "30 min",
+      "Grupo completo o subgrupos",
+      "Papel y post-its"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "mapa-de-expectativas",
+    "categorySlug": "reunion",
+    "title": "Mapa de Expectativas",
+    "description": "Al inicio de una sesión, cada participante nombra brevemente qué espera obtener de ella. El/la facilitador/a recoge estas expectativas de forma visible, lo que aumenta el sentido de pertenencia y permite ajustar el enfoque si es necesario.",
+    "categoryLabel": "Apertura de Reunión",
+    "subcategory": "Apertura de Reunión",
+    "permaElement": null,
+    "metas": [
+      "8-10 min",
+      "Grupo completo",
+      "Post-its o pizarra"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "mapa-fortalezas",
+    "categorySlug": "perma",
+    "title": "Mapa de Fortalezas",
+    "description": "Cada persona identifica una fortaleza VIA y la comparte con el grupo. El equipo construye un mapa de talentos y acuerda cómo alinearlo con proyectos. Recomendado tras la actividad «Test Oficial VIA».",
+    "categoryLabel": "PERMA · E — Compromiso",
+    "subcategory": "E",
+    "permaElement": "E",
+    "metas": [
+      "25–30 min",
+      "Grupos de 4–8",
+      "Tarjetas y marcadores"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "mapa-interdependencia",
+    "categorySlug": "equipo",
+    "title": "Mapa de Interdependencia",
+    "description": "El equipo visualiza de qué depende cada persona para hacer bien su trabajo y de quién dependen los demás de ella, haciendo explícita la red de coordinación que sostiene el trabajo cotidiano.",
+    "categoryLabel": "Trabajo en Equipo · Coordinación",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "35 min",
+      "Equipo completo",
+      "Post-its de 2 colores"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "mapa-roles-equipo",
+    "categorySlug": "equipo",
+    "title": "Mapa de Roles del Equipo",
+    "description": "El equipo identifica los roles naturales que cada persona cumple — más allá del cargo formal — y mapea cómo se complementan. Reduce fricciones y aprovecha la diversidad de estilos.",
+    "categoryLabel": "Trabajo en Equipo · Complementariedad",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "35–40 min",
+      "Equipo completo",
+      "Tarjetas de roles"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "fc-matriz-uso",
+    "categorySlug": "fortalezas",
+    "title": "Matriz de Uso de Fortalezas",
+    "description": "Mapea cada fortaleza signature en subuso, uso óptimo o sobreuso. Herramienta individual para calibrar el carácter en contextos laborales concretos.",
+    "categoryLabel": "Fortalezas del Carácter · Autoconocimiento",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "30 min",
+      "Individual",
+      "Top 5 VIA",
+      "Ideal tras test oficial"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "metaforas-en-accion",
+    "categorySlug": "pnl",
+    "title": "Metáforas en Acción",
+    "description": "Las metáforas ayudan a comprender situaciones complejas mediante imágenes simples. Esta dinámica utiliza objetos cotidianos para representar desafíos personales o del equipo y descubrir nuevas formas de afrontarlos.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "45 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "fac-ruta-formacion",
+    "categorySlug": "facilitacion",
+    "title": "Mi ruta de formación",
+    "description": "Tres niveles de desarrollo como facilitador/a con autoevaluación y siguiente paso sugerido.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15–20 min autoevaluación",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "minuto-presencia",
+    "categorySlug": "mindfulness",
+    "title": "Minuto de Presencia Compartida",
+    "description": "Antes de comenzar una reunión o taller, el equipo dedica 1–2 minutos en silencio para respirar conscientemente y centrar la atención en el presente. Simple, poderoso y reproducible.",
+    "categoryLabel": "Mindfulness · Apertura",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "3–5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "mis-tres-apoyos",
+    "categorySlug": "perma",
+    "title": "Mis Tres Apoyos",
+    "description": "Cada persona identifica a tres colegas que han sido clave en su camino laboral y comparte con el grupo su importancia. Hace visible la red de apoyo que sostiene al equipo y fortalece los lazos de confianza mutua.",
+    "categoryLabel": "PERMA · R — Relaciones Positivas",
+    "subcategory": "R",
+    "permaElement": "R",
+    "metas": [
+      "20 min",
+      "Grupo completo",
+      "Papel y lápiz"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "mision-frase",
+    "categorySlug": "perma",
+    "title": "Misión en Una Frase",
+    "description": "El equipo redacta colectivamente una frase que sintetice su propósito común. Analiza avances y puntos de mejora. Alinea la identidad grupal y refuerza la dirección compartida.",
+    "categoryLabel": "PERMA · M — Sentido",
+    "subcategory": "M",
+    "permaElement": "M",
+    "metas": [
+      "30–35 min",
+      "Equipo completo",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 35
+    }
+  },
+  {
+    "slug": "modelando-la-excelencia",
+    "categorySlug": "pnl",
+    "title": "Modelando la Excelencia",
+    "description": "Actividad orientada a identificar comportamientos efectivos observando a personas que destacan en una determinada habilidad y traduciendo esas conductas en acciones concretas de aprendizaje.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "45 minutos",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "fc-moderacion",
+    "categorySlug": "fortalezas",
+    "title": "Moderación",
+    "description": "Fortalezas que protegen contra excesos y favorecen equilibrio: autorregulación, humildad, perdón y prudencia.",
+    "categoryLabel": "Virtud · Moderación",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "4 fortalezas",
+      "Autogestión",
+      "Equilibrio profesional"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "momento-wow",
+    "categorySlug": "perma",
+    "title": "Momento WOW Colectivo",
+    "description": "Cada integrante recuerda y comparte una experiencia laboral que generó alegría, gratitud o inspiración. Estas historias fortalecen el sentido colectivo del trabajo y generan emoción compartida.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "20–25 min",
+      "Grupo completo",
+      "Post-its y marcadores"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "momentos-que-nos-unen",
+    "categorySlug": "conexion",
+    "title": "Momentos que Nos Unen",
+    "description": "El equipo construye colectivamente una línea de tiempo con los momentos compartidos que más recuerdan (logros, desafíos superados juntos, anécdotas), fortaleciendo el sentido de identidad y pertenencia grupal.",
+    "categoryLabel": "Conexión · Narrativa Colectiva",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "35-40 min",
+      "Grupo completo",
+      "Papel largo o pizarra"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "tres-prioridades-hoy",
+    "categorySlug": "reunion",
+    "title": "Nuestras Tres Prioridades de Hoy",
+    "description": "Antes de comenzar una reunión con agenda extensa, el equipo acuerda colectivamente cuáles son las tres prioridades reales de la sesión, evitando que temas menores consuman el tiempo destinado a lo verdaderamente importante.",
+    "categoryLabel": "Apertura de Reunión · Foco",
+    "subcategory": "Apertura de Reunión",
+    "permaElement": null,
+    "metas": [
+      "5-8 min",
+      "Grupo completo",
+      "Pizarra visible"
+    ],
+    "duration": {
+      "total": 8
+    }
+  },
+  {
+    "slug": "objetivo-bien-construido",
+    "categorySlug": "pnl",
+    "title": "Objetivo Bien Construido",
+    "description": "Transformar un deseo general en un objetivo claro, específico y accionable.",
+    "categoryLabel": "Comunicación y PNL · Planificación",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Individual",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "objetivos-smart-equipo",
+    "categorySlug": "equipo",
+    "title": "Objetivos que Enfocan",
+    "description": "El equipo redacta o revisa sus objetivos de rendimiento aplicando cinco criterios de calidad: específicos, medibles, orientados a la acción, centrados en resultados y enmarcados en el tiempo. Convierte deseos generales en metas accionables.",
+    "categoryLabel": "Trabajo en Equipo · Foco y Dirección",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "40-45 min",
+      "Equipo completo",
+      "Ficha de criterios"
+    ],
+    "duration": {
+      "total": 45
+    }
+  },
+  {
+    "slug": "observa-nombra",
+    "categorySlug": "mindfulness",
+    "title": "Observa y Nombra",
+    "description": "Cada persona elige un objeto cualquiera del entorno, lo observa con atención plena durante 30 segundos notando cada detalle, y lo describe brevemente al grupo. Entrena la atención sostenida y ayuda a \"aterrizar\" antes de una sesión.",
+    "categoryLabel": "Mindfulness · Foco Atencional",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "5–8 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 8
+    }
+  },
+  {
+    "slug": "palabra-intencion",
+    "categorySlug": "reunion",
+    "title": "Palabra Intención",
+    "description": "Antes de comenzar cualquier sesión, cada persona elige una palabra que represente su intención: cómo quiere estar, qué quiere aportar, con qué actitud quiere participar. Ancla la presencia y clarifica el propósito individual dentro del colectivo.",
+    "categoryLabel": "Apertura de Reunión",
+    "subcategory": "Apertura de Reunión",
+    "permaElement": null,
+    "metas": [
+      "5–8 min",
+      "Grupo completo",
+      "Post-its opcionales"
+    ],
+    "duration": {
+      "total": 8
+    }
+  },
+  {
+    "slug": "parking-lot",
+    "categorySlug": "reuniones",
+    "title": "Parking Lot (Aparcadero de Ideas)",
+    "description": "Herramienta visual para capturar temas importantes que surgen durante una reunión pero que no pertenecen a la agenda actual. Evita desvíos sin perder ideas valiosas. Mantiene el foco sin silenciar la creatividad del grupo.",
+    "categoryLabel": "Reuniones Efectivas · Facilitación",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "Setup: 2 min",
+      "Uso durante toda la sesión",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 2
+    }
+  },
+  {
+    "slug": "pasapalabra",
+    "categorySlug": "reunion",
+    "title": "Pasapalabra Temático",
+    "description": "El grupo define conceptos clave del tema del taller o reunión en UNA sola palabra diferente a la original. Activa el conocimiento previo, genera risas y conecta al grupo con el contenido antes de empezar.",
+    "categoryLabel": "Energizador Temático",
+    "subcategory": "Energizador Temático",
+    "permaElement": null,
+    "metas": [
+      "8–12 min",
+      "Grupo completo o subgrupos",
+      "Pizarra o pantalla"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "mindful-pausa-antes-decidir",
+    "categorySlug": "mindfulness",
+    "title": "Pausa de un Minuto antes de Decidir",
+    "description": "Antes de una decisión importante en una reunión, el grupo hace una pausa de un minuto en silencio para notar la propia reacción —racional y emocional— antes de votar u opinar en voz alta. Reduce la influencia del primer opinante y la reactividad grupal.",
+    "categoryLabel": "Mindfulness · Toma de Decisiones",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "2–3 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 3
+    }
+  },
+  {
+    "slug": "mindful-pensamientos-nubes",
+    "categorySlug": "mindfulness",
+    "title": "Pensamientos como Nubes",
+    "description": "Una breve meditación guiada que invita a observar los pensamientos como nubes que pasan por el cielo, sin aferrarse a ellos ni empujarlos. Útil para equipos atrapados en rumiación sobre un problema difícil antes de retomar el trabajo con más claridad.",
+    "categoryLabel": "Mindfulness · Defusión Cognitiva",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "5–6 min",
+      "Grupo completo",
+      "Espacio tranquilo"
+    ],
+    "duration": {
+      "total": 6
+    }
+  },
+  {
+    "slug": "perma-pulso-equipo",
+    "categorySlug": "perma",
+    "title": "PERMA Pulso del Equipo",
+    "description": "Check-in rápido de los cinco pilares PERMA en escala 1–10. Permite detectar desbalances, priorizar conversaciones y medir evolución mes a mes.",
+    "categoryLabel": "PERMA · Diagnóstico de equipo",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "15–20 min",
+      "Equipo completo",
+      "Pizarra o mural digital",
+      "Mensual o trimestral"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "compasion-inter",
+    "categorySlug": "conexion",
+    "title": "Práctica: Compasión Interpersonal",
+    "description": "Espacio seguro y humano para encontrarnos, reconocernos y conectarnos con otra persona desde la mirada compasiva. Cultivar la empatía y la comprensión profunda hacia otro ser humano, reconociendo su historia, su vulnerabilidad y su valor.",
+    "categoryLabel": "Conexión · Compasión",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Duplas",
+      "Espacio tranquilo"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "preguntas-que-abren-conversaciones",
+    "categorySlug": "pnl",
+    "title": "Preguntas que Abren Conversaciones",
+    "description": "Entrenar el uso de preguntas abiertas para ampliar perspectivas y generar conversaciones más profundas.",
+    "categoryLabel": "Comunicación y PNL · Comunicación",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "30 minutos",
+      "Parejas",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "reunion-premortem",
+    "categorySlug": "reuniones",
+    "title": "Premortem de Decisión",
+    "description": "Antes de lanzar un proyecto o tomar una decisión importante, el equipo imagina que ya fracasó estrepitosamente y trabaja hacia atrás para identificar por qué, revelando riesgos que el optimismo inicial suele ocultar.",
+    "categoryLabel": "Reuniones Efectivas · Gestión de Riesgo",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "30–40 min",
+      "Equipo completo involucrado en la decisión",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "presencia-compartida",
+    "categorySlug": "conexion",
+    "title": "Presencia Compartida",
+    "description": "Práctica breve en parejas de respiración consciente compartida y contacto visual sostenido, sin palabras, para experimentar la conexión que se genera simplemente al estar plenamente presente con otra persona.",
+    "categoryLabel": "Conexión · Presencia",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "10-12 min",
+      "Parejas",
+      "Espacio tranquilo"
+    ],
+    "duration": {
+      "total": 12
+    }
+  },
+  {
+    "slug": "fac-principios-practica",
+    "categorySlug": "facilitacion",
+    "title": "Principios que sostienen la práctica",
+    "description": "Cuatro valores base y cinco competencias-actitud que distinguen una facilitación genuina de la simple conducción de una reunión.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "12–18 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 18
+    }
+  },
+  {
+    "slug": "proposito-tres-niveles",
+    "categorySlug": "perma",
+    "title": "Propósito en Tres Niveles",
+    "description": "Reflexión individual sobre el trabajo como job (sustento), career (trayectoria) y calling (vocación). Alinea la labor cotidiana con sentido personal y profesional.",
+    "categoryLabel": "PERMA · M — Sentido",
+    "subcategory": "M",
+    "permaElement": "M",
+    "metas": [
+      "25–30 min",
+      "Individual",
+      "Papel y lápiz",
+      "Ideal tras cambio de rol o burnout leve"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "puno-a-cinco",
+    "categorySlug": "reunion",
+    "title": "Puño a Cinco",
+    "description": "Técnica rápida de verificación de consenso: frente a una propuesta, cada persona levanta entre 0 y 5 dedos para indicar su nivel de apoyo, permitiendo detectar en segundos si existe acuerdo suficiente para avanzar.",
+    "categoryLabel": "Toma de Decisiones · Pulso Rápido",
+    "subcategory": "Toma de Decisiones",
+    "permaElement": null,
+    "metas": [
+      "3-5 min por votación",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "reconociendo-al-otro",
+    "categorySlug": "conexion",
+    "title": "Reconociendo al Otro",
+    "description": "Ronda oral y pública donde cada persona reconoce en voz alta, frente al grupo completo, una cualidad o aporte genuino de un compañero/a específico. A diferencia de la carta escrita, aquí el reconocimiento se dice y se recibe en el momento, frente a todos.",
+    "categoryLabel": "Conexión · Reconocimiento",
+    "subcategory": "Conexión",
+    "permaElement": null,
+    "metas": [
+      "25-30 min",
+      "Grupo completo (hasta 12 personas)",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "reencuadrar-historias",
+    "categorySlug": "pnl",
+    "title": "Reencuadrar Historias",
+    "description": "Las personas solemos interpretar los acontecimientos desde una única perspectiva. Esta actividad invita al grupo a descubrir cómo una misma experiencia puede adquirir significados completamente distintos dependiendo del marco desde el cual se observa.",
+    "categoryLabel": "Comunicación y PNL · Dinámica",
+    "subcategory": "Comunicación y PNL",
+    "permaElement": null,
+    "metas": [
+      "40 minutos --- Page 16 ---",
+      "Grupal",
+      "Ética · No clínica · Aplicación práctica"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "respiracion-444",
+    "categorySlug": "mindfulness",
+    "title": "Respiración Colectiva 4-4-4",
+    "description": "El equipo practica respiración consciente: inhalar 4 segundos, mantener 4 y exhalar 4. Se repite tres veces en conjunto. Regula la energía grupal, reduce el estrés y sincroniza al equipo antes de una tarea importante.",
+    "categoryLabel": "Mindfulness · Regulación",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "retrospectiva",
+    "categorySlug": "reuniones",
+    "title": "Retrospectiva del Equipo",
+    "description": "Reunión estructurada al final de un sprint, proyecto o período para reflexionar colectivamente sobre qué funcionó, qué mejorar y qué probar diferente. El motor de la mejora continua en equipos ágiles.",
+    "categoryLabel": "Reuniones Efectivas · Mejora Continua",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "45–60 min",
+      "Equipo completo",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 60
+    }
+  },
+  {
+    "slug": "ronda-noticias",
+    "categorySlug": "perma",
+    "title": "Ronda de Buenas Noticias",
+    "description": "Cada persona comparte una noticia positiva laboral o personal antes de comenzar la jornada o reunión. Refuerza la conexión, el optimismo y la cohesión del equipo desde el primer minuto.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "10–15 min",
+      "Grupo completo",
+      "Sin materiales",
+      "Ideal para apertura de reunión"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "feedback-360-breve",
+    "categorySlug": "equipo",
+    "title": "Ronda de Feedback 360",
+    "description": "Cada integrante del equipo recibe retroalimentación breve y estructurada de sus compañeros/as sobre una fortaleza a mantener y una oportunidad de mejora, en un formato seguro, específico y orientado al futuro.",
+    "categoryLabel": "Trabajo en Equipo · Retroalimentación",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "45-50 min",
+      "Equipo completo (hasta 10 personas)",
+      "Hojas de feedback"
+    ],
+    "duration": {
+      "total": 50
+    }
+  },
+  {
+    "slug": "mindful-gratitud-equipo",
+    "categorySlug": "mindfulness",
+    "title": "Ronda de Gratitud Exprés",
+    "description": "Al cierre de una sesión o jornada, cada persona nombra en una frase breve algo o alguien del equipo por lo que siente gratitud esa semana. Un ritual de menos de cinco minutos que cierra con un tono distinto al del contenido de trabajo.",
+    "categoryLabel": "Mindfulness · Gratitud",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "3–5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "ronda-de-tiempo-igual",
+    "categorySlug": "reunion",
+    "title": "Ronda de Tiempo Igual",
+    "description": "Dinámica para asegurar que todas las voces del equipo tengan el mismo espacio para hablar durante una discusión, usando un turno visual que se pasa de persona en persona antes de abrir el debate libre.",
+    "categoryLabel": "Facilitación · Participación Equitativa",
+    "subcategory": "Facilitación",
+    "permaElement": null,
+    "metas": [
+      "15-20 min",
+      "Grupo completo",
+      "Objeto para pasar — opcional"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "elogio-constructivo",
+    "categorySlug": "perma",
+    "title": "Ronda del Elogio Constructivo",
+    "description": "Cada integrante destaca una fortaleza concreta o acción específica de otro miembro del equipo. La retroalimentación positiva y el reconocimiento genuino generan confianza y fortalecen la cultura apreciativa.",
+    "categoryLabel": "PERMA · A — Logro",
+    "subcategory": "A",
+    "permaElement": "A",
+    "metas": [
+      "15–20 min",
+      "Grupo o equipo",
+      "Tarjetas opcionales"
+    ],
+    "duration": {
+      "total": 20
+    }
+  },
+  {
+    "slug": "fc-sabiduria",
+    "categorySlug": "fortalezas",
+    "title": "Sabiduría y Conocimiento",
+    "description": "Fortalezas cognitivas vinculadas a adquirir, integrar y usar conocimiento: creatividad, curiosidad, juicio crítico, amor por aprender y perspectiva.",
+    "categoryLabel": "Virtud · Sabiduría y Conocimiento",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "5 fortalezas",
+      "Liderazgo reflexivo",
+      "Aprendizaje continuo"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "saboreo-consciente",
+    "categorySlug": "perma",
+    "title": "Saboreo Consciente",
+    "description": "Práctica guiada para prolongar e intensificar una experiencia positiva reciente —laboral o personal— mediante atención plena al recuerdo. Individual o en parejas.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "10–15 min",
+      "Individual o duplas",
+      "Sin materiales",
+      "Tras un logro o momento agradable"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "semaforo-equipo",
+    "categorySlug": "reunion",
+    "title": "Semáforo del Equipo",
+    "description": "Evaluación rápida y visual del estado real del equipo usando el código de colores del semáforo. Permite tomar el pulso grupal en 5 minutos y tomar decisiones de facilitación basadas en datos reales.",
+    "categoryLabel": "Pulso del Equipo",
+    "subcategory": "Pulso del Equipo",
+    "permaElement": null,
+    "metas": [
+      "5–8 min",
+      "Equipo de trabajo",
+      "Tarjetas de colores o manos"
+    ],
+    "duration": {
+      "total": 8
+    }
+  },
+  {
+    "slug": "sociograma-confianza",
+    "categorySlug": "equipo",
+    "title": "Sociograma de Confianza",
+    "description": "El equipo construye un mapa visual de las relaciones de apoyo y colaboración entre sus integrantes, identificando nodos de conexión fuerte y también vínculos que podrían fortalecerse.",
+    "categoryLabel": "Trabajo en Equipo · Confianza",
+    "subcategory": "Trabajo en Equipo",
+    "permaElement": null,
+    "metas": [
+      "40 min",
+      "Equipo completo (ideal 6-12 personas)",
+      "Papel kraft grande"
+    ],
+    "duration": {
+      "total": 40
+    }
+  },
+  {
+    "slug": "fc-spotting-parejas",
+    "categorySlug": "fortalezas",
+    "title": "Strength Spotting en Parejas",
+    "description": "Cada persona observa y nombra fortalezas VIA concretas en su compañero/a durante una tarea o conversación. Entrena el reconocimiento basado en evidencia conductual, no en cumplidos genéricos.",
+    "categoryLabel": "Fortalezas del Carácter · Equipo",
+    "subcategory": "Fortalezas del Carácter",
+    "permaElement": null,
+    "metas": [
+      "20–25 min",
+      "Duplas",
+      "Lista VIA de referencia",
+      "Tras proyecto o retro"
+    ],
+    "duration": {
+      "total": 25
+    }
+  },
+  {
+    "slug": "kanban-visual",
+    "categorySlug": "reuniones",
+    "title": "Tablero Kanban Visual",
+    "description": "Sistema visual de gestión del flujo de trabajo en equipo. Columnas Por Hacer → En Progreso → Hecho. Cada tarea es una tarjeta que se mueve según su estado. Hace visible el flujo real del equipo en tiempo real.",
+    "categoryLabel": "Reuniones Efectivas · Kanban",
+    "subcategory": "Reuniones Efectivas",
+    "permaElement": null,
+    "metas": [
+      "Setup inicial: 20–30 min",
+      "Revisión diaria: 5 min",
+      "Post-its y pizarra o herramienta digital"
+    ],
+    "duration": {
+      "total": 30
+    }
+  },
+  {
+    "slug": "mindful-stop",
+    "categorySlug": "mindfulness",
+    "title": "Técnica STOP",
+    "description": "Un micro-ejercicio de cuatro pasos (Stop, Take a breath, Observe, Proceed) para interrumpir la reactividad automática en medio de una jornada intensa. Se enseña una vez en grupo y luego cada persona puede usarlo por su cuenta, en cualquier momento.",
+    "categoryLabel": "Mindfulness · Micro-práctica",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "4–5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "termometro",
+    "categorySlug": "reunion",
+    "title": "Termómetro del Aprendizaje",
+    "description": "Al finalizar un taller o sesión, cada persona evalúa visualmente su nivel de comprensión del contenido. Permite al/la facilitador/a detectar en tiempo real si hay algo que necesita refuerzo antes de cerrar.",
+    "categoryLabel": "Evaluación · Cierre",
+    "subcategory": "Evaluación",
+    "permaElement": null,
+    "metas": [
+      "5–10 min",
+      "Grupo completo",
+      "Post-its y pizarra"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "mindful-transicion-reuniones",
+    "categorySlug": "mindfulness",
+    "title": "Transición Consciente entre Reuniones",
+    "description": "Un protocolo breve de 2 minutos para cerrar mentalmente una reunión antes de abrir la siguiente, evitando el arrastre de atención de una tarea a otra. Especialmente útil en jornadas con reuniones consecutivas sin pausa.",
+    "categoryLabel": "Mindfulness · Transiciones",
+    "subcategory": "Mindfulness",
+    "permaElement": null,
+    "metas": [
+      "2 min entre reuniones",
+      "Individual o grupal",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 2
+    }
+  },
+  {
+    "slug": "fc-trascendencia",
+    "categorySlug": "fortalezas",
+    "title": "Trascendencia",
+    "description": "Fortalezas que conectan con significado, esperanza y algo más grande: humor, gratitud, esperanza, espiritualidad y aprecio de la belleza y excelencia.",
+    "categoryLabel": "Virtud · Trascendencia",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "5 fortalezas",
+      "Sentido y propósito",
+      "Bienestar cotidiano"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "tres-cosas-buenas",
+    "categorySlug": "perma",
+    "title": "Tres Cosas Buenas",
+    "description": "Ritual breve —individual o en equipo— para registrar tres experiencias positivas del día o de la semana. Entrena la atención hacia lo que funciona y construye un repertorio de gratitud cotidiana.",
+    "categoryLabel": "PERMA · P — Emociones Positivas",
+    "subcategory": "P",
+    "permaElement": "P",
+    "metas": [
+      "5–10 min",
+      "Individual o equipo",
+      "Bitácora o app",
+      "Ritual diario o semanal"
+    ],
+    "duration": {
+      "total": 10
+    }
+  },
+  {
+    "slug": "una-palabra-de-cierre",
+    "categorySlug": "reunion",
+    "title": "Una Palabra de Cierre",
+    "description": "Ronda breve de cierre donde cada persona resume en una sola palabra cómo se va de la sesión. Simple, rápida y efectiva para marcar el fin del espacio y dar una última lectura del estado del grupo.",
+    "categoryLabel": "Cierre de Reunión",
+    "subcategory": "Cierre de Reunión",
+    "permaElement": null,
+    "metas": [
+      "3-5 min",
+      "Grupo completo",
+      "Sin materiales"
+    ],
+    "duration": {
+      "total": 5
+    }
+  },
+  {
+    "slug": "fc-valor",
+    "categorySlug": "fortalezas",
+    "title": "Valor",
+    "description": "Fortalezas emocionales para avanzar frente a dificultad interna o externa: valentía, perseverancia, honestidad y vitalidad/entusiasmo.",
+    "categoryLabel": "Virtud · Valor",
+    "subcategory": "Virtud",
+    "permaElement": null,
+    "metas": [
+      "4 fortalezas",
+      "Coraje profesional",
+      "Energía para actuar"
+    ],
+    "duration": {
+      "total": 15
+    }
+  },
+  {
+    "slug": "fac-voces-facilitacion",
+    "categorySlug": "facilitacion",
+    "title": "Voces de la facilitación",
+    "description": "Cápsulas inspiradoras de referentes del oficio para sostener la mirada y la ética de quien facilita.",
+    "categoryLabel": "Fundamentos de la Facilitación · Guía",
+    "subcategory": "Fundamentos de la Facilitación",
+    "permaElement": null,
+    "metas": [
+      "5–8 min lectura",
+      "Lectura guiada · Autoinstrucción",
+      "Ideal antes de usar el Kit"
+    ],
+    "duration": {
+      "total": 8
+    }
+  }
+]

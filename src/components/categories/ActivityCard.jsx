@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import KitpopIcon from '../../icons/kitpopIcons'
+import { ListPageSkeleton } from '../ui/Skeleton'
 
 export default function ActivityCard({ activity, icon = 'perma-star' }) {
   const chips = activity.metas?.length
@@ -55,5 +56,13 @@ export default function ActivityCard({ activity, icon = 'perma-star' }) {
 
       <span className="ai-arr">›</span>
     </Link>
+  )
+}
+
+export function ActivityListSkeleton({ rows = 4 }) {
+  return (
+    <div className="acts-list" aria-busy="true" aria-label="Cargando actividades">
+      <ListPageSkeleton rows={rows} showForm={false} />
+    </div>
   )
 }

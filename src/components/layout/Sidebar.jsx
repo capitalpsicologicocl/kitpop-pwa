@@ -1,10 +1,11 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import KitpopIcon from '../../icons/kitpopIcons'
 import { useAuth } from '../../context/AuthContext'
 import { categories } from '../../data/categories'
-import { searchActivities } from '../../utils/searchActivities'
+import { useActivityIndex } from '../../hooks/useContent'
+import { searchActivitiesAsync } from '../../utils/searchActivities'
 
 export default function Sidebar({ isOpen, onClose }) {
   const navigate = useNavigate()
@@ -13,26 +14,54 @@ export default function Sidebar({ isOpen, onClose }) {
   const [categorySlug, setCategorySlug] = useState('all')
   const [duration, setDuration] = useState('all')
   const [favoritesOnly, setFavoritesOnly] = useState('all')
+  const { loading: indexLoading } = useActivityIndex()
+  const [results, setResults] = useState([])
 
-  const results = useMemo(() => {
-    const trimmedQuery = query.trim()
+  const trimmedQuery = query.trim()
+  const shouldSearch = Boolean(trimmedQuery) || favoritesOnly === 'fav'
+
+  useEffect(() => {
+    if (!shouldSearch) {
+      setResults([])
+      return
+    }
 
     if (favoritesOnly === 'fav' && !user) {
-      return []
+      setResults([])
+      return
     }
 
-    if (!trimmedQuery && favoritesOnly !== 'fav') {
-      return []
+    if (indexLoading) {
+      return
     }
 
-    return searchActivities({
+    let mounted = true
+
+    searchActivitiesAsync({
       query: trimmedQuery,
       categorySlug,
       duration,
       favoritesOnly: favoritesOnly === 'fav',
       favoriteSlugs,
-    }).slice(0, 8)
-  }, [query, categorySlug, duration, favoritesOnly, favoriteSlugs, user])
+    }).then((items) => {
+      if (mounted) {
+        setResults(items.slice(0, 8))
+      }
+    })
+
+    return () => {
+      mounted = false
+    }
+  }, [
+    trimmedQuery,
+    categorySlug,
+    duration,
+    favoritesOnly,
+    favoriteSlugs,
+    user,
+    indexLoading,
+    shouldSearch,
+  ])
 
   function handleSubmit(event) {
     event.preventDefault()

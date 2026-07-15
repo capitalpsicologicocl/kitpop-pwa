@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import { useAuth } from '../context/AuthContext'
-import { getActivityBySlug } from '../data/kitpopAdapter'
+import { useActivity } from '../hooks/useContent'
 import ExportActions from '../components/export/ExportActions'
 import GuestSignupCTA from '../components/auth/GuestSignupCTA'
 import ActivityGuide from '../components/activity/ActivityGuide'
@@ -23,7 +23,7 @@ export default function Activity() {
   const navigate = useNavigate()
   const { slug } = useParams()
   const { user, favoriteSlugs, toggleFavorite } = useAuth()
-  const activity = getActivityBySlug(slug)
+  const { activity, loading } = useActivity(slug)
   const [activeTab, setActiveTab] = useState('guide')
   const [favoriteError, setFavoriteError] = useState('')
 
@@ -55,6 +55,14 @@ export default function Activity() {
 
       setFavoriteError(error.message || 'No se pudo actualizar el favorito.')
     }
+  }
+
+  if (loading) {
+    return (
+      <main id="act-view" className="fade-in">
+        <p className="auth-loading">Cargando actividad...</p>
+      </main>
+    )
   }
 
   if (!activity) {

@@ -1,17 +1,26 @@
-import { activities } from '../data/activities'
-import { stripHtml } from '../data/kitpopAdapter'
+import { loadActivityIndex } from '../data/contentLoader'
+
+let activityIndexCache = null
+
+async function getIndex() {
+  if (!activityIndexCache) {
+    activityIndexCache = await loadActivityIndex()
+  }
+
+  return activityIndexCache
+}
+
+function stripHtml(html = '') {
+  return html.replace(/<[^>]+>/g, '').trim()
+}
 
 function getSearchText(activity) {
-  const kitpop = activity.kitpop ?? {}
-
   return stripHtml(
     [
       activity.title,
       activity.description,
       activity.categoryLabel,
-      kitpop.name,
-      kitpop.sub,
-      kitpop.cat,
+      activity.subcategory,
     ].join(' ')
   ).toLowerCase()
 }
@@ -38,46 +47,14 @@ function matchesDuration(activity, duration) {
   return true
 }
 
-export function searchActivities({
-  query = '',
-  categorySlug = 'all',
-  duration = 'all',
-  favoritesOnly = false,
-  favoriteSlugs = [],
-}) {
+function filterActivities(activities, { query, categorySlug, duration, favoritesOnly, favoriteSlugs }) {
   const normalizedQuery = query.trim().toLowerCase()
 
-  if (favoritesOnly) {
-    if (!favoriteSlugs.length) {
-      return []
+  return activities.filter((activity) => {
+    if (favoritesOnly && !favoriteSlugs.includes(activity.slug)) {
+      return false
     }
 
-    return activities.filter((activity) => {
-      if (!favoriteSlugs.includes(activity.slug)) {
-        return false
-      }
-
-      if (categorySlug !== 'all' && activity.categorySlug !== categorySlug) {
-        return false
-      }
-
-      if (!matchesDuration(activity, duration)) {
-        return false
-      }
-
-      if (!normalizedQuery) {
-        return true
-      }
-
-      return getSearchText(activity).includes(normalizedQuery)
-    })
-  }
-
-  if (!normalizedQuery) {
-    return []
-  }
-
-  return activities.filter((activity) => {
     if (categorySlug !== 'all' && activity.categorySlug !== categorySlug) {
       return false
     }
@@ -87,9 +64,30 @@ export function searchActivities({
     }
 
     if (!normalizedQuery) {
-      return false
+      return favoritesOnly
     }
 
     return getSearchText(activity).includes(normalizedQuery)
   })
 }
+
+export async function searchActivitiesAsync(options) {
+  const index = await getIndex()
+  return filterActivities(index, options)
+}
+
+/** Síncrono sobre índice ya cargado; preferir searchActivitiesAsync en UI */
+export function searchActivities(options) {
+  if (!activityIndexCache) {
+    return []
+  }
+
+  return filterActivities(activityIndexCache, options)
+}
+
+export async function preloadActivityIndex() {
+  activityIndexCache = await getIndex()
+  return activityIndexCache
+}
+
+export { stripHtml }

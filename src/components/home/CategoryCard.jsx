@@ -1,12 +1,9 @@
 import { Link } from 'react-router-dom'
 
 import KitpopIcon from '../../icons/kitpopIcons'
-import { activities } from '../../data/activities'
 
 export default function CategoryCard({ category }) {
-  const activityCount = activities.filter(
-    (activity) => activity.categorySlug === category.slug
-  ).length
+  const activityCount = category.activityCount ?? 0
 
   return (
     <Link
