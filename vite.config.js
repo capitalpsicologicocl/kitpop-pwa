@@ -17,8 +17,10 @@ function requireSupabaseEnv(mode) {
 }
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
-  requireSupabaseEnv(mode)
+export default defineConfig(({ mode, command }) => {
+  if (command === 'build') {
+    requireSupabaseEnv(mode)
+  }
 
   return {
     plugins: [
