@@ -1,13 +1,83 @@
-<h2>¡Bienvenido/a a KitPOP!</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bienvenido/a a KitPOP</title>
+</head>
+<body style="margin:0;padding:0;background:#F3F4F6;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:#1F2937;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F3F4F6;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(59,30,142,.08);">
+          <tr>
+            <td style="background:linear-gradient(135deg,#5B3EC4,#3b1e8e);padding:28px 32px;">
+              <p style="margin:0;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);">KitPOP de Facilitación</p>
+              <h1 style="margin:8px 0 0;font-size:26px;line-height:1.25;color:#ffffff;">¡Bienvenido/a!</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:28px 32px;">
+              <p style="margin:0 0 16px;font-size:16px;line-height:1.6;">Hola,</p>
+              <p style="margin:0 0 20px;font-size:16px;line-height:1.6;">
+                Gracias por registrarte en <strong>KitPOP</strong>. Confirma tu correo para activar tu cuenta Explorer
+                y acceder al banco de actividades, favoritos, bitácora y espacio interactivo.
+              </p>
+              <p style="margin:0 0 24px;text-align:center;">
+                <a href="{{ .ConfirmationURL }}" style="display:inline-block;background:#3b1e8e;color:#ffffff;text-decoration:none;font-weight:700;font-size:16px;padding:14px 28px;border-radius:12px;">
+                  Confirmar mi cuenta
+                </a>
+              </p>
 
-<p>Hola,</p>
+              <h2 style="margin:0 0 12px;font-size:18px;color:#3b1e8e;">Primeros pasos en la app</h2>
+              <ol style="margin:0 0 24px;padding-left:20px;font-size:15px;line-height:1.7;">
+                <li>Entra a <a href="https://app.kitpopapp.com" style="color:#5B3EC4;">app.kitpopapp.com</a> e inicia sesión.</li>
+                <li>Explora <strong>Categorías</strong> y abre una guía (p. ej. <em>Ronda de Buenas Noticias</em>).</li>
+                <li>Guarda actividades en <strong>Favoritos</strong> para tu próximo taller.</li>
+                <li>Crea tu primer taller en <strong>Talleres</strong> y prueba el diseño con IA (Explorer incluye prueba).</li>
+              </ol>
 
-<p>Gracias por registrarte en <strong>KitPOP de Facilitación</strong>. Ya casi está todo listo.</p>
+              <h2 style="margin:0 0 12px;font-size:18px;color:#3b1e8e;">Instala KitPOP en tu pantalla</h2>
+              <p style="margin:0 0 16px;font-size:15px;line-height:1.6;">
+                KitPOP es una PWA: puedes abrirla como app, sin buscarla cada vez en el navegador.
+              </p>
 
-<p>Confirma tu correo para activar tu cuenta Explorer y acceder al banco de actividades, favoritos, bitácora y espacio interactivo:</p>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 12px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;">
+                <tr>
+                  <td style="padding:16px;">
+                    <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#3b1e8e;">iPhone / iPad (Safari)</p>
+                    <p style="margin:0;font-size:14px;line-height:1.6;">Abre la app → botón <strong>Compartir</strong> → <strong>Añadir a pantalla de inicio</strong> → Confirmar.</p>
+                  </td>
+                </tr>
+              </table>
 
-<p><a href="{{ .ConfirmationURL }}">Confirmar mi cuenta</a></p>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 12px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;">
+                <tr>
+                  <td style="padding:16px;">
+                    <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#3b1e8e;">Android (Chrome)</p>
+                    <p style="margin:0;font-size:14px;line-height:1.6;">Menú <strong>⋮</strong> → <strong>Instalar aplicación</strong> o <strong>Añadir a pantalla de inicio</strong>.</p>
+                  </td>
+                </tr>
+              </table>
 
-<p>Si no creaste esta cuenta, puedes ignorar este mensaje.</p>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 24px;background:#F9FAFB;border:1px solid #E5E7EB;border-radius:12px;">
+                <tr>
+                  <td style="padding:16px;">
+                    <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#3b1e8e;">Computador (Chrome / Edge)</p>
+                    <p style="margin:0;font-size:14px;line-height:1.6;">Icono <strong>Instalar</strong> en la barra de direcciones → <strong>Instalar</strong>. También puedes crear un acceso directo en el escritorio desde el menú del navegador.</p>
+                  </td>
+                </tr>
+              </table>
 
-<p>Facilita mejor,<br />Equipo KitPOP</p>
+              <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#6B7280;">
+                Si no creaste esta cuenta, ignora este mensaje.
+              </p>
+              <p style="margin:0;font-size:15px;line-height:1.6;">Facilita mejor,<br /><strong>Equipo KitPOP</strong></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

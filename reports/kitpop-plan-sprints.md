@@ -167,18 +167,17 @@
 
 ---
 
-## Sprint 8 — Performance + email (Semana 15–16) ⏳ Prioridad 2 (parcial)
+## Sprint 8 — Performance + email (Semana 15–16) 🟡 En curso
 
 **Meta:** bundle más liviano + bienvenida post-registro + liberar slot Vercel.
 
-| Tarea | Quién | Entregable |
-|-------|-------|------------|
-| Code-splitting rutas pesadas | 🤖 | `React.lazy` en `/talleres`, `/interactivo`, `/admin`; chunks separados en Vite |
-| Análisis bundle (`rollup-plugin-visualizer` o build log) | 🤖 | Meta: bajar chunk principal ~30% |
-| Email bienvenida vía Resend | 🤖 + ⚙️ | Templates HTML en `supabase/email-templates/` + guía SMTP Resend |
-| Eliminar APIs Stripe muertas | 🤖 | Borrar `create-checkout-session`, `create-portal-session`, `stripe-webhook`, `stripeService.js` (no usados; PayPal es el flujo) → libera 3 slots Vercel |
-| Configurar Resend SMTP en Supabase | ⚙️ | Authentication → SMTP; dominio `kitpopapp.com` verificado en Resend |
-| Secuencia post-registro (opcional) | 🤖 | Email día 3 “primer taller” vía webhook Supabase → `/api/notifications` (solo si eliminamos Stripe) |
+| Tarea | Quién | Estado | Entregable |
+|-------|-------|--------|------------|
+| Favicon KitPOP (app + landing) | 🤖 | ✅ | `assets/kitpop-favicon.svg` + `npm run generate:favicons` |
+| Email bienvenida + instrucciones PWA | 🤖 | ✅ | `confirm-signup.html`, `welcome.html`, `auth_emails_setup.sql` |
+| Configurar Resend SMTP en Supabase | ⚙️ | ⏳ | Pegar template + SMTP (guía en `auth_emails_setup.sql`) |
+| Code-splitting rutas pesadas | 🤖 | ⏳ | `React.lazy` en `/talleres`, `/interactivo`, `/admin` |
+| Eliminar APIs Stripe muertas | 🤖 | ⏳ | Libera 3 slots Vercel |
 
 **Checklist deploy Sprint 8**
 

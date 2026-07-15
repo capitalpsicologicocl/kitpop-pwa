@@ -1,7 +1,9 @@
 -- KitPOP: configuración de correos de auth (Supabase Dashboard)
 -- No ejecutes este archivo como SQL. Es una guía de configuración manual.
 --
+-- ═══════════════════════════════════════════════════════════════
 -- 1) Authentication → URL Configuration
+-- ═══════════════════════════════════════════════════════════════
 --    Site URL: https://app.kitpopapp.com
 --    Redirect URLs (añadir todas):
 --      https://app.kitpopapp.com/login
@@ -11,19 +13,43 @@
 --      http://localhost:5173/login
 --      http://localhost:5173/restablecer-contrasena
 --
+-- ═══════════════════════════════════════════════════════════════
 -- 2) Authentication → Providers → Email
---    Activar "Confirm email" (recomendado)
---    Así el registro envía el correo de bienvenida + confirmación.
+-- ═══════════════════════════════════════════════════════════════
+--    Activar "Confirm email" (recomendado).
+--    El correo de confirmación incluye bienvenida + instrucciones PWA.
 --
+-- ═══════════════════════════════════════════════════════════════
 -- 3) Authentication → Email Templates
---    Confirm signup: pegar supabase/email-templates/confirm-signup.html
---    Reset password: pegar supabase/email-templates/reset-password.html
+-- ═══════════════════════════════════════════════════════════════
+--    Confirm signup → pegar supabase/email-templates/confirm-signup.html
+--      Subject: Bienvenido/a a KitPOP — confirma tu cuenta
 --
--- 4) (Opcional) Authentication → SMTP Settings
---    Configura SMTP propio (Resend, SendGrid, etc.) para enviar desde tu dominio.
+--    Reset password → pegar supabase/email-templates/reset-password.html
+--      Subject: Restablece tu contraseña KitPOP
 --
--- Subject sugerido Confirm signup:
---   Bienvenido/a a KitPOP — confirma tu cuenta
+--    (Opcional) Si usas Auth Hook post-confirmación, envía welcome.html
+--      Subject: Tu cuenta KitPOP está lista — instálala en tu pantalla
 --
--- Subject sugerido Reset password:
---   Restablece tu contraseña KitPOP
+-- ═══════════════════════════════════════════════════════════════
+-- 4) Resend SMTP (recomendado — envía desde @kitpopapp.com)
+-- ═══════════════════════════════════════════════════════════════
+--    A) resend.com → Domains → añadir kitpopapp.com → verificar DNS (SPF, DKIM)
+--    B) Resend → API Keys → crear key (para futuros envíos transaccionales)
+--    C) Supabase → Project Settings → Authentication → SMTP Settings:
+--         Enable custom SMTP: ON
+--         Host: smtp.resend.com
+--         Port: 465 (SSL) o 587 (TLS)
+--         Username: resend
+--         Password: <tu API key de Resend>
+--         Sender email: hola@kitpopapp.com  (o noreply@kitpopapp.com)
+--         Sender name: KitPOP
+--    D) Guardar → Send test email desde Supabase
+--
+-- ═══════════════════════════════════════════════════════════════
+-- 5) Verificación
+-- ═══════════════════════════════════════════════════════════════
+--    Registro test → bandeja recibe confirm-signup con:
+--      - Botón confirmar cuenta
+--      - Primeros pasos en la app
+--      - Instrucciones instalar PWA (iPhone, Android, computador)
