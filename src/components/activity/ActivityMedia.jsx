@@ -9,7 +9,6 @@ import {
 function MediaPlayer({ item }) {
   const provider = normalizeMediaProvider(item)
   const title = item.title || 'Recurso'
-  const duration = formatMediaDuration(item.durationSec)
 
   if (provider === 'youtube') {
     const embedUrl = getYoutubeEmbedUrl(item.url)

@@ -189,6 +189,16 @@
             }
           ]
         }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Valores y competencias del facilitador",
+          "description": "Introducción a principios IAF: igualdad, diversidad, cooperación y cuidado en procesos grupales.",
+          "url": "https://www.youtube.com/watch?v=HBr5sQ5Ex0I",
+          "provider": "youtube",
+          "durationSec": 600
+        }
       ]
     },
     "fac-rol-facilitador": {
@@ -262,6 +272,16 @@
             }
           ]
         }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "El rol del facilitador",
+          "description": "Roger Schwarz sobre liderazgo inteligente y facilitación de equipos de alto rendimiento.",
+          "url": "https://www.youtube.com/watch?v=ha3e2F4k4_4",
+          "provider": "youtube",
+          "durationSec": 780
+        }
       ]
     },
     "fac-disena-4-fases": {
@@ -324,6 +344,16 @@
               "p": "El ciclo Visión–Diseño–Actuar–Aprender dialoga con el aprendizaje experiencial de Kolb (1984) y con modelos de investigación-acción participativa (Reason & Bradbury, 2008). La planificación deliberada de apertura y cierre reduce ambigüedad y mejora retención de acuerdos. La andragogía de Knowles (1984) subraya conectar cada fase con resultados observables y con las necesidades reales de quienes participan."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Diseño de sesiones participativas",
+          "description": "Referencia sobre estructura de talleres: apertura, trabajo y cierre con intención.",
+          "url": "https://www.youtube.com/watch?v=pqzFo4QB29U",
+          "provider": "youtube",
+          "durationSec": 660
         }
       ]
     },
@@ -624,6 +654,16 @@
               "p": "Estudios sobre reuniones organizacionales identifican improvisación sin propósito, monopolio de turno y cierres abruptos como factores de baja efectividad (Rogelberg et al., 2010). La facilitación estructurada mitiga estos riesgos al reservar tiempo para síntesis y al devolver contenido al grupo mediante preguntas abiertas (Schwarz, 2002; Doyle & Straus, 1993)."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Errores frecuentes al facilitar",
+          "description": "Señales de alerta y buenas prácticas para evitar monopolio de turno y cierres abruptos.",
+          "url": "https://www.youtube.com/watch?v=n6_BJIs_EYE",
+          "provider": "youtube",
+          "durationSec": 540
         }
       ]
     },

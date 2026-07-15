@@ -17,7 +17,7 @@ export function buildSurveyResultsDocumentHtml(survey, results) {
     .map((question, index) => {
       const stats = computeQuestionStats(question, results.answers ?? [])
 
-      let statsHtml = ''
+      let statsHtml
 
       if (isLikertType(question.question_type)) {
         statsHtml = `

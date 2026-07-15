@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FUNDING, PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 import { fetchPayPalConfig, syncPayPalSubscription } from '../../services/paypalService'
@@ -45,20 +45,16 @@ export default function PayPalSubscribeButtons({
     }
   }, [billingInterval, planVariant])
 
-  const scriptOptions = useMemo(() => {
-    if (!config?.clientId) {
-      return null
-    }
-
-    return {
-      clientId: config.clientId,
-      vault: true,
-      intent: 'subscription',
-      currency: 'USD',
-      components: 'buttons',
-      enableFunding: 'card,venmo',
-    }
-  }, [config?.clientId])
+  const scriptOptions = config?.clientId
+    ? {
+        clientId: config.clientId,
+        vault: true,
+        intent: 'subscription',
+        currency: 'USD',
+        components: 'buttons',
+        enableFunding: 'card,venmo',
+      }
+    : null
 
   if (loading) {
     return <p className="plan-paypal-loading">Cargando opciones de pago…</p>

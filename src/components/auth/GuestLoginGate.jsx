@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function GuestLoginGate({ featureLabel, children }) {
+export default function GuestLoginGate({ featureLabel }) {
   return (
     <div className="guest-login-gate auth-panel">
       <h3>{featureLabel} requiere cuenta</h3>

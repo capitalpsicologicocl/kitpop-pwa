@@ -11,7 +11,7 @@ import {
 } from './_lib/supabase.js'
 
 function parseCheckoutBody(req) {
-  let body = {}
+  let body
 
   try {
     body =

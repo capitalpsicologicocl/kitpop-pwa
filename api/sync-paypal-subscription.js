@@ -5,7 +5,7 @@ import {
 import { getAuthenticatedUser, getSupabaseAdmin } from './_lib/supabase.js'
 
 function parseBody(req) {
-  let body = {}
+  let body
 
   try {
     body =

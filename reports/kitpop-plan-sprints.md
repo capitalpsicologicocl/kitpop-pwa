@@ -141,17 +141,17 @@
 
 ---
 
-## Sprint 7 — Hardening (Semana 13–14) ⏳ Prioridad 1
+## Sprint 7 — Hardening (Semana 13–14) ✅
 
 **Meta:** calidad de ingeniería lista para CI estricto + microlearning visible + E2E autenticado.
 
-| Tarea | Quién | Entregable |
-|-------|-------|------------|
-| Poblar `media[]` en 5–10 actividades clave | 🤖 + 👤 revisar | `perma.json` + `facilitacion.json` — videos YouTube/Vimeo curados (PERMA + facilitación) |
-| E2E login → taller → export gate | 🤖 | `e2e/sprint7-auth-workshop.spec.js` — usa `E2E_TEST_EMAIL` / `E2E_TEST_PASSWORD` |
-| Limpiar ESLint (68 errores) | 🤖 | `eslint.config.js` env Node para `api/`; fixes en `src/` (~22 archivos) |
-| CI falla en lint | 🤖 | Quitar `continue-on-error: true` en `.github/workflows/ci.yml` |
-| Usuario test E2E en Supabase | 👤 | Cuenta Explorer dedicada; secrets en GitHub Actions |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Poblar `media[]` en 5–10 actividades clave | ✅ | 6 PERMA + 5 facilitación (11 total con `fac-que-es-facilitar`) |
+| E2E login → taller → export gate | ✅ | `e2e/sprint7-auth-workshop.spec.js` |
+| Limpiar ESLint (68 errores) | ✅ | `eslint.config.js` env Node + fixes puntuales |
+| CI falla en lint | ✅ | Sin `continue-on-error` en `.github/workflows/ci.yml` |
+| Usuario test E2E en Supabase | ⏳ Ops | Cuenta Explorer + secrets GitHub |
 
 **Actividades candidatas `media[]` (PERMA):** `ronda-noticias`, `tres-cosas-buenas`, `saboreo-consciente`, `apreciograma`, `proposito-tres-niveles`, `mapa-fortalezas`.
 
@@ -286,4 +286,4 @@ S1–S6 ✅ completados
 → S10 (visual premium US/EU)
 ```
 
-**Próximo paso inmediato:** arrancar **Sprint 7** (lint + E2E auth + `media[]`). Paralelo tuyo: crear usuario test E2E en Supabase.
+**Próximo paso inmediato:** deploy Sprint 7 + configurar secrets E2E en GitHub. Luego **Sprint 8** (code-split + email Resend).

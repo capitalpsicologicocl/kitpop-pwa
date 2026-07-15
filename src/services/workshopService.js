@@ -245,7 +245,7 @@ export async function initializeWorkshopSessions(userId, workshopId, sessions) {
     journal_notes: '',
   }))
 
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('workshop_sessions')
     .insert(rows)
     .select('*, workshop_items(*)')

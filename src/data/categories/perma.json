@@ -141,6 +141,16 @@
             }
           ]
         }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Emociones positivas y resiliencia",
+          "description": "Barbara Fredrickson explica la teoría broaden-and-build, base científica de compartir lo positivo en equipos.",
+          "url": "https://www.youtube.com/watch?v=Z7dFDhzV07I",
+          "provider": "youtube",
+          "durationSec": 720
+        }
       ]
     },
     "cadena-agradecimiento": {
@@ -489,6 +499,16 @@
             }
           ]
         }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Tres cosas buenas — práctica de gratitud",
+          "description": "Introducción a la intervención clásica de psicología positiva para entrenar atención hacia lo positivo.",
+          "url": "https://www.youtube.com/watch?v=ZOGAp9WP8-z",
+          "provider": "youtube",
+          "durationSec": 360
+        }
       ]
     },
     "saboreo-consciente": {
@@ -544,6 +564,16 @@
               "p": "El saboreo (savoring) busca aumentar intensidad y duración de emociones positivas mediante atención deliberada. Meta-análisis reportan efectos pequeños a moderados en bienestar (Klibert et al., 2022). En PERMA-P, saborear no depende de más eventos externos: transforma cómo procesamos lo que ya ocurrió (Hernández, 2026)."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Saboreo consciente",
+          "description": "Referencia breve sobre savoring: prolongar y profundizar experiencias positivas con atención plena.",
+          "url": "https://www.youtube.com/watch?v=muDR1-vRiys",
+          "provider": "youtube",
+          "durationSec": 420
         }
       ]
     },
@@ -727,6 +757,16 @@
               "p": "Seligman y Peterson identificaron 24 fortalezas de carácter agrupadas en seis virtudes (VIA). Usar fortalezas signature en el trabajo aumenta engagement y bienestar (Niemiec, 2018; Linley et al., 2010). Esta actividad hace visible el capital de talentos del equipo antes de asignar roles, alineando E (compromiso) con fortalezas reales."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Fortalezas del carácter VIA",
+          "description": "Introducción al modelo VIA de 24 fortalezas, útil antes del mapa de talentos del equipo.",
+          "url": "https://www.youtube.com/watch?v=tFNQwmFhNiA",
+          "provider": "youtube",
+          "durationSec": 540
         }
       ]
     },
@@ -1118,6 +1158,16 @@
               "p": "Basado en prácticas apreciativas y reconocimiento mutuo anónimo. El feedback positivo específico fortalece autoeficacia y pertenencia (A y R del PERMA). Meta-evidencia sobre intervenciones de psicología positiva respalda beneficios promedio en bienestar cuando el reconocimiento es concreto y creíble (Carr et al., 2021)."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Gratitud y reconocimiento en equipos",
+          "description": "Perspectiva sobre aprecio mutuo y cultura de reconocimiento en contextos laborales.",
+          "url": "https://www.youtube.com/watch?v=2Xshl9e923k",
+          "provider": "youtube",
+          "durationSec": 480
         }
       ]
     },
@@ -1549,6 +1599,16 @@
               "p": "Wrzesniewski et al. distinguen job, career y calling como orientaciones al trabajo. Percibir la labor como calling se asocia con mayor engagement y satisfacción, pero job crafting —rediseñar tareas y relaciones— puede aumentar sentido sin cambiar de empleo (Wrzesniewski & Dutton, 2001). Conecta directamente con M (meaning) del PERMA (Seligman, 2018)."
             }
           ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "Sentido en el trabajo",
+          "description": "Emily Esfahani Smith sobre los cuatro pilares del significado — complemento al modelo job/career/calling.",
+          "url": "https://www.youtube.com/watch?v=DRjV1P8U3w0",
+          "provider": "youtube",
+          "durationSec": 900
         }
       ]
     },
