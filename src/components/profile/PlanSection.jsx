@@ -29,7 +29,8 @@ export default function PlanSection({ profile, onPlanChange }) {
   const hasPayPalSubscription = Boolean(profile?.paypal_subscription_id)
   const aiRemaining = getAiGenerationRemaining(profile)
   const aiLimitLabel = formatAiLimitLabel(currentPlanId)
-  const showFounding = foundingSlots?.available && !isPaid
+  const showLaunchOffer = foundingSlots?.available && !isPaid
+  const showFounding = showLaunchOffer && foundingSlots?.paypalConfigured
   const visiblePlans = getVisiblePlans({ includeFounding: showFounding })
   const yearlySavings = getProYearlySavingsPercent('pro')
 
@@ -98,10 +99,9 @@ export default function PlanSection({ profile, onPlanChange }) {
         </p>
       </div>
 
-      {showFounding && (
+      {showLaunchOffer && (
         <div className="plan-founding-banner">
-          <strong>Plan Fundador</strong> — USD 29/año (mismo Pro) · quedan{' '}
-          {foundingSlots.remaining} de {foundingSlots.limit} cupos
+          <strong>Oferta de Lanzamiento.</strong> Pocos cupos disponibles.
         </div>
       )}
 

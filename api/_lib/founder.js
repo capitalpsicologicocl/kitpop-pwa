@@ -13,6 +13,10 @@ export async function countFoundingMembers(supabaseAdmin) {
   return count ?? 0
 }
 
+function isFoundingPayPalConfigured() {
+  return Boolean(process.env.PAYPAL_PLAN_PRO_FOUNDING_YEARLY)
+}
+
 export async function getFoundingSlots(supabaseAdmin) {
   const used = await countFoundingMembers(supabaseAdmin)
 
@@ -21,6 +25,7 @@ export async function getFoundingSlots(supabaseAdmin) {
     used,
     remaining: Math.max(0, FOUNDING_MEMBER_LIMIT - used),
     available: used < FOUNDING_MEMBER_LIMIT,
+    paypalConfigured: isFoundingPayPalConfigured(),
   }
 }
 

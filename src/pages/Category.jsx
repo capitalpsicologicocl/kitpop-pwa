@@ -33,8 +33,8 @@ export default function Category() {
 
   return (
     <main id="cat-view" className="fade-in">
-      <Link to="/" className="back-btn">
-        ← Volver
+      <Link to="/categorias" className="back-btn">
+        ← Volver a categorías
       </Link>
 
       <h1 className="cv-title">

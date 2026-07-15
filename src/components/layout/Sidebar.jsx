@@ -14,10 +14,6 @@ export default function Sidebar({ isOpen, onClose }) {
   const [favoritesOnly, setFavoritesOnly] = useState('all')
 
   const results = useMemo(() => {
-    if (!user) {
-      return []
-    }
-
     const trimmedQuery = query.trim()
 
     if (favoritesOnly === 'fav' && !user) {
@@ -49,19 +45,6 @@ export default function Sidebar({ isOpen, onClose }) {
     if (favoritesOnly === 'fav' && !user) {
       onClose()
       navigate('/login')
-      return
-    }
-
-    if (!user) {
-      onClose()
-      navigate('/login', {
-        state: {
-          from: {
-            pathname: '/buscar',
-            search: trimmedQuery ? `?q=${encodeURIComponent(trimmedQuery)}` : '',
-          },
-        },
-      })
       return
     }
 
@@ -230,9 +213,38 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
         ) : (
           <div className="kp-menu-section">
-            <p className="kp-menu-label">Banco de actividades</p>
+            <p className="kp-menu-label">Buscar actividades</p>
+
+            <form onSubmit={handleSubmit}>
+              <input
+                className="kp-menu-input"
+                placeholder="Buscar por nombre, objetivo o material."
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+
+              <button type="submit" className="kp-menu-search-btn">
+                Buscar
+              </button>
+            </form>
+
+            <div className="kp-menu-results">
+              {results.length > 0 &&
+                results.map((activity) => (
+                  <Link
+                    key={activity.slug}
+                    to={`/actividad/${activity.slug}`}
+                    className="kp-menu-result-item"
+                    onClick={onClose}
+                  >
+                    <strong>{activity.title}</strong>
+                    <span>{activity.categoryLabel}</span>
+                  </Link>
+                ))}
+            </div>
+
             <p className="kp-menu-note">
-              Inicia sesión para buscar dinámicas y explorar categorías.
+              También puedes explorar por categoría sin iniciar sesión.
             </p>
           </div>
         )}
@@ -257,21 +269,26 @@ export default function Sidebar({ isOpen, onClose }) {
               Inicio
             </Link>
 
-            {user &&
-              categories.map((category) => (
-                <Link
-                  key={category.slug}
-                  to={`/categoria/${category.slug}`}
-                  className="kp-menu-cat-btn"
-                  onClick={onClose}
-                >
-                  {category.title}
-                </Link>
-              ))}
-
-            <Link to="/interactivo" className="kp-menu-cat-btn" onClick={onClose}>
-              Espacio interactivo
+            <Link to="/categorias" className="kp-menu-cat-btn" onClick={onClose}>
+              Categorías
             </Link>
+
+            {categories.map((category) => (
+              <Link
+                key={category.slug}
+                to={`/categoria/${category.slug}`}
+                className="kp-menu-cat-btn"
+                onClick={onClose}
+              >
+                {category.title}
+              </Link>
+            ))}
+
+            {user && (
+              <Link to="/interactivo" className="kp-menu-cat-btn" onClick={onClose}>
+                Espacio interactivo
+              </Link>
+            )}
           </div>
         </div>
       </aside>

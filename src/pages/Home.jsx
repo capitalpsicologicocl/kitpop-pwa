@@ -11,8 +11,8 @@ function HomeGuestCTA() {
       <div className="home-panel">
         <h2>Accede al banco completo</h2>
         <p>
-          Crea tu cuenta gratis para explorar las actividades, buscar dinámicas
-          y diseñar talleres con KitPOP.
+          Ya puedes explorar categorías y actividades sin cuenta. Regístrate gratis
+          para favoritos, bitácora y diseño de talleres con IA.
         </p>
 
         <div className="auth-actions">
@@ -42,14 +42,8 @@ export default function Home() {
   return (
     <main id="home" className="fade-in">
       <Hero />
-      {user ? (
-        <>
-          <CategoryGrid />
-          <QuickGrid />
-        </>
-      ) : (
-        <HomeGuestCTA />
-      )}
+      <CategoryGrid />
+      {user ? <QuickGrid /> : <HomeGuestCTA />}
     </main>
   )
 }
