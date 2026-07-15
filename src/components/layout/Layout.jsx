@@ -19,7 +19,9 @@ export default function Layout() {
   return (
     <>
       <Topbar onOpenMenu={openMenu} />
-      <Outlet />
+      <div className="app-mesh-bg">
+        <Outlet />
+      </div>
       <Footer />
       <Sidebar isOpen={isMenuOpen} onClose={closeMenu} />
     </>

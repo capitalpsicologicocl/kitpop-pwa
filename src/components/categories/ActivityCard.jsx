@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
-export default function ActivityCard({ activity, icon = '✦' }) {
+import KitpopIcon from '../../icons/kitpopIcons'
+
+export default function ActivityCard({ activity, icon = 'perma-star' }) {
   const chips = activity.metas?.length
     ? activity.metas.slice(0, 4)
     : [
@@ -24,7 +26,7 @@ export default function ActivityCard({ activity, icon = '✦' }) {
       className="act-item"
     >
       <div className="ai-icon">
-        <span>{icon}</span>
+        <KitpopIcon name={icon} size={22} />
       </div>
 
       <div className="ai-body">

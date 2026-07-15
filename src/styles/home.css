@@ -373,9 +373,7 @@
 }
 
 .cat-icon-symbol {
-  font-size:22px;
-  font-weight:800;
-  line-height:1;
+  display: block;
 }
 
 .cat-tag-lbl {

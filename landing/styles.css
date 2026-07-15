@@ -17,16 +17,22 @@
   --g800: #1f2937;
   --white: #fff;
   --shadow: 0 18px 50px rgba(59, 30, 142, 0.12);
+  --shadow-md: 0 24px 60px rgba(59, 30, 142, 0.16);
   --radius: 18px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
   --surface: var(--white);
+  --surface-elevated: var(--white);
   --surface-muted: var(--g50);
   --text: var(--g800);
   --text-muted: var(--g500);
   --border: var(--g200);
+  --ring: rgba(91, 62, 196, 0.28);
+  --transition-fast: 150ms ease;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme='light']) {
     --brand-l: #2a1f4a;
     --g50: #12101a;
     --g100: #1a1625;
@@ -38,16 +44,119 @@
     --g800: #f3f4f6;
     --white: #1a1625;
     --surface: #1a1625;
+    --surface-elevated: #211c30;
     --surface-muted: #12101a;
     --text: #f3f4f6;
     --text-muted: #a8adc0;
     --border: #2d2640;
     --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 24px 60px rgba(0, 0, 0, 0.45);
   }
 
-  .nav {
+  :root:not([data-theme='light']) .nav {
     background: rgba(26, 22, 37, 0.92);
   }
+}
+
+:root[data-theme='dark'],
+.theme-dark {
+  --brand-l: #2a1f4a;
+  --g50: #12101a;
+  --g100: #1a1625;
+  --g200: #2d2640;
+  --g400: #8b8fa8;
+  --g500: #a8adc0;
+  --g600: #c4c8d4;
+  --g700: #dfe2ea;
+  --g800: #f3f4f6;
+  --white: #1a1625;
+  --surface: #1a1625;
+  --surface-elevated: #211c30;
+  --surface-muted: #12101a;
+  --text: #f3f4f6;
+  --text-muted: #a8adc0;
+  --border: #2d2640;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+:root[data-theme='dark'] .nav,
+.theme-dark .nav {
+  background: rgba(26, 22, 37, 0.92);
+}
+
+.landing-mesh {
+  position: relative;
+}
+
+.landing-mesh::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 80% 50% at 15% -5%, rgba(91, 62, 196, 0.16), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 92% 8%, rgba(233, 30, 140, 0.09), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(245, 166, 35, 0.07), transparent 55%);
+}
+
+.kp-icon {
+  display: block;
+}
+
+.kp-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--brand-l);
+  color: var(--brand);
+}
+
+.kp-icon-box--sm {
+  width: 40px;
+  height: 40px;
+}
+
+.kp-icon-box--md {
+  width: 48px;
+  height: 48px;
+}
+
+.kp-icon-box--inverse {
+  background: var(--brand);
+  color: var(--white);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--brand);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-theme-toggle:hover {
+  border-color: var(--brand-m);
+  background: var(--brand-l);
+}
+
+.nav-theme-toggle:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 *,
@@ -542,20 +651,11 @@ a {
 }
 
 .platform-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: var(--brand-l);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
   margin-bottom: 16px;
 }
 
-.platform-card--main .platform-card-icon {
-  background: var(--brand);
-  font-size: 24px;
+.platform-card--main .platform-card-icon.kp-icon-box--inverse {
+  box-shadow: 0 8px 20px rgba(59, 30, 142, 0.25);
 }
 
 .platform-card h3 {
@@ -616,9 +716,7 @@ a {
 }
 
 .wellbeing-card-icon {
-  font-size: 32px;
   margin-bottom: 14px;
-  line-height: 1;
 }
 
 .wellbeing-card h3 {
@@ -714,7 +812,6 @@ a {
 }
 
 .learn-visual-icon {
-  font-size: 36px;
   margin-bottom: 10px;
 }
 
@@ -747,9 +844,7 @@ a {
 }
 
 .evolution-icon {
-  font-size: 48px;
   flex-shrink: 0;
-  line-height: 1;
 }
 
 .evolution-inner h2 {
@@ -1082,9 +1177,12 @@ body.billing-monthly .price-monthly {
 }
 
 .benefit-icon {
-  font-size: 28px;
   margin-bottom: 12px;
-  line-height: 1;
+}
+
+.benefit-icon.kp-icon-box {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
 }
 
 .benefit-card h3 {

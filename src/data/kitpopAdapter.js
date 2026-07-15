@@ -41,16 +41,16 @@ const CATEGORY_SLUG_MAP = {
 }
 
 const ICON_MAP = {
-  perma: '✦',
-  equipo: '◯',
-  reunion: '▤',
-  conexion: '♡',
-  reuniones: '▣',
-  conversaciones1a1: '↔',
-  fortalezas: '★',
-  mindful: '◐',
-  facilitacion: '◎',
-  pnl: '🧠',
+  perma: 'perma-star',
+  equipo: 'team',
+  reunion: 'meeting',
+  conexion: 'connection',
+  reuniones: 'sessions',
+  conversaciones1a1: 'conversation',
+  fortalezas: 'strength',
+  mindful: 'mindful',
+  facilitacion: 'facilitate',
+  pnl: 'mind',
 }
 
 const CLASSNAME_MAP = {
@@ -169,7 +169,7 @@ export const kitpopCategories = Object.entries(CATS)
     title: stripHtml(category.title),
     subtitle: SUBTITLE_MAP[key] ?? 'Banco de actividades',
     description: category.desc,
-    icon: ICON_MAP[key] ?? '✦',
+    icon: ICON_MAP[key] ?? 'perma-star',
     className: CLASSNAME_MAP[key] ?? '',
     order: 0,
     visible: true,

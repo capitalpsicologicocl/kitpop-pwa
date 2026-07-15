@@ -4,12 +4,12 @@ import ActivityCard from './ActivityCard'
 import EmptyState from '../ui/EmptyState'
 
 function getCategoryIcon(categorySlug) {
-  return categories.find((category) => category.slug === categorySlug)?.icon ?? '✦'
+  return categories.find((category) => category.slug === categorySlug)?.icon ?? 'perma-star'
 }
 
 export default function ActivityList({
   categorySlug,
-  categoryIcon = '✦',
+  categoryIcon = 'perma-star',
   permaFilter = 'all',
   items = null,
   useActivityIcons = false,

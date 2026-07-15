@@ -12,7 +12,7 @@
   <title>KitPOP — Plataforma de facilitación</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="billing-annual">
+<body class="billing-annual landing-mesh">
 
   <nav class="nav">
     <div class="container nav-inner">
@@ -26,7 +26,10 @@
         <a href="#beneficios">Beneficios</a>
         <a href="#planes">Planes</a>
       </div>
-      <a href="https://app.kitpopapp.com" class="btn btn-primary">Empezar gratis</a>
+      <div class="nav-actions">
+        <button type="button" class="nav-theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+        <a href="https://app.kitpopapp.com" class="btn btn-primary">Empezar gratis</a>
+      </div>
     </div>
   </nav>
 
@@ -119,22 +122,30 @@
 
       <div class="platform-grid">
         <article class="platform-card platform-card--main">
-          <div class="platform-card-icon">🎯</div>
+          <div class="platform-card-icon kp-icon-box kp-icon-box--md kp-icon-box--inverse">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-activities-bank"/></svg>
+          </div>
           <h3>Banco de Actividades</h3>
           <p>Dinámicas de equipo, reuniones, conexión, conversaciones 1 a 1 y más, cada una con guía paso a paso para el/la facilitador/a. Diseñadas para facilitar los mejores talleres.</p>
         </article>
         <article class="platform-card">
-          <div class="platform-card-icon">📋</div>
+          <div class="platform-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-clipboard"/></svg>
+          </div>
           <h3>Talleres y sesiones</h3>
           <p>Arma tu programa completo: elige actividades, define tiempos y lleva el hilo conductor de tu sesión.</p>
         </article>
         <article class="platform-card">
-          <div class="platform-card-icon">✨</div>
+          <div class="platform-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-ai-spark"/></svg>
+          </div>
           <h3>Diseño con IA</h3>
           <p>Sube tu TDR o describe tu sesión: KitPOP propone un taller con actividades del banco y tiempos sugeridos.</p>
         </article>
         <article class="platform-card">
-          <div class="platform-card-icon">📄</div>
+          <div class="platform-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-export"/></svg>
+          </div>
           <h3>Exports Pro</h3>
           <p>Descarga guías, talleres y resultados en Word o PDF listos para compartir con tu equipo o cliente.</p>
         </article>
@@ -154,7 +165,9 @@
 
       <div class="wellbeing-grid">
         <article class="wellbeing-card wellbeing-card--perma">
-          <div class="wellbeing-card-icon">🃏</div>
+          <div class="wellbeing-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-cards"/></svg>
+          </div>
           <h3>POP Cards PERMA</h3>
           <p>
             Actividades del modelo PERMA de Seligman: Emociones Positivas, Compromiso, Relaciones,
@@ -163,7 +176,9 @@
         </article>
 
         <article class="wellbeing-card">
-          <div class="wellbeing-card-icon">💼</div>
+          <div class="wellbeing-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-briefcase"/></svg>
+          </div>
           <h3>Actividades de bienestar laboral</h3>
           <p>
             Dinámicas pensadas para el contexto organizacional: conexión entre colegas, cultura de
@@ -172,7 +187,9 @@
         </article>
 
         <article class="wellbeing-card wellbeing-card--strengths">
-          <div class="wellbeing-card-icon">✨</div>
+          <div class="wellbeing-card-icon kp-icon-box kp-icon-box--md">
+            <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-star-burst"/></svg>
+          </div>
           <h3>Fortalezas del Carácter</h3>
           <p>
             Sección basada en el modelo VIA de 24 fortalezas del carácter. Incluye teoría, test oficial
@@ -209,12 +226,16 @@
         </div>
         <div class="learn-visual">
           <div class="learn-visual-card">
-            <div class="learn-visual-icon">📖</div>
+            <div class="learn-visual-icon kp-icon-box kp-icon-box--md">
+              <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-book"/></svg>
+            </div>
             <h3>Guías</h3>
             <p>Lee, aplica y facilita con más seguridad.</p>
           </div>
           <div class="learn-visual-card">
-            <div class="learn-visual-icon">✨</div>
+            <div class="learn-visual-icon kp-icon-box kp-icon-box--md">
+              <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-ai-spark"/></svg>
+            </div>
             <h3>IA + exports</h3>
             <p>Diseña talleres y descarga Word/PDF con KitPOP Pro.</p>
           </div>
@@ -225,7 +246,9 @@
     <!-- Evolution -->
     <section class="evolution-section">
       <div class="evolution-inner">
-        <div class="evolution-icon">🔄</div>
+        <div class="evolution-icon kp-icon-box kp-icon-box--md">
+          <svg class="kp-icon" width="24" height="24" aria-hidden="true"><use href="#kp-refresh"/></svg>
+        </div>
         <div>
           <h2>Una plataforma viva, que crece contigo</h2>
           <p>
@@ -252,37 +275,49 @@
         <div class="benefits-grid">
           <article class="benefit-card benefit-card--highlight">
             <span class="benefit-number">01</span>
-            <div class="benefit-icon">⏱️</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-timer"/></svg>
+            </div>
             <h3>Ahorra horas de preparación</h3>
             <p>Actividades listas con guía paso a paso. Arma tu taller en minutos, no en horas.</p>
           </article>
           <article class="benefit-card">
             <span class="benefit-number">02</span>
-            <div class="benefit-icon">📱</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-device"/></svg>
+            </div>
             <h3>Lleva tu kit a cualquier lado</h3>
             <p>Funciona en celular, tablet y computador. Tu plataforma va contigo a cada sesión.</p>
           </article>
           <article class="benefit-card">
             <span class="benefit-number">03</span>
-            <div class="benefit-icon">✨</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-ai-spark"/></svg>
+            </div>
             <h3>Diseña talleres con IA</h3>
             <p>Sube tu documento o describe la sesión: KitPOP arma la propuesta con actividades del banco.</p>
           </article>
           <article class="benefit-card">
             <span class="benefit-number">04</span>
-            <div class="benefit-icon">🧘</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-calm"/></svg>
+            </div>
             <h3>Menos estrés, más presencia</h3>
             <p>Llega seguro/a a cada reunión o taller. Sabes qué hacer, cuánto tiempo y cómo cerrar bien.</p>
           </article>
           <article class="benefit-card benefit-card--pink">
             <span class="benefit-number">05</span>
-            <div class="benefit-icon">⚡</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-live-bolt"/></svg>
+            </div>
             <h3>Participación en vivo</h3>
             <p>Encuestas, códigos de acceso y preguntas interactivas para que el grupo no sea solo audiencia.</p>
           </article>
           <article class="benefit-card">
             <span class="benefit-number">06</span>
-            <div class="benefit-icon">🌎</div>
+            <div class="benefit-icon kp-icon-box kp-icon-box--sm">
+              <svg class="kp-icon" width="22" height="22" aria-hidden="true"><use href="#kp-globe"/></svg>
+            </div>
             <h3>Creado para Latinoamérica</h3>
             <p>En español, con el estilo y la cultura de facilitación de nuestra región.</p>
           </article>
@@ -416,6 +451,24 @@
     </div>
   </footer>
 
+  <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+    <symbol id="kp-activities-bank" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path stroke="currentColor" stroke-width="1.6" d="M12 3.5V6M12 18v2.5M3.5 12H6M18 12h2.5" stroke-linecap="round"/></symbol>
+    <symbol id="kp-clipboard" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M9 5.5h6a1.5 1.5 0 0 1 1.5 1.5V19a2 2 0 0 1-2 2H7.5a2 2 0 0 1-2-2V7a1.5 1.5 0 0 1 1.5-1.5Z"/><rect x="9.5" y="3.5" width="5" height="3.5" rx="1" fill="currentColor"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9 11h6M9 14.5h4"/></symbol>
+    <symbol id="kp-ai-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5 13.2 8.2 19 9.4l-4.6 3.9 1.4 5.7L12 15.8 8.2 19l1.4-5.7L5 9.4l5.8-1.2L12 2.5Z"/><circle cx="18.5" cy="5" r="1.2" fill="currentColor" opacity=".55"/><circle cx="5" cy="18" r="1" fill="currentColor" opacity=".45"/></symbol>
+    <symbol id="kp-export" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M8 4.5h8v14H8a2 2 0 0 1-2-2v-10a2 2 0 0 1 2-2Z"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M10 8.5h4M10 11.5h4M10 14.5h2.5"/><path fill="currentColor" d="M14.5 14.5 12 17l-2.5-2.5h1.8v-4h1.4v4h1.8Z"/></symbol>
+    <symbol id="kp-cards" viewBox="0 0 24 24"><rect x="4" y="7" width="11" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="9" y="4" width="11" height="13" rx="2" fill="currentColor" opacity=".18"/><rect x="9" y="4" width="11" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="kp-briefcase" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" d="M9 8V6.5A1.5 1.5 0 0 1 10.5 5h3A1.5 1.5 0 0 1 15 6.5V8"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 12h16"/></symbol>
+    <symbol id="kp-star-burst" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.8 14 9l6.2 1-4.7 4 1.4 6.1L12 16.8 7.1 20.2l1.4-6.1-4.7-4L10 9l2-6.2Z"/></symbol>
+    <symbol id="kp-book" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M6 5.5h11a1.5 1.5 0 0 1 1.5 1.5V19l-3.2-1.8L12 19l-3.3-1.8L5.5 19V7a1.5 1.5 0 0 1 1.5-1.5Z"/><path stroke="currentColor" stroke-width="1.6" d="M12 5.5V19"/></symbol>
+    <symbol id="kp-refresh" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M18 8.5A6.5 6.5 0 0 0 7.8 6.5M6 15.5A6.5 6.5 0 0 0 16.2 17.5"/><path fill="currentColor" d="M18 4.5v4h-4M6 19.5v-4h4"/></symbol>
+    <symbol id="kp-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M12 9v4.5l3 1.8M9.5 3.5h5"/></symbol>
+    <symbol id="kp-device" viewBox="0 0 24 24"><rect x="7" y="3.5" width="10" height="17" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="17.5" r="1" fill="currentColor"/><rect x="9.5" y="6" width="5" height="8" rx=".8" fill="currentColor" opacity=".2"/></symbol>
+    <symbol id="kp-calm" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><circle cx="12" cy="9" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="kp-live-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13.2 3 7 13.2h4.2L10.8 21 17 10.8H12.8L13.2 3Z"/></symbol>
+    <symbol id="kp-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path fill="none" stroke="currentColor" stroke-width="1.4" d="M3.8 12h16.4M12 3.5c2.5 2.8 4 6 4 8.5s-1.5 5.7-4 8.5c-2.5-2.8-4-6-4-8.5s1.5-5.7 4-8.5Z"/></symbol>
+  </svg>
+
+  <script src="theme.js"></script>
   <script>
     const toggle = document.querySelector('.billing-toggle');
     if (toggle) {

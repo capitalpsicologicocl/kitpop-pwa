@@ -25,17 +25,17 @@
 }
 
 .kp-menu-toggle {
-  margin-left:auto;
-  background:var(--gold);
-  color:#2a1566;
-  border:none;
-  border-radius:12px;
-  width:42px;
-  height:38px;
-  font-size:22px;
-  font-weight:900;
-  cursor:pointer;
-  box-shadow:0 5px 14px rgba(245,166,35,.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: #2a1566;
+  border: none;
+  border-radius: 12px;
+  width: 42px;
+  height: 38px;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(245, 166, 35, 0.22);
 }
 
 .footer {

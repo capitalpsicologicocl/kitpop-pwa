@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import KitpopIcon from '../../icons/kitpopIcons'
 import { useAuth } from '../../context/AuthContext'
 import { categories } from '../../data/categories'
 import { searchActivities } from '../../utils/searchActivities'
@@ -254,7 +255,7 @@ export default function Sidebar({ isOpen, onClose }) {
             <p className="kp-menu-label">Diseño de talleres / reuniones</p>
             <Link to="/talleres" className="kp-menu-workshop-btn" onClick={onClose}>
               <span className="kp-menu-workshop-icon" aria-hidden="true">
-                ◫
+                <KitpopIcon name="workshop" size={18} />
               </span>
               Diseña tu Workshop
             </Link>

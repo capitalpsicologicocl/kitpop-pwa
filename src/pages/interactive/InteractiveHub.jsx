@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import KitpopIcon from '../../icons/kitpopIcons'
 import { useAuth } from '../../context/AuthContext'
 import { fetchLiveSessions } from '../../services/liveSessionService'
 import { fetchSurveys } from '../../services/surveyService'
@@ -96,7 +97,9 @@ export default function InteractiveHub() {
 
       <div className="profile-hub-grid">
         <Link to="/interactivo/encuestas" className="profile-hub-card profile-hub-card-featured">
-          <span className="profile-hub-icon">📋</span>
+          <span className="profile-hub-icon">
+            <KitpopIcon name="survey" size={24} />
+          </span>
           <strong>Encuestas</strong>
           <p>Satisfacción y feedback post-taller.</p>
           <span className="profile-hub-count">
@@ -105,7 +108,9 @@ export default function InteractiveHub() {
         </Link>
 
         <Link to="/interactivo/en-vivo" className="profile-hub-card">
-          <span className="profile-hub-icon">📡</span>
+          <span className="profile-hub-icon">
+            <KitpopIcon name="broadcast" size={24} />
+          </span>
           <strong>En vivo</strong>
           <p>Polls sincronizados con participantes.</p>
           <span className="profile-hub-count">

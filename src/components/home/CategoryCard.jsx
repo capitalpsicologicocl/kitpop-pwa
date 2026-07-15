@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 
+import KitpopIcon from '../../icons/kitpopIcons'
 import { activities } from '../../data/activities'
 
 export default function CategoryCard({ category }) {
@@ -13,9 +14,7 @@ export default function CategoryCard({ category }) {
       className={`cat-card ${category.className || ''}`}
     >
       <div className="cat-icon-box">
-        <span className="cat-icon-symbol">
-          {category.icon}
-        </span>
+        <KitpopIcon name={category.icon} size={22} className="cat-icon-symbol" />
       </div>
 
       <p className="cat-tag-lbl">

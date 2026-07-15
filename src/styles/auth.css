@@ -143,8 +143,14 @@
 }
 
 .profile-hub-icon {
-  font-size:22px;
-  line-height:1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--brand-l);
+  color: var(--brand);
 }
 
 .profile-hub-card strong {

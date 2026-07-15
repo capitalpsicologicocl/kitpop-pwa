@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import PlanSection from '../components/profile/PlanSection'
+import KitpopIcon from '../icons/kitpopIcons'
 import { useAuth } from '../context/AuthContext'
 import { fetchAdminAccess } from '../services/adminService'
 import { fetchJournalEntries } from '../services/journalService'
@@ -238,7 +239,7 @@ export default function Profile() {
       id: 'talleres',
       filter: 'talleres',
       to: '/talleres',
-      icon: '🛠',
+      icon: 'workshop',
       title: 'Talleres / Workshops',
       copy: 'Diseña sesiones, actividades y pausas. Descarga la estructura en Word o PDF.',
       count: `${workshopCount} taller${workshopCount === 1 ? '' : 'es'}`,
@@ -248,7 +249,7 @@ export default function Profile() {
       id: 'reuniones',
       filter: 'reuniones',
       to: '/interactivo',
-      icon: '⚡',
+      icon: 'live-bolt',
       title: 'Reuniones interactivas',
       copy: 'Encuestas y polls en vivo con códigos para participantes.',
       count: 'Encuestas · En vivo',
@@ -257,7 +258,7 @@ export default function Profile() {
       id: 'favoritos',
       filter: 'todas',
       to: '/favoritos',
-      icon: '☆',
+      icon: 'star-outline',
       title: 'Favoritos',
       copy: 'Actividades que marcaste para usar después.',
       count: `${favoriteSlugs.length} guardada${favoriteSlugs.length === 1 ? '' : 's'}`,
@@ -266,7 +267,7 @@ export default function Profile() {
       id: 'bitacora',
       filter: 'todas',
       to: '/bitacora',
-      icon: '📓',
+      icon: 'journal',
       title: 'Bitácora',
       copy: 'Registros de sesiones y aprendizajes de facilitación.',
       count: `${journalCount} registro${journalCount === 1 ? '' : 's'}`,
@@ -430,7 +431,9 @@ export default function Profile() {
                 to={card.to}
                 className={`profile-hub-card${card.featured ? ' profile-hub-card-featured' : ''}`}
               >
-                <span className="profile-hub-icon">{card.icon}</span>
+                <span className="profile-hub-icon">
+                  <KitpopIcon name={card.icon} size={24} />
+                </span>
                 <strong>{card.title}</strong>
                 <p>{card.copy}</p>
                 <span className="profile-hub-count">{card.count}</span>

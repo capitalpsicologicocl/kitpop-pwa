@@ -31,7 +31,7 @@
   font-family:'Nunito',sans-serif;
   font-size:clamp(20px,3.5vw,30px);
   font-weight:300;
-  color:var(--g800);
+  color:var(--text);
   margin-bottom:5px;
   line-height:1.2;
 }
@@ -43,7 +43,7 @@
 
 .cv-desc {
   font-size:13px;
-  color:var(--g600);
+  color:var(--text-muted);
   line-height:1.65;
   margin-bottom:18px;
 }
@@ -102,8 +102,8 @@
 }
 
 .act-item {
-  background:var(--white);
-  border:1.5px solid var(--g200);
+  background:var(--surface-elevated);
+  border:1.5px solid var(--border);
   border-radius:13px;
   padding:16px 17px;
   cursor:pointer;
@@ -152,7 +152,7 @@
   font-family:'Nunito',sans-serif;
   font-size:15.5px;
   font-weight:300;
-  color:var(--g800);
+  color:var(--text);
   margin-bottom:2px;
   line-height:1.25;
 }

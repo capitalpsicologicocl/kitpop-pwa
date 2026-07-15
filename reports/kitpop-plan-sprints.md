@@ -1,6 +1,10 @@
 # KitPOP — Plan de trabajo por sprints
 
-**Objetivo:** pasar de beta comercial (6.9/10) a producto monetizable y estable en 6 sprints (~12 semanas).
+**Objetivo original (S1–S6):** pasar de beta comercial (6.9/10) a producto monetizable (~7.8/10). ✅ Completado en código.
+
+**Objetivo actual (S7–S10):** acercarse a SaaS premium US/EU (~8.5/10) + hardening para escalar tráfico pagado.
+
+**Leyenda:** 🤖 Agente (código) · 👤 Tú (contenido/negocio) · ⚙️ Ops (dashboards, keys, DNS)
 
 **Modelo de precios (jul 2026)**
 
@@ -13,7 +17,7 @@
 
 ---
 
-## Sprint 1 — Monetización y adquisición (Semana 1–2) ✅ En curso
+## Sprint 1 — Monetización y adquisición (Semana 1–2) ✅
 
 **Meta:** cobrar de verdad y dejar explorar sin login.
 
@@ -36,7 +40,7 @@
 
 ---
 
-## Sprint 2 — Operaciones y conversión (Semana 3–4) ✅ En curso
+## Sprint 2 — Operaciones y conversión (Semana 3–4) ✅
 
 **Meta:** reducir fricción operativa y subir registro → Pro.
 
@@ -58,7 +62,7 @@
 
 ---
 
-## Sprint 3 — UX polish (Semana 5–6) ✅ En curso
+## Sprint 3 — UX polish (Semana 5–6) ✅
 
 **Meta:** subir UX de 6.5 → ~7.5.
 
@@ -72,7 +76,7 @@
 
 ---
 
-## Sprint 4 — Estabilidad y realtime (Semana 7–9) ✅ En curso
+## Sprint 4 — Estabilidad y realtime (Semana 7–9) ✅
 
 **Meta:** confianza para escalar tráfico pagado.
 
@@ -95,7 +99,7 @@
 
 ---
 
-## Sprint 5 — Contenido (Semana 10–11) ✅ En curso
+## Sprint 5 — Contenido (Semana 10–11) ✅
 
 **Meta:** cerrar brechas de contenido (7.2 → 8+).
 
@@ -115,7 +119,7 @@
 
 ---
 
-## Sprint 6 — Visual premium (Semana 12) ✅ En curso
+## Sprint 6 — Visual premium (Semana 12) ✅
 
 **Meta:** sensación producto premium sin rediseño total.
 
@@ -134,6 +138,120 @@
 4. Probar dark mode con preferencia del sistema
 
 **Fuera de alcance agente:** identidad de marca profunda (requiere diseñador).
+
+---
+
+## Sprint 7 — Hardening (Semana 13–14) ⏳ Prioridad 1
+
+**Meta:** calidad de ingeniería lista para CI estricto + microlearning visible + E2E autenticado.
+
+| Tarea | Quién | Entregable |
+|-------|-------|------------|
+| Poblar `media[]` en 5–10 actividades clave | 🤖 + 👤 revisar | `perma.json` + `facilitacion.json` — videos YouTube/Vimeo curados (PERMA + facilitación) |
+| E2E login → taller → export gate | 🤖 | `e2e/sprint7-auth-workshop.spec.js` — usa `E2E_TEST_EMAIL` / `E2E_TEST_PASSWORD` |
+| Limpiar ESLint (68 errores) | 🤖 | `eslint.config.js` env Node para `api/`; fixes en `src/` (~22 archivos) |
+| CI falla en lint | 🤖 | Quitar `continue-on-error: true` en `.github/workflows/ci.yml` |
+| Usuario test E2E en Supabase | 👤 | Cuenta Explorer dedicada; secrets en GitHub Actions |
+
+**Actividades candidatas `media[]` (PERMA):** `ronda-noticias`, `tres-cosas-buenas`, `saboreo-consciente`, `apreciograma`, `proposito-tres-niveles`, `mapa-fortalezas`.
+
+**Actividades candidatas (Facilitación):** `fac-principios-practica`, `fac-rol-facilitador`, `fac-disena-4-fases`, `fac-errores-comunes`.
+
+**Checklist deploy Sprint 7**
+
+1. GitHub: añadir secrets `E2E_TEST_EMAIL`, `E2E_TEST_PASSWORD`.
+2. Push → CI verde (lint + build + E2E).
+3. Verificar 5–10 actividades con pestaña **Recursos** visible.
+
+**Fuera de alcance agente:** grabación de audios propios; solo URLs públicas curadas.
+
+---
+
+## Sprint 8 — Performance + email (Semana 15–16) ⏳ Prioridad 2 (parcial)
+
+**Meta:** bundle más liviano + bienvenida post-registro + liberar slot Vercel.
+
+| Tarea | Quién | Entregable |
+|-------|-------|------------|
+| Code-splitting rutas pesadas | 🤖 | `React.lazy` en `/talleres`, `/interactivo`, `/admin`; chunks separados en Vite |
+| Análisis bundle (`rollup-plugin-visualizer` o build log) | 🤖 | Meta: bajar chunk principal ~30% |
+| Email bienvenida vía Resend | 🤖 + ⚙️ | Templates HTML en `supabase/email-templates/` + guía SMTP Resend |
+| Eliminar APIs Stripe muertas | 🤖 | Borrar `create-checkout-session`, `create-portal-session`, `stripe-webhook`, `stripeService.js` (no usados; PayPal es el flujo) → libera 3 slots Vercel |
+| Configurar Resend SMTP en Supabase | ⚙️ | Authentication → SMTP; dominio `kitpopapp.com` verificado en Resend |
+| Secuencia post-registro (opcional) | 🤖 | Email día 3 “primer taller” vía webhook Supabase → `/api/notifications` (solo si eliminamos Stripe) |
+
+**Checklist deploy Sprint 8**
+
+1. Resend: verificar dominio + API key.
+2. Supabase: pegar templates + SMTP Resend (`supabase/auth_emails_setup.sql`).
+3. Vercel: redeploy; confirmar ≤12 functions.
+4. Registro test → correo de bienvenida en bandeja.
+
+**Nota Vercel:** hoy hay **12/12 functions**. Email transaccional extra requiere consolidar rutas o retirar Stripe legacy.
+
+---
+
+## Sprint 9 — Confianza landing (Semana 17–18) ⏳ Prioridad 2
+
+**Meta:** social proof creíble (estructura lista; contenido real tuyo).
+
+| Tarea | Quién | Entregable |
+|-------|-------|------------|
+| Sección testimonios en landing | 🤖 | `landing/testimonials.json` + cards con foto, rol, cita |
+| Barra de logos / “Usado por…” | 🤖 | Grid SVG/PNG con slots configurables |
+| Contenido testimonios reales | 👤 | 2–4 citas + permiso + foto opcional |
+| Logos reales (consultoras, universidades) | 👤 | PNG/SVG con permiso de uso |
+| Caso de uso mini (1 página) | 🤖 + 👤 | `landing/caso-facilitador.html` o sección en index |
+
+**Checklist deploy Sprint 9**
+
+1. Enviar al agente: citas, nombres, cargos, logos (aunque sean borrador).
+2. Redeploy landing en Vercel.
+3. Revisar mobile + dark mode en testimonios.
+
+**Fuera de alcance agente:** inventar testimonios o logos de clientes reales.
+
+---
+
+## Sprint 10 — Visual premium US/EU (Semana 19–22) ✅ En curso
+
+**Meta:** subir Visual 8.0 → ~8.7; iconografía propia KitPOP (no emojis de teclado).
+
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Design tokens semánticos | ✅ | `global.css` + `landing/styles.css` — `--surface-elevated`, `--ring`, radios, sombras |
+| Dark mode manual + sistema | ✅ | `ThemeContext.jsx` + toggle en topbar app + `landing/theme.js` |
+| Iconos SVG propios KitPOP | ✅ | `src/icons/kitpopIcons.jsx` — categorías, hub, landing |
+| Landing sin emojis universales | ✅ | `landing/index.html` — sprite SVG + `kp-icon-box` |
+| App sin emojis universales | ✅ | Categorías, perfil, interactivo, sidebar, menú |
+| Fondo mesh premium | ✅ | `app-mesh-bg` + `landing-mesh` |
+| Componentes UI base | ✅ | `ui.css` — `.kp-btn`, `.kp-input`, `.kp-card`, icon boxes |
+| Toggle dark en nav landing | ✅ | Botón `#theme-toggle` sincronizado con app (`kitpop-theme`) |
+
+**Checklist deploy Sprint 10**
+
+1. Redeploy Production + landing
+2. Probar toggle dark en app y landing (misma preferencia)
+3. Verificar iconos en `/`, `/categorias`, `/perfil`, `www.kitpopapp.com`
+4. Revisar contraste dark mode en listas y cards
+
+**Pendiente post-S10 (Sprint 8/9 si no hecho):** code-splitting, testimonios reales, email Resend.
+
+**Fuera de alcance agente:** ilustraciones de marca custom por diseñador.
+
+---
+
+## Resumen: qué hace el agente vs qué necesitas tú
+
+| Área | Agente 🤖 | Tú 👤 / Ops ⚙️ |
+|------|-----------|----------------|
+| `media[]` | Curar 5–10 URLs públicas + metadata | Revisar relevancia; audios propios después |
+| E2E auth | Escribir tests + fixtures | Cuenta test + secrets GitHub |
+| ESLint + CI | Fix 68 errores + CI estricto | — |
+| Code-splitting | Lazy routes + chunks | — |
+| Email Resend | Templates HTML + doc + API si hay slot | Resend account, DNS, Supabase SMTP |
+| Testimonios/logos | UI + JSON editable | Citas, permisos, archivos logo |
+| Visual premium | Tokens, dark mode, componentes, landing | Brand book / diseñador (opcional) |
 
 ---
 
@@ -161,8 +279,11 @@
 ## Orden de ejecución recomendado
 
 ```
-S1 (monetización) → S2 (admin + CTA) → S4 (tests) en paralelo con S3 (UX)
-→ S5 (contenido) → S6 (visual)
+S1–S6 ✅ completados
+→ S7 (hardening: lint + E2E + media)
+→ S8 (code-split + email Resend)
+→ S9 (testimonios landing) — puede solaparse con S8 si ya tienes citas
+→ S10 (visual premium US/EU)
 ```
 
-**Próximo paso inmediato:** terminar deploy Sprint 1 (PayPal + SQL + Vercel) y arrancar panel admin Sprint 2.
+**Próximo paso inmediato:** arrancar **Sprint 7** (lint + E2E auth + `media[]`). Paralelo tuyo: crear usuario test E2E en Supabase.
