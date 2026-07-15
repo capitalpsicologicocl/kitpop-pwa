@@ -37,22 +37,22 @@ async function adminRequest(path, options = {}) {
 
 export async function fetchAdminAccess() {
   try {
-    return await adminRequest('/api/admin/me')
+    return await adminRequest('/api/admin?action=me')
   } catch (error) {
     return { isAdmin: false, error: error.message }
   }
 }
 
 export async function lookupAdminUser(email) {
-  return adminRequest('/api/admin/lookup-user', {
+  return adminRequest('/api/admin?action=lookup-user', {
     method: 'POST',
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ action: 'lookup-user', email }),
   })
 }
 
 export async function grantAdminPlan({ userId, grantType, days, note }) {
-  return adminRequest('/api/admin/grant-plan', {
+  return adminRequest('/api/admin?action=grant-plan', {
     method: 'POST',
-    body: JSON.stringify({ userId, grantType, days, note }),
+    body: JSON.stringify({ action: 'grant-plan', userId, grantType, days, note }),
   })
 }

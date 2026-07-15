@@ -54,6 +54,8 @@
 2. Redeploy Production
 3. Inicia sesión → Perfil → **Panel de administración** → busca email beta → **Dar Pro cortesía**
 
+> **Límite Hobby:** Vercel permite máx. **12 serverless functions** por deploy. Admin usa una sola ruta `/api/admin` (no 3 archivos separados).
+
 ---
 
 ## Sprint 3 — UX polish (Semana 5–6)
