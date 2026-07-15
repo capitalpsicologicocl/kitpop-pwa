@@ -1,9 +1,15 @@
+import { getFoundingSlots } from './_lib/founder.js'
 import { getPayPalPlanId } from './_lib/paypal.js'
-import { getAuthenticatedUser } from './_lib/supabase.js'
+import { getAuthenticatedUser, getSupabaseAdmin } from './_lib/supabase.js'
 
 function parseBillingInterval(req) {
   const interval = req.query?.billingInterval || req.body?.billingInterval
   return interval === 'monthly' ? 'monthly' : 'yearly'
+}
+
+function parsePlanVariant(req) {
+  const variant = req.query?.planVariant || req.body?.planVariant
+  return variant === 'founding' ? 'founding' : 'standard'
 }
 
 export default async function handler(req, res) {
@@ -25,13 +31,32 @@ export default async function handler(req, res) {
     }
 
     const billingInterval = parseBillingInterval(req)
-    const planId = getPayPalPlanId('pro', billingInterval)
+    const planVariant = parsePlanVariant(req)
+    const supabaseAdmin = getSupabaseAdmin()
+    const foundingSlots = await getFoundingSlots(supabaseAdmin)
+
+    if (planVariant === 'founding') {
+      if (billingInterval !== 'yearly') {
+        return res.status(400).json({ error: 'El plan Fundador solo está disponible en pago anual.' })
+      }
+
+      if (!foundingSlots.available) {
+        return res.status(410).json({
+          error: 'El plan Fundador ya no está disponible. Elige Pro Anual.',
+          foundingSlots,
+        })
+      }
+    }
+
+    const planId = getPayPalPlanId('pro', billingInterval, planVariant)
 
     return res.status(200).json({
       clientId,
       planId,
+      planVariant,
       userId: user.id,
       userEmail: user.email ?? '',
+      foundingSlots,
     })
   } catch (error) {
     console.error('paypal-config', error)

@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import LivePollCard from '../../components/live/LivePollCard'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import ExportActions from '../../components/export/ExportActions'
+import ExportProGate from '../../components/export/ExportProGate'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -36,7 +37,7 @@ import {
 export default function LiveSessionEditor() {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { user, loading: authLoading } = useAuth()
+  const { user, profile, loading: authLoading } = useAuth()
 
   const [session, setSession] = useState(null)
   const [polls, setPolls] = useState([])
@@ -437,10 +438,12 @@ export default function LiveSessionEditor() {
       </div>
 
       {polls.length > 0 && (
-        <ExportActions
-          onDownloadWord={handleDownloadResultsWord}
-          onPrintPdf={printDocumentPdf}
-        />
+        <ExportProGate profile={profile} featureLabel="de sesión en vivo">
+          <ExportActions
+            onDownloadWord={handleDownloadResultsWord}
+            onPrintPdf={printDocumentPdf}
+          />
+        </ExportProGate>
       )}
 
       {message && <div className="auth-message success">{message}</div>}

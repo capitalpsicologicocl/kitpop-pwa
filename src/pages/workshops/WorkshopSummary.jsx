@@ -15,6 +15,7 @@ import {
   printWorkshopPdf,
 } from '../../utils/workshopExport'
 import ExportActions from '../../components/export/ExportActions'
+import ExportProGate from '../../components/export/ExportProGate'
 import {
   getPauseLabel,
   getWorkshopStatusLabel,
@@ -24,7 +25,7 @@ import {
 
 export default function WorkshopSummary() {
   const { id } = useParams()
-  const { user, loading: authLoading } = useAuth()
+  const { user, profile, loading: authLoading } = useAuth()
   const [workshop, setWorkshop] = useState(null)
   const [sessions, setSessions] = useState([])
   const [loading, setLoading] = useState(true)
@@ -119,10 +120,12 @@ export default function WorkshopSummary() {
         </Link>
       </div>
 
-      <ExportActions
-        onDownloadWord={handleDownloadWord}
-        onPrintPdf={printWorkshopPdf}
-      />
+      <ExportProGate profile={profile} featureLabel="del taller">
+        <ExportActions
+          onDownloadWord={handleDownloadWord}
+          onPrintPdf={printWorkshopPdf}
+        />
+      </ExportProGate>
 
       <article className="auth-panel workshop-summary-document">
         <header className="workshop-summary-head">

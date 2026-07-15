@@ -30,21 +30,23 @@ async function postPayPalEndpoint(path, body = {}) {
   return payload
 }
 
-export async function fetchPayPalConfig(billingInterval) {
+export async function fetchPayPalConfig(billingInterval, planVariant = 'standard') {
   const token = await getAccessToken()
 
   if (!token) {
     throw new Error('Debes iniciar sesión para continuar.')
   }
 
-  const response = await fetch(
-    `/api/paypal-config?billingInterval=${encodeURIComponent(billingInterval)}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  )
+  const params = new URLSearchParams({
+    billingInterval,
+    planVariant,
+  })
+
+  const response = await fetch(`/api/paypal-config?${params.toString()}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
 
   const payload = await response.json().catch(() => ({}))
 
@@ -70,6 +72,17 @@ export async function syncPayPalSubscription(subscriptionId) {
 
 export async function cancelPayPalSubscription() {
   return postPayPalEndpoint('/api/cancel-paypal-subscription')
+}
+
+export async function fetchFoundingSlots() {
+  const response = await fetch('/api/founder-status')
+  const payload = await response.json().catch(() => ({}))
+
+  if (!response.ok) {
+    throw new Error(payload.error || 'No se pudo consultar cupos Fundador.')
+  }
+
+  return payload
 }
 
 export async function redirectToPayPalCheckout(planTier, billingInterval) {

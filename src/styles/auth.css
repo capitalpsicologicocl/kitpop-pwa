@@ -518,6 +518,46 @@
   line-height:1.6;
 }
 
+.plan-founding-banner {
+  margin:0 0 14px;
+  padding:12px 16px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#faf5ff 0%,#ede9fe 100%);
+  border:1px solid #c4b5fd;
+  font-size:13px;
+  color:var(--g700);
+  line-height:1.55;
+}
+
+.plan-card-founding {
+  border-color:#a78bfa;
+  background:linear-gradient(180deg,#f5f3ff 0%,#fff 100%);
+}
+
+.plan-card-anchor {
+  margin:-6px 0 12px;
+  font-size:12px;
+  color:var(--g500);
+  text-decoration:line-through;
+}
+
+.export-pro-gate {
+  margin-bottom:16px;
+}
+
+.export-pro-gate h3 {
+  margin:0 0 8px;
+  font-size:16px;
+  color:var(--g800);
+}
+
+.export-pro-gate p {
+  margin:0 0 12px;
+  font-size:13px;
+  color:var(--g600);
+  line-height:1.6;
+}
+
 .plan-upgrade-hint {
   margin:-6px 0 14px;
   font-size:13px;

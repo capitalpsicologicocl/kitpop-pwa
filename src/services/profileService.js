@@ -8,7 +8,7 @@ export async function fetchProfile(userId) {
   const { data, error } = await supabase
     .from('profiles')
     .select(
-      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
+      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, is_founding_member, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
     )
     .eq('id', userId)
     .maybeSingle()
@@ -28,7 +28,7 @@ export async function updateProfile(userId, fullName) {
       full_name: fullName,
     })
     .select(
-      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
+      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, is_founding_member, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
     )
     .single()
 
@@ -75,7 +75,7 @@ export async function uploadAvatar(userId, file) {
       avatar_url: avatarUrl,
     })
     .select(
-      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
+      'full_name, avatar_url, plan, subscription_status, paypal_subscription_id, plan_period_end, is_founding_member, ai_generations_lifetime_count, ai_generations_month_count, ai_generations_month_key'
     )
     .single()
 

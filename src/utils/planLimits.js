@@ -15,21 +15,34 @@ export const PLANS = {
       'Banco completo de actividades',
       '1 taller, 1 encuesta, 1 sesión en vivo',
       '2 diseños con IA (prueba)',
-      'Favoritos y bitácora',
+      'Vista previa de taller (export Word/PDF requiere Pro)',
     ],
   },
   pro: {
     id: 'pro',
     label: 'KitPOP Pro',
     kicker: 'Pro',
-    priceMonthly: 3.99,
-    priceYearly: 29,
+    priceMonthly: 6.99,
+    priceYearly: 39,
     features: [
       'Talleres ilimitados',
       'Encuestas ilimitadas',
       'Polls en vivo ilimitados',
       'Exports Word/PDF completos',
       '18 diseños con IA al mes (talleres y reuniones)',
+    ],
+  },
+  pro_founding: {
+    id: 'pro_founding',
+    label: 'KitPOP Pro Fundador',
+    kicker: 'Fundador',
+    priceMonthly: 0,
+    priceYearly: 29,
+    subtitle: 'Primeros 100 clientes · mismo Pro, precio especial',
+    features: [
+      'Todo lo de KitPOP Pro',
+      'USD 29/año bloqueado de por vida en renovaciones*',
+      'Acceso anticipado a nuevas funciones',
     ],
   },
   pro_studio: {
@@ -113,11 +126,32 @@ export const PLAN_LIMITS = {
 const ACTIVE_STATUSES = new Set(['active', 'trialing'])
 const PAID_PLANS = new Set(['pro', 'pro_studio', 'pro_team'])
 
-/** Planes visibles en checkout (Studio y TEAM cuando existan planes PayPal). */
+/** Planes visibles en checkout base (Fundador se muestra aparte si hay cupo). */
 export const VISIBLE_PLAN_IDS = ['explorer', 'pro']
 
-export function getVisiblePlans() {
-  return VISIBLE_PLAN_IDS.map((id) => PLANS[id]).filter(Boolean)
+export const FOUNDING_MEMBER_LIMIT = 100
+
+export function getVisiblePlans({ includeFounding = false } = {}) {
+  const ids = includeFounding
+    ? ['explorer', 'pro_founding', 'pro']
+    : VISIBLE_PLAN_IDS
+
+  return ids.map((id) => PLANS[id]).filter(Boolean)
+}
+
+export function canExportProContent(profile) {
+  return hasPaidPlan(profile)
+}
+
+export function getProYearlySavingsPercent(planId = 'pro') {
+  const plan = PLANS[planId] ?? PLANS.pro
+
+  if (!plan.priceMonthly || !plan.priceYearly) {
+    return 0
+  }
+
+  const monthlyAnnualized = plan.priceMonthly * 12
+  return Math.round((1 - plan.priceYearly / monthlyAnnualized) * 100)
 }
 
 export function normalizePlanId(plan) {
@@ -263,7 +297,11 @@ export function formatPlanPrice(planId, billingInterval = 'yearly') {
     return ''
   }
 
-  if (plan.priceMonthly === 0) {
+  if (planId === 'pro_founding') {
+    return `USD ${plan.priceYearly}/año`
+  }
+
+  if (plan.priceMonthly === 0 && plan.priceYearly === 0) {
     return 'USD 0'
   }
 
@@ -271,7 +309,8 @@ export function formatPlanPrice(planId, billingInterval = 'yearly') {
     return `USD ${plan.priceMonthly.toFixed(2)}/mes`
   }
 
-  return `USD ${plan.priceYearly}/año`
+  const savings = getProYearlySavingsPercent('pro')
+  return `USD ${plan.priceYearly}/año (−${savings}% vs mensual)`
 }
 
 export function getSubscriptionStatusLabel(profile) {

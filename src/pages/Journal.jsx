@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { getActivityBySlug } from '../data/kitpopAdapter'
 import ExportActions from '../components/export/ExportActions'
+import ExportProGate from '../components/export/ExportProGate'
 import {
   deleteJournalEntry,
   fetchJournalEntries,
@@ -23,7 +24,7 @@ function formatDate(value) {
 }
 
 export default function Journal() {
-  const { user, loading: authLoading } = useAuth()
+  const { user, profile, loading: authLoading } = useAuth()
   const [entries, setEntries] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -126,15 +127,17 @@ export default function Journal() {
       </Link>
 
       {entries.length > 0 && (
-        <ExportActions
-          onDownloadWord={() =>
-            downloadDocumentWord(
-              buildJournalDocumentHtml(entries),
-              getJournalFilename()
-            )
-          }
-          onPrintPdf={printDocumentPdf}
-        />
+        <ExportProGate profile={profile} featureLabel="de bitácora">
+          <ExportActions
+            onDownloadWord={() =>
+              downloadDocumentWord(
+                buildJournalDocumentHtml(entries),
+                getJournalFilename()
+              )
+            }
+            onPrintPdf={printDocumentPdf}
+          />
+        </ExportProGate>
       )}
 
       <div className="page-head">

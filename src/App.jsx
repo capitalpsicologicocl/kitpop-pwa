@@ -49,11 +49,12 @@ export default function App() {
           <Route path="/recuperar-contrasena" element={<ForgotPassword />} />
           <Route path="/restablecer-contrasena" element={<ResetPassword />} />
 
+          <Route path="/categorias" element={<Categories />} />
+          <Route path="/categoria/:slug" element={<Category />} />
+          <Route path="/actividad/:slug" element={<Activity />} />
+          <Route path="/buscar" element={<SearchResults />} />
+
           <Route element={<RequireAuth />}>
-            <Route path="/categorias" element={<Categories />} />
-            <Route path="/categoria/:slug" element={<Category />} />
-            <Route path="/actividad/:slug" element={<Activity />} />
-            <Route path="/buscar" element={<SearchResults />} />
             <Route path="/taller" element={<Navigate to="/talleres" replace />} />
             <Route path="/talleres" element={<Workshops />} />
             <Route path="/talleres/:id" element={<WorkshopEditor />} />

@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import PayPalSubscribeButtons from './PayPalSubscribeButtons'
-import { cancelPayPalSubscription } from '../../services/paypalService'
+import { cancelPayPalSubscription, fetchFoundingSlots } from '../../services/paypalService'
 import {
-  getVisiblePlans,
+  PLANS,
   formatPlanPeriodEnd,
   formatPlanPrice,
   getAiGenerationRemaining,
   getPlanLabel,
+  getProYearlySavingsPercent,
   getSubscriptionStatusLabel,
   getUserPlan,
+  getVisiblePlans,
   formatAiLimitLabel,
   hasPaidPlan,
 } from '../../utils/planLimits'
@@ -20,12 +22,40 @@ export default function PlanSection({ profile, onPlanChange }) {
   const [loadingPlan, setLoadingPlan] = useState('')
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
+  const [foundingSlots, setFoundingSlots] = useState(null)
   const currentPlanId = getUserPlan(profile)
   const isPaid = hasPaidPlan(profile)
   const periodEnd = formatPlanPeriodEnd(profile)
   const hasPayPalSubscription = Boolean(profile?.paypal_subscription_id)
   const aiRemaining = getAiGenerationRemaining(profile)
   const aiLimitLabel = formatAiLimitLabel(currentPlanId)
+  const showFounding = foundingSlots?.available && !isPaid
+  const visiblePlans = getVisiblePlans({ includeFounding: showFounding })
+  const yearlySavings = getProYearlySavingsPercent('pro')
+
+  useEffect(() => {
+    let mounted = true
+
+    async function loadFounding() {
+      try {
+        const slots = await fetchFoundingSlots()
+
+        if (mounted) {
+          setFoundingSlots(slots)
+        }
+      } catch {
+        if (mounted) {
+          setFoundingSlots(null)
+        }
+      }
+    }
+
+    loadFounding()
+
+    return () => {
+      mounted = false
+    }
+  }, [])
 
   async function handleCancelSubscription() {
     const confirmed = window.confirm(
@@ -53,7 +83,7 @@ export default function PlanSection({ profile, onPlanChange }) {
 
   function handleSubscribeSuccess() {
     setError('')
-    setMessage('¡KitPOP Pro activado! Ya puedes crear sin límites.')
+    setMessage('¡KitPOP Pro activado! Ya puedes exportar y crear sin límites.')
     onPlanChange?.()
   }
 
@@ -62,44 +92,61 @@ export default function PlanSection({ profile, onPlanChange }) {
       <div className="plan-section-head">
         <h2>Tu plan KitPOP</h2>
         <p>
-          Explorer es gratis (incluye 2 diseños con IA de prueba). Pro desbloquea
-          talleres sin límites y 18 diseños con IA al mes.
+          Explorer es gratis para probar. Pro desbloquea exports Word/PDF, talleres ilimitados
+          y 18 diseños con IA al mes. Recomendamos el <strong>pago anual</strong> (−{yearlySavings}%
+          vs mensual).
         </p>
       </div>
 
+      {showFounding && (
+        <div className="plan-founding-banner">
+          <strong>Plan Fundador</strong> — USD 29/año (mismo Pro) · quedan{' '}
+          {foundingSlots.remaining} de {foundingSlots.limit} cupos
+        </div>
+      )}
+
       <div className="plan-billing-toggle no-print">
-        <button
-          type="button"
-          className={billingInterval === 'monthly' ? 'on' : ''}
-          onClick={() => setBillingInterval('monthly')}
-        >
-          Pago mensual
-        </button>
         <button
           type="button"
           className={billingInterval === 'yearly' ? 'on' : ''}
           onClick={() => setBillingInterval('yearly')}
         >
-          Pago anual
+          Pago anual (recomendado)
+        </button>
+        <button
+          type="button"
+          className={billingInterval === 'monthly' ? 'on' : ''}
+          onClick={() => setBillingInterval('monthly')}
+        >
+          Pago mensual (USD 6,99)
         </button>
       </div>
 
-      <div className="plan-cards">
-        {getVisiblePlans().map((plan) => {
-          const isCurrent = currentPlanId === plan.id
+      <div className={`plan-cards ${showFounding ? 'plan-cards-three' : ''}`}>
+        {visiblePlans.map((plan) => {
+          const isCurrent = currentPlanId === plan.id || (plan.id === 'pro_founding' && profile?.is_founding_member)
           const isExplorer = plan.id === 'explorer'
+          const isFounding = plan.id === 'pro_founding'
 
           return (
             <article
               key={plan.id}
-              className={`plan-card ${isCurrent ? 'plan-card-current' : ''}`}
+              className={`plan-card ${isCurrent ? 'plan-card-current' : ''} ${isFounding ? 'plan-card-founding' : ''}`}
             >
               <p className="plan-card-kicker">{plan.kicker}</p>
               <h3>{plan.label}</h3>
               {plan.subtitle && <p className="plan-card-subtitle">{plan.subtitle}</p>}
               <p className="plan-card-price">
-                {formatPlanPrice(plan.id, billingInterval)}
+                {isFounding
+                  ? formatPlanPrice('pro_founding', 'yearly')
+                  : formatPlanPrice(plan.id, billingInterval)}
               </p>
+
+              {!isExplorer && billingInterval === 'yearly' && plan.id === 'pro' && (
+                <p className="plan-card-anchor">
+                  vs USD {PLANS.pro.priceMonthly.toFixed(2)}/mes (USD {(PLANS.pro.priceMonthly * 12).toFixed(0)}/año)
+                </p>
+              )}
 
               <ul className="plan-card-list">
                 {plan.features.map((feature) => (
@@ -111,7 +158,8 @@ export default function PlanSection({ profile, onPlanChange }) {
 
               {!isExplorer && !isPaid && (
                 <PayPalSubscribeButtons
-                  billingInterval={billingInterval}
+                  billingInterval={isFounding ? 'yearly' : billingInterval}
+                  planVariant={isFounding ? 'founding' : 'standard'}
                   onSuccess={handleSubscribeSuccess}
                   onError={setError}
                 />
@@ -158,16 +206,15 @@ export default function PlanSection({ profile, onPlanChange }) {
         )}
 
         {!isPaid && (
-          <Link to="/interactivo" className="btn-secondary btn-link">
-            Ver espacio interactivo
+          <Link to="/talleres" className="btn-secondary btn-link">
+            Volver a talleres
           </Link>
         )}
       </div>
 
       <p className="plan-footnote">
-        Elige <strong>Débito o crédito</strong> para pagar sin cuenta PayPal, o{' '}
-        <strong>PayPal</strong> si ya tienes una. Pro: USD 3.99/mes o USD 29/año.
-        Renovación automática hasta que canceles.
+        Pro Anual USD 39/año · Pro Mensual USD 6,99/mes · Fundador USD 29/año (100 cupos).
+        Paga con tarjeta o PayPal. Renovación automática hasta que canceles.
       </p>
     </section>
   )

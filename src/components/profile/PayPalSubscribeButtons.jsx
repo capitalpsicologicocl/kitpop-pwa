@@ -3,7 +3,12 @@ import { FUNDING, PayPalButtons, PayPalScriptProvider } from '@paypal/react-payp
 
 import { fetchPayPalConfig, syncPayPalSubscription } from '../../services/paypalService'
 
-export default function PayPalSubscribeButtons({ billingInterval, onSuccess, onError }) {
+export default function PayPalSubscribeButtons({
+  billingInterval,
+  planVariant = 'standard',
+  onSuccess,
+  onError,
+}) {
   const [config, setConfig] = useState(null)
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState('')
@@ -16,7 +21,7 @@ export default function PayPalSubscribeButtons({ billingInterval, onSuccess, onE
       setLoadError('')
 
       try {
-        const nextConfig = await fetchPayPalConfig(billingInterval)
+        const nextConfig = await fetchPayPalConfig(billingInterval, planVariant)
 
         if (mounted) {
           setConfig(nextConfig)
@@ -38,7 +43,7 @@ export default function PayPalSubscribeButtons({ billingInterval, onSuccess, onE
     return () => {
       mounted = false
     }
-  }, [billingInterval])
+  }, [billingInterval, planVariant])
 
   const scriptOptions = useMemo(() => {
     if (!config?.clientId) {

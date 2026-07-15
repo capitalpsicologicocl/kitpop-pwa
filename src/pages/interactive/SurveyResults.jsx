@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import ExportActions from '../../components/export/ExportActions'
+import ExportProGate from '../../components/export/ExportProGate'
 import { useAuth } from '../../context/AuthContext'
 import {
   fetchSurveyById,
@@ -43,7 +44,7 @@ function DistributionList({ distribution }) {
 
 export default function SurveyResults() {
   const { id } = useParams()
-  const { user, loading: authLoading } = useAuth()
+  const { user, profile, loading: authLoading } = useAuth()
   const [survey, setSurvey] = useState(null)
   const [results, setResults] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -130,11 +131,13 @@ export default function SurveyResults() {
         ← Editar encuesta
       </Link>
 
-      <ExportActions
-        onDownloadWord={handleDownloadWord}
-        onPrintPdf={printDocumentPdf}
-        disabled={results.questions.length === 0}
-      />
+      <ExportProGate profile={profile} featureLabel="de resultados">
+        <ExportActions
+          onDownloadWord={handleDownloadWord}
+          onPrintPdf={printDocumentPdf}
+          disabled={results.questions.length === 0}
+        />
+      </ExportProGate>
 
       <div className="page-head">
         <h1 className="cv-title">Resultados y promedios</h1>

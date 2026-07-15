@@ -1,7 +1,10 @@
+import { isFoundingPayPalPlan } from './founder.js'
+
 const PLAN_ENV_KEYS = {
   pro: {
     monthly: 'PAYPAL_PLAN_PRO_MONTHLY',
     yearly: 'PAYPAL_PLAN_PRO_YEARLY',
+    foundingYearly: 'PAYPAL_PLAN_PRO_FOUNDING_YEARLY',
   },
   pro_team: {
     monthly: 'PAYPAL_PLAN_TEAM_MONTHLY',
@@ -27,9 +30,20 @@ export function getPayPalBaseUrl() {
     : 'https://api-m.sandbox.paypal.com'
 }
 
-export function getPayPalPlanId(planTier, billingInterval) {
+export function getPayPalPlanId(planTier, billingInterval, planVariant = 'standard') {
   const tier = planTier === 'pro_team' ? 'pro_team' : 'pro'
   const interval = billingInterval === 'monthly' ? 'monthly' : 'yearly'
+
+  if (tier === 'pro' && planVariant === 'founding' && interval === 'yearly') {
+    const foundingPlanId = process.env.PAYPAL_PLAN_PRO_FOUNDING_YEARLY
+
+    if (!foundingPlanId) {
+      throw new Error('Missing PAYPAL_PLAN_PRO_FOUNDING_YEARLY.')
+    }
+
+    return foundingPlanId
+  }
+
   const envKey = PLAN_ENV_KEYS[tier][interval]
   const planId = process.env[envKey]
 
@@ -41,10 +55,15 @@ export function getPayPalPlanId(planTier, billingInterval) {
 }
 
 export function resolvePlanTierFromPayPalPlan(planId) {
+  const foundingPlan = process.env.PAYPAL_PLAN_PRO_FOUNDING_YEARLY
   const teamPlans = [
     process.env.PAYPAL_PLAN_TEAM_MONTHLY,
     process.env.PAYPAL_PLAN_TEAM_YEARLY,
   ].filter(Boolean)
+
+  if (foundingPlan && planId === foundingPlan) {
+    return 'pro'
+  }
 
   if (teamPlans.includes(planId)) {
     return 'pro_team'
@@ -203,6 +222,11 @@ export async function syncProfileFromPayPalSubscription(subscription, supabaseAd
   }
 
   const patch = mapPayPalSubscriptionToProfile(subscription)
+
+  if (isFoundingPayPalPlan(subscription.plan_id)) {
+    patch.is_founding_member = true
+  }
+
   const { error } = await supabaseAdmin.from('profiles').update(patch).eq('id', userId)
 
   if (error) {
