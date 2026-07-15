@@ -24,6 +24,7 @@ import LiveSessionEditor from './pages/interactive/LiveSessionEditor'
 import ParticipantJoin from './pages/interactive/ParticipantJoin'
 import WorkshopEditor from './pages/interactive/WorkshopEditor'
 import Workshops from './pages/workshops/Workshops'
+import WorkshopSummary from './pages/workshops/WorkshopSummary'
 import Admin from './pages/Admin'
 
 function RedirectLegacyWorkshop() {
