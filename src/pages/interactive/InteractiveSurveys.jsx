@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { ListPageSkeleton } from '../../components/ui/Skeleton'
+import EmptyState from '../../components/ui/EmptyState'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
 import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
@@ -277,9 +278,11 @@ export default function InteractiveSurveys() {
 
       <div className="interactive-list">
         {surveys.length === 0 ? (
-          <div className="auth-panel">
-            <p>Aún no tienes encuestas.</p>
-          </div>
+          <EmptyState
+            variant="surveys"
+            title="Aún no tienes encuestas"
+            description="Crea una encuesta de satisfacción o carga ítems personalizados."
+          />
         ) : (
           surveys.map((survey) => (
             <article key={survey.id} className="interactive-item auth-panel">

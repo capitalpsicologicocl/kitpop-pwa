@@ -447,8 +447,14 @@
   border:1.5px solid var(--g200);
   border-radius:18px;
   padding:18px;
-  background:#fff;
+  background:var(--surface);
   position:relative;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+
+.plan-card:hover {
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-soft);
 }
 
 .plan-card-pro {

@@ -16,6 +16,41 @@
   --g700:#374151;
   --g800:#1F2937;
   --white:#fff;
+  --surface:var(--white);
+  --surface-muted:var(--g50);
+  --text:var(--g800);
+  --text-muted:var(--g500);
+  --border:var(--g200);
+  --shadow-soft:0 12px 32px rgba(59,30,142,.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-l:#2a1f4a;
+    --g50:#12101a;
+    --g100:#1a1625;
+    --g200:#2d2640;
+    --g400:#8b8fa8;
+    --g500:#a8adc0;
+    --g600:#c4c8d4;
+    --g700:#dfe2ea;
+    --g800:#f3f4f6;
+    --white:#1a1625;
+    --surface:#1a1625;
+    --surface-muted:#12101a;
+    --text:#f3f4f6;
+    --text-muted:#a8adc0;
+    --border:#2d2640;
+    --shadow-soft:0 12px 32px rgba(0,0,0,.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+  }
 }
 
 *,
@@ -28,8 +63,8 @@
 
 body {
   font-family:'Plus Jakarta Sans', sans-serif;
-  background:var(--g50);
-  color:var(--g800);
+  background:var(--surface-muted);
+  color:var(--text);
   min-height:100vh;
   overflow-x:hidden;
 }

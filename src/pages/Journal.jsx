@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext'
 import { getActivityBySlug } from '../data/kitpopAdapter'
 import ExportActions from '../components/export/ExportActions'
 import ExportProGate from '../components/export/ExportProGate'
+import EmptyState from '../components/ui/EmptyState'
 import {
   deleteJournalEntry,
   fetchJournalEntries,
@@ -151,12 +152,11 @@ export default function Journal() {
       {error && <div className="auth-message error">{error}</div>}
 
       {entries.length === 0 ? (
-        <div className="home-panel">
-          <p>
-            Aún no tienes registros. Guarda experiencias desde la pestaña
-            Bitácora de cualquier actividad.
-          </p>
-        </div>
+        <EmptyState
+          variant="journal"
+          title="Tu bitácora está vacía"
+          description="Guarda experiencias desde la pestaña Bitácora de cualquier actividad."
+        />
       ) : (
         <div className="journal-list">
           {entries.map((entry) => {

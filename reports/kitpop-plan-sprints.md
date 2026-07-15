@@ -115,16 +115,23 @@
 
 ---
 
-## Sprint 6 — Visual premium (Semana 12)
+## Sprint 6 — Visual premium (Semana 12) ✅ En curso
 
 **Meta:** sensación producto premium sin rediseño total.
 
-| Tarea | Impacto | Entregable |
-|-------|---------|------------|
-| Ilustraciones empty states | Medio | SVG inline morados |
-| Motion sutil (Framer/CSS) | Bajo | Transiciones tabs, cards plan |
-| Hero landing refresh | Medio | Mockup app + social proof placeholder |
-| Dark mode (opcional) | Bajo | Variables CSS |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Ilustraciones empty states | ✅ | `EmptyState` + SVG morados en listas vacías |
+| Motion sutil (CSS) | ✅ | Tabs actividad, cards plan, hero glow, pricing hover |
+| Hero landing refresh | ✅ | Mockup app + social proof + iconos SVG |
+| Dark mode (opcional) | ✅ | Variables CSS + `prefers-color-scheme: dark` |
+
+**Checklist deploy Sprint 6**
+
+1. Redeploy Production + landing (`landing/` en Vercel si aplica)
+2. Probar listas vacías: favoritos, talleres, encuestas, bitácora
+3. Verificar hero en `/` y `www.kitpopapp.com`
+4. Probar dark mode con preferencia del sistema
 
 **Fuera de alcance agente:** identidad de marca profunda (requiere diseñador).
 

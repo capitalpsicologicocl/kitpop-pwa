@@ -49,6 +49,7 @@ export default function SearchResults() {
             useActivityIcons
             emptyTitle="Sin resultados"
             emptyDescription={emptyDescription}
+            emptyVariant="search"
           />
         </>
       ) : (

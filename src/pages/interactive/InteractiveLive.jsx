@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { ListPageSkeleton } from '../../components/ui/Skeleton'
+import EmptyState from '../../components/ui/EmptyState'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
 import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
@@ -206,9 +207,11 @@ export default function InteractiveLive() {
 
       <div className="interactive-list">
         {sessions.length === 0 ? (
-          <div className="auth-panel">
-            <p>Aún no tienes sesiones en vivo.</p>
-          </div>
+          <EmptyState
+            variant="live"
+            title="Aún no tienes sesiones en vivo"
+            description="Crea una sesión, agrega polls y comparte el código con participantes."
+          />
         ) : (
           sessions.map((session) => (
             <article key={session.id} className="interactive-item auth-panel">

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import { ListPageSkeleton } from '../../components/ui/Skeleton'
+import EmptyState from '../../components/ui/EmptyState'
 import CompactPlanStrip from '../../components/profile/CompactPlanStrip'
 import { useAuth } from '../../context/AuthContext'
 import PlanUpgradeHint, { isPlanLimitMessage } from '../../components/profile/PlanUpgradeHint'
@@ -222,9 +223,11 @@ export default function Workshops() {
 
       <div className="interactive-list">
         {workshops.length === 0 ? (
-          <div className="auth-panel">
-            <p>Aún no tienes talleres diseñados. Crea el primero arriba.</p>
-          </div>
+          <EmptyState
+            variant="workshops"
+            title="Aún no tienes talleres diseñados"
+            description="Crea el primero arriba y arma sesiones con actividades KitPOP e IA."
+          />
         ) : (
           workshops.map((workshop) => (
             <article key={workshop.id} className="interactive-item auth-panel">

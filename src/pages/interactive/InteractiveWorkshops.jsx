@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import InteractiveNav from '../../components/interactive/InteractiveNav'
+import EmptyState from '../../components/ui/EmptyState'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
@@ -190,9 +191,11 @@ export default function InteractiveWorkshops() {
 
       <div className="interactive-list">
         {workshops.length === 0 ? (
-          <div className="auth-panel">
-            <p>Aún no tienes talleres. Crea el primero arriba.</p>
-          </div>
+          <EmptyState
+            variant="workshops"
+            title="Aún no tienes talleres"
+            description="Crea el primero arriba y diseña sesiones con actividades del Kit."
+          />
         ) : (
           workshops.map((workshop) => (
             <article key={workshop.id} className="interactive-item auth-panel">

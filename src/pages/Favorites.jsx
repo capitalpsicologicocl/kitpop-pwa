@@ -65,6 +65,7 @@ export default function Favorites() {
         useActivityIcons
         emptyTitle="Aún no tienes favoritos"
         emptyDescription="Marca actividades con ☆ desde la vista de detalle."
+        emptyVariant="favorites"
       />
     </main>
   )
