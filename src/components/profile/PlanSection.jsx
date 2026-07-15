@@ -214,7 +214,7 @@ export default function PlanSection({ profile, onPlanChange }) {
 
       <p className="plan-footnote">
         Pro Anual USD 39/año · Pro Mensual USD 6,99/mes · Fundador USD 29/año (100 cupos).
-        Paga con tarjeta o PayPal. Renovación automática hasta que canceles.
+        Prueba Pro 7 días disponible vía invitación admin. Paga con tarjeta o PayPal.
       </p>
     </section>
   )

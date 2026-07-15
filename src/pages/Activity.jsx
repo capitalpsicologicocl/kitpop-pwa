@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { getActivityBySlug } from '../data/kitpopAdapter'
 import ExportActions from '../components/export/ExportActions'
+import GuestSignupCTA from '../components/auth/GuestSignupCTA'
 import ActivityGuide from '../components/activity/ActivityGuide'
 import ActivityHero from '../components/activity/ActivityHero'
 import ActivityJournalForm from '../components/activity/ActivityJournalForm'
@@ -19,7 +20,7 @@ import { downloadDocumentWord, printDocumentPdf } from '../utils/documentExport'
 export default function Activity() {
   const navigate = useNavigate()
   const { slug } = useParams()
-  const { favoriteSlugs, toggleFavorite } = useAuth()
+  const { user, favoriteSlugs, toggleFavorite } = useAuth()
   const activity = getActivityBySlug(slug)
   const [activeTab, setActiveTab] = useState('guide')
   const [favoriteError, setFavoriteError] = useState('')
@@ -109,6 +110,8 @@ export default function Activity() {
           activityTitle={activity.title}
         />
       )}
+
+      {!user && <GuestSignupCTA variant="activity" />}
     </main>
   )
 }

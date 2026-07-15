@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
-
 import CategoryGrid from '../components/home/CategoryGrid'
+import GuestSignupCTA from '../components/auth/GuestSignupCTA'
 import { useAuth } from '../context/AuthContext'
 
 export default function Categories() {
@@ -17,24 +16,7 @@ export default function Categories() {
 
       <CategoryGrid />
 
-      {!user && (
-        <section className="home-guest-cta">
-          <div className="home-panel">
-            <h2>Guarda favoritos y diseña talleres</h2>
-            <p>
-              Crea tu cuenta Explorer gratis para favoritos, bitácora y diseño con IA.
-            </p>
-            <div className="auth-actions">
-              <Link to="/registro" className="btn-primary btn-link">
-                Crear cuenta gratis
-              </Link>
-              <Link to="/login" className="btn-secondary btn-link">
-                Iniciar sesión
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+      {!user && <GuestSignupCTA variant="category" />}
     </main>
   )
 }

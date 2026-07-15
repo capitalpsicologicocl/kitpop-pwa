@@ -36,19 +36,23 @@
 
 ---
 
-## Sprint 2 — Operaciones y conversión (Semana 3–4)
+## Sprint 2 — Operaciones y conversión (Semana 3–4) ✅ En curso
 
 **Meta:** reducir fricción operativa y subir registro → Pro.
 
-| Tarea | Impacto | Entregable |
-|-------|---------|------------|
-| Panel admin cortesía Pro | Alto | Ruta `/admin` protegida: buscar usuario, asignar Pro/cortesía, ver cupos fundador |
-| Trial 7 días Pro (opcional) | Medio | Flag `trialing` + `plan_period_end`; copy en checkout |
-| CTA guest → registro | Alto | Banner en actividad pública: “Guarda favoritos / exporta con Pro” |
-| Copy landing alineado | Medio | Quitar promesa audios hasta Sprint 5; destacar IA + exports |
-| Email post-registro (Resend/similar) | Medio | Bienvenida + link a primer taller |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Panel admin cortesía Pro | ✅ | `/admin` + APIs `lookup-user`, `grant-plan` |
+| Trial 7 días Pro | ✅ | Botón en admin (`trialing` + 7 días) |
+| CTA guest → registro | ✅ | `GuestSignupCTA` en Activity, Category, Home |
+| Copy landing alineado | ✅ | Sin promesa audios; IA + exports |
+| Email post-registro | ⏳ | Sprint 2.1 (Resend) |
 
-**Criterio de done:** dar Pro a un beta tester sin tocar Supabase Table Editor.
+**Checklist deploy Sprint 2**
+
+1. Vercel: `ADMIN_EMAILS=tu@email.com` (emails admin separados por coma)
+2. Redeploy Production
+3. Inicia sesión → Perfil → **Panel de administración** → busca email beta → **Dar Pro cortesía**
 
 ---
 

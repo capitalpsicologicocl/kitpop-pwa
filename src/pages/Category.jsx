@@ -4,9 +4,12 @@ import { Link, useParams } from 'react-router-dom'
 import { categories } from '../data/categories'
 import ActivityList from '../components/categories/ActivityList'
 import PermaFilters from '../components/categories/PermaFilters'
+import GuestSignupCTA from '../components/auth/GuestSignupCTA'
+import { useAuth } from '../context/AuthContext'
 
 export default function Category() {
   const { slug } = useParams()
+  const { user } = useAuth()
   const [permaFilter, setPermaFilter] = useState('all')
 
   const category = categories.find(
@@ -57,6 +60,8 @@ export default function Category() {
         categoryIcon={category.icon}
         permaFilter={category.showPermaFilter ? permaFilter : 'all'}
       />
+
+      {!user && <GuestSignupCTA variant="category" />}
     </main>
   )
 }

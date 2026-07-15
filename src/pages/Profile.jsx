@@ -3,6 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 
 import PlanSection from '../components/profile/PlanSection'
 import { useAuth } from '../context/AuthContext'
+import { fetchAdminAccess } from '../services/adminService'
 import { fetchJournalEntries } from '../services/journalService'
 import { syncPayPalSubscription } from '../services/paypalService'
 import { fetchWorkshops } from '../services/workshopService'
@@ -45,10 +46,34 @@ export default function Profile() {
   const [submitting, setSubmitting] = useState(false)
   const [uploadingAvatar, setUploadingAvatar] = useState(false)
   const [facilitationFilter, setFacilitationFilter] = useState('todas')
+  const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
     setFullName(profile?.full_name ?? '')
   }, [profile])
+
+  useEffect(() => {
+    let mounted = true
+
+    async function loadAdminAccess() {
+      if (!user) {
+        setIsAdmin(false)
+        return
+      }
+
+      const access = await fetchAdminAccess()
+
+      if (mounted) {
+        setIsAdmin(Boolean(access.isAdmin))
+      }
+    }
+
+    loadAdminAccess()
+
+    return () => {
+      mounted = false
+    }
+  }, [user])
 
   useEffect(() => {
     const checkoutState = searchParams.get('checkout')
@@ -356,6 +381,12 @@ export default function Profile() {
               </button>
             </div>
           </form>
+
+          {isAdmin && (
+            <p className="profile-admin-link">
+              <Link to="/admin">Panel de administración →</Link>
+            </p>
+          )}
         </section>
         )}
 

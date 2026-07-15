@@ -24,7 +24,7 @@ import LiveSessionEditor from './pages/interactive/LiveSessionEditor'
 import ParticipantJoin from './pages/interactive/ParticipantJoin'
 import WorkshopEditor from './pages/interactive/WorkshopEditor'
 import Workshops from './pages/workshops/Workshops'
-import WorkshopSummary from './pages/workshops/WorkshopSummary'
+import Admin from './pages/Admin'
 
 function RedirectLegacyWorkshop() {
   const { id } = useParams()
@@ -71,6 +71,7 @@ export default function App() {
             <Route path="/perfil" element={<Profile />} />
             <Route path="/favoritos" element={<Favorites />} />
             <Route path="/bitacora" element={<Journal />} />
+            <Route path="/admin" element={<Admin />} />
           </Route>
 
           <Route path="/espacio-interactivo" element={<Navigate to="/interactivo" replace />} />
