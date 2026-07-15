@@ -85,6 +85,26 @@
               "p": "Campo con principios, competencias y ética propios, practicado con responsabilidad y evaluado con rigor."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Roger Schwarz (2002) define la facilitación como el proceso por el cual una persona esencialmente neutral ayuda a un grupo a mejorar cómo identifica problemas, dialoga y decide, sin imponer contenido. La International Association of Facilitators (IAF) distingue facilitar de presidir o capacitar: quien facilita cuida el proceso grupal. Revisiones sobre intervenciones participativas muestran mayor compromiso e implementación de acuerdos cuando el diseño del proceso es explícito y el rol del facilitador está claramente encuadrado (Brown & Paulus, 2002)."
+            }
+          ]
+        }
+      ],
+      "media": [
+        {
+          "type": "video",
+          "title": "El poder de escuchar",
+          "description": "Referencia sobre escucha activa, habilidad central de quien facilita.",
+          "url": "https://www.youtube.com/watch?v=saXfRv1NyJY",
+          "provider": "youtube",
+          "durationSec": 480
         }
       ]
     },
@@ -158,6 +178,16 @@
               "p": "Confiar en que la inteligencia colectiva supera la suma de capacidades individuales."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Los valores de la IAF —igualdad, diversidad, cooperación y cuidado— se alinean con la investigación sobre clima psicológico seguro (Edmondson, 1999): las personas participan más cuando perciben que pueden expresarse sin castigo. Las competencias de escucha activa, participación equitativa y gestión del poder están respaldadas por décadas de estudio en dinámica grupal y comunicación organizacional (Tuckman & Jensen, 1977; Schwarz, 2017)."
+            }
+          ]
         }
       ]
     },
@@ -221,6 +251,16 @@
               "p": "Prepararse antes del taller, hacer pausas, confiar en los recursos del grupo y contar con red de pares facilitadores."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Sam Kaner (2014) describe al facilitador como guardián del proceso: protege la calidad del pensamiento colectivo más que el contenido de las decisiones. Schwarz enfatiza reformular, sintetizar y gestionar tensiones sin tomar partido. Estudios sobre mediación y facilitación grupal indican que la neutralidad percibida aumenta la confianza y la equidad de participación, especialmente cuando hay desbalances de poder (Schwarz, 2017; IAF Core Competencies, 2023)."
+            }
+          ]
         }
       ]
     },
@@ -274,6 +314,16 @@
               "p": "Toda sesión bien diseñada contempla apertura (presentaciones, expectativas, reglas, objetivos) y cierre firme (síntesis, plan de acción, evaluación). Poca apertura = sesión de instrucciones; apertura sin cierre = sesión de café sin decisiones."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El ciclo Visión–Diseño–Actuar–Aprender dialoga con el aprendizaje experiencial de Kolb (1984) y con modelos de investigación-acción participativa (Reason & Bradbury, 2008). La planificación deliberada de apertura y cierre reduce ambigüedad y mejora retención de acuerdos. La andragogía de Knowles (1984) subraya conectar cada fase con resultados observables y con las necesidades reales de quienes participan."
+            }
+          ]
         }
       ]
     },
@@ -320,6 +370,16 @@
               "ic": "circle",
               "h": "Círculos de diálogo",
               "p": "Escuchar, reflexionar y construir sentido colectivo. Métodos: disposición circular, objeto de la palabra, silencios, enfoque restaurativo."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Las tipologías de taller participativo (diagnóstico, planificación, formación, innovación, diálogo) provienen de décadas de práctica en desarrollo organizacional y facilitación comunitaria (IAF; IDRC). Mezclar métodos de propósitos distintos debilita la coherencia pedagógica. La evidencia en transferencia de aprendizaje sugiere alinear formato, objetivo y evaluación para sostener resultados (Kirkpatrick & Kirkpatrick, 2016)."
             }
           ]
         }
@@ -373,6 +433,16 @@
               "ic": "link",
               "h": "Usar el Kit con intención",
               "p": "Las categorías PERMA, Equipo, Reunión y demás ya organizan actividades por propósito. Combínalas según el tipo de taller que diseñaste en la fase de Visión."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Técnicas como world café, dot voting o check-in estructurado forman parte de marcos como Liberating Structures (Lipmanowicz & McCandless, 2013), diseñados para incluir muchas voces en poco tiempo. La revisión de intervenciones grupales muestra que combinar formatos verbales, escritos y visuales mejora la participación de estilos cognitivos diversos (Paulus & Yang, 2000)."
             }
           ]
         }
@@ -438,6 +508,16 @@
               "p": "Requiere más tiempo que una reunión unidireccional. No resuelve problemas fuera del control del grupo. Depende de autoridad real para implementar acuerdos."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Knowles (1984) propone que facilitar a adultos requiere integrar conocimiento, actitudes y habilidades en contextos reales. Las metodologías participativas aumentan compromiso y calidad percibida de decisiones, pero requieren tiempo y autoridad de implementación — límites documentados en evaluaciones de procesos participativos organizacionales (IAP2, 2014; Creighton & Adams, 2011)."
+            }
+          ]
         }
       ]
     },
@@ -479,6 +559,16 @@
               "ic": "power",
               "h": "Equidad de participación",
               "p": "¿Diseñaste formas de incluir voces silenciosas? ¿Nombraste explícitamente normas contra interrupciones y microagresiones?"
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "El Diseño Universal para el Aprendizaje (CAST, 2018) recomienda múltiples formas de participación, representación y acción. Las pautas WCAG orientan accesibilidad digital (subtítulos, contraste, navegación). La investigación en equidad organizacional muestra que normas explícitas y formatos alternativos reducen dominancia verbal y microagresiones en grupos heterogéneos (Nishii et al., 2018; W3C, 2023)."
             }
           ]
         }
@@ -524,6 +614,16 @@
               "p": "Se manifiesta cuando la sesión termina sin claridad sobre próximos pasos. Evítalo reservando siempre 10–15 minutos para cierre estructurado."
             }
           ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Estudios sobre reuniones organizacionales identifican improvisación sin propósito, monopolio de turno y cierres abruptos como factores de baja efectividad (Rogelberg et al., 2010). La facilitación estructurada mitiga estos riesgos al reservar tiempo para síntesis y al devolver contenido al grupo mediante preguntas abiertas (Schwarz, 2002; Doyle & Straus, 1993)."
+            }
+          ]
         }
       ]
     },
@@ -565,6 +665,16 @@
               "ic": "quote",
               "h": "Peter Senge",
               "p": "La confianza del grupo hacia quien facilita se construye en etapas: encuadre, compromiso y verificación."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Schwarz, Kaner, Bohm y Senge representan corrientes convergentes: facilitación neutral (Schwarz, 2002), guardianía del proceso (Kaner, 2014), diálogo suspendiendo supuestos (Bohm, 1996) y aprendizaje organizacional (Senge, 1990). Estas miradas informan estándares profesionales como las competencias nucleares de la IAF, adoptadas por facilitadores en más de 65 países."
             }
           ]
         }
@@ -613,6 +723,16 @@
               "ic": "tree",
               "h": "Procesos complejos y mentoría",
               "p": "¿Diseño procesos de varias sesiones? ¿Incorporo inclusión y accesibilidad sistemáticamente? ¿Tengo red de pares facilitadores? Siguiente paso: documentar tus diseños como biblioteca personal y mentorear facilitadores de nivel 1."
+            }
+          ]
+        },
+        {
+          "t": "Fundamento científico",
+          "rows": [
+            {
+              "ic": "science",
+              "h": "Evidencia y fundamento",
+              "p": "Modelos de desarrollo profesional en facilitación proponen progresión de práctica guiada a diseño autónomo y mentoría (IAF Pathways). La práctica deliberada con retroalimentación estructurada acelera la adquisición de habilidades complejas (Ericsson & Pool, 2016). Documentar diseños propios consolida aprendizaje experiencial y permite replicar éxitos entre contextos (Kolb, 1984)."
             }
           ]
         }

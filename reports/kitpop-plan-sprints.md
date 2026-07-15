@@ -95,15 +95,21 @@
 
 ---
 
-## Sprint 5 — Contenido (Semana 10–11)
+## Sprint 5 — Contenido (Semana 10–11) ✅ En curso
 
 **Meta:** cerrar brechas de contenido (7.2 → 8+).
 
-| Tarea | Impacto | Entregable |
-|-------|---------|------------|
-| Ciencia en 11 guías pendientes | Medio | JSON + UI sección “Evidencia” |
-| UI audios / microlearning | Medio | Reproductor + lista; URLs externas (YouTube/Vimeo/Supabase Storage) |
-| Migrar catálogo crítico a Supabase | Bajo | Solo si se necesita edición sin deploy |
+| Tarea | Estado | Entregable |
+|-------|--------|------------|
+| Ciencia en 11 guías pendientes | ✅ | `facilitacion.json` — sección Evidencia en las 11 guías |
+| UI audios / microlearning | ✅ | Tab **Recursos** + `ActivityMedia.jsx` (YouTube/Vimeo/audio) |
+| Migrar catálogo crítico a Supabase | ⏸ | Fuera de alcance — no hay demanda de edición sin deploy |
+
+**Checklist deploy Sprint 5**
+
+1. Redeploy Production (solo frontend; sin SQL)
+2. Verificar `/actividad/fac-que-es-facilitar` → pestaña **Evidencia** y **Recursos**
+3. Agregar URLs de audio/video en campo `media[]` de actividades según contenido disponible
 
 **Fuera de alcance agente:** grabación de audios.
 

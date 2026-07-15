@@ -6,7 +6,7 @@ export default function ActivityScience({ kitpop }) {
   return (
     <div className="activity-pane">
       <div className="content-card">
-        <h3>Fundamento científico y técnico</h3>
+        <h3>Evidencia y fundamento</h3>
 
         {rows.length > 0 ? (
           rows.map((row) => (

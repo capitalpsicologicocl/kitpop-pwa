@@ -8,6 +8,7 @@ import GuestSignupCTA from '../components/auth/GuestSignupCTA'
 import ActivityGuide from '../components/activity/ActivityGuide'
 import ActivityHero from '../components/activity/ActivityHero'
 import ActivityJournalForm from '../components/activity/ActivityJournalForm'
+import ActivityMedia from '../components/activity/ActivityMedia'
 import ActivityScience from '../components/activity/ActivityScience'
 import ActivityTabs from '../components/activity/ActivityTabs'
 import ActivityTimer from '../components/activity/ActivityTimer'
@@ -15,6 +16,7 @@ import {
   buildActivityGuideDocumentHtml,
   getActivityGuideFilename,
 } from '../utils/activityExport'
+import { getActivityMediaItems } from '../utils/activityMedia'
 import { downloadDocumentWord, printDocumentPdf } from '../utils/documentExport'
 
 export default function Activity() {
@@ -33,6 +35,12 @@ export default function Activity() {
     setActiveTab('guide')
     setFavoriteError('')
   }, [slug])
+
+  useEffect(() => {
+    if (activeTab === 'media' && !getActivityMediaItems(activity?.kitpop).length) {
+      setActiveTab('guide')
+    }
+  }, [activeTab, activity])
 
   async function handleToggleFavorite() {
     setFavoriteError('')
@@ -97,13 +105,14 @@ export default function Activity() {
       />
 
       <div className="activity-sticky-tools">
-        <ActivityTabs activeTab={activeTab} onTabChange={setActiveTab} />
+        <ActivityTabs kitpop={kitpop} activeTab={activeTab} onTabChange={setActiveTab} />
 
         {showTimer && <ActivityTimer metas={kitpop.metas ?? []} />}
       </div>
 
       {activeTab === 'guide' && <ActivityGuide kitpop={kitpop} />}
       {activeTab === 'science' && <ActivityScience kitpop={kitpop} />}
+      {activeTab === 'media' && <ActivityMedia kitpop={kitpop} />}
       {activeTab === 'journal' && (
         <ActivityJournalForm
           activitySlug={activity.slug}
