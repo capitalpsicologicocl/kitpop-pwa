@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Routes, Route, useParams } from 'react-router-
 
 import RequireAuth from './components/auth/RequireAuth'
 import Layout from './components/layout/Layout'
+import { lazyPage } from './routes/lazyPage'
 
 import Home from './pages/Home'
 import Categories from './pages/Categories'
@@ -12,20 +13,23 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword'
-import Profile from './pages/Profile'
-import Favorites from './pages/Favorites'
-import Journal from './pages/Journal'
-import InteractiveHub from './pages/interactive/InteractiveHub'
-import InteractiveSurveys from './pages/interactive/InteractiveSurveys'
-import SurveyEditor from './pages/interactive/SurveyEditor'
-import SurveyResults from './pages/interactive/SurveyResults'
-import InteractiveLive from './pages/interactive/InteractiveLive'
-import LiveSessionEditor from './pages/interactive/LiveSessionEditor'
-import ParticipantJoin from './pages/interactive/ParticipantJoin'
-import WorkshopEditor from './pages/interactive/WorkshopEditor'
-import Workshops from './pages/workshops/Workshops'
-import WorkshopSummary from './pages/workshops/WorkshopSummary'
-import Admin from './pages/Admin'
+
+const Workshops = lazyPage(() => import('./pages/workshops/Workshops'))
+const WorkshopEditor = lazyPage(() => import('./pages/interactive/WorkshopEditor'))
+const WorkshopSummary = lazyPage(() => import('./pages/workshops/WorkshopSummary'))
+
+const InteractiveHub = lazyPage(() => import('./pages/interactive/InteractiveHub'))
+const InteractiveSurveys = lazyPage(() => import('./pages/interactive/InteractiveSurveys'))
+const SurveyEditor = lazyPage(() => import('./pages/interactive/SurveyEditor'))
+const SurveyResults = lazyPage(() => import('./pages/interactive/SurveyResults'))
+const InteractiveLive = lazyPage(() => import('./pages/interactive/InteractiveLive'))
+const LiveSessionEditor = lazyPage(() => import('./pages/interactive/LiveSessionEditor'))
+const ParticipantJoin = lazyPage(() => import('./pages/interactive/ParticipantJoin'))
+
+const Profile = lazyPage(() => import('./pages/Profile'))
+const Favorites = lazyPage(() => import('./pages/Favorites'))
+const Journal = lazyPage(() => import('./pages/Journal'))
+const Admin = lazyPage(() => import('./pages/Admin'))
 
 function RedirectLegacyWorkshop() {
   const { id } = useParams()

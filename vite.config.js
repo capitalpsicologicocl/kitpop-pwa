@@ -26,15 +26,15 @@ export default defineConfig(({ mode, command }) => {
     plugins: [
       react(),
       VitePWA({
-      registerType: 'autoUpdate',
-      includeAssets: [
-        'favicon.svg',
-        'favicon.ico',
-        'favicon-32.png',
-        'icons.svg',
-        'apple-touch-icon-180x180.png',
-      ],
-      manifest: {
+        registerType: 'autoUpdate',
+        includeAssets: [
+          'favicon.svg',
+          'favicon.ico',
+          'favicon-32.png',
+          'icons.svg',
+          'apple-touch-icon-180x180.png',
+        ],
+        manifest: {
         name: 'KitPOP de Facilitación',
         short_name: 'KitPOP',
         description:
@@ -106,5 +106,19 @@ export default defineConfig(({ mode, command }) => {
       },
       }),
     ],
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules/@paypal')) {
+              return 'paypal'
+            }
+            if (id.includes('node_modules/@supabase')) {
+              return 'supabase'
+            }
+          },
+        },
+      },
+    },
   }
 })

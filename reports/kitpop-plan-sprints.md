@@ -176,7 +176,8 @@
 | Favicon KitPOP (app + landing) | 🤖 | ✅ | `assets/kitpop-favicon.svg` + `npm run generate:favicons` |
 | Email bienvenida + instrucciones PWA | 🤖 | ✅ | `confirm-signup.html`, `welcome.html`, `auth_emails_setup.sql` |
 | Configurar Resend SMTP en Supabase | ⚙️ | ⏳ | Pegar template + SMTP (guía en `auth_emails_setup.sql`) |
-| Code-splitting rutas pesadas | 🤖 | ⏳ | `React.lazy` en `/talleres`, `/interactivo`, `/admin` |
+| Code-splitting rutas pesadas | 🤖 | ✅ | `React.lazy` vía `lazyPage()` en talleres, interactivo, perfil y admin |
+| Análisis bundle | 🤖 | ✅ | Chunk principal `index`: 1253 kB → 252 kB (−80%); vendors `supabase` + `paypal` separados |
 | Eliminar APIs Stripe muertas | 🤖 | ⏳ | Libera 3 slots Vercel |
 
 **Checklist deploy Sprint 8**
