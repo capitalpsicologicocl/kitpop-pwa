@@ -1584,3 +1584,207 @@
     font-size:14px;
   }
 }
+
+/* Sprint 11 — Espacios de trabajo */
+
+.participant-panel-workspace {
+  max-width:960px;
+}
+
+.workspace-powered-by {
+  margin-top:24px;
+  font-size:12px;
+  color:var(--g400);
+  text-align:center;
+}
+
+.workspace-participant-auth h1 {
+  font-family:Nunito,sans-serif;
+  font-size:26px;
+  color:var(--g800);
+  margin:8px 0;
+}
+
+.workspace-auth-tabs {
+  display:flex;
+  gap:8px;
+  margin:12px 0;
+}
+
+.workspace-auth-form {
+  margin-top:12px;
+}
+
+.workspace-privacy-check {
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:12px;
+  color:var(--g600);
+  line-height:1.5;
+}
+
+.workspace-participant-layout {
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:16px;
+  margin-top:16px;
+}
+
+.workspace-section-nav {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.workspace-section-nav-item {
+  text-align:left;
+  border:1px solid var(--g200);
+  border-radius:10px;
+  padding:10px 12px;
+  background:#fff;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.workspace-section-nav-item.on {
+  border-color:var(--brand);
+  background:var(--brand-l);
+}
+
+.workspace-section-nav-item.locked {
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
+.workspace-section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.workspace-section-head h2 {
+  margin:0;
+  font-size:20px;
+}
+
+.workspace-info-block {
+  white-space:pre-wrap;
+  line-height:1.65;
+  color:var(--g700);
+}
+
+.workspace-choice-list {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.workspace-choice-item {
+  display:flex;
+  gap:8px;
+  align-items:center;
+  font-size:14px;
+}
+
+.workspace-table-wrap {
+  overflow-x:auto;
+}
+
+.workspace-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-bottom:12px;
+}
+
+.workspace-table th,
+.workspace-table td {
+  border:1px solid var(--g200);
+  padding:8px;
+  vertical-align:top;
+}
+
+.workspace-table input {
+  width:100%;
+  min-width:120px;
+}
+
+.workspace-editor-page .workspace-tabs {
+  margin-bottom:16px;
+}
+
+.workspace-status-actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:12px 0;
+}
+
+.workspace-add-types {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.workspace-section-list {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.workspace-section-editor {
+  margin-top:0;
+}
+
+.workspace-section-fields {
+  flex:1;
+}
+
+.workspace-inline-check {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.workspace-option-row {
+  display:flex;
+  gap:8px;
+  margin-bottom:8px;
+}
+
+.workspace-panel-table-wrap {
+  overflow-x:auto;
+}
+
+.workspace-panel-table {
+  width:100%;
+  border-collapse:collapse;
+  margin:16px 0;
+}
+
+.workspace-panel-table th,
+.workspace-panel-table td {
+  border:1px solid var(--g200);
+  padding:8px;
+  font-size:13px;
+  vertical-align:top;
+}
+
+.workspace-live-responses {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.workspace-text-responses {
+  font-size:12px;
+  word-break:break-word;
+}
+
+@media (max-width:768px) {
+  .workspace-participant-layout {
+    grid-template-columns:1fr;
+  }
+}

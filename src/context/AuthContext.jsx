@@ -25,10 +25,10 @@ export function AuthProvider({ children }) {
   const [favoriteSlugs, setFavoriteSlugs] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const refreshProfile = useCallback(async (userId) => {
+  const refreshProfile = useCallback(async (userId, userEmail) => {
     try {
       const data = await fetchProfile(userId)
-      setProfile(data)
+      setProfile(data ? { ...data, email: userEmail ?? null } : null)
     } catch {
       setProfile(null)
     }
@@ -58,7 +58,7 @@ export function AuthProvider({ children }) {
 
       if (sessionUser) {
         await Promise.all([
-          refreshProfile(sessionUser.id),
+          refreshProfile(sessionUser.id, sessionUser.email),
           refreshFavorites(sessionUser.id),
         ])
       } else {
@@ -80,7 +80,7 @@ export function AuthProvider({ children }) {
 
         if (sessionUser) {
           await Promise.all([
-            refreshProfile(sessionUser.id),
+            refreshProfile(sessionUser.id, sessionUser.email),
             refreshFavorites(sessionUser.id),
           ])
         } else {

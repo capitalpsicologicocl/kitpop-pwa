@@ -16,8 +16,9 @@
 -- ═══════════════════════════════════════════════════════════════
 -- 2) Authentication → Providers → Email
 -- ═══════════════════════════════════════════════════════════════
---    Activar "Confirm email" (recomendado).
---    El correo de confirmación incluye bienvenida + instrucciones PWA.
+--    Espacios de trabajo (participantes): desactivar "Confirm email" (Auto Confirm)
+--      para que el registro en /p/CODIGO no requiera clic en correo.
+--    Facilitadores KitPOP normales: puedes mantener confirmación si lo prefieres.
 --
 -- ═══════════════════════════════════════════════════════════════
 -- 3) Authentication → Email Templates

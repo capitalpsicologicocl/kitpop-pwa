@@ -1,3 +1,5 @@
+import { isStaffEmail } from './staffAccess'
+
 /** IDs de modelo Anthropic (sincronizar con api/_lib/aiPlanLimits.js). */
 export const AI_MODELS = {
   haiku: 'claude-haiku-4-5-20251001',
@@ -92,6 +94,7 @@ export const PLAN_LIMITS = {
     workshops: Infinity,
     surveys: Infinity,
     liveSessions: Infinity,
+    workspaceParticipants: 50,
     ai: {
       monthly: 18,
       lifetime: null,
@@ -124,7 +127,7 @@ export const PLAN_LIMITS = {
 }
 
 const ACTIVE_STATUSES = new Set(['active', 'trialing'])
-const PAID_PLANS = new Set(['pro', 'pro_studio', 'pro_team'])
+const PAID_PLANS = new Set(['pro', 'pro_founding', 'pro_studio', 'pro_team'])
 
 /** Planes visibles en checkout base (Fundador se muestra aparte si hay cupo). */
 export const VISIBLE_PLAN_IDS = ['explorer', 'pro']
@@ -163,6 +166,10 @@ export function normalizePlanId(plan) {
 }
 
 export function getUserPlan(profile) {
+  if (isStaffEmail(profile?.email)) {
+    return 'pro_studio'
+  }
+
   const planId = normalizePlanId(profile?.plan)
 
   if (!PAID_PLANS.has(planId)) {
@@ -222,6 +229,10 @@ export function resolveAiUsage(profile) {
 }
 
 export function getAiGenerationRemaining(profile) {
+  if (isStaffEmail(profile?.email)) {
+    return Infinity
+  }
+
   const { limits, monthlyUsed, lifetimeUsed } = resolveAiUsage(profile)
 
   if (limits.lifetime != null && limits.lifetime > 0) {

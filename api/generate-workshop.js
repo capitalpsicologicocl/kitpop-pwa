@@ -325,10 +325,10 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: 'No encontramos tu perfil.' })
     }
 
-    if (!canUseAiGeneration(profile)) {
+    if (!canUseAiGeneration(profile, user.email)) {
       return res.status(403).json({
         error: 'No te quedan diseños con IA disponibles. Mejora a Pro o espera al próximo mes.',
-        usage: buildAiUsageResponse(profile),
+        usage: buildAiUsageResponse(profile, user.email),
       })
     }
 
@@ -381,7 +381,7 @@ export default async function handler(req, res) {
 
     const brief = buildWorkshopBrief(workshop, sessions)
     const catalog = getKitpopActivityCatalog()
-    const model = getAiModelForTask(profile, 'workshop')
+    const model = getAiModelForTask(profile, 'workshop', user.email)
     const system = useKitpopActivities
       ? `Eres un diseñador experto de talleres y reuniones para KitPOP, una plataforma de facilitación con base científica en psicología positiva, trabajo en equipo y comunicación. Seleccionas actividades del catálogo provisto y armas secuencias coherentes, variadas y realizables.`
       : `Eres un diseñador experto de talleres y reuniones. Creas secuencias pedagógicas con actividades originales, teóricas y pausas, adaptadas al brief del cliente.`
@@ -409,7 +409,7 @@ export default async function handler(req, res) {
       model,
       useKitpopActivities,
       includeTheoryModules,
-      usage: buildAiUsageResponse(updatedProfile),
+      usage: buildAiUsageResponse(updatedProfile, user.email),
     })
   } catch (error) {
     console.error('[generate-workshop]', error)
