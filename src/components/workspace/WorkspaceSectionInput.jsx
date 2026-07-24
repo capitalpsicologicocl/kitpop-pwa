@@ -1,6 +1,7 @@
 import { getLikertLabel } from '../../utils/surveyHelpers'
 import {
   emptyTableRows,
+  getSectionPrompt,
   normalizeTableValue,
 } from '../../utils/workspaceHelpers'
 
@@ -34,11 +35,32 @@ export default function WorkspaceSectionInput({
   disabled = false,
 }) {
   const config = section.config ?? {}
+  const prompt = getSectionPrompt(section)
 
   if (section.section_type === 'info') {
-    return <div className="workspace-info-block">{config.content}</div>
+    return (
+      <div className="workspace-activity-body">
+        {config.description ? (
+          <p className="workspace-section-description">{config.description}</p>
+        ) : null}
+        <div className="workspace-info-block">{prompt}</div>
+      </div>
+    )
   }
 
+  return (
+    <div className="workspace-activity-body">
+      {config.description ? (
+        <p className="workspace-section-description">{config.description}</p>
+      ) : null}
+      {prompt ? <p className="workspace-section-prompt">{prompt}</p> : null}
+
+      {renderResponseInput(section, config, value, onChange, disabled)}
+    </div>
+  )
+}
+
+function renderResponseInput(section, config, value, onChange, disabled) {
   if (section.section_type === 'text_short') {
     return (
       <input

@@ -254,7 +254,7 @@ export default function WorkspaceEditor() {
     setError('')
 
     try {
-      const defaults = buildDefaultSection(sectionType, sections.length)
+      const defaults = buildDefaultSection(sectionType, sections.length, 'individual', sections)
       const created = await createWorkspaceSection(user.id, workspace.id, defaults)
       setSections((current) => [...current, created])
       setMessage('Bloque agregado.')
@@ -273,12 +273,23 @@ export default function WorkspaceEditor() {
     setSectionSavingId(section.id)
     setError('')
 
+    const payload = { ...section }
+
+    if (section.section_type === 'info') {
+      const prompt = section.config?.prompt ?? section.config?.content ?? ''
+      payload.config = {
+        ...section.config,
+        prompt,
+        content: prompt,
+      }
+    }
+
     try {
-      const updated = await updateWorkspaceSection(user.id, section.id, section)
+      const updated = await updateWorkspaceSection(user.id, section.id, payload)
       setSections((current) =>
         current.map((item) => (item.id === section.id ? updated : item))
       )
-      setMessage('Bloque guardado.')
+      setMessage('Actividad guardada.')
     } catch (saveError) {
       setError(saveError.message || 'No se pudo guardar el bloque.')
     } finally {
@@ -515,7 +526,7 @@ export default function WorkspaceEditor() {
           </div>
 
           <div className="auth-panel interactive-form">
-            <h3>Agregar bloques</h3>
+            <h3>Agregar actividades</h3>
             <div className="workspace-add-types">
               {SECTION_TYPE_OPTIONS.map((option) => (
                 <button
@@ -532,10 +543,12 @@ export default function WorkspaceEditor() {
           </div>
 
           <div className="workspace-section-list">
-            {sections.map((section) => (
+            {sections.map((section, index) => (
               <WorkspaceSectionEditor
                 key={section.id}
                 section={section}
+                sectionIndex={index}
+                sections={sections}
                 hasResponses={responseSectionIds.has(section.id)}
                 saving={sectionSavingId === section.id}
                 onChange={(next) =>

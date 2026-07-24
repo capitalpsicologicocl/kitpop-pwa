@@ -39,24 +39,42 @@ export function getScopeLabel(scope) {
   return WORKSPACE_SCOPES[scope] ?? scope
 }
 
-export function buildDefaultSection(type, sortOrder = 0, scope = 'individual') {
+export function buildDefaultSection(type, sortOrder = 0, scope = 'individual', previousSections = []) {
+  const hasPrevious = previousSections.length > 0
+  const previousModule = hasPrevious
+    ? resolveSectionModuleName(previousSections, previousSections.length - 1)
+    : ''
+
   const base = {
     title: getSectionTypeLabel(type),
     section_type: type,
     scope,
     sort_order: sortOrder,
     is_required: type !== 'info',
-    config: {},
+    config: {
+      module_name: previousModule || 'Módulo 1',
+      module_continue: hasPrevious,
+      description: '',
+      prompt: '',
+    },
   }
 
   switch (type) {
     case 'info':
-      return { ...base, config: { content: 'Escribe aquí las instrucciones para los participantes.' } }
+      return {
+        ...base,
+        config: {
+          ...base.config,
+          prompt: 'Escribe aquí las instrucciones para los participantes.',
+          content: 'Escribe aquí las instrucciones para los participantes.',
+        },
+      }
     case 'single_choice':
     case 'multi_choice':
       return {
         ...base,
         config: {
+          ...base.config,
           options: [
             { id: 'opt1', label: 'Opción 1' },
             { id: 'opt2', label: 'Opción 2' },
@@ -64,13 +82,17 @@ export function buildDefaultSection(type, sortOrder = 0, scope = 'individual') {
         },
       }
     case 'likert':
-      return { ...base, config: { scale: 5 } }
+      return { ...base, config: { ...base.config, scale: 5 } }
     case 'boolean':
-      return { ...base, config: { true_label: 'Sí', false_label: 'No' } }
+      return {
+        ...base,
+        config: { ...base.config, true_label: 'Sí', false_label: 'No' },
+      }
     case 'table':
       return {
         ...base,
         config: {
+          ...base.config,
           columns: [
             { key: 'col1', label: 'Columna 1' },
             { key: 'col2', label: 'Columna 2' },
@@ -82,6 +104,44 @@ export function buildDefaultSection(type, sortOrder = 0, scope = 'individual') {
     default:
       return base
   }
+}
+
+/** Nombre efectivo del módulo (resuelve continuidad hacia atrás). */
+export function resolveSectionModuleName(sections, index) {
+  if (!Array.isArray(sections) || index < 0 || index >= sections.length) {
+    return ''
+  }
+
+  let cursor = index
+
+  while (cursor >= 0) {
+    const config = sections[cursor]?.config ?? {}
+    const name = config.module_name?.trim()
+
+    if (!config.module_continue || cursor === 0) {
+      return name || `Módulo ${cursor + 1}`
+    }
+
+    cursor -= 1
+  }
+
+  return 'Módulo 1'
+}
+
+export function shouldShowModuleHeader(sections, index) {
+  if (index <= 0) {
+    return true
+  }
+
+  return (
+    resolveSectionModuleName(sections, index) !==
+    resolveSectionModuleName(sections, index - 1)
+  )
+}
+
+export function getSectionPrompt(section) {
+  const config = section?.config ?? {}
+  return config.prompt?.trim() || config.content?.trim() || ''
 }
 
 export function isResponseSection(section) {

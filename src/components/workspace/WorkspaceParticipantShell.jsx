@@ -7,7 +7,7 @@ import {
   joinWorkspace,
   upsertWorkspaceResponse,
 } from '../../services/workspaceService'
-import { isResponseSection } from '../../utils/workspaceHelpers'
+import { isResponseSection, resolveSectionModuleName, shouldShowModuleHeader } from '../../utils/workspaceHelpers'
 
 export default function WorkspaceParticipantShell({ code }) {
   const [workspace, setWorkspace] = useState(null)
@@ -209,6 +209,9 @@ export default function WorkspaceParticipantShell({ code }) {
         <nav className="workspace-section-nav" aria-label="Secciones">
           {sections.map((section, index) => {
             const locked = isSectionLocked(index)
+            const moduleName = resolveSectionModuleName(sections, index)
+            const showModuleInNav =
+              shouldShowModuleHeader(sections, index) && moduleName
 
             return (
               <button
@@ -220,8 +223,13 @@ export default function WorkspaceParticipantShell({ code }) {
                 disabled={locked}
                 onClick={() => setActiveSectionId(section.id)}
               >
-                {index + 1}. {section.title}
-                {section.response ? ' ✓' : ''}
+                {showModuleInNav ? (
+                  <span className="workspace-nav-module">{moduleName}</span>
+                ) : null}
+                <span>
+                  {index + 1}. {section.title}
+                  {section.response ? ' ✓' : ''}
+                </span>
               </button>
             )
           })}
@@ -229,6 +237,12 @@ export default function WorkspaceParticipantShell({ code }) {
 
         {activeSection && (
           <section className="workspace-section-panel auth-panel">
+            {shouldShowModuleHeader(sections, activeIndex) && (
+              <p className="workspace-module-banner">
+                {resolveSectionModuleName(sections, activeIndex)}
+              </p>
+            )}
+
             <div className="workspace-section-head">
               <h2>{activeSection.title}</h2>
               <span className="profile-badge">
