@@ -485,22 +485,33 @@ export default function WorkspaceEditor() {
                 </select>
               </div>
             </div>
-            <button type="submit" className="btn-primary" disabled={savingMeta}>
-              {savingMeta ? 'Guardando...' : 'Guardar datos'}
-            </button>
+            <div className="form-actions">
+              <button type="submit" className="btn-primary" disabled={savingMeta}>
+                {savingMeta ? 'Guardando...' : 'Guardar datos'}
+              </button>
+            </div>
           </form>
 
-          <div className="auth-panel interactive-form">
+          <div className="auth-panel interactive-form workspace-groups-panel">
             <h3>Grupos</h3>
-            <p className="interactive-item-meta">Un nombre por línea. Ej: Grupo 1, Equipo Norte…</p>
-            <textarea
-              rows={6}
-              value={groupNames}
-              onChange={(event) => setGroupNames(event.target.value)}
-            />
-            <button type="button" className="btn-primary" onClick={handleSaveGroups}>
-              Guardar grupos
-            </button>
+            <div className="form-grid">
+              <div className="field full">
+                <label htmlFor="ws-groups">Nombres de grupos</label>
+                <p className="field-hint">Un nombre por línea. Ej: Grupo 1, Equipo Norte…</p>
+                <textarea
+                  id="ws-groups"
+                  rows={7}
+                  value={groupNames}
+                  onChange={(event) => setGroupNames(event.target.value)}
+                  placeholder={'Grupo 1\nGrupo 2\nEquipo Norte'}
+                />
+              </div>
+            </div>
+            <div className="form-actions">
+              <button type="button" className="btn-primary" onClick={handleSaveGroups}>
+                Guardar grupos
+              </button>
+            </div>
           </div>
 
           <div className="auth-panel interactive-form">

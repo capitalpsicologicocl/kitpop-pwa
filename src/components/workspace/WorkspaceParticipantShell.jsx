@@ -252,25 +252,42 @@ export default function WorkspaceParticipantShell({ code }) {
             />
 
             {isResponseSection(activeSection) && activeSection.can_edit && (
-              <button
-                type="button"
-                className="btn-primary"
-                disabled={savingSectionId === activeSection.id}
-                onClick={() => handleSaveSection(activeSection)}
-              >
-                {savingSectionId === activeSection.id ? 'Guardando...' : 'Guardar respuesta'}
-              </button>
+              <div className="form-actions">
+                <button
+                  type="button"
+                  className="btn-primary"
+                  disabled={savingSectionId === activeSection.id}
+                  onClick={() => handleSaveSection(activeSection)}
+                >
+                  {savingSectionId === activeSection.id ? 'Guardando...' : 'Guardar respuesta'}
+                </button>
+
+                {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
+                  <button
+                    type="button"
+                    className="timer-btn timer-btn-secondary"
+                    disabled={isSectionLocked(activeIndex + 1)}
+                    onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
+                  >
+                    Siguiente sección →
+                  </button>
+                )}
+              </div>
             )}
 
-            {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
-              <button
-                type="button"
-                className="timer-btn timer-btn-secondary"
-                disabled={isSectionLocked(activeIndex + 1)}
-                onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
-              >
-                Siguiente sección →
-              </button>
+            {(!isResponseSection(activeSection) || !activeSection.can_edit) &&
+              navigationMode === 'sequential' &&
+              activeIndex < sections.length - 1 && (
+              <div className="form-actions">
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-secondary"
+                  disabled={isSectionLocked(activeIndex + 1)}
+                  onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
+                >
+                  Siguiente sección →
+                </button>
+              </div>
             )}
           </section>
         )}
