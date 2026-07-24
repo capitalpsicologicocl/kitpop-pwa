@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test'
 
+import { getE2ECredentials, loginAsTestUser, waitForActivityPage } from './helpers/auth.js'
+
 test.describe('Guest browse', () => {
   test('home loads without login', async ({ page }) => {
     await page.goto('/')
@@ -14,13 +16,11 @@ test.describe('Guest browse', () => {
   })
 
   test('activity guide is readable as guest', async ({ page }) => {
-    await page.goto('/actividad/ronda-noticias')
-    await expect(page.locator('#act-view')).toBeVisible()
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Ronda de Buenas Noticias')
+    await waitForActivityPage(page, 'ronda-noticias', /Ronda de Buenas Noticias/i)
   })
 
   test('guest signup CTA appears on activity page', async ({ page }) => {
-    await page.goto('/actividad/ronda-noticias')
+    await waitForActivityPage(page, 'ronda-noticias', /Ronda de Buenas Noticias/i)
     await expect(page.getByRole('link', { name: 'Crear cuenta gratis' })).toBeVisible()
   })
 })
@@ -52,17 +52,12 @@ test.describe('Export Pro gate', () => {
 })
 
 test.describe('Authenticated flows', () => {
-  const email = process.env.E2E_TEST_EMAIL
-  const password = process.env.E2E_TEST_PASSWORD
+  const { hasAuthCredentials } = getE2ECredentials()
 
-  test.skip(!email || !password, 'Set E2E_TEST_EMAIL and E2E_TEST_PASSWORD for auth E2E')
+  test.skip(!hasAuthCredentials, 'Set E2E_TEST_EMAIL and E2E_TEST_PASSWORD for auth E2E')
 
   test.beforeEach(async ({ page }) => {
-    await page.goto('/login')
-    await page.getByLabel(/correo/i).fill(email)
-    await page.getByLabel(/contraseña/i).fill(password)
-    await page.getByRole('button', { name: /iniciar sesión/i }).click()
-    await expect(page).not.toHaveURL(/\/login/)
+    await loginAsTestUser(page)
   })
 
   test('explorer sees export gate on workshops list path', async ({ page }) => {
