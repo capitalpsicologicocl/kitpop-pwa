@@ -166,7 +166,7 @@ export function AuthProvider({ children }) {
     }
 
     const data = await updateProfile(user.id, fullName)
-    setProfile(data)
+    setProfile(data ? { ...data, email: user.email ?? null } : null)
     return data
   }, [user])
 
@@ -176,7 +176,7 @@ export function AuthProvider({ children }) {
     }
 
     const data = await uploadAvatar(user.id, file)
-    setProfile(data)
+    setProfile(data ? { ...data, email: user.email ?? null } : null)
     return data
   }, [user])
 
