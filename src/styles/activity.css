@@ -601,14 +601,79 @@
 .field textarea {
   border:1.5px solid var(--g200);
   border-radius:12px;
-  padding:11px;
+  padding:12px 14px;
   background:var(--white);
   font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;
+  line-height:1.45;
+  width:100%;
+  box-sizing:border-box;
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline:none;
+  border-color:var(--brand-m);
+  box-shadow:0 0 0 3px rgba(59,30,142,.12);
 }
 
 .field textarea {
-  min-height:105px;
+  min-height:132px;
   resize:vertical;
+}
+
+.field-hint {
+  font-size:12px;
+  color:var(--g500);
+  line-height:1.55;
+  margin:0;
+}
+
+.form-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:center;
+  margin-top:20px;
+  padding-top:2px;
+}
+
+.auth-panel > textarea,
+.interactive-form > textarea,
+.auth-panel > input[type='text'],
+.interactive-form > input[type='text'],
+.auth-panel > input[type='email'],
+.interactive-form > input[type='email'],
+.auth-panel > input[type='password'],
+.interactive-form > input[type='password'] {
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  border:1.5px solid var(--g200);
+  border-radius:12px;
+  padding:12px 14px;
+  background:var(--white);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px;
+  line-height:1.45;
+}
+
+.auth-panel > textarea,
+.interactive-form > textarea {
+  min-height:140px;
+  resize:vertical;
+  margin-top:8px;
+}
+
+.auth-panel form > .btn-primary,
+.interactive-form form > .btn-primary,
+.auth-panel .form-grid ~ .btn-primary,
+.interactive-form .form-grid ~ .btn-primary,
+.auth-panel .form-grid ~ .form-actions,
+.interactive-form .form-grid ~ .form-actions {
+  margin-top:20px;
 }
 
 @media(max-width:920px) {
@@ -659,5 +724,23 @@
 
   .field.full {
     grid-column:auto;
+  }
+
+  .form-actions {
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .form-actions .btn-primary,
+  .form-actions .btn-secondary,
+  .form-actions .timer-btn {
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height:44px;
   }
 }

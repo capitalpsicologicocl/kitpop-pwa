@@ -207,9 +207,11 @@ export default function WorkspaceSectionEditor({
         </div>
       )}
 
-      <button type="button" className="btn-primary" disabled={saving} onClick={onSave}>
-        {saving ? 'Guardando...' : 'Guardar bloque'}
-      </button>
+      <div className="form-actions">
+        <button type="button" className="btn-primary" disabled={saving} onClick={onSave}>
+          {saving ? 'Guardando...' : 'Guardar bloque'}
+        </button>
+      </div>
     </article>
   )
 }

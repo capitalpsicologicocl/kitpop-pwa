@@ -2,9 +2,7 @@ import {
   aggregateBooleanResponses,
   aggregateChoiceResponses,
   aggregateLikertResponses,
-  buildDefaultSection,
   getWorkspaceStatusLabel,
-  isResponseSection,
 } from './workspaceHelpers'
 
 export function buildWorkspaceExportHtml({
@@ -25,31 +23,37 @@ export function buildWorkspaceExportHtml({
         (response) => response.section_id === section.id
       )
 
-      let body = ''
+      const body = (() => {
+        if (section.section_type === 'info') {
+          return `<p>${escapeHtml(section.config?.content ?? '')}</p>`
+        }
 
-      if (section.section_type === 'info') {
-        body = `<p>${escapeHtml(section.config?.content ?? '')}</p>`
-      } else if (
-        section.section_type === 'single_choice' ||
-        section.section_type === 'multi_choice'
-      ) {
-        const aggregated = aggregateChoiceResponses(section, sectionResponses)
-        body = `<ul>${aggregated
-          .map(
-            (option) =>
-              `<li><strong>${escapeHtml(option.label)}</strong>: ${option.count}</li>`
-          )
-          .join('')}</ul>`
-      } else if (section.section_type === 'likert') {
-        const { average, counts, total } = aggregateLikertResponses(section, sectionResponses)
-        body = `<p>Promedio: ${average} (${total} respuestas)</p><ul>${Object.entries(counts)
-          .map(([score, count]) => `<li>${score}: ${count}</li>`)
-          .join('')}</ul>`
-      } else if (section.section_type === 'boolean') {
-        const { yes, no, yesPct } = aggregateBooleanResponses(section, sectionResponses)
-        body = `<p>Sí: ${yes} (${yesPct}%) · No: ${no}</p>`
-      } else {
-        body = `<ul>${sectionResponses
+        if (
+          section.section_type === 'single_choice' ||
+          section.section_type === 'multi_choice'
+        ) {
+          const aggregated = aggregateChoiceResponses(section, sectionResponses)
+          return `<ul>${aggregated
+            .map(
+              (option) =>
+                `<li><strong>${escapeHtml(option.label)}</strong>: ${option.count}</li>`
+            )
+            .join('')}</ul>`
+        }
+
+        if (section.section_type === 'likert') {
+          const { average, counts, total } = aggregateLikertResponses(section, sectionResponses)
+          return `<p>Promedio: ${average} (${total} respuestas)</p><ul>${Object.entries(counts)
+            .map(([score, count]) => `<li>${score}: ${count}</li>`)
+            .join('')}</ul>`
+        }
+
+        if (section.section_type === 'boolean') {
+          const { yes, no, yesPct } = aggregateBooleanResponses(section, sectionResponses)
+          return `<p>Sí: ${yes} (${yesPct}%) · No: ${no}</p>`
+        }
+
+        return `<ul>${sectionResponses
           .map((response) => {
             const label =
               section.scope === 'group'
@@ -61,7 +65,7 @@ export function buildWorkspaceExportHtml({
             )}</li>`
           })
           .join('')}</ul>`
-      }
+      })()
 
       return `
         <section style="margin-bottom:24px;">

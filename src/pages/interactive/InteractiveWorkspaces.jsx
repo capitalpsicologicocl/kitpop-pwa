@@ -174,9 +174,11 @@ export default function InteractiveWorkspaces() {
             </div>
           </div>
 
-          <button type="submit" className="btn-primary" disabled={submitting}>
-            {submitting ? 'Creando...' : 'Crear y configurar →'}
-          </button>
+          <div className="form-actions">
+            <button type="submit" className="btn-primary" disabled={submitting}>
+              {submitting ? 'Creando...' : 'Crear y configurar →'}
+            </button>
+          </div>
         </form>
       )}
 
