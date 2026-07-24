@@ -25,4 +25,5 @@ export const RESOURCE_LABELS = {
   workshop: 'Taller',
   survey: 'Encuesta',
   live: 'Sesión en vivo',
+  workspace: 'Espacio de trabajo',
 }

@@ -192,6 +192,22 @@
 
 ---
 
+## Sprint 11 — Espacios de trabajo participantes (Jul 2026) 🟡 Diseño
+
+**Meta:** panel facilitador + inscripción participantes + grupos + respuestas individual/grupal; piloto **lun 28 jul 2026** (presencial; trabajo entre sesiones).
+
+**Diseño completo:** [`reports/sprint-11-workspaces-design.md`](sprint-11-workspaces-design.md)
+
+| Fase | Alcance | Fecha objetivo |
+|------|---------|----------------|
+| **11a MVP piloto** | Editor bloques, grupos, registro, panel, pausar/archivar, imprimir | Fin de semana 26–27 jul |
+| **11b** | Uploads, realtime, plantillas | Ago 2026 |
+| **11c** | Pricing Explorer/Pro/Studio | Ago 2026 |
+
+**Límite costos:** Pro ≤50 participantes/espacio; sin Storage en 11a; RPC Supabase > APIs nuevas.
+
+---
+
 ## Sprint 9 — Confianza landing (Semana 17–18) ⏳ Prioridad 2
 
 **Meta:** social proof creíble (estructura lista; contenido real tuyo).

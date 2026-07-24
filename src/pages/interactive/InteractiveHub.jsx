@@ -6,13 +6,15 @@ import KitpopIcon from '../../icons/kitpopIcons'
 import { useAuth } from '../../context/AuthContext'
 import { fetchLiveSessions } from '../../services/liveSessionService'
 import { fetchSurveys } from '../../services/surveyService'
-import { getPlanLabel, getPlanLimits } from '../../utils/planLimits'
+import { fetchWorkspaces } from '../../services/workspaceService'
+import { getPlanLabel, getPlanLimits, hasPaidPlan } from '../../utils/planLimits'
 
 export default function InteractiveHub() {
   const { user, profile, loading } = useAuth()
   const [counts, setCounts] = useState({
     surveys: 0,
     live: 0,
+    workspaces: 0,
   })
 
   useEffect(() => {
@@ -24,15 +26,17 @@ export default function InteractiveHub() {
 
     async function loadCounts() {
       try {
-        const [surveys, liveSessions] = await Promise.all([
+        const [surveys, liveSessions, workspaces] = await Promise.all([
           fetchSurveys(user.id),
           fetchLiveSessions(user.id),
+          fetchWorkspaces(user.id).catch(() => []),
         ])
 
         if (mounted) {
           setCounts({
             surveys: surveys.length,
             live: liveSessions.length,
+            workspaces: workspaces.length,
           })
         }
       } catch {
@@ -88,7 +92,7 @@ export default function InteractiveHub() {
       <div className="page-head">
         <h1 className="cv-title">Espacio interactivo</h1>
         <p className="cv-desc">
-          Encuestas y polls en vivo para facilitar con datos reales de participantes.
+          Encuestas, espacios de trabajo y polls en vivo para facilitar con datos reales.
         </p>
         <span className="profile-badge">{getPlanLabel(profile)}</span>
       </div>
@@ -96,7 +100,20 @@ export default function InteractiveHub() {
       <InteractiveNav />
 
       <div className="profile-hub-grid">
-        <Link to="/interactivo/encuestas" className="profile-hub-card profile-hub-card-featured">
+        {hasPaidPlan(profile) && (
+          <Link to="/interactivo/espacios" className="profile-hub-card profile-hub-card-featured">
+            <span className="profile-hub-icon">
+              <KitpopIcon name="survey" size={24} />
+            </span>
+            <strong>Espacios de trabajo</strong>
+            <p>Inscripción, grupos y paneles colaborativos entre sesiones.</p>
+            <span className="profile-hub-count">
+              {counts.workspaces} espacio{counts.workspaces === 1 ? '' : 's'}
+            </span>
+          </Link>
+        )}
+
+        <Link to="/interactivo/encuestas" className="profile-hub-card">
           <span className="profile-hub-icon">
             <KitpopIcon name="survey" size={24} />
           </span>
@@ -122,7 +139,7 @@ export default function InteractiveHub() {
       <div className="auth-panel interactive-note">
         <h3>Participantes sin login</h3>
         <p>
-          Comparte el código o enlace <code>/p/CODIGO</code> para encuestas y polls en vivo.
+          Comparte el código o enlace <code>/p/CODIGO</code> para encuestas, espacios de trabajo y polls en vivo.
           Talleres están en tu perfil → Talleres.
         </p>
       </div>

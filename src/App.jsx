@@ -26,6 +26,9 @@ const InteractiveLive = lazyPage(() => import('./pages/interactive/InteractiveLi
 const LiveSessionEditor = lazyPage(() => import('./pages/interactive/LiveSessionEditor'))
 const ParticipantJoin = lazyPage(() => import('./pages/interactive/ParticipantJoin'))
 
+const InteractiveWorkspaces = lazyPage(() => import('./pages/interactive/InteractiveWorkspaces'))
+const WorkspaceEditor = lazyPage(() => import('./pages/interactive/WorkspaceEditor'))
+
 const Profile = lazyPage(() => import('./pages/Profile'))
 const Favorites = lazyPage(() => import('./pages/Favorites'))
 const Journal = lazyPage(() => import('./pages/Journal'))
@@ -73,6 +76,8 @@ export default function App() {
             <Route path="/interactivo/encuestas/:id/resultados" element={<SurveyResults />} />
             <Route path="/interactivo/en-vivo" element={<InteractiveLive />} />
             <Route path="/interactivo/en-vivo/:id" element={<LiveSessionEditor />} />
+            <Route path="/interactivo/espacios" element={<InteractiveWorkspaces />} />
+            <Route path="/interactivo/espacios/:id" element={<WorkspaceEditor />} />
             <Route path="/perfil" element={<Profile />} />
             <Route path="/favoritos" element={<Favorites />} />
             <Route path="/bitacora" element={<Journal />} />

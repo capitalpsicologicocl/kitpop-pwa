@@ -8,6 +8,7 @@ import { fetchAdminAccess } from '../services/adminService'
 import { fetchJournalEntries } from '../services/journalService'
 import { syncPayPalSubscription } from '../services/paypalService'
 import { fetchWorkshops } from '../services/workshopService'
+import { fetchWorkspaces } from '../services/workspaceService'
 
 function getInitials(name = '', email = '') {
   const source = name.trim() || email.trim()
@@ -42,6 +43,7 @@ export default function Profile() {
   const [fullName, setFullName] = useState('')
   const [journalCount, setJournalCount] = useState(0)
   const [workshopCount, setWorkshopCount] = useState(0)
+  const [workspaceCount, setWorkspaceCount] = useState(0)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
@@ -99,7 +101,7 @@ export default function Profile() {
           setMessage('Pago recibido. Tu plan Pro se activará en unos segundos.')
         }
 
-        await refreshProfile(user.id)
+        await refreshProfile(user.id, user.email)
       } else if (checkoutState === 'canceled') {
         setMessage('Pago cancelado. Puedes activar Pro cuando quieras.')
       }
@@ -119,19 +121,22 @@ export default function Profile() {
 
     async function loadCounts() {
       try {
-        const [entries, workshops] = await Promise.all([
+        const [entries, workshops, workspaces] = await Promise.all([
           fetchJournalEntries(user.id),
           fetchWorkshops(user.id),
+          fetchWorkspaces(user.id).catch(() => []),
         ])
 
         if (mounted) {
           setJournalCount(entries.length)
           setWorkshopCount(workshops.length)
+          setWorkspaceCount(workspaces.length)
         }
       } catch {
         if (mounted) {
           setJournalCount(0)
           setWorkshopCount(0)
+          setWorkspaceCount(0)
         }
       }
     }
@@ -236,6 +241,16 @@ export default function Profile() {
 
   const hubCards = [
     {
+      id: 'espacios',
+      filter: 'espacios',
+      to: '/interactivo/espacios',
+      icon: 'team',
+      title: 'Espacios de trabajo',
+      copy: 'Panel virtual del taller: inscripción, grupos, bloques y respuestas entre sesiones.',
+      count: `${workspaceCount} espacio${workspaceCount === 1 ? '' : 's'}`,
+      featured: true,
+    },
+    {
       id: 'talleres',
       filter: 'talleres',
       to: '/talleres',
@@ -243,15 +258,14 @@ export default function Profile() {
       title: 'Talleres / Workshops',
       copy: 'Diseña sesiones, actividades y pausas. Descarga la estructura en Word o PDF.',
       count: `${workshopCount} taller${workshopCount === 1 ? '' : 'es'}`,
-      featured: true,
     },
     {
       id: 'reuniones',
       filter: 'reuniones',
       to: '/interactivo',
       icon: 'live-bolt',
-      title: 'Reuniones interactivas',
-      copy: 'Encuestas y polls en vivo con códigos para participantes.',
+      title: 'Encuestas y en vivo',
+      copy: 'Encuestas post-taller y polls en vivo con código para participantes.',
       count: 'Encuestas · En vivo',
     },
     {
@@ -394,7 +408,7 @@ export default function Profile() {
         {activeTab === 'plan' && (
           <PlanSection
             profile={profile}
-            onPlanChange={() => user && refreshProfile(user.id)}
+            onPlanChange={() => user && refreshProfile(user.id, user.email)}
           />
         )}
 
@@ -402,14 +416,17 @@ export default function Profile() {
         <section className="profile-section">
           <div className="profile-section-head">
             <h2>Tu espacio de facilitación</h2>
-            <p>Diseño de talleres / reuniones y herramientas interactivas.</p>
+            <p>
+              Diseño de talleres, paneles colaborativos con participantes y herramientas en vivo.
+            </p>
           </div>
 
           <div className="facilitation-filter-tabs" role="tablist" aria-label="Filtrar herramientas">
             {[
               { id: 'todas', label: 'Todas' },
+              { id: 'espacios', label: 'Espacios de trabajo' },
               { id: 'talleres', label: 'Talleres / Workshops' },
-              { id: 'reuniones', label: 'Reuniones' },
+              { id: 'reuniones', label: 'Encuestas · En vivo' },
             ].map((option) => (
               <button
                 key={option.id}

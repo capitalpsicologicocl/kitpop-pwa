@@ -3,12 +3,12 @@ import {
   resolveAiUsage,
 } from './aiPlanLimits.js'
 
-export function buildAiUsageResponse(profile) {
-  const usage = resolveAiUsage(profile)
+export function buildAiUsageResponse(profile, email) {
+  const usage = resolveAiUsage(profile, email)
 
   return {
     planId: usage.planId,
-    remaining: getAiGenerationRemaining(profile),
+    remaining: getAiGenerationRemaining(profile, email),
     monthlyUsed: usage.monthlyUsed,
     lifetimeUsed: usage.lifetimeUsed,
     monthKey: usage.monthKey,

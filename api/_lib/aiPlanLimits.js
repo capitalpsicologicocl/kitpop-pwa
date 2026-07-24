@@ -1,3 +1,5 @@
+import { isStaffEmail } from './staffAccess.js'
+
 /**
  * Límites IA para API serverless — mantener sincronizado con src/utils/planLimits.js
  */
@@ -45,7 +47,11 @@ export function normalizePlanId(plan) {
   return plan
 }
 
-export function getUserPlanFromProfile(profile) {
+export function getUserPlanFromProfile(profile, email) {
+  if (isStaffEmail(email)) {
+    return 'pro_studio'
+  }
+
   const planId = normalizePlanId(profile?.plan)
 
   if (!PAID_PLANS.has(planId)) {
@@ -69,8 +75,8 @@ export function getCurrentAiMonthKey(date = new Date()) {
   return `${year}-${month}`
 }
 
-export function resolveAiUsage(profile) {
-  const planId = getUserPlanFromProfile(profile)
+export function resolveAiUsage(profile, email) {
+  const planId = getUserPlanFromProfile(profile, email)
   const limits = AI_PLAN_LIMITS[planId] ?? AI_PLAN_LIMITS.explorer
   const monthKey = getCurrentAiMonthKey()
   const storedMonthKey = profile?.ai_generations_month_key ?? ''
@@ -81,8 +87,12 @@ export function resolveAiUsage(profile) {
   return { planId, limits, monthKey, monthlyUsed, lifetimeUsed }
 }
 
-export function getAiGenerationRemaining(profile) {
-  const { limits, monthlyUsed, lifetimeUsed } = resolveAiUsage(profile)
+export function getAiGenerationRemaining(profile, email) {
+  if (isStaffEmail(email)) {
+    return Infinity
+  }
+
+  const { limits, monthlyUsed, lifetimeUsed } = resolveAiUsage(profile, email)
 
   if (limits.lifetime != null && limits.lifetime > 0) {
     return Math.max(0, limits.lifetime - lifetimeUsed)
@@ -95,12 +105,12 @@ export function getAiGenerationRemaining(profile) {
   return Math.max(0, limits.monthly - monthlyUsed)
 }
 
-export function canUseAiGeneration(profile) {
-  return getAiGenerationRemaining(profile) > 0
+export function canUseAiGeneration(profile, email) {
+  return getAiGenerationRemaining(profile, email) > 0
 }
 
-export function getAiModelForTask(profile, task = 'workshop') {
-  const { limits } = resolveAiUsage(profile)
+export function getAiModelForTask(profile, task = 'workshop', email) {
+  const { limits } = resolveAiUsage(profile, email)
 
   if (task === 'narrative' && limits.narrativeModel) {
     return limits.narrativeModel

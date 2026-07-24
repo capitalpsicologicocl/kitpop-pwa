@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import LiveParticipantPoll from '../../components/live/LiveParticipantPoll'
 import SurveyParticipantForm from '../../components/survey/SurveyParticipantForm'
+import WorkspaceParticipantShell from '../../components/workspace/WorkspaceParticipantShell'
 import { getLiveSessionForParticipant } from '../../services/liveSessionService'
 import { subscribeLiveSessionRealtime } from '../../services/livePollRealtime'
 import { getSurveyForParticipant } from '../../services/surveyService'
@@ -116,12 +117,16 @@ export default function ParticipantJoin() {
 
   return (
     <main id="participant-view" className="fade-in">
-      <Link to="/" className="back-btn">
-        ← KitPOP
-      </Link>
+      {session?.resource_type !== 'workspace' && (
+        <Link to="/" className="back-btn">
+          ← KitPOP
+        </Link>
+      )}
 
-      <div className="auth-panel participant-panel">
-        <p className="profile-badge">Acceso participante</p>
+      <div className={`auth-panel participant-panel ${session?.resource_type === 'workspace' ? 'participant-panel-workspace' : ''}`}>
+        {session?.resource_type !== 'workspace' && (
+          <p className="profile-badge">Acceso participante</p>
+        )}
 
         {loading && <p className="auth-loading">Validando código...</p>}
 
@@ -131,6 +136,10 @@ export default function ParticipantJoin() {
             <p>{error}</p>
             <p className="interactive-item-meta">Código ingresado: {normalizedCode}</p>
           </>
+        )}
+
+        {!loading && session?.resource_type === 'workspace' && (
+          <WorkspaceParticipantShell code={code} />
         )}
 
         {!loading && session?.resource_type === 'workshop' && (
