@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-import { getE2ECredentials, loginAsTestUser, waitForActivityPage } from './helpers/auth.js'
+import { waitForActivityPage } from './helpers/auth.js'
 
 test.describe('Guest browse', () => {
   test('home loads without login', async ({ page }) => {
@@ -48,21 +48,6 @@ test.describe('Export Pro gate', () => {
   test('workshop summary redirects guests to login', async ({ page }) => {
     await page.goto('/talleres/00000000-0000-0000-0000-000000000001/resumen')
     await expect(page).toHaveURL(/\/login/)
-  })
-})
-
-test.describe('Authenticated flows', () => {
-  const { hasAuthCredentials } = getE2ECredentials()
-
-  test.skip(!hasAuthCredentials, 'Set E2E_TEST_EMAIL and E2E_TEST_PASSWORD for auth E2E')
-
-  test.beforeEach(async ({ page }) => {
-    await loginAsTestUser(page)
-  })
-
-  test('explorer sees export gate on workshops list path', async ({ page }) => {
-    await page.goto('/talleres')
-    await expect(page.locator('#workshops-view, main')).toBeVisible()
   })
 })
 

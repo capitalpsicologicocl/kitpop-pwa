@@ -1,19 +1,11 @@
 import { test, expect } from '@playwright/test'
 
-import {
-  getE2ECredentials,
-  loginAsTestUser,
-  waitForActivityPage,
-} from './helpers/auth.js'
+import { getAuthE2ESkipReason, waitForActivityPage } from './helpers/auth.js'
 
-const { hasAuthCredentials } = getE2ECredentials()
+const authSkipReason = getAuthE2ESkipReason()
 
 test.describe('Sprint 7 — Auth workshop export gate', () => {
-  test.skip(!hasAuthCredentials, 'Set E2E_TEST_EMAIL and E2E_TEST_PASSWORD for auth E2E')
-
-  test.beforeEach(async ({ page }) => {
-    await loginAsTestUser(page)
-  })
+  test.skip(Boolean(authSkipReason), authSkipReason ?? '')
 
   test('login → talleres → resumen muestra gate Pro o exports', async ({ page }) => {
     await page.goto('/talleres')
