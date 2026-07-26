@@ -106,7 +106,7 @@ export default function WorkspaceEditor() {
   }
 
   const loadWorkspace = useCallback(async () => {
-    if (!user || !id) {
+    if (!user?.id || !id) {
       return
     }
 
@@ -149,7 +149,7 @@ export default function WorkspaceEditor() {
     } finally {
       setLoading(false)
     }
-  }, [id, user])
+  }, [id, user?.id])
 
   const loadPanel = useCallback(async () => {
     if (!id) {
@@ -184,7 +184,7 @@ export default function WorkspaceEditor() {
     }
 
     loadWorkspace()
-  }, [authLoading, loadWorkspace, user])
+  }, [authLoading, loadWorkspace, user?.id])
 
   useEffect(() => {
     if (tab !== 'panel' && tab !== 'export') {
@@ -591,7 +591,9 @@ export default function WorkspaceEditor() {
                 <input
                   id="ws-title"
                   value={form.title}
-                  onChange={(event) => setForm({ ...form, title: event.target.value })}
+                  onChange={(event) =>
+                    setForm((current) => ({ ...current, title: event.target.value }))
+                  }
                 />
               </div>
               <div className="field full">
@@ -599,7 +601,9 @@ export default function WorkspaceEditor() {
                 <RichTextEditor
                   id="ws-desc"
                   value={form.description}
-                  onChange={(value) => setForm({ ...form, description: value })}
+                  onChange={(value) =>
+                    setForm((current) => ({ ...current, description: value }))
+                  }
                   placeholder="Contexto general del espacio para los participantes."
                   minHeight={120}
                 />
@@ -610,7 +614,10 @@ export default function WorkspaceEditor() {
                   id="ws-nav"
                   value={form.navigation_mode}
                   onChange={(event) =>
-                    setForm({ ...form, navigation_mode: event.target.value })
+                    setForm((current) => ({
+                      ...current,
+                      navigation_mode: event.target.value,
+                    }))
                   }
                 >
                   <option value="free">Libre entre secciones</option>
@@ -650,7 +657,9 @@ export default function WorkspaceEditor() {
           <WorkspaceModulesSettings
             moduleSettings={form.moduleSettings ?? getDefaultWorkspaceSettings()}
             closureSectionCount={closureSections.length}
-            onChange={(moduleSettings) => setForm({ ...form, moduleSettings })}
+            onChange={(moduleSettings) =>
+              setForm((current) => ({ ...current, moduleSettings }))
+            }
           />
 
           <WorkspaceAddActivities

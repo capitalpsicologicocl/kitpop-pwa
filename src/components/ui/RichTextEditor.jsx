@@ -119,6 +119,8 @@ export default function RichTextEditor({
 }) {
   const editorRef = useRef(null)
   const onChangeRef = useRef(onChange)
+  const lastEmittedRef = useRef(value ?? '')
+  const isFocusedRef = useRef(false)
 
   useEffect(() => {
     onChangeRef.current = onChange
@@ -133,13 +135,24 @@ export default function RichTextEditor({
 
     const nextValue = value ?? ''
 
+    if (nextValue === lastEmittedRef.current) {
+      return
+    }
+
+    if (isFocusedRef.current) {
+      return
+    }
+
     if (node.innerHTML !== nextValue) {
       node.innerHTML = nextValue
     }
+
+    lastEmittedRef.current = nextValue
   }, [value])
 
   function emitChange() {
     const html = sanitizeWorkspaceHtml(editorRef.current?.innerHTML ?? '')
+    lastEmittedRef.current = html
     onChangeRef.current(html)
   }
 
@@ -203,7 +216,13 @@ export default function RichTextEditor({
         data-placeholder={placeholder}
         style={{ minHeight }}
         onInput={emitChange}
-        onBlur={emitChange}
+        onFocus={() => {
+          isFocusedRef.current = true
+        }}
+        onBlur={() => {
+          isFocusedRef.current = false
+          emitChange()
+        }}
       />
     </div>
   )
