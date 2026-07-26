@@ -1996,28 +1996,29 @@
 }
 
 .rich-text-tool {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   min-width:32px;
   height:32px;
+  padding:0 6px;
   border:1px solid var(--g200);
   border-radius:8px;
   background:#fff;
-  color:var(--g800);
-  font-size:13px;
-  font-weight:700;
+  color:var(--g700);
   cursor:pointer;
 }
 
-.rich-text-tool.center {
-  text-align:center;
-}
-
-.rich-text-tool.right {
-  text-align:right;
+.rich-text-tool-text {
+  font-size:13px;
+  font-weight:700;
+  color:var(--g800);
 }
 
 .rich-text-tool:hover {
   border-color:var(--brand);
   color:var(--brand);
+  background:#fff;
 }
 
 .rich-text-body {

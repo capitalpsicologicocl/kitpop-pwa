@@ -2,18 +2,107 @@ import { useEffect, useRef } from 'react'
 
 import { sanitizeWorkspaceHtml } from '../../utils/sanitizeHtml'
 
+function RichTextIcon({ name }) {
+  const props = {
+    viewBox: '0 0 20 20',
+    width: 18,
+    height: 18,
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.6,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    'aria-hidden': true,
+  }
+
+  switch (name) {
+    case 'bold':
+      return (
+        <svg {...props}>
+          <path d="M6 3.5h4.2a3.3 3.3 0 0 1 0 6.6H6V3.5z" fill="currentColor" stroke="none" />
+          <path d="M6 10.1h4.8a3.1 3.1 0 0 1 0 6.2H6v-6.2z" fill="currentColor" stroke="none" />
+        </svg>
+      )
+    case 'italic':
+      return (
+        <svg {...props}>
+          <line x1="11" y1="3.5" x2="7" y2="16.5" />
+          <line x1="14.5" y1="3.5" x2="8.5" y2="3.5" />
+          <line x1="9.5" y1="16.5" x2="15.5" y2="16.5" />
+        </svg>
+      )
+    case 'underline':
+      return (
+        <svg {...props}>
+          <path d="M6 3.5v5.8a4 4 0 0 0 8 0V3.5" />
+          <line x1="4.5" y1="16.5" x2="15.5" y2="16.5" />
+        </svg>
+      )
+    case 'alignLeft':
+      return (
+        <svg {...props}>
+          <line x1="3" y1="4.5" x2="17" y2="4.5" />
+          <line x1="3" y1="8.5" x2="12" y2="8.5" />
+          <line x1="3" y1="12.5" x2="17" y2="12.5" />
+          <line x1="3" y1="16.5" x2="10" y2="16.5" />
+        </svg>
+      )
+    case 'alignCenter':
+      return (
+        <svg {...props}>
+          <line x1="3" y1="4.5" x2="17" y2="4.5" />
+          <line x1="5.5" y1="8.5" x2="14.5" y2="8.5" />
+          <line x1="3" y1="12.5" x2="17" y2="12.5" />
+          <line x1="6" y1="16.5" x2="14" y2="16.5" />
+        </svg>
+      )
+    case 'alignRight':
+      return (
+        <svg {...props}>
+          <line x1="3" y1="4.5" x2="17" y2="4.5" />
+          <line x1="8" y1="8.5" x2="17" y2="8.5" />
+          <line x1="3" y1="12.5" x2="17" y2="12.5" />
+          <line x1="10" y1="16.5" x2="17" y2="16.5" />
+        </svg>
+      )
+    case 'alignJustify':
+      return (
+        <svg {...props}>
+          <line x1="3" y1="4.5" x2="17" y2="4.5" />
+          <line x1="3" y1="8.5" x2="17" y2="8.5" />
+          <line x1="3" y1="12.5" x2="17" y2="12.5" />
+          <line x1="3" y1="16.5" x2="17" y2="16.5" />
+        </svg>
+      )
+    case 'bulletList':
+      return (
+        <svg {...props}>
+          <circle cx="4.5" cy="5" r="1.2" fill="currentColor" stroke="none" />
+          <line x1="8" y1="5" x2="16.5" y2="5" />
+          <circle cx="4.5" cy="10" r="1.2" fill="currentColor" stroke="none" />
+          <line x1="8" y1="10" x2="16.5" y2="10" />
+          <circle cx="4.5" cy="15" r="1.2" fill="currentColor" stroke="none" />
+          <line x1="8" y1="15" x2="16.5" y2="15" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
 const TOOLBAR_GROUPS = [
   [
-    { cmd: 'bold', label: 'B', title: 'Negrita' },
-    { cmd: 'italic', label: 'I', title: 'Cursiva' },
-    { cmd: 'underline', label: 'U', title: 'Subrayado' },
+    { cmd: 'bold', icon: 'bold', title: 'Negrita' },
+    { cmd: 'italic', icon: 'italic', title: 'Cursiva' },
+    { cmd: 'underline', icon: 'underline', title: 'Subrayado' },
   ],
   [
-    { cmd: 'justifyLeft', label: '≡', title: 'Alinear izquierda' },
-    { cmd: 'justifyCenter', label: '≡', title: 'Centrar', className: 'center' },
-    { cmd: 'justifyRight', label: '≡', title: 'Alinear derecha', className: 'right' },
+    { cmd: 'justifyLeft', icon: 'alignLeft', title: 'Alinear izquierda' },
+    { cmd: 'justifyCenter', icon: 'alignCenter', title: 'Centrar' },
+    { cmd: 'justifyRight', icon: 'alignRight', title: 'Alinear derecha' },
+    { cmd: 'justifyFull', icon: 'alignJustify', title: 'Justificar' },
   ],
-  [{ cmd: 'insertUnorderedList', label: '•', title: 'Viñetas' }],
+  [{ cmd: 'insertUnorderedList', icon: 'bulletList', title: 'Viñetas' }],
   [
     { cmd: 'fontSize', value: '2', label: 'S', title: 'Texto pequeño' },
     { cmd: 'fontSize', value: '3', label: 'M', title: 'Texto normal' },
@@ -88,9 +177,9 @@ export default function RichTextEditor({
           <div key={groupIndex} className="rich-text-toolbar-group">
             {group.map((item) => (
               <button
-                key={`${item.cmd}-${item.value ?? item.label}`}
+                key={`${item.cmd}-${item.value ?? item.icon ?? item.label}`}
                 type="button"
-                className={`rich-text-tool ${item.className ?? ''}`}
+                className={`rich-text-tool ${item.label ? 'rich-text-tool-text' : ''}`}
                 title={item.title}
                 aria-label={item.title}
                 onMouseDown={(event) => {
@@ -98,7 +187,7 @@ export default function RichTextEditor({
                   runCommand(item.cmd, item.value ?? null)
                 }}
               >
-                {item.label}
+                {item.icon ? <RichTextIcon name={item.icon} /> : item.label}
               </button>
             ))}
           </div>
