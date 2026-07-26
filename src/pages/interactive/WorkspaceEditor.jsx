@@ -40,6 +40,7 @@ import {
   getWorkspaceStatusLabel,
   isClosureSurveySection,
   isResponseSection,
+  normalizeWorkspaceSections,
 } from '../../utils/workspaceHelpers'
 import { buildWorkspaceExportHtml } from '../../utils/workspaceExport'
 
@@ -128,7 +129,7 @@ export default function WorkspaceEditor() {
       }
 
       setWorkspace(workspaceData)
-      setSections(sectionData)
+      setSections(normalizeWorkspaceSections(sectionData))
       setGroupNames(groupData.map((group) => group.name).join('\n'))
       setForm({
         title: workspaceData.title ?? '',
@@ -674,7 +675,7 @@ export default function WorkspaceEditor() {
                 <WorkspaceSectionEditor
                   section={section}
                   sectionIndex={index}
-                  sections={sections}
+                  sections={activitySections}
                   hasResponses={responseSectionIds.has(section.id)}
                   saving={sectionSavingId === section.id}
                   onChange={(next) =>

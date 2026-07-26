@@ -45,7 +45,32 @@ export function getDefaultWorkspaceSettings(existing = {}) {
 }
 
 export function isClosureSurveySection(section) {
-  return Boolean(section?.config?.closure_survey)
+  const config = section?.config ?? {}
+
+  if (config.closure_survey === true || config.closure_survey === 'true') {
+    return true
+  }
+
+  return config.module_name?.trim() === 'Encuesta de cierre'
+}
+
+export function normalizeWorkspaceSection(section) {
+  if (!isClosureSurveySection(section)) {
+    return section
+  }
+
+  return {
+    ...section,
+    config: {
+      ...(section.config ?? {}),
+      closure_survey: true,
+      module_name: section.config?.module_name?.trim() || 'Encuesta de cierre',
+    },
+  }
+}
+
+export function normalizeWorkspaceSections(sections = []) {
+  return sections.map(normalizeWorkspaceSection)
 }
 
 export const SECTION_TYPE_OPTIONS = Object.entries(WORKSPACE_SECTION_TYPES).map(
@@ -71,14 +96,14 @@ export function buildDefaultSection(type, sortOrder = 0, scope = 'individual', p
     : ''
 
   const base = {
-    title: getSectionTypeLabel(type),
+    title: '',
     section_type: type,
     scope,
     sort_order: sortOrder,
     is_required: type !== 'info',
     config: {
       module_name: previousModule || 'Módulo 1',
-      module_continue: hasPrevious,
+      module_continue: false,
       description: '',
       prompt: '',
     },
@@ -90,8 +115,7 @@ export function buildDefaultSection(type, sortOrder = 0, scope = 'individual', p
         ...base,
         config: {
           ...base.config,
-          prompt: 'Escribe aquí las instrucciones para los participantes.',
-          content: 'Escribe aquí las instrucciones para los participantes.',
+          content: '',
         },
       }
     case 'single_choice':

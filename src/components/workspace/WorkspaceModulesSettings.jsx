@@ -58,7 +58,10 @@ export default function WorkspaceModulesSettings({
               ))}
             </select>
             {closureSectionCount > 0 && (
-              <p className="field-hint">{closureSectionCount} preguntas listas al final.</p>
+              <p className="field-hint">
+                {closureSectionCount} preguntas listas al final (no aparecen en la lista de
+                actividades; se activan desde el panel en vivo).
+              </p>
             )}
           </div>
         )}
