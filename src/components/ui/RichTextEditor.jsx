@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { forwardRef, memo, useCallback, useEffect, useRef } from 'react'
 
 import { sanitizeWorkspaceHtml } from '../../utils/sanitizeHtml'
 
@@ -110,6 +110,27 @@ const TOOLBAR_GROUPS = [
   ],
 ]
 
+const RichTextBody = memo(
+  forwardRef(function RichTextBody(
+    { id, placeholder, minHeight, onInput, onBlur },
+    ref
+  ) {
+    return (
+      <div
+        id={id}
+        ref={ref}
+        className="rich-text-body"
+        contentEditable
+        suppressContentEditableWarning
+        data-placeholder={placeholder}
+        style={{ minHeight }}
+        onInput={onInput}
+        onBlur={onBlur}
+      />
+    )
+  })
+)
+
 export default function RichTextEditor({
   value,
   onChange,
@@ -119,12 +140,20 @@ export default function RichTextEditor({
 }) {
   const editorRef = useRef(null)
   const onChangeRef = useRef(onChange)
-  const lastEmittedRef = useRef(value ?? '')
-  const isFocusedRef = useRef(false)
+  const emitChangeRef = useRef(() => {})
+  const lastEmittedRef = useRef(null)
 
   useEffect(() => {
     onChangeRef.current = onChange
   }, [onChange])
+
+  function emitChange() {
+    const html = sanitizeWorkspaceHtml(editorRef.current?.innerHTML ?? '')
+    lastEmittedRef.current = html
+    onChangeRef.current(html)
+  }
+
+  emitChangeRef.current = emitChange
 
   useEffect(() => {
     const node = editorRef.current
@@ -135,11 +164,11 @@ export default function RichTextEditor({
 
     const nextValue = value ?? ''
 
-    if (nextValue === lastEmittedRef.current) {
+    if (document.activeElement === node) {
       return
     }
 
-    if (isFocusedRef.current) {
+    if (lastEmittedRef.current !== null && nextValue === lastEmittedRef.current) {
       return
     }
 
@@ -150,15 +179,17 @@ export default function RichTextEditor({
     lastEmittedRef.current = nextValue
   }, [value])
 
-  function emitChange() {
-    const html = sanitizeWorkspaceHtml(editorRef.current?.innerHTML ?? '')
-    lastEmittedRef.current = html
-    onChangeRef.current(html)
-  }
+  const handleInput = useCallback(() => {
+    emitChangeRef.current()
+  }, [])
+
+  const handleBlur = useCallback(() => {
+    emitChangeRef.current()
+  }, [])
 
   useEffect(() => {
     function flushEditor() {
-      emitChange()
+      emitChangeRef.current()
     }
 
     function handleVisibilityChange() {
@@ -207,22 +238,13 @@ export default function RichTextEditor({
         ))}
       </div>
 
-      <div
-        id={id}
+      <RichTextBody
         ref={editorRef}
-        className="rich-text-body"
-        contentEditable
-        suppressContentEditableWarning
-        data-placeholder={placeholder}
-        style={{ minHeight }}
-        onInput={emitChange}
-        onFocus={() => {
-          isFocusedRef.current = true
-        }}
-        onBlur={() => {
-          isFocusedRef.current = false
-          emitChange()
-        }}
+        id={id}
+        placeholder={placeholder}
+        minHeight={minHeight}
+        onInput={handleInput}
+        onBlur={handleBlur}
       />
     </div>
   )
