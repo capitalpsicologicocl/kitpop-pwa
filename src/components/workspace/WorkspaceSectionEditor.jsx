@@ -1,8 +1,11 @@
+import { useMemo } from 'react'
+
 import RichTextEditor from '../ui/RichTextEditor'
 import {
   SECTION_TYPE_OPTIONS,
   getScopeLabel,
   getSectionTypeLabel,
+  listWorkspaceModuleNames,
   resolveSectionModuleName,
 } from '../../utils/workspaceHelpers'
 
@@ -17,10 +20,14 @@ export default function WorkspaceSectionEditor({
   hasResponses,
 }) {
   const config = section.config ?? {}
-  const previousModule =
-    sectionIndex > 0 ? resolveSectionModuleName(sections, sectionIndex - 1) : ''
   const effectiveModule = resolveSectionModuleName(sections, sectionIndex)
-  const moduleContinues = Boolean(config.module_continue) && sectionIndex > 0
+  const moduleMode =
+    sectionIndex === 0 ? 'new' : config.module_continue ? 'continue' : 'new'
+
+  const availableModules = useMemo(
+    () => listWorkspaceModuleNames(sections.slice(0, sectionIndex)),
+    [sections, sectionIndex]
+  )
 
   function updateField(field, value) {
     onChange({ ...section, [field]: value })
@@ -40,13 +47,52 @@ export default function WorkspaceSectionEditor({
     onChange({ ...section, config: nextConfig })
   }
 
-  function handleModuleContinueChange(checked) {
+  function handleModuleModeChange(nextMode) {
+    if (nextMode === 'continue') {
+      const fallbackModule = availableModules[0] ?? previousModuleName() ?? 'Módulo 1'
+
+      onChange({
+        ...section,
+        config: {
+          ...config,
+          module_continue: true,
+          module_name: availableModules.includes(config.module_name)
+            ? config.module_name
+            : fallbackModule,
+        },
+      })
+      return
+    }
+
     onChange({
       ...section,
       config: {
         ...config,
-        module_continue: checked,
-        module_name: checked ? config.module_name : config.module_name || previousModule || 'Módulo 1',
+        module_continue: false,
+        module_name: config.module_name?.trim() || nextModuleName(),
+      },
+    })
+  }
+
+  function previousModuleName() {
+    if (sectionIndex <= 0) {
+      return ''
+    }
+
+    return resolveSectionModuleName(sections, sectionIndex - 1)
+  }
+
+  function nextModuleName() {
+    return `Módulo ${listWorkspaceModuleNames(sections.slice(0, sectionIndex + 1)).length + 1}`
+  }
+
+  function handleContinueModuleChange(moduleName) {
+    onChange({
+      ...section,
+      config: {
+        ...config,
+        module_continue: true,
+        module_name: moduleName,
       },
     })
   }
@@ -90,7 +136,7 @@ export default function WorkspaceSectionEditor({
           <span className="profile-badge">Actividad {sectionIndex + 1}</span>
           <p className="interactive-item-meta">
             {getSectionTypeLabel(section.section_type)} · {getScopeLabel(section.scope)}
-            {moduleContinues ? ` · ${effectiveModule}` : ''}
+            {effectiveModule ? ` · ${effectiveModule}` : ''}
           </p>
         </div>
 
@@ -104,23 +150,34 @@ export default function WorkspaceSectionEditor({
           <span className="workspace-design-block-label">Módulo</span>
 
           {sectionIndex > 0 ? (
-            <label className="workspace-field-check">
-              <input
-                type="checkbox"
-                checked={moduleContinues}
-                onChange={(event) => handleModuleContinueChange(event.target.checked)}
-              />
-              <span>
-                Continuidad del módulo anterior
-                {previousModule ? ` (${previousModule})` : ''}
-              </span>
-            </label>
+            <div className="field full workspace-module-mode">
+              <label htmlFor={`module-mode-${section.id}`}>Incorporar actividad a</label>
+              <select
+                id={`module-mode-${section.id}`}
+                value={moduleMode}
+                onChange={(event) => handleModuleModeChange(event.target.value)}
+              >
+                <option value="continue">Continuidad de otro módulo</option>
+                <option value="new">Nuevo módulo</option>
+              </select>
+            </div>
           ) : null}
 
-          {moduleContinues ? (
-            <p className="field-hint workspace-module-resolved">
-              Módulo activo: <strong>{effectiveModule}</strong>
-            </p>
+          {moduleMode === 'continue' && sectionIndex > 0 ? (
+            <div className="field full">
+              <label htmlFor={`module-select-${section.id}`}>Seleccionar módulo</label>
+              <select
+                id={`module-select-${section.id}`}
+                value={config.module_name ?? availableModules[0] ?? ''}
+                onChange={(event) => handleContinueModuleChange(event.target.value)}
+              >
+                {availableModules.map((moduleName) => (
+                  <option key={moduleName} value={moduleName}>
+                    {moduleName}
+                  </option>
+                ))}
+              </select>
+            </div>
           ) : (
             <div className="field full">
               <label htmlFor={`module-${section.id}`}>Nombre del módulo</label>
@@ -144,7 +201,7 @@ export default function WorkspaceSectionEditor({
           />
         </div>
 
-        <div className="field full">
+        <div className="field full workspace-rich-field">
           <label htmlFor={`description-${section.id}`}>Descripción</label>
           <RichTextEditor
             id={`description-${section.id}`}
@@ -155,7 +212,7 @@ export default function WorkspaceSectionEditor({
           />
         </div>
 
-        <div className="field full">
+        <div className="field full workspace-rich-field">
           <label htmlFor={`prompt-${section.id}`}>
             {section.section_type === 'info' ? 'Instrucciones' : 'Pregunta o actividad'}
           </label>
@@ -303,7 +360,7 @@ export default function WorkspaceSectionEditor({
         </div>
       )}
 
-      <div className="form-actions">
+      <div className="form-actions workspace-section-actions">
         <button type="button" className="btn-primary" disabled={saving} onClick={onSave}>
           {saving ? 'Guardando...' : 'Guardar actividad'}
         </button>

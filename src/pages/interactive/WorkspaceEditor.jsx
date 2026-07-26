@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useMemo, useState, Fragment } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import RichTextEditor from '../../components/ui/RichTextEditor'
@@ -53,9 +53,13 @@ const TABS = [
 export default function WorkspaceEditor() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const initialTab = searchParams.get('tab')
   const { user, loading: authLoading } = useAuth()
 
-  const [tab, setTab] = useState('design')
+  const [tab, setTab] = useState(
+    TABS.some((item) => item.id === initialTab) ? initialTab : 'design'
+  )
   const [workspace, setWorkspace] = useState(null)
   const [sections, setSections] = useState([])
   const [panel, setPanel] = useState({ participants: [], groups: [], responses: [] })
@@ -131,11 +135,13 @@ export default function WorkspaceEditor() {
       setWorkspace(workspaceData)
       setSections(normalizeWorkspaceSections(sectionData))
       setGroupNames(groupData.map((group) => group.name).join('\n'))
+      const defaultSettings = getDefaultWorkspaceSettings(workspaceData.settings ?? {})
       setForm({
         title: workspaceData.title ?? '',
         description: workspaceData.description ?? '',
-        navigation_mode: workspaceData.settings?.navigation_mode ?? 'free',
-        moduleSettings: getDefaultWorkspaceSettings(workspaceData.settings ?? {}),
+        navigation_mode: defaultSettings.navigation_mode,
+        dates: defaultSettings.dates,
+        moduleSettings: defaultSettings,
       })
       setAccessCode(codes.find((entry) => entry.resource_id === id)?.code ?? '')
       setSetupError(false)
@@ -197,43 +203,94 @@ export default function WorkspaceEditor() {
     return () => window.clearInterval(interval)
   }, [loadPanel, tab])
 
+  async function persistWorkspaceMeta() {
+    if (!user || !workspace || !form) {
+      return false
+    }
+
+    const moduleSettings = form.moduleSettings ?? getDefaultWorkspaceSettings()
+    const cleanedDates = (form.dates ?? []).map((entry) => String(entry ?? '').trim()).filter(Boolean)
+    const settings = {
+      ...moduleSettings,
+      navigation_mode: form.navigation_mode,
+      dates: cleanedDates,
+    }
+
+    const updated = await updateWorkspace(user.id, workspace.id, {
+      title: form.title.trim(),
+      description: form.description.trim(),
+      status: workspace.status,
+      settings,
+    })
+
+    await syncClosureSurveySections(
+      Boolean(moduleSettings.closure_survey?.enabled),
+      Number(moduleSettings.closure_survey?.likert_scale) || 5
+    )
+
+    setWorkspace(updated)
+    return true
+  }
+
   async function handleSaveMeta(event) {
     event.preventDefault()
-
-    if (!user || !workspace || !form) {
-      return
-    }
 
     setSavingMeta(true)
     setMessage('')
     setError('')
 
     try {
-      const moduleSettings = form.moduleSettings ?? getDefaultWorkspaceSettings()
-      const settings = {
-        ...moduleSettings,
-        navigation_mode: form.navigation_mode,
-      }
-
-      const updated = await updateWorkspace(user.id, workspace.id, {
-        title: form.title.trim(),
-        description: form.description.trim(),
-        status: workspace.status,
-        settings,
-      })
-
-      await syncClosureSurveySections(
-        Boolean(moduleSettings.closure_survey?.enabled),
-        Number(moduleSettings.closure_survey?.likert_scale) || 5
-      )
-
-      setWorkspace(updated)
+      await persistWorkspaceMeta()
       setMessage('Datos guardados.')
     } catch (saveError) {
       setError(saveError.message || 'No se pudieron guardar los datos.')
     } finally {
       setSavingMeta(false)
     }
+  }
+
+  async function handleSaveAndFinish() {
+    setSavingMeta(true)
+    setMessage('')
+    setError('')
+
+    try {
+      await persistWorkspaceMeta()
+      navigate('/interactivo/espacios')
+    } catch (saveError) {
+      setError(saveError.message || 'No se pudieron guardar los datos.')
+    } finally {
+      setSavingMeta(false)
+    }
+  }
+
+  function handleDateChange(index, value) {
+    setForm((current) => {
+      const nextDates = [...(current?.dates ?? [''])]
+      nextDates[index] = value
+      return { ...current, dates: nextDates }
+    })
+  }
+
+  function handleAddDate() {
+    setForm((current) => ({
+      ...current,
+      dates: [...(current?.dates ?? ['']), ''],
+    }))
+  }
+
+  function handleRemoveDate(index) {
+    setForm((current) => {
+      const nextDates = [...(current?.dates ?? [''])]
+
+      if (nextDates.length <= 1) {
+        nextDates[0] = ''
+        return { ...current, dates: nextDates }
+      }
+
+      nextDates.splice(index, 1)
+      return { ...current, dates: nextDates }
+    })
   }
 
   async function handleSaveGroups() {
@@ -625,6 +682,39 @@ export default function WorkspaceEditor() {
                   <option value="sequential">Secuencial obligatorio</option>
                 </select>
               </div>
+
+              <div className="field full">
+                <label>Fechas del espacio</label>
+                <p className="field-hint">Opcional. Puedes registrar una o más jornadas.</p>
+                <div className="workspace-date-list">
+                  {(form.dates ?? ['']).map((dateValue, index) => (
+                    <div key={`ws-date-${index}`} className="workspace-date-row">
+                      <input
+                        type="date"
+                        value={dateValue}
+                        onChange={(event) => handleDateChange(index, event.target.value)}
+                        aria-label={`Fecha ${index + 1}`}
+                      />
+                      {(form.dates?.length ?? 1) > 1 ? (
+                        <button
+                          type="button"
+                          className="timer-btn timer-btn-ghost"
+                          onClick={() => handleRemoveDate(index)}
+                        >
+                          Quitar
+                        </button>
+                      ) : null}
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    className="timer-btn timer-btn-secondary workspace-date-add"
+                    onClick={handleAddDate}
+                  >
+                    + Fecha
+                  </button>
+                </div>
+              </div>
             </div>
             <div className="form-actions">
               <button type="submit" className="btn-primary" disabled={savingMeta}>
@@ -663,47 +753,37 @@ export default function WorkspaceEditor() {
             }
           />
 
-          <WorkspaceAddActivities
-            addingType={addingType}
-            onAdd={handleAddSection}
-            workspaceStatus={workspace.status}
-          />
-
           <div className="workspace-section-list">
             {activitySections.map((section, index) => (
-              <Fragment key={section.id}>
-                <WorkspaceSectionEditor
-                  section={section}
-                  sectionIndex={index}
-                  sections={activitySections}
-                  hasResponses={responseSectionIds.has(section.id)}
-                  saving={sectionSavingId === section.id}
-                  onChange={(next) =>
-                    setSections((current) =>
-                      current.map((item) => (item.id === section.id ? next : item))
-                    )
-                  }
-                  onSave={() => handleSaveSection(section)}
-                  onDelete={() => handleDeleteSection(section.id)}
-                />
-                <WorkspaceAddActivities
-                  compact
-                  addingType={addingType}
-                  onAdd={handleAddSection}
-                  workspaceStatus={workspace.status}
-                />
-              </Fragment>
+              <WorkspaceSectionEditor
+                key={section.id}
+                section={section}
+                sectionIndex={index}
+                sections={activitySections}
+                hasResponses={responseSectionIds.has(section.id)}
+                saving={sectionSavingId === section.id}
+                onChange={(next) =>
+                  setSections((current) =>
+                    current.map((item) => (item.id === section.id ? next : item))
+                  )
+                }
+                onSave={() => handleSaveSection(section)}
+                onDelete={() => handleDeleteSection(section.id)}
+              />
             ))}
           </div>
 
           <WorkspaceAddActivities
             addingType={addingType}
             onAdd={handleAddSection}
+            showSaveAndFinish
+            onSaveAndFinish={handleSaveAndFinish}
+            saveAndFinishDisabled={savingMeta}
             showPublish
             onPublish={handlePublishWorkspace}
             publishDisabled={statusUpdating}
             publishLabel={
-              workspace.status === 'paused' ? 'Reabrir espacio de trabajo' : 'Publicar espacio de trabajo'
+              workspace.status === 'paused' ? 'Reabrir espacio' : 'Publicar'
             }
             workspaceStatus={workspace.status}
           />

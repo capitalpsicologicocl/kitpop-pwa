@@ -91,6 +91,61 @@ export async function deleteWorkspace(userId, workspaceId) {
   }
 }
 
+export async function duplicateWorkspace(userId, workspaceId) {
+  const [workspace, sections, groups] = await Promise.all([
+    fetchWorkspaceById(userId, workspaceId),
+    fetchWorkspaceSections(userId, workspaceId),
+    fetchWorkspaceGroups(userId, workspaceId),
+  ])
+
+  if (!workspace) {
+    throw new Error('No encontramos este espacio.')
+  }
+
+  const copy = await createWorkspace(userId, {
+    title: `${workspace.title?.trim() || 'Espacio'} (copia)`,
+    description: workspace.description ?? '',
+    settings: {
+      ...(workspace.settings ?? {}),
+      closure_survey: {
+        ...(workspace.settings?.closure_survey ?? {}),
+        active: false,
+      },
+      attendance: {
+        ...(workspace.settings?.attendance ?? {}),
+        prompt_active: false,
+      },
+    },
+  })
+
+  if (groups.length > 0) {
+    await replaceWorkspaceGroups(
+      userId,
+      copy.id,
+      groups.map((group) => ({ name: group.name }))
+    )
+  }
+
+  const orderedSections = [...sections].sort(
+    (left, right) =>
+      (left.sort_order ?? 0) - (right.sort_order ?? 0) ||
+      String(left.created_at ?? '').localeCompare(String(right.created_at ?? ''))
+  )
+
+  for (const [index, section] of orderedSections.entries()) {
+    await createWorkspaceSection(userId, copy.id, {
+      title: section.title,
+      section_type: section.section_type,
+      scope: section.scope,
+      config: section.config ?? {},
+      sort_order: index,
+      is_required: section.is_required ?? true,
+    })
+  }
+
+  return copy
+}
+
 export async function fetchWorkspaceGroups(userId, workspaceId) {
   const { data, error } = await supabase
     .from('workspace_groups')

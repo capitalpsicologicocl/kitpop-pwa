@@ -30,8 +30,15 @@ export const WORKSPACE_SCOPES = {
 export const WORKSPACE_PARTICIPANT_LIMIT = 50
 
 export function getDefaultWorkspaceSettings(existing = {}) {
+  const rawDates = existing.dates
+  const dates =
+    Array.isArray(rawDates) && rawDates.length > 0
+      ? rawDates.map((entry) => String(entry ?? ''))
+      : ['']
+
   return {
     navigation_mode: existing.navigation_mode ?? 'free',
+    dates,
     closure_survey: {
       enabled: existing.closure_survey?.enabled ?? false,
       likert_scale: existing.closure_survey?.likert_scale ?? 5,
@@ -161,11 +168,21 @@ export function resolveSectionModuleName(sections, index) {
     return ''
   }
 
+  if (isClosureSurveySection(sections[index])) {
+    return sections[index]?.config?.module_name?.trim() || 'Encuesta de cierre'
+  }
+
   let cursor = index
 
   while (cursor >= 0) {
-    const config = sections[cursor]?.config ?? {}
+    const section = sections[cursor]
+    const config = section?.config ?? {}
     const name = config.module_name?.trim()
+
+    if (isClosureSurveySection(section)) {
+      cursor -= 1
+      continue
+    }
 
     if (!config.module_continue || cursor === 0) {
       return name || `Módulo ${cursor + 1}`
@@ -175,6 +192,25 @@ export function resolveSectionModuleName(sections, index) {
   }
 
   return 'Módulo 1'
+}
+
+/** Módulos disponibles para continuidad (sin encuesta de cierre). */
+export function listWorkspaceModuleNames(sections = []) {
+  const names = []
+
+  for (let index = 0; index < sections.length; index += 1) {
+    if (isClosureSurveySection(sections[index])) {
+      continue
+    }
+
+    const name = resolveSectionModuleName(sections, index)
+
+    if (name && !names.includes(name)) {
+      names.push(name)
+    }
+  }
+
+  return names
 }
 
 export function shouldShowModuleHeader(sections, index) {

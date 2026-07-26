@@ -5,19 +5,21 @@ import { SECTION_TYPE_OPTIONS } from '../../utils/workspaceHelpers'
 export default function WorkspaceAddActivities({
   addingType,
   onAdd,
-  compact = false,
+  showSaveAndFinish = false,
+  onSaveAndFinish,
+  saveAndFinishDisabled = false,
   showPublish = false,
   onPublish,
   publishDisabled = false,
-  publishLabel = 'Publicar espacio de trabajo',
+  publishLabel = 'Publicar',
   workspaceStatus,
 }) {
-  const [expanded, setExpanded] = useState(!compact)
+  const [expanded, setExpanded] = useState(true)
 
   const canPublish = workspaceStatus === 'draft' || workspaceStatus === 'paused'
 
   return (
-    <div className={`workspace-add-activities ${compact ? 'is-compact' : ''}`}>
+    <div className="workspace-add-activities workspace-design-footer">
       <div className="workspace-add-activities-bar">
         <button
           type="button"
@@ -27,6 +29,17 @@ export default function WorkspaceAddActivities({
           {expanded ? 'Ocultar tipos de actividad' : 'Agregar actividades'}
         </button>
 
+        {showSaveAndFinish && (
+          <button
+            type="button"
+            className="timer-btn timer-btn-secondary"
+            disabled={saveAndFinishDisabled}
+            onClick={onSaveAndFinish}
+          >
+            {saveAndFinishDisabled ? 'Guardando...' : 'Guardar y finalizar espacio'}
+          </button>
+        )}
+
         {showPublish && canPublish && (
           <button
             type="button"
@@ -34,7 +47,7 @@ export default function WorkspaceAddActivities({
             disabled={publishDisabled}
             onClick={onPublish}
           >
-            {publishLabel}
+            {publishDisabled ? 'Publicando...' : publishLabel}
           </button>
         )}
       </div>

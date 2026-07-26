@@ -11,6 +11,7 @@ import { fetchAccessCodesByType } from '../../services/accessCodeService'
 import {
   createWorkspace,
   deleteWorkspace,
+  duplicateWorkspace,
   fetchWorkspaces,
   isWorkspaceSetupError,
 } from '../../services/workspaceService'
@@ -25,6 +26,7 @@ export default function InteractiveWorkspaces() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [duplicatingId, setDuplicatingId] = useState('')
   const [form, setForm] = useState({ title: '', description: '' })
 
   async function loadWorkspaces() {
@@ -91,6 +93,24 @@ export default function InteractiveWorkspaces() {
       )
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  async function handleDuplicate(workspaceId) {
+    if (!user) {
+      return
+    }
+
+    setDuplicatingId(workspaceId)
+    setError('')
+
+    try {
+      const copy = await duplicateWorkspace(user.id, workspaceId)
+      navigate(`/interactivo/espacios/${copy.id}`)
+    } catch (duplicateError) {
+      setError(duplicateError.message || 'No se pudo duplicar el espacio.')
+    } finally {
+      setDuplicatingId('')
     }
   }
 
@@ -211,13 +231,27 @@ export default function InteractiveWorkspaces() {
 
               <AccessCodePanel code={codeMap[workspace.id]} resourceLabel="Espacio de trabajo" />
 
-              <div className="interactive-item-actions">
+              <div className="interactive-item-actions workspace-list-actions">
                 <Link
                   to={`/interactivo/espacios/${workspace.id}`}
                   className="btn-primary btn-link"
                 >
-                  Editar y panel en vivo
+                  Editar
                 </Link>
+                <Link
+                  to={`/interactivo/espacios/${workspace.id}?tab=panel`}
+                  className="timer-btn timer-btn-secondary btn-link"
+                >
+                  Panel en vivo
+                </Link>
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-secondary"
+                  disabled={duplicatingId === workspace.id}
+                  onClick={() => handleDuplicate(workspace.id)}
+                >
+                  {duplicatingId === workspace.id ? 'Duplicando...' : 'Duplicar'}
+                </button>
               </div>
             </article>
           ))

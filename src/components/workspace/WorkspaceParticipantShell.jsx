@@ -243,6 +243,23 @@ export default function WorkspaceParticipantShell({ code }) {
             className="workspace-participant-description"
           />
         ) : null}
+        {Array.isArray(workspace.settings?.dates) && workspace.settings.dates.length > 0 ? (
+          <p className="interactive-item-meta workspace-participant-dates">
+            {workspace.settings.dates
+              .map((entry) => {
+                try {
+                  return new Date(`${entry}T12:00:00`).toLocaleDateString('es-CL', {
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })
+                } catch {
+                  return entry
+                }
+              })
+              .join(' · ')}
+          </p>
+        ) : null}
         {workspace.group?.name && (
           <p className="interactive-item-meta">
             {workspace.group.name}
@@ -251,8 +268,8 @@ export default function WorkspaceParticipantShell({ code }) {
         )}
         {awaitingGroup && (
           <p className="participant-copy participant-wait">
-            Puedes avanzar en las secciones individuales. El facilitador te asignará a un
-            grupo para las actividades grupales.
+            Puedes revisar todas las actividades del espacio. Las actividades grupales están
+            en solo lectura hasta que el facilitador te asigne a un grupo.
           </p>
         )}
       </header>
@@ -307,7 +324,8 @@ export default function WorkspaceParticipantShell({ code }) {
 
             {activeSection.scope === 'group' && !activeSection.can_edit && (
               <p className="participant-copy participant-wait">
-                Solo lectura — el editor del grupo registra las respuestas compartidas.
+                Solo lectura — puedes revisar esta actividad grupal; el editor del grupo
+                registra las respuestas compartidas.
               </p>
             )}
 
