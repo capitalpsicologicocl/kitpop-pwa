@@ -1,10 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 
+import WorkspaceAttendanceModal from './WorkspaceAttendanceModal'
 import WorkspaceParticipantAuth from './WorkspaceParticipantAuth'
+import WorkspaceRichContent from './WorkspaceRichContent'
 import WorkspaceSectionInput from './WorkspaceSectionInput'
 import {
   getWorkspaceForParticipant,
   joinWorkspace,
+  submitWorkspaceAttendance,
+  touchWorkspacePresence,
   upsertWorkspaceResponse,
 } from '../../services/workspaceService'
 import { isResponseSection, resolveSectionModuleName, shouldShowModuleHeader } from '../../utils/workspaceHelpers'
@@ -17,9 +21,13 @@ export default function WorkspaceParticipantShell({ code }) {
   const [draftValues, setDraftValues] = useState({})
   const [savingSectionId, setSavingSectionId] = useState('')
   const [saveMessage, setSaveMessage] = useState('')
+  const [attendanceSubmitting, setAttendanceSubmitting] = useState(false)
+  const [attendanceError, setAttendanceError] = useState('')
 
-  const loadWorkspace = useCallback(async () => {
-    setLoading(true)
+  const loadWorkspace = useCallback(async ({ silent = false } = {}) => {
+    if (!silent) {
+      setLoading(true)
+    }
     setError('')
 
     try {
@@ -65,13 +73,54 @@ export default function WorkspaceParticipantShell({ code }) {
     } catch (loadError) {
       setError(loadError.message || 'No se pudo cargar el espacio.')
     } finally {
-      setLoading(false)
+      if (!silent) {
+        setLoading(false)
+      }
     }
   }, [code])
 
   useEffect(() => {
     loadWorkspace()
   }, [loadWorkspace])
+
+  useEffect(() => {
+    if (
+      !workspace ||
+      workspace.needsAuth ||
+      workspace.needsEnrollment ||
+      workspace.archived ||
+      !workspace.participant
+    ) {
+      return undefined
+    }
+
+    touchWorkspacePresence(code).catch(() => {})
+
+    const interval = window.setInterval(() => {
+      touchWorkspacePresence(code).catch(() => {})
+      loadWorkspace({ silent: true }).catch(() => {})
+    }, 30_000)
+
+    return () => window.clearInterval(interval)
+  }, [code, loadWorkspace, workspace])
+
+  async function handleAttendanceSubmit(payload) {
+    setAttendanceSubmitting(true)
+    setAttendanceError('')
+
+    try {
+      await submitWorkspaceAttendance(code, payload)
+      await loadWorkspace({ silent: true })
+    } catch (submitError) {
+      setAttendanceError(submitError.message || 'No se pudo registrar la asistencia.')
+    } finally {
+      setAttendanceSubmitting(false)
+    }
+  }
+
+  const showAttendanceModal = Boolean(
+    workspace?.modules?.attendance_prompt && !workspace?.participant?.attendance_registered_at
+  )
 
   async function handleJoined(displayName) {
     await joinWorkspace(code, displayName, true)
@@ -188,6 +237,12 @@ export default function WorkspaceParticipantShell({ code }) {
     <div className="workspace-participant-shell">
       <header className="workspace-participant-head">
         <h1>{workspace.title}</h1>
+        {workspace.description ? (
+          <WorkspaceRichContent
+            html={workspace.description}
+            className="workspace-participant-description"
+          />
+        ) : null}
         {workspace.group?.name && (
           <p className="interactive-item-meta">
             {workspace.group.name}
@@ -308,6 +363,14 @@ export default function WorkspaceParticipantShell({ code }) {
       </div>
 
       <p className="workspace-powered-by">Powered by KitPOP</p>
+
+      {showAttendanceModal && (
+        <WorkspaceAttendanceModal
+          submitting={attendanceSubmitting}
+          error={attendanceError}
+          onSubmit={handleAttendanceSubmit}
+        />
+      )}
     </div>
   )
 }

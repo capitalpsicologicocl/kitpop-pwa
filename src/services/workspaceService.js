@@ -308,6 +308,46 @@ export async function getWorkspaceForParticipant(code) {
   return data
 }
 
+export async function setWorkspaceModuleFlags(workspaceId, flags = {}) {
+  const { data, error } = await supabase.rpc('set_workspace_module_flags', {
+    p_workspace_id: workspaceId,
+    p_closure_survey_active: flags.closureSurveyActive ?? null,
+    p_attendance_prompt_active: flags.attendancePromptActive ?? null,
+  })
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
+
+export async function submitWorkspaceAttendance(code, payload) {
+  const { data, error } = await supabase.rpc('submit_workspace_attendance', {
+    p_code: code.trim().toUpperCase(),
+    p_first_name: payload.firstName,
+    p_last_name: payload.lastName,
+    p_rut: payload.rut,
+    p_job_title: payload.jobTitle,
+  })
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
+
+export async function touchWorkspacePresence(code) {
+  const { error } = await supabase.rpc('touch_workspace_presence', {
+    p_code: code.trim().toUpperCase(),
+  })
+
+  if (error && !error.message?.includes('touch_workspace_presence')) {
+    throw error
+  }
+}
+
 export async function upsertWorkspaceResponse(code, sectionId, value) {
   const { data, error } = await supabase.rpc('upsert_workspace_response', {
     p_code: code.trim().toUpperCase(),

@@ -1,7 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState, Fragment } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
+import RichTextEditor from '../../components/ui/RichTextEditor'
+import WorkspaceModulesSettings from '../../components/workspace/WorkspaceModulesSettings'
+import WorkspaceAddActivities from '../../components/workspace/WorkspaceAddActivities'
+import WorkspaceParticipantResponsesModal from '../../components/workspace/WorkspaceParticipantResponsesModal'
 import WorkspaceSectionEditor from '../../components/workspace/WorkspaceSectionEditor'
 import { useAuth } from '../../context/AuthContext'
 import { fetchAccessCodesByType } from '../../services/accessCodeService'
@@ -21,16 +25,20 @@ import {
   reopenWorkspace,
   replaceWorkspaceGroups,
   setGroupEditor,
+  setWorkspaceModuleFlags,
   updateWorkspace,
   updateWorkspaceSection,
 } from '../../services/workspaceService'
 import {
-  SECTION_TYPE_OPTIONS,
   aggregateBooleanResponses,
   aggregateChoiceResponses,
   aggregateLikertResponses,
   buildDefaultSection,
+  buildClosureSurveySections,
+  getConnectedParticipantCount,
+  getDefaultWorkspaceSettings,
   getWorkspaceStatusLabel,
+  isClosureSurveySection,
   isResponseSection,
 } from '../../utils/workspaceHelpers'
 import { buildWorkspaceExportHtml } from '../../utils/workspaceExport'
@@ -59,6 +67,7 @@ export default function WorkspaceEditor() {
   const [statusUpdating, setStatusUpdating] = useState(false)
   const [sectionSavingId, setSectionSavingId] = useState('')
   const [addingType, setAddingType] = useState('')
+  const [selectedParticipant, setSelectedParticipant] = useState(null)
   const [setupError, setSetupError] = useState(false)
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
@@ -68,6 +77,33 @@ export default function WorkspaceEditor() {
       (panel.responses ?? []).map((response) => response.section_id)
     )
   }, [panel.responses])
+
+  const connectedCount = useMemo(
+    () => getConnectedParticipantCount(panel.participants ?? [], panel.responses ?? []),
+    [panel.participants, panel.responses]
+  )
+
+  const activitySections = useMemo(
+    () => sections.filter((section) => !isClosureSurveySection(section)),
+    [sections]
+  )
+
+  const closureSections = useMemo(
+    () => sections.filter((section) => isClosureSurveySection(section)),
+    [sections]
+  )
+
+  const workspaceSettings = workspace?.settings ?? panel.settings ?? {}
+  const attendanceRegisteredCount = useMemo(
+    () =>
+      (panel.participants ?? []).filter((participant) => participant.attendance_registered_at)
+        .length,
+    [panel.participants]
+  )
+
+  function handlePublishWorkspace() {
+    handleStatusChange('open')
+  }
 
   const loadWorkspace = useCallback(async () => {
     if (!user || !id) {
@@ -98,6 +134,7 @@ export default function WorkspaceEditor() {
         title: workspaceData.title ?? '',
         description: workspaceData.description ?? '',
         navigation_mode: workspaceData.settings?.navigation_mode ?? 'free',
+        moduleSettings: getDefaultWorkspaceSettings(workspaceData.settings ?? {}),
       })
       setAccessCode(codes.find((entry) => entry.resource_id === id)?.code ?? '')
       setSetupError(false)
@@ -124,6 +161,11 @@ export default function WorkspaceEditor() {
     try {
       const summary = await getWorkspacePanelSummary(id)
       setPanel(summary)
+      if (summary.settings) {
+        setWorkspace((current) =>
+          current ? { ...current, settings: summary.settings } : current
+        )
+      }
     } catch (panelError) {
       setError(panelError.message || 'No se pudo cargar el panel.')
     } finally {
@@ -166,12 +208,24 @@ export default function WorkspaceEditor() {
     setError('')
 
     try {
+      const moduleSettings = form.moduleSettings ?? getDefaultWorkspaceSettings()
+      const settings = {
+        ...moduleSettings,
+        navigation_mode: form.navigation_mode,
+      }
+
       const updated = await updateWorkspace(user.id, workspace.id, {
         title: form.title.trim(),
         description: form.description.trim(),
         status: workspace.status,
-        settings: { navigation_mode: form.navigation_mode },
+        settings,
       })
+
+      await syncClosureSurveySections(
+        Boolean(moduleSettings.closure_survey?.enabled),
+        Number(moduleSettings.closure_survey?.likert_scale) || 5
+      )
+
       setWorkspace(updated)
       setMessage('Datos guardados.')
     } catch (saveError) {
@@ -245,6 +299,68 @@ export default function WorkspaceEditor() {
     }
   }
 
+  async function syncClosureSurveySections(enabled, likertScale) {
+    if (!user || !workspace) {
+      return
+    }
+
+    const existingClosure = sections.filter((section) => isClosureSurveySection(section))
+
+    for (const section of existingClosure) {
+      await deleteWorkspaceSection(user.id, section.id)
+    }
+
+    if (!enabled) {
+      setSections((current) => current.filter((section) => !isClosureSurveySection(section)))
+      return
+    }
+
+    const regularCount = sections.filter((section) => !isClosureSurveySection(section)).length
+    const drafts = buildClosureSurveySections(likertScale, regularCount)
+    const created = []
+
+    for (const draft of drafts) {
+      created.push(await createWorkspaceSection(user.id, workspace.id, draft))
+    }
+
+    setSections((current) => [
+      ...current.filter((section) => !isClosureSurveySection(section)),
+      ...created,
+    ])
+  }
+
+  async function handleModuleFlagChange(flags) {
+    if (!workspace) {
+      return
+    }
+
+    setError('')
+    setMessage('')
+
+    try {
+      const nextSettings = await setWorkspaceModuleFlags(workspace.id, flags)
+      setWorkspace((current) => ({ ...current, settings: nextSettings }))
+      setForm((current) =>
+        current
+          ? {
+              ...current,
+              moduleSettings: getDefaultWorkspaceSettings(nextSettings),
+            }
+          : current
+      )
+      setMessage(
+        flags.attendancePromptActive
+          ? 'Popup de asistencia enviado a participantes conectados.'
+          : flags.closureSurveyActive
+            ? 'Encuesta de cierre activada para participantes.'
+            : 'Módulo actualizado.'
+      )
+      await loadPanel()
+    } catch (moduleError) {
+      setError(moduleError.message || 'No se pudo actualizar el módulo.')
+    }
+  }
+
   async function handleAddSection(sectionType) {
     if (!user || !workspace) {
       return
@@ -254,7 +370,12 @@ export default function WorkspaceEditor() {
     setError('')
 
     try {
-      const defaults = buildDefaultSection(sectionType, sections.length, 'individual', sections)
+      const defaults = buildDefaultSection(
+        sectionType,
+        activitySections.length,
+        'individual',
+        activitySections
+      )
       const created = await createWorkspaceSection(user.id, workspace.id, defaults)
       setSections((current) => [...current, created])
       setMessage('Bloque agregado.')
@@ -380,8 +501,6 @@ export default function WorkspaceEditor() {
     )
   }
 
-  const participants = panel.participants ?? []
-
   return (
     <main id="interactive-view" className="fade-in workspace-editor-page">
       <Link to="/interactivo/espacios" className="back-btn">
@@ -461,7 +580,8 @@ export default function WorkspaceEditor() {
       )}
       {message && <div className="auth-message success">{message}</div>}
 
-      {tab === 'design' && form && (
+      <div className={`workspace-tab-panel ${tab === 'design' ? '' : 'workspace-tab-hidden'}`} hidden={tab !== 'design'}>
+        {form && (
         <>
           <form className="auth-panel interactive-form" onSubmit={handleSaveMeta}>
             <h3>Datos del espacio</h3>
@@ -476,10 +596,12 @@ export default function WorkspaceEditor() {
               </div>
               <div className="field full">
                 <label htmlFor="ws-desc">Descripción</label>
-                <textarea
+                <RichTextEditor
                   id="ws-desc"
                   value={form.description}
-                  onChange={(event) => setForm({ ...form, description: event.target.value })}
+                  onChange={(value) => setForm({ ...form, description: value })}
+                  placeholder="Contexto general del espacio para los participantes."
+                  minHeight={120}
                 />
               </div>
               <div className="field">
@@ -525,51 +647,67 @@ export default function WorkspaceEditor() {
             </div>
           </div>
 
-          <div className="auth-panel interactive-form">
-            <h3>Agregar actividades</h3>
-            <div className="workspace-add-types">
-              {SECTION_TYPE_OPTIONS.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  className="timer-btn timer-btn-secondary"
-                  disabled={addingType === option.value}
-                  onClick={() => handleAddSection(option.value)}
-                >
-                  + {option.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <WorkspaceModulesSettings
+            moduleSettings={form.moduleSettings ?? getDefaultWorkspaceSettings()}
+            closureSectionCount={closureSections.length}
+            onChange={(moduleSettings) => setForm({ ...form, moduleSettings })}
+          />
+
+          <WorkspaceAddActivities
+            addingType={addingType}
+            onAdd={handleAddSection}
+            workspaceStatus={workspace.status}
+          />
 
           <div className="workspace-section-list">
-            {sections.map((section, index) => (
-              <WorkspaceSectionEditor
-                key={section.id}
-                section={section}
-                sectionIndex={index}
-                sections={sections}
-                hasResponses={responseSectionIds.has(section.id)}
-                saving={sectionSavingId === section.id}
-                onChange={(next) =>
-                  setSections((current) =>
-                    current.map((item) => (item.id === section.id ? next : item))
-                  )
-                }
-                onSave={() => handleSaveSection(section)}
-                onDelete={() => handleDeleteSection(section.id)}
-              />
+            {activitySections.map((section, index) => (
+              <Fragment key={section.id}>
+                <WorkspaceSectionEditor
+                  section={section}
+                  sectionIndex={index}
+                  sections={sections}
+                  hasResponses={responseSectionIds.has(section.id)}
+                  saving={sectionSavingId === section.id}
+                  onChange={(next) =>
+                    setSections((current) =>
+                      current.map((item) => (item.id === section.id ? next : item))
+                    )
+                  }
+                  onSave={() => handleSaveSection(section)}
+                  onDelete={() => handleDeleteSection(section.id)}
+                />
+                <WorkspaceAddActivities
+                  compact
+                  addingType={addingType}
+                  onAdd={handleAddSection}
+                  workspaceStatus={workspace.status}
+                />
+              </Fragment>
             ))}
           </div>
-        </>
-      )}
 
-      {tab === 'panel' && (
+          <WorkspaceAddActivities
+            addingType={addingType}
+            onAdd={handleAddSection}
+            showPublish
+            onPublish={handlePublishWorkspace}
+            publishDisabled={statusUpdating}
+            publishLabel={
+              workspace.status === 'paused' ? 'Reabrir espacio de trabajo' : 'Publicar espacio de trabajo'
+            }
+            workspaceStatus={workspace.status}
+          />
+        </>
+        )}
+      </div>
+
+      <div className={`workspace-tab-panel ${tab === 'panel' ? '' : 'workspace-tab-hidden'}`} hidden={tab !== 'panel'}>
         <div className="auth-panel workspace-panel">
           <div className="workspace-panel-head">
             <h3>Panel en vivo</h3>
             <p className="interactive-item-meta">
-              {getParticipantLimitMessage(participants.length)}
+              {(panel.participants ?? []).length} inscritos · {connectedCount} conectados ahora ·{' '}
+              {getParticipantLimitMessage((panel.participants ?? []).length)}
               {panelLoading ? ' · Actualizando...' : ' · Se actualiza cada 30 s'}
             </p>
             <button type="button" className="timer-btn timer-btn-ghost" onClick={loadPanel}>
@@ -577,25 +715,84 @@ export default function WorkspaceEditor() {
             </button>
           </div>
 
+          <div className="workspace-live-modules auth-panel">
+            <h4>Módulos en vivo</h4>
+            <div className="workspace-live-modules-actions">
+              {workspaceSettings.attendance?.enabled && (
+                <>
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={() => handleModuleFlagChange({ attendancePromptActive: true })}
+                  >
+                    Solicitar registro de asistencia
+                  </button>
+                  <button
+                    type="button"
+                    className="timer-btn timer-btn-ghost"
+                    onClick={() => handleModuleFlagChange({ attendancePromptActive: false })}
+                  >
+                    Cerrar popup de asistencia
+                  </button>
+                  <p className="interactive-item-meta">
+                    {attendanceRegisteredCount} / {(panel.participants ?? []).length} registraron
+                    asistencia
+                    {workspaceSettings.attendance?.prompt_active ? ' · Popup activo' : ''}
+                  </p>
+                </>
+              )}
+
+              {workspaceSettings.closure_survey?.enabled && (
+                <>
+                  <button
+                    type="button"
+                    className="btn-primary"
+                    onClick={() => handleModuleFlagChange({ closureSurveyActive: true })}
+                    disabled={closureSections.length === 0}
+                  >
+                    Activar encuesta de cierre
+                  </button>
+                  <button
+                    type="button"
+                    className="timer-btn timer-btn-ghost"
+                    onClick={() => handleModuleFlagChange({ closureSurveyActive: false })}
+                  >
+                    Ocultar encuesta de cierre
+                  </button>
+                  <p className="interactive-item-meta">
+                    {closureSections.length} preguntas ·{' '}
+                    {workspaceSettings.closure_survey?.active
+                      ? 'Visible para participantes'
+                      : 'Oculta hasta activar'}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+
           <div className="workspace-panel-table-wrap">
             <table className="workspace-panel-table">
               <thead>
                 <tr>
+                  <th>Nº</th>
                   <th>Nombre</th>
                   <th>Correo</th>
                   <th>Grupo</th>
                   <th>Editor</th>
                   <th>Avance</th>
+                  <th>Asistencia</th>
+                  <th aria-label="Respuestas" />
                 </tr>
               </thead>
               <tbody>
-                {participants.length === 0 ? (
+                {(panel.participants ?? []).length === 0 ? (
                   <tr>
-                    <td colSpan={5}>Aún no hay inscripciones.</td>
+                    <td colSpan={8}>Aún no hay inscripciones.</td>
                   </tr>
                 ) : (
-                  participants.map((participant) => (
+                  (panel.participants ?? []).map((participant, index) => (
                     <tr key={participant.id}>
+                      <td>{index + 1}</td>
                       <td>{participant.display_name}</td>
                       <td>{participant.email}</td>
                       <td>
@@ -626,7 +823,7 @@ export default function WorkspaceEditor() {
                             }
                           >
                             <option value="">Sin editor</option>
-                            {participants
+                            {(panel.participants ?? [])
                               .filter((member) => member.group_id === participant.group_id)
                               .map((member) => (
                                 <option key={member.id} value={member.id}>
@@ -639,6 +836,23 @@ export default function WorkspaceEditor() {
                         )}
                       </td>
                       <td>{participant.completion_pct ?? 0}%</td>
+                      <td>{participant.attendance_registered_at ? '✓' : '—'}</td>
+                      <td>
+                        <button
+                          type="button"
+                          className="workspace-response-link"
+                          title="Ver respuestas completas"
+                          aria-label={`Ver respuestas de ${participant.display_name}`}
+                          onClick={() => setSelectedParticipant(participant)}
+                        >
+                          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path
+                              fill="currentColor"
+                              d="M3.9 12a5 5 0 0 1 9.05-2.9l1.43 1.43A3 3 0 0 0 12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4a3 3 0 0 0 2.32-1.1l1.43 1.43A5 5 0 0 1 3.9 12Zm14.43-1.17 1.43-1.43A5 5 0 0 1 20.1 12a5 5 0 0 1-9.05 2.9l-1.43-1.43A3 3 0 0 0 12 16c2.21 0 4-1.79 4-4a3 3 0 0 0-2.32-1.17l-1.43 1.43A5 5 0 0 1 20.33 10.83ZM12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                            />
+                          </svg>
+                        </button>
+                      </td>
                     </tr>
                   ))
                 )}
@@ -705,9 +919,19 @@ export default function WorkspaceEditor() {
             })}
           </div>
         </div>
+      </div>
+
+      {selectedParticipant && (
+        <WorkspaceParticipantResponsesModal
+          participant={selectedParticipant}
+          sections={sections}
+          responses={panel.responses ?? []}
+          groups={panel.groups ?? []}
+          onClose={() => setSelectedParticipant(null)}
+        />
       )}
 
-      {tab === 'export' && (
+      <div className={`workspace-tab-panel ${tab === 'export' ? '' : 'workspace-tab-hidden'}`} hidden={tab !== 'export'}>
         <div className="auth-panel workspace-export-panel">
           <h3>Exportar resumen</h3>
           <p className="interactive-item-meta">
@@ -717,7 +941,7 @@ export default function WorkspaceEditor() {
             Imprimir / PDF (navegador)
           </button>
         </div>
-      )}
+      </div>
     </main>
   )
 }

@@ -1,3 +1,9 @@
+import {
+  buildSatisfactionQuestions,
+  getLikertScaleFromType,
+  isLikertType,
+} from './surveyHelpers'
+
 export const WORKSPACE_STATUSES = {
   draft: 'Borrador',
   open: 'Abierto',
@@ -22,6 +28,25 @@ export const WORKSPACE_SCOPES = {
 }
 
 export const WORKSPACE_PARTICIPANT_LIMIT = 50
+
+export function getDefaultWorkspaceSettings(existing = {}) {
+  return {
+    navigation_mode: existing.navigation_mode ?? 'free',
+    closure_survey: {
+      enabled: existing.closure_survey?.enabled ?? false,
+      likert_scale: existing.closure_survey?.likert_scale ?? 5,
+      active: existing.closure_survey?.active ?? false,
+    },
+    attendance: {
+      enabled: existing.attendance?.enabled ?? false,
+      prompt_active: existing.attendance?.prompt_active ?? false,
+    },
+  }
+}
+
+export function isClosureSurveySection(section) {
+  return Boolean(section?.config?.closure_survey)
+}
 
 export const SECTION_TYPE_OPTIONS = Object.entries(WORKSPACE_SECTION_TYPES).map(
   ([value, label]) => ({ value, label })
@@ -142,6 +167,114 @@ export function shouldShowModuleHeader(sections, index) {
 export function getSectionPrompt(section) {
   const config = section?.config ?? {}
   return config.prompt?.trim() || config.content?.trim() || ''
+}
+
+const CONNECTED_WINDOW_MS = 10 * 60 * 1000
+
+export function getConnectedParticipantCount(participants = [], responses = []) {
+  const now = Date.now()
+  const activeIds = new Set()
+
+  for (const participant of participants) {
+    if (participant.last_seen_at) {
+      const seenAt = new Date(participant.last_seen_at).getTime()
+
+      if (now - seenAt <= CONNECTED_WINDOW_MS) {
+        activeIds.add(participant.id)
+      }
+    }
+  }
+
+  for (const response of responses) {
+    if (!response.participant_id || !response.updated_at) {
+      continue
+    }
+
+    const updatedAt = new Date(response.updated_at).getTime()
+
+    if (now - updatedAt <= CONNECTED_WINDOW_MS) {
+      activeIds.add(response.participant_id)
+    }
+  }
+
+  return activeIds.size
+}
+
+export function formatWorkspaceResponseValue(section, value) {
+  if (!value || typeof value !== 'object') {
+    return '—'
+  }
+
+  const config = section?.config ?? {}
+
+  if (section.section_type === 'text_short' || section.section_type === 'text_long') {
+    return value.text?.trim() || '—'
+  }
+
+  if (section.section_type === 'single_choice') {
+    const option = (config.options ?? []).find((item) => item.id === value.choice)
+    return option?.label ?? value.choice ?? '—'
+  }
+
+  if (section.section_type === 'multi_choice') {
+    const labels = (value.choices ?? [])
+      .map((choiceId) => (config.options ?? []).find((item) => item.id === choiceId)?.label)
+      .filter(Boolean)
+
+    return labels.length ? labels.join(', ') : '—'
+  }
+
+  if (section.section_type === 'boolean') {
+    if (value.value === true) {
+      return config.true_label ?? 'Sí'
+    }
+
+    if (value.value === false) {
+      return config.false_label ?? 'No'
+    }
+
+    return '—'
+  }
+
+  if (section.section_type === 'likert') {
+    return value.score ? `${value.score} / ${config.scale ?? 5}` : '—'
+  }
+
+  if (section.section_type === 'table') {
+    const rows = value.rows ?? []
+    return rows.length ? `${rows.length} fila(s)` : '—'
+  }
+
+  return JSON.stringify(value)
+}
+
+export function getParticipantResponses(participant, sections, responses, groups) {
+  const groupName = groups.find((group) => group.id === participant.group_id)?.name ?? 'Sin grupo'
+
+  return (sections ?? [])
+    .filter(isResponseSection)
+    .map((section) => {
+      const response = (responses ?? []).find((item) => {
+        if (item.section_id !== section.id) {
+          return false
+        }
+
+        if (section.scope === 'individual') {
+          return item.participant_id === participant.id
+        }
+
+        return item.group_id === participant.group_id && participant.group_id
+      })
+
+      return {
+        section,
+        value: response?.value ?? null,
+        label: formatWorkspaceResponseValue(section, response?.value),
+        updatedAt: response?.updated_at ?? null,
+      }
+    })
+    .filter((entry) => entry.value)
+    .map((entry) => ({ ...entry, groupName }))
 }
 
 export function isResponseSection(section) {
@@ -288,5 +421,44 @@ export function isWorkspaceSetupError(error) {
     message.includes('workspace_') ||
     error?.code === '42P01' ||
     error?.code === 'PGRST205'
+  )
+}
+
+export function mapSurveyQuestionToWorkspaceSection(question, sortOrder) {
+  const config = {
+    closure_survey: true,
+    module_name: 'Encuesta de cierre',
+    module_continue: false,
+    description: '',
+    prompt: question.prompt,
+  }
+
+  let sectionType = 'text_long'
+
+  if (isLikertType(question.questionType)) {
+    sectionType = 'likert'
+    config.scale = getLikertScaleFromType(question.questionType)
+  } else if (question.questionType === 'yes_no') {
+    sectionType = 'boolean'
+    config.true_label = 'Sí'
+    config.false_label = 'No'
+  }
+
+  const title =
+    question.prompt.length > 72 ? `${question.prompt.slice(0, 72)}…` : question.prompt
+
+  return {
+    title,
+    section_type: sectionType,
+    scope: 'individual',
+    sort_order: sortOrder,
+    is_required: question.isRequired ?? true,
+    config,
+  }
+}
+
+export function buildClosureSurveySections(likertScale, startSortOrder = 0) {
+  return buildSatisfactionQuestions(likertScale).map((question, index) =>
+    mapSurveyQuestionToWorkspaceSection(question, startSortOrder + index)
   )
 }

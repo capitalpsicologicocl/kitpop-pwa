@@ -4,6 +4,7 @@ import {
   getSectionPrompt,
   normalizeTableValue,
 } from '../../utils/workspaceHelpers'
+import WorkspaceRichContent from './WorkspaceRichContent'
 
 function LikertInput({ scale, value, onChange, disabled, name }) {
   const values = Array.from({ length: scale }, (_, index) => index + 1)
@@ -41,9 +42,12 @@ export default function WorkspaceSectionInput({
     return (
       <div className="workspace-activity-body">
         {config.description ? (
-          <p className="workspace-section-description">{config.description}</p>
+          <WorkspaceRichContent
+            html={config.description}
+            className="workspace-section-description"
+          />
         ) : null}
-        <div className="workspace-info-block">{prompt}</div>
+        <WorkspaceRichContent html={prompt} className="workspace-info-block" />
       </div>
     )
   }
@@ -51,9 +55,14 @@ export default function WorkspaceSectionInput({
   return (
     <div className="workspace-activity-body">
       {config.description ? (
-        <p className="workspace-section-description">{config.description}</p>
+        <WorkspaceRichContent
+          html={config.description}
+          className="workspace-section-description"
+        />
       ) : null}
-      {prompt ? <p className="workspace-section-prompt">{prompt}</p> : null}
+      {prompt ? (
+        <WorkspaceRichContent html={prompt} className="workspace-section-prompt" />
+      ) : null}
 
       {renderResponseInput(section, config, value, onChange, disabled)}
     </div>

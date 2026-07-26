@@ -1,3 +1,4 @@
+import RichTextEditor from '../ui/RichTextEditor'
 import {
   SECTION_TYPE_OPTIONS,
   getScopeLabel,
@@ -103,7 +104,7 @@ export default function WorkspaceSectionEditor({
           <span className="workspace-design-block-label">Módulo</span>
 
           {sectionIndex > 0 ? (
-            <label className="workspace-inline-check workspace-module-continue">
+            <label className="workspace-field-check">
               <input
                 type="checkbox"
                 checked={moduleContinues}
@@ -145,12 +146,12 @@ export default function WorkspaceSectionEditor({
 
         <div className="field full">
           <label htmlFor={`description-${section.id}`}>Descripción</label>
-          <textarea
+          <RichTextEditor
             id={`description-${section.id}`}
-            rows={2}
             value={config.description ?? ''}
-            onChange={(event) => updateConfig('description', event.target.value)}
+            onChange={(value) => updateConfig('description', value)}
             placeholder="Contexto breve para el participante (opcional)."
+            minHeight={100}
           />
         </div>
 
@@ -158,16 +159,16 @@ export default function WorkspaceSectionEditor({
           <label htmlFor={`prompt-${section.id}`}>
             {section.section_type === 'info' ? 'Instrucciones' : 'Pregunta o actividad'}
           </label>
-          <textarea
+          <RichTextEditor
             id={`prompt-${section.id}`}
-            rows={3}
             value={config.prompt ?? config.content ?? ''}
-            onChange={(event) => updatePrompt(event.target.value)}
+            onChange={updatePrompt}
             placeholder={
               section.section_type === 'info'
                 ? 'Texto que verán los participantes en este bloque.'
                 : 'Enunciado de la pregunta o consigna de la actividad.'
             }
+            minHeight={140}
           />
         </div>
 
@@ -201,39 +202,44 @@ export default function WorkspaceSectionEditor({
         </div>
 
         {section.section_type !== 'info' && (
-          <label className="workspace-inline-check field full">
-            <input
-              type="checkbox"
-              checked={section.is_required ?? true}
-              onChange={(event) => updateField('is_required', event.target.checked)}
-            />
-            <span>Actividad obligatoria</span>
-          </label>
+          <div className="field full">
+            <label className="workspace-field-check">
+              <input
+                type="checkbox"
+                checked={section.is_required ?? true}
+                onChange={(event) => updateField('is_required', event.target.checked)}
+              />
+              <span>Actividad obligatoria</span>
+            </label>
+          </div>
         )}
       </div>
 
       {(section.section_type === 'single_choice' ||
         section.section_type === 'multi_choice') && (
-        <div className="workspace-options-editor">
-          <p className="interactive-item-meta">Alternativas de respuesta</p>
-          {(config.options ?? []).map((option, index) => (
-            <div key={option.id} className="workspace-option-row">
-              <input
-                value={option.label}
-                onChange={(event) => updateOption(index, event.target.value)}
-              />
-              <button
-                type="button"
-                className="timer-btn timer-btn-ghost"
-                onClick={() => removeOption(index)}
-              >
-                Quitar
-              </button>
-            </div>
-          ))}
-          <button type="button" className="timer-btn timer-btn-secondary" onClick={addOption}>
-            + Alternativa
-          </button>
+        <div className="workspace-options-editor form-grid">
+          <div className="field full">
+            <label>Alternativas de respuesta</label>
+            {(config.options ?? []).map((option, index) => (
+              <div key={option.id} className="workspace-option-row">
+                <input
+                  value={option.label}
+                  onChange={(event) => updateOption(index, event.target.value)}
+                  placeholder={`Alternativa ${index + 1}`}
+                />
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-ghost"
+                  onClick={() => removeOption(index)}
+                >
+                  Quitar
+                </button>
+              </div>
+            ))}
+            <button type="button" className="timer-btn timer-btn-secondary" onClick={addOption}>
+              + Alternativa
+            </button>
+          </div>
         </div>
       )}
 
@@ -252,7 +258,7 @@ export default function WorkspaceSectionEditor({
       )}
 
       {section.section_type === 'table' && (
-        <div className="workspace-table-config">
+        <div className="workspace-table-config form-grid">
           <div className="field">
             <label>Filas de la tabla</label>
             <select
@@ -279,18 +285,21 @@ export default function WorkspaceSectionEditor({
             </div>
           )}
 
-          <p className="interactive-item-meta">Columnas</p>
-          {(config.columns ?? []).map((column, index) => (
-            <div key={column.key} className="workspace-option-row">
-              <input
-                value={column.label}
-                onChange={(event) => updateColumn(index, 'label', event.target.value)}
-              />
-            </div>
-          ))}
-          <button type="button" className="timer-btn timer-btn-secondary" onClick={addColumn}>
-            + Columna
-          </button>
+          <div className="field full">
+            <label>Columnas</label>
+            {(config.columns ?? []).map((column, index) => (
+              <div key={column.key} className="workspace-option-row">
+                <input
+                  value={column.label}
+                  onChange={(event) => updateColumn(index, 'label', event.target.value)}
+                  placeholder={`Columna ${index + 1}`}
+                />
+              </div>
+            ))}
+            <button type="button" className="timer-btn timer-btn-secondary" onClick={addColumn}>
+              + Columna
+            </button>
+          </div>
         </div>
       )}
 
