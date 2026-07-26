@@ -3,7 +3,6 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import RichTextEditor from '../../components/ui/RichTextEditor'
-import WorkspaceModulesSettings from '../../components/workspace/WorkspaceModulesSettings'
 import WorkspaceAddActivities from '../../components/workspace/WorkspaceAddActivities'
 import WorkspaceParticipantResponsesModal from '../../components/workspace/WorkspaceParticipantResponsesModal'
 import WorkspaceSectionEditor from '../../components/workspace/WorkspaceSectionEditor'
@@ -35,6 +34,7 @@ import {
   aggregateLikertResponses,
   buildDefaultSection,
   buildClosureSurveySections,
+  buildSectionSavePayload,
   getConnectedParticipantCount,
   getDefaultWorkspaceSettings,
   getWorkspaceStatusLabel,
@@ -70,8 +70,8 @@ export default function WorkspaceEditor() {
   const [panelLoading, setPanelLoading] = useState(false)
   const [savingMeta, setSavingMeta] = useState(false)
   const [statusUpdating, setStatusUpdating] = useState(false)
-  const [sectionSavingId, setSectionSavingId] = useState('')
   const [addingType, setAddingType] = useState('')
+  const [lastAddedSectionId, setLastAddedSectionId] = useState('')
   const [selectedParticipant, setSelectedParticipant] = useState(null)
   const [setupError, setSetupError] = useState(false)
   const [error, setError] = useState('')
@@ -105,10 +105,6 @@ export default function WorkspaceEditor() {
         .length,
     [panel.participants]
   )
-
-  function handlePublishWorkspace() {
-    handleStatusChange('open')
-  }
 
   const loadWorkspace = useCallback(async () => {
     if (!user?.id || !id) {
@@ -203,12 +199,13 @@ export default function WorkspaceEditor() {
     return () => window.clearInterval(interval)
   }, [loadPanel, tab])
 
-  async function persistWorkspaceMeta() {
+  async function persistWorkspaceMeta(nextModuleSettings = null) {
     if (!user || !workspace || !form) {
       return false
     }
 
-    const moduleSettings = form.moduleSettings ?? getDefaultWorkspaceSettings()
+    const moduleSettings =
+      nextModuleSettings ?? form.moduleSettings ?? getDefaultWorkspaceSettings()
     const cleanedDates = (form.dates ?? []).map((entry) => String(entry ?? '').trim()).filter(Boolean)
     const settings = {
       ...moduleSettings,
@@ -228,6 +225,9 @@ export default function WorkspaceEditor() {
       Number(moduleSettings.closure_survey?.likert_scale) || 5
     )
 
+    setForm((current) =>
+      current ? { ...current, moduleSettings: getDefaultWorkspaceSettings(settings) } : current
+    )
     setWorkspace(updated)
     return true
   }
@@ -249,6 +249,37 @@ export default function WorkspaceEditor() {
     }
   }
 
+  async function handleSaveAll() {
+    if (!user) {
+      return
+    }
+
+    setSavingMeta(true)
+    setMessage('')
+    setError('')
+
+    try {
+      await persistWorkspaceMeta()
+
+      for (const section of activitySections) {
+        const updated = await updateWorkspaceSection(
+          user.id,
+          section.id,
+          buildSectionSavePayload(section)
+        )
+        setSections((current) =>
+          current.map((item) => (item.id === section.id ? updated : item))
+        )
+      }
+
+      setMessage('Espacio guardado.')
+    } catch (saveError) {
+      setError(saveError.message || 'No se pudo guardar el espacio.')
+    } finally {
+      setSavingMeta(false)
+    }
+  }
+
   async function handleSaveAndFinish() {
     setSavingMeta(true)
     setMessage('')
@@ -256,9 +287,18 @@ export default function WorkspaceEditor() {
 
     try {
       await persistWorkspaceMeta()
+
+      for (const section of activitySections) {
+        await updateWorkspaceSection(
+          user.id,
+          section.id,
+          buildSectionSavePayload(section)
+        )
+      }
+
       navigate('/interactivo/espacios')
     } catch (saveError) {
-      setError(saveError.message || 'No se pudieron guardar los datos.')
+      setError(saveError.message || 'No se pudo guardar el espacio.')
     } finally {
       setSavingMeta(false)
     }
@@ -419,60 +459,83 @@ export default function WorkspaceEditor() {
     }
   }
 
-  async function handleAddSection(sectionType) {
-    if (!user || !workspace) {
+  async function handleAddActivity(option) {
+    if (!user || !workspace || !form) {
       return
     }
 
-    setAddingType(sectionType)
+    if (option.kind === 'module') {
+      setAddingType(option.value)
+      setError('')
+      setMessage('')
+
+      try {
+        const currentSettings = form.moduleSettings ?? getDefaultWorkspaceSettings()
+
+        if (option.value === 'closure_survey') {
+          if (currentSettings.closure_survey?.enabled) {
+            setMessage('La encuesta de satisfacción ya está en este espacio.')
+            return
+          }
+
+          const nextSettings = {
+            ...currentSettings,
+            closure_survey: {
+              ...currentSettings.closure_survey,
+              enabled: true,
+              likert_scale: currentSettings.closure_survey?.likert_scale ?? 5,
+            },
+          }
+
+          await persistWorkspaceMeta(nextSettings)
+          setMessage('Encuesta de satisfacción agregada. Actívala desde el panel en vivo.')
+          return
+        }
+
+        if (option.value === 'attendance') {
+          if (currentSettings.attendance?.enabled) {
+            setMessage('El registro de asistencia ya está en este espacio.')
+            return
+          }
+
+          const nextSettings = {
+            ...currentSettings,
+            attendance: {
+              ...currentSettings.attendance,
+              enabled: true,
+            },
+          }
+
+          await persistWorkspaceMeta(nextSettings)
+          setMessage('Registro de asistencia agregado. Dispara el popup desde el panel en vivo.')
+        }
+      } catch (moduleError) {
+        setError(moduleError.message || 'No se pudo agregar el módulo.')
+      } finally {
+        setAddingType('')
+      }
+
+      return
+    }
+
+    setAddingType(option.value)
     setError('')
 
     try {
       const defaults = buildDefaultSection(
-        sectionType,
+        option.value,
         activitySections.length,
         'individual',
         activitySections
       )
       const created = await createWorkspaceSection(user.id, workspace.id, defaults)
       setSections((current) => [...current, created])
-      setMessage('Bloque agregado.')
+      setLastAddedSectionId(created.id)
+      setMessage('Actividad agregada.')
     } catch (createError) {
-      setError(createError.message || 'No se pudo agregar el bloque.')
+      setError(createError.message || 'No se pudo agregar la actividad.')
     } finally {
       setAddingType('')
-    }
-  }
-
-  async function handleSaveSection(section) {
-    if (!user) {
-      return
-    }
-
-    setSectionSavingId(section.id)
-    setError('')
-
-    const payload = { ...section }
-
-    if (section.section_type === 'info') {
-      const prompt = section.config?.prompt ?? section.config?.content ?? ''
-      payload.config = {
-        ...section.config,
-        prompt,
-        content: prompt,
-      }
-    }
-
-    try {
-      const updated = await updateWorkspaceSection(user.id, section.id, payload)
-      setSections((current) =>
-        current.map((item) => (item.id === section.id ? updated : item))
-      )
-      setMessage('Actividad guardada.')
-    } catch (saveError) {
-      setError(saveError.message || 'No se pudo guardar el bloque.')
-    } finally {
-      setSectionSavingId('')
     }
   }
 
@@ -745,14 +808,6 @@ export default function WorkspaceEditor() {
             </div>
           </div>
 
-          <WorkspaceModulesSettings
-            moduleSettings={form.moduleSettings ?? getDefaultWorkspaceSettings()}
-            closureSectionCount={closureSections.length}
-            onChange={(moduleSettings) =>
-              setForm((current) => ({ ...current, moduleSettings }))
-            }
-          />
-
           <div className="workspace-section-list">
             {activitySections.map((section, index) => (
               <WorkspaceSectionEditor
@@ -761,13 +816,12 @@ export default function WorkspaceEditor() {
                 sectionIndex={index}
                 sections={activitySections}
                 hasResponses={responseSectionIds.has(section.id)}
-                saving={sectionSavingId === section.id}
+                defaultExpanded={section.id === lastAddedSectionId}
                 onChange={(next) =>
                   setSections((current) =>
                     current.map((item) => (item.id === section.id ? next : item))
                   )
                 }
-                onSave={() => handleSaveSection(section)}
                 onDelete={() => handleDeleteSection(section.id)}
               />
             ))}
@@ -775,17 +829,11 @@ export default function WorkspaceEditor() {
 
           <WorkspaceAddActivities
             addingType={addingType}
-            onAdd={handleAddSection}
-            showSaveAndFinish
-            onSaveAndFinish={handleSaveAndFinish}
-            saveAndFinishDisabled={savingMeta}
-            showPublish
-            onPublish={handlePublishWorkspace}
-            publishDisabled={statusUpdating}
-            publishLabel={
-              workspace.status === 'paused' ? 'Reabrir espacio' : 'Publicar'
-            }
-            workspaceStatus={workspace.status}
+            onAdd={handleAddActivity}
+            onSave={handleSaveAll}
+            onFinish={handleSaveAndFinish}
+            saving={savingMeta}
+            moduleSettings={form.moduleSettings ?? getDefaultWorkspaceSettings()}
           />
         </>
         )}

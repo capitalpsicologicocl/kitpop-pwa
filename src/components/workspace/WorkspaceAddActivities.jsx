@@ -1,70 +1,77 @@
 import { useState } from 'react'
 
-import { SECTION_TYPE_OPTIONS } from '../../utils/workspaceHelpers'
+import { ADD_ACTIVITY_MENU_OPTIONS } from '../../utils/workspaceHelpers'
 
 export default function WorkspaceAddActivities({
   addingType,
   onAdd,
-  showSaveAndFinish = false,
-  onSaveAndFinish,
-  saveAndFinishDisabled = false,
-  showPublish = false,
-  onPublish,
-  publishDisabled = false,
-  publishLabel = 'Publicar',
-  workspaceStatus,
+  onSave,
+  onFinish,
+  saving = false,
+  moduleSettings,
 }) {
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(false)
 
-  const canPublish = workspaceStatus === 'draft' || workspaceStatus === 'paused'
+  const closureEnabled = Boolean(moduleSettings?.closure_survey?.enabled)
+  const attendanceEnabled = Boolean(moduleSettings?.attendance?.enabled)
+
+  function handleOptionClick(option) {
+    onAdd(option)
+    setExpanded(false)
+  }
 
   return (
     <div className="workspace-add-activities workspace-design-footer">
-      <div className="workspace-add-activities-bar">
+      <div className="workspace-footer-actions">
         <button
           type="button"
-          className="timer-btn timer-btn-secondary"
+          className="workspace-footer-btn workspace-footer-btn-secondary"
+          aria-expanded={expanded}
           onClick={() => setExpanded((current) => !current)}
         >
-          {expanded ? 'Ocultar tipos de actividad' : 'Agregar actividades'}
+          Agregar actividades
         </button>
 
-        {showSaveAndFinish && (
-          <button
-            type="button"
-            className="timer-btn timer-btn-secondary"
-            disabled={saveAndFinishDisabled}
-            onClick={onSaveAndFinish}
-          >
-            {saveAndFinishDisabled ? 'Guardando...' : 'Guardar y finalizar espacio'}
-          </button>
-        )}
+        <button
+          type="button"
+          className="workspace-footer-btn workspace-footer-btn-secondary"
+          disabled={saving}
+          onClick={onSave}
+        >
+          {saving ? 'Guardando...' : 'Guardar'}
+        </button>
 
-        {showPublish && canPublish && (
-          <button
-            type="button"
-            className="btn-primary"
-            disabled={publishDisabled}
-            onClick={onPublish}
-          >
-            {publishDisabled ? 'Publicando...' : publishLabel}
-          </button>
-        )}
+        <button
+          type="button"
+          className="workspace-footer-btn workspace-footer-btn-primary"
+          disabled={saving}
+          onClick={onFinish}
+        >
+          Finalizar
+        </button>
       </div>
 
       {expanded && (
         <div className="workspace-add-types">
-          {SECTION_TYPE_OPTIONS.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              className="timer-btn timer-btn-secondary"
-              disabled={addingType === option.value}
-              onClick={() => onAdd(option.value)}
-            >
-              + {option.label}
-            </button>
-          ))}
+          {ADD_ACTIVITY_MENU_OPTIONS.map((option) => {
+            const isModuleOn =
+              (option.value === 'closure_survey' && closureEnabled) ||
+              (option.value === 'attendance' && attendanceEnabled)
+            const isLoading = addingType === option.value
+
+            return (
+              <button
+                key={`${option.kind}-${option.value}`}
+                type="button"
+                className="workspace-add-type-btn"
+                disabled={isLoading || (option.kind === 'module' && isModuleOn)}
+                onClick={() => handleOptionClick(option)}
+              >
+                + {option.label}
+                {isModuleOn ? ' ✓' : ''}
+              </button>
+            )
+          })}
         </div>
       )}
     </div>

@@ -84,6 +84,33 @@ export const SECTION_TYPE_OPTIONS = Object.entries(WORKSPACE_SECTION_TYPES).map(
   ([value, label]) => ({ value, label })
 )
 
+export const ADD_ACTIVITY_MENU_OPTIONS = [
+  { kind: 'section', value: 'info', label: 'Instrucciones' },
+  { kind: 'section', value: 'text_long', label: 'Pregunta abierta' },
+  { kind: 'section', value: 'single_choice', label: 'Alternativa única' },
+  { kind: 'section', value: 'multi_choice', label: 'Alternativas múltiples' },
+  { kind: 'section', value: 'boolean', label: 'Verdadero / Falso' },
+  { kind: 'section', value: 'likert', label: 'Escala Likert' },
+  { kind: 'section', value: 'table', label: 'Tabla' },
+  { kind: 'module', value: 'closure_survey', label: 'Encuesta de satisfacción' },
+  { kind: 'module', value: 'attendance', label: 'Registro de asistencia' },
+]
+
+export function buildSectionSavePayload(section) {
+  const payload = { ...section }
+
+  if (section.section_type === 'info') {
+    const prompt = section.config?.prompt ?? section.config?.content ?? ''
+    payload.config = {
+      ...section.config,
+      prompt,
+      content: prompt,
+    }
+  }
+
+  return payload
+}
+
 export function getWorkspaceStatusLabel(status) {
   return WORKSPACE_STATUSES[status] ?? status
 }

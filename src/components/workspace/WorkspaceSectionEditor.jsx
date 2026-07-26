@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 
 import RichTextEditor from '../ui/RichTextEditor'
 import {
@@ -14,11 +14,11 @@ export default function WorkspaceSectionEditor({
   sectionIndex,
   sections,
   onChange,
-  onSave,
   onDelete,
-  saving,
   hasResponses,
+  defaultExpanded = false,
 }) {
+  const [expanded, setExpanded] = useState(defaultExpanded)
   const config = section.config ?? {}
   const effectiveModule = resolveSectionModuleName(sections, sectionIndex)
   const moduleMode =
@@ -130,21 +130,36 @@ export default function WorkspaceSectionEditor({
   }
 
   return (
-    <article className="workspace-section-editor auth-panel">
+    <article
+      className={`workspace-section-editor auth-panel ${expanded ? 'is-expanded' : 'is-collapsed'}`}
+    >
       <div className="interactive-item-head workspace-section-editor-head">
-        <div className="workspace-section-order">
-          <span className="profile-badge">Actividad {sectionIndex + 1}</span>
-          <p className="interactive-item-meta">
-            {getSectionTypeLabel(section.section_type)} · {getScopeLabel(section.scope)}
-            {effectiveModule ? ` · ${effectiveModule}` : ''}
-          </p>
-        </div>
+        <button
+          type="button"
+          className="workspace-section-toggle"
+          aria-expanded={expanded}
+          onClick={() => setExpanded((current) => !current)}
+        >
+          <span className="workspace-section-chevron" aria-hidden="true">
+            {expanded ? '▾' : '▸'}
+          </span>
+          <div className="workspace-section-order">
+            <span className="profile-badge">Actividad {sectionIndex + 1}</span>
+            <p className="interactive-item-meta">
+              {section.title?.trim() || 'Sin título'} ·{' '}
+              {getSectionTypeLabel(section.section_type)} · {getScopeLabel(section.scope)}
+              {effectiveModule ? ` · ${effectiveModule}` : ''}
+            </p>
+          </div>
+        </button>
 
         <button type="button" className="journal-delete" onClick={onDelete}>
           Eliminar
         </button>
       </div>
 
+      {expanded ? (
+        <>
       <div className="workspace-design-form form-grid">
         <div className="workspace-design-block field full">
           <span className="workspace-design-block-label">Módulo</span>
@@ -359,12 +374,8 @@ export default function WorkspaceSectionEditor({
           </div>
         </div>
       )}
-
-      <div className="form-actions workspace-section-actions">
-        <button type="button" className="btn-primary" disabled={saving} onClick={onSave}>
-          {saving ? 'Guardando...' : 'Guardar actividad'}
-        </button>
-      </div>
+        </>
+      ) : null}
     </article>
   )
 }

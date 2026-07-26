@@ -234,19 +234,19 @@ export default function InteractiveWorkspaces() {
               <div className="interactive-item-actions workspace-list-actions">
                 <Link
                   to={`/interactivo/espacios/${workspace.id}`}
-                  className="btn-primary btn-link"
+                  className="workspace-action-btn workspace-action-btn-primary"
                 >
                   Editar
                 </Link>
                 <Link
                   to={`/interactivo/espacios/${workspace.id}?tab=panel`}
-                  className="timer-btn timer-btn-secondary btn-link"
+                  className="workspace-action-btn workspace-action-btn-secondary"
                 >
                   Panel en vivo
                 </Link>
                 <button
                   type="button"
-                  className="timer-btn timer-btn-secondary"
+                  className="workspace-action-btn workspace-action-btn-secondary"
                   disabled={duplicatingId === workspace.id}
                   onClick={() => handleDuplicate(workspace.id)}
                 >
