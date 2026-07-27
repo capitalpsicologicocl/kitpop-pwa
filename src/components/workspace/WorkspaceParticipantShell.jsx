@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import WorkspaceAttendanceModal from './WorkspaceAttendanceModal'
 import WorkspaceParticipantAuth from './WorkspaceParticipantAuth'
@@ -33,13 +33,90 @@ export default function WorkspaceParticipantShell({ code }) {
   const [attendanceSubmitting, setAttendanceSubmitting] = useState(false)
   const [attendanceError, setAttendanceError] = useState('')
 
+  const draftValuesRef = useRef({})
+  const dirtySectionIdsRef = useRef(new Set())
+  const hasLoadedRef = useRef(false)
+  const autosaveTimerRef = useRef(null)
+
   const draftStorageKey = useMemo(
     () => (code ? `kitpop-ws-drafts-${code.trim().toUpperCase()}` : ''),
     [code]
   )
 
-  const loadWorkspace = useCallback(async ({ silent = false } = {}) => {
-    if (!silent) {
+  const persistDrafts = useCallback((drafts) => {
+    draftValuesRef.current = drafts
+
+    if (!draftStorageKey) {
+      return
+    }
+
+    try {
+      sessionStorage.setItem(draftStorageKey, JSON.stringify(drafts))
+    } catch {
+      // ignore quota errors
+    }
+  }, [draftStorageKey])
+
+  const mergeDraftsFromServer = useCallback(
+    (visibleSections, { silent = false } = {}) => {
+      let next = { ...draftValuesRef.current }
+
+      if (!silent && Object.keys(next).length === 0 && draftStorageKey) {
+        try {
+          const stored = sessionStorage.getItem(draftStorageKey)
+          if (stored) {
+            next = { ...JSON.parse(stored), ...next }
+          }
+        } catch {
+          // ignore invalid cache
+        }
+      }
+
+      for (const section of visibleSections) {
+        if (dirtySectionIdsRef.current.has(section.id)) {
+          continue
+        }
+
+        if (section.response == null) {
+          continue
+        }
+
+        if (next[section.id] === undefined) {
+          next[section.id] = section.response
+        }
+      }
+
+      persistDrafts(next)
+      return next
+    },
+    [draftStorageKey, persistDrafts]
+  )
+
+  const updateDraft = useCallback(
+    (sectionId, value) => {
+      dirtySectionIdsRef.current.add(sectionId)
+      const next = { ...draftValuesRef.current, [sectionId]: value }
+      persistDrafts(next)
+      setDraftValues(next)
+    },
+    [persistDrafts]
+  )
+
+  const clearDraftDirty = useCallback((sectionId) => {
+    dirtySectionIdsRef.current.delete(sectionId)
+  }, [])
+
+  const loadWorkspace = useCallback(async ({ silent = false, force = false } = {}) => {
+    if (
+      silent &&
+      !force &&
+      (dirtySectionIdsRef.current.size > 0 ||
+        document.activeElement?.matches('input, textarea, select'))
+    ) {
+      return
+    }
+
+    if (!silent && !hasLoadedRef.current) {
       setLoading(true)
     }
     setError('')
@@ -83,56 +160,77 @@ export default function WorkspaceParticipantShell({ code }) {
         return visibleSections[0]?.id || ''
       })
 
-      setDraftValues((current) => {
-        let next = { ...current }
-
-        if (!silent && Object.keys(next).length === 0 && draftStorageKey) {
-          try {
-            const stored = sessionStorage.getItem(draftStorageKey)
-            if (stored) {
-              next = { ...JSON.parse(stored), ...next }
-            }
-          } catch {
-            // ignore invalid cache
-          }
-        }
-
-        for (const section of visibleSections) {
-          if (section.response == null) {
-            continue
-          }
-
-          if (next[section.id] === undefined) {
-            next[section.id] = section.response
-          }
-        }
-
-        return next
-      })
+      setDraftValues(mergeDraftsFromServer(visibleSections, { silent }))
     } catch (loadError) {
       setError(loadError.message || 'No se pudo cargar el espacio.')
     } finally {
-      if (!silent) {
+      if (!silent && !hasLoadedRef.current) {
         setLoading(false)
+        hasLoadedRef.current = true
       }
     }
-  }, [code, draftStorageKey])
-
-  useEffect(() => {
-    if (!draftStorageKey || Object.keys(draftValues).length === 0) {
-      return
-    }
-
-    try {
-      sessionStorage.setItem(draftStorageKey, JSON.stringify(draftValues))
-    } catch {
-      // ignore quota errors
-    }
-  }, [draftStorageKey, draftValues])
+  }, [code, mergeDraftsFromServer])
 
   useEffect(() => {
     loadWorkspace()
   }, [loadWorkspace])
+
+  const sections = useMemo(
+    () => (workspace?.sections ?? []).filter((section) => section.visible !== false),
+    [workspace]
+  )
+
+  useEffect(() => {
+    if (dirtySectionIdsRef.current.size === 0) {
+      return undefined
+    }
+
+    if (autosaveTimerRef.current) {
+      window.clearTimeout(autosaveTimerRef.current)
+    }
+
+    autosaveTimerRef.current = window.setTimeout(async () => {
+      const dirtyIds = [...dirtySectionIdsRef.current]
+
+      for (const sectionId of dirtyIds) {
+        const section = sections.find((item) => item.id === sectionId)
+
+        if (!section || !section.can_edit || !isResponseSection(section)) {
+          continue
+        }
+
+        const value = draftValuesRef.current[sectionId]
+        if (value === undefined) {
+          continue
+        }
+
+        try {
+          await upsertWorkspaceResponse(code, sectionId, value)
+          clearDraftDirty(sectionId)
+          setWorkspace((current) => {
+            if (!current?.sections) {
+              return current
+            }
+
+            return {
+              ...current,
+              sections: current.sections.map((item) =>
+                item.id === sectionId ? { ...item, response: value } : item
+              ),
+            }
+          })
+        } catch {
+          // Mantener borrador local si falla el autoguardado.
+        }
+      }
+    }, 1500)
+
+    return () => {
+      if (autosaveTimerRef.current) {
+        window.clearTimeout(autosaveTimerRef.current)
+      }
+    }
+  }, [clearDraftDirty, code, draftValues, sections])
 
   useEffect(() => {
     if (
@@ -159,7 +257,7 @@ export default function WorkspaceParticipantShell({ code }) {
       window.clearInterval(interval)
       window.clearInterval(syncInterval)
     }
-  }, [code, loadWorkspace, workspace])
+  }, [code, loadWorkspace, workspace?.participant?.id, workspace?.needsAuth, workspace?.needsEnrollment, workspace?.archived])
 
   async function handleAttendanceSubmit(payload) {
     setAttendanceSubmitting(true)
@@ -181,14 +279,10 @@ export default function WorkspaceParticipantShell({ code }) {
 
   async function handleJoined(displayName) {
     await joinWorkspace(code, displayName, true)
-    await loadWorkspace()
+    await loadWorkspace({ silent: hasLoadedRef.current })
   }
 
   const navigationMode = workspace?.settings?.navigation_mode ?? 'free'
-  const sections = useMemo(
-    () => (workspace?.sections ?? []).filter((section) => section.visible !== false),
-    [workspace]
-  )
   const { main: mainSections, closure: closureSections } = useMemo(
     () => partitionParticipantSections(sections),
     [sections]
@@ -228,9 +322,11 @@ export default function WorkspaceParticipantShell({ code }) {
     setError('')
 
     try {
-      const value = draftValues[section.id] ?? section.response ?? {}
+      const value = draftValuesRef.current[section.id] ?? section.response ?? {}
       await upsertWorkspaceResponse(code, section.id, value)
-      setDraftValues((current) => ({ ...current, [section.id]: value }))
+      clearDraftDirty(section.id)
+      persistDrafts({ ...draftValuesRef.current, [section.id]: value })
+      setDraftValues({ ...draftValuesRef.current, [section.id]: value })
       setSaveMessage('Respuesta guardada.')
       setWorkspace((current) => {
         if (!current?.sections) {
@@ -262,9 +358,10 @@ export default function WorkspaceParticipantShell({ code }) {
           continue
         }
 
-        const draft = draftValues[section.id]
+        const draft = draftValuesRef.current[section.id]
         if (draft !== undefined) {
           await upsertWorkspaceResponse(code, section.id, draft)
+          clearDraftDirty(section.id)
         }
       }
 
@@ -274,13 +371,16 @@ export default function WorkspaceParticipantShell({ code }) {
         activeSection.can_edit &&
         !isClosureSurveySection(activeSection)
       ) {
-        const value = draftValues[activeSection.id] ?? activeSection.response ?? {}
+        const value =
+          draftValuesRef.current[activeSection.id] ?? activeSection.response ?? {}
         await upsertWorkspaceResponse(code, activeSection.id, value)
+        clearDraftDirty(activeSection.id)
       }
 
       await submitWorkspacePanelFinish(code)
+      dirtySectionIdsRef.current.clear()
       setSaveMessage('Panel de participación finalizado.')
-      await loadWorkspace()
+      await loadWorkspace({ silent: true, force: true })
     } catch (finishError) {
       const message = finishError.message ?? ''
       if (
@@ -530,9 +630,7 @@ export default function WorkspaceParticipantShell({ code }) {
               section={activeSection}
               value={draftValues[activeSection.id] ?? activeSection.response ?? {}}
               disabled={!activeSection.can_edit || activeSection.section_type === 'info'}
-              onChange={(value) =>
-                setDraftValues((current) => ({ ...current, [activeSection.id]: value }))
-              }
+              onChange={(value) => updateDraft(activeSection.id, value)}
             />
 
             {isResponseSection(activeSection) && activeSection.can_edit && (

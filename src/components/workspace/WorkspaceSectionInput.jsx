@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 import { getLikertLabel } from '../../utils/surveyHelpers'
 import {
   emptyTableRows,
@@ -5,6 +7,57 @@ import {
   normalizeTableValue,
 } from '../../utils/workspaceHelpers'
 import WorkspaceRichContent from './WorkspaceRichContent'
+
+function DraftTextField({
+  sectionId,
+  value,
+  onChange,
+  disabled,
+  multiline = false,
+}) {
+  const [localText, setLocalText] = useState(() => value?.text ?? '')
+  const isDirtyRef = useRef(false)
+
+  useEffect(() => {
+    isDirtyRef.current = false
+    setLocalText(value?.text ?? '')
+  }, [sectionId])
+
+  useEffect(() => {
+    if (isDirtyRef.current) {
+      return
+    }
+
+    setLocalText(value?.text ?? '')
+  }, [value?.text])
+
+  function handleChange(event) {
+    const nextText = event.target.value
+    isDirtyRef.current = true
+    setLocalText(nextText)
+    onChange({ text: nextText })
+  }
+
+  if (multiline) {
+    return (
+      <textarea
+        rows={4}
+        value={localText}
+        disabled={disabled}
+        onChange={handleChange}
+      />
+    )
+  }
+
+  return (
+    <input
+      type="text"
+      value={localText}
+      disabled={disabled}
+      onChange={handleChange}
+    />
+  )
+}
 
 function LikertInput({ scale, value, onChange, disabled, name }) {
   const values = Array.from({ length: scale }, (_, index) => index + 1)
@@ -72,22 +125,23 @@ export default function WorkspaceSectionInput({
 function renderResponseInput(section, config, value, onChange, disabled) {
   if (section.section_type === 'text_short') {
     return (
-      <input
-        type="text"
-        value={value?.text ?? ''}
+      <DraftTextField
+        sectionId={section.id}
+        value={value}
         disabled={disabled}
-        onChange={(event) => onChange({ text: event.target.value })}
+        onChange={onChange}
       />
     )
   }
 
   if (section.section_type === 'text_long') {
     return (
-      <textarea
-        rows={4}
-        value={value?.text ?? ''}
+      <DraftTextField
+        sectionId={section.id}
+        value={value}
         disabled={disabled}
-        onChange={(event) => onChange({ text: event.target.value })}
+        multiline
+        onChange={onChange}
       />
     )
   }
