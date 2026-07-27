@@ -2165,6 +2165,71 @@
   padding-top:4px;
 }
 
+.workspace-participant-actions.form-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+  padding-top:16px;
+  border-top:1px solid var(--g200);
+}
+
+.workspace-participant-actions .btn-primary,
+.workspace-participant-actions .workspace-footer-btn,
+.workspace-participant-actions .timer-btn {
+  min-height:46px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.workspace-participant-finished {
+  margin-top:16px;
+  text-align:center;
+}
+
+.workspace-participant-finished h2 {
+  margin:0 0 10px;
+  color:var(--brand);
+}
+
+.workspace-survey-banner {
+  font-weight:700;
+  color:var(--brand);
+}
+
+.workspace-closure-preview {
+  margin-bottom:16px;
+}
+
+.workspace-closure-preview-list {
+  margin:12px 0 0;
+  padding-left:20px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--g700);
+}
+
+.workspace-closure-preview-list li {
+  margin-bottom:8px;
+}
+
+.workspace-closure-preview-kind {
+  display:inline-block;
+  min-width:88px;
+  margin-right:8px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  color:var(--brand);
+}
+
+.workspace-closure-preview-steps {
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--g200);
+}
+
 .workspace-add-activities.is-compact {
   padding:12px 14px;
   margin:0 0 12px;

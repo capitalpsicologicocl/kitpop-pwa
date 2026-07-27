@@ -8,10 +8,18 @@ import {
   getWorkspaceForParticipant,
   joinWorkspace,
   submitWorkspaceAttendance,
+  submitWorkspacePanelFinish,
   touchWorkspacePresence,
   upsertWorkspaceResponse,
 } from '../../services/workspaceService'
-import { isResponseSection, resolveSectionModuleName, shouldShowModuleHeader } from '../../utils/workspaceHelpers'
+import {
+  allClosureSectionsAnswered,
+  isClosureSurveySection,
+  isResponseSection,
+  partitionParticipantSections,
+  resolveSectionModuleName,
+  shouldShowModuleHeader,
+} from '../../utils/workspaceHelpers'
 
 export default function WorkspaceParticipantShell({ code }) {
   const [workspace, setWorkspace] = useState(null)
@@ -20,6 +28,7 @@ export default function WorkspaceParticipantShell({ code }) {
   const [activeSectionId, setActiveSectionId] = useState('')
   const [draftValues, setDraftValues] = useState({})
   const [savingSectionId, setSavingSectionId] = useState('')
+  const [finishingPanel, setFinishingPanel] = useState(false)
   const [saveMessage, setSaveMessage] = useState('')
   const [attendanceSubmitting, setAttendanceSubmitting] = useState(false)
   const [attendanceError, setAttendanceError] = useState('')
@@ -61,7 +70,13 @@ export default function WorkspaceParticipantShell({ code }) {
       setWorkspace(data)
 
       const visibleSections = (data.sections ?? []).filter((section) => section.visible !== false)
-      setActiveSectionId((current) => current || visibleSections[0]?.id || '')
+      setActiveSectionId((current) => {
+        if (current && visibleSections.some((section) => section.id === current)) {
+          return current
+        }
+
+        return visibleSections[0]?.id || ''
+      })
 
       const initialDrafts = {}
       for (const section of visibleSections) {
@@ -132,8 +147,22 @@ export default function WorkspaceParticipantShell({ code }) {
     () => (workspace?.sections ?? []).filter((section) => section.visible !== false),
     [workspace]
   )
+  const { main: mainSections, closure: closureSections } = useMemo(
+    () => partitionParticipantSections(sections),
+    [sections]
+  )
+
+  const panelFinished = Boolean(workspace?.participant?.panel_finished_at)
+  const closureActive = Boolean(workspace?.modules?.closure_survey_active)
+  const closureEnabled = Boolean(workspace?.modules?.closure_survey_enabled)
+  const surveyComplete = panelFinished && closureActive && allClosureSectionsAnswered(closureSections)
+
   const activeIndex = sections.findIndex((section) => section.id === activeSectionId)
   const activeSection = sections[activeIndex] ?? sections[0]
+  const lastMainSection = mainSections[mainSections.length - 1]
+  const isLastMainSection = Boolean(
+    !panelFinished && activeSection && lastMainSection && activeSection.id === lastMainSection.id
+  )
 
   function isSectionLocked(sectionIndex) {
     if (navigationMode !== 'sequential' || sectionIndex === 0) {
@@ -158,11 +187,37 @@ export default function WorkspaceParticipantShell({ code }) {
       const value = draftValues[section.id] ?? section.response ?? {}
       await upsertWorkspaceResponse(code, section.id, value)
       setSaveMessage('Respuesta guardada.')
-      await loadWorkspace()
+      await loadWorkspace({ silent: true })
     } catch (saveError) {
       setError(saveError.message || 'No se pudo guardar la respuesta.')
     } finally {
       setSavingSectionId('')
+    }
+  }
+
+  async function handleFinalizePanel() {
+    setFinishingPanel(true)
+    setSaveMessage('')
+    setError('')
+
+    try {
+      if (
+        activeSection &&
+        isResponseSection(activeSection) &&
+        activeSection.can_edit &&
+        !isClosureSurveySection(activeSection)
+      ) {
+        const value = draftValues[activeSection.id] ?? activeSection.response ?? {}
+        await upsertWorkspaceResponse(code, activeSection.id, value)
+      }
+
+      await submitWorkspacePanelFinish(code)
+      setSaveMessage('Panel de participación finalizado.')
+      await loadWorkspace()
+    } catch (finishError) {
+      setError(finishError.message || 'No se pudo finalizar el panel.')
+    } finally {
+      setFinishingPanel(false)
     }
   }
 
@@ -212,9 +267,62 @@ export default function WorkspaceParticipantShell({ code }) {
   }
 
   const hasGroupSections = (workspace?.sections ?? []).some(
-    (section) => section.scope === 'group'
+    (section) => section.scope === 'group' && !isClosureSurveySection(section)
   )
   const awaitingGroup = !workspace?.participant?.group_id && hasGroupSections
+
+  if (panelFinished && closureEnabled && !closureActive) {
+    return (
+      <div className="workspace-participant-shell">
+        <header className="workspace-participant-head">
+          <h1>{workspace.title}</h1>
+        </header>
+        <div className="auth-panel workspace-participant-finished">
+          <h2>Panel de participación finalizado</h2>
+          <p className="participant-copy">
+            Enviaste tu trabajo. El facilitador activará pronto la encuesta de satisfacción;
+            esta página se actualizará sola (cada 30 s).
+          </p>
+        </div>
+        <p className="workspace-powered-by">Powered by KitPOP</p>
+      </div>
+    )
+  }
+
+  if (panelFinished && !closureEnabled) {
+    return (
+      <div className="workspace-participant-shell">
+        <header className="workspace-participant-head">
+          <h1>{workspace.title}</h1>
+        </header>
+        <div className="auth-panel workspace-participant-finished">
+          <h2>¡Gracias por participar!</h2>
+          <p className="participant-copy">
+            Finalizaste tu panel de participación. Ya no hay actividades pendientes.
+          </p>
+        </div>
+        <p className="workspace-powered-by">Powered by KitPOP</p>
+      </div>
+    )
+  }
+
+  if (surveyComplete) {
+    return (
+      <div className="workspace-participant-shell">
+        <header className="workspace-participant-head">
+          <h1>{workspace.title}</h1>
+        </header>
+        <div className="auth-panel workspace-participant-finished">
+          <h2>Encuesta enviada</h2>
+          <p className="participant-copy">
+            Gracias por completar la encuesta de satisfacción. Tu participación ha quedado
+            registrada.
+          </p>
+        </div>
+        <p className="workspace-powered-by">Powered by KitPOP</p>
+      </div>
+    )
+  }
 
   if (sections.length === 0) {
     return (
@@ -237,6 +345,11 @@ export default function WorkspaceParticipantShell({ code }) {
     <div className="workspace-participant-shell">
       <header className="workspace-participant-head">
         <h1>{workspace.title}</h1>
+        {panelFinished && closureActive ? (
+          <p className="participant-copy workspace-survey-banner">
+            Encuesta de satisfacción — responde las preguntas siguientes.
+          </p>
+        ) : null}
         {workspace.description ? (
           <WorkspaceRichContent
             html={workspace.description}
@@ -266,7 +379,7 @@ export default function WorkspaceParticipantShell({ code }) {
             {workspace.participant.is_group_editor ? ' · Editor del grupo' : ''}
           </p>
         )}
-        {awaitingGroup && (
+        {awaitingGroup && !panelFinished && (
           <p className="participant-copy participant-wait">
             Puedes revisar todas las actividades del espacio. Las actividades grupales están
             en solo lectura hasta que el facilitador te asigne a un grupo.
@@ -318,11 +431,17 @@ export default function WorkspaceParticipantShell({ code }) {
             <div className="workspace-section-head">
               <h2>{activeSection.title}</h2>
               <span className="profile-badge">
-                {activeSection.scope === 'group' ? 'Grupal' : 'Individual'}
+                {isClosureSurveySection(activeSection)
+                  ? 'Encuesta'
+                  : activeSection.scope === 'group'
+                    ? 'Grupal'
+                    : 'Individual'}
               </span>
             </div>
 
-            {activeSection.scope === 'group' && !activeSection.can_edit && (
+            {activeSection.scope === 'group' &&
+              !activeSection.can_edit &&
+              !isClosureSurveySection(activeSection) && (
               <p className="participant-copy participant-wait">
                 Solo lectura — puedes revisar esta actividad grupal; el editor del grupo
                 registra las respuestas compartidas.
@@ -339,15 +458,26 @@ export default function WorkspaceParticipantShell({ code }) {
             />
 
             {isResponseSection(activeSection) && activeSection.can_edit && (
-              <div className="form-actions">
+              <div className="form-actions workspace-participant-actions">
                 <button
                   type="button"
                   className="btn-primary"
-                  disabled={savingSectionId === activeSection.id}
+                  disabled={savingSectionId === activeSection.id || finishingPanel}
                   onClick={() => handleSaveSection(activeSection)}
                 >
                   {savingSectionId === activeSection.id ? 'Guardando...' : 'Guardar respuesta'}
                 </button>
+
+                {isLastMainSection && (
+                  <button
+                    type="button"
+                    className="workspace-footer-btn workspace-footer-btn-primary"
+                    disabled={finishingPanel || savingSectionId === activeSection.id}
+                    onClick={handleFinalizePanel}
+                  >
+                    {finishingPanel ? 'Finalizando...' : 'Finalizar panel de participación'}
+                  </button>
+                )}
 
                 {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
                   <button
@@ -362,18 +492,29 @@ export default function WorkspaceParticipantShell({ code }) {
               </div>
             )}
 
-            {(!isResponseSection(activeSection) || !activeSection.can_edit) &&
-              navigationMode === 'sequential' &&
-              activeIndex < sections.length - 1 && (
-              <div className="form-actions">
-                <button
-                  type="button"
-                  className="timer-btn timer-btn-secondary"
-                  disabled={isSectionLocked(activeIndex + 1)}
-                  onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
-                >
-                  Siguiente sección →
-                </button>
+            {(!isResponseSection(activeSection) || !activeSection.can_edit) && (
+              <div className="form-actions workspace-participant-actions">
+                {isLastMainSection && !panelFinished && (
+                  <button
+                    type="button"
+                    className="workspace-footer-btn workspace-footer-btn-primary"
+                    disabled={finishingPanel}
+                    onClick={handleFinalizePanel}
+                  >
+                    {finishingPanel ? 'Finalizando...' : 'Finalizar panel de participación'}
+                  </button>
+                )}
+
+                {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
+                  <button
+                    type="button"
+                    className="timer-btn timer-btn-secondary"
+                    disabled={isSectionLocked(activeIndex + 1)}
+                    onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
+                  >
+                    Siguiente sección →
+                  </button>
+                )}
               </div>
             )}
           </section>

@@ -501,7 +501,34 @@ export function normalizeTableValue(section, value) {
   return { rows: emptyTableRows(section) }
 }
 
-export function isWorkspaceSetupError(error) {
+export function partitionParticipantSections(sections = []) {
+  const main = []
+  const closure = []
+
+  for (const section of sections) {
+    if (isClosureSurveySection(section)) {
+      closure.push(section)
+    } else {
+      main.push(section)
+    }
+  }
+
+  return { main, closure }
+}
+
+export function allClosureSectionsAnswered(closureSections = []) {
+  if (closureSections.length === 0) {
+    return false
+  }
+
+  return closureSections.every((section) => {
+    if (!isResponseSection(section)) {
+      return true
+    }
+
+    return Boolean(section.response)
+  })
+}
   const message = error?.message ?? ''
   return (
     message.includes('workspaces') ||

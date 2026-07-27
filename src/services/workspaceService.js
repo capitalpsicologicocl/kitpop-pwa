@@ -393,6 +393,18 @@ export async function submitWorkspaceAttendance(code, payload) {
   return data
 }
 
+export async function submitWorkspacePanelFinish(code) {
+  const { data, error } = await supabase.rpc('submit_workspace_panel_finish', {
+    p_code: code.trim().toUpperCase(),
+  })
+
+  if (error) {
+    throw error
+  }
+
+  return data
+}
+
 export async function touchWorkspacePresence(code) {
   const { error } = await supabase.rpc('touch_workspace_presence', {
     p_code: code.trim().toUpperCase(),

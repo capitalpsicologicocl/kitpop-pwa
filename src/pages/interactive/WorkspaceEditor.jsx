@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import AccessCodePanel from '../../components/interactive/AccessCodePanel'
 import RichTextEditor from '../../components/ui/RichTextEditor'
 import WorkspaceAddActivities from '../../components/workspace/WorkspaceAddActivities'
+import WorkspaceClosureSurveyPreview from '../../components/workspace/WorkspaceClosureSurveyPreview'
 import WorkspaceParticipantResponsesModal from '../../components/workspace/WorkspaceParticipantResponsesModal'
 import WorkspaceSectionEditor from '../../components/workspace/WorkspaceSectionEditor'
 import { useAuth } from '../../context/AuthContext'
@@ -882,6 +883,11 @@ export default function WorkspaceEditor() {
 
               {workspaceSettings.closure_survey?.enabled && (
                 <>
+                  <WorkspaceClosureSurveyPreview
+                    likertScale={Number(workspaceSettings.closure_survey?.likert_scale) || 5}
+                    questionCount={closureSections.length}
+                  />
+                  <div className="workspace-live-modules-actions">
                   <button
                     type="button"
                     className="btn-primary"
@@ -900,9 +906,10 @@ export default function WorkspaceEditor() {
                   <p className="interactive-item-meta">
                     {closureSections.length} preguntas ·{' '}
                     {workspaceSettings.closure_survey?.active
-                      ? 'Visible para participantes'
+                      ? 'Visible para quienes finalizaron su panel'
                       : 'Oculta hasta activar'}
                   </p>
+                  </div>
                 </>
               )}
             </div>
