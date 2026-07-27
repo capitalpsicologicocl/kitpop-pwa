@@ -33,6 +33,11 @@ export default function WorkspaceParticipantShell({ code }) {
   const [attendanceSubmitting, setAttendanceSubmitting] = useState(false)
   const [attendanceError, setAttendanceError] = useState('')
 
+  const draftStorageKey = useMemo(
+    () => (code ? `kitpop-ws-drafts-${code.trim().toUpperCase()}` : ''),
+    [code]
+  )
+
   const loadWorkspace = useCallback(async ({ silent = false } = {}) => {
     if (!silent) {
       setLoading(true)
@@ -78,13 +83,32 @@ export default function WorkspaceParticipantShell({ code }) {
         return visibleSections[0]?.id || ''
       })
 
-      const initialDrafts = {}
-      for (const section of visibleSections) {
-        if (section.response) {
-          initialDrafts[section.id] = section.response
+      setDraftValues((current) => {
+        let next = { ...current }
+
+        if (!silent && Object.keys(next).length === 0 && draftStorageKey) {
+          try {
+            const stored = sessionStorage.getItem(draftStorageKey)
+            if (stored) {
+              next = { ...JSON.parse(stored), ...next }
+            }
+          } catch {
+            // ignore invalid cache
+          }
         }
-      }
-      setDraftValues(initialDrafts)
+
+        for (const section of visibleSections) {
+          if (section.response == null) {
+            continue
+          }
+
+          if (next[section.id] === undefined) {
+            next[section.id] = section.response
+          }
+        }
+
+        return next
+      })
     } catch (loadError) {
       setError(loadError.message || 'No se pudo cargar el espacio.')
     } finally {
@@ -92,7 +116,19 @@ export default function WorkspaceParticipantShell({ code }) {
         setLoading(false)
       }
     }
-  }, [code])
+  }, [code, draftStorageKey])
+
+  useEffect(() => {
+    if (!draftStorageKey || Object.keys(draftValues).length === 0) {
+      return
+    }
+
+    try {
+      sessionStorage.setItem(draftStorageKey, JSON.stringify(draftValues))
+    } catch {
+      // ignore quota errors
+    }
+  }, [draftStorageKey, draftValues])
 
   useEffect(() => {
     loadWorkspace()
@@ -113,10 +149,16 @@ export default function WorkspaceParticipantShell({ code }) {
 
     const interval = window.setInterval(() => {
       touchWorkspacePresence(code).catch(() => {})
-      loadWorkspace({ silent: true }).catch(() => {})
     }, 30_000)
 
-    return () => window.clearInterval(interval)
+    const syncInterval = window.setInterval(() => {
+      loadWorkspace({ silent: true }).catch(() => {})
+    }, 120_000)
+
+    return () => {
+      window.clearInterval(interval)
+      window.clearInterval(syncInterval)
+    }
   }, [code, loadWorkspace, workspace])
 
   async function handleAttendanceSubmit(payload) {
@@ -188,8 +230,20 @@ export default function WorkspaceParticipantShell({ code }) {
     try {
       const value = draftValues[section.id] ?? section.response ?? {}
       await upsertWorkspaceResponse(code, section.id, value)
+      setDraftValues((current) => ({ ...current, [section.id]: value }))
       setSaveMessage('Respuesta guardada.')
-      await loadWorkspace({ silent: true })
+      setWorkspace((current) => {
+        if (!current?.sections) {
+          return current
+        }
+
+        return {
+          ...current,
+          sections: current.sections.map((item) =>
+            item.id === section.id ? { ...item, response: value } : item
+          ),
+        }
+      })
     } catch (saveError) {
       setError(saveError.message || 'No se pudo guardar la respuesta.')
     } finally {
@@ -305,7 +359,7 @@ export default function WorkspaceParticipantShell({ code }) {
           <h2>Panel de participación finalizado</h2>
           <p className="participant-copy">
             Enviaste tu trabajo. El facilitador activará pronto la encuesta de satisfacción;
-            esta página se actualizará sola (cada 30 s).
+            esta página se actualizará sola en unos minutos.
           </p>
         </div>
         <p className="workspace-powered-by">Powered by KitPOP</p>
