@@ -529,6 +529,8 @@ export function allClosureSectionsAnswered(closureSections = []) {
     return Boolean(section.response)
   })
 }
+
+export function isWorkspaceSetupError(error) {
   const message = error?.message ?? ''
   return (
     message.includes('workspaces') ||
