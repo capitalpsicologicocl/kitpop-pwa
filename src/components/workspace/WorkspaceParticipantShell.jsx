@@ -154,15 +154,17 @@ export default function WorkspaceParticipantShell({ code }) {
 
   const panelFinished = Boolean(workspace?.participant?.panel_finished_at)
   const closureActive = Boolean(workspace?.modules?.closure_survey_active)
-  const closureEnabled = Boolean(workspace?.modules?.closure_survey_enabled)
-  const surveyComplete = panelFinished && closureActive && allClosureSectionsAnswered(closureSections)
+  const closureEnabled = Boolean(
+    workspace?.modules?.closure_survey_enabled ??
+      workspace?.settings?.closure_survey?.enabled
+  )
+  const surveyComplete =
+    panelFinished && closureActive && allClosureSectionsAnswered(closureSections)
+  const showMainPanel = !panelFinished && mainSections.length > 0
+  const showSurveyPanel = panelFinished && closureActive && closureSections.length > 0
 
   const activeIndex = sections.findIndex((section) => section.id === activeSectionId)
   const activeSection = sections[activeIndex] ?? sections[0]
-  const lastMainSection = mainSections[mainSections.length - 1]
-  const isLastMainSection = Boolean(
-    !panelFinished && activeSection && lastMainSection && activeSection.id === lastMainSection.id
-  )
 
   function isSectionLocked(sectionIndex) {
     if (navigationMode !== 'sequential' || sectionIndex === 0) {
@@ -201,6 +203,17 @@ export default function WorkspaceParticipantShell({ code }) {
     setError('')
 
     try {
+      for (const section of mainSections) {
+        if (!isResponseSection(section) || !section.can_edit || isClosureSurveySection(section)) {
+          continue
+        }
+
+        const draft = draftValues[section.id]
+        if (draft !== undefined) {
+          await upsertWorkspaceResponse(code, section.id, draft)
+        }
+      }
+
       if (
         activeSection &&
         isResponseSection(activeSection) &&
@@ -215,7 +228,18 @@ export default function WorkspaceParticipantShell({ code }) {
       setSaveMessage('Panel de participación finalizado.')
       await loadWorkspace()
     } catch (finishError) {
-      setError(finishError.message || 'No se pudo finalizar el panel.')
+      const message = finishError.message ?? ''
+      if (
+        message.includes('submit_workspace_panel_finish') ||
+        message.includes('panel_finished_at') ||
+        message.includes('does not exist')
+      ) {
+        setError(
+          'Falta configuración en Supabase. El facilitador debe ejecutar supabase/workspaces_participant_finish.sql.'
+        )
+      } else {
+        setError(message || 'No se pudo finalizar el panel.')
+      }
     } finally {
       setFinishingPanel(false)
     }
@@ -468,17 +492,6 @@ export default function WorkspaceParticipantShell({ code }) {
                   {savingSectionId === activeSection.id ? 'Guardando...' : 'Guardar respuesta'}
                 </button>
 
-                {isLastMainSection && (
-                  <button
-                    type="button"
-                    className="workspace-footer-btn workspace-footer-btn-primary"
-                    disabled={finishingPanel || savingSectionId === activeSection.id}
-                    onClick={handleFinalizePanel}
-                  >
-                    {finishingPanel ? 'Finalizando...' : 'Finalizar panel de participación'}
-                  </button>
-                )}
-
                 {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
                   <button
                     type="button"
@@ -492,34 +505,51 @@ export default function WorkspaceParticipantShell({ code }) {
               </div>
             )}
 
-            {(!isResponseSection(activeSection) || !activeSection.can_edit) && (
+            {(!isResponseSection(activeSection) || !activeSection.can_edit) &&
+              navigationMode === 'sequential' &&
+              activeIndex < sections.length - 1 && (
               <div className="form-actions workspace-participant-actions">
-                {isLastMainSection && !panelFinished && (
-                  <button
-                    type="button"
-                    className="workspace-footer-btn workspace-footer-btn-primary"
-                    disabled={finishingPanel}
-                    onClick={handleFinalizePanel}
-                  >
-                    {finishingPanel ? 'Finalizando...' : 'Finalizar panel de participación'}
-                  </button>
-                )}
-
-                {navigationMode === 'sequential' && activeIndex < sections.length - 1 && (
-                  <button
-                    type="button"
-                    className="timer-btn timer-btn-secondary"
-                    disabled={isSectionLocked(activeIndex + 1)}
-                    onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
-                  >
-                    Siguiente sección →
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className="timer-btn timer-btn-secondary"
+                  disabled={isSectionLocked(activeIndex + 1)}
+                  onClick={() => setActiveSectionId(sections[activeIndex + 1].id)}
+                >
+                  Siguiente sección →
+                </button>
               </div>
             )}
           </section>
         )}
       </div>
+
+      {showMainPanel && (
+        <div className="workspace-participant-finish-bar auth-panel">
+          <div className="workspace-participant-finish-copy">
+            <h3>Enviar tu trabajo</h3>
+            <p className="field-hint">
+              Cuando hayas completado las actividades, finaliza tu panel. Después podrás
+              responder la encuesta de satisfacción si el facilitador la activa.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="workspace-participant-finish-btn"
+            disabled={finishingPanel}
+            onClick={handleFinalizePanel}
+          >
+            {finishingPanel ? 'Finalizando...' : 'Finalizar panel de participación'}
+          </button>
+        </div>
+      )}
+
+      {showSurveyPanel && (
+        <div className="workspace-participant-finish-bar auth-panel workspace-participant-survey-bar">
+          <p className="field-hint">
+            Encuesta de satisfacción — guarda cada respuesta y avanza por el menú lateral.
+          </p>
+        </div>
+      )}
 
       <p className="workspace-powered-by">Powered by KitPOP</p>
 
